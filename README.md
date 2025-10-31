@@ -302,6 +302,7 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 
 ### 社区论坛
 - [明经通道 CAD 社区](http://www.mjtd.com/) - 中国领先的 CAD 二次开发社区，开发讨论氛围活跃，提供大量技术资料和代码示例
+  - [维护者个人空间](http://www.mjtd.com/?7318880) - 在明经通道的个人主页
 - [Autodesk 开发者论坛](https://forums.autodesk.com/) - Autodesk 官方开发者社区
 
 ### 学习资源
@@ -319,12 +320,19 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 2. 参考示例代码（`samples/` 目录）
 3. 访问 [明经通道 CAD 社区](http://www.mjtd.com/) - 中文社区，讨论氛围活跃
 4. 访问 [Autodesk 开发者论坛](https://forums.autodesk.com/) - 官方英文社区
+5. 通过 [Telegram](https://t.me/DevinITX) 联系维护者
 
 ---
 
 ## 🤝 贡献
 
 如果您发现任何问题或有改进建议，欢迎提交 **Issue** 或 **Pull Request**。
+
+### 维护者
+
+- **明经通道**: [Hexon](http://www.mjtd.com/?7318880) - 个人空间
+- **Linux do**: [Hexon-X](https://linux.do/) - 用户名 Hexon-X
+- **Telegram**: [@DevinITX](https://t.me/DevinITX)
 
 ---
 
@@ -353,5 +361,10 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 <div align="center">
 
 **最后更新**: 2025年 | **维护状态**: 持续更新中
+
+**维护者联系方式**:
+- [Telegram @DevinITX](https://t.me/DevinITX)
+- [明经通道个人空间](http://www.mjtd.com/?7318880)
+- Linux do: [Hexon-X](https://linux.do/)
 
 </div>
