@@ -302,8 +302,8 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 
 ### 社区论坛
 - [明经通道 CAD 社区](http://www.mjtd.com/) - 中国领先的 CAD 二次开发社区，开发讨论氛围活跃，提供大量技术资料和代码示例
-  - [维护者个人空间](http://www.mjtd.com/?7318880) - 在明经通道的个人主页
 - [Autodesk 开发者论坛](https://forums.autodesk.com/) - Autodesk 官方开发者社区
+- [Linux do](https://linux.do/) - 优秀的技术社区站点，提供丰富的技术讨论和资源分享
 
 ### 学习资源
 - ObjectARX 开发文档（位于各版本的 `docs/` 目录）
@@ -320,19 +320,13 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 2. 参考示例代码（`samples/` 目录）
 3. 访问 [明经通道 CAD 社区](http://www.mjtd.com/) - 中文社区，讨论氛围活跃
 4. 访问 [Autodesk 开发者论坛](https://forums.autodesk.com/) - 官方英文社区
-5. 通过 [Telegram](https://t.me/DevinITX) 联系维护者
+5. 提交 [GitHub Issue](https://github.com/CNIong/ObjectARX-SDK/issues) - 报告问题或提出建议
 
 ---
 
 ## 🤝 贡献
 
-如果您发现任何问题或有改进建议，欢迎提交 **Issue** 或 **Pull Request**。
-
-### 维护者
-
-- **明经通道**: [Hexon](http://www.mjtd.com/?7318880) - 个人空间
-- **Linux do**: [Hexon-X](https://linux.do/) - 用户名 Hexon-X
-- **Telegram**: [@DevinITX](https://t.me/DevinITX)
+如果您发现任何问题或有改进建议，欢迎提交 [Issue](https://github.com/CNIong/ObjectARX-SDK/issues) 或 [Pull Request](https://github.com/CNIong/ObjectARX-SDK/pulls)。
 
 ---
 
@@ -362,9 +356,6 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 
 **最后更新**: 2025年 | **维护状态**: 持续更新中
 
-**维护者联系方式**:
-- [Telegram @DevinITX](https://t.me/DevinITX)
-- [明经通道个人空间](http://www.mjtd.com/?7318880)
-- Linux do: [Hexon-X](https://linux.do/)
+如有问题，请通过 [GitHub Issues](https://github.com/CNIong/ObjectARX-SDK/issues) 联系
 
 </div>
