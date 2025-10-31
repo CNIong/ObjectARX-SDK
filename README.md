@@ -48,7 +48,7 @@
 
 > **提示**: 
 > - **R14 (1998)**: 以 `R14.exe` 安装包形式提供，使用 Visual C++ 5.0 开发
-> - 版本对照表图片已移至文档末尾，详细描述了每个版本的开发环境要求
+> - 版本对照表图片位于文档末尾，包含每个版本的详细开发环境要求
 
 ---
 
@@ -83,15 +83,108 @@
 
 ---
 
+## 📚 仓库内容
+
+### 头文件 (Header Files)
+
+每个版本都包含完整的头文件集合：
+- **核心 API**: `rxapi.h`, `rxdefs.h` 等
+- **数据库 API**: `acdb.h`, `dbents.h` 等
+- **几何 API**: `acge.h`, `geassign.h` 等
+- **用户界面 API**: `acui.h`, `adui.h` 等
+
+### 库文件 (Library Files)
+
+预编译的静态库文件，包含：
+- `rxapi.lib` - ObjectARX 运行时 API
+- `acdb*.lib` - 数据库 API
+- `acge*.lib` - 几何库
+- `acgi*.lib` - 图形接口库
+- 以及其他相关库文件
+
+### 示例代码 (Samples)
+
+丰富的示例代码涵盖各种开发场景：
+
+#### 数据库操作 (`database/`)
+- ARXDBG - 调试工具示例
+- 实体遍历、事务处理
+- XData、XRecord 操作
+- 克隆和深拷贝
+
+#### 自定义实体 (`entity/`)
+- PolySamp - 多边形实体示例
+- 自定义对象创建
+- 实体属性扩展
+
+#### 用户界面 (`editor/`)
+- MFC 对话框示例
+- 工具面板示例
+- 上下文菜单
+
+#### 图形处理 (`graphics/`)
+- 视觉样式
+- 材质和渲染
+- 坐标系统
+
+#### 反应器 (`reactors/`)
+- 数据库反应器
+- 编辑器反应器
+- 协议反应器
+
+#### .NET API (`dotNet/`)
+- C# 和 VB.NET 示例
+- 事件处理
+- UI 扩展
+
+### 文档 (Documentation)
+
+文档通常以 CHM（帮助文件）或 PDF 格式提供：
+- `arxdev.chm` - 开发指南
+- `arxref.chm` - API 参考
+- `arxmgd.chm` - .NET API 文档
+- `readarx.chm` - 入门教程
+
+### 工具和实用程序 (Utilities)
+
+- **AModeler**: 高级建模工具库
+- **BRep**: 边界表示法几何库
+- **HlrApi**: 隐藏线移除功能
+- **Atil**: 纹理图像处理库
+
+---
+
 ## 🚀 快速开始
 
 ### 系统要求
 
-- **操作系统**: Windows (通常支持 Windows 7 及以上版本)
-- **开发环境**: 
-  - Visual Studio（建议使用与 AutoCAD 版本匹配的 VS 版本）
-  - 部分旧版本可能需要 Visual C++ 6.0
+- **操作系统**: Windows（通常支持 Windows 7 及以上版本）
+- **开发环境**: Visual Studio（必须与目标 AutoCAD 版本匹配，详见下方版本要求表格）
 - **AutoCAD**: 需要安装对应版本的 AutoCAD 软件
+
+### Visual Studio 版本要求
+
+不同 AutoCAD 版本需要特定版本的 Visual Studio：
+
+| AutoCAD 版本 | Visual Studio 版本 | 平台支持 |
+|------------|------------------|---------|
+| AutoCAD R14 | Visual C++ 5.0 | 32 位 |
+| AutoCAD 2000-2004 | Visual C++ 6.0 或 Visual Studio .NET | 32 位 |
+| AutoCAD 2005-2006 | Visual Studio .NET 2002/2003 | 32 位 |
+| AutoCAD 2007-2009 | Visual Studio 2005 | 32 位 |
+| AutoCAD 2010-2012 | Visual Studio 2008 | 32/64 位 |
+| AutoCAD 2013-2014 | Visual Studio 2010 | 32/64 位 |
+| AutoCAD 2015-2016 | Visual Studio 2012 | 32/64 位 |
+| AutoCAD 2017-2019 | Visual Studio 2015 | 32/64 位 |
+| AutoCAD 2020-2021 | Visual Studio 2017 | **仅 64 位** |
+| AutoCAD 2022-2023 | Visual Studio 2019 | **仅 64 位** |
+| AutoCAD 2024-2025 | Visual Studio 2022 | **仅 64 位** |
+| AutoCAD 2026 | Visual Studio 2022 | **仅 64 位** |
+
+> ⚠️ **重要提示**: 
+> - ObjectARX 应用程序必须与 AutoCAD 版本严格匹配
+> - 从 AutoCAD 2020 开始，仅支持 64 位平台
+> - 详细版本对照表请查看文档末尾的图片
 
 ### 编译示例
 
@@ -136,74 +229,81 @@ acgi25.lib
 
 ---
 
-## 📚 主要内容
+## 🛠️ 多版本编译环境配置
 
-### 1. 头文件 (Header Files)
+如果需要在 Visual Studio 2022 中编译多个版本的 ObjectARX 项目，可以配置 VS2022 以支持旧版本的编译器工具集。
 
-每个版本都包含完整的头文件集合：
-- **核心 API**: `rxapi.h`, `rxdefs.h` 等
-- **数据库 API**: `acdb.h`, `dbents.h` 等
-- **几何 API**: `acge.h`, `geassign.h` 等
-- **用户界面 API**: `acui.h`, `adui.h` 等
+### 方法一：通过安装程序（推荐）
 
-### 2. 库文件 (Library Files)
+1. **安装 Visual Studio 2022**
+   
+   在安装时勾选以下工作负载和组件：
+   - **使用 C++ 的桌面开发**
+   - 在 **单个组件** 中勾选旧版本工具集：
+     - **MSVC v142 - VS 2019 C++ x64/x86 生成工具**
+     - **MSVC v141 - VS 2017 C++ x64/x86 生成工具**
+     - **MSVC v140 - VS 2015 C++ x64/x86 生成工具**（如果有）
 
-预编译的静态库文件，包含：
-- `rxapi.lib` - ObjectARX 运行时 API
-- `acdb*.lib` - 数据库 API
-- `acge*.lib` - 几何库
-- `acgi*.lib` - 图形接口库
-- 以及其他相关库文件
+2. **安装 Daffodil 插件**
+   
+   - 下载并安装 `Daffodil.ENU.msi`
+   - 下载地址：
+     - [GitHub Releases](https://github.com/KirillOsenkov/MSBuildProjectTools/releases)（搜索 Daffodil）
+     - [Visual Studio Marketplace](https://marketplace.visualstudio.com/)（搜索 "Daffodil"）
+     - 或通过搜索引擎搜索 "Daffodil Visual Studio 2022 download"
+   - 此插件帮助 Visual Studio 2022 识别和使用旧版本的编译器工具集
 
-### 3. 示例代码 (Samples)
+3. **安装 Visual Studio 2010**
+   
+   安装 Visual Studio 2010 以提供 VC10.0 工具集，安装后 VS2022 即可识别并使用。
 
-丰富的示例代码涵盖各种开发场景：
+### 方法二：手动注册旧版本工具集
 
-#### 数据库操作 (`database/`)
-- ARXDBG - 调试工具示例
-- 实体遍历、事务处理
-- XData、XRecord 操作
-- 克隆和深拷贝
+如果不想安装完整的 Visual Studio 2010，可以手动复制并注册工具集：
 
-#### 自定义实体 (`entity/`)
-- PolySamp - 多边形实体示例
-- 自定义对象创建
-- 实体属性扩展
+1. **复制工具集目录**
+   
+   - 从 Visual Studio 2010 安装目录复制 `VC` 目录
+   - 放置到 D 盘合适的位置（例如：`D:\VisualStudio\VC10\`）
+   - 💡 **建议**: 使用 D 盘可减轻 C 盘负担，同时保持目录结构清晰
 
-#### 用户界面 (`editor/`)
-- MFC 对话框示例
-- 工具面板示例
-- 上下文菜单
+2. **注册工具集到注册表**
+   
+   在注册表中添加以下路径（根据实际安装路径调整）：
+   
+   ```
+   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\10.0\Setup\VS
+   HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\10.0\Setup\VS
+   ```
+   
+   在注册表路径下创建或修改以下键值：
+   
+   - `ProductDir` = `D:\VisualStudio\VC10\`（VC 目录路径）
+   - `VCInstallDir` = `D:\VisualStudio\VC10\VC\`
+   - `VSInstallDir` = `D:\VisualStudio\VC10\`（或根据实际情况调整）
+   
+   > 💡 **提示**: 如果 Visual Studio 2010 安装在默认位置，`VSInstallDir` 可能仍为 `C:\Program Files (x86)\Microsoft Visual Studio 10.0\`，需要根据实际情况调整。
 
-#### 图形处理 (`graphics/`)
-- 视觉样式
-- 材质和渲染
-- 坐标系统
+3. **验证配置**
+   
+   - 重启 Visual Studio 2022
+   - 在项目属性中检查 **平台工具集** 是否可以看到旧版本（如 v100, v140, v141, v142 等）
 
-#### 反应器 (`reactors/`)
-- 数据库反应器
-- 编辑器反应器
-- 协议反应器
+### 注意事项
 
-#### .NET API (`dotNet/`)
-- C# 和 VB.NET 示例
-- 事件处理
-- UI 扩展
+⚠️ **重要提示**：
+- 不同版本的 AutoCAD 必须使用对应版本的 Visual Studio 编译器
+- 即使配置了多版本工具集，仍需要确保使用正确的工具集编译对应版本的插件
+- 建议为每个 AutoCAD 版本创建单独的项目配置或解决方案配置
+- **手动修改注册表前请先备份注册表**
 
-### 4. 文档 (Documentation)
+### 快速验证
 
-文档通常以 CHM（帮助文件）或 PDF 格式提供：
-- `arxdev.chm` - 开发指南
-- `arxref.chm` - API 参考
-- `arxmgd.chm` - .NET API 文档
-- `readarx.chm` - 入门教程
+配置完成后，可以通过以下方式验证：
 
-### 5. 工具和实用程序 (Utilities)
-
-- **AModeler**: 高级建模工具库
-- **BRep**: 边界表示法几何库
-- **HlrApi**: 隐藏线移除功能
-- **Atil**: 纹理图像处理库
+1. 在 Visual Studio 2022 中打开任意 C++ 项目
+2. 右键项目 → **属性** → **常规** → **平台工具集**
+3. 查看下拉列表中是否包含已安装的工具集版本
 
 ---
 
@@ -236,7 +336,7 @@ acgi25.lib
 
 ### 版本兼容性
 
-⚠️ **重要提示**: ObjectARX 应用程序必须与 AutoCAD 版本严格匹配。
+⚠️ **重要**: ObjectARX 应用程序必须与 AutoCAD 版本严格匹配。
 
 - AutoCAD 2025 的插件只能在 AutoCAD 2025 上运行
 - 旧版本插件无法在新版本 AutoCAD 上运行
@@ -250,47 +350,18 @@ acgi25.lib
 
 ---
 
-## ⚠️ 注意事项
+## ⚠️ 重要注意事项
 
 ### 许可证
+
 ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 
-### 版本匹配
-确保 SDK 版本与目标 AutoCAD 版本完全匹配。
+### R14 版本特殊说明
 
-### R14 版本
 `R14.exe` 是 AutoCAD R14 (1998) 版本的 SDK 安装包，由于文件格式较老，可能需要：
 - 在兼容模式下运行（Windows 兼容性设置）
 - 使用旧版本 Windows 系统（如 Windows XP/7）解压
-- 或者使用专门的解压工具
-
-### 平台支持
-
-| 版本范围 | 平台支持 |
-|---------|---------|
-| AutoCAD 2008-2019 | 同时支持 32 位和 64 位平台（64 位为主流） |
-| **AutoCAD 2020 及以后** | **仅支持 64 位平台，结束对 32 位（X86）的支持** |
-
-### Visual Studio 版本要求
-
-不同 AutoCAD 版本需要特定版本的 Visual Studio：
-
-| AutoCAD 版本 | Visual Studio 版本 |
-|------------|------------------|
-| AutoCAD R14 | Visual C++ 5.0 |
-| AutoCAD 2000-2004 | Visual C++ 6.0 或 Visual Studio .NET |
-| AutoCAD 2005-2006 | Visual Studio .NET 2002/2003 |
-| AutoCAD 2007-2009 | Visual Studio 2005 |
-| AutoCAD 2010-2012 | Visual Studio 2008 |
-| AutoCAD 2013-2014 | Visual Studio 2010 |
-| AutoCAD 2015-2016 | Visual Studio 2012 |
-| AutoCAD 2017-2019 | Visual Studio 2015 |
-| AutoCAD 2020-2021 | Visual Studio 2017 |
-| AutoCAD 2022-2023 | Visual Studio 2019 |
-| AutoCAD 2024-2025 | Visual Studio 2022 |
-| AutoCAD 2026 | Visual Studio 2022 |
-
-> 💡 详细说明请参考文档末尾的版本对照表图片。
+- 或使用专门的解压工具
 
 ---
 
@@ -314,7 +385,7 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 
 ## 📞 支持
 
-如有问题，请：
+如有问题，请按以下顺序尝试：
 
 1. 查阅对应版本的文档（`docs/` 目录）
 2. 参考示例代码（`samples/` 目录）
