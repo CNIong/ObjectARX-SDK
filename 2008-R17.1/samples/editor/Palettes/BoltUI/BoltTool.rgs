@@ -1,0 +1,26 @@
+HKCR
+{
+	boltUI.CBoltTool.1 = s 'CBoltTool Class'
+	{
+		CLSID = s '{56FDE866-D7DA-4ED2-9858-65997CDEF4F9}'
+	}
+	boltUI.CBoltTool = s 'CBoltTool Class'
+	{
+		CLSID = s '{56FDE866-D7DA-4ED2-9858-65997CDEF4F9}'
+		CurVer = s 'boltUI.CBoltTool.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {56FDE866-D7DA-4ED2-9858-65997CDEF4F9} = s 'CBoltTool Class'
+		{
+			ProgID = s 'boltUI.CBoltTool.1'
+			VersionIndependentProgID = s 'boltUI.CBoltTool'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{EE506FE6-9FEA-4CDB-892C-9377CF6436A9}'
+		}
+	}
+}

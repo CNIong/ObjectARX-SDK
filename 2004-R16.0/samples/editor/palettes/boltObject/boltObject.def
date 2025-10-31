@@ -1,0 +1,7 @@
+
+LIBRARY      "asdkboltObject"
+
+EXPORTS
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

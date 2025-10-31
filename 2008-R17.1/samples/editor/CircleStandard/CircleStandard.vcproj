@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="CircleStandard" ProjectGUID="{870FBCC1-E568-48F9-B946-BC230D402F3C}" RootNamespace="CircleStandard" Keyword="AtlProj">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="..\..\..\inc" GenerateStublessProxies="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" PreprocessorDefinitions="_WINDOWS;_USRDLL" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile=".\CircleStandard.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="..\..\..\inc" GenerateStublessProxies="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" PreprocessorDefinitions="_WINDOWS;_USRDLL" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile=".\CircleStandard.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" AdditionalIncludeDirectories="..\..\..\inc" GenerateStublessProxies="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" PreprocessorDefinitions="_USRDLL" UsePrecompiledHeader="2" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile=".\CircleStandard.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" AdditionalIncludeDirectories="..\..\..\inc" GenerateStublessProxies="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" PreprocessorDefinitions="_USRDLL" UsePrecompiledHeader="2" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile=".\CircleStandard.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+      <File RelativePath="AcStCircle.cpp" />
+      <File RelativePath="CircleStandard.cpp" />
+      <File RelativePath="CircleStandard.idl" />
+      <File RelativePath="stdafx.cpp">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+      </File>
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc">
+      <File RelativePath="AcStCircle.h" />
+      <File RelativePath="Resource.h" />
+      <File RelativePath="stdafx.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+      <File RelativePath="AcStCircle.rgs" />
+      <File RelativePath="CircleStandard.rc" />
+      <File RelativePath="CircleStandard.rgs" />
+    </Filter>
+    <Filter Name="Generated Files" SourceControlFiles="false" />
+    <File RelativePath="ReadMe.txt" />
+  </Files>
+  <Globals />
+</VisualStudioProject>

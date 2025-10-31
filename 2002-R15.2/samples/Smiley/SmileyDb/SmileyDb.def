@@ -1,0 +1,7 @@
+
+LIBRARY      "AsdkSmileyDb"
+
+EXPORTS
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

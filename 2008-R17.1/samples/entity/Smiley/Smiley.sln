@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkSmileyDb", "SmileyDb\SmileyDb.vcproj", "{E9C278D1-6076-44E4-8DEB-92FC72B5195F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkSmileyDbCom", "SmileyDbCom\SmileyDbCom.vcproj", "{120D0797-83FD-4DAE-95BB-C6B547C29770}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F} = {E9C278D1-6076-44E4-8DEB-92FC72B5195F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkSmileyUi", "SmileyUi\SmileyUi.vcproj", "{6B174D74-3447-42BD-B1AF-F237FA05CC00}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F} = {E9C278D1-6076-44E4-8DEB-92FC72B5195F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkSmileyUiCom", "SmileyUiCom\SmileyUiCom.vcproj", "{4E5E6F39-3617-41A2-A9CA-266577B88040}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00} = {6B174D74-3447-42BD-B1AF-F237FA05CC00}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Debug|Win32.Build.0 = Debug|Win32
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Release|Win32.ActiveCfg = Release|Win32
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Release|Win32.Build.0 = Release|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Debug|Win32.ActiveCfg = Debug|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Debug|Win32.Build.0 = Debug|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Release|Win32.ActiveCfg = Release|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Release|Win32.Build.0 = Release|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Debug|Win32.Build.0 = Debug|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Release|Win32.ActiveCfg = Release|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Release|Win32.Build.0 = Release|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Debug|Win32.Build.0 = Debug|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Release|Win32.ActiveCfg = Release|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

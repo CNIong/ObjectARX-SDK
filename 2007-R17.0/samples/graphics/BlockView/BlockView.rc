@@ -1,0 +1,271 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\BlockView.rc2"" // non-Microsoft Visual C++ edited resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "BlockView ObjectARX application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "BlockView"
+            VALUE "LegalCopyright", "Copyright 1999"
+            VALUE "OriginalFilename", "AsdkBlockView.arx"
+            VALUE "ProductName", "BlockView Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BLOCKVIEW DIALOGEX 0, 0, 273, 238
+STYLE DS_SETFONT | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "BlockView Sample  "
+MENU IDR_MAINMENU
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,213,217,50,14,BS_FLAT
+    PUSHBUTTON      "Remap Colors",IDC_REMAPCOLORS,100,185,59,14,BS_FLAT
+    PUSHBUTTON      "Standard Colors",IDC_STANDARDCOLORS,165,185,60,14,BS_FLAT
+    PUSHBUTTON      "Add Entity",IDC_ADDENTITY,7,217,44,14,BS_FLAT
+    PUSHBUTTON      "Add Temp Entity",IDC_ADDTEMPENTITY,54,217,60,14,BS_FLAT
+    LTEXT           "The Gs Preview comes here.",IDC_VIEW,7,25,256,153,SS_SUNKEN | NOT WS_GROUP | WS_TABSTOP,WS_EX_TRANSPARENT
+    CTEXT           "Use the left mouse button to orbit, the wheel to zoom, and the middle button to pan",IDC_STATIC,7,7,250,17
+    COMBOBOX        IDC_VIEWMODE,7,185,86,75,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_BLOCKVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 231
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDI_PAN                 CURSOR                  "idi_pan.cur"
+IDI_CROSS               CURSOR                  "idi_cros.cur"
+IDI_ORBIT               CURSOR                  "idi_orbi.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BLOCKVIEW DLGINIT
+BEGIN
+    IDC_VIEWMODE, 0x403, 13, 0
+0x326b, 0x4f44, 0x7470, 0x6d69, 0x7a69, 0x6465, "\000" 
+    IDC_VIEWMODE, 0x403, 13, 0
+0x426b, 0x756f, 0x646e, 0x6e69, 0x4267, 0x786f, "\000" 
+    IDC_VIEWMODE, 0x403, 11, 0
+0x576b, 0x7269, 0x6665, 0x6172, 0x656d, "\000" 
+    IDC_VIEWMODE, 0x403, 12, 0
+0x486b, 0x6469, 0x6564, 0x4c6e, 0x6e69, 0x0065, 
+    IDC_VIEWMODE, 0x403, 12, 0
+0x466b, 0x616c, 0x5374, 0x6168, 0x6564, 0x0064, 
+    IDC_VIEWMODE, 0x403, 15, 0
+0x476b, 0x756f, 0x6172, 0x6475, 0x6853, 0x6461, 0x6465, "\000" 
+    IDC_VIEWMODE, 0x403, 25, 0
+0x466b, 0x616c, 0x5374, 0x6168, 0x6564, 0x5764, 0x7469, 0x5768, 0x7269, 
+0x6665, 0x6172, 0x656d, "\000" 
+    IDC_VIEWMODE, 0x403, 28, 0
+0x476b, 0x756f, 0x6172, 0x6475, 0x6853, 0x6461, 0x6465, 0x6957, 0x6874, 
+0x6957, 0x6572, 0x7266, 0x6d61, 0x0065, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "BlockView"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open",                       57601
+        MENUITEM SEPARATOR
+        MENUITEM "O&utput",                     ID_TOOLS_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "AcGsDevice &Config",          ID_FILE_ACGSCONFIG
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&Zoom"
+        BEGIN
+            MENUITEM "&Window",                     ID_ZOOM_WINDOW
+            MENUITEM "&Extents",                    ID_ZOOM_EXTENTS
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Settings"
+        BEGIN
+            POPUP "&Show"
+            BEGIN
+                MENUITEM "Show &Linetypes",             ID_SHOWLINETYPES, CHECKED
+                MENUITEM "Show &Sectioning",            ID_SHOWSECTIONING, CHECKED
+            END
+            MENUITEM SEPARATOR
+            POPUP "&Renderer Type"
+            BEGIN
+                MENUITEM "k&Default",                   ID_RENDERERTYPE_KDEFAULT, CHECKED
+                MENUITEM "k&Software",                  ID_RENDERERTYPE_KSOFTWARE
+                MENUITEM "k&SoftwareNewViewsOnly",      ID_RENDERERTYPE_KSOFTWARENEWVIEWSONLY
+                MENUITEM "k&FullRender",                ID_RENDERERTYPE_KFULLRENDER
+                MENUITEM "k&SelectionRender",           ID_RENDERERTYPE_KSELECTIONRENDER
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "&Visual Style...",            ID_SETTINGS_VISUALSTYLE
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_TOOLS_PRINT          "Output a jpg file..."
+    ID_FILE_ACGSCONFIG      "View the current AcGsDevice configuration..."
+END
+
+STRINGTABLE 
+BEGIN
+    57601                   "Open another drawing..."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_RESET           "Reset the GsView to the original"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\BlockView.rc2" // non-Microsoft Visual C++ edited resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,41 @@
+REGEDIT4
+;
+; Registry for Demand Loading PolySamp/PolyCAD
+;
+;
+; NOTE: Make sure the path in "LOADER" is updated to reflect the
+;       location of asdkpolyui.arx in your environment.
+;
+;       [HKEY_CURRENT_USER\SOFTWARE\Autodesk\AutoCAD\R18.0\ACAD-8001:409]
+;
+;       Install ID uses the country code or locale Id. Change "ACAD-8001:409"
+;       if using this for a localized version.
+;      
+;       Move or Copy asdkpolyobj.dbx to Autodesk Shared directory
+;       (i.e. "C:\Program Files\Common Files\Autodesk Shared\")
+
+
+
+; AutoCAD registry section
+[HKEY_CURRENT_USER\SOFTWARE\Autodesk\AutoCAD\R18.0\ACAD-8001:409\Applications\AsdkPolyCAD]
+"DESCRIPTION"="Sample app to draw polygons"
+"LOADCTRLS"=dword:0000000d
+"LOADER"="c:\\ObjectARX\\samples\\entity\\polysamp\\debug\\asdkpolyui.arx"
+
+; Used for command invocation
+
+[HKEY_CURRENT_USER\SOFTWARE\Autodesk\AutoCAD\R18.0\ACAD-8001:409\Applications\AsdkPolyCAD\Groups]
+; value name and value data should be the same
+"ASDK_POLYGON"="ASDK_POLYGON"
+
+[HKEY_CURRENT_USER\SOFTWARE\Autodesk\AutoCAD\R18.0\ACAD-8001:409\Applications\AsdkPolyCAD\Commands]
+; Global : Local
+"ASDK_POLY"="POLY"
+"ASDK_DRAGPOLY"="DRAGPOLY"
+"ASDK_POLYEDIT"="POLYEDIT"
+
+; Object Enabler registry section
+[HKEY_CURRENT_USER\SOFTWARE\Autodesk\ObjectDBX\R18.0\Applications\AsdkPolyOBJ2.0]
+"DESCRIPTION"="Object Enabler for the poly object"
+"LOADCTRLS"=dword:00000001
+"LOADER"="c:\\ObjectARX\\samples\\entity\\polysamp\\debug\\asdkpolyobj.dbx"

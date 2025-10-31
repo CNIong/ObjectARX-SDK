@@ -1,0 +1,7 @@
+
+LIBRARY      "AsdkEmployee"
+
+EXPORTS
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

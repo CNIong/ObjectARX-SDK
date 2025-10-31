@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsWatcher", "EventsWatcher.csproj", "{BB86A96E-E6DB-4C8A-8AD4-37F3F809B4A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BB86A96E-E6DB-4C8A-8AD4-37F3F809B4A2}.Debug.ActiveCfg = Debug|.NET
+		{BB86A96E-E6DB-4C8A-8AD4-37F3F809B4A2}.Debug.Build.0 = Debug|.NET
+		{BB86A96E-E6DB-4C8A-8AD4-37F3F809B4A2}.Release.ActiveCfg = Release|.NET
+		{BB86A96E-E6DB-4C8A-8AD4-37F3F809B4A2}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

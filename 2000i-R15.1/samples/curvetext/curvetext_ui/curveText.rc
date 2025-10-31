@@ -1,0 +1,250 @@
+// $Header: $
+//Microsoft Developer Studio generated resource script.
+// $NoKeywords: $
+//
+// (C) Copyright 1998 by Autodesk, Inc.
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Autodesk\0"
+            VALUE "FileDescription", "CurveText.ARX\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CurveText\0"
+            VALUE "LegalCopyright", "Copyright © 1997\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CurveText.ARX\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "CurveText Dynamic Link Library\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_POLYTEXT DIALOG DISCARDABLE  0, 0, 198, 152
+STYLE DS_MODALFRAME | DS_CENTERMOUSE | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "CurveText (AcDbCurve)"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_STRING,45,5,147,13,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    EDITTEXT        IDC_EDIT_SIZE,45,22,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SPACE,146,22,46,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_STYLE,45,39,147,80,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Show &Curve",IDC_CHECK_SHOW,"Button",BS_3STATE | 
+                    WS_TABSTOP,5,76,52,10
+    CONTROL         "&Fit",IDC_CHECK_FIT,"Button",BS_3STATE | WS_TABSTOP,5,
+                    106,23,10
+    CONTROL         "Show &Text",IDC_CHECK_SHOWTEXT,"Button",BS_3STATE | 
+                    WS_TABSTOP,5,91,47,10
+    CONTROL         "&Dynamic",IDC_CHECK_DYNAMIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,136,43,10
+    PUSHBUTTON      "Set Text &Start Point",IDC_START_POINT,63,62,66,18
+    PUSHBUTTON      "Set Text &Length",IDC_END_POINT,63,80,66,17
+    PUSHBUTTON      "&Reset Text Points",IDC_END_RESET,63,97,66,18
+    CONTROL         "&Above",IDC_ABOVE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,146,71,36,10
+    CONTROL         "&Middle",IDC_MIDDLE,"Button",BS_AUTORADIOBUTTON,146,86,
+                    37,10
+    CONTROL         "&Below",IDC_BELOW,"Button",BS_AUTORADIOBUTTON,146,101,
+                    35,10
+    DEFPUSHBUTTON   "OK",IDOK,63,126,66,20
+    PUSHBUTTON      "Cancel",IDCANCEL,137,126,55,20
+    LTEXT           "String:",IDC_STATIC_STRING,5,8,20,8
+    LTEXT           "Text Size:",IDC_STATIC_SIZE,5,24,30,8
+    LTEXT           "Text Style:",IDC_STATIC_SSTYLE,5,41,32,8
+    LTEXT           "&Char. Space:",IDC_STATIC_SPACE,106,24,40,8
+    GROUPBOX        "Text Position",IDC_POSITION,137,62,55,55,WS_GROUP
+    CONTROL         "&Repeat Text",IDC_CHECK_REPEATTEXT,"Button",BS_3STATE | 
+                    WS_TABSTOP,5,62,53,10
+    CONTROL         "&Reverse",IDC_CHECK_REVERSE,"Button",BS_3STATE | 
+                    WS_TABSTOP,5,121,42,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_POLYTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 192
+        VERTGUIDE, 45
+        VERTGUIDE, 63
+        VERTGUIDE, 129
+        VERTGUIDE, 137
+        VERTGUIDE, 146
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 146
+        HORZGUIDE, 12
+        HORZGUIDE, 28
+        HORZGUIDE, 45
+        HORZGUIDE, 62
+        HORZGUIDE, 81
+        HORZGUIDE, 96
+        HORZGUIDE, 111
+        HORZGUIDE, 126
+        HORZGUIDE, 138
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_EDIT_CURVETEXT MENU DISCARDABLE 
+BEGIN
+    POPUP "Curvetext"
+    BEGIN
+        MENUITEM "Reverse",                     ID_CURVETEXT_REVERSE
+        POPUP "Curve"
+        BEGIN
+            MENUITEM "Show",                        ID_CURVETEXT_CURVE_SHOW
+            MENUITEM "Hide",                        ID_CURVETEXT_CURVE_HIDE
+        END
+        POPUP "Text"
+        BEGIN
+            MENUITEM "Show",                        ID_CURVETEXT_TEXT_SHOW
+            MENUITEM "Hide",                        ID_CURVETEXT_TEXT_HIDE
+        END
+        POPUP "Fit Text"
+        BEGIN
+            MENUITEM "Yes",                         ID_CURVETEXT_FITTEXT_YES
+            MENUITEM "No",                          ID_CURVETEXT_FITTEXT_NO
+        END
+        POPUP "Repeat Text"
+        BEGIN
+            MENUITEM "Yes",                         ID_CURVETEXT_REPEATTEXT_YES
+
+            MENUITEM "No",                          ID_CURVETEXT_REPEATTEXT_NO
+
+        END
+        MENUITEM "Set text start point",        ID_CURVETEXT_SETTEXTSTARTPOINT
+
+        MENUITEM "Set text end point",          ID_CURVETEXT_SETTEXTENDPOINT
+    END
+END
+
+IDR_EDIT_CURVES MENU DISCARDABLE 
+BEGIN
+    POPUP "Curves"
+    BEGIN
+        MENUITEM "Curvetext...",                ID_CURVES_CURVETEXT
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "afxres.rc"  // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

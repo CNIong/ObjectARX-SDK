@@ -1,0 +1,85 @@
+// compoly.idl : IDL source for compoly.dll
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2017 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+#include "compoly.hm"
+//
+// Type library section and components
+//
+[
+	uuid(5474B929-CF4A-4370-BBB7-B8A5E43B1727),
+	version(1.0),
+	helpstring("Compoly 1.0 Type Library"),
+	helpfile("compoly.hlp")
+]
+library COMPOLYLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//Importing english is ok here. We don't localize this idl/tlb.
+	//axdb21enu.tlb is guaranteed to be available in all locales.
+	//If you want to provide localized typelib then you must import
+	//localized tlb here.
+	importlib("axdb22enu.tlb");
+
+	// This file will be processed by the MIDL tool to
+	// produce the type library (compoly.tlb) and marshalling code.
+
+	import "oaidl.idl";
+	import "ocidl.idl";
+
+	//
+	// Interfaces
+	//
+	// IComPolygon interface
+	[
+		object,
+		uuid(C16E0121-C612-460E-A37D-96FFD0E5D2C1),
+		dual,
+		helpstring("IComPolygon Interface"),
+		helpcontext(IDH_ICOMPOLYGON),
+		pointer_default(unique)
+	]
+	interface IComPolygon : IAcadEntity
+	{
+		[propget, id(1), helpstring("property TextString"),helpcontext(IDH_TEXTSTRING)] HRESULT TextString([out, retval] BSTR *pVal);
+		[propput, id(1), helpstring("property TextString"),helpcontext(IDH_TEXTSTRING)] HRESULT TextString([in] BSTR newVal);
+		[propget, id(2), helpstring("property NumSides"),helpcontext(IDH_NUMSIDES)] HRESULT NumSides([out, retval] long *pVal);
+		[propput, id(2), helpstring("property NumSides"),helpcontext(IDH_NUMSIDES)] HRESULT NumSides([in] long newVal);
+		[propget, id(3), helpstring("property Normal"),helpcontext(IDH_NORMAL)] HRESULT Normal([out, retval] VARIANT *pVal);
+		[propput, id(3), helpstring("property Normal"),helpcontext(IDH_NORMAL)] HRESULT Normal([in] VARIANT newVal);
+		[propget, id(4), helpstring("property Center"),helpcontext(IDH_CENTER)] HRESULT Center([out, retval] VARIANT *pVal);
+		[propput, id(4), helpstring("property Center"),helpcontext(IDH_CENTER)] HRESULT Center([in] VARIANT newVal);
+		[propget, id(5), helpstring("property StartPoint"),helpcontext(IDH_STARTPOINT)] HRESULT StartPoint([out, retval] VARIANT *pVal);
+		[propput, id(5), helpstring("property StartPoint"),helpcontext(IDH_STARTPOINT)] HRESULT StartPoint([in] VARIANT newVal);
+		[propget, id(6), helpstring("property TextStyleName"),helpcontext(IDH_TEXTSTYLENAME)] HRESULT TextStyleName([out, retval] BSTR *pVal);
+		[propput, id(6), helpstring("property TextStyleName"),helpcontext(IDH_TEXTSTYLENAME)] HRESULT TextStyleName([in] BSTR newVal);
+		[id(7), helpstring("method GetVertices"),helpcontext(IDH_GETVERTICES)] HRESULT GetVertices([retval, out] VARIANT* pnts);
+		[propget, id(8), helpstring("property Elevation"),helpcontext(IDH_ELEVATION)] HRESULT Elevation([out, retval] double *pVal);
+		[propput, id(8), helpstring("property Elevation"),helpcontext(IDH_ELEVATION)] HRESULT Elevation([in] double newVal);
+	};
+	//
+	// coclasses in type library
+	//
+
+	// ComPolygon coclass
+	[
+		uuid(FBA998D8-68AF-4C5F-9939-DB777862045B),
+		helpstring("ComPolygon Class"),
+		helpcontext(IDH_CCOMPOLYGON),
+		noncreatable
+	]
+	coclass ComPolygon 
+	{
+		[default] interface IComPolygon;
+		[source] interface IAcadObjectEvents;
+	};
+};

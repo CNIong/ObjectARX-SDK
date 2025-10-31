@@ -1,0 +1,7 @@
+LIBRARY      dbreact
+DESCRIPTION  'ObjectARX sample application - dbreact'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

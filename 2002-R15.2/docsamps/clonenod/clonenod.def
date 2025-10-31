@@ -1,0 +1,7 @@
+LIBRARY      clonenod
+DESCRIPTION  'ObjectAARX AcDb Library Test Program'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

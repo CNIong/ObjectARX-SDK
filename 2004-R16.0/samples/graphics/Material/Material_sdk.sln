@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MaterialDb", "Db\MaterialDb.vcproj", "{15CED60A-58FC-4A27-BDE6-E3F6E6638440}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MaterialUi", "Ui\MaterialUi.vcproj", "{08CBF468-1D09-40E4-8B4E-30BB67C661C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.0 = {15CED60A-58FC-4A27-BDE6-E3F6E6638440}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Debug.ActiveCfg = Debug|Win32
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Debug.Build.0 = Debug|Win32
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Release.ActiveCfg = Release|Win32
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Release.Build.0 = Release|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Debug.ActiveCfg = Debug|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Debug.Build.0 = Debug|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Release.ActiveCfg = Release|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

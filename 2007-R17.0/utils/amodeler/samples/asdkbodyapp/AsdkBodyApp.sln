@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkBodyObj", "AsdkBodyObj\AsdkBodyObj.vcproj", "{559144CE-2E65-404F-9D7B-18F6D144354F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkBodyUi", "AsdkBodyUi\AsdkBodyUi.vcproj", "{6B281658-8723-4D4B-B122-2373447B4558}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{6B281658-8723-4D4B-B122-2373447B4558}.0 = {559144CE-2E65-404F-9D7B-18F6D144354F}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{559144CE-2E65-404F-9D7B-18F6D144354F}.Debug.ActiveCfg = Debug|Win32
+		{559144CE-2E65-404F-9D7B-18F6D144354F}.Debug.Build.0 = Debug|Win32
+		{559144CE-2E65-404F-9D7B-18F6D144354F}.Release.ActiveCfg = Release|Win32
+		{559144CE-2E65-404F-9D7B-18F6D144354F}.Release.Build.0 = Release|Win32
+		{6B281658-8723-4D4B-B122-2373447B4558}.Debug.ActiveCfg = Debug|Win32
+		{6B281658-8723-4D4B-B122-2373447B4558}.Debug.Build.0 = Debug|Win32
+		{6B281658-8723-4D4B-B122-2373447B4558}.Release.ActiveCfg = Release|Win32
+		{6B281658-8723-4D4B-B122-2373447B4558}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

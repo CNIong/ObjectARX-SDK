@@ -1,0 +1,520 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Charles Mc Auley">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (WinNT; I) [Netscape]">
+   <TITLE>ObjectARX 2000 Training</TITLE>
+</HEAD>
+<BODY onload="parent.window.frames['index'].location.href='index_step03.htm'">
+
+<H1>
+<A NAME="Top"></A>Step 3 - Symbol Tables</H1>
+
+<H3>
+
+<HR WIDTH="100%"></H3>
+
+<H3>
+<A NAME="Step03 - Introduction"></A>Introduction</H3>
+In this section of the ObjectARX 2000 Training tutorial, we will look at
+AutoCAD's Symbol Tables. We will create a new layer; create a Block Definition;
+and explore how to use an Iterator to step through the entities contained
+in the Model Space block table record. In this section of the tutorial
+you will be introduced to the process on opening objects for read and write
+operations. <B><I>It is very important that any objects open for read or
+write operations must be closed when you are finished with them. Failure
+to close open objects will cause AutoCAD to crash - you have been WARNED!</I></B>
+First we will take a look at setting up the ObjectARX Components used in
+this tutorial.
+<H3>
+<A NAME="Step03 - ARX Components for Tutorial"></A>Setting up the ObjectARX
+Components used for the ObjectARX 2000 Training Tutorial</H3>
+Before we begin our discussion of the Symbol Tables in AutoCAD, let us
+revisit the ObjectARX Wizard Component Gallery. Located in the <B><TT>arxlabs</TT></B>
+folder, you will find an "<B>ArxComponents.dat</B>" file. Using Explorer,
+copy this file to the Visual C++ <B><TT>addins</TT></B> folder, which is
+usually located at:
+<BLOCKQUOTE><TT>c:\program files\microsoft visual studio\Common\msdev98\addins\arxaddin</TT></BLOCKQUOTE>
+If there is already an "<B>ArxComponents.dat</B>" file in the <B><TT>addins</TT></B>
+folder, make sure you make a backup copy of the file before replacing this
+file with the "<B>ArxComponents.dat</B>" located in the <B><TT>arxlabs</TT></B>
+folder. Next time you launch Visual C++ and select the ObjectARX Components
+button on the ObjectARX Wizard toolbar, you will be presented with the
+ObjectARX Components dialog which contains source code and functions used
+in ObjectARX 2000 Training tutorial as shown by the following illustration:
+<BR>&nbsp;
+<BLOCKQUOTE><IMG SRC="Step3_TutorialARXComponents.jpg" HEIGHT=380 WIDTH=428></BLOCKQUOTE>
+
+<BLOCKQUOTE><B>Step 3 Figure 1 - ObjectARX Components used by the ObjectARX
+2000 Training</B></BLOCKQUOTE>
+
+<H3>
+<A NAME="Step03 - Objective"></A>Objective</H3>
+
+<BLOCKQUOTE>As a starting point for this exercise, use the files you created
+in the previous step or open the project contained in the <B><TT>Step03</TT></B>
+folder. In this exercise we will create two new AutoCAD commands "<B>CREATE</B>"
+and "<B>SETLAYER</B>". During the course of these tutorials, if you get
+stuck you can use the ObjectARX Components as outlined earlier or alternatively
+you can look at the code for the next step to see how the code is implemented.
+<P>When the "<B>CREATE</B>" command is executed, it will:
+<UL>
+<LI>
+Create a new layer called "<B>USER</B>" and create a new block definition
+called "<B>EMPLOYEE</B>".</LI>
+
+<UL>
+<LI>
+Creating a new layer adds an <B><TT>AcDbLayerTableRecord</TT></B> to the
+<B><TT>AcDbLayerTable</TT></B>.</LI>
+
+<LI>
+Creating a new block definition adds an <B><TT>AcDbBlockTableRecord</TT></B>
+to the <B><TT>AcDbBlockTable</TT></B>. To implement the definition of the
+block, the entities that make up the block definition are then added to
+the newly created <B><TT>AcDbBlockTableRecord</TT></B>. Use AutoCAD's "<B>INSERT</B>"
+command to create an instance of a block definition. An instance of a block
+definition is called an <B><TT>AcDbBlockReference</TT></B> entity. The
+<B><TT>AcDbBlockReference</TT></B>
+entity is appended to either Model Space or one of AutoCAD Paper Space
+layouts.</LI>
+</UL>
+</UL>
+When the "<B>SETLAYER</B>" command is executed, it will:
+<UL>
+<LI>
+Search for instances of the "<B>EMPLOYEE</B>" block in Model Space (<B><TT>AcDbBlockReference</TT></B>
+entities that have a reference to the "<B>EMPLOYEE</B>" <B><TT>AcDbBlockTableRecord</TT></B>).
+For each "<B>EMPLOYEE</B>" block found, change the layer of the "<B>EMPLOYEE</B>"
+block to the layer "<B>USER</B>". Searching for instances of the "<B>EMPLOYEE</B>"
+block in Model Space will utilize a block table iterator - <B><TT>AcDbBlockTableRecordIterator</TT></B>.</LI>
+</UL>
+The "<B>EMPLOYEE</B>" block definition will represent a "happy face" composed
+of 3 circles (<B><TT>AcDbCircle</TT></B> - the face and the two eyes),
+and an arc (<B><TT>AcDbArc</TT></B> - the mouth) as shown by the following
+illustration.
+<P><IMG SRC="step3_EmployeeBlockDef.JPG" HEIGHT=100 WIDTH=100>
+<P><B>Step 3 Figure 2 - EMPLOYEE Block Definition</B></BLOCKQUOTE>
+
+<H3>
+<A NAME="Step03 - Implementation"></A>Implementation</H3>
+
+<BLOCKQUOTE><B>NOTE:</B> Select the link to view implementation details.</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<UL>
+<LI>
+Load project "<B>Step03</B>", which was created with the ObjectARX Wizard
+and contains the commands and source from the previous step, or continue
+with the file you created from the previous step.</LI>
+
+<LI>
+Register the command <B><A HREF="#Step03 - RegisterCREATECommand">CREATE</A></B>,
+set the name of the function to be called to '<B><TT>asdkcreate()</TT></B>'.</LI>
+
+<LI>
+Register the command <B><A HREF="#Step03 - RegisterSETLAYERCommand">SETLAYER</A></B>
+, set the name of the function to be called to '<B><TT>asdksetlayer()</TT></B>'.</LI>
+
+<LI>
+Implement the user defined utility function '<B><TT><A HREF="#Step03 - ImpCreateLayerFunction">createLayer()</A></TT></B>'
+which is called when&nbsp; the command <B>CREATE</B> is executed.</LI>
+
+<LI>
+Implement the user defined function '<B><TT><A HREF="#Step03 - ImpCreateBlockRecordFunction">createBlockRecord()</A></TT></B>'
+which creates the "<B>EMPLOYEE</B>" block definition, which is called the
+<B>CREATE</B>
+command is executed.</LI>
+
+<LI>
+Implement the function '<B><TT><A HREF="#Step03 - ImpAsdkCreateFunction">asdkcreate()</A></TT></B>'
+which is called when the command <B>CREATE</B> is executed.</LI>
+
+<LI>
+Implement the function '<B><TT><A HREF="#Step03 - ImpAsdkSetLayerFunction">asdksetlayer()</A></TT></B>'
+which is called when the command <B>SETLAYER</B> is executed.</LI>
+
+<LI>
+<A HREF="#Step03 - Testing the Application">Testing the application</A>.</LI>
+</UL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step03 - RegisterCREATECommand"></A>Register the CREATE command</H4>
+
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Register the command <B>CREATE</B> with the ObjectARX Wizard and set the
+function to be called to '<B><TT>asdkcreate()</TT></B>'.</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step03 - RegisterSETLAYERCommand"></A>Register the SETLAYER command</H4>
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Register the command <B>SETLAYER</B> with the ObjectARX Wizard and set
+the function to be call to '<B><TT>asdksetlayer()</TT></B>'.</LI>
+</OL>
+
+<HR WIDTH="80%">
+<H4>
+<A NAME="Step03 - ImpCreateLayerFunction"></A>Implementation of the user
+defined '<TT>createLayer()</TT>' utility function</H4>
+
+<H4>
+Declaration of createLayer()</H4>
+
+<BLOCKQUOTE>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>Acad::ErrorStatus</TT>
+<BR><TT>createLayer (const char* layerName, AcDbObjectId&amp; layerId);</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H4>
+Function description</H4>
+
+<BLOCKQUOTE>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>//</TT>
+<BR><TT>// Create a new layer or return the ObjectId if it already exists</TT>
+<BR><TT>//</TT>
+<BR><TT>// In :</TT>
+<BR><TT>//&nbsp;&nbsp;&nbsp;&nbsp; const char* layerName&nbsp;&nbsp;&nbsp;&nbsp;
+: layer name</TT>
+<BR><TT>// Out :</TT>
+<BR><TT>//&nbsp;&nbsp;&nbsp;&nbsp; AcDbObjectId&amp; layerId&nbsp;&nbsp;&nbsp;&nbsp;
+: ObjectId of the created or existing layer</TT>
+<BR><TT>//</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Get the layer table from the current working database (<B>AcDbLayerTable</B>,
+<B>AcDbDatabase::getLayerTable()</B>).
+To get the current working database, see "current database, accessing"
+in the index tab of the ObjectARX online help. (Use <B><TT>acdbHostApplicationServices()->workingDatabase()</TT></B>)</LI>
+
+<LI>
+Check to see if a layer of the same name already exists (<B>AcDbLayerTable::getAt()</B>).
+If it does, get it's object ID and return it using the second argument
+of our '<B>createLayer()</B>' function.</LI>
+
+<LI>
+If the layer does not already exist then we have to create it and add it
+to the layer table (<B><TT>AcDbLayerTable::getAt()</TT></B>). You create
+a new layer ( <B>AcDbLayerTableRecord</B>) with the '<B>new</B>' operator.
+Since we will modify the layer table, the layer table will need to be opened
+for write. The newly created Layer Table Record will be added to the layer
+table with <B>AcDbLayerTable::add()</B>. We will return the object ID of
+the newly created layer - after it has been closed, of course.</LI>
+
+<LI>
+Using <B>AcDbLayerTable</B>, <B>AcDbLayerTableRecord</B> requires the include
+file <B>&lt;dbsymtb.h></B>. You can use the ObjectARX Wizard. Select the
+"<B>.H"</B> button on the ObjectARX Wizard toolbar, then select the "Symbol
+table" check box. The include file will be added into the&nbsp; "<B>StdArx.h</B>".</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you can use the ObjectARX component gallery to
+insert the entry under "Step3 - createLayer()" and study the source code.</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step03 - ImpCreateBlockRecordFunction"></A>Implementation of the
+user defined '<B><TT>createBlockRecord()</TT></B>' utility function</H4>
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<H4>
+Declaration of createBlockRecord():</H4>
+
+<BLOCKQUOTE>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>Acad::ErrorStatus createBlockRecord (const char *name);</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H4>
+Function description</H4>
+
+<BLOCKQUOTE>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>//</TT>
+<BR><TT>// Create a new block table record and add the entities of the
+employee to it</TT>
+<BR><TT>//</TT>
+<BR><TT>// In :</TT>
+<BR><TT>//&nbsp;&nbsp;&nbsp;&nbsp; const char* name : Name of block table
+record</TT>
+<BR><TT>//</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Get the block table from the current working database (<B><TT>AcDbBlockTable</TT></B>,
+<B><TT>AcDbDatabase::getBlockTable()</TT></B>
+)</LI>
+
+<LI>
+Check if the block table record already exists (<B><TT>AcDbBlockTable::has()</TT></B>).
+If it exists, return an error status (<B><TT>Acad::eDuplicateKey</TT></B>).
+Don't forget to close the block table.</LI>
+
+<LI>
+Create a new block table record with the '<B><TT>new</TT></B>' operator
+and add it to the block table (<B><TT>AcDbBlockTableRecord</TT></B>, <B><TT>AcDbBlockTable::add()</TT></B>
+). (Since we modify the block table it must be opened for write). Initialize
+the new block table record. Set the origin to <B><TT>(0,0,0)</TT></B> (<B><TT>AcDbBlockTableRecord::setOrigin
+(AcGePoint3d::kOrigin)</TT></B> ). Set its name. If the block table record
+was successfully added to the AutoCAD database, you can close the block
+table.</LI>
+
+<LI>
+Create the "<B>EMPLOYEE</B>" entities and append them to the new block
+table record. (<B><TT>AcDbBlockTableRecord::appendAcDbEntity()</TT></B>
+) The "<B>EMPLOYEE</B>" entities are three circles (<B><TT>AcDbCircle</TT></B>)
+and an arc (<B><TT>AcDbArc</TT></B>) with the characteristics outlined
+in the table below. Make the face yellow, eyes blue, and mouth red. (<B><TT>AcDbEntity::setColorIndex()</TT></B>)</LI>
+
+<LI>
+Don't forget to close the newly created entities, block table record and
+block table.</LI>
+
+<LI>
+When using <B><TT>AcDbCircle</TT></B>, <B><TT>AcDbArc</TT></B> requires
+the include file <B><TT>&lt;dbents.h></TT></B>. You can use the ObjectARX
+Wizard. Select the "<B>.H</B>" button on the ObjectARX toolbar and then
+select the <B><TT>AcDbCircle</TT></B> and <B><TT>AcDbArc</TT></B> classes
+to add the appropriate header files to the project. The appropriate include
+files will be added into the "<B>StdArx.h</B>"</LI>
+
+<LI>
+<B><TT>PI</TT></B> can be defined as <B><TT>3.141592654</TT></B></LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step3 - createBlockRecord()" and study the source code.</LI>
+</OL>
+
+<TABLE BORDER COLS=6 WIDTH="90%" >
+<CAPTION><B>Data for "EMPLOYEE" Block Definition</B></CAPTION>
+
+<TR>
+<TD><TT>Block name</TT>
+<BR><TT>"EMPLOYEE"</TT></TD>
+
+<TD><TT>AcDbBlockReference</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD><TT>Block origin</TT></TD>
+
+<TD><TT>(0, 0, 0)</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD><TT>Face characteristics</TT></TD>
+
+<TD><TT>AcDbCircle (yellow)</TT></TD>
+
+<TD><TT>Center</TT>
+<BR><TT>= (0, 0, 0)</TT></TD>
+
+<TD><TT>Radius = 1.0</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD><TT>Left eye</TT></TD>
+
+<TD><TT>AcDbCircle (blue)</TT></TD>
+
+<TD><TT>Center</TT>
+<BR><TT>= (0.33,0.25,0)</TT></TD>
+
+<TD><TT>Radius = 0.1</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD><TT>Right eye</TT></TD>
+
+<TD><TT>AcDbCircle (blue)</TT></TD>
+
+<TD><TT>Center</TT>
+<BR><TT>= (-0.33,0.25,0)</TT></TD>
+
+<TD><TT>Radius = 0.1</TT></TD>
+
+<TD><TT>&nbsp;</TT></TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD><TT>Mouth</TT></TD>
+
+<TD><TT>AcDbArc (red)</TT></TD>
+
+<TD><TT>Center</TT>
+<BR><TT>= (0,0.5,0)</TT></TD>
+
+<TD><TT>Radius = 1.0</TT></TD>
+
+<TD><TT>Start Angle</TT>
+<BR><TT>= PI+(PI*0.3)</TT></TD>
+
+<TD><TT>End Angle</TT>
+<BR><TT>= PI+(PI*0.7)</TT></TD>
+</TR>
+</TABLE>
+
+<H4>
+<A NAME="Step03 - ImpAsdkCreateFunction"></A>Implementation of the '<B><TT>asdkcreate()</TT></B>'
+function</H4>
+
+<OL>
+<LI>
+The implementation will call our user defined utility function '<B><TT>createLayer()</TT></B>'
+with parameter "<B>USER</B>" as layer name and user defined function '<B><TT>createBlockRecord()</TT></B>'
+with parameter "<B>EMPLOYEE</B>" as block name.</LI>
+
+<LI>
+After the layer table changes, call the ObjectARX global function <B><TT>applyCurDwgLayerTableChanges()</TT></B>.
+This function will force AutoCAD to update itself to use any changes made
+to any layer table records in the drawing currently in the AutoCAD editor.</LI>
+
+<LI>
+To save time you can use the ObjectARX component gallery under '<B><TT>asdkcreate</TT></B>'.</LI>
+</OL>
+
+<H4>
+<A NAME="Step03 - ImpAsdkSetLayerFunction"></A>Implementation of the '<B><TT>asdksetlayer()</TT></B>'
+function</H4>
+
+<OL>
+<LI>
+To implement '<B><TT>asdksetlayer()</TT></B>' (which changes the layer
+of "<B>EMPLOYEE</B>" block references)</LI>
+
+<OL TYPE=a>
+<LI>
+Open the block table of the current working database</LI>
+
+<LI>
+Get the MODEL SPACE block table record (<B><TT>AcDbBlockTable::getAt()</TT></B>,
+<B><TT>ACDB_MODEL_SPACE
+</TT></B>)</LI>
+
+<LI>
+Obtain a block table record iterator (<B><TT>AcDbBlockTableRecordIterator</TT></B>,
+<B><TT>AcDbBlockTableRecord::newIterator()</TT></B>)
+to iterate through the MODEL SPACE block table record.</LI>
+
+<LI>
+Iterate through the MODEL_SPACE (<B><TT>AcDbBlockTableRecordIterator::start()</TT></B>,
+<B><TT>AcDbBlockTableRecordIterator::done()</TT></B>,
+<B><TT>AcDbBlockTableRecordIterator::step()</TT></B>).</LI>
+
+<LI>
+To open objects for read or write operations use <B><TT>acdbOpenObject()</TT></B>.</LI>
+
+<LI>
+Obtain the entity (<B><TT>AcDbBlockTableRecordIterator::getEntity()</TT></B>).</LI>
+
+<LI>
+Check if the entity is a block reference (<B><TT>pEnt->isA() != AcDbBlockReference::desc()</TT></B>
+).</LI>
+
+<LI>
+Obtain the block table record of the reference (<B><TT>AcDbBlockReference::blockTableRecord()</TT></B>
+) and check if the block table record's name is "<B>EMPLOYEE</B>".</LI>
+
+<LI>
+Change the layer (<B><TT>setLayer()</TT></B>)</LI>
+
+<LI>
+Don't forget to close any objects you opened and delete the iterator !</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget to use the ObjectARX
+online help. (Place the cursor on the ObjectARX class for which you need
+help and select the "<B>ARX</B>" button on the ObjectARX Wizard toolbar).
+As an alternative you can use the ObjectARX component gallery under "Step3
+- asdksetlayer()" and study the source code.</LI>
+</OL>
+</OL>
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step03 - Testing the Application"></A>Test the application:</H4>
+Build the application and run the <B>CREATE</B> command in a new drawing,
+then use AutoCAD's "<B>INSERT</B>" command to add one or more instances
+of the <B>EMPLOYEE</B> block on layer "<B>0</B>". After creating the inserts,
+execute the <B>SETLAYER</B> command to change each <B>EMPLOYEE</B> block
+reference's layer to "<B>USER</B>". Using AutoCAD's&nbsp; "<B>LIST</B>"
+command you may check on which layer the references are. Alternatively,
+you may turn layers off. See AutoCAD's "<B>LAYER</B>" command.</BLOCKQUOTE>
+
+</BODY>
+</HTML>

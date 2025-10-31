@@ -1,0 +1,7 @@
+LIBRARY      "Jig3d"
+DESCRIPTION  'Jig3d ObjectARX Application'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

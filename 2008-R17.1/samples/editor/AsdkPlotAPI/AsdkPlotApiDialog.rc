@@ -1,0 +1,182 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "AsdkPlotAPI ObjectARX application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "AsdkPlotAPI "
+            VALUE "LegalCopyright", "Copyright © 2002"
+            VALUE "OriginalFilename", "AsdkPlotAPI .arx"
+            VALUE "ProductName", "AsdkPlotAPI Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_APIPLOTDIALOG DIALOGEX 0, 0, 249, 127
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_OVERLAPPEDWINDOW
+CAPTION "ObjectARX Plot API"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Close",IDCANCEL,181,9,50,14
+    PUSHBUTTON      "Plot",IDC_PLOT,92,97,52,14
+    COMBOBOX        IDC_DEVICES,14,25,151,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_MEDIA,14,50,151,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Available Plot Devices",IDC_STATIC,15,15,70,8
+    LTEXT           "Available Media",IDC_STATIC,14,42,50,8
+    CONTROL         "Landscape",IDC_LANDSCAPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,52,50,10
+    PUSHBUTTON      "Preview",IDC_PREVIEW,16,97,52,14
+    CONTROL         "Background",IDC_BACKGROUND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,27,52,10
+    GROUPBOX        "Scale",IDC_STATIC,174,71,68,48
+    CONTROL         "Fit",IDC_FIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,181,
+                    81,24,10
+    EDITTEXT        IDC_SCALE,181,95,52,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILENAME,15,73,100,14,ES_AUTOHSCROLL
+    CONTROL         "Plot To File",IDC_PLOTTOFILE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,117,75,51,10
+END
+
+IDD_PLOTNOTIFICATIONSDIALOG DIALOGEX 0, 0, 278, 156
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Background Plot Notifications"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_PLOTNOTIFICATIONLIST,20,24,236,106,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Background Plot Notifications",IDC_STATIC,20,16,94,8
+    PUSHBUTTON      "Clear",IDC_CLEAR,205,132,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_APIPLOTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 242
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_PLOTNOTIFICATIONSDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_ASDKPLOTNOTIFYSINK  REGISTRY                "AsdkPlotNotifySink.rgs"
+IDR_ASDKPLOTNOTIFYSINK1 REGISTRY                "AsdkPlotNotifySink1.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "AsdkPlotAPI"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+

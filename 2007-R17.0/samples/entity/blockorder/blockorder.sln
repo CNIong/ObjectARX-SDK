@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlockOrderDb", "Db\BlockOrderDb.vcproj", "{A6F439E8-D644-40E2-B1D1-6307CF9E5071}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlockOrderUi", "Ui\BlockOrderUi.vcproj", "{B634C033-944D-46B6-A4FC-11C548D966D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{B634C033-944D-46B6-A4FC-11C548D966D5}.0 = {A6F439E8-D644-40E2-B1D1-6307CF9E5071}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A6F439E8-D644-40E2-B1D1-6307CF9E5071}.Debug.ActiveCfg = Debug|Win32
+		{A6F439E8-D644-40E2-B1D1-6307CF9E5071}.Debug.Build.0 = Debug|Win32
+		{A6F439E8-D644-40E2-B1D1-6307CF9E5071}.Release.ActiveCfg = Release|Win32
+		{A6F439E8-D644-40E2-B1D1-6307CF9E5071}.Release.Build.0 = Release|Win32
+		{B634C033-944D-46B6-A4FC-11C548D966D5}.Debug.ActiveCfg = Debug|Win32
+		{B634C033-944D-46B6-A4FC-11C548D966D5}.Debug.Build.0 = Debug|Win32
+		{B634C033-944D-46B6-A4FC-11C548D966D5}.Release.ActiveCfg = Release|Win32
+		{B634C033-944D-46B6-A4FC-11C548D966D5}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

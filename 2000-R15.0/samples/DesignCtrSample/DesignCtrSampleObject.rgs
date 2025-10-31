@@ -1,0 +1,24 @@
+HKCR
+{
+	DesignCtrSampleObject.Object.1 = s 'DesignCtrSampleObject Class'
+	{
+		CLSID = s '{12A96FD3-36AA-11D2-B730-444553540001}'
+	}
+	DesignCtrSampleObject.Object = s 'DesignCtrSampleObject Class'
+	{
+		CurVer = s 'DesignCtrSampleObject.Object.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {12A96FD3-36AA-11D2-B730-444553540001} = s 'DesignCtrSampleObject Class'
+		{
+			ProgID = s 'DesignCtrSampleObject.Object.1'
+			VersionIndependentProgID = s 'DesignCtrSampleObject.Object'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+		}
+	}
+}
+

@@ -1,0 +1,62 @@
+Lab2
+
+Purpose:
+=======
+
+In this lab, we append a line to the model space record, use ads_getpoint() to get user input, and set the line's color attribute while it is still open.
+When finished, we close the pointer rather than deleting it.
+
+
+Steps:
+=====
+
+
+1. In lab2main.cpp, define a function with the following signature:
+
+Acad::ErrorStatus newLine()
+
+In this function, do the following:
+
+- Use ads_getpoint to get two endpoints from the user. Be sure to rubberband the line from
+  the first point chosen while waiting for the second point.
+  Because AcDbLine's constructor uses AcGePoint3d, but ads_getpoint returns ads_point,
+  you must find a way to translate old style to new style. The best solution is to 
+  use asPnt3d() from geassign.h.
+- Instantiate a pointer to an AcDbLine object. Initialize it with the two endpoints.
+- Get the line's intended color index (integer) from the user with ads_getint(). Set the line's color to this index.
+    (HINT: For simplicity, use AcDbEntity::setColorIndex() rather than AcDbEntity::setColor().)
+- Add the line to the model space block table record by calling a new utility function named postToDatabase() (see instructions below). This assigns it an owner and allows it to participate in regens.
+- Return an appropriate Acad::ErrorStatus.
+
+
+2. In lab2utils.h, define a utility function with the following signature:
+
+Acad::ErrorStatus 
+postToDatabase(/*[in]*/AcDbEntity* pEnt,/*[out]*/AcDbObjectId& idObj)
+
+In this function, do the following:
+
+- Get a pointer to the current drawing using an acdb global function.
+- Get the drawing's block table. Open it for read.
+- Get the model space record from the block table. Open it for write.
+    (HINT: Use the symbol ACDB_MODEL_SPACE to identify the desired record.)
+- Close the block table.
+- Append the entity to the model space block table record.
+    (HINT: Use the overload of AppendAcDbEntity() that returns an object ID.)
+- Close the model space record.
+- Close the entity.
+- Return an appropriate Acad::ErrorStatus.
+
+
+3. In lab2main.cpp, add a function with the following signature:
+
+void addLineCommand()
+
+In this function, do the following:
+
+- Call newLine(). Perform appropriate error checking based on its return value.
+
+
+4. In lab2main.cpp, add a new command named "addline" in the kInitAppMsg callback of the acrxEntryPoint function.
+
+   Rebuild your application, load it in AutoCAD, and run it.

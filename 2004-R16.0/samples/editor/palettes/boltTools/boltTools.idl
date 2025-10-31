@@ -1,0 +1,60 @@
+// BoltTools.idl : IDL source for asdkBoltTools.arx
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (asdkBoltTools.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(E47337B5-1650-48C7-A6A3-D53CCACB329A),
+		dual,
+		helpstring("IBoltTool Interface"),
+		pointer_default(unique)
+	]
+	interface IBoltTool : IDispatch
+	{
+		[propget, id(1), helpstring("property partNumber")] HRESULT partNumber([out, retval] BSTR* pVal);
+		[propput, id(1), helpstring("property partNumber")] HRESULT partNumber([in] BSTR newVal);
+		[propget, id(2), helpstring("property Color")] HRESULT Color([out, retval] long *pVal);
+		[propput, id(2), helpstring("property Color")] HRESULT Color([in] long newVal);
+		[propget, id(3), helpstring("property Layer")] HRESULT Layer([out, retval] BSTR *pVal);
+		[propput, id(3), helpstring("property Layer")] HRESULT Layer([in] BSTR newVal);
+		[propget, id(4), helpstring("property materialName")] HRESULT materialName([out, retval] BSTR* pVal);
+		[propput, id(4), helpstring("property materialName")] HRESULT materialName([in] BSTR newVal);
+		[propget, id(5), helpstring("property HeadSides")] HRESULT HeadSides([out, retval] long *pVal);
+		[propput, id(5), helpstring("property HeadSides")] HRESULT HeadSides([in] long newVal);
+		[propget, id(6), helpstring("property HeadDiameter")] HRESULT HeadDiameter([out, retval] double *pVal);
+		[propput, id(6), helpstring("property HeadDiameter")] HRESULT HeadDiameter([in] double newVal);
+		[propget, id(7), helpstring("property HeadHeight")] HRESULT HeadHeight([out, retval] double *pVal);
+		[propput, id(7), helpstring("property HeadHeight")] HRESULT HeadHeight([in] double newVal);
+		[propget, id(8), helpstring("property ShaftLength")] HRESULT ShaftLength([out, retval] double *pVal);
+		[propput, id(8), helpstring("property ShaftLength")] HRESULT ShaftLength([in] double newVal);
+		[propget, id(9), helpstring("property ShaftDiameter")] HRESULT ShaftDiameter([out, retval] double *pVal);
+		[propput, id(9), helpstring("property ShaftDiameter")] HRESULT ShaftDiameter([in] double newVal);
+		[propget, id(10), helpstring("property ThreadLength")] HRESULT ThreadLength([out, retval] double *pVal);
+		[propput, id(10), helpstring("property ThreadLength")] HRESULT ThreadLength([in] double newVal);
+		[propget, id(11), helpstring("property ThreadWidth")] HRESULT ThreadWidth([out, retval] double *pVal);
+		[propput, id(11), helpstring("property ThreadWidth")] HRESULT ThreadWidth([in] double newVal);
+	};
+
+
+[
+	uuid(3BB7646A-77BA-4682-9CA0-4976F6A93C3C),
+	version(1.0),
+	helpstring("asdkBoltTools 1.0 Type Library")
+]
+library asdkBOLTTOOLSLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//importlib("actc.tlb");
+	[
+		uuid(DF800C4A-2B2F-45C6-8A6A-293C9DA5CA4B),
+		helpstring("BoltTool Class")
+	]
+	coclass BoltTool
+	{
+		[default] interface IBoltTool;
+	};
+};

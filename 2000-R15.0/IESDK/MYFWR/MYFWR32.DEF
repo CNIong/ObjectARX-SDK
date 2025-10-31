@@ -1,0 +1,8 @@
+
+LIBRARY myfwr32
+DESCRIPTION 'MYF Sample IE File Writer'
+EXETYPE WINDOWS
+
+EXPORTS
+    moduleIdentify
+    newIeFileAnalyzer

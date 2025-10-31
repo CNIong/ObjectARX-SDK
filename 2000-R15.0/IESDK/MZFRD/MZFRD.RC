@@ -1,0 +1,14 @@
+#ifndef _mzfrd_rc
+#define _mzfrd_rc
+
+#define CS_DESCSTRING   "MZF Reader DLL\0"
+#define CS_NAMESTRING   "mzfrd32\0"
+#define CS_ORIGSTRING   "mzfrd32.dll\0"
+#define CS_FILEVERSTRING "5.0\0"
+#define CS_COPYRIGHTSTRING  "Copyright \251 Autodesk, Inc. 1995-1996\0"
+#define CS_FILEVERMAJ   5
+#define CS_FILEVERMIN   0
+
+#include <ieverson.rc>
+
+#endif // _mzfrd_rc

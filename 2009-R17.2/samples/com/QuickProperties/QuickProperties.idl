@@ -1,0 +1,152 @@
+// (C) Copyright 2002-2007 by Autodesk, Inc. 
+
+// QuickProperties.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (adskQuickProperties.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+//import "acadi.idl";
+
+	[
+		object,
+		uuid(5385BFE7-8C4B-46a1-B0E9-DE3A110CCF93),
+		helpstring("IMyPerInstancePropFactory Interface"),
+		pointer_default(unique)
+	]
+	interface IMyPerInstancePropFactory : IUnknown {
+	} ;
+
+	[
+		object,
+		uuid(6641B180-6626-487C-ADC7-61E50E7631C0),
+		dual,
+		nonextensible,
+		helpstring("IMyEntityDynProp1 Interface"),
+		pointer_default(unique)
+	]
+	interface IMyEntityDynProp1 : IDispatch	
+  {
+	};
+	[
+		object,
+		uuid(08A7D892-3ECB-4BAC-B237-8F15975DC1F8),
+		dual,
+		nonextensible,
+		helpstring("IMyEntityDynProp2 Interface"),
+		pointer_default(unique)
+	]
+	interface IMyEntityDynProp2 : IDispatch	{
+	};
+	[
+		object,
+		uuid(61D16C95-263A-40FD-8FA4-DE244182134B),
+		dual,
+		nonextensible,
+		helpstring("IMyEntityDynProp3 Interface"),
+		pointer_default(unique)
+	]
+	interface IMyEntityDynProp3 : IDispatch	{
+	};
+[
+	uuid(F89DCF73-645B-47C5-A505-2EEA8CA013B0),
+	version(1.0),
+	helpstring("adskQuickProperties 1.0 Type Library")
+]
+library adskQuickPropertiesLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//----- If the following import fails then it means that the type library 
+	//----- is not on the system path you can fix the problem in two ways:
+	//----- 1. Add it to the system wide PATH environment variable
+	//----- 2. Add it to the executable file list in Developer Studio. You can do
+	//----- this in using the Tools/Option menu and then choosing the 'Directories'
+	//----- tab and finally typing the full path at the Executable files section.
+
+	//----- Importing english is ok here. Autodesk doesn't localize this idl/tlb.
+	//----- axdb16enu.tlb is guaranteed to be available in all locales.
+	//----- If you want to provide localized typelib then you must import
+	//----- localized tlb here.
+	importlib("axdb17enu.tlb");
+	//- Interface definition
+	[
+		object,
+		uuid(D4FB0127-5171-4D32-B9A5-8B1C1A6B4A00),
+		dual,
+		nonextensible,
+		helpstring("IMyEntityWrapper Interface"),
+		pointer_default(unique)
+	]
+	interface IMyEntityWrapper : IAcadEntity	{
+    [propget, id(1), helpstring("property MyType")] HRESULT MyType([out, retval] LONG* pVal);
+    [propput, id(1), helpstring("property MyType")] HRESULT MyType([in] LONG newVal);
+    [propget, id(2), helpstring("property MyPointValue")] HRESULT MyPointValue([out, retval] ACAD_POINT* pVal);
+    [propput, id(2), helpstring("property MyPointValue")] HRESULT MyPointValue([in] ACAD_POINT newVal);
+    // for box, just made up properties
+    [propget, id(3), helpstring("property MyTextString")] HRESULT MyTextString([out, retval] BSTR* pVal);
+    [propput, id(3), helpstring("property MyTextString")] HRESULT MyTextString([in] BSTR newVal);
+    [propget, id(4), helpstring("property MyLength")] HRESULT MyLength([out, retval] ACAD_DISTANCE* pVal);
+    [propput, id(4), helpstring("property MyLength")] HRESULT MyLength([in] ACAD_DISTANCE newVal);
+    [propget, id(5), helpstring("property MyRotation")] HRESULT MyRotation([out, retval] ACAD_ANGLE* pVal);
+    [propput, id(5), helpstring("property MyRotation")] HRESULT MyRotation([in] ACAD_ANGLE newVal);
+
+    // for sphere, just made up properties
+    [propget, id(6), helpstring("property MyDropDown")] HRESULT MyDropDown([out, retval] LONG* pVal);
+    [propput, id(6), helpstring("property MyDropDown")] HRESULT MyDropDown([in] LONG newVal);
+    [propget, id(7), helpstring("property MySurfaceArea")] HRESULT MySurfaceArea([out, retval] ACAD_NOUNITS* pVal);
+    [propput, id(7), helpstring("property MySurfaceArea")] HRESULT MySurfaceArea([in] ACAD_NOUNITS newVal);
+
+    // for cylinder, just made up properties
+    [propget, id(8), helpstring("property MyRadius")] HRESULT MyRadius([out, retval] ACAD_DISTANCE* pVal);
+    [propput, id(8), helpstring("property MyRadius")] HRESULT MyRadius([in] ACAD_DISTANCE newVal);
+    [propget, id(9), helpstring("property MyHeight")] HRESULT MyHeight([out, retval] ACAD_DISTANCE* pVal);
+    [propput, id(9), helpstring("property MyHeight")] HRESULT MyHeight([in] ACAD_DISTANCE newVal);
+    [propget, id(10), helpstring("property MyWidth")] HRESULT MyWidth([out, retval] ACAD_DISTANCE* pVal);
+    [propput, id(10), helpstring("property MyWidth")] HRESULT MyWidth([in] ACAD_DISTANCE newVal);
+  };
+	//- Library section of interface IMyEntityWrapper
+	[
+		uuid(BA415977-05AE-4167-8470-9D04C6C152E2),
+		helpstring("MyEntityWrapper Class")
+	]
+	coclass MyEntityWrapper
+	{
+		[default] interface IMyEntityWrapper;
+		[source] interface IAcadObjectEvents;
+	};
+
+	[
+		uuid(D5B4D5EC-A2F0-4c89-9C19-1BAFFE2F92B6),
+		helpstring("MyPerInstancePropFactory Class")
+	]
+	coclass MyPerInstancePropFactory {
+		[default] interface IMyPerInstancePropFactory ;
+	} ;
+
+	[
+		uuid(E7F4DCCC-9336-4BF4-87CD-EEDEB41FC17B),
+		helpstring("MyPerInstanceProp Class")
+	]
+	coclass MyEntityDynProp1
+	{
+		[default] interface IMyEntityDynProp1;
+	};
+	[
+		uuid(2682063C-A488-4817-B93C-5231C054D752),
+		helpstring("MyEntityDynProp2 Class")
+	]
+	coclass MyEntityDynProp2
+	{
+		[default] interface IMyEntityDynProp2;
+	};
+	[
+		uuid(7D3FC9E1-C0A7-43BC-B485-044D24B7F2FB),
+		helpstring("MyEntityDynProp3 Class")
+	]
+	coclass MyEntityDynProp3
+	{
+		[default] interface IMyEntityDynProp3;
+	};
+};

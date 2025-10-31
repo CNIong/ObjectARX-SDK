@@ -1,0 +1,132 @@
+// (C) Copyright 2002-2006 by Autodesk, Inc. 
+
+// SliderCrankDb.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkSliderCrankDb.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+//import "acadi.idl";
+
+[
+    uuid(BED89941-05DD-476F-BD3C-E063B8157A13),
+    version(1.0),
+    helpstring("AsdkSliderCrankDb 1.0 Type Library")
+]
+library AsdkSliderCrankDbLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    //----- If the following import fails then it means that the type library 
+    //----- is not on the system path you can fix the problem in two ways:
+    //----- 1. Add it to the system wide PATH environment variable
+    //----- 2. Add it to the executable file list in Developer Studio. You can do
+    //----- this in using the Tools/Option menu and then choosing the 'Directories'
+    //----- tab and finally typing the full path at the Executable files section.
+
+    //----- Importing english is ok here. Autodesk doesn't localize this idl/tlb.
+    //----- axdb16enu.tlb is guaranteed to be available in all locales.
+    //----- If you want to provide localized typelib then you must import
+    //----- localized tlb here.
+    importlib("../../../../inc/axdb17enu.tlb");
+    //- Interface definition
+    [
+        object,
+        uuid(F1739FFA-3605-41E7-8117-689F24A15982),
+        dual,
+        nonextensible,
+        helpstring("ISliderCrank Interface"),
+        pointer_default(unique)
+    ]
+    interface ISliderCrank : IAcadEntity	{
+        [propget, id(1), helpstring("property PistonSize")] HRESULT PistonSize([out, retval] DOUBLE* pVal);
+        [propput, id(1), helpstring("property PistonSize")] HRESULT PistonSize([in] DOUBLE newVal);
+        [propget, id(2), helpstring("property CrankRadius")] HRESULT CrankRadius([out, retval] DOUBLE* pVal);
+        [propput, id(2), helpstring("property CrankRadius")] HRESULT CrankRadius([in] DOUBLE newVal);
+        [propget, id(3), helpstring("property LinkLength")] HRESULT LinkLength([out, retval] DOUBLE* pVal);
+        [propput, id(3), helpstring("property LinkLength")] HRESULT LinkLength([in] DOUBLE newVal);
+    };
+    //- Library section of interface ISliderCrank
+    [
+        uuid(9FD8D5AD-646F-4C7B-8652-41C76BC15FAF),
+        helpstring("SliderCrank Class")
+    ]
+    coclass SliderCrank
+    {
+        [default] interface ISliderCrank;
+        [source] interface IAcadObjectEvents;
+    };
+
+    //- Interface definition
+    [
+        object,
+        uuid(55DF6051-832B-462E-99B4-C0DB65E77F3C),
+        dual,
+        nonextensible,
+        helpstring("IConnectingLink Interface"),
+        pointer_default(unique)
+    ]
+    interface IConnectingLink : IAcadEntity	{
+        [propget, id(1), helpstring("property Length")] HRESULT Length([out, retval] DOUBLE* pVal);
+        [propput, id(1), helpstring("property Length")] HRESULT Length([in] DOUBLE newVal);
+    };
+    //- Library section of interface IConnectingLink
+    [
+        uuid(F39D31DE-794F-4090-B308-6492A1276851),
+        helpstring("ConnectingLink Class")
+    ]
+    coclass ConnectingLink
+    {
+        [default] interface IConnectingLink;
+        [source] interface IAcadObjectEvents;
+    };
+    //- Interface definition
+    [
+        object,
+        uuid(5521212C-05DF-468B-8A06-88DD71856BD7),
+        dual,
+        nonextensible,
+        helpstring("ICrank Interface"),
+        pointer_default(unique)
+    ]
+    interface ICrank : IAcadEntity	{
+        [propget, id(1), helpstring("property Radius")] HRESULT Radius([out, retval] DOUBLE* pVal);
+        [propput, id(1), helpstring("property Radius")] HRESULT Radius([in] DOUBLE newVal);
+    };
+    //- Library section of interface ICrank
+    [
+        uuid(848A798D-6919-43D8-BFF1-0767FA09D840),
+        helpstring("Crank Class")
+    ]
+    coclass Crank
+    {
+        [default] interface ICrank;
+        [source] interface IAcadObjectEvents;
+    };
+    //- Interface definition
+    [
+        object,
+        uuid(5CA05288-2A4E-4712-935E-C0A2A901F02B),
+        dual,
+        nonextensible,
+        helpstring("IPiston Interface"),
+        pointer_default(unique)
+    ]
+    interface IPiston : IAcadEntity	{
+        [propget, id(1), helpstring("property Size")] HRESULT Size([out, retval] DOUBLE* pVal);
+        [propput, id(1), helpstring("property Size")] HRESULT Size([in] DOUBLE newVal);
+        [propget, id(2), helpstring("property SkirtLength")] HRESULT SkirtLength([out, retval] DOUBLE* pVal);
+        [propput, id(2), helpstring("property SkirtLength")] HRESULT SkirtLength([in] DOUBLE newVal);
+    };
+    //- Library section of interface IPiston
+    [
+        uuid(13D5C55F-9308-4CCE-89CC-3E2ACB947603),
+        helpstring("Piston Class")
+    ]
+    coclass Piston
+    {
+        [default] interface IPiston;
+        [source] interface IAcadObjectEvents;
+    };
+};

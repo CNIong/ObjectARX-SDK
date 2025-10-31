@@ -1,0 +1,1624 @@
+// Next available MSG number is    10 
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2024 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+// MODULE_ID AXTYPES_IDL_/
+// axtypes.idl : Type library constants
+//
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(0C70CC4D-2DFB-46C3-88B2-9E521F057002)] [v1_enum] enum AcBoolean
+    {
+        // Switches
+        acFalse = 0,
+        acTrue = 1
+    } AcBoolean;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(8BD9B79E-79BD-491E-902C-3653E0F76517)] [v1_enum] enum AcOnOff
+    {
+        // Switches
+        acOff = 0,
+        acOn = 1
+    } AcOnOff;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(CB2F941C-845D-43E9-91F1-C1BEC84829C6)] [v1_enum] enum AcEntityName
+    {
+        // Entities
+        ac3dFace = 1,
+        ac3dPolyline = 2,
+        ac3dSolid = 3,
+        acArc = 4,
+        acAttribute = 5,
+        acAttributeReference = 6,
+        acBlockReference = 7,
+        acCircle = 8,
+        acDimAligned = 9,
+        acDimAngular = 10,
+
+        acDimDiametric = 12,
+        acDimOrdinate = 13,
+        acDimRadial = 14,
+        acDimRotated = 15,
+        acEllipse = 16,
+        acHatch = 17,
+        acLeader = 18,
+        acLine = 19,
+
+        acMtext = 21,
+        acPoint = 22,
+        acPolyline = 23,
+        acPolylineLight = 24,
+        acPolymesh = 25,
+        acRaster = 26,
+        acRay = 27,
+        acRegion = 28,
+        acShape = 29,
+        acSolid = 30,
+        acSpline = 31,
+        acText = 32,
+        acTolerance = 33,
+        acTrace = 34,
+        acPViewport = 35,
+        acXline = 36,
+        acGroup = 37,
+        acMInsertBlock = 38,
+        acPolyfaceMesh = 39,
+        acMLine = 40,
+        acDim3PointAngular = 41,
+        acExternalReference = 42,
+        acTable = 43,
+        acDimArcLength = 44,
+		acDimRadialLarge = 45,
+        acDwfUnderlay = 46,
+        acDgnUnderlay = 47,
+        acMLeader = 48,
+        acSubDMesh = 49,
+		acPdfUnderlay = 50,
+        acNurbSurface  =51
+    } AcEntityName;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(50AC1B29-2677-433D-A68B-B0583A0D68E2)] [v1_enum] enum AcActiveSpace
+    {
+        // Paper/Model space
+        acPaperSpace = 0,
+        acModelSpace = 1
+    } AcActiveSpace;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(C92410D8-42B2-431E-82F3-592F0C49CC46)] [v1_enum] enum AcKeyboardAccelerator
+    {
+        // Preferences
+        acPreferenceClassic = 0,
+        acPreferenceCustom = 1
+    } AcKeyboardAccelerator;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(6EC010F0-5225-4DC5-AA96-1F48CD95705F)] [v1_enum] enum AcPlotOrientation
+    {
+        // Plot Orientation
+        acPlotOrientationPortrait = 0,
+        acPlotOrientationLandscape = 1
+    } AcPlotOrientation;
+
+    //Note: the entity color property still takes an int to
+    //allow color values other than the ones listed here.
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(0BB5D1B7-4289-4DCA-A98D-DA2F85DF7E6C)] [v1_enum] enum AcColor
+    {
+        // AutoCAD's color palette
+        [helpstring(/*AXTYPES_IDL_1*/"Color Byblock.")]
+        acByBlock = 0,
+        [helpstring(/*AXTYPES_IDL_2*/"Color Red.")]
+        acRed = 1,
+        [helpstring(/*AXTYPES_IDL_3*/"Color Yellow.")]
+        acYellow = 2,
+        [helpstring(/*AXTYPES_IDL_4*/"Color Green.")]
+        acGreen = 3,
+        [helpstring(/*AXTYPES_IDL_5*/"Color Cyan.")]
+        acCyan = 4,
+        [helpstring(/*AXTYPES_IDL_6*/"Color Blue.")]
+        acBlue = 5,
+        [helpstring(/*AXTYPES_IDL_7*/"Color Magenta.")]
+        acMagenta = 6,
+        [helpstring(/*AXTYPES_IDL_8*/"Color White.")]
+        acWhite = 7,
+        [helpstring(/*AXTYPES_IDL_9*/"Color Bylayer.")]
+        acByLayer = 256
+    } AcColor;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(01F2EEF3-41DA-4877-B25E-A2C725D508DA)] [v1_enum] enum AcAttachmentPoint
+    {
+        // AttachmentPoint[Mtext]
+        acAttachmentPointTopLeft = 1,
+        acAttachmentPointTopCenter = 2,
+        acAttachmentPointTopRight = 3,
+        acAttachmentPointMiddleLeft = 4,
+        acAttachmentPointMiddleCenter = 5,
+        acAttachmentPointMiddleRight = 6,
+        acAttachmentPointBottomLeft = 7,
+        acAttachmentPointBottomCenter = 8,
+        acAttachmentPointBottomRight = 9
+    } AcAttachmentPoint;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(D0D1AAA2-0700-45A0-93BC-0BBB789C5099)] [v1_enum] enum AcDrawingDirection
+    {
+        // Mtext.DrawingDirection
+        acLeftToRight = 1,
+        acRightToLeft = 2,
+        acTopToBottom = 3,
+        acBottomToTop = 4,
+        acByStyle     = 5
+    } AcDrawingDirection;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(DD1912E3-FC66-4495-B789-C614D2FDEF7D)] [v1_enum] enum AcLeaderType
+    {
+        // Pathtype [Leader]
+        acLineNoArrow = 0,
+        acSplineNoArrow = 1,
+        acLineWithArrow = 2,
+        acSplineWithArrow = 3
+    } AcLeaderType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(39A679CD-7C78-4AD1-99B5-B00F7EFC4015)] [v1_enum] enum AcAttributeMode
+    {
+        // Attribute Mode
+        acAttributeModeNormal = 0,
+        acAttributeModeInvisible = 1,
+        acAttributeModeConstant = 2,
+        acAttributeModeVerify = 4,
+        acAttributeModePreset = 8,
+        acAttributeModeLockPosition = 16,
+        acAttributeModeMultipleLine = 32
+    } AcAttributeMode;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(8D32F81D-3DD8-4ACB-8DE4-C90093FA09B4)] [v1_enum] enum AcHorizontalAlignment
+    {
+        // Attribute.HorizontalAlignment
+        acHorizontalAlignmentLeft = 0,
+        acHorizontalAlignmentCenter = 1,
+        acHorizontalAlignmentRight = 2,
+        acHorizontalAlignmentAligned = 3,
+        acHorizontalAlignmentMiddle = 4,
+        acHorizontalAlignmentFit = 5
+    } AcHorizontalAlignment;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(FB106DE6-B750-4343-AC89-0BFD1FBD2236)] [v1_enum] enum AcVerticalAlignment
+    {
+        // Attribute.VerticalAlignment
+        acVerticalAlignmentBaseline = 0,
+        acVerticalAlignmentBottom = 1,
+        acVerticalAlignmentMiddle = 2,
+        acVerticalAlignmentTop = 3
+    } AcVerticalAlignment;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(675BE4C5-ADF6-424A-97AB-4016C1E6C8FD)] [v1_enum] enum AcTextGenerationFlag
+    {
+        // Text Flag Setting
+        acTextFlagBackward = 2,
+        acTextFlagUpsideDown = 4
+    } AcTextGenerationFlag;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(9C705EB8-4201-4E8D-AF35-5CC083E72992)] [v1_enum] enum AcSelect
+    {
+        // SelectionSet Mode
+        acSelectionSetWindow = 0,
+        acSelectionSetCrossing = 1,
+        acSelectionSetFence = 2,
+        acSelectionSetPrevious = 3,
+        acSelectionSetLast = 4,
+        acSelectionSetAll = 5,
+        acSelectionSetWindowPolygon = 6,
+        acSelectionSetCrossingPolygon = 7
+    } AcSelect;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(98C5CB51-1BE9-4993-9F46-DD479450E91F)] [v1_enum] enum AcPatternType
+    {
+        // Hatch
+        // PatternType
+        acHatchPatternTypeUserDefined = 0,
+        acHatchPatternTypePreDefined = 1,
+        acHatchPatternTypeCustomDefined = 2
+    } AcPatternType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(41075B28-E017-4C99-B621-AB4AF14A28D3)] [v1_enum] enum AcLoopType
+    {
+        // Hatch Style
+        acHatchLoopTypeDefault = 0,
+        acHatchLoopTypeExternal = 1,
+        acHatchLoopTypePolyline = 2,
+        acHatchLoopTypeDerived = 4,
+        acHatchLoopTypeTextbox = 8
+    } AcLoopType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(B52AF81F-031E-49E7-AA1A-CAE8FDDAED53)] [v1_enum] enum AcHatchStyle
+    {
+        acHatchStyleNormal = 0,
+        acHatchStyleOuter = 1,
+        acHatchStyleIgnore = 2 
+    } AcHatchStyle;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(B78EF47B-B694-4227-9B5D-3949FC91273E)] [v1_enum] enum AcPolylineType
+    {
+        // Polyline type
+        acSimplePoly = 0,
+        acFitCurvePoly = 1,
+        acQuadSplinePoly = 2,
+        acCubicSplinePoly = 3
+    } AcPolylineType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(3917E679-DBE1-4E74-A0E1-3ED86ACDA427)] [v1_enum] enum Ac3DPolylineType
+    {
+        // 3dPolyline type
+        acSimple3DPoly = 0,
+        acQuadSpline3DPoly = 1,
+        acCubicSpline3DPoly = 2
+    } Ac3DPolylineType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(8970AC24-6203-43B6-825C-7B4BFF529555)] [v1_enum] enum AcViewportSplitType
+    {
+        // Viewport Split Modes
+        acViewport2Horizontal = 0,
+        acViewport2Vertical = 1,
+        acViewport3Left = 2,
+        acViewport3Right = 3,
+        acViewport3Horizontal = 4,
+        acViewport3Vertical = 5,
+        acViewport3Above = 6,
+        acViewport3Below = 7,
+        acViewport4 = 8
+    } AcViewportSplitType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E7810D47-D7EE-4687-A8FB-7E6040EADEF9)] [v1_enum] enum AcRegenType
+    {
+        // Application regen constants
+        acActiveViewport = 0,
+        acAllViewports = 1
+    } AcRegenType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E216C8F0-E907-441C-B6C5-7A704C5B8ECE)] [v1_enum] enum AcBooleanType
+    {
+        // Constants for boolean operation
+        acUnion = 0,
+        acIntersection = 1,
+        acSubtraction = 2
+    } AcBooleanType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A1FCDA2D-B6AD-45EB-8D09-DEC1D9890AE6)] [v1_enum] enum AcExtendOption
+    {
+        // Constants for IntersectWith
+        acExtendNone = 0,
+        acExtendThisEntity = 1,
+        acExtendOtherEntity = 2,
+        acExtendBoth = 3
+    } AcExtendOption;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(9081180F-7A77-4110-BD04-A7891B1F9AFB)] [v1_enum] enum AcAngleUnits
+    {
+        // Constants for Interactive Functions
+        acDegrees = 0,
+        acDegreeMinuteSeconds = 1,
+        acGrads = 2,
+        acRadians = 3
+    } AcAngleUnits;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(3EE5C48F-45F2-441C-90FE-FA12913514D9)] [v1_enum] enum AcUnits
+    {
+        // Units for distof
+        acDefaultUnits = -1,
+        acScientific = 1,
+        acDecimal = 2,
+        acEngineering = 3,
+        acArchitectural = 4,
+        acFractional = 5
+    } AcUnits;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(52E8B440-E714-429D-A78D-E4F32F3638F6)] [v1_enum] enum AcCoordinateSystem
+    {
+        // Constants for coordinate system transformations
+        acWorld = 0,
+        acUCS = 1,
+        acDisplayDCS = 2,
+        acPaperSpaceDCS = 3,
+        acOCS = 4,
+    } AcCoordinateSystem;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(9B491179-3F93-431B-A7CF-10EC7D8DA8FB)] [v1_enum] enum AcMeasurementUnits
+    {
+        // Constants for MeasurementUnits property off of Preference
+        acEnglish = 0,
+        acMetric = 1,
+    } AcMeasurementUnits;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(4C9DF327-8EE5-419C-9CFF-D25CC18E13BA)] [v1_enum] enum AcXRefDemandLoad
+    {
+        // Constants for XRefDemandLoad property off of Preference
+        acDemandLoadDisabled = 0,
+        acDemandLoadEnabled = 1,
+        acDemandLoadEnabledWithCopy = 2
+    } AcXRefDemandLoad;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(30A53912-EA0F-4F8E-867F-4510C711D6E5)] [v1_enum] enum AcPreviewMode
+    {
+        // Constants for Plot preview
+        acPartialPreview = 0,
+        acFullPreview = 1
+    } AcPreviewMode;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(9B280A71-F2FF-4E27-8919-518525135C8B)] [v1_enum] enum AcPolymeshType
+    {
+        // Polymesh type
+        acSimpleMesh = 0,
+        acQuadSurfaceMesh = 5,
+        acCubicSurfaceMesh = 6,
+        acBezierSurfaceMesh = 8
+    } AcPolymeshType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(C464B784-A5C6-411E-9149-81BFF3B5AAA7)] [v1_enum] enum AcZoomScaleType
+    {
+        // Zoom
+        acZoomScaledAbsolute =  0,
+        acZoomScaledRelative =  1,
+        acZoomScaledRelativePSpace =  2
+    } AcZoomScaleType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(5B5C29A8-2933-44E0-88B0-2097D5944BBF)] [v1_enum] enum AcDragDisplayMode
+    {
+        // DisplayedDragObject
+        acDragDoNotDisplay = 0,
+        acDragDisplayOnRequest = 1,
+        acDragDisplayAutomatically = 2
+    } AcDragDisplayMode;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(0CB4F20E-B1C8-4714-97DA-81D0DBF9B29F)] [v1_enum] enum AcARXDemandLoad
+    {
+        // Proxy detection
+        acDemanLoadDisable = 0,
+        acDemandLoadOnObjectDetect = 1,
+        acDemandLoadCmdInvoke    = 2
+    } AcARXDemandLoad;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E28C1A95-BC0F-4C06-B97F-007806E0735A)] [v1_enum] enum AcTextFontStyle
+    {
+        acFontRegular = 0,
+        acFontItalic = 1,
+        acFontBold = 2,
+        acFontBoldItalic = 3
+    } AcTextFontStyle;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(2C487ED9-9ED0-4F6F-B5BF-09A3E7BCF8B6)] [v1_enum] enum AcProxyImage
+    {
+        acProxyNotShow = 0,
+        acProxyShow = 1,
+        acProxyBoundingBox = 2
+    } AcProxyImage;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(DF2EDA3A-CA3E-4F16-B8CC-03D9AF24D86D)] [v1_enum] enum AcKeyboardPriority
+    {
+        acKeyboardRunningObjSnap = 0,
+        acKeyboardEntry = 1,
+        acKeyboardEntryExceptScripts = 2
+    } AcKeyboardPriority;
+
+    // Constants for Speller Dialect
+    // The strings are extentions and do
+    // not need translation.  However,
+    // the constant names should be translated
+    const LPSTR acAmericanEnglish = "enu";
+    const LPSTR acAustralianEnglish = "ena";
+    const LPSTR acBritishEnglishIse = "ens";
+    const LPSTR acBritishEnglishIze = "enz";
+    const LPSTR acCatalan = "ca";
+    const LPSTR acCzech = "cs";
+    const LPSTR acDanish = "da";
+    const LPSTR acDutchPrim = "nl";
+    const LPSTR acDutchSec = "nls";
+    const LPSTR acFinnish = "fi";
+    const LPSTR acFrenchUnaccentCap = "fr";
+    const LPSTR acFrenchAccentCap = "fra";
+    const LPSTR acGermanScharfesS = "de";
+    const LPSTR acGermanDoppleS = "ded";
+    const LPSTR acItalian = "it";
+    const LPSTR acNorwegianBokmal = "no";
+    const LPSTR acNorwegianNynorsk = "non";
+    const LPSTR acPortugueseIberian = "pt";
+    const LPSTR acPortugueseBrazilian = "ptb";
+    const LPSTR acRussianInfrequentIo = "ru";
+    const LPSTR acRussianFrequentIo = "rui";
+    const LPSTR acSpanishUnaccentCap = "es";
+    const LPSTR acSpanishAccentCap = "esa";
+    const LPSTR acSwedish = "sv";
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(1E298B78-B423-4624-A8E9-9B2D8098AD87)] [v1_enum] enum AcMenuGroupType
+    {
+        acBaseMenuGroup = 0,
+        acPartialMenuGroup = 1
+    } AcMenuGroupType;
+
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(567815B1-DEAB-4223-9D11-144AE6CA2F43)] [v1_enum] enum AcMenuFileType
+    {
+        acMenuFileCompiled = 0,
+        acMenuFileSource = 1
+    } AcMenuFileType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(7F9EE760-C719-474A-9D8F-4A1E1BACDB8C)] [v1_enum] enum AcMenuItemType
+    {
+        acMenuItem = 0,
+        acMenuSeparator = 1,
+        acMenuSubMenu = 2
+    } AcMenuItemType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A5FE283F-88CA-4C09-A082-F558630FC95C)] [v1_enum] enum AcToolbarItemType
+    {
+        acToolbarButton = 0,
+        acToolbarSeparator = 1,
+        acToolbarControl = 2,
+        acToolbarFlyout = 3
+    } AcToolbarItemType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(4AE01288-F259-43CD-AB91-C37A2AE688DF)] [v1_enum] enum AcToolbarDockStatus
+    {
+        acToolbarDockTop = 0,
+        acToolbarDockBottom = 1,
+        acToolbarDockLeft = 2,
+        acToolbarDockRight = 3,
+        acToolbarFloating = 4
+    } AcToolbarDockStatus;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(472B9F40-A3F2-4FCB-BD66-94989E258D21)] [v1_enum] enum AcLineWeight
+    { 
+        acLnWt000          =   0,
+        acLnWt005          =   5,
+        acLnWt009          =   9,
+        acLnWt013          =  13,
+        acLnWt015          =  15,
+        acLnWt018          =  18,
+        acLnWt020          =  20,
+        acLnWt025          =  25,
+        acLnWt030          =  30,
+        acLnWt035          =  35,
+        acLnWt040          =  40,
+        acLnWt050          =  50,
+        acLnWt053          =  53,
+        acLnWt060          =  60,
+        acLnWt070          =  70,
+        acLnWt080          =  80,
+        acLnWt090          =  90,
+        acLnWt100          = 100,
+        acLnWt106          = 106,
+        acLnWt120          = 120,
+        acLnWt140          = 140,
+        acLnWt158          = 158,
+        acLnWt200          = 200,
+        acLnWt211          = 211,
+        acLnWtByLayer      = -1,
+        acLnWtByBlock      = -2,
+        acLnWtByLwDefault  = -3
+    } AcLineWeight;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(F6DFAFE3-9543-4950-BFD8-ED137950BD3A)] [v1_enum] enum AcWindowState
+    {
+        acNorm = 1,
+        acMin,
+        acMax
+    } AcWindowState;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(9E334824-F62B-453B-82BD-2CCDDD763D6A)] [v1_enum] enum AcPlotPaperUnits
+    {
+        acInches = 0,
+        acMillimeters,
+        acPixels
+    } AcPlotPaperUnits;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(D16FEB19-212E-44AD-803F-8C01469C819E)] [v1_enum] enum AcPlotRotation
+    {
+        ac0degrees = 0,
+        ac90degrees,
+        ac180degrees,
+        ac270degrees
+    } AcPlotRotation;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(DE7C21E4-5D7F-48E7-9E1A-B6BF9C1D2940)] [v1_enum] enum AcPlotType
+    {
+        acDisplay = 0,
+        acExtents,
+        acLimits,
+        acView,
+        acWindow,
+        acLayout
+    } AcPlotType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(12F5702A-CC3E-464B-9305-01FDEBE047D6)] [v1_enum] enum AcPlotScale
+    {
+        acScaleToFit = 0,              // Scaled to Fit
+        ac1_128in_1ft,                 // 1/128"= 1'
+        ac1_64in_1ft,                  // 1/64"= 1'
+        ac1_32in_1ft,                  // 1/32"= 1'
+        ac1_16in_1ft,                  // 1/16"= 1'
+        ac3_32in_1ft,                  // 3/32"= 1'
+        ac1_8in_1ft,                   // 1/8" = 1'
+        ac3_16in_1ft,                  // 3/16"= 1'
+        ac1_4in_1ft,                   // 1/4" = 1'
+        ac3_8in_1ft,                   // 3/8" = 1'
+        ac1_2in_1ft,                   // 1/2" = 1'
+        ac3_4in_1ft,                   // 3/4" = 1'
+        ac1in_1ft,                     // 1"= 1'
+        ac3in_1ft,                     // 3"= 1'
+        ac6in_1ft,                     // 6"= 1'
+        ac1ft_1ft,                     // 1'= 1'
+        ac1_1,                         // 1:1
+        ac1_2,                         // 1:2
+        ac1_4,                         // 1:4
+        ac1_5,                         // 1:5
+        ac1_8,                         // 1:8
+        ac1_10,                        // 1:10
+        ac1_16,                        // 1:16           
+        ac1_20,                        // 1:20
+        ac1_30,                        // 1:30
+        ac1_40,                        // 1:40
+        ac1_50,                        // 1:50
+        ac1_100,                       // 1:100
+        ac2_1,                         // 2:1
+        ac4_1,                         // 4:1
+        ac8_1,                         // 8:1
+        ac10_1,                        // 10:1
+        ac100_1,                       // 100:1
+    } AcPlotScale;     
+
+    // values messaged for ease of use in separating and combining the
+    // vertical and horizontal alignment values
+    // look at DXF group code documentation for more information
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(B54A53B2-31E6-4081-89E1-1D643D60A071)] [v1_enum] enum AcAlignment
+    {
+        acAlignmentLeft = 0,
+        acAlignmentCenter,
+        acAlignmentRight,
+        acAlignmentAligned,
+        acAlignmentMiddle,
+        acAlignmentFit,
+        acAlignmentTopLeft,
+        acAlignmentTopCenter,
+        acAlignmentTopRight,
+        acAlignmentMiddleLeft,
+        acAlignmentMiddleCenter,
+        acAlignmentMiddleRight,
+        acAlignmentBottomLeft,
+        acAlignmentBottomCenter,
+        acAlignmentBottomRight
+    } AcAlignment;
+
+    // Typdefs for stock property types
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(686F177B-5E73-4790-95F5-7C4E27BEF5C2)] [public] AcColor       ACAD_COLOR;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(2B76BC92-FC0E-4A4E-B0AA-2E74443D2315)] [public] BSTR          ACAD_LAYER;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(EBA862B8-EB07-45FD-848E-0C85B9D9AFB6)] [public] BSTR          ACAD_LTYPE;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(2158192E-61E8-4B98-B7F2-48500BF96A4A)] [public] long          ACAD_NULL;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(10388454-C05B-4FE3-B745-0CE4969B1055)] [public] double        ACAD_DISTANCE;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(976A824C-3510-45B1-9353-B41A8B2BA338)] [public] double        ACAD_ANGLE;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(51C3EA9B-50D4-4064-A71B-32AB23853620)] [public] AcLineWeight  ACAD_LWEIGHT;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(CAD7ADA0-B3CD-4E30-872E-A460B31BA2D9)] [public] double        ACAD_NOUNITS;
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(8F1DB6BC-D88C-42CA-8974-CF2C5F8871AF)] [public] VARIANT       ACAD_POINT;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(1E9C7D1C-CA0F-441F-B289-0C69AC5FFEDF)] [v1_enum] enum AcLineSpacingStyle
+    {
+        // Mtext: lineSpacingStyle/setLineSpacingStyle
+        acLineSpacingStyleAtLeast = 1,
+        acLineSpacingStyleExactly = 2,
+    } AcLineSpacingStyle;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(4CE97594-F44B-447A-8273-B7E35A6CD54C)] [v1_enum] enum AcDimPrecision
+    {
+        //DIMADEC
+        acDimPrecisionZero = 0,
+        acDimPrecisionOne,
+        acDimPrecisionTwo,
+        acDimPrecisionThree,
+        acDimPrecisionFour,
+        acDimPrecisionFive,
+        acDimPrecisionSix,
+        acDimPrecisionSeven,
+        acDimPrecisionEight
+    } AcDimPrecision;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(3E474573-D64C-4BCB-B19E-1E889E48B6B7)] [v1_enum] enum AcDimUnits
+    {
+        //DIMALTU
+        acDimScientific = 1,
+        acDimDecimal,
+        acDimEngineering,
+        acDimArchitecturalStacked,
+        acDimFractionalStacked,
+        acDimArchitectural,
+        acDimFractional,
+        acDimWindowsDesktop
+    } AcDimUnits;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(34E1AB5D-C2C6-4923-ACA5-A1AA97E3F46C)] [v1_enum] enum AcDimLUnits
+    {
+        //DIMLUNIT
+        acDimLScientific = 1,
+        acDimLDecimal,
+        acDimLEngineering,
+        acDimLArchitectural,
+        acDimLFractional,
+        acDimLWindowsDesktop
+    } AcDimLUnits;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(8469408A-52B5-41CD-AE51-5923CEFA2E13)] [v1_enum] enum AcDimArrowheadType
+    {
+        //DIMBLK1
+        acArrowDefault       = 0,
+        acArrowClosedBlank   = 1,
+        acArrowClosed        = 2,
+        acArrowDot           = 3,
+        acArrowArchTick      = 4,
+        acArrowOblique       = 5,    
+        acArrowOpen          = 6,
+        acArrowOrigin        = 7,
+        acArrowOrigin2       = 8,
+        acArrowOpen90        = 9,    
+        acArrowOpen30        = 10,
+        acArrowDotSmall      = 11,
+        acArrowDotBlank      = 12,
+        acArrowSmall         = 13,
+        acArrowBoxBlank      = 14,
+        acArrowBoxFilled     = 15,
+        acArrowDatumBlank    = 16,
+        acArrowDatumFilled   = 17,
+        acArrowIntegral      = 18,
+        acArrowNone          = 19,
+        acArrowUserDefined   = 20
+    } AcDimArrowheadType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(0B684553-4E86-4375-88DD-142E97E7ED51)] [v1_enum] enum AcDimCenterType
+    {
+        //DIMBLK1
+        acCenterMark = 0,
+        acCenterLine,
+        acCenterNone
+    } AcDimCenterType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(029C65EC-F48A-4A2F-9B45-9F99D30CF90F)] [v1_enum] enum AcDimFit
+    {
+        //DIMFIT2
+        acTextAndArrows = 0,
+        acArrowsOnly,
+        acTextOnly,
+        acBestFit
+    } AcDimFit;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(C1733CC5-939E-423C-B414-46B14FA58BED)] [v1_enum] enum AcDimFractionType
+    {
+        //FIMFIT2
+        acHorizontal = 0,
+        acDiagonal,
+        acNotStacked
+    } AcDimFractionType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(1E362702-18FB-4ECF-9463-0D5344F1E8A9)] [v1_enum] enum AcDimArcLengthSymbol
+    {
+        //Arc length symbol position
+        acSymInFront = 0,
+        acSymAbove,
+        acSymNone
+    } AcDimArcLengthSymbol;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(131202C4-5143-4795-B2D9-A9F3CA141E86)] [v1_enum] enum AcDimHorizontalJustification
+    {
+        //FIMFIT2
+        acHorzCentered = 0,
+        acFirstExtensionLine,
+        acSecondExtensionLine,
+        acOverFirstExtension,
+        acOverSecondExtension
+    } AcDimHorizontalJustification;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(76E87CC6-1CEB-49EE-B8C1-57F202AC60FC)] [v1_enum] enum AcDimVerticalJustification
+    {
+        //FIMFIT2
+        acVertCentered = 0,
+        acAbove,
+        acOutside,
+        acJIS,
+        acUnder
+    } AcDimVerticalJustification;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E76D775B-C12C-4FFC-979D-8B5B45B2978C)] [v1_enum] enum AcDimTextMovement
+    {
+        //DIMTMOVE
+        acDimLineWithText = 0,
+        acMoveTextAddLeader,
+        acMoveTextNoLeader
+    } AcDimTextMovement;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(6CC10368-101A-405E-A1CF-90EF539A7309)] [v1_enum] enum AcDimToleranceMethod
+    {
+        //DIMTOL
+        acTolNone = 0,
+        acTolSymmetrical,
+        acTolDeviation,
+        acTolLimits,
+        acTolBasic
+    } AcDimToleranceMethod;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(AD4E5070-7C06-4364-9017-6E40A11CFECE)] [v1_enum] enum AcDimToleranceJustify
+    {
+        //DIMTOLJ
+        acTolBottom = 0,
+        acTolMiddle,
+        acTolTop
+    } AcDimToleranceJustify;
+    
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(52D24C41-7612-476B-84A1-56773562C8B5)] [v1_enum] enum AcViewportScale
+    {
+        acVpScaleToFit = 0,              // Scaled to Fit
+        acVpCustomScale,                 
+        // standard default scales
+        acVp1_1,                         // 1:1
+        acVp1_2,                         // 1:2
+        acVp1_4,                         // 1:4
+        acVp1_5,                         // 1:5
+        acVp1_8,                         // 1:8
+        acVp1_10,                        // 1:10
+        acVp1_16,                        // 1:16           
+        acVp1_20,                        // 1:20
+        acVp1_30,                        // 1:30
+        acVp1_40,                        // 1:40
+        acVp1_50,                        // 1:50
+        acVp1_100,                       // 1:100
+        acVp2_1,                         // 2:1
+        acVp4_1,                         // 4:1
+        acVp8_1,                         // 8:1
+        acVp10_1,                        // 10:1
+        acVp100_1,                       // 100:1
+        acVp1_128in_1ft,                 // 1/128"= 1'
+        acVp1_64in_1ft,                  // 1/64"= 1'
+        acVp1_32in_1ft,                  // 1/32"= 1'
+        acVp1_16in_1ft,                  // 1/16"= 1'
+        acVp3_32in_1ft,                  // 3/32"= 1'
+        acVp1_8in_1ft,                   // 1/8" = 1'
+        acVp3_16in_1ft,                  // 3/16"= 1'
+        acVp1_4in_1ft,                   // 1/4" = 1'
+        acVp3_8in_1ft,                   // 3/8" = 1'
+        acVp1_2in_1ft,                   // 1/2" = 1'
+        acVp3_4in_1ft,                   // 3/4" = 1'
+        acVp1in_1ft,                     // 1"= 1'
+        acVp1and1_2in_1ft,               // 1 1/2"= 1'
+        acVp3in_1ft,                     // 3"= 1'
+        acVp6in_1ft,                     // 6"= 1'
+        acVp1ft_1ft,                     // 1'= 1'
+    } AcViewportScale;     
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A0362186-43F2-4DD0-A95C-B88D2CCEFBC1)] [v1_enum] enum AcISOPenWidth
+    {
+        acPenWidth013 =  13,
+        acPenWidth018 =  18,
+        acPenWidth025 =  25,
+        acPenWidth035 =  35,
+        acPenWidth050 =  50,
+        acPenWidth070 =  70,
+        acPenWidth100 = 100,
+        acPenWidth140 = 140,
+        acPenWidth200 = 200,
+        acPenWidthUnk =  -1
+    } AcISOPenWidth;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A82691E0-2284-4E35-827F-32CF769963F5)] [v1_enum] enum AcSaveAsType
+    {
+        // These must match the corresponding values in AcApDocument::SaveFormat
+
+        acUnknown = -1,
+        acR12_dxf = 1,
+        acR13_dwg = 4,
+        acR13_dxf = 5,
+        acR14_dwg = 8,
+        acR14_dxf = 9,
+        ac2000_dwg = 12,
+        ac2000_dxf = 13,
+        ac2000_Template = 14,
+        ac2004_dwg = 24,
+        ac2004_dxf = 25,
+        ac2004_Template = 26,
+        ac2007_dwg = 36,
+        ac2007_dxf = 37,
+        ac2007_Template = 38,
+        ac2010_dwg = 48,
+        ac2010_dxf = 49,
+        ac2010_Template = 50,
+        ac2013_dwg = 60,
+        ac2013_dxf = 61,
+        ac2013_Template = 62,
+        ac2018_dwg = 64,
+        ac2018_dxf = 65,
+        ac2018_Template = 66,
+
+        acNative = ac2018_dwg,
+
+        // aliases
+        acR15_dwg = ac2000_dwg,
+        acR15_dxf = ac2000_dxf,
+        acR15_Template = ac2000_Template,
+        acR18_dwg = ac2004_dwg,
+        acR18_dxf = ac2004_dxf,
+        acR18_Template = ac2004_Template
+    } AcSaveAsType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A9124761-F814-4C67-8823-99A5F10020F3)] [v1_enum] enum AcPrinterSpoolAlert
+    {
+        acPrinterAlwaysAlert = 0,
+        acPrinterAlertOnce,
+        acPrinterNeverAlertLogOnce,
+        acPrinterNeverAlert
+    } AcPrinterSpoolAlert;
+
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A7F07A66-8102-4163-9852-1ED1F43FAA33)] [v1_enum] enum AcPlotPolicyForNewDwgs
+    {
+        acPolicyNewDefault = 0,
+        acPolicyNewLegacy
+    } AcPlotPolicyForNewDwgs;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(7681C9EF-E4A9-48B0-8DD2-8EEDA1FFAF05)] [v1_enum] enum AcPlotPolicyForLegacyDwgs
+    {
+        acPolicyLegacyDefault = 0,
+        acPolicyLegacyQuery,
+        acPolicyLegacyLegacy
+    } AcPlotPolicyForLegacyDwgs;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(670E22EE-6AD3-47F4-9405-28A25C1A284A)] [v1_enum] enum AcOleQuality
+    {
+        acOQLineArt = 0,
+        acOQText,
+        acOQGraphics,
+        acOQPhoto,
+        acOQHighPhoto
+    } AcOleQuality;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(319E930C-0E3A-4559-AB82-B8F68A0AC416)] [v1_enum] enum AcLoadPalette
+    {
+        acPaletteByDrawing = 0,
+        acPaletteBySession
+    } AcLoadPalette;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(44D4F3D3-ECE9-4961-A853-AA7E17C9D1BA)] [v1_enum] enum AcInsertUnits
+    {
+        acInsertUnitsUnitless = 0,
+        acInsertUnitsInches,
+        acInsertUnitsFeet,
+        acInsertUnitsMiles,
+        acInsertUnitsMillimeters,
+        acInsertUnitsCentimeters,
+        acInsertUnitsMeters,
+        acInsertUnitsKilometers,
+        acInsertUnitsMicroinches,
+        acInsertUnitsMils,
+        acInsertUnitsYards,
+        acInsertUnitsAngstroms,
+        acInsertUnitsNanometers,
+        acInsertUnitsMicrons,
+        acInsertUnitsDecimeters,
+        acInsertUnitsDecameters,
+        acInsertUnitsHectometers,
+        acInsertUnitsGigameters,
+        acInsertUnitsAstronomicalUnits,
+        acInsertUnitsLightYears,
+        acInsertUnitsParsecs,
+        acInsertUnitsUSSurveyFeet,
+        acInsertUnitsUSSurveyInch,
+        acInsertUnitsUSSurveyYard,
+        acInsertUnitsUSSurveyMile
+    } AcInsertUnits;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(57B9C73A-475D-4FE2-B6BB-996A5AEB0D61)] [v1_enum] enum AcAlignmentPointAcquisition
+    {
+        acAlignPntAcquisitionAutomatic = 0,
+        acAlignPntAcquisitionShiftToAcquire
+    } AcAlignmentPointAcquisition;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(F6E7DB47-B827-4858-BBA3-67366FC3A68A)] [v1_enum] enum AcInsertUnitsAction
+    {
+        acInsertUnitsPrompt = 0,
+        acInsertUnitsAutoAssign
+    } AcInsertUnitsAction;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(2F782302-4A53-48A4-BA1E-37219E64167A)] [v1_enum] enum AcPlotPolicy
+    {
+        acPolicyNamed = 0,
+        acPolicyLegacy
+    } AcPlotPolicy;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(F040E079-97DA-4BA8-B9FF-B6D1B9A884D4)] [v1_enum] enum AcDrawingAreaShortCutMenu
+    {
+        acNoDrawingAreaShortCutMenu = 0,
+        acUseDefaultDrawingAreaShortCutMenu
+    } AcDrawingAreaShortCutMenu;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(C7D4A410-7ECC-4FBF-85F4-34265978BBF0)] [v1_enum] enum AcDrawingAreaSCMDefault
+    {
+        acRepeatLastCommand = 0,
+        acSCM
+    } AcDrawingAreaSCMDefault;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(DC347709-6472-4F29-8EAF-BB420E1FAC0C)] [v1_enum] enum AcDrawingAreaSCMEdit
+    {
+        acEdRepeatLastCommand = 0,
+        acEdSCM
+    } AcDrawingAreaSCMEdit;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(D8BE0B91-BAE3-462A-9D8C-E6EDAF5E16DA)] [v1_enum] enum AcDrawingAreaSCMCommand
+    {
+        acEnter = 0,
+        acEnableSCMOptions,
+        acEnableSCM
+    } AcDrawingAreaSCMCommand;
+
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(AEA07F0B-731F-447D-8E2D-5E52A5C41A2E)] [v1_enum] enum AcLayerStateMask
+    {
+        acLsNone           = 0x0000,
+        acLsOn             = 0x0001,
+        acLsFrozen         = 0x0002,
+        acLsLocked         = 0x0004,
+        acLsPlot           = 0x0008,
+        acLsNewViewport    = 0x0010,
+        acLsColor          = 0x0020,
+        acLsLineType       = 0x0040,
+        acLsLineWeight     = 0x0080,
+        acLsPlotStyle      = 0x0100,
+        acLsAll            = 0xFFFF
+    } AcLayerStateMask;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(819185F9-80C2-4008-960A-2FCF5209922F)] [v1_enum] enum AcShadePlot
+    {
+        acShadePlotAsDisplayed = 0,
+        acShadePlotWireframe,
+        acShadePlotHidden,
+        acShadePlotRendered
+    } AcShadePlot;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(D3B1A055-4B3E-45A6-921D-570B1A6DB7E2)] [v1_enum] enum AcHatchObjectType
+    {
+        acHatchObject = 0,
+        acGradientObject = 1
+    } AcHatchObjectType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(1E7B0B4C-4AFA-41C2-A8C6-B91DF0BC8E7D)] [v1_enum] enum AcGradientPatternType
+    {
+        acPreDefinedGradient  = 0,
+        acUserDefinedGradient = 1
+    } AcGradientPatternType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E0A20A53-1ABF-4672-A957-4BC0D8CB5577)] [v1_enum] enum AcTableDirection
+    {
+        acTableTopToBottom  = 0,
+        acTableBottomToTop = 1
+    } AcTableDirection;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(37FA346A-6AFB-4FC8-B960-5768DE8FC853)] [v1_enum] enum AcCellAlignment
+    {
+        acTopLeft        = 1,
+        acTopCenter      = 2,
+        acTopRight       = 3,
+        acMiddleLeft     = 4,
+        acMiddleCenter   = 5,
+        acMiddleRight    = 6,
+        acBottomLeft     = 7,
+        acBottomCenter   = 8,
+        acBottomRight    = 9
+    } AcCellAlignment;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(8FCCC251-647B-4D71-B255-ED99476D5A91)] [v1_enum] enum AcRowType
+    {
+        acUnknownRow     = 0,
+        acDataRow        = 1,
+        acTitleRow       = 2,
+        acHeaderRow      = 4
+    } AcRowType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(4814E2E8-2B7E-4CF1-A07C-1779B1C3C672)] [v1_enum] enum AcValueDataType
+    {
+        // These values should match the values of enum 
+        // AcValue::DataType in AcValue.h
+        acUnknownDataType   = 0,
+        acLong              = (0x1 << 0),
+        acDouble            = (0x1 << 1),
+        acString            = (0x1 << 2),
+        acDate              = (0x1 << 3),
+        acPoint2d           = (0x1 << 4),
+        acPoint3d           = (0x1 << 5),
+        acObjectId          = (0x1 << 6),
+        acBuffer            = (0x1 << 7),
+        acResbuf            = (0x1 << 8),
+        acGeneral           = (0x1 << 9),
+
+    } AcValueDataType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E6C356FC-3F2F-454D-8C77-920403AFF7E6)] [v1_enum] enum AcValueUnitType
+    {
+        // These values should match the values of enum 
+        // AcValue::UnitType in AcValue.h
+        acUnitless      = 0,
+        acUnitDistance  = (0x1 << 0),
+        acUnitAngle     = (0x1 << 1),
+        acUnitArea      = (0x1 << 2),
+        acUnitVolume    = (0x1 << 3),
+
+    } AcValueUnitType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(ADCCDD8E-C39D-4EA8-8769-5F0A75AC5772)] [v1_enum] enum AcParseOption
+    {
+        // These values should match the values of enum 
+        // AcValue::ParseOption in AcValue.h
+        acParseOptionNone       = 0,
+        acSetDefaultFormat      = (0x1 << 0),
+        acPreserveMtextFormat   = (0x1 << 1),
+
+    } AcParseOption;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(C04A1CDF-59BE-4F73-AB5C-F100C716713E)] [v1_enum] enum AcFormatOption
+    {
+        // These values should match the values of enum 
+        // AcValue::FormatOption in AcValue.h
+        kFormatOptionNone       = 0,
+        acForEditing            = (0x1 << 0),
+        acForExpression         = (0x1 << 1),
+        acUseMaximumPrecision   = (0x1 << 2),
+        acIgnoreMtextFormat     = (0x1 << 3),
+
+    } AcFormatOption;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(BDC448AC-256F-4913-A198-AC983B5D860E)] [v1_enum] enum AcGridLineType
+    {
+        acInvalidGridLine = 0,
+        acHorzTop        = 1,
+        acHorzInside     = 2,
+        acHorzBottom     = 4,
+        acVertLeft       = 8,
+        acVertInside     = 0x10,
+        acVertRight      = 0x20 
+
+    } AcGridLineType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E4438EF4-728A-4F47-9B0C-68D1832E0CEC)] [v1_enum] enum AcCellType
+    {
+        acUnknownCell = 0,
+        acTextCell= 1,
+        acBlockCell= 2,
+
+    } AcCellType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(86DFC27D-ED55-4E82-BC7C-97E8F2000D58)] [v1_enum] enum AcCellEdgeMask
+    {
+        acTopMask= 1,
+        acRightMask= 2,
+        acBottomMask= 4,
+        acLeftMask= 8,
+
+    } AcCellEdgeMask;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E9ACACD0-3D23-4372-BDB2-42F369DF0DB3)] [v1_enum] enum AcRotationAngle
+    {
+        acDegreesUnknown = -1,
+        acDegrees000     = 0,
+        acDegrees090     = 1,
+        acDegrees180     = 2,
+        acDegrees270     = 3,
+
+    } AcRotationAngle;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(D806E117-258B-4F6E-A544-A3980DEB4E5B)] [v1_enum] enum AcMergeCellStyleOption
+    {
+        acMergeCellStyleNone                         = 0,    // AcDb::kMergeCellStyleNone;
+        acMergeCellStyleCopyDuplicates               = 0x1,  // AcDb::kMergeCellStyleCopyDuplicates
+        acMergeCellStyleOverwriteDuplicates          = 0x2,  // AcDb::kMergeCellStyleOverwriteDuplicates
+        acMergeCellStyleConvertDuplicatesToOverrides = 0x4,  // AcDb::kMergeCellStyleConvertDuplicatesToOverrides
+        acMergeCellStyleIgnoreNewStyles              = 0x8,  // AcDb::kMergeCellStyleIgnoreNewStyles
+
+    } AcMergeCellStyleOption;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(44F073A7-032A-4F40-AE73-A07BD2F0BF88)] [v1_enum] enum AcSelectType
+    {
+        acTableSelectWindow= 1,
+        acTableSelectCrossing= 2,
+
+    } AcSelectType;
+
+	typedef [helpcontext(IDH_ENUMTYPES), uuid(C9A2F6B5-66B5-4BF0-B397-E6D80AD01CDB)] [v1_enum] enum AcOleType
+    {
+		acOTLink = 1,
+		acOTEmbedded = 2,
+		acOTStatic = 3
+	} AcOleType;
+
+	typedef [helpcontext(IDH_ENUMTYPES), uuid(E54BA337-5D15-4424-A4BF-A5A2A01B4E9B)] [v1_enum] enum AcOlePlotQuality
+    {
+        acOPQMonochrome = 0,
+        acOPQLowGraphics,
+        acOPQHighGraphics
+    } AcOlePlotQuality;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(DBE1348A-C185-4A18-AAEF-A915E35CCD35)] [v1_enum] enum AcTableStyleOverrides
+    {
+        //table
+        acTitleSuppressed             = 1,
+        acHeaderSuppressed            = 2,
+        acFlowDirection               = 3,         
+        acHorzCellMargin              = 4,
+        acVertCellMargin              = 5,
+        acTitleRowColor               = 6,
+        acHeaderRowColor              = 7,
+        acDataRowColor                = 8,
+        acTitleRowFillNone            = 9,
+        acHeaderRowFillNone           = 10,
+        acDataRowFillNone             = 11,
+        acTitleRowFillColor           = 12,
+        acHeaderRowFillColor          = 13,
+        acDataRowFillColor            = 14,
+        acTitleRowAlignment           = 15,
+        acHeaderRowAlignment          = 16,
+        acDataRowAlignment            = 17,
+        acTitleRowTextStyle           = 18,
+        acHeaderRowTextStyle          = 19,
+        acDataRowTextStyle            = 20,
+        acTitleRowTextHeight          = 21,
+        acHeaderRowTextHeight         = 22,
+        acDataRowTextHeight           = 23,
+        acTitleRowDataType            = 24,
+        acHeaderRowDataType           = 25,
+        acDataRowDataType             = 26,
+        // grid color
+        acTitleHorzTopColor           = 40,
+        acTitleHorzInsideColor        = 41,
+        acTitleHorzBottomColor        = 42,
+        acTitleVertLeftColor          = 43,
+        acTitleVertInsideColor        = 44,
+        acTitleVertRightColor         = 45,
+        acHeaderHorzTopColor          = 46,
+        acHeaderHorzInsideColor       = 47,
+        acHeaderHorzBottomColor       = 48,
+        acHeaderVertLeftColor         = 49,
+        acHeaderVertInsideColor       = 50,
+        acHeaderVertRightColor        = 51,
+        acDataHorzTopColor            = 52,
+        acDataHorzInsideColor         = 53,
+        acDataHorzBottomColor         = 54,
+        acDataVertLeftColor           = 55,
+        acDataVertInsideColor         = 56,
+        acDataVertRightColor          = 57,
+        // grid line weight
+        acTitleHorzTopLineWeight      = 70,
+        acTitleHorzInsideLineWeight   = 71,
+        acTitleHorzBottomLineWeight   = 72,
+        acTitleVertLeftLineWeight     = 73,
+        acTitleVertInsideLineWeight   = 74,
+        acTitleVertRightLineWeight    = 75,
+        acHeaderHorzTopLineWeight     = 76,
+        acHeaderHorzInsideLineWeight  = 77,
+        acHeaderHorzBottomLineWeight  = 78,
+        acHeaderVertLeftLineWeight    = 79,
+        acHeaderVertInsideLineWeight  = 80,
+        acHeaderVertRightLineWeight   = 81,
+        acDataHorzTopLineWeight       = 82,
+        acDataHorzInsideLineWeight    = 83,
+        acDataHorzBottomLineWeight    = 84,
+        acDataVertLeftLineWeight      = 85,
+        acDataVertInsideLineWeight    = 86,
+        acDataVertRightLineWeight     = 87,
+        // grid visibility
+        acTitleHorzTopVisibility      = 100,
+        acTitleHorzInsideVisibility   = 101,
+        acTitleHorzBottomVisibility   = 102,
+        acTitleVertLeftVisibility     = 103,
+        acTitleVertInsideVisibility   = 104,
+        acTitleVertRightVisibility    = 105,
+        acHeaderHorzTopVisibility     = 106,
+        acHeaderHorzInsideVisibility  = 107,
+        acHeaderHorzBottomVisibility  = 108,
+        acHeaderVertLeftVisibility    = 109,
+        acHeaderVertInsideVisibility  = 110,
+        acHeaderVertRightVisibility   = 111,
+        acDataHorzTopVisibility       = 112,
+        acDataHorzInsideVisibility    = 113,
+        acDataHorzBottomVisibility    = 114,
+        acDataVertLeftVisibility      = 115,
+        acDataVertInsideVisibility    = 116,
+        acDataVertRightVisibility     = 117,
+        //cell 
+        acCellAlign                   = 130,
+        acCellBackgroundFillNone      = 131,
+        acCellBackgroundColor         = 132,
+        acCellContentColor            = 133,
+        acCellTextStyle               = 134,
+        acCellTextHeight              = 135,
+        acCellTopGridColor            = 136,
+        acCellRightGridColor          = 137,
+        acCellBottomGridColor         = 138,
+        acCellLeftGridColor           = 139,
+        acCellTopGridLineWeight       = 140,
+        acCellRightGridLineWeight     = 141,
+        acCellBottomGridLineWeight    = 142,
+        acCellLeftGridLineWeight      = 143,
+        acCellTopVisibility           = 144,
+        acCellRightVisibility         = 145,
+        acCellBottomVisibility        = 146,
+        acCellLeftVisibility          = 147,
+        acCellDataType                = 148,
+
+    } AcTableStyleOverrides;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(B2F5CD04-5E71-4890-B198-2B779C0EB6DE)] [v1_enum] enum AcMLineJustification
+    {
+        acTop        = 0,
+        acZero       = 1,
+        acBottom     = 2
+    } AcMLineJustification;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(3F69C501-C352-4B4C-AC4C-F64D350A9BF4)] [v1_enum] enum AcBlockScaling
+    {
+        acAny       = 0,
+        acUniform   = 1
+    } AcBlockScaling;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(AE17185A-78E1-448E-8A85-CBDBD6397B9C)] [v1_enum] enum AcDynamicBlockReferencePropertyUnitsType
+    {
+            acNoUnits  = 0,
+            acAngular  = 1,
+            acDistance = 2,
+            acArea     = 3
+    } AcDynamicBlockReferencePropertyUnitsType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(B7D57EC0-F352-48DF-8D14-8A2AE515E5AA)] [v1_enum] enum AcSectionState
+    {
+        acSectionStatePlane     = (0x1 << 0),
+        acSectionStateBoundary  = (0x1 << 1),
+        acSectionStateVolume    = (0x1 << 2),
+
+    } AcSectionState;
+
+	typedef[helpcontext(IDH_ENUMTYPES), uuid(EF4C5B46-9919-41C1-A778-893A7854D359)][v1_enum] enum AcSectionState2
+	{
+		acSectionState2Plane    = (0x1 << 0),
+		acSectionState2Slice    = (0x1 << 1),
+		acSectionState2Boundary = (0x1 << 2),
+		acSectionState2Volume   = (0x1 << 3),
+	} AcSectionState2;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(7601B960-26AE-43B2-B1D0-FAB807759EF5)] [v1_enum] enum AcSectionSubItem
+    {
+        // AcDbSection::SubItem
+        // These values should match the values of enum AcDbSection::SubItem
+        // in DbSection.h
+        acSectionSubItemkNone              = 0,
+        acSectionSubItemSectionLine        = (0x1 << 0),
+        acSectionSubItemSectionLineTop     = (0x1 << 1),
+        acSectionSubItemSectionLineBottom  = (0x1 << 2),
+        acSectionSubItemBackLine           = (0x1 << 3),
+        acSectionSubItemBackLineTop        = (0x1 << 4),
+        acSectionSubItemBackLineBottom     = (0x1 << 5),
+        acSectionSubItemVerticalLineTop    = (0x1 << 6),
+        acSectionSubItemVerticalLineBottom = (0x1 << 7),
+
+    } AcSectionSubItem;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(91138361-AAFD-4A03-8D88-F32596051016)] [v1_enum] enum AcSectionType
+    {
+        // AcDbSectionSettings::SectionType
+        // These values should match the values of enum 
+        // AcDbSectionSettings::SectionType in DbSection.h
+        acSectionTypeLiveSection   = (0x1 << 0),
+        acSectionType2dSection     = (0x1 << 1),
+        acSectionType3dSection     = (0x1 << 2),
+
+    } AcSectionType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(AA2EEB97-4F86-480C-9B5F-88E77FD11C28)] [v1_enum] enum AcSectionGeneration
+    {
+        // AcDbSectionSettings::Generation
+        // These values should match the values of enum 
+        // AcDbSectionSettings::Generation in DbSection.h
+        acSectionGenerationSourceAllObjects          = (0x1 << 0),
+        acSectionGenerationSourceSelectedObjects     = (0x1 << 1),
+        acSectionGenerationDestinationNewBlock       = (0x1 << 4),
+        acSectionGenerationDestinationReplaceBlock   = (0x1 << 5),
+        acSectionGenerationDestinationFile           = (0x1 << 6),
+
+    } AcSectionGeneration;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A45DB1F8-BE7D-4341-A854-C28CBCD1BFCF)] [v1_enum] enum AcHelixConstrainType
+    {
+        acTurnHeight  = 0,
+        acTurns       = 1,
+        acHeight      = 2
+
+    } AcHelixConstrainType;
+
+   
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(5603F393-4113-4B02-942B-622E5AB576CA)] [v1_enum] enum AcShadowDisplayType
+    {
+        acCastsAndReceivesShadows = 0,
+        acCastsShadows = 1,
+        acReceivesShadows = 2,
+        acIgnoreShadows = 3
+    } AcShadowDisplayType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(A74A1A71-2D69-489E-A6BC-997F01618AA4)] [v1_enum] enum AcLoftedSurfaceNormalType
+    {
+        acRuled = 0,
+        acSmooth = 1,
+        acFirstNormal = 2,
+        acLastNormal = 3,
+        acEndsNormal = 4,
+        acAllNormal = 5,
+        acUseDraftAngles = 6
+    } AcLoftedSurfaceNormalType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(ABF0620A-521A-4370-B2FA-9816712C1356)] [v1_enum] enum AcHelixTwistType
+    {
+        acCCW = 0,
+        acCW = 1
+    } AcHelixTwistType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(4FF88BB3-240A-49B6-8E17-744C0E1646A3)] [v1_enum] enum AcUnderlayLayerOverrideType
+    {
+        acNoOverrides = 0,
+        acApplied = 1
+    } AcUnderlayLayerOverrideType;
+
+    typedef [uuid(498337B4-4E0F-45CE-ABFC-49904FEFE4A5)] [v1_enum] enum AcTableFlowDirection
+    {
+        acTableFlowRight     = 0x1, // AcDb::kTableBreakFlowRight
+        acTableFlowDownOrUp = 0x2,  // AcDb::kTableBreakFlowDownOrUp
+        acTableFlowLeft= 0x4,       // AcDb::kTableBreakFlowLeft
+    } AcTableFlowDirection;
+
+    typedef [uuid(3CC9E63A-8BDB-44B8-A125-33D970D8FFF5)] [v1_enum] enum AcCellMargin
+    {
+        acCellMarginTop     = 0x1,        // AcDb::kCellMarginTop
+        acCellMarginLeft    = 0x2,        // AcDb::kCellMarginLeft
+        acCellMarginBottom  = 0x4,        // AcDb::kCellMarginBottom
+        acCellMarginRight   = 0x8,        // AcDb::kCellMarginRight
+        acCellMarginHorzSpacing = 0x10,   // AcDb::kCellMarginHorzSpacing
+        acCellMarginVertSpacing = 0x20,   // AcDb::kCellMarginVertSpacing
+    } AcCellMargin;
+
+    typedef [uuid(37DD264B-1760-472E-868F-E4CB139FF74C)] [v1_enum] enum AcCellContentLayout
+    {
+        acCellContentLayoutFlow              = 0x1, // AcDb::kCellContentLayoutFlow
+        acCellContentLayoutStackedHorizontal = 0x2, // AcDb::kCellContentLayoutStackedHorizontal
+        acCellContentLayoutStackedVertical   = 0x4, // AcDb::kCellContentLayoutStackedVertical
+    } AcCellContentLayout;
+
+    typedef [uuid(A26D146C-689C-4875-90D5-5C1FAC15C567)] [v1_enum] enum AcCellProperty
+    {
+        // these enum values are from AcDb.h
+           acInvalidCellProperty     = 0,            // AcDb::CellProperty::kInvalidCellProperty
+           acLock                    = (0x1 << 0),   // AcDb::CellProperty::kLock
+           acDataType                = (0x1 << 1),   // AcDb::CellProperty::kDataType
+           acDataFormat              = (0x1 << 2),   // AcDb::CellProperty::kDataFormat
+           acRotation                = (0x1 << 3),   // AcDb::CellProperty::kRotation
+           acScale                   = (0x1 << 4),   // AcDb::CellProperty::kScale
+           acAlignmentProperty       = (0x1 << 5),   // AcDb::CellProperty::kAlignment
+           acContentColor            = (0x1 << 6),   // AcDb::CellProperty::kContentColor
+           acBackgroundColor         = (0x1 << 7),   // AcDb::CellProperty::kBackgroundColor
+           acTextStyle               = (0x1 << 8),   // AcDb::CellProperty::kTextStyle
+           acTextHeight              = (0x1 << 9),   // AcDb::CellProperty::kTextHeight
+           acMarginLeft              = (0x1 << 10),  // AcDb::CellProperty::kMarginLeft
+           acMarginTop               = (0x1 << 11),  // AcDb::CellProperty::kMarginTop
+           acMarginRight             = (0x1 << 12),  // AcDb::CellProperty::kMarginRight
+           acMarginBottom            = (0x1 << 13),  // AcDb::CellProperty::kMarginBottom
+           acEnableBackgroundColor   = (0x1 << 14),  // AcDb::CellProperty::kEnableBackgroundColor
+           acAutoScale               = (0x1 << 15),  // AcDb::CellProperty::kAutoScale
+           acMergeAll                = (0x1 << 16),  // AcDb::CellProperty::kMergeAll
+           acFlowDirBtoT             = (0x1 << 17),  // AcDb::CellProperty::kFlowDirBToT
+           acContentLayout           = (0x1 << 18),  // AcDb::CellProperty::kContentLayout
+           acDataTypeAndFormat       = (acDataType | acDataFormat), // AcDb::CellProperty::kDataTypeAndFormat
+           acContentProperties       = (acDataType | acDataFormat | acRotation |
+                                       acScale | acAlignmentProperty | acContentColor |  
+                                       acTextStyle | acTextHeight | acAutoScale),  
+                                                    // AcDb::CellProperty::kContentProperties
+           acBitProperties           = (acEnableBackgroundColor | acAutoScale | acMergeAll | acFlowDirBtoT),
+                                                    // AcDb::CellProperty::kBitProperties
+           acAllCellProperties       = (acLock | acDataType | acDataFormat | acRotation |
+                                       acScale | acAlignmentProperty | acContentColor | acBackgroundColor | 
+                                       acTextStyle | acTextHeight | acMarginLeft | acMarginTop |
+                                       acMarginRight | acMarginBottom | acEnableBackgroundColor | 
+                                       acAutoScale | acMergeAll | acFlowDirBtoT | acContentLayout),
+                                                    // AcDb::CellProperty::AllCellProperties
+    } AcCellProperty;
+
+    typedef [uuid(4E40DEED-0A4B-41E8-A566-7B892387CE59)] [v1_enum] enum AcGridLineStyle
+    {
+        acGridLineStyleSingle = 1,      //AcDb::kGridLineStyleSingle
+        acGridLineStyleDouble = 2,      //AcDb::kGridLineStyleDouble
+    } AcGridLineStyle;
+
+    typedef [uuid(B01A3A5C-7706-4E61-B601-8351D7B39CAF)] [v1_enum] enum AcDataLinkUpdateDirection
+    {
+        acUpdateDataFromSource   = 0x1,     // AcDb::kUpdateDirSourceToData
+        acUpdateSourceFromData   = 0x2,     // AcDb::kUpdateDirDataToSource
+    } AcDataLinkUpdateDirection;
+
+    typedef [uuid(43CE763E-F46E-4CA7-BFD2-B36B7A23F765)] [v1_enum] enum AcDataLinkUpdateOption
+    {
+        acUpdateOptionNone                                  = 0,         // AcDb::kUpdateDirSourceToData
+        acUpdateOptionOverwriteContentModifiedAfterUpdate   = 0x20000,   // AcDb::kUpdateOptionOverwriteContentModifiedAfterUpdate
+        acUpdateOptionOverwriteFormatModifiedAfterUpdate    = 0x40000,   // AcDb::kUpdateOptionOverwriteFormatModifiedAfterUpdate
+        acUpdateOptionUpdateFullSourceRange                 = 0x80000,   // AcDb::kUpdateOptionUpdateFullSourceRange
+        acUpdateOptionIncludeXrefs                          = 0x100000,  // AcDb::kUpdateOptionIncludeXrefs
+    } AcDataLinkUpdateOption;
+
+    typedef [uuid(909287AF-B63D-4823-BB78-45240B379F36)] [v1_enum] enum AcCellContentType
+    {
+        acCellContentTypeUnknown = 0,            //AcDb::CellContentType::kUnknown
+        acCellContentTypeValue   = (0x1 << 0),   //AcDb::CellContentType::kCellContentTypeValue
+        acCellContentTypeField   = (0x1 << 1),   //AcDb::CellContentType::kUnknown
+        acCellContentTypeBlock   = (0x1 << 2),   //AcDb::CellContentType::kCellContentTypeBlock
+    } AcCellContentType;
+
+    typedef [uuid(9C0B8C66-0BBE-4BF7-8E1A-421A9D12ACC9)][v1_enum] enum AcCellState
+    {
+        acCellStateNone             = 0,            //AcDb::kCellStateNone
+        acCellStateContentLocked    = 0x1,          //AcDb::kCellStateContentLocked
+        acCellStateContentReadOnly  = 0x2,          //AcDb::kCellStateContentReadOnly
+        acCellStateFormatLocked     = 0x4,          //AcDb::kCellStateFormatLocked
+        acCellStateFormatReadOnly   = 0x8,          //AcDb::kCellStateFormatReadOnly
+        acCellStateLinked           = 0x10,          //AcDb::kCellStateLinked
+        acCellStateContentModified  = 0x20,          //AcDb::kCellStateContentModified
+        acCellStateFormatModified   = 0x40,          //AcDb::kCellStateFormatModified
+    } AcCellState;
+
+    typedef [uuid(09A08489-E7A6-4310-9BB0-B22B404252DC)][v1_enum] enum AcCellOption
+    {
+        kCellOptionNone    = 0,//AcDb::kCellOptionNone
+        kInheritCellFormat = 0x1,//AcDb::kInheritCellFormat
+    } AcCellOption;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(2E4BDD6C-BAC2-41C9-8FA4-7DA2DC192215)] [v1_enum] enum AcTextAttachmentType
+    {
+        acAttachmentTopOfTop        = 0,
+        acAttachmentMiddleOfTop     = 1,
+        acAttachmentBottomOfTop     = 2,
+        acAttachmentBottomOfTopLine = 3,
+        acAttachmentMiddle          = 4,
+        acAttachmentMiddleOfBottom  = 5,
+        acAttachmentBottomOfBottom  = 6,
+        acAttachmentBottomLine      = 7,
+        acAttachmentAllLine         = 8
+    } AcTextAttachmentType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(FB73E811-DF31-4A41-A35C-B4FC385957C2)] [v1_enum] enum AcMLeaderType
+    {
+        acStraightLeader            = 1,
+        acSplineLeader              = 2,
+        acInVisibleLeader           = 0
+    } AcMLeaderType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(658EDC37-AF26-4584-A38F-ABC28D0EFE44)] [v1_enum] enum AcMLeaderContentType
+    {
+        acNoneContent                = 0,
+        acBlockContent               = 1,
+        acMTextContent               = 2
+    } AcMLeaderContentType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(30C721DE-5514-4FFE-8041-77474ED079E9)] [v1_enum] enum AcTextAlignmentType
+    {
+        acLeftAlignment             = 0,
+        acCenterAlignment           = 1,
+        acRightAlignment            = 2
+    } AcTextAlignmentType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(6E878EC0-53D3-4C82-96AF-00305C0EBD98)] [v1_enum] enum AcTextAngleType
+    {
+        acInsertAngle               = 0,
+        acHorizontalAngle           = 1,
+        acAlwaysRightReadingAngle   = 2
+    } AcTextAngleType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(90F08F46-4107-42E8-B293-BFC3DFC7D033)] [v1_enum] enum AcBlockConnectionType {
+        acConnectExtents            = 0,
+        acConnectBase               = 1
+    } AcBlockConnectionType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(BD31843B-7A54-4FD2-B6E6-E3B7E877CA45)] [v1_enum] enum AcPredefBlockType
+    {
+        acBlockImperial      =  0,
+        acBlockSlot          =  1,
+        acBlockCircle        =  2,
+        acBlockBox           =  3,
+        acBlockHexagon       =  4,
+        acBlockTriangle      =  5,    
+        acBlockUserDefined   =  6
+    } AcPredefBlockType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(58C200B9-7C82-413D-A2A9-E1714AA81232)] [v1_enum] enum AcDrawLeaderOrderType {
+        acDrawLeaderHeadFirst            = 0,
+        acDrawLeaderTailFirst            = 1
+    } AcDrawLeaderOrderType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E7D7373C-2E21-4680-9771-AFF35CA33202)] [v1_enum] enum AcDrawMLeaderOrderType {
+        acDrawContentFirst            = 0,
+        acDrawLeaderFirst            = 1
+    } AcDrawMLeaderOrderType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(B8F78DE4-D20D-4FE2-BE18-2F9AB6FBA4D4)] [v1_enum] enum AcSegmentAngleType {
+        acDegreesAny            = 0,
+        acDegrees15            = 1,
+        acDegrees30            = 2,
+        acDegrees45            = 3,
+        acDegrees60            = 4,
+        acDegrees90            = 6,
+        acDegreesHorz            = 12
+    } AcSegmentAngleType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(E3B81C90-F182-4B99-A7E2-2A4DCF8B7278)] [v1_enum] enum AcTextAttachmentDirection {
+        acAttachmentHorizontal = 0,
+        acAttachmentVertical   = 1
+    } AcTextAttachmentDirection;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(AB2B8E1A-9FB5-40D4-9887-627FE4A0C6DC)] [v1_enum] enum AcVerticalTextAttachmentType {
+        acAttachmentCenter          = 0,
+        acAttachmentLinedCenter     = 1
+    } AcVerticalTextAttachmentType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(82536AF0-7AAB-4284-8A08-72FA644E1D41)] [v1_enum] enum AcMeshCreaseType {
+        acNoneCrease                = 0,
+        acAlwaysCrease              = 1,
+        acCreaseByLevel             = 2
+    } AcMeshCreaseType;
+
+interface IAcadObject; // NOTE: This forward declaration is needed to prevent an MIDL compiler bug from breaking binary compatibility
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(16C6BCB9-FB7D-4A8C-AF49-17A9B88FA4AA)] [v1_enum] enum AcWireframeType {
+        acIsolines            = 0,
+        acIsoparms            = 1
+    } AcWireframeType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(FDF9407C-6181-4405-93DF-B4F276D39EBB)] [v1_enum] enum AcSplineKnotParameterizationType {
+        acChord                    = 0,               //AcGe::kChord
+        acSqrtChord                = 1,               //AcGe::kSqrtChord
+        acUniformParam             = 2,               //AcGe::kUniform
+        acCustomParameterization   = 15               //AcGe::kCustomParameterization
+    } AcSplineKnotParameterizationType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(B16FF38A-67D0-4688-9E5F-48C9AEFC8C5A)] [v1_enum] enum AcSplineFrameType {
+        acShow                     = 0,
+        acHide                     = 1
+    } AcSplineFrameType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(D4C599D4-0E35-4A95-86C5-AE57C2FF8864)] [v1_enum] enum AcSplineMethodType {
+        acFit                      = 0,
+        acControlVertices          = 1
+    } AcSplineMethodType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(63AD8F7B-7D1C-4B03-BF5C-52235C9784D4)] [v1_enum] enum AcPointCloudColorType {
+        acTrueColor     = 0,
+        acByColor       = 1
+    } AcPointCloudColorType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(5A67DE5E-D603-410A-B402-E7A8ED15D3B2)] [v1_enum] enum AcPointCloudStylizationType {
+        acScanColor     = 0,
+        acObjectColor   = 1,
+        acNormal        = 2,
+        acIntensity     = 3
+    } AcPointCloudStylizationType;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(F3EF88F9-A2D3-4BD1-92CA-3938966C1E9F)] [v1_enum] enum AcPointCloudIntensityStyle{
+        acIntensityGrayscale     = 0,
+        acIntensityRainbow       = 1,
+        acIntensityRed           = 2,
+        acIntensityGreen         = 3,
+        acIntensityBlue          = 4,
+        acIntensityEditableFlag  = 5
+    } AcPointCloudIntensityStyle;
+
+    typedef [helpcontext(IDH_ENUMTYPES), uuid(2DDBE4CA-35A6-41A0-AFDF-608E889FC31C)] [v1_enum] enum AcPointCloudExStylizationType {
+        acRGB                    = 0,
+        acObject                 = 1,
+        acNormals                = 2,
+        acIntensities            = 3,
+        acElevation              = 4,
+        acClassification         = 5
+    } AcPointCloudExStylizationType;

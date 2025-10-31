@@ -1,0 +1,7 @@
+LIBRARY textstyl
+DESCRIPTION 'ObjectARX AcGi subentityTraits Test Program'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

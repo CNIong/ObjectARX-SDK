@@ -1,0 +1,39 @@
+// DesignCtrSample.idl : IDL source for DesignCtrSample.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DesignCtrSample.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "dcapi.idl"
+
+	[
+		object,
+		uuid(12A96FD2-36AA-11D2-B730-444553540001),
+		dual,
+		helpstring("IDesignCtrSampleObject Interface"),
+		pointer_default(unique)
+	]
+	interface IDesignCtrSampleObject : IDispatch
+	{
+	};
+[
+	uuid(12A96FC3-36AA-11D2-B730-444553540001),
+	version(1.0),
+	helpstring("DesignCtrSample 1.0 Type Library")
+]
+library DesignCtrSampleLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(12A96FD3-36AA-11D2-B730-444553540001),
+		helpstring("DesignCtrSampleObject Class")
+	]
+	coclass DesignCtrSampleObject
+	{
+		[default] interface IDesignCtrSampleObject;
+	};
+};

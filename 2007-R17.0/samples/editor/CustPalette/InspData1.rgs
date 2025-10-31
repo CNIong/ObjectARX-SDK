@@ -1,0 +1,27 @@
+HKCR
+{
+	CustPalette.InspData.1 = s 'InspData Class'
+	{
+		CLSID = s '{27116BE4-11DA-4D43-952F-EF03EAA62884}'
+	}
+	CustPalette.InspData = s 'InspData Class'
+	{
+		CLSID = s '{27116BE4-11DA-4D43-952F-EF03EAA62884}'
+		CurVer = s 'CustPalette.InspData.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {27116BE4-11DA-4D43-952F-EF03EAA62884} = s 'InspData Class'
+		{
+			ProgID = s 'CustPalette.InspData.1'
+			VersionIndependentProgID = s 'CustPalette.InspData'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{8A76C9A0-80F0-4F7B-9247-7CC1730962AC}'
+		}
+	}
+}

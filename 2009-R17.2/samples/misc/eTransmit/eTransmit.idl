@@ -1,0 +1,71 @@
+//
+// (C) Copyright 2001-2006 by Autodesk, Inc. 
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted, 
+// provided that the above copyright notice appears in all copies and 
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting 
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to 
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+//
+
+// eTransmit.idl : IDL source for AsdkeTransmit.arx
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkeTransmit.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+[
+	object,
+	uuid(3F61DB11-0DCA-4209-B485-B3D454129DD1),
+	dual,
+	helpstring("IAddFileHandler Interface"),
+	pointer_default(unique)
+]
+interface IAddFileHandler : IDispatch
+{
+};
+
+
+[
+	uuid(1FC604A1-CB15-49EB-94DF-932B7954093F),
+	version(1.0),
+	helpstring("asdkeTransmit 1.0 Type Library")
+]
+library asdkETRANSMITLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//If the following import fails then it means that the type library 
+	//is not on the system path you can fix the problem in two ways:
+	//1. Add it to the system wide PATH environment variable
+	//2. Add it to the executable file list in Developer Studio. You can do
+	//this in using the Tools/Option menu and then choosing the 'Directories'
+	//tab and finally typing the full path at the Executable files section
+	//
+	//Importing english is ok here. We don't localize this idl/tlb.
+	//axdb17enu.tlb is guaranteed to be available in all locales.
+	//If you want to provide localized typelib then you must import
+	//localized tlb here.	importlib("axdb17enu.tlb");
+	importlib("axdb17enu.tlb");
+	[
+		uuid(AF63F89F-9931-43e4-B3A8-5725C9BCA77A),
+		helpstring("AddFileHandler Class")
+	]
+	coclass AddFileHandler
+	{
+		[default] interface IAddFileHandler;
+	};
+};

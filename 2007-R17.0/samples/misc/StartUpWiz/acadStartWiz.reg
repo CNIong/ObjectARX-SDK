@@ -1,0 +1,27 @@
+REGEDIT4
+HKEY_LOCAL_MACHINE\SOFTWARE\Autodesk\AutoCAD\R17.0\ACAD-301:409
+[HKEY_LOCAL_MACHINE\SOFTWARE\Autodesk\AutoCAD\R17.0\ACAD-301:409\StartupWizards]
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Autodesk\AutoCAD\R17.0\ACAD-301:409\StartupWizards\MyWizard]
+;;; AppPath is the path to the New\StartUp Wizard to be loaded. 
+;;; Note: The double "\\" are required.
+"AppPath"="c:\\arxsdk\\samples\\misc\\startupwiz\\StartWiz.arx"
+"Template"="StartWiz"
+;;; The ARX command name to execute when the Wizard is selected. 
+"CommandName"="StartWiz"
+
+;;; These are the bitmaps that are displayed in the New and Startup dialog when 
+;;; StartWiz is highlighted in the Wizard combobox. 
+;;; SmallIcon and LargeIcon are the names of bitmap resources built onto StartWiz.arx. 
+;;; The bitmaps are loaded by "Name" not "ID". To maintain the bitmap name in the resource, 
+;;; "SmallIcon" and "LargeIcon" should not be defined in resource.h. AutoCAD first tries 
+;;; to load the bitmaps from the main AutoCAD resource dll so the bitmap names cannot be 
+;;; used in AutoCAD. If the wrong bitmap is displayed try changing the name.  
+"SmallIcon"="SmallIcon"
+"LargeIcon"="LargeIcon"
+
+;;; The text desciption of your Wizard that is displayed in the New and Startup dialog
+;;; when StartWiz is highlighted in the Wizard combobox. 
+"Description"="Your Startup Wizard goes here!"
+

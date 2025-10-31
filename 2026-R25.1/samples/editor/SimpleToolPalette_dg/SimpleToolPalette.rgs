@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'SimpleToolPalette'
+		'asdkSimpleToolPalette3.arx'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

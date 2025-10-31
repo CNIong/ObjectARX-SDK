@@ -1,0 +1,6 @@
+LIBRARY      asdkpolyobj
+DESCRIPTION  'Arx sample application - POLYSAMP'
+
+EXPORTS
+	acrxEntryPoint        PRIVATE
+    acrxGetApiVersion     PRIVATE

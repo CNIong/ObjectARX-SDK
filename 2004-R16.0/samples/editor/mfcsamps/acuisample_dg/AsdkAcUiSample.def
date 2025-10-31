@@ -1,0 +1,8 @@
+; AsdkAcUiSample.def : Declares the module parameters for the DLL.
+
+; (C) Copyright 1998 by Autodesk, Inc.
+LIBRARY      "AsdkAcUiSample"
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

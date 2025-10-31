@@ -1,0 +1,11 @@
+Lab8
+
+Purpose:
+=======
+
+The purpose of this lab is to create a persistent object reactor.
+This reactor will remove the EmployeeEntry from the employee dictionary 
+if the insert EMPLOYEE is erased. 
+For this you have only to overwrite in the class EmployeeDetails the 
+virtual void erased (const AcDbObject* pDbObj,Adesk::Boolean erasing = Adesk::kTrue) 
+function inherited from AcDbObject.

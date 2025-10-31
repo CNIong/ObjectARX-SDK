@@ -1,0 +1,8 @@
+; AsdkSquareLib.def : Declares the module parameters.
+; (C) Copyright 2005-2006 by Autodesk, Inc. 
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

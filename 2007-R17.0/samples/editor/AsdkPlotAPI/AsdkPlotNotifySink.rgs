@@ -1,0 +1,27 @@
+HKCR
+{
+	AsdkPlotApiDialog.PlotNotifySink.1 = s 'CPlotNotifySink Class'
+	{
+		CLSID = s '{548B5EF0-E731-4436-A381-17356CC2A348}'
+	}
+	AsdkPlotApiDialog.PlotNotifySink = s 'CPlotNotifySink Class'
+	{
+		CLSID = s '{548B5EF0-E731-4436-A381-17356CC2A348}'
+		CurVer = s 'AsdkPlotApiDialog.PlotNotifySink.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {548B5EF0-E731-4436-A381-17356CC2A348} = s 'CPlotNotifySink Class'
+		{
+			ProgID = s 'AsdkPlotApiDialog.PlotNotifySink.1'
+			VersionIndependentProgID = s 'AsdkPlotApiDialog.PlotNotifySink'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{79897881-D31A-4E29-865E-8C7096349AF0}'
+		}
+	}
+}

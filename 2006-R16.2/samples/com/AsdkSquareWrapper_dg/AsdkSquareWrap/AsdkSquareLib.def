@@ -1,0 +1,9 @@
+; AsdkSquareLib.def : Declares the module parameters.
+
+LIBRARY      "AsdkSquareLib.DLL"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE

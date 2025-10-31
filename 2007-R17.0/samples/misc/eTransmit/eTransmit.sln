@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "eTransmit", "eTransmit.vcproj", "{B16ED737-B35E-479E-B96B-CD3FC9322572}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B16ED737-B35E-479E-B96B-CD3FC9322572}.Debug.ActiveCfg = Release|Win32
+		{B16ED737-B35E-479E-B96B-CD3FC9322572}.Debug.Build.0 = Release|Win32
+		{B16ED737-B35E-479E-B96B-CD3FC9322572}.Release.ActiveCfg = Release|Win32
+		{B16ED737-B35E-479E-B96B-CD3FC9322572}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

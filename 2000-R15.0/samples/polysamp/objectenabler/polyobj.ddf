@@ -1,0 +1,10 @@
+;Please see the Cabinet SDK for documentation on .ddf files.
+;Be sure to build AsdkPolyOBJ.dbx before you run MakeCAB.
+
+
+.OPTION EXPLICIT
+
+.Set CabinetNameTemplate=AsdkPolyOBJ.cab
+.Set Cabinet=on
+.Set Compress=on
+..\AsdkPolyOBJ.dbx

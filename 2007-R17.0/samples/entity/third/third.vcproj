@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?><VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="Third" ProjectGUID="{CA20ABC2-DBCD-4213-97CB-742D46E3D075}">
+	<Platforms>
+		<Platform Name="Win32"></Platform>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Release/Third.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;ACRXAPP" StringPooling="true" RuntimeLibrary="2" BufferSecurityCheck="true" EnableFunctionLevelLinking="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" UsePrecompiledHeader="0" PrecompiledHeaderFile=".\Release/Third.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" WarningLevel="3" SuppressStartupBanner="true" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386 /IGNORE:4089" AdditionalDependencies="acad.lib acedapi.lib rxapi.lib acge17.lib acdb17.lib acgiapi.lib odbc32.lib odbccp32.lib" OutputFile="Release/Third.arx" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" ProgramDatabaseFile=".\Release/Third.pdb" SubSystem="2" BaseAddress="0x1c000000" ImportLibrary=".\Release/Third.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Debug/Third.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="" Optimization="0" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";WIN32;_WINDOWS;ACRXAPP" RuntimeLibrary="2" BufferSecurityCheck="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" UsePrecompiledHeader="0" PrecompiledHeaderFile=".\Debug/Third.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" BrowseInformation="0" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386" AdditionalDependencies="acad.lib acedapi.lib rxapi.lib acge17.lib acdb17.lib acgiapi.lib odbc32.lib odbccp32.lib" OutputFile="Debug/Third.arx" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" GenerateDebugInformation="true" ProgramDatabaseFile=".\Debug/Third.pdb" SubSystem="2" BaseAddress="0x1c000000" ImportLibrary=".\Debug/Third.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File RelativePath=".\Main.cpp">
+		</File>
+		<File RelativePath=".\ReadMe.txt">
+		</File>
+		<File RelativePath=".\ThirdGlyph.cpp">
+		</File>
+		<File RelativePath=".\ThirdGlyph.h">
+		</File>
+		<File RelativePath=".\ThirdOsnapInfo.cpp">
+		</File>
+		<File RelativePath=".\ThirdOsnapInfo.h">
+		</File>
+		<File RelativePath=".\ThirdOsnapMode.cpp">
+		</File>
+		<File RelativePath=".\ThirdOsnapMode.h">
+		</File>
+	</Files>
+</VisualStudioProject>

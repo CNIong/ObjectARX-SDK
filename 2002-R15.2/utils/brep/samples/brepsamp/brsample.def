@@ -1,0 +1,15 @@
+;------------------------------------
+; BRSAMPLE.DEF module definition file
+; (C) Copyright 1998 by Autodesk, Inc.
+;
+;------------------------------------
+
+LIBRARY			BRSAMPLE
+DESCRIPTION		'Autodesk Boundary Representation Library Sample Program'
+
+EXPORTS
+
+acrxGetApiVersion PRIVATE
+acrxEntryPoint PRIVATE
+
+

@@ -1,0 +1,7 @@
+; ProtocolReactors.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ProtocolReactors"
+
+EXPORTS
+	acrxEntryPoint			PRIVATE
+	acrxGetApiVersion		PRIVATE

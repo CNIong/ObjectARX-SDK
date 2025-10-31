@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SimpleToolPaletteExample</RootNamespace>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableComHosting>true</EnableComHosting>
+    <AssemblySearchPaths>..\..\..\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <ComHostTypeLibrary Include="SimpleToolPaletteExample.tlb" Id="1" />
+    <RuntimeHostConfigurationOption Include="System.Runtime.InteropServices.COM.LoadComponentInDefaultContext" Value="true" />
+    <Reference Include="AcDbMgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="accoremgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcTcMgd">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="TOOL1.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Target Name="CalculateIdls">
+    <ItemGroup>
+      <Idl Include="@(ComHostTypeLibrary->'%(RootDir)%(Directory)%(Filename).idl')"></Idl>
+    </ItemGroup>
+  </Target>
+  <Target Name="Midl" BeforeTargets="CoreCompile" DependsOnTargets="CalculateIdls" Inputs="@(Idl)" Outputs="@(ComHostTypeLibrary)">
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -command &quot;&amp; { .\midl.ps1 @(Idl)} &quot;" />
+  </Target>
+</Project>

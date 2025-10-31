@@ -1,0 +1,47 @@
+HKCR
+{
+	SliderCrankDb.SliderCrank.1 = s 'SliderCrank Class'
+	{
+		CLSID = s '{9FD8D5AD-646F-4C7B-8652-41C76BC15FAF}'
+	}
+	SliderCrankDb.SliderCrank = s 'SliderCrank Class'
+	{
+		CLSID = s '{9FD8D5AD-646F-4C7B-8652-41C76BC15FAF}'
+		CurVer = s 'SliderCrankDb.SliderCrank.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {9FD8D5AD-646F-4C7B-8652-41C76BC15FAF} = s 'SliderCrank Class'
+		{
+			ProgID = s 'SliderCrankDb.SliderCrank.1'
+			VersionIndependentProgID = s 'SliderCrankDb.SliderCrank'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{BED89941-05DD-476F-BD3C-E063B8157A13}'
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Autodesk
+		{
+			NoRemove ObjectDBX
+			{
+				NoRemove R17.0
+				{
+					NoRemove ActiveXCLSID
+					{
+						val ASDKSLIDERCRANK = s '{9FD8D5AD-646F-4C7B-8652-41C76BC15FAF}'
+					}
+				}
+			}
+		}
+	}
+}

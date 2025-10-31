@@ -1,0 +1,74 @@
+// (C) Copyright 1999-2008 by Autodesk, Inc. 
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted, 
+// provided that the above copyright notice appears in all copies and 
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting 
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to 
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+//
+
+// AsdkSquareLib.idl : IDL source for AsdkSquareLib.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkSquareLib.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+    uuid(8EA3FA30-B2C2-484F-BB39-50BDB294A35D),
+    version(1.0),
+    helpstring("AsdkSquareLib 1.0 Type Library")
+]
+library ASDKSQUARELIBLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+	//Importing english is ok here. We don't localize this idl/tlb.
+	//axdb18enu.tlb is guaranteed to be available in all locales.
+	//If you want to provide localized typelib then you must import
+	//localized tlb here.
+    importlib("axdb18enu.tlb");
+    [
+        object,
+        uuid(92DD3CDE-83B0-4A90-A31A-E5328F29EDCE),
+        dual,
+        helpstring("IAsdkSquareWrapper Interface"),
+        pointer_default(unique)
+    ]
+    interface IAsdkSquareWrapper : IAcadEntity
+    {
+        [propget, id(1), helpstring("property Number")] HRESULT Number([out, retval] short *pVal);
+        [propput, id(1), helpstring("property Number")] HRESULT Number([in] short newVal);
+        [propget, id(2), helpstring("property SquareSize")] HRESULT SquareSize([out, retval] double *pVal);
+        [propput, id(2), helpstring("property SquareSize")] HRESULT SquareSize([in] double newVal);
+        [propget, id(3), helpstring("property CenterPoint")] HRESULT CenterPoint([out, retval] VARIANT *pVal);
+        [propput, id(3), helpstring("property CenterPoint")] HRESULT CenterPoint([in] VARIANT newVal);
+    };
+
+    [
+        uuid(71DF4CE4-9286-400F-87F2-BDFEDE1C0315),
+        helpstring("AsdkSquareWrapper Class")
+    ]
+    coclass AsdkSquareWrapper
+    {
+        [default] interface IAsdkSquareWrapper;
+        [source] interface IAcadObjectEvents;
+    };
+};
+
+

@@ -1,0 +1,670 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Charles Mc Auley">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (WinNT; I) [Netscape]">
+   <TITLE>ObjectARX 2000 Training</TITLE>
+</HEAD>
+<BODY onload="parent.window.frames['index'].location.href='index_step05.htm'">
+
+<H1>
+<A NAME="Top"></A>Step 5 - Custom Objects - Extension Dictionary</H1>
+
+<HR WIDTH="100%">
+<H3>
+<A NAME="Step05 - Introduction"></A>Introduction</H3>
+In this section of the ObjectARX 2000 Training tutorial, we look at creating
+classes derived from <B><TT>AcDbObject</TT></B>. Our class will be <B><TT>AsdkEmployeeDetails</TT></B>
+and will be stored in the Extension Dictionary of an <B>EMPLOYEE</B> <B><TT>AcDbBlockReference</TT></B>.
+The <B><TT>AsdkEmployeeDetail</TT></B> object will contain employee information.
+Each instance of a named <B><TT>AcDbBlockReference</TT></B> entity&nbsp;
+is a reference to a single <B><TT>AcDbBlockTableRecord</TT></B> definition.
+Here we will use the "<B>EMPLOYEE</B>" block reference that we have used
+previously. The custom <B><TT>AsdkEmployeeDetails</TT></B> class will store
+an Employee ID; the employee's cubicle number; employee's first name and
+the employee's last name. Here is how the objects will relate to one another:
+<P><TT>Employee (class: AcDbBlockReference)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; |_ Extension Dictionary (class:AcDbDictionary)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_ "ASDK_EMPLOYEE_DICTIONARY" (class:AcDbDictionary)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_ "DETAILS" (class:AsdkEmployeeDetails)</TT>
+<P>In addition to our discussion of custom objects and extension dictionaries,
+here we introduce the concept of the separation of the User Interface from
+it's Object commonly termed DB/UI separation. In this section we will build
+two applications; an <B>ObjectDBX</B> application representing the DB portion
+of our application; and an <B>ObjectARX</B> application representing the
+UI portion of our application. You will be pleased to know that the ObjectARX
+Wizard handles both ObjectARX and ObjectDBX applications - as we will see
+shortly.
+<BR>&nbsp;
+<H3>
+<A NAME="Step05 - Objective"></A>Objective</H3>
+
+<BLOCKQUOTE>As a starting point for this exercise, use the files you created
+in the previous step or open the project contained in the <B><TT>Step05</TT></B>
+folder. In this exercise we will create three new AutoCAD commands "<B>ADDDETAIL</B>",
+"<B>LISTDETAILS</B>" and "<B>REMOVEDETAIL</B>".
+<P>When the "<B>ADDDETAIL</B>" command is executed,
+<UL>
+<LI>
+The user will be prompted to select an EMPLOYEE block reference.</LI>
+
+<LI>
+If the selection is successful,&nbsp; the user will be prompted&nbsp; to
+enter EMPLOYEE details.</LI>
+
+<LI>
+The function will get the entity's Extension Dictionary.</LI>
+
+<LI>
+The function will verify that the EMPLOYEE block reference has a base level
+"<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" dictionary.</LI>
+
+<LI>
+If the EMPLOYEE block reference does not contain an <B><TT>AsdkEmployeeDetails</TT></B>
+object, it will create a new <B><TT>AsdkEmployeeDetails</TT></B> object
+, fill in the appropriate details, and add the <B><TT>AsdkEmployeeDetails</TT></B>
+object to the base level of the EMPLOYEE block reference Extension Dictionary.</LI>
+</UL>
+When the "<B>LISTDETAILS</B>" command is executed,
+<UL>
+<LI>
+The user will be prompted to select an EMPLOYEE block reference.</LI>
+
+<LI>
+If the selection is successful, retrieve the EMPLOYEE block reference Extension
+Dictionary.</LI>
+
+<LI>
+If the EMPLOYEE block reference has an Extension Dictionary, retrieve the
+"<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" dictionary.</LI>
+
+<LI>
+If the EMPLOYEE block reference has an "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+dictionary, retrieve the "<B><TT>DETAILS</TT></B>" <B><TT>AsdkEmployeeDetails</TT></B>
+object.</LI>
+
+<LI>
+If the <B><TT>AsdkEmployeeDetails</TT></B> object exists, retrieve is data
+and prompt to the user.</LI>
+</UL>
+When the "<B>REMOVEDETAIL</B>" command is executed,
+<UL>
+<LI>
+The user will be prompted to select an EMPLOYEE block reference.</LI>
+
+<LI>
+If the selection is successful, the function will retrieve the EMPLOYEE
+block reference Extension Dictionary.</LI>
+
+<LI>
+If the EMPLOYEE block reference has an Extension Dictionary, the function
+will retrieve the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" dictionary.</LI>
+
+<LI>
+If the EMPLOYEE block reference has an "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+dictionary, it will retrieve the "<B><TT>DETAILS</TT></B>" <B><TT>AsdkEmployeeDetails</TT></B>
+object.</LI>
+
+<LI>
+If the <B><TT>AsdkEmployeeDetails</TT></B> object exists, it will erase
+it and if there are no other entries referencing the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+dictionary, the dictionary will also be erased.</LI>
+</UL>
+</BLOCKQUOTE>
+
+<H3>
+<A NAME="Step05 - Implementation"></A>Implementation</H3>
+
+<BLOCKQUOTE><B>NOTE:</B> Select the link to view implementation details.
+<UL>
+<LI>
+Load project "<B><TT>Step05</TT></B>", which was created with the ObjectARX
+Wizard and contains the commands and source from the previous step or continue
+with the files you created from the previous step.</LI>
+
+<LI>
+Create a sub project for the <A HREF="#Step05 - Create ObjectDBX module">ObjectDBX</A>
+(*.dbx) module.</LI>
+
+<LI>
+Create the <B><TT><A HREF="#Step05 - CreateAskdEmployeeDetails">AsdkEmployeeDetails</A></TT></B>
+object.</LI>
+
+<LI>
+Register the command <B><A HREF="#Step05 - ImpADDDETAILcommand">ADDDETAIL</A></B>,
+set the name of the function to be called to '<B><TT>asdkadddetail()</TT></B>'.</LI>
+
+<LI>
+Register the command <B><A HREF="#Step05 - ImpLISTDETAILScommand">LISTDETAILS</A></B>,
+set the name of the function to be called to '<B><TT>asdklistdetails()</TT></B>'.</LI>
+
+<LI>
+Register the command <B><A HREF="#Step05 - ImpREMOVEDETAILcommand">REMOVEDETAIL</A></B>,
+set the name of the function to be called to '<B><TT>asdkremovedetail()</TT></B>'.</LI>
+
+<LI>
+Add the <B><TT><A HREF="#Step05 - ImpAddAskdEmployeeDetails to module">AsdkEmployeeDetails</A></TT></B>
+object to the command module.</LI>
+
+<LI>
+<A HREF="#Step05 - Testing the application">Testing the application</A>.</LI>
+</UL>
+
+<H4>
+<A NAME="Step05 - Create ObjectDBX module"></A>Create a sub project for
+the ObjectDBX (*.dbx) module</H4>
+
+<OL>
+<LI>
+From the "File" pull down menu of Visual C++ 6.0, select "New...".</LI>
+
+<LI>
+Select the "Projects" tab in the dialog that appears.</LI>
+
+<LI>
+Select "ObjectARX 2000 AppWizard" in the list of project types.</LI>
+
+<LI>
+Enter <B>EmployeeDetails</B> as project name.</LI>
+
+<LI>
+Select the '<B>Add to current workspace</B>' radio button.</LI>
+</OL>
+<IMG SRC="step5_addEmployeeDetailsProject.jpg" HEIGHT=400 WIDTH=561>
+<P><B>Step 5 Figure 1 - Creating a Sub Project EmployeeDetails</B>
+<OL START=6>
+<LI>
+When presented with the new dialog (Step 1 of 1), choose "<B>ObjectDBX
+(custom object definition)</B>" radio button - <B>IMPORTANT!!</B></LI>
+
+<LI>
+Click "Finish" and then "OK."</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<OL START=5>
+<H4>
+<A NAME="Step05 - CreateAskdEmployeeDetails"></A>Create the <B><TT>AsdkEmployeeDetails</TT></B>
+object</H4>
+We will use the ObjectARX Wizard to create the <B><TT>AsdkEmployeeDetails</TT></B>
+object. Make sure that <B>EmployeeDetails</B> is the active project.
+<BR>&nbsp;
+<OL>
+<LI>
+Select the '<B>ObjectARX class wizard</B>' button from the ObjectARX Wizard
+toolbar as shown in the following illustration:</LI>
+
+<BR>&nbsp;</OL>
+<IMG SRC="step5_ARXClassWizardToolbar.jpg" HEIGHT=129 WIDTH=351>
+<P><B>Step 5 Figure 2 - Selecting the ObjectARX class wizard</B>
+<BR>&nbsp;
+<OL START=2>
+<LI>
+When presented with the <B>ObjectARX ClassWizard</B> dialog, click the
+"<B>Add class...</B>" button.</LI>
+
+<OL TYPE=a>
+<LI>
+When presented with the <B>New Class</B> dialog as shown below:</LI>
+
+<LI>
+Use <B>AsdkEmployeeDetails</B> as class name.</LI>
+
+<LI>
+Derive from <B>AcDbObject</B>.</LI>
+
+<LI>
+Use <B>ASDKEMPLOYEE_DETAILS</B> as the <B>DXF</B> name.</LI>
+
+<BR>&nbsp;</OL>
+<IMG SRC="step5_newEmployeeDetailsClass.jpg" HEIGHT=249 WIDTH=302>
+<P><B>Step 5 Figure 3 - Creating the <TT>AsdkEmployeeDetails</TT> class</B>
+<BR>&nbsp;
+<LI>
+Add the following member functions <B><TT>dwgInFields()</TT></B>, <B><TT>dwgOutFields()</TT></B>,
+<B><TT>dxfInFields()</TT></B>
+and <B><TT>dxfOutFields()</TT></B> as shown in the illustration below:
+These function are used so that we can write our custom class out to and
+read our custom class in from persistent storage. Refer to the ObjectARX
+Developer's Guide and online help for more information on these functions.</LI>
+
+<P><BR><IMG SRC="step5_addMemberFunctions.jpg" HEIGHT=469 WIDTH=580>
+<P><B>Step 5 Figure 4 - Adding member functions to the <TT>AsdkEmployeeDetails</TT>
+class</B>
+<BR>&nbsp;
+<LI>
+Add the following member variables as shown in the table and illustration:</LI>
+
+<BR>&nbsp;
+<TABLE BORDER COLS=3 WIDTH="50%" >
+<CAPTION><B><TT>Member Variables for AsdkEmployeeDetails object</TT></B></CAPTION>
+
+<TR>
+<TD><TT>Variable Name</TT></TD>
+
+<TD><TT>Data Type</TT></TD>
+
+<TD><TT>DXF Code</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_lastName</TT></TD>
+
+<TD><TT>char*</TT></TD>
+
+<TD><TT>300</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_firstName</TT></TD>
+
+<TD><TT>char*</TT></TD>
+
+<TD><TT>301</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_cube</TT></TD>
+
+<TD><TT>Adesk::Int32</TT></TD>
+
+<TD><TT>90</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_ID</TT></TD>
+
+<TD><TT>Adeak::Int32</TT></TD>
+
+<TD><TT>91</TT></TD>
+</TR>
+</TABLE>
+
+<P><IMG SRC="step5_addMemberVariables.jpg" HEIGHT=468 WIDTH=580>
+<P><B>Step 5 Figure 5 - Adding member variable to the <TT>AsdkEmployeeDetails</TT>
+class</B>
+<BR>&nbsp;</OL>
+<B>NOTE: </B>In addition to adding member variables to the project, the
+ObjectARX Wizard will also add the data access functions to our project
+for us. Here is a list of the function prototypes that were added to the
+<B><TT>AsdkEmployeeDetails.h</TT></B>
+file, see the <B><TT>AsdkEmployeeDetails.cpp</TT></B> for the implementation
+of these functions.
+<BR><B><TT></TT></B>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>//{{AFX_ARX_DATA_ACCESS(AsdkEmployeeDetails)</TT>
+<BR><TT>Acad::ErrorStatus setID(const Adesk::Int32 ID);</TT>
+<BR><TT>Acad::ErrorStatus iD(Adesk::Int32&amp; ID);</TT>
+<BR><TT>Acad::ErrorStatus setCube(const Adesk::Int32 cube);</TT>
+<BR><TT>Acad::ErrorStatus cube(Adesk::Int32&amp; cube);</TT>
+<BR><TT>Acad::ErrorStatus setFirstName(const char* firstName);</TT>
+<BR><TT>Acad::ErrorStatus firstName(char*&amp; firstName);</TT>
+<BR><TT>Acad::ErrorStatus setLastName(const char* lastName);</TT>
+<BR><TT>Acad::ErrorStatus lastName(char*&amp; lastName);</TT>
+<BR><TT>//}}AFX_ARX_DATA_ACCESS</TT></TD>
+</TR>
+</TABLE>
+
+<OL>&nbsp;</OL>
+
+<LI>
+Examine the source code generated by the ObjectARX Wizard.</LI>
+
+<OL TYPE=a>
+<LI>
+Take a look at <B><TT>AsdkEmployeeDetails.h</TT></B></LI>
+
+<BR>Pay close attention to the following:
+<BR><B><TT></TT></B>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>#ifndef ASDKEMPLOYEEDETAILS_DBXSERVICE</TT>
+<BR><TT>#define ASDKEMPLOYEEDETAILS_DBXSERVICE "ASDKEMPLOYEEDETAILS_DBXSERVICE"</TT>
+<BR><TT>#endif</TT></TD>
+</TR>
+</TABLE>
+
+<P>This was added by the ObjectARX Wizard. This will be used to register
+a service in ObjectARX.
+<BR>&nbsp;
+<LI>
+Take a look at <B><TT>AsdkEmployeeDetails.cpp</TT></B></LI>
+
+<LI>
+Take a look at <B><TT>EmployeeDetails.cpp</TT></B></LI>
+
+<BR>Pay close attention to the <B><TT>InitApplication()</TT></B> function
+which was generated by the ObjectARX Wizard:
+<BR><B><TT></TT></B>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>void InitApplication()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;// NOTE: DO NOT edit the following lines.</TT>
+<BR><TT>&nbsp;//{{AFX_ARX_INIT</TT>
+<BR><TT>&nbsp;AsdkEmployeeDetails::rxInit();</TT>
+<BR><TT>&nbsp;acrxBuildClassHierarchy();</TT>
+<BR><TT>&nbsp;acrxRegisterService(ASDKEMPLOYEEDETAILS_DBXSERVICE);</TT>
+<BR><TT>&nbsp;//}}AFX_ARX_INIT</TT>
+<P><TT>&nbsp;// TODO: add your initialization functions</TT>
+<P><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>Here we initialize the <B><TT>AsdkEmployeeDetails</TT></B> class, build
+the ObjectARX class hierarchy and add a service called <B><TT>ASKDEMPLOYEEDETAILS_DBXSERVICE</TT></B>,
+we will see later how we utilize this service in our ObjectARX application.
+For more information on these functions and their usage, refer to the ObjectARX
+Developers Guide and online help.
+<BR>&nbsp;</OL>
+
+<LI>
+Compile the project.</LI>
+
+<BR><B>NOTE:</B> The file extension for an ObjectDBX application is
+<B><TT>*.DBX</TT></B>,
+see Step 5 Figure 6 below for suggested ObjectDXB file location.</OL>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE><A NAME="Step05 - ImpADDDETAILcommand"></A><B>NOTE: </B>If
+you want to compile the ObjectARX application at this point, please refer
+to the "Add the <B><TT><A HREF="#Step05 - ImpAddAskdEmployeeDetails to module">AsdkEmployeeDetails</A></TT></B>
+object to the command module" instructions before compiling your application.</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<H4>
+Implementation of the ADDDETAIL command - <TT>'asdkadddetail()'</TT></H4>
+
+<H4>
+Algorithm</H4>
+
+<BLOCKQUOTE>
+<OL>
+<LI>
+Register the command <B>ADDDETAIL</B> with the ObjectARX Wizard and set
+the function to be call to '<B><TT>asdkadddetail()</TT></B>'.</LI>
+
+<LI>
+Let the user select a block reference (<B><TT>acedEntSel()</TT></B>).</LI>
+
+<OL TYPE=a>
+<LI>
+Convert the <B><TT>ads_name</TT></B> to an <B><TT>AcDbObjectId</TT></B>
+(<B><TT>acdbGetObjectId()</TT></B>).</LI>
+
+<LI>
+Open the object (<B><TT>acdbOpenAcDbObject()</TT></B>).</LI>
+
+<LI>
+Check with the <B><TT>isKindOf()</TT></B> function that the user has selected
+a block reference (<B><TT>AcDbBlockReference::desc()</TT></B>)</LI>
+
+<LI>
+Return if it is not a block reference.</LI>
+</OL>
+
+<LI>
+Input employee data for employee ID; employee Cube; employee first name;
+employee last name (<B><TT>acedGetInt()</TT></B>, <B><TT>acedGetString()</TT></B>).</LI>
+
+<LI>
+Get the extension dictionary of the EMPLOYEE block reference (<B><TT>AcDbObject::extensionDictionary()</TT></B>).</LI>
+
+<LI>
+If the EMPLOYEE block reference does not have an extension dictionary create
+one. (<B><TT>AcDbObject::createExtensionDictionary()</TT></B>)</LI>
+
+<LI>
+Open the extension dictionary. If the extension dictionary was erased previously,
+then open the erased extension dictionary, since we can reuse the extension
+dictionary.</LI>
+
+<LI>
+If the extension dictionary was erased (<B><TT>AcDbObject::isErased ()</TT></B>)
+unerase it (<B><TT>AcDbObject::erase(Adesk::kFalse)</TT></B>)</LI>
+
+<LI>
+Retrieve the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" (<B><TT>AcDbDictionary::getAt()</TT></B>)</LI>
+
+<OL TYPE=a>
+<LI>
+If the "<B><TT>ASDK_EMLOYEE_DICTIONARY</TT></B>" <B><TT>AcDbDictionary</TT></B>
+does not exist, create an "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" <B><TT>AcDbDictionary</TT></B>
+and add it to the EMPLOYEE block reference extension dictionary.</LI>
+</OL>
+
+<LI>
+Check to see if an <B><TT>AsdkEmployeeDetails</TT></B> object is already
+present in the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" (we store <B><TT>AsdkEmployeeDetails</TT></B>
+objects under the key "<B><TT>DETAILS</TT></B>")</LI>
+
+<OL TYPE=a>
+<LI>
+If an <B>AsdkEmployeeDetails</B> object does not exist, create a new <B>AsdkEmployeeDetails</B>
+object and set it's data.</LI>
+
+<LI>
+Add a new <B>AsdkEmployeeDetails</B> object under the key "<B>DETAILS</B>"
+in the "<B>ASDK_EMPLOYEE_DICTIONARY</B>"</LI>
+</OL>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step5 - asdkadddetail" and study the source code.</LI>
+</OL>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step05 - ImpLISTDETAILScommand"></A>Implementation of the LISTDETAILS
+command
+- '<B><TT>asdklistdetails()</TT></B>'</H4>
+
+<H4>
+Algorithm</H4>
+
+<OL>
+<OL>
+<LI>
+Register the command <B>LISTDETAILS</B> with the ObjectARX Wizard and set
+the function to be called to '<B><TT>asdklistdetails()</TT></B>'.</LI>
+
+<LI>
+Let the user select a block reference (<B><TT>acedEntSel()</TT></B>).</LI>
+
+<OL TYPE=a>
+<LI>
+Convert the <B><TT>ads_name</TT></B> to an <B><TT>AcDbObjectId</TT></B>
+(<B><TT>acdbGetObjectId()</TT></B>).</LI>
+
+<LI>
+Open the object (<B><TT>acdbOpenAcDbObject()</TT></B>).</LI>
+
+<LI>
+Check with the <B><TT>isKindOf()</TT></B> function that the user has selected
+a block reference (<B><TT>AcDbBlockReference::desc()</TT></B>).</LI>
+
+<LI>
+Return if it is not a block reference.</LI>
+</OL>
+
+<LI>
+Retrieve the extension dictionary of the block reference. If there is none
+return. (<B><TT>AcDbObject::extensionDictionary()</TT></B>).</LI>
+
+<LI>
+Retrieve the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" (<B><TT>AcDbDictionary::getAt()</TT></B>).
+If there is none return.</LI>
+
+<LI>
+Retrieve the <B><TT>AsdkEmployeeDetails</TT></B> object from the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+under the "<B><TT>DETAILS</TT></B>" key.</LI>
+
+<LI>
+Retrieve the <B><TT>AsdkEmployeeDetails</TT></B> object data and print
+the details.</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step5 - asdklistdetails" and study the source code.</LI>
+</OL>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step05 - ImpREMOVEDETAILcommand"></A>Implementation of the REMOVEDETAIL
+command - '<TT>asdkremovedetail<B>()</B></TT>'</H4>
+
+<H4>
+Algorithm</H4>
+
+<BLOCKQUOTE>
+<OL>
+<LI>
+Register the command <B>REMOVEDETAIL</B> with the ObjectARX Wizard and
+set the function to be called to '<B><TT>asdkremovedetail()</TT></B>'.</LI>
+
+<LI>
+Let the user select a block reference (<B><TT>acedEntSel()</TT></B>).</LI>
+
+<OL TYPE=a>
+<LI>
+Convert the <B><TT>ads_name</TT></B> to an <B><TT>AcDbObjectId</TT></B>
+(<B><TT>acdbGetObjectId()</TT></B>).</LI>
+
+<LI>
+Open the object (<B><TT>acdbOpenAcDbObject()</TT></B>).</LI>
+
+<LI>
+Check with the <B><TT>isKindOf()</TT></B> function that the user has selected
+a block reference (<B><TT>AcDbBlockReference::desc()</TT></B>).</LI>
+
+<LI>
+Return if it is not a block reference.</LI>
+</OL>
+
+<LI>
+Retrieve the extension dictionary of the block reference. If there is none
+return. (<B><TT>AcDbObject::extensionDictionary()</TT></B>).</LI>
+
+<LI>
+Retrieve the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" (<B><TT>AcDbDictionary::getAt()</TT></B>).
+If there is none return.</LI>
+
+<LI>
+Retrieve the <B><TT>AsdkEmployeeDetails</TT></B> object from the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+under the "<B><TT>DETAILS</TT></B>" key.</LI>
+
+<LI>
+Erase the <B><TT>AsdkEmployeeDetails</TT></B> object (<B><TT>AcDbObject::erase()</TT></B>).</LI>
+
+<LI>
+Erase the dictionaries if they contains no more entries. (<B><TT>AcDbDictionary::numEntries()</TT></B>)</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, your may use the ObjectARX component gallery under
+"Step5 - asdkremovedetail" and study the source code.</LI>
+</OL>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step05 - Add code to acrxEntryPoint()"></A>Add code to acrxEntryPoint()</H4>
+
+<OL>
+<OL>
+<LI>
+Add the following code to the '<B><TT>acrxEntryPoint()</TT></B>' of the
+'<B><TT>Project.cpp</TT></B>' file.</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>AcRxObject *pSvc;</TT>
+<BR><TT>if ( !(pSvc =acrxServiceDictionary->at (ASDKEMPLOYEEDETAILS_DBXSERVICE))
+) {</TT>
+<BR><TT>&nbsp;&nbsp; // Try to load the module, if it is not yet present</TT>
+<BR><TT>&nbsp;&nbsp; if ( !acrxDynamicLinker->loadModule ("AsdkEmployeeDetails.dbx",
+0) ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; acutPrintf ("Unable to load AsdkEmployeeDetails.dbx.
+Unloading this application...\n") ;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; return (AcRx::kRetError) ;</TT>
+<BR><TT>&nbsp;&nbsp; }</TT>
+<BR><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>Here we are checking to see if the ObjectDBX application is loaded.
+This is achieved by checking to see if the <B><TT>ASDKEMPLOYEEDETAILS_DBXSERVICE
+</TT></B>service
+is registered. If the service is not registered, load the ObjectDBX module.
+Alternatively this code could be added to the '<B><TT>InitApplication()</TT></B>'
+function generated by the ObjectARX Wizard.
+<P>NOTE: When loading our ObjectARX applications, the dependent ObjectDBX
+files are located in the same folder as the step we are working on, in
+this particular case '<B><TT>STEP05</TT></B>'. When we load our ObjectARX
+application, the associated ObjectDBX file(s) will be found. Normal practice
+is to locate ObjectDBX files in the "Autodesk Shared" folder which is usually
+located at:
+<P><B><TT>C:\Program Files\Common Files\Autodesk Shared</TT></B>
+<P><IMG SRC="step5_DBXLinkLoc.jpg" HEIGHT=372 WIDTH=577>
+<P><B>Step 5 Figure 6 - Location of ObjectDBX Files</B></OL>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step05 - ImpAddAskdEmployeeDetails to module"></A>Add the <B><TT>AsdkEmployeeDetails</TT></B>
+object to the command module</H4>
+
+<BLOCKQUOTE>
+<OL>
+<LI>
+Add the <B>AsdkEmployeeDetails.h</B> to <B>StdArx.h</B>&nbsp; - <B><TT>#include
+"EmployeeDetails\AsdkEmployeeDetails.h"</TT></B></LI>
+
+<LI>
+Add <B>AsdkEmployeeDetails.lib</B> to the libraries of the linker settings.</LI>
+
+<LI>
+In <B>Project.cpp</B> at the <B><TT>AcRx::kInitAppMsg</TT></B> location
+in <B><TT>acrxEntryPoint()</TT></B> add code to load the <B>DBX</B> module.
+You may use the ObjectARX component gallery under "Step5 - kInitAppMsg"
+and study the source code.</LI>
+</OL>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step05 - Testing the application"></A>Test the application</H4>
+
+<BLOCKQUOTE>
+<OL>
+<LI>
+Build the application and load the ObjectDBX module first then load the
+ObjectARX application. Insert some <B>EMPLOYEE</B> block references and
+run the <B>ADDDETAIL</B> command. After you have added some employee data
+you may call the commands <B>LISTDETAILS</B> or <B>REMOVEDETAIL</B>.</LI>
+</OL>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+</BODY>
+</HTML>

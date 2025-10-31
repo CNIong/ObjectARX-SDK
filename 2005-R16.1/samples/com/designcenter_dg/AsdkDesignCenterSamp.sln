@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkDesignCenterSamp", "AsdkDesignCenterSamp.vcproj", "{F9F73C41-48B2-40B0-8F59-F0F67AEB8D2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release MinDependency
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F9F73C41-48B2-40B0-8F59-F0F67AEB8D2C}.Debug.ActiveCfg = Debug|Win32
+		{F9F73C41-48B2-40B0-8F59-F0F67AEB8D2C}.Debug.Build.0 = Debug|Win32
+		{F9F73C41-48B2-40B0-8F59-F0F67AEB8D2C}.Release MinDependency.ActiveCfg = Release MinDependency|Win32
+		{F9F73C41-48B2-40B0-8F59-F0F67AEB8D2C}.Release MinDependency.Build.0 = Release MinDependency|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

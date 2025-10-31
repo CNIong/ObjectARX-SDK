@@ -1,0 +1,2492 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Charles McAuley">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (WinNT; I) [Netscape]">
+   <title>ObjectARX Samples Readme (content)</title>
+   <style>
+   body{font-family: Arial, Helvetica, sans-serif}
+   </style>
+</head>
+<body>
+
+<h2>
+<a NAME="top"></a>ObjectARX Samples Readme</h2>
+
+<hr WIDTH="100%">
+<h3>
+Introduction</h3>
+
+<p>This document provides an overview of the sample applications that come with ObjectARX. The sample applications are located in the ObjectARX <i>samples</i> directory. Whether you are new to ObjectARX or relatively experienced with it, the sample applications can be a source of ideas and an opportunity to learn new concepts. In addition to describing what each sample application
+does, this document explains the sample categories, lists the skill level required to understand
+each application, and provides a suggested order in which to go through the sample
+applications.</p>
+
+<hr WIDTH="100%">
+<h3>
+<a NAME="Sample_Categories"></a>Sample Categories</h3>
+<p>The ObjectARX sample applications are grouped into subdirectories according to the major focus of the sample code. The subdirectories and descriptions of the corresponding categories are listed below.</p>
+
+<dl>
+<dt><i>com</i></dt>
+<dd>These examples illustrate how to use COM with ObjectARX.</dd>
+<dt><i>database</i></dt>
+<dd>These examples focus on understanding and working with the AutoCAD database.</dd>
+<dt><i>editor</i></dt>
+<dd>These examples rely on the AutoCAD editor.</dd>
+<dt><i>entity</i></dt>
+<dd>These examples concentrate on deriving custom entities.</dd>
+<dt><i>graphics</i></dt>
+<dd>These examples emphasize the AcGi library.</dd>
+<dt><i>misc</i></dt>
+<dd>Miscellaneous examples include the startup wizard, eTransmit, and ISM.</dd>
+<dt><i>reactors</i></dt>
+<dd>These examples illustrate how to use reactors in ObjectARX.</dd>
+
+</dl>
+
+<hr WIDTH="100%">
+<h3>
+<a NAME="Skill_Desc_Level"></a>Skill Levels</h3>
+
+<p>To help you identify where to start and what skill level you need to understand a particular sample application, this document lists a skill level rating for each sample. The four levels, beginning, medium, high, and advanced, are characterized by the specific ObjectARX development skills described below.</p>
+
+<h4>
+<a NAME="Beg_level"></a>Beginning</h4>
+<p>
+At this level, the developer has an understanding of the AutoCAD database and knows how to do the following:</p>
+<ul>
+<li>
+Open and close objects.</li>
+<li>
+Understand symbol tables and symbol table records and how to use interators.</li>
+<li>
+Understand the Named Objects Dictionary and Extension Dictionaries.</li>
+<li>
+Understand the standard ObjectARX objects and entities.</li>
+<li>
+Create a standard entity/object and manipulate its properties.</li>
+</ul>
+
+<h4>
+<a NAME="Med_level"></a>Medium</h4>
+
+<p>At this level, the developer knows how to:</p>
+<ul>
+<li>
+Create a custom class derived from AcDbObject or AcDbEntity and understand what virtual functions need to be overridden as a result.</li>
+<li>
+Understand transactions and transient and persistent reactors.</li>
+<li>
+Understand the Multiple Document Interface.</li>
+<li>
+Understand document management.</li>
+</ul>
+
+<h4>
+<a NAME="High_level"></a>High</h4>
+<p>At this level, the developer knows how to:</p>
+<ul>
+<li>
+Create a custom class derived from AcDbCurve and understand what virtual functions need to be overridden as a result.</li>
+<li>
+Use AcEdJig.</li>
+<li>
+Use MFC with ObjectARX.</li>
+</ul>
+
+<h4><a NAME="Adv_level"></a>Advanced</h4>
+
+<p>At this level, the developer knows how to:</p>
+<ul>
+<li>
+Understand deep cloning.</li>
+<li>
+Understand protocol extensions.</li>
+<li>
+Understand COM and ActiveX as it pertains to AutoCAD and ObjectARX.</li>
+<li>
+Understand Design Center, input point processing, and Object Property Manager.</li>
+</ul>
+
+<hr WIDTH="100%">
+<h3>
+<a NAME="App_hierarchy"></a>Sample Applications by Subdirectory</h3>
+
+<p><b>com</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#AsdkMfcComSamp_dg">AsdkMfcComSamp_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#AsdkPlainComSamp_dg">AsdkPlainComSamp_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#AsdkSquareWrapper_dg">AsdkSquareWrapper_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#designcenter_dg">designcenter_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DesignCtrSample">DesignCtrSample</a>
+<br><b>database</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#arxdbg">Arxdbg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#clonemsg">clonemsg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#clonenod_dg">clonenod_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#clones">clones</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#clonreac_dg">clonreac_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#complex_dg">complex_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#curve_dg">curve_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;dataxtsn
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#edinvent">edinvent</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#peinvent">peinvent</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#deepclone_dg">deepclone_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#elipsjig_dg">elipsjig_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ents_dg">ents_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#entswerr_dg">entswerr_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#groups_dg">groups_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#longtrans_dg">longtrans_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ownrshp_dg">ownrshp_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#partopen">partopen</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pliniter_dg">pliniter_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tablerec_dg">tablerec_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tbliter_dg">tbliter_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#testdb_dg">testdb_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#xdata_dg">xdata_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#xrecord_dg">xrecord_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#xtsndict_dg">xtsndict_dg</a>
+<br><b>editor</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cmdcount">cmdcount</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#custobj_dg">custobj_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#docman">docman</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;mfcsamps
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#acuisample_dg">acuisample_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arxdd***
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#contextmenu">contextmenu</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dynamic_dg">dynamic_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ExtendTabs">ExtendTabs</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#modal">modal</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#modeless">modeless</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pretranslate">pretranslate</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#progbar">progbar</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rect">rect</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#simpledynprops">simpledynprops</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;StatusBar***
+<br><b>entity</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#blockorder">blockorder</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#curvetext">curvetext</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;DblClick***
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dimovrid">dimovrid</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#divisor">divisor</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;grip***
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#hilight_dg">hilight_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;mpolygon***
+<br>&nbsp;&nbsp;&nbsp;&nbsp;MultilineTooltipSamp***
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#polysamp">polysamp</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#referenc_dg">referenc_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#smiley">smiley</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tempapp_dg">tempapp_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#third">third</a>
+<br><b>graphics</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#acgisamp">acgisamp</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#coordsys_dg">coordsys_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#icon_dg">icon_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#jig3d">jig3d</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Material">Material</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#mesh_dg">mesh_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#shell_dg">shell_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#stylcvrt_dg">stylcvrt_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#teselate_dg">teselate_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#textstyl_dg">textstyl_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#traits_dg">traits_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#viewgeom_dg">viewgeom_dg</a>
+<br><b>misc</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;eTransmit***
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#fact_dg">fact_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ism">ism</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#specials_dg">specials_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;StartUpWiz***
+<br><b>reactors</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dbreact_dg">dbreact_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#inputpoint">inputpoint</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#othrwblk_dg">othrwblk_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#persreac_dg">persreac_dg</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#profilesamp_dg">profilesamp_dg</a>
+</p>
+<p>*** These samples have not yet been added to the Readme.</p>
+<p><b>Note</b> Samples with names that end in "_dg" are referenced in the <i>ObjectARX Developer's Guide.</i></p>
+
+
+<hr WIDTH="100%">
+<h3>
+<a NAME="Samp_app_desc"></a>Sample Applications Alphabetical by Name</h3>
+
+<p>This section lists the sample applications in
+alphabetical order and briefly discusses what each application does.</p>
+
+<p> <a href="#B">B</a> | <a href="#C">C</a> | <a href="#D">D</a> | <a href="#E">E</a> | <a href="#F">F</a> | <a href="#G">G</a> | <a href="#H">H</a> | <a href="#I">I</a> | <a href="#J">J</a> | <a href="#L">L</a> | <a href="#M">M</a> | <a href="#O">O</a> | <a href="#P">P</a> | <a href="#R">R</a> | <a href="#S">S</a> | <a href="#T">T</a> | <a href="#V">V</a> | <a href="#X">X</a>
+</p>
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="acgisamp"></a><b>Application:</b></td>
+<td>acgisamp</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>AcGi Interface classes</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are AcGiWorldDraw, AcGiWorldGeometry,
+AcGiSubEntityTraits, AcGiContext, AcDbEntity, and AcApDocManagerReactor.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>The acgisamp sample application demonstrates how to implement the
+AcGi interfaces in your application. The AcGi interfaces are used by entities
+in the database to draw themselves. AutoCAD implements these interfaces
+to acquire the graphical representation of entities for display and plotting
+purposes. Applications can also implement these interfaces to carry out
+various tasks that require graphical representation of entities. For example
+an application may wish to implement these interfaces to draw entities
+on a different window than AutoCAD's view, to convert entities to other
+images, drawing formats, and so on.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="AsdkMfcComSamp_dg"></a><b>Application:</b></td>
+<td>AsdkMfcComSamp_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>COM and MFC</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample demonstrates some of the many uses of COM access 
+using MFC.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="AsdkPlainComSamp_dg"></a><b>Application:</b></td>
+<td>AsdkPlainComSamp_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>COM</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample demonstrates some of the many uses of COM access 
+using the Win32 API.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="AsdkSquareWrapper_dg"></a><b>Application:</b></td>
+<td>AsdkSquareWrapper_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>COM wrappers for custom entities</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample shows an ATL COM wrapper for an ObjectARX custom entity. This project builds
+a DLL that will be loaded when COM access to the custom entity is requested.</td>
+</tr>
+</table>
+
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="arxdbg"></a><b>Application:</b></td>
+<td>arxdbg</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>ObjectARX application debugging tool</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+<td>See summary information</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application is provided to help in debugging and understanding
+ObjectARX applications. The application serves as a learning/debugging
+tool by allowing the user to monitor what types of events are happening
+in the system. There is an extensive Word document that describes this
+application's capabilities in great detail.</td>
+</tr>
+</table>
+
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="B"></a>
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="blockorder"></a><b>Application:</b></td>
+<td>blockorder</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Input/Filter API</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>High</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are AcDbIndex, AcDbFilter, and AcDbFilteredBlockIterator.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>The blockorder sample application demonstrates the use of the filter/index API. AutoCAD uses this API to implement xref clipping
+and the partial load feature.
+<p>Applications can use this API to three things:
+<ol>
+<li>
+Programmatically clip xrefs.</li>
+<li>
+Use partial loading programmatically.</li>
+<li>
+Create custom indices and filters to be used by AcDbBlockReference
+regeneration.</li>
+</ol>
+
+<p><br>The blockorder sample demonstrates usage #3 by implementing
+a custom index/filter that lets the user control the order in which entities
+are regenerated by an AcDbBlockReference. Applications may take advantage
+of usage #3 by filtering contents of blocks/xrefs based on custom criteria
+(in the case of blockorder, the custom criterion is the order in which
+the user wants the entities displayed).</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="C"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="clonemsg"></a><b><font color="#000000">Application:</b></td>
+<td>clonemsg</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Deep cloning, ownership types</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are AcDbObject, AcDbEntity and AcDbEditorReactor.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>The main focus of this application is deep cloning and maintaining
+the relationship between a custom entity and custom object, during save/open/wblock/insert/copy/block/explode
+operations. The application discusses hard and soft pointers as well as
+hard ownership. Other topics of interest are the Named Objects Dictionary
+and Extension Dictionaries. Note that in the project settings you can build
+the application for the following custom project settings:
+<br>
+<ul>
+<li>
+Win32 Direct</li>
+<li>
+Win32 ExtDict SoftPointer</li>
+<li>
+Win32 ExtDict HardPointer</li>
+<li>
+Win32 NOD SoftPointer</li>
+<li>
+Win32 NOD HardPointer</li>
+</ul>
+<p><br>These settings determine the object relationship type and how
+beginDeepCloneXlation() should behave according to these relationship types.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="clonenod_dg"></a><b>Application:</b></td>
+<td>clonenod_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>Deep cloning</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>High</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>Implements deep cloning for a user-defined object dictionary in the named objects dictionary.
+</td>
+</tr>
+</table>
+
+
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="clones"></a><b>Application:</b></td>
+
+<td>clones</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+
+<td>Shallow clone, deep clone, and cloning across databases</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>High</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+
+<td>No major class categories.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application discusses how to copy entities, and complex entities
+using clone() and deepCloneObjects(). There is a demonstration of copying
+an external drawing database into the current model space. This application
+is a good prelude for the 'clonemsg' sample application.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="clonreac_dg"></a><b>Application:</b></td>
+<td>clonreac_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>Customizing deep clone behavior</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Advanced</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>Implements a transient editor reactor to customize deep cloning behavior.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="cmdcount"></a><b>Application:</b></td>
+
+<td>cmdcount</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+
+<td>Demonstrates the use of Document and Editor reactors.</td>
+</tr>
+
+<tr>
+<td><b>Skill Level</b>:</td>
+
+<td>Medium</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td>Major classes derived from are AcEditorReactor, AcRxObject and
+AcApDocManagerReactor.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>The Command Counter application records the number of times each
+AutoCAD command, AcEd-registered command, or AutoLISP expression evaluation
+is invoked, plus the cumulative time spent with each. This application
+demonstrates how to use AutoCAD 2002 Document Manager reactor as well as
+an editor reactor.</td>
+</tr>
+</table>
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="complex_dg"></a><b>Application:</b></td>
+<td>complex_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>Complex entities</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>Creates blocks and a complex entity and adds them to the database.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="coordsys_dg"></a><b>Application:</b></td>
+<td>coordsys_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>Coordinate systems.</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This example demonstrates the use of isPerspective(), doPerspective(), getBackAndFrontClippingValues(), polygonDc(), polygonEye(), and polygon(). To do this, it takes an original line segment in model coordinates and creates its equivalents in eye and display coordinates. When displayed, all lines will overlap exactly.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="curve_dg"></a><b>Application:</b></td>
+<td>curve_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>Entities</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates the use of AcDbCurve protocol to create specific types of ellipses.
+</td>
+</tr>
+</table>
+
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="curvetext"></a><b>Application:</b></td>
+
+<td>curvetext</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Advanced custom entities, AutoCAD UI, Demand Loading and AcEdJig
+and embedded entities.</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td>Major classes derived from are AcDbCurve, AcEdInputPointMonitor,
+CAcUiDialog, AcEdJig and AcEdUIContext.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application demonstrates many aspects of ObjectARX's
+capabilities including the use of embedded entities. The application creates
+a custom entity derived from AcDbCurve and overwrites many of the required
+functions. The custom entity is text that follows the outline of a curve
+entity. If the user selects a grip point and changes the shape of the curve,
+the text follows the new shape of the curve. You enter text and manipulate
+the custom entity through an AutoCAD dialog. Changing the start
+and end points for the text demonstrates how to use the new Input Point
+Monitoring capabilities. A key feature of curvetext is that it embeds another
+entity: the curvetext object maintains a pointer to an AcDbCurve object.
+Demand Loading of the application is also covered.</td>
+</tr>
+</table>
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="custobj_dg"></a><b>Application:</b></td>
+<td>custobj_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>Custom objects</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>Implements a custom object. Creates a dictionary and iterates over it.
+</td>
+</tr>
+</table>
+
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="D"></a>
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="edinvent"></a><b>Application:</b></td>
+<td>dataxtsn\edinvent</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Extension Dictionary</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Medium</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+<td>Major classes derived from are AcDbObject.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application creates a custom class derived from AcDbObject
+and stores string data in the custom class. The custom object in turn is
+stored in the entities Extension Dictionary.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="peinvent"></a><b>Application:</b></td>
+<td>dataxtsn\peinvent</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Protocol Extension (PEX) and Xdata</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+<td>Major classes derived from are AcRxObject.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrate the Protocol Extension mechanism (PEX)
+and attaches Xdata to a selected entity. You can also use PEX to retrieve
+the Xdata from the entity that has the Xdata attached.</td>
+</tr>
+</table>
+
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="dbreact_dg"></a><b>Application:</b></td>
+<td>dbreact_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>Implements a database reactor and shows how to make the reactor MDI aware.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="deepclone_dg"></a><b>Application:</b></td>
+<td>deepclone_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>Demonstrates deep cloning.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="designcenter_dg"></a><b>Application:</b></td>
+
+<td>designcenter_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>Implements COM interfaces to extend the AutoCAD Design Center.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="DesignCtrSample"></a><b>Application:</b></td>
+
+<td>DesignCtrSample</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+
+<td>Extend the Design Center COM API</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+
+<td>Uses ATL Simple Object plus IAcDcContentView</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This COM based application is written in ATL. It extends the Design
+Center COM API to browse and display a DWF file in a separate window within
+the AutoCAD frame window. It demonstrates how to implement a COM server
+that is also a client of the Design Center COM Server. It further demonstrates
+how to use the Whip ocx control and how to map it to an MDI Child window.
+It requires a good knowledge of MFC, COM, and ATL.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="dimovrid"></a><b>Application:</b></td>
+
+<td>dimovrid</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+
+<td>Adding dimension overrides to dimension entities</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+
+<td>No major class categories.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application programmatically adds and manipulates dimension
+overrides. These adjustments parallel the changes that can be made
+to DIM* system variables in AutoCAD. Once dimension overrides are
+applied, the propagated change is often noticed visually in an altered
+display for a dimension, tolerance, or leader entity. For this application,
+you need to understand result buffers (refbuf structure) and xdata as it
+pertains to overriding dimension entities.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="divisor"></a><b>Application:</b></td>
+
+<td>divisor</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+
+<td>Custom Object Snaps</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td>Major classes derived from are AcGiGlyph, AcDbCustomOsnapInfo and
+AcDbCustomOsnapMode.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application is an extension of the 'third' sample application.
+This application discusses custom object snaps which can be applied to
+a whole polyline or each segment of a polyline. For each of the object
+snaps, the application draws a glyph based on the AcGiGlyph class.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="docman"></a><b>Application:</b></td>
+
+<td>docman</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+
+<td>Various aspects of Multiple Document management.</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>High</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td>Major classes derived from are AcApDocManagerReactor, AcEditorReactor,
+CDialog (MFC).</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application demonstrates how to manage multiple documents
+in AutoCAD 2002. This application also demonstrates the use of the document
+manager reactor and editor reactor and the factors that have to be taken
+into account when dealing with multiple documents. Topics include active
+and current documents, locking documents, creating new documents opening
+drawing files in memory, and opening drawings in their own window. This
+application is also a good example of how to use a modeless dialog in the
+context of multiple document usage. Executing commands within a document
+versus application context is also discussed.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="E"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="elipsjig_dg"></a><b>Application:</b></td>
+
+<td>elipsjig_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Using AcEdJig</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This program demonstrates how to use AcEdJig to provide a user interface for AcDbEllipse creation that's slightly different from that provided by AutoCAD itself.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="ents_dg"></a><b>Application:</b></td>
+<td>ents_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Entities</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates how to create entities, layers, and groups.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="entswerr_dg"></a><b>Application:</b></td>
+<td>entswerr_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Entities</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates error checking when creating entities.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="F"></a>
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="fact_dg"></a><b>Application:</b></td>
+<td>fact_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample provides various utilitiy functions that can be used in ObjectARX.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="G"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="groups_dg"></a><b>Application:</b></td>
+<td>groups_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Groups</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates the use of some of the AcDbGroup protocol.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="H"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="hilight_dg"></a><b>Application:</b></td>
+<td>hilight_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Medium</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates how to use ObjectARX API functions to highlight and unhighlight subentities of complex entities such as ACIS solids.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="I"></a>
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="icon_dg"></a><b>Application:</b></td>
+<td>icon_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>Viewport-dependent graphics.</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This example demonstrates the main use of polylineDc(), polygonDc(), and getViewportDcCorners()--graphics that depend on the physical layout of the viewport, like icons, markers, or borders that vary with the size of the viewport. For the demonstration, this example draws a box in the upper right corner of the viewport. The box's width and height are always a tenth of the viewport's shortest dimension and are centered a tenth of the viewport's shortest dimension down and to the left of the upper righthand corner of the viewport.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="inputpoint"></a><b>Application:</b></td>
+<td>inputpoint</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Input Point Manager</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are AcEdInputPointMonitor, AcEdInputPointFilter
+and AcEdInputContextReactor.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to use the Input Point Monitor.
+In this application, you add an input point monitor, filter, and reactor
+to the current document. The input point monitor watches your cursor movements.
+The input point filter tracks custom cursor behavior in addition to standard
+cursor movement. The input point reactor reacts to various begin and end
+input functions, whether graphical or keyboard user input. The reactor
+also allows you to accept or reject the user input.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="ism"></a><b>Application:</b></td>
+<td>ism</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Image Support Module</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Medium</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes used in this application are AcDbRasterImage, AcDbRasterImageDef,
+AcDbRasterImageDefReactor and AcDbRasterVariables.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to work with raster images. When
+you run this application, make sure that you load the acISMui.arx, which
+is located in the AutoCAD 2002 directory.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="J"></a>
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="jig3d"></a><b>Application:</b></td>
+<td>jig3d</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Using an AcEdJig and demonstrating the capabilities of the graphics
+library</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>High</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are AcEdJig and AcGiDrawable.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to use AcEdJig and also the capabilities
+of the AcGiDrawable class. In this application you can select a solid object
+in some rendered state, and move the select solid freeform or about the
+x, y, or z axis while the select solid retains the value of whatever shade
+mode was in effect for it.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="L"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="longtrans_dg"></a><b>Application:</b></td>
+<td>longtrans_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Long transactions</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program shows how to use long transactions, including checkout and checkin of entities.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="M"></a>
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="Material"></a><b>Application:</b></td>
+<td>Material</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td></td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="mesh_dg"></a><b>Application:</b></td>
+<td>mesh_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>mesh()</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This example demonstrates the use of the mesh() function.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="acuisample_dg"></a><b>Application:</b></td>
+<td>mfcsamps\acuisample_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>MFC</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample demostrates some of the many uses of AcUi MFC dialog 
+classes for AutoCAD.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="contextmenu"></a><b>Application:</b></td>
+<td>mfcsamps\contextmenu</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>How to create Context Menus</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Medium</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are AcEdUIContext.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to create Context Menus for AutoCAD
+2002. Context Menus are menus that appear as a result of right-clicking
+on the graphics screen. These menus are dynamic in nature, in that they
+change according to the operation being carried out at the time. With no
+entities selected, a menu item is added to the standard AutoCAD context
+menu. When lines are selected, the Context Menu is created in terms of
+line entities. This applies for circle entities also. If entities of different
+types are selected, the Context Menu changes to reflect this condition.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="dynamic_dg"></a><b>Application:</b></td>
+<td>mfcsamps\dynamic_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>MFC</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample demonstrates how to use an MFC DLL in an ObjectARX application.</td>
+</tr>
+</table>
+
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="ExtendTabs"></a><b>Application:</b></td>
+<td>mfcsamps\ExtendTabs</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Adding Tabs to a Standard Resizable AutoCAD Tabbed Dialog.</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Medium</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are CDialog, CAcUiTabChildDialog.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to add new tab to an existing
+resizable AutoCAD tabbed dialog, in this case the 'preferences' dialog.
+The tabs that are added to the 'preferences' dialog also demonstrate how
+to resize the controls within the tab, when the 'preferences' dialog changes
+size.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="modal"></a><b>Application:</b></td>
+<td>mfcsamps\modal</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Using an MFC Modal Dialog within ObjectARX</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+<td>Major classes derived from are CDialog.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This relatively simple application demonstrates how to implement
+a modal dialog within AutoCAD.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="modeless"></a><b>Application:</b></td>
+<td>mfcsamps\modeless</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>How to implement a modeless dialog in a MDI environment.</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Medium</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes derived from are CDialog, AcDbDatabaseReactor, AcApDocManagerReactor,
+AsdkDataManager, and AcEditorReactor.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to implement a modeless dialog
+in terms of AutoCAD 2002 Multiple Document Environment, as well as how
+to send commands to the command-line from the dialog context. This application
+also implements reactors for document, editor, and database. Information
+on changes and additions in database entities are reflected in the modeless
+dialog.</td>
+</tr>
+</table>
+
+
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="pretranslate"></a><b>Application:</b></td>
+<td>mfcsamps\pretranslate</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Capture AutoCAD message</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+<td>None</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample shows how to pretranslate AutoCAD messages before they're
+processed by AutoCAD.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="progbar"></a><b>Application:</b></td>
+<td>mfcsamps\progbar</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>How to implement a Progress Bar on the status bar</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+<td>None</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to put a Progress Bar on the
+AutoCAD status bar.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="O"></a>
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="othrwblk_dg"></a><b>Application:</b></td>
+<td>othrwblk_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample shows correct and incorrect ways to use AcEditorReactor::otherWblock to get the object ID of the model space block table record for the destination database.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="ownrshp_dg"></a><b>Application:</b></td>
+<td>ownrshp_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Ownership</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates deriving from AcDbObject and establishing ownership trees.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="P"></a>
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="partopen"></a><b>Application:</b></td>
+<td>partopen</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+<td>Demonstrate AutoCAD 2002 Partial Open techniques</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>High</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classes used by this application are AcDbLayerFilter and
+AcDbSpatialFilter. Class derived from are AcEditorReactor.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates AutoCAD 2002 capability to partially
+open drawing file based on Layer relationship and spatial relationships.
+There is also an editor reactor that responds to the partial open requests
+and veto operations.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="persreac_dg"></a><b>Application:</b></td>
+<td>persreac_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Persistent reactors</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates the use of persistent reactors by attaching two reactors one to each of two lines. Each reactor stores the object ID of the line to which it is not attached. When the line the reactor is attached to is lengthened or shortened, the reactor opens the other line and modifies its length to be the same as the new length of the line just changed.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="pliniter_dg"></a><b>Application:</b></td>
+<td>pliniter_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates iterating over the subentity vertices of an AcDb2dPolyline.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="polysamp"></a><b>Application:</b></td>
+<td>polysamp</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>This application demonstrate multiple techniques and technologies.
+(Not a beginner's application.)</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+<td>See Summary Information below.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application is not targeted at the beginning ObjectARX Developer.
+This application demonstrates many techniques and technologies as follows:
+<br>
+<ul>
+<li>
+How to implement a custom entity class.</li>
+<li>
+How transactions work.</li>
+<li>
+How to implement an OLE Automation interface for a custom class.</li>
+<li>
+How to split your application into a UI and a Custom Object section.</li>
+<li>
+How to build an Object Enabler.</li>
+</ul>
+
+<p><br>This is the Developer Consulting Group melting-pot application,
+in that it has a little of everything.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="profilesamp_dg"></a><b>Application:</b></td>
+<td>profilesamp_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Profile Manager notifications</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample demonstrates some of the many uses of the Profile Manager.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="R"></a>
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="rect"></a><b>Application:</b></td>
+<td>rect</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Demonstrate how to manage global data on a per-document basis.</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td>High</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td>Major classed derived form are AcApDocManagerReactor and AcEdJig.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This application demonstrates how to manage global data on a per-document
+basis. All the global data for this application is placed in a class.For
+each open drawing, that class data is managed by template map class (created
+by ObjecARX Wizard). This application draws a rectangle exactly like the
+AutoCAD RECTANG command. There is a document manager that manages which
+set of data belongs to which document, and also removes the document's
+global data when that document is destroyed. To see the effect of the global
+data, open 2 drawings and set the chamfer radius to a different value for
+each document. Start the custom rectangle in one window, then switch to
+the other window. Start the custom rectangle command, finish the command
+in the second window and return to the first window, and to finish the
+rectangle. This will demonstrate why proper management of global data is
+much more important in AutoCAD 2002 that previous versions of AutoCAD.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="referenc_dg"></a><b>Application:</b></td>
+<td>referenc_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Hard pointer references</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates interobject references. It creates a class that extends AcDbEllipse by adding functionality to store a dynamic array of hard pointer object IDs. The subErase() member function has been overriden and implemented such that whenever an object of this class is erased, the objects pointed to by the hard pointer IDs stored within the object will also be erased.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="S"></a>
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="shell_dg"></a><b>Application:</b></td>
+<td>shell_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>shell()</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This example demonstrates the use of the shell() function.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="simpledynprops"></a><b>Application:</b></td>
+
+<td>simpledynprops</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Dynamic Properties of the Object Property Manager</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td>IDynamicProperty, ICategorizeProperties and IEnumProperty.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application demonstrates the dynamic properties of the Object
+Properties Manager. In this application, we attach an AcDbXrecord to an
+AcDbDictionary to a selected entities Extension Dictionary. You can view
+and edit this data in the Object Properties window.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="smiley"></a><b>Application:</b></td>
+
+<td>smiley</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>This application demonstrates multiple techniques and technologies.
+(Not a beginner's application.)</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Advanced</td>
+</tr>
+
+<tr>
+<td><b>Classes:</b></td>
+
+<td>See Summary Information below.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application demonstrates defining a custom entity in an ObjectDBX
+object enabler, and also how to make use of this entity from an ObjectARX
+User Interface application (which defines commands). There is also a COM
+wrapper DLL project for each of the DBX and the ARX modules, which not
+only expose the entity and commands through Automation, but also categorizes
+the entity's properties for the AutoCAD Properties Window.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="specials_dg"></a><b>Application:</b></td>
+<td>specials_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This directory contains code samples that get an object ID and create owner relationships. It also contains files that expand various macros used in the SDK.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="stylcvrt_dg"></a><b>Application:</b></td>
+<td>stylcvrt_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>AcDb and AcGi text styles.</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates converting back and forth between AcDb and AcGi text styles.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="T"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="tablerec_dg"></a><b>Application:</b></td>
+
+<td>tablerec_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Symbol tables</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This program demonstrates creating a symbol table record (specifically a layer table record), filling in the required data, and then adding it to the layer table.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="tbliter_dg"></a><b>Application:</b></td>
+
+<td>tbliter_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Symbol tables</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This program demonstrates iterating over a symbol table. In this example, the linetype table is used.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="tempapp_dg"></a><b>Application:</b></td>
+<td>tempapp_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Protocol extension</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates ObjectARX protocol extension. It implements a protocol extension for AcDbCircle, AcDbEllipse, and AcDbRegion.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="teselate_dg"></a><b>Application:</b></td>
+<td>teselate_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>worldDraw() and viewportDraw()</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample shows a unit circle centered at the origin that depends on a viewport's view of the circle and tries to draw the circle with a polyline with the minimum number of discernible segments. It demonstrates one reason getNumPixelsInUnitSquare() is needed, but does not show how to optimally code the task.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="testdb_dg"></a><b>Application:</b></td>
+
+<td>testdb_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Reading and writing database objects</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>Beginning</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This program demonstrates reading and writing AcDbDatabase objects.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="textstyl_dg"></a><b>Application:</b></td>
+<td>textstyl_dg</td>
+</tr>
+<tr>
+<td><b>Subject:</b></td>
+<td>AcGi text styles</td>
+</tr>
+<tr>
+<td><b>Skill Level:</b></td>
+<td>Beginning</td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program demonstrates the use of AcGi text styles.
+</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td><a NAME="third"></a><b>Application:</b></td>
+
+<td>third</td>
+</tr>
+
+<tr>
+<td><b>Subject:</b></td>
+
+<td>Custom Object Snaps</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td>High</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td>Major classes derived from are AcGiGlyph, AcDbCustomOsnapInfo and
+AcDbCustomOsnapMode.</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This application discusses custom object snaps which can be applied
+to a whole polyline or each segment of a polyline. For each of the object
+snap, the application draws a glyph based on the AcGiGlyph class. See the
+sample application 'divisor', which is an extension of this application.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="traits_dg"></a><b>Application:</b></td>
+<td>traits_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Subentity traits</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This sample demonstrates using many of the AcGiSubEntityTraits class functions for controlling the properties of the graphics primitives drawn during entity elaboration.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="V"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="viewgeom_dg"></a><b>Application:</b></td>
+<td>viewgeom_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>worldDraw() and viewportDraw(), showing the use of getNumPixelsInUnitSquare()</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This example demonstrates using viewportDraw(), getModelToEyeTransform(), doPerspective(), RegenType(), and polylineEye().</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%"><a NAME="X"></a>
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="xdata_dg"></a><b>Application:</b></td>
+<td>xdata_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+<td>Extended entity data</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+<td>This program shows how to add and access extended entity data (xdata).</td>
+</tr>
+</table>
+
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="xrecord_dg"></a><b>Application:</b></td>
+
+<td>xrecord_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Xrecords</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>This program demonstrates using xrecords.</td>
+</tr>
+</table>
+
+<hr ALIGN=LEFT WIDTH="80%">
+<table WIDTH="80%" >
+<tr>
+<td VALIGN=TOP><a NAME="xtsndict_dg"></a><b>Application:</b></td>
+
+<td>xtsndict_dg</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Subject:</b></td>
+
+<td>Extension dictionaries</td>
+</tr>
+
+<tr>
+<td><b>Skill Level:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Classes:</b></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><b>Summary:</b></td>
+
+<td>
+This program demonstrates using extension dictionaries.</td>
+</tr>
+</table>
+
+</body>
+</html>

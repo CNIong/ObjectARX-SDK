@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Charles Mc Auley">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (WinNT; I) [Netscape]">
+   <TITLE>ObjectARX 2000 Training</TITLE>
+</HEAD>
+<BODY onload="parent.window.frames['index'].location.href='index_step02.htm'">
+
+<H1>
+<A NAME="Top"></A>Step 2 - Input Functions</H1>
+
+<H2>
+
+<HR WIDTH="100%"><A NAME="Step02 - Introduction"></A>Introduction</H2>
+As you have seen in the previous section it is quite an effort to create
+an ObjectARX application manually. In this step you will be introduced
+to the ObjectARX Wizard. Here we will use the ObjectARX Wizard to create
+our ObjectARX application and then we will revisit the ObjectARX Wizard
+to add two commands to our application. For this application and remaining
+applications outlined in the various steps of this tutorial, we will utilize
+the ObjectARX Wizard. We will also take a look at how to use the ObjectARX
+Wizard Components Gallery, which is a useful tool for storing commonly
+used functions and code.
+<P><B>NOTE:</B> In the Visual C++&nbsp; "Project->Settings…" select the
+same "Additional include directories" and "Additional Library Path" as
+in Step 1. Alternatively, add these paths in "Tools->Options…" in the Directories
+tab (this will then be valid for all the projects).
+<P><B>NOTE:</B> If the toolbar has not been included during the installation
+of the ObjectARX Wizard, add it using the Visual C++&nbsp; menu "Tools->Customize".
+On the 'Add-inns and Macro Files' tab, select the ObjectARXAddIn.DSAddIn.1
+check box. (See 'ObjectARX AddIn.hlp' file in 'ObjectARX 2000\utils' directory).
+<H3>
+<A NAME="Step02 - Creating an ObjectARX AppWizard"></A>Creating an ObjectARX
+AppWizard Application</H3>
+
+<OL>
+<LI>
+Close your previous project by selecting "Close Workspace" from Visual
+C++ "File" menu, then start a new project and select "ObjectARX 2000 AppWizard"
+as shown below. As a project name we will simply use "Project".</LI>
+</OL>
+
+<BLOCKQUOTE><IMG SRC="step2_newObjectArxWizardProject.JPG" HEIGHT=401 WIDTH=561></BLOCKQUOTE>
+
+<BLOCKQUOTE><B>Step 2 Figure 1 - Using the ObjectARX 2000 AppWizard</B></BLOCKQUOTE>
+
+<OL START=2>
+<LI>
+When your are presented with the the<B> ObjectARX 2000 AppWizard - Step
+1 of 1 </B>dialog, enter your Registered Developer Symbol (RDS). Here we
+enter '<B>Asdk</B>'. Make sure that 'ObjectARX (AutoCAD extension)" radio
+button is selected. For more information on Registered Developer Symbols
+(RDS) go to the following URL:</LI>
+</OL>
+
+<BLOCKQUOTE>&nbsp;<A HREF="http://www.autodesk.com/solution/partners/adn/symbols/index.htm">http://www.autodesk.com/solution/partners/adn/symbols/index.htm</A></BLOCKQUOTE>
+
+<OL START=3><IMG SRC="step2_newObjectArxWizardStep1Of1.JPG" HEIGHT=384 WIDTH=477>
+<P><B>Step 2 Figure 2 - ObjectARX Wizard Step 1 of 1</B>
+<BR>&nbsp;
+<LI>
+Select the "Finish" button and press "OK". The ObjectARX Wizard will setup
+the Project Setting appropriately and also create a set of starter files.
+Explore and examine the files that the ObjectARX Wizard has created for
+you.</LI>
+
+<BR>&nbsp;</OL>
+
+<H3>
+<A NAME="Step02 - Adding commands using the ObjectARX Wizard"></A>Adding
+commands using the ObjectARX Wizard</H3>
+
+<BLOCKQUOTE>We will now add two commands to our application using the ObjectARX
+Wizard; '<B>myInput</B>' and '<B>mySelect</B>'.</BLOCKQUOTE>
+
+<OL>
+<LI>
+From the ObjectARX Wizard toolbar select the "<B>CMD</B>" button.</LI>
+
+<P><BR><IMG SRC="step2_ObjectArxWizardToolbar.JPG" HEIGHT=108 WIDTH=327>
+<P><B>Step 2 Figure 3 - ObjectARX Wizard Toolbar</B>
+<BR>&nbsp;
+<LI>
+When presented with the ObjectARX Defined Commands dialog, add two new
+commands "<B>MYSELECT</B>" and "<B>MYINPUT</B>" as shown below. (When you
+have entered data for a command, press the “Add” button to add it to the
+“List of new commands:”).</LI>
+
+<P><BR><IMG SRC="step2_commandRegistration.JPG" HEIGHT=543 WIDTH=545>
+<BR>&nbsp;
+<P><B>Step 2 Figure 4 - ObjectARX Defined Commands Dialog</B>
+<P>From the dialog you can select the "<B>OK</B>" button or the "<B>Edit
+code</B>" button. ObjectARX Wizard will create a "<B><TT>ProjectCommands.CPP</TT></B>"
+file where you can implement the actions that your commands execute. Here
+is the listing of what the ObjectARX Wizard will create:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>/////////////////////////////////////////////</TT>
+<BR><TT>// ObjectARX defined commands</TT>
+<P><TT>#include "StdAfx.h"</TT>
+<BR><TT>#include "StdArx.h"</TT>
+<P><TT>// This is command 'MYINPUT'</TT>
+<BR><TT>void asdkmyinput()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;// TODO: Implement the command</TT>
+<P><TT>}</TT>
+<P><TT>// This is command 'MYSELECT'</TT>
+<BR><TT>void asdkmyselect()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;// TODO: Implement the command</TT>
+<P><TT>}</TT></TD>
+</TR>
+</TABLE>
+</OL>
+
+<H3>
+<A NAME="Step02 - Using the ObjectARX Wizard Component Gallery"></A>Using
+the ObjectARX Wizard Component Gallery</H3>
+
+<OL>Here we will demonstrate how to use the ObjectARX Wizard Component
+Gallery. The ObjectARX Wizard Component Gallery can be found at the following
+location on the ObjectARX Wizard toolbar:
+<P><IMG SRC="step2_toolbarARXComponentLocation.jpg" HEIGHT=130 WIDTH=395>
+<P><B>Step 2 Figure 5 - Selecting the ObjectARX Wizard Component Gallery
+from the Toolbar</B>
+<P>As mentioned previously the files contained in the directory for each
+step represent the starting point for that particular step. To demonstrate
+the ObjectARX Wizard Component Gallery, open the <B><TT>ProjectCommand.CPP</TT></B>
+file from the <B><TT>Step03</TT></B> folder. The files contained in the
+<B><TT>Step03</TT></B>
+folder represent the state of the finished application for <B><TT>Step02</TT></B>.
+From this file we are going to add the '<B><TT>asdkmyselect()</TT></B>'
+function to the ObjectARX Wizard Component Gallery. With the <B><TT>ProjectCommands.CPP</TT></B>
+file open in Visual C++, highlight the '<B><TT>asdkmyselect()</TT></B>'
+function. From the ObjectARX Wizard Toolbar click the ObjectARX Component
+button. This will launch the ObjectARX Wizard Component Gallery dialog
+as show in the following illustration.
+<P><IMG SRC="step2_ObjectARXComponentsDialog.jpg" HEIGHT=529 WIDTH=691>
+<P><B>Step 2 Figure 6 - ObjectARX Components Dialog</B>
+<BR>&nbsp;
+<OL>
+<LI>
+Select the 'Store current selection...' button.</LI>
+</OL>
+
+<P><BR>When you are presented with the New ObjectARX Component dialog as
+show below, complete the instructions as follows:
+<OL>&nbsp;</OL>
+<IMG SRC="step2_NewObjectARXComponent.jpg" HEIGHT=358 WIDTH=441>
+<P><B>Step 2 Figure 7 - New ObjectARX Component Dialog</B>
+<BR>&nbsp;
+<OL START=2>
+<LI>
+In the edit box next to the 'Create tree' button, enter "Step02 Function",
+then select the 'Create tree' button.</LI>
+
+<LI>
+Select the 'Function' radio button.</LI>
+
+<LI>
+In the 'Declaration' edit box enter the function prototype, in this case
+'<B><TT>void asdkmyselect()</TT></B>'.</LI>
+
+<LI>
+In the 'Comment:' edit box enter whatever comment best describes the nature
+of the function.</LI>
+
+<LI>
+Select the 'OK' button.</LI>
+
+<LI>
+Select the 'Close' button on the ObjectARX Components Dialog.</LI>
+
+<LI>
+Close the <B><TT>ProjectCommands.CPP</TT></B> file from the <B><TT>Step03</TT></B>
+folder.</LI>
+
+<LI>
+Click the 'ObjectARX Components' button on the ObjectARX Wizard toolbar
+again.</LI>
+</OL>
+
+<P><BR>When presented with the ObjectARX Components dialog as shown below,
+you will see that the function '<B><TT>asdkmyselect()</TT></B>' has been
+added to the Component Gallery.
+<P><IMG SRC="step2_askdmyselectComponent.jpg" HEIGHT=380 WIDTH=428>
+<P><B>Step 2 Figure 8 - Component added to ObjectARX Components Gallery</B>
+<BR>&nbsp;
+<OL START=10>
+<LI>
+Click on the functions entry in the tree list as shown above.&nbsp; Then
+type <B><TT>StdArx.h</TT></B> in the "Add declaration in:" edit box type
+<B><TT>ProjectCommands.cpp</TT></B>
+in the "Append implementation to:" edit box. Click the "Insert" button.</LI>
+</OL>
+
+<P><BR>This will add the '<B><TT>void asdkmyselect()</TT></B>' function
+prototype to the <B><TT>StdArx.h</TT></B> file and add the function body
+to the <B><TT>ProjectCommands.CPP</TT></B> file. In addition to functions
+we can also add source files to our ObjectARX Components Gallery. This
+is a very useful feature for commonly used functions and source code.
+<BR>&nbsp;</OL>
+
+<H3>
+<A NAME="Step02 - Getting Input using"></A>Getting Input using ObjectARX</H3>
+
+<OL>ObjectARX offers the following input functions. Refer to the ObjectARX
+Online Help for a complete description of how to use these functions.
+<P><TT><B>acedGetInt</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used
+to get an integer value</TT>
+<BR><TT><B>acedGetReal</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to
+get a real value</TT>
+<BR><TT><B>acedGetString</B>&nbsp;&nbsp;&nbsp;&nbsp; used to get a string</TT>
+<BR><TT><B>acedGetAngle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </B>used to get a
+angle value</TT>
+<BR><TT><B>acedGetKword</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to get a
+key word</TT>
+<BR><TT><B>acedInitGet</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to
+initialize acedGetXXXX functions</TT>
+<BR><TT><B>acedGetFileD</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to retrieve
+file selection from a file dialog</TT>
+<BR><TT><B>acedGetPoint</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to pick
+a point</TT>
+<BR><TT><B>acedGetDist</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to
+get the distance between two points</TT>
+<BR><TT><B>acedGetCorner</B>&nbsp;&nbsp;&nbsp;&nbsp; see Online Help for
+a complete description</TT>
+<P>ObjectARX offers the following functions for selection of AutoCAD entities.
+(Again refer to the ObjectARX Online Help for a complete description of
+how to use these functions).
+<P><TT><B>acedEntSel</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to select
+a single entity</TT>
+<BR><TT><B>acedNEntSel</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used to select
+a single, nested entity</TT>
+<BR><TT><B>acedNEntSelP</B>&nbsp;&nbsp;&nbsp;&nbsp; used to select a single,
+nested entity</TT>
+<BR><TT><B>acutSSGet</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used
+to select multiple entities</TT></OL>
+
+<H3>
+<A NAME="Step02 - Objective"></A>Objective</H3>
+
+<OL>
+<OL>
+<LI>
+Implement the "<B>MYINPUT</B>" command. The "<B>MYINPUT</B>" command is
+to demonstrate the use of ObjectARX's input functions.</LI>
+
+<OL TYPE=a>
+<LI>
+Ask the user for an integer value such that, a negative value is disallowed
+and a zero value is also disallowed.</LI>
+
+<LI>
+Ask the user for a real value, but also enable keyword based input such
+that the user can enter one of the following values:</LI>
+
+<BR>"<B>PI</B>" "<B>A</B>" "<B>B</B>" "<B>C</B>" defaulting to "<B>C</B>"
+if the user presses the &lt;ENTER> key. The value of a double will be set
+to <B>3.14</B> for "<B>PI</B>"; <B>10.0</B> for "<B>A</B>"; <B>11.0</B>
+for "<B>B</B>"; <B>12.0</B> for "<B>C</B>".
+<LI>
+Take into account that the user can press the &lt;ESC> key during execution
+of the command. Handle this case appropriately.</LI>
+
+<LI>
+Display at the command prompt, the value of the integer variable and the
+value of the double variable.</LI>
+
+<BR>&nbsp;</OL>
+
+<LI>
+Implement the "<B>MYSELECT</B>" command. The "<B>MYSELECT</B>" command
+is to demonstrate the use of ObjectARX's entity selection functions.</LI>
+
+<OL TYPE=a>
+<LI>
+Ask the user to select and entity.</LI>
+
+<LI>
+If the entity was successfully selected, display on the command prompt
+the Object ID of the entity. Hint: this is the first element of the <B><TT>ads_name</TT></B>
+data type.</LI>
+</OL>
+</OL>
+
+<P><BR><B>NOTE:</B> For solved implementations of the "<B>MYINPUT</B>"
+and "<B>MYSELECT</B>" commands refer to the <B><TT>ProjectCommands.CPP</TT></B>
+file in the <B><TT>Step03</TT></B> folder.</OL>
+
+</BODY>
+</HTML>

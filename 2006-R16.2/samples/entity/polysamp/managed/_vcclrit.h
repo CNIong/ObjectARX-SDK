@@ -1,0 +1,1 @@
+#error See KB article at http://support.microsoft.com/?id=814472.  The contents of _vcclrit.h are given under 'Users of Visual Studio.NET 2002'.  Copy the contents here, and comment this #error

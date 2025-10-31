@@ -1,0 +1,27 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2017 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+  
+#define IDH_CONTENTS		0x1
+#define IDH_OBJECTS		0x2
+
+#define IDH_COMPOLYGON_PROPERTIES 0x10
+#define IDH_COMPOLYGON_METHODS 0x11
+#define IDH_COMPOLYGON_EVENTS  0x12
+
+#define	IDH_TEXTSTRING		0x101
+#define	IDH_NUMSIDES		0x102
+#define	IDH_NORMAL		0x103
+#define	IDH_CENTER		0x104
+#define	IDH_STARTPOINT		0x105
+#define	IDH_TEXTSTYLENAME	0x106
+#define	IDH_GETVERTICES		0x107
+#define	IDH_ELEVATION		0x108
+#define	IDH_ICOMPOLYGON		0x2 /*IDH_OBJECTS*/
+#define	IDH_CCOMPOLYGON		0x2 /*IDH_OBJECTS*/

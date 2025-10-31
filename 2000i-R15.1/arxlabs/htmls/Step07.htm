@@ -1,0 +1,638 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Charles Mc Auley">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (WinNT; I) [Netscape]">
+   <TITLE>ObjectARX 2000 Training</TITLE>
+</HEAD>
+<BODY onload="parent.window.frames['index'].location.href='index_step07.htm'">
+
+<H1>
+<A NAME="Top"></A>Step 7 - Transient Reactors</H1>
+
+<HR WIDTH="100%">
+<H2>
+<A NAME="Step07 - Introduction"></A>Introduction</H2>
+In this section of the ObjectARX 2000 Training tutorial, we take a look
+at Transient Reactors. Reactors are placed in the AutoCAD environment to
+watch and react to events that occur in AutoCAD. Reactors come in a variety
+of types. In this step we will look at four type of reactors namely; the
+database reactor (<B><TT>AcDbDatabaseReactor</TT></B>); the AutoCAD editor
+reactor (<B><TT>AcDbEditorReactor</TT></B>); an object reactor (<B><TT>AcDbObjectReactor</TT></B>);
+and the AutoCAD document manager reactor (<B><TT>AcApDocManagerReactor</TT></B>).
+The database reactor (<B><TT>AcDbDatabaseReactor</TT></B>) monitors the
+AutoCAD database and can react to events such as adding or removing entities
+to and from the database. The editor reactor (<B><TT>AcDbEditorReactor</TT></B>)
+monitors AutoCAD editor and can react to certain AutoCAD commands being
+executed. The object reactor (<B><TT>AcDbObjectReactor</TT></B>) can (for
+example) monitor the events on a specific entity, such as changes in properties
+of that entity. Finally AutoCAD 2000 is a multiple document environment
+and the document manager reactor (<B><TT>AcApDocManagerReactor</TT></B>)
+can monitor events such as switching from one drawing to another and can
+also be used to manage a drawing's global data.
+<H3>
+<A NAME="Step07 - Objective"></A>Objective</H3>
+This application does not register any new AutoCAD commands, it depends
+on instances of the EMPLOYEE block reference that were developed in Step
+3. You will need to insert EMPLOYEE block references in your AutoCAD drawing.
+Whenever the user tries to move an EMPLOYEE block reference the program
+will reset the EMPLOYEE block reference to its previous position. The strategy
+implemented here is to use an editor reactor, which will be notified when
+certain AutoCAD commands modify the location of the EMPLOYEE block reference.
+If one of the edit commands is applied to one or more of the EMPLOYEE block
+references, then the original and final positions of the EMPLOYEE block
+references in question will be recorded.
+<P>To achieve this, an object reactor is planted on each EMPLOYEE block
+reference in order to detect when the block reference is opened for a modify
+operation. This will occur before the actual transformation takes place.
+To detect the new position for the block reference after the transformation
+has taken place, we will also need to implement the editor reactor's notification
+for 'command ended'.
+<P>Finally, we need to detect when new EMPLOYEE block references are created,
+this can be achieved with a database reactor.
+<P>Bear in mind that a user can decide to apply the edit commands to a
+selection set and the selection set can contain one or more EMPLOYEE block
+references in addition to other types of entities. To handle such a case,
+we need to use an array of objectIds (<B><TT>AcDbObjectIdArray</TT></B>)
+for the EMPLOYEE block reference(s) being modified. In parallel to this,
+we also need to maintain an array of points (<B><TT>AGePoint3dArray</TT></B>)
+to store the corresponding original position(s) of the EMPLOYEE block reference(s).
+<P>To further manage the <B><TT>AcDbObjectIdArray</TT></B> and the <B><TT>AcGePoint3dArray</TT></B>,
+we need to manage this data on a document by document basis. Each document
+will manage its own set of <B><TT>AcDbObjectIdArray</TT></B> and <B><TT>AcGePoint3dArray</TT></B>
+data. We therefore need a document manager reactor to manage the appropriate
+set of data when the active document is switched.
+<H3>
+<A NAME="Step07 - Implementation"></A>Implementation</H3>
+
+<BLOCKQUOTE>
+<UL>
+<LI>
+Load project "<B><TT>Step03</TT></B>", which was created with the ObjectARX
+Wizard or continue with the files you created from the previous step.</LI>
+
+<LI>
+<A HREF="#Step07 - Prepare the document data">Prepare the document data</A>.</LI>
+
+<LI>
+<A HREF="#Step07 - ImpEditorReactor">Add and implement an editor reactor
+for the application</A>.</LI>
+
+<LI>
+<A HREF="#Step07 - ImpObjectReactor">Add and implement an object reactor
+for the application</A>.</LI>
+
+<LI>
+<A HREF="#Step07 - ImpAttachEmployeeReactorToAllEmployee" TARGET="main">Implement
+the user defined 'attachEmployeeReactorToAllEmployee()' utility function</A></LI>
+
+<LI>
+<A HREF="#Step07 - ImpDetachAllEmployeeReactors" TARGET="main">Implement
+the user defined 'detachAllEmployeeReactors()' utility function</A></LI>
+
+<LI>
+<A HREF="#Step07 - ImpDatabaseReactor">Add and implement a database reactor
+for the application</A>.</LI>
+
+<LI>
+<A HREF="#Step07 - Testing the application">Test the application</A>.</LI>
+</UL>
+
+<H4>
+<A NAME="Step07 - Prepare the document data"></A>Prepare the document data</H4>
+The ObjectARX Wizard automatically creates the class <B><TT>CDocData</TT></B>
+(see <B><TT>DocData.h</TT></B>, <B><TT>DocData.cpp</TT></B> and <B><TT>AsdkDMgr.h</TT></B>).
+The <B><TT>CDocData</TT></B> class can be used to implement document dependent
+data. If you are continuing from the previous step, make sure the "<B><TT>Project</TT></B>"
+application is the active project in Visual C++.
+<OL>
+<LI>
+Add the member variables outlined in the following table to the
+<B><TT>CDocData</TT></B>
+class in <B><TT>DocData.h</TT></B> file:</LI>
+</OL>
+
+<TABLE BORDER COLS=2 WIDTH="70%" >
+<CAPTION><B><TT>Member variables to be added to the CDocData Class</TT></B></CAPTION>
+
+<TR>
+<TD><TT>Data Type</TT></TD>
+
+<TD><TT>Variable Name</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>bool</TT></TD>
+
+<TD><TT>m_editCommand</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>bool</TT></TD>
+
+<TD><TT>m_doRepositioning</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>AcDbObjectIdArray</TT></TD>
+
+<TD><TT>m_changedObjects</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>AcGePoint3dArray</TT></TD>
+
+<TD><TT>m_employeePositions</TT></TD>
+</TR>
+</TABLE>
+
+<UL>
+<LI>
+<B><TT>m_editCommand</TT></B> will be used to record if one of our monitored
+editing commands is active.</LI>
+
+<LI>
+<B><TT>m_doRepositioning</TT></B> will be use to let us know if repositioning
+of an EMPLOYEE block reference is required, so that we can ignore/monitor
+reactor callbacks.</LI>
+
+<LI>
+<B><TT>m_changedObjects</TT></B> will be used to record which EMPLOYEE
+block references were modified.</LI>
+
+<LI>
+<B><TT>m_employeePositions</TT></B> will be used to store the original
+positions of EMPLOYEE block references.</LI>
+</UL>
+
+<OL START=2>
+<LI>
+In the constructor of <B><TT>CDocData</TT></B> in <B><TT>CDocData.cpp</TT></B>
+we initialize</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>m_editCommand = false;</TT>
+<BR><TT>m_doRepositioning = false;</TT></TD>
+</TR>
+</TABLE>
+</OL>
+<B>NOTE:</B> Access to the document dependent data is achieved through
+<B><TT>DocVars.docData()</TT></B>.
+See the declaration of <B><TT>AsdkDataManager</TT></B>
+<B><TT>DocVars</TT></B>
+global variable, in <B><TT>CDocData.cpp</TT></B> for details.</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step07 - ImpEditorReactor"></A>Add and implement an editor reactor
+for the application</H4>
+
+<OL>
+<LI>
+Use the ObjectARX Wizard toolbar (see Step 7 Figure 1) to create an editor
+reactor class <B><TT>AsdkEdEmployeeReactor</TT></B> derived from <B><TT>AcEditorReactor</TT></B>.
+The Wizard automatically prefixes the class with the RDS symbol.</LI>
+
+<BR>&nbsp;
+<P>&nbsp;
+<P><IMG SRC="step7_ObjectARXWizardToolbar.jpg" HEIGHT=132 WIDTH=326>
+<P><B>Step 7 Figure 1 - Selecting Transient Reactors from ObjectARX&nbsp;
+Toolbar</B>
+<BR>&nbsp;
+<LI>
+Using the ObjectARX Wizard, add the functions <B><TT>commandWillStart()</TT></B>
+and
+<B><TT>commandEnded()</TT></B>.</LI>
+
+<BR><B>NOTE:</B> Make sure that the ObjectARX application is the active
+project in Visual C++ and not an ObjectDBX application. ObjectDBX applications
+do not support <B><TT>AcEditorReactor</TT></B>'s and hence you will not
+see this type of reactor in the drop-down list.
+<P><IMG SRC="step7_TransientReactorsDlg.jpg" HEIGHT=426 WIDTH=533>
+<P><B>Step 7 Figure 2 - Adding Transient Reactor functions</B>
+<BR>&nbsp;
+<LI>
+Add code to <B><TT>commandWillStart()</TT></B> that does the following
+:</LI>
+
+<OL TYPE=a>
+<LI>
+Check if one of the commands "<B>MOVE</B>", "<B>ROTATE</B>", "<B>STRETCH</B>",
+"<B>SCALE</B>" or "<B>GRIP_STRETCH</B>" is started (use a string comparison
+function such as <B><TT>strcmp()</TT></B> current command being use is
+passed in through the parameter).</LI>
+
+<LI>
+If it is one of the monitored commands, set <B><TT>m_editCommand = true;</TT></B>
+and
+<B><TT>m_doRepositioning = false; </TT></B>(Use <B><TT>DocVars.docData().&lt;appropriate
+variable here></TT></B>).</LI>
+
+<LI>
+Reset any objectIds and position information (<B><TT>AcDbObjectIdArray::setLogicalLength()</TT></B>)
+to zero.</LI>
+</OL>
+
+<LI>
+Add code to <B><TT>commandEnded()</TT></B> that does the following:</LI>
+
+<OL TYPE=a>
+<LI>
+If the command being monitored is not a monitored command from the above
+list of commands then set <B><TT>m_editCommand == false;</TT></B> and simply
+return.</LI>
+
+<LI>
+Reset <B><TT>m_editCommand </TT></B>to false.</LI>
+
+<LI>
+Set <B><TT>m_doRepositioning</TT></B> to true and start repositioning the
+moved objects</LI>
+
+<LI>
+For every object in <B><TT>m_changedObjects</TT></B> (<B><TT>AcDbObjectIdArray::length()</TT></B>)
+do the following</LI>
+
+<OL TYPE=a>
+<LI>
+Open the entity (<B><TT>acdbOpenObject()</TT></B>).</LI>
+
+<LI>
+If the actual position is different from the stored position reposition
+the object (<B><TT>AcDbBlockReference::position()</TT></B>, <B><TT>m_employeePositions.at()</TT></B>,
+<B><TT>AcDbBlockReference::setPosition()</TT></B>)</LI>
+</OL>
+</OL>
+
+<LI>
+Create an <B><TT>AsdkEdEmployeeReactor</TT></B> reactor instance.</LI>
+
+<OL TYPE=a>
+<LI>
+Create a global pointer to your editor reactor. Place this reactor in the
+"<B><TT>Project.cpp</TT></B>" file as follows:</LI>
+
+<OL><B><TT>AsdkEdEmployeeReactor *pEdEmployeeReactor = NULL;</TT></B></OL>
+
+<LI>
+Create an instance of the <B><TT>AsdkEdEmployeeReactor</TT></B> editor
+reactor when the application loads, place this in the '<B><TT>InitApplication()</TT></B>'
+of the "<B><TT>Project.cpp</TT></B>" file.</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>pEdEmployeeReactor = new AsdkEdEmployeeReactor(true);</TT></TD>
+</TR>
+</TABLE>
+
+<P><B>NOTE:</B> Normally when working with transient reactors we utilize
+the functions '<B><TT>addReactor()</TT></B>' and '<B><TT>removeReactor()</TT></B>'
+to place/remove our transient reactors at the appropriate time during the
+life of our application. In this particular case the <B><TT>AsdkEdEmployeeReactor</TT></B>
+class was generated by the ObjectARX Wizard and the ObjectARX Wizard delegates
+the responsibility of adding/removing the <B><TT>AsdkEdEmployeeReactor</TT></B>
+to the constructor/destructor of the class respectively. See "<B><TT>rEditorReactor.cpp</TT></B>"
+for details. Also an editor reactor is added only when we load our application
+and removed when we unload our application. It is extremely important to
+remove your editor reactor if you unload your application. Failing to do
+so can cause AutoCAD to crash. It's your responsibility.
+<BR>&nbsp;</OL>
+
+<LI>
+If the application unloads delete the editor reactor. Place the following
+in '<B><TT>UnloadApplication()</TT></B>':</LI>
+
+<OL TYPE=a>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>delete pEdEmployeeReactor;</TT></TD>
+</TR>
+</TABLE>
+</OL>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step07 - ImpObjectReactor"></A>Add and implement an object reactor
+for the application</H4>
+
+<OL>
+<LI>
+Use the ObjectARX Wizard to create object reactor class <B><TT>AsdkEmployeeReactor</TT></B>
+derived from <B><TT>AcDbObjectReactor</TT></B>. The Wizard automatically
+prefixes the class with the RDS symbol.</LI>
+
+<LI>
+Using ObjectARX Wizard, add the function <B><TT>openedForModify()</TT></B></LI>
+
+<BR>Examine the files created by the ObjectWizard, "<B><TT>rObjectReactor.h</TT></B>"
+and "<B><TT>rObjectReactor.cpp</TT></B>".
+<LI>
+Add code to <B><TT>openedForModify()</TT></B> such that:</LI>
+
+<OL TYPE=a>
+<LI>
+If we are currently repositioning (<B><TT>m_doRepositioning == true</TT></B>)
+then return. (Use <B><TT>DocVars.docData().&lt;appropriate variable here></TT></B>).</LI>
+
+<LI>
+If none of the monitored commands is active (<B><TT>m_editCommand == false</TT></B>)
+then return.</LI>
+
+<LI>
+Verify that the <B><TT>AcDbObject</TT></B> passed in, is an <B><TT>AcDbBlockReference</TT></B>
+entity, if not return.</LI>
+
+<LI>
+Retrieve the name of the <B><TT>AcDbBlockReference</TT></B>. For this you
+will need to get the <B><TT>AcDbBlockReference</TT></B>'s block definition
+<B><TT>AcDbBlockTableRecord</TT></B>
+and query the name of the <B><TT>AcDbBlockTableRecord</TT></B>. (Use <B><TT>AcDbBlockReference::blockTableRecord
+()</TT></B>). If it is not an <B><TT>EMPLOYEE</TT></B> block reference,
+just return.</LI>
+
+<LI>
+Store the position of the '<B><TT>openedForModify()</TT></B>' object in
+<B><TT>m_employeePositions</TT></B>
+(<B><TT>AcGePoint3dArray::append()</TT></B>).</LI>
+
+<LI>
+Store the objectId of the '<B><TT>openedForModify()</TT></B>' object in
+<B><TT>m_changedObjects</TT></B>
+(<B><TT>AcDbObjectIdArray::append()</TT></B>).</LI>
+</OL>
+
+<LI>
+Create an <B><TT>AsdkEmployeeReactor</TT></B> reactor instance.</LI>
+
+<OL TYPE=a>
+<LI>
+Create a global pointer to your object reactor. Place this reactor in the
+"<B><TT>Project.cpp</TT></B>" file as follows:</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>AsdkEmployeeReactor *pEmployeeReactor = NULL;</TT></TD>
+</TR>
+</TABLE>
+
+<BR>&nbsp;
+<LI>
+Create an instance of the object reactor when the application loads,, place
+this in the '<B><TT>InitApplication()</TT></B>' of the "<B><TT>Project.cpp</TT></B>"
+file.</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>pEmployeeReactor = new AsdkEmployeeReactor();</TT></TD>
+</TR>
+</TABLE>
+
+<BR>&nbsp;
+<LI>
+If the application unloads delete the object reactor. Place the following
+in '<B><TT>UnloadApplication()</TT></B>':</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>delete pEmployeeReactor;</TT></TD>
+</TR>
+</TABLE>
+
+<P><B>NOTE:</B> Here we create a single global instance of <B><TT>AsdkEmployeeReactor</TT></B>
+(an <B><TT>AcDbObjectReactor</TT></B> object), as you will see later we
+attach this instance to the EMPLOYEE block references. We could also have
+created new instances of the <B><TT>AsdkEmployeeReactor</TT></B> and attached
+each instance to each EMPLOYEE block reference found. We just want you
+to be aware that an <B><TT>AcDbObjectReactor</TT></B> can be attached to
+more than one object.</OL>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step07 - ImpAttachEmployeeReactorToAllEmployee"></A>Implementation
+of the user defined '<TT>attachEmployeeReactorToAllEmployee()</TT>' utility
+function</H4>
+<B>NOTE:</B> As mentioned earlier we add/remove transient reactors to our
+objects using <B><TT>addReactor()/removeReactor()</TT></B>. Here we are
+going to attach reactors to all EMPLOYEE block reference objects. Remember
+that more than one open drawing can contain EMPLOYEE block references.
+The <B><TT>AsdkDataManager</TT></B> class manages <B><TT>CDocData</TT></B>
+classes and there is one <B><TT>CDocData</TT></B> class per document. In
+the constructor for the <B><TT>CDocData</TT></B> we will call the user
+defined function '<B><TT>attachEmployeeReactorToAllEmployee()</TT></B>'.
+This will be called for every drawing open in the current AutoCAD session
+and also when new drawing are created or existing drawing are opened. This
+function will be responsible for attaching/removing the <B><TT>AsdkEmployeeReactor</TT></B>
+objects for each drawing.</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<OL>
+<LI>
+Attach the object reactor to all "EMPLOYEE" references which are already
+in the drawing. Write the function:</LI>
+
+<OL TYPE=a><B><TT>Acad::ErrorStatus</TT></B>
+<BR><B><TT>attachEmployeeReactorToAllEmployee(bool attach) </TT></B>that
+will:
+<LI>
+Get the block table (<B><TT>AcDbDatabase::getBlockTable()</TT></B>).</LI>
+
+<LI>
+Get the model space record (<B><TT>AcDbBlockTable::getAt()</TT></B>, <B><TT>ACDB_MODEL_SPACE</TT></B>).</LI>
+
+<LI>
+Get a block table record iterator (<B><TT>AcDbBlockTableRecordIterator</TT></B>,
+<B><TT>AcDbBlockTableRecord::newIterator()</TT></B>).</LI>
+
+<LI>
+Iterate through the Model Space records and retrieve the entities (<B><TT>AcDbBlockTableRecordIterator::getEntity()</TT></B>).
+If the retrieved block reference entity is not an EMPLOYEE object, just
+return.</LI>
+
+<LI>
+If the retrieved entity is an "EMPLOYEE" block reference, attach the global
+object reactor (<B><TT>AcDbObject::addReactor()</TT></B>) or if the parameter
+<B><TT>attach</TT></B>
+is false then remove the already attached object reactor (<B><TT>AcDbObject::removeReactor()</TT></B>).</LI>
+
+<LI>
+Finally, don't forget to delete the iterator and to close the objects.</LI>
+</OL>
+
+<LI>
+Call <B><TT>attachEmployeeReactorToAllEmployee()</TT></B> inside the <B><TT>CDocData</TT></B>
+constructor.</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step07 - ImpDetachAllEmployeeReactors"></A>Implementation of the
+user defined '<TT><B>detachAllEmployeeReactors</B>()</TT>' utility function</H4>
+
+<OL>
+<LI>
+If you unload your application you must detach all object reactors attached
+to EMPLOYEE block reference entities. Implement '<B><TT>detachAllEmployeeReactors()</TT></B>'
+to do this.</LI>
+
+<OL><B><TT>void detachAllEmployeeReactors()</TT></B></OL>
+This function will:
+<OL TYPE=a>
+<LI>
+Get an <B><TT>AcApDocumentIterator</TT></B> (<B><TT>acDocManager->newAcApDocumentIterator()</TT></B>).
+<B><TT>acDocManager</TT></B>
+is a global macro that is used to retrieve the <B><TT>AcApDocManager</TT></B>
+which is responsible for all the documents in an AutoCAD session. Refer
+to the <B><TT>AcApDocManager</TT></B> in the ObjectARX online help for
+details.</LI>
+
+<LI>
+Store a pointer to the current document, so you can reset the document
+after iterating (<B><TT>acDocManager->curDocument()</TT></B>).</LI>
+
+<LI>
+Iterate through all documents, make each document the current document
+and call <B><TT>attachEmployeeReactorToAllEmployee(false)</TT></B>.</LI>
+
+<LI>
+After iterating, reset the current document to be the one that was current
+before iterating.</LI>
+</OL>
+
+<LI>
+Call <B><TT>detachAllEmployeeReactors()</TT></B> if your application unloads.</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step07 - ImpDatabaseReactor"></A>Add and implement a database
+reactor for the application</H4>
+
+<OL>
+<LI>
+Use the ObjectARX Wizard to create a database reactor class <B><TT>AsdkDbEmployeeReactor</TT></B>
+derived from <B><TT>AcDbDatabaseReactor</TT></B>. The Wizard automatically
+prefixes the class with the RDS symbol.</LI>
+
+<LI>
+Using the ObjectARX Wizard, add the function <TT><B>objectAppended()</B>.</TT></LI>
+
+<LI>
+Implement the '<B><TT>objectAppend()</TT></B>' function.</LI>
+
+<OL TYPE=a>
+<LI>
+Check if the appended object is an <B><TT>AcDbBlockReference</TT></B> (
+<B><TT>cast</TT></B>
+). If not return.</LI>
+
+<LI>
+Get the block table record of the reference. (<B><TT>AcDbBlockReference::blockTableRecord()</TT></B>).</LI>
+
+<LI>
+Get the name of the block table record and check if it is an EMPLOYEE block
+reference. If not return. (<B><TT>AcDbSymbolTable::getName()</TT></B>).</LI>
+
+<LI>
+Attach the <B><TT>AsdkEmployeeReactor</TT></B> object reactor to the appended
+block reference. (<B><TT>AcDbObject::addReactor()</TT></B>). Remember we
+are watching the database to see if any EMPLOYEE block references are being
+added and if so we are attaching the <B><TT>AsdkEmployeeReactor</TT></B>
+object reactor to the block reference.</LI>
+</OL>
+
+<LI>
+Create a new instance of&nbsp; the database reactor for every new drawing.
+You can do this when you receive the <B><TT>kLoadDwgMsg</TT></B> message
+in the <B><TT>acrxEntryPoint()</TT></B> function.</LI>
+
+<OL TYPE=a>
+<LI>
+From the ObjectARX Wizard toolbar, click the 'ObjectARX entry point messages'
+button.</LI>
+
+<BR>&nbsp;
+<P>&nbsp;
+<P><IMG SRC="step7_ObjectARXWizardToolbar(2).jpg" HEIGHT=142 WIDTH=376>
+<P><B>Step 7 Figure 3 - Entry Point Messages on the ObjectARX Wizard toolbar</B>
+<BR>&nbsp;
+<LI>
+From the ObjectARX Entry Point Messages dialog select '<B><TT>kLoadDwgMsg</TT></B>'
+message.</LI>
+
+<BR>&nbsp;
+<P>&nbsp;
+<P><IMG SRC="step7_ARXEntryPointMessageDlg.jpg" HEIGHT=266 WIDTH=393>
+<P><B>Step 7 Figure 4 - ObjectARX Entry Point Messages Dialog</B>
+<P>The ObjectARX Wizard will create an function '<B><TT>OnkLoadDwgMsg()</TT></B>'
+in the "<B><TT>Project.cpp</TT></B>" file.
+<BR>&nbsp;
+<LI>
+Create a new <B><TT>AsdkDbEmployeeReactor</TT></B> object in the '<B><TT>OnkLoadDwgMsg()</TT></B>'
+message function.</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>new AsdkDbEmployeeReactor (true, curDoc());</TT></TD>
+</TR>
+</TABLE>
+</OL>
+
+<LI>
+Examine the "<B><TT>rDatabaseReactor.h</TT></B>" and the "<B><TT>rDatabaseReactor.cpp</TT></B>"
+files created by the ObjectARX Wizard.</LI>
+
+<OL>&nbsp;</OL>
+<B>NOTE:</B> In the constructor for the <B><TT>AsdkDbEmployeeReactor</TT></B>
+class we add our database reactor to the document using '<B><TT>addReactor()</TT></B>'
+and also we initialize the pointer variable <B><TT>m_pAsdkDbEmployeeReactor</TT></B>
+to point to this <B><TT>AsdkDbEmployeeReactor</TT></B> database reactor
+object. The <B><TT>m_pAsdkDbEmployeeReactor</TT></B> is part of the <B><TT>CDocData</TT></B>
+class and was put there by the ObjectARX Wizard. When a drawing is closed,
+the <B><TT>~CDocData</TT></B> destructor is called, here we check to see
+if <B><TT>m_pAsdkDbEmployeeReactor</TT></B> is not <B><TT>NULL</TT></B>
+and delete the pointer. This in turn will call the destructor for the <B><TT>AsdkEmployeeReactor</TT></B>
+class and removes the database reactor with a call to '<B><TT>removeReactor()</TT></B>'.</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step07 - Testing the application"></A>Test the application</H4>
+
+<BLOCKQUOTE>Create some EMPLOYEE block references as you did within Step03.
+Try to <B>MOVE</B> these EMPLOYEE block references. Save the drawing. Unload
+the application. Open the saved drawing and reload the application. The
+<B>MOVE</B>
+command will have had no effect on the EMPLOYEE block reference, because
+the reactors that are attached were transient in nature..</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<H3>
+
+<HR WIDTH="80%">CONGRATULATIONS!</H3>
+
+<BLOCKQUOTE>You have now completed the ObjectARX 2000 Training Tutorial.
+We hope that you have enjoyed this small sampler and we wish you every
+success in your future as an ObjectARX programmer.</BLOCKQUOTE>
+
+</BODY>
+</HTML>

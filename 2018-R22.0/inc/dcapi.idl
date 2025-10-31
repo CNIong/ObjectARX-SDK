@@ -1,0 +1,1583 @@
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2017 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//
+// dcapi.idl : IDL source for Design Center API
+//
+// NOTES:
+//      The methods of IAcDcContentBrowser and IAcDcContentView have disp ids
+//      assigned even though they are not dual or derived from IDispatch
+//      currently.  This is purely for future possibilities.
+//
+//      For all VARIANT parameters, the valid data member is given in
+//      parenthesis to indicate the valid member.  For example: HRESULT
+//      AddPaletteItem(... VARIANT varImageIndex // index of image(VT_I4)..);
+//      indicates lVal member of varImageIndex would have valid value.
+//
+// A typical component that wants to provide its content to DesignCenter
+// implements IAcDcContentView and optionally IAcDcContentFinder.  Some
+// miscellaneous aspects that a component may have to do:
+//
+// 1. Write a comparison function to sort the items that it gives to DC.  This
+//    function will be called for each item when DC sorts the items.
+// 2. Correctly handle the errors by returning valid HRESULTs.  It may want to
+//    return specific custom error codes by implementing an error object that
+//    implements IErrorInfo.
+//
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "dcconst.idl"
+#include "dcdispid.h"
+
+[
+    object,
+    uuid(9F8AB2D8-D57F-11D1-A92C-0060B0A1F6BB),
+    helpstring("IAcDcContentBrowser Interface"),
+    pointer_default(unique)
+]
+// IAcDcContentBrowser interface
+interface IAcDcContentBrowser : IUnknown
+{
+    //
+    // Adds an item to DesignCenter palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrText
+    //     A BSTR that specifies the item text.
+    // varImageIndex
+    //     int nImageIndex = varImageIndex.lVal;
+    // 
+    //     A VARIANT that specifies the image index of the icon in the component's
+    //     image list.  The component should have called SetPaletteImageList or
+    //     SetNavigatorImageList on the given IAcDcContentBrowser object of
+    //     DesignCenter in Initialize to set its small and large image lists.
+    // pvarItemData
+    //     A pointer to a VARIANT that specifies the component-defined data that
+    //     has be associated with the item.  The component can provide any
+    //     32-bit data for the data.  This is typically used in sorting the
+    //     items in the palette with a component defined comparison function.
+    //     The data contained in this VARIANT is meaningful only to the
+    //     component.  The memory for this has to be allocated on heap so that
+    //     the data is available at the time of sorting.  DesignCenter will
+    //     supply this pointer back to the component in DeleteItemData method
+    //     when all the items provided by the component are being deleted.  The
+    //     component should delete all the memory allocated for this variable in
+    //     that method.
+    // pvarAddedItemIndex
+    //     int nAddedItemIndex = pvarAddedItemIndex->lVal;
+    // 
+    //     A pointer a VARIANT that will contain the index of the added item.
+    // 
+    // Components can use this method to add an item to DesignCenter palette.  The
+    // items will show up with item texts with appropriate icons provided for each
+    // item.  This function returns the index of the added item in pvarAddedItemIndex.
+    // 
+    [id(DISPID_IAcDcContentBrowser_AddPaletteItem), helpstring("method AddPaletteItem")]
+    HRESULT AddPaletteItem(
+        [in, string] BSTR bstrText                  // text of item
+        , [in] VARIANT varImageIndex                // index of image(VT_I4)
+        , [in] VARIANT *pvarItemData                // item specific data
+        , [out, retval] VARIANT *pvarAddedItemIndex // index of added item(VT_I4)
+    );
+
+    //
+    // Adds a node in the navigator of DesignCenter.  This is valid only in case of
+    // components which participate in custom view of DesignCenter.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhRelativeNode
+    //     HTREEITEM hItem = (HTREEITEM)(varhRelativeNode.lVal);
+    // 
+    //     A VARIANT that specifies the HTREEITEM of a relative node with reference to
+    //     which DesignCenter should create a new navigator node in the tree.
+    // sRelationship
+    //     A flag that is taken from dcNavNodeRelation enumeration that indicates what
+    //     type of relationship does the new node would have with reference to
+    //     varhRelativeNode.
+    // bstrText
+    //     A BSTR that specifies the text of the node.
+    // varIconIndex
+    //     int nIconIndex = varIconIndex.lVal;
+    // 
+    //     A VARIANT that specifies the index of the unselected state icon to be used
+    //     for the new node.
+    // varSelectedIconIndex
+    //     int nSelIconIndex = varSelectedIconIndex.lVal;
+    // 
+    //     A VARIANT that specifies the index of the selected state icon to be used for
+    //     the new node.
+    // varbMayhaveChildren
+    //     bool bMayHaveChildren = varbMayhaveChildren.boolVal;
+    // 
+    //     A VARIANT to indicate if the new node may have children or not.  If the
+    //     component plans to add children nodes to the newly created node, this
+    //     VARIANT should have a TRUE value in boolVal.
+    // pvarAddedNodeID
+    //     HTREEITEM hAddedNode = (HTREEITEM)pvarAddedNodeID->lVal;
+    // 
+    //     A pointer a VARIANT that contains the handle to HTREEITEM of the newly
+    //     created node.  This node handle can be used to create other nodes.
+    // 
+    // Components which participate in custom content view typically call this to add
+    // nodes to the navigator view of DesignCenter.  This function returns a handle to
+    // the added node in pvarAddedNodeID.
+    // 
+    [id(DISPID_IAcDcContentBrowser_AddNavigatorNode), helpstring("method AddNavigatorNode")]
+    HRESULT AddNavigatorNode(
+        [in] VARIANT varhRelativeNode               // relative node id(VT_I4)
+        , [in] dcNavNodeRelation sRelationship      // relationship to relative(lVal)
+        , [in, string] BSTR bstrText                // text of the node
+        , [in] VARIANT varIconIndex                 // icon index(VT_I4)
+        , [in] VARIANT varSelectedIconIndex         // selected icon index(VT_I4)
+        , [in] VARIANT varbMayhaveChildren	        // possibly a non-leaf node(VT_BOOL)
+        , [out, retval] VARIANT *pvarAddedNodeID    // added node id(VT_I4)
+    );
+
+    //
+    // Gets the handle to the window of DesignCenter frame.  This handle is READ-ONLY -
+    // it should never be destroyed.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // pvarhFrameWindow
+    //     HWND hDCFrame = (HWND)(pvarhFrameWindow->lVal);
+    // 
+    //     A pointer to a VARIANT that contains the handle to DesignCenter frame
+    //     window.
+    // 
+    // Components should never destroy the handle returned by this function.  This
+    // handle is typically used when a component wants to display a context menu for
+    // any item that it is displaying in DesignCenter.  This function returns the
+    // Windows handle of DesignCenter frame in pvarhFrameWindow.
+    //
+    [id(DISPID_IAcDcContentBrowser_GetDCFrameWindow), helpstring("method GetDCFrameWindow")]
+    HRESULT GetDCFrameWindow(
+        // handle to DC frame window(VT_I4); typecast it to HWND
+        [out, retval] VARIANT *pvarhFrameWindow     
+    );
+
+    //
+    // Sets the description text for an item selected in palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrDescription
+    //     A BSTR that specifies the description of an item that is selected in the
+    //     palette of DesignCenter
+    // 
+    // Components use this function to show the description of a selected item in the
+    // description pane of DesignCenter.  The components need to cache the selected
+    // item during IAcDcContentView::PaletteMouseDown or
+    // IAcDcContentView::PaletteMouseUp notifications.  When the user opens the
+    // description pane in DesignCenter, the description of the component item would be
+    // shown.
+    //
+    [id(DISPID_IAcDcContentBrowser_SetItemDescription), helpstring("method SetItemDescription")]
+    HRESULT SetItemDescription(
+        [in, string] BSTR bstrDescription           // description
+    );
+
+    // 
+    // Sets the image list which contain icons for items in the palette; this image
+    // list will be used by DesignCenter when displaying the images of the contents
+    // supplied by a component with calls to AddPaletteItem.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhImageList
+    //     HIMAGELIST hImageList = (HImageList)(varhImageList.lVal);
+    // 
+    //     A VARIANT that contains a handle to a small/large image list depending on
+    //     the flag in varbLarge.  If varbLarge is TRUE, then the handle is expected to
+    //     be of large image list of the component.  If varbLarge is FALSE, then the
+    //     handle is expected to be of small image list of the component.
+    // varbLarge
+    //     bool bLargeImageList = varbLarge.boolVal;
+    // 
+    //     A VARIANT that specifies whether varhImageList is that of a small or a large
+    //     image list.
+    // 
+    // Components should call this function before adding any items to the palette of
+    // DesignCenter by calls to AddPaletteItem.  This enables DesignCenter to fetch the
+    // correct icon indices for the items when it displays them.
+    // 
+    [id(DISPID_IAcDcContentBrowser_SetPaletteImageList), helpstring("method SetPaletteImageList")]
+    HRESULT SetPaletteImageList(
+        [in] VARIANT varhImageList          // HIMAGELIST of image list(VT_I4)
+        , [in] VARIANT varbLarge            // is the image list large?(VT_BOOL)
+    );
+
+    // 
+    // Sets the image list to be used for icons of nodes in the navigator; valid only
+    // for components which display their contents in the custom view of DesignCenter.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhImageList
+    //     HIMAGELIST hImageList = (HImageList)(varhImageList.lVal);
+    // 
+    //     A VARIANT that contains a handle to small image list that contains icons for
+    //     nodes that the component has added in the DesignCenter custom view.
+    // pvarImageListOffset
+    //     int nImageOffset = pvarImageListOffset->lVal;
+    // 
+    //     A VARIANT that will contain the offset of the first icon in varhImageList in
+    //     the small image list maintained by DesignCenter
+    // 
+    // Components should call this function before adding any nodes to custom view of
+    // DesignCenter.  The icons in the imagelist would be used to display the nodes in
+    // DesignCenter custom view.  This function returns the offset of the first icon in
+    // varhImageList in pvarImageListOffset.  This function has to be called
+    // only once(in IAcDcContentView::SetImageLists method).
+    // 
+    [id(DISPID_IAcDcContentBrowser_SetNavigatorImageList), helpstring("method SetNavigatorImageList")]
+    HRESULT SetNavigatorImageList(
+        [in] VARIANT varhImageList,                 // HIMAGELIST of image list(VT_I4) 
+        [out, retval] VARIANT *pvarImageListOffset  // offset of the component image 
+                                                    // list in global image list(VT_I4)
+    );
+
+    // 
+    // Sets the palette of DC to allow selection of multiple items.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varbMultiSelect
+    //     bool bMultiSelect = (bool)varbMultiSelect.boolVal;
+    // 
+    //     A VARIANT that contains a boolean to indicate whether multiple selection
+    //     should be allowed or not
+    // 
+    // Components can call this function to allow multiple selections of items in the
+    // palette of DC.  By default, the palette of DC allows selection of only one item
+    // at a time.
+    // 
+    [id(DISPID_IAcDcContentBrowser_SetPaletteMultiSelect), helpstring("method SetPaletteMultiSelect")]
+    HRESULT SetPaletteMultiSelect(
+        [in] VARIANT varbMultiSelect     // should allow multi selection(VT_BOOL)
+    );
+
+    // 
+    // Inserts a column in the detail view of palette of DC.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varIndex
+    //     int nColumnIndex = varIndex.lVal;
+    // 
+    //     A VARIANT which contains the index of the column to insert.  The column
+    //     indices should begin with 1.
+    // bstrText
+    //     A BSTR which contains the name of the column.  This name would appear as a
+    //     header of the column being inserted in the detail view of DC.
+    // eFormat
+    //     A flag taken from dcPalColAlignment enums to indicate how the inserted
+    //     column is to be justified.
+    // 
+    // Components can call this function to insert a column in the details view of DC
+    // palette.  This column is typically used to show the subitems of an item in DC
+    // palette using SetPaletteSubItem().
+    // 
+    [id(DISPID_IAcDcContentBrowser_InsertPaletteColumn), helpstring("method InsertPaletteColumn")]
+    HRESULT InsertPaletteColumn(
+        [in] VARIANT varIndex            // column index(VT_I4)
+        , [in] BSTR bstrText             // column text
+        , [in] dcPalColAlignment eFormat // format: left, right, center aligned(VT_I4)
+    );
+
+    // 
+    // Deletes all the items which are currently shown in DC palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // Components can call this function in response to either
+    // IAcDcContentView::Refresh() call by DC or any other situation that requires a
+    // modification of items that are shown in DC palette.  Components should call
+    // RestorePaletteSelection after they fill all the new items in DC palette.  A
+    // typical sequence would be:
+    //   ...
+    //   // delete all the items in the palette
+    //   m_pContentBrowser->DeleteAllPaletteItems();
+    //   // fill the palette with new items in DC palette(component defined)
+    //   FillDCPalette(); // refer to an example in NavigatorNodeClick
+    //   // ask DC to restore the previously selected item
+    //   m_pContentBrowser->RestorePaletteSelection();
+    // 
+    [id(DISPID_IAcDcContentBrowser_DeleteAllPaletteItems), helpstring("method DeleteAllPaletteItems")]
+    HRESULT DeleteAllPaletteItems();
+
+    //
+    // Gets the current node text of the current view of DC.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrText
+    //     A pointer to a BSTR that would contain the text of the currently selected
+    //     node.  The component is responsible for freeing the memory allocated for
+    //     this variable by calling ::SysFreeString function.
+    // 
+    // Components can call this function to get the complete qualified path of the
+    // currently selected node text in the current view of DC.  A component typically
+    // calls this to make sure the contents of a node for which it is going to refresh
+    // the items in is the same as the one it expects.  The text is returned in
+    // bstrText.
+    //
+    [id(DISPID_IAcDcContentBrowser_GetSelectedNavNodeText), helpstring("method GetSelectedNavNodeText")]
+    HRESULT GetSelectedNavNodeText([out, string] BSTR* bstrText);
+
+    //
+    // Gets the current mode of DC.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // psMode
+    //     A pointer to a dcContentMode enum that indicates the view mode that DC is
+    //     currently in.
+    // 
+    // Components can call this function to get the current view mode of DC.  There are
+    // three views of DC -- desktop, open drawings and custom view.  The enum values
+    // of dcContentMode indicate this modes.  The current mode is returned in psMode.
+    //
+    [id(DISPID_IAcDcContentBrowser_GetCurrentViewMode), helpstring("method GetCurrentViewMode")]
+    HRESULT GetCurrentViewMode(
+        [out, retval] dcContentMode *psMode            // DC mode
+    );
+
+    // 
+    // Sets the subitems of an already existing palette item in DC.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varItemIndex
+    //     int nItemIndex = varItemIndex.lVal;
+    // 
+    //     A VARIANT that contains the index of the item for which the sub item is
+    //     being set.
+    // varColumnIndex
+    //     int nColumnIndex = varColumnIndex.lVal;
+    // 
+    //     A VARIANT that contains the column index the sub item belongs to.
+    // bstrSubItemText
+    //     A BSTR that contains the text of the sub item.  This text appears in the
+    //     column varColumnIndex in details view of DC palette.
+    // 
+    // Components call this function to add sub items to items already added in DC
+    // palette via AddPaletteItem().  These sub items will appear in separate columns
+    // in detail view of DC.
+    // 
+    // set the subitems of a palette item; this can be used to add sub items to
+    // an already existing item via calls to AddPaletteItem.
+    //
+    [id(DISPID_IAcDcContentBrowser_SetPaletteSubItem), helpstring("method SetPaletteSubItem")]
+    HRESULT SetPaletteSubItem(
+        [in] VARIANT varItemIndex       // item index
+        , [in] VARIANT varColumnIndex   // column index
+        , [in] BSTR bstrSubItemText     // sub item text
+    );
+
+    // 
+    // Sorts the palette items according to a component given function.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varpfnFunction
+    //     PFNLVCOMPARE pfnCompareFunc = (PFNLVCOMPARE)(varpfnFunction.lVal);
+    // 
+    //     A VARIANT that contains a 32-bit pointer to the address of a function that
+    //     has the following signature:
+    //     
+    //     int CALLBACK CompareFunc(LPARAM lParam1, LPARAM lParam2, LPARAM
+    //                             lParamSort);
+    // 
+    //     This function(CompareFunc) is a function that is similar to Windows List
+    //     control comparison function.
+    // 
+    //     The comparison function must return a negative value if the first item
+    //     should precede the second, a positive value if the first item should follow
+    //     the second, or zero if the two items are equivalent.
+    // 
+    //     The lParam1 and lParam2 parameters specify the item data for the two items
+    //     being compared.  The lParamSort parameter is the same as varSortData
+    //     explained next.
+    // 
+    //     See NavigatorNodeClick for an example of this function.
+    // varSortData
+    //     A VARIANT that contains the component defined 32-bit data that is meaningful
+    //     to the comparison function.  This is typically used to indicate whether the
+    //     sorting needs to happen in ascending or descending manner.  But it can also
+    //     be a pointer to a structure that contains this sorting information as well
+    //     as the column index for which the sorting has to happen.
+    // 
+    // Components can call this function to ask DC to sort the items that are displayed
+    // in DC palette.
+    // 
+    [id(DISPID_IAcDcContentBrowser_SortPaletteItems), helpstring("method SortPaletteItems")]
+    HRESULT SortPaletteItems(
+        [in] VARIANT varpfnFunction     // pointer to function(PFNLVCOMPARE)(VT_I4)
+        , [in] VARIANT varSortData      // sort data(VT_I4)
+    );
+
+    // 
+    // Restores previously selected item selection in the palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // This can be used to ask the DesignCenter to restore the selection state of a
+    // previously selected item.  If a component clears/refreshes its contents in DC
+    // palette, it can ask the DC to try to restore the previous selection since DC
+    // maintains a cache of previous selection.  This function should be called after
+    // filling the palette with items because this would update the status bar of DC of
+    // the selected item.
+    // 
+    [id(DISPID_IAcDcContentBrowser_RestorePaletteSelection), helpstring("method RestorePaletteSelection")]
+    HRESULT RestorePaletteSelection();
+
+    // 
+    // Gets the handle to the status bar of DC frame; READ-ONLY.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // pvarhStatusBar
+    //     HWND hDCStatusBar = (HWND)(pvarhStatusBar->lVal);
+    // 
+    //     A pointer to a VARIANT that contains the handle to DC status bar window.
+    // 
+    // Components can call this function to obtain the Windows handle to the status bar
+    // of DC.  This handle should never be destroyed.  The returned handle can be used
+    // in updating the status bar during preview/description display to keep the user
+    // informed of the task the component is performing.  The handle is returned in
+    // pvarhStatusBar.
+    // 
+    [id(DISPID_IAcDcContentBrowser_GetDCStatusBar), helpstring("method GetDCStatusBar")]
+    HRESULT GetDCStatusBar(
+        // handle to DC status bar window(VT_I4); typecast it to HWND
+        [out, retval] VARIANT *pvarhStatusBar     
+    );
+
+    // 
+    // Gets the DC panes' info.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // ePane
+    //     A flag from dcPane enum to describe the pane for which the information is
+    //     requested.
+    // pvarWidth
+    //     int nWidth = pvarWidth->lVal;
+    // 
+    //     A pointer to a VARIANT that contains the width of the requested pane in
+    //     pixels.
+    // pvarHeight
+    //     int nHeight = pvarHeight->lVal;
+    // 
+    //     A pointer to a VARIANT that contains the height of the requested pane in
+    //     pixels.
+    // 
+    // This function can be used to get the width and height of DC panes.  DC has three
+    // panes: navigator pane, preview pane and description pane. Returns width and height
+    // and height of requested pane in pvarWidth and pvarHeight.
+    // 
+    // An example:
+    //   ...
+    //   dcPane ePane = dcPreview;
+    //   _variant_t varWidth, varHeight;
+    //   HRESULT hRes = m_spContentBrowser->GetPaneInfo(ePane, &varWidth, &varHeight);
+    //   ...
+    // 
+    [id(DISPID_IAcDcContentBrowser_GetPaneInfo), helpstring("method GetPaneInfo")]
+    HRESULT GetPaneInfo(
+        [in] dcPane ePane               // pane for which info is needed
+        , [out] VARIANT *pvarWidth      // width of the pane (VT_I4)
+        , [out] VARIANT *pvarHeight     // height of the pane (VT_I4)
+    );
+
+    // 
+    // Sets the DC palette view type.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // eViewType
+    //     A flag from dcPalViewType enum that contains the view type of the palette to
+    //     be set.
+    // 
+    // Components can call this function to change the view types of palette of DC.
+    // The view types of the palette are list, details, small and large icon view.
+    //
+    [id(DISPID_IAcDcContentBrowser_SetPaletteViewType), helpstring("method SetPaletteViewType")]
+    HRESULT SetPaletteViewType(
+        [in] dcPalViewType eViewType    // palette view type
+    );
+
+    // 
+    // Makes the DC navigate to the given path in given view.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // eViewMode
+    //     A flag from dcContentMode enum that indicates the view mode the DC is
+    //     requested to navigate to.
+    // bstrPath
+    //     A BSTR that contains the exact fully qualified path that is meaningful in
+    //     eViewMode.  Fully qualified paths are different in different modes of DC: in
+    //     desktop, they are of the form, "<actual file/directory path on disk>"; in
+    //     open drawings, the are of the from, "Open Drawings\<name of dwg>\<name of
+    //     content type>;in custom view, they are of the form, "<application
+    //     name>\<application defined subnode>\...".
+    // 
+    //     For example, in desktop, the path can be "c:\winnt"; in open drawings, the
+    //     path can be "open drawings\foo.dwg\Blocks"; in custom view, the path can be
+    //     "aec\doors".
+    // 
+    // Components can request DC to navigate to a valid given path in a given view
+    // using this function.  This function is currently supported only for custom view.
+    // 
+    [id(DISPID_IAcDcContentBrowser_NavigateTo), helpstring("method NavigateTo")]
+    HRESULT NavigateTo(
+        [in] dcContentMode eViewMode
+        , [in] BSTR bstrPath
+    );
+
+}; // interface IAcDcContentBrowser
+
+
+
+[
+    object,
+    uuid(625cecb0-a722-11d1-9715-92a923000000),
+    helpstring("IAcDcContentView interface"),
+    pointer_default(unique)
+]
+// IAcDcContentView interface
+interface IAcDcContentView : IUnknown
+{
+    // 
+    // Called by DC to initialize the registered component.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varBrowser
+    //     IUnknown *pBrowser = varBrowser.punkVal;
+    // 
+    //     A pointer to IUnknown interface of the browser object implemented by DC.
+    // varReserved
+    //     Reserved parameter.
+    // 
+    // DesignCenter calls this function first to initialize the component.  It
+    // also gives the IUnknown pointer of the browser object that implements
+    // IAcDcContentBrowser interface in varBrowser.  This browser interface
+    // pointer should be cached by the component and can be used to interact
+    // with DesignCenter by calling methods in IAcDcContentBrowser interface.
+    // 
+    // 
+    [id(DISPID_IAcDcContentView_Initialize), helpstring("Initializes the content")]
+    HRESULT Initialize(
+        [in] VARIANT varBrowser     // Back pointer to IAcDcContentBrowser(VT_UNKNOWN)
+        , [in] VARIANT varReserved  // Reserved
+    );
+
+    // 
+    // Requested by DC to the component to ask it to set its image lists on DC.
+    // The image lists provided by the component will be used by the DC palette
+    // when it displays the contents of the component.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // DesignCenter calls this function immediately after
+    // IAcDcContentView::Initialize.  The component should call
+    // IAcDcContentBrowser::SetPaletteImageList with its small and large image
+    // lists that were created in IAcDcContentView::Initialize.
+    // 
+    // In addition to this, the components that participate in custom view mode
+    // of DC should call IAcDcContentBrowser::SetNavigatorImageList to set the
+    // image list to be used for navigator nodes in custom view.
+    // 
+    [id(DISPID_IAcDcContentView_SetImageLists), helpstring("Sets the image lists")]
+    HRESULT SetImageLists();
+
+    // 
+    // DesignCenter calls this function whenever "Refresh" context menu in the
+    // palette background of DC is chosen by the user.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // If applicable, the component should clear the palette, refill the palette
+    // with changed/new items, and then restore the selection of previously
+    // selected item by calling appropriate methods on the browser object.  The
+    // node for which the component is displaying the content should have been
+    // cached in IAcDcContentView::NavigatorNodeClick method and the content of
+    // that node should be refilled in response to this function.
+    // 
+    [id(DISPID_IAcDcContentView_Refresh), helpstring("Refreshes the content")]
+    HRESULT Refresh();
+
+    // 
+    // Called by DC when a navigator node is expanding.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhNode
+    //     HTREEITEM hExpandingNode = (HTREEITEM)(varhNode.lVal);
+    // 
+    //     A VARIANT that contains the handle to the navigator node which needs
+    //     expanding.
+    // bstrNodeText
+    //     A BSTR that contains the fully qualified path of the expanding node.
+    // 
+    // Currently, this applies only to components which are participating in
+    // custom view of DC.
+    // The component is expected to create children of the node that is expanding.
+    //
+    [id(DISPID_IAcDcContentView_NavigatorNodeExpanding), helpstring("Event fired when a navigator node is clicked")]
+    HRESULT NavigatorNodeExpanding(
+        [in] VARIANT varhNode                 // expanding node id(VT_I4)
+        , [in, string] BSTR bstrNodeText      // full text of the node
+    );
+
+    // 
+    // Called by DC when a navigator node is collapsing.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhNode
+    //     HTREEITEM hCollapsingNode = (HTREEITEM)(varhNode.lVal);
+    // 
+    //     A VARIANT that contains the handle to the navigator node which needs
+    //     collapsing.
+    // bstrNodeText
+    //     A BSTR that contains the fully qualified path of the collapsing node.
+    // 
+    // Currently, this applies only to components which are participating in
+    // custom view of DC.
+    // 
+    [id(DISPID_IAcDcContentView_NavigatorNodeCollapsing), helpstring("Event fired when a navigator node is collapsed")]
+    HRESULT NavigatorNodeCollapsing(
+        [in] VARIANT varhNode                 // collapsing node id(VT_I4)
+        , [in, string] BSTR bstrNodeText      // full text of the node
+    );
+
+    // 
+    // Called by DC when the content of a node needs to be filled in the palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhNode
+    //     HTREEITEM hClickedNode = (HTREEITEM)(varhNode.lVal);
+    // 
+    //     A VARIANT that contains the handle to the navigator node that is clicked by
+    //     the user.
+    // bstrNodeText
+    //     A BSTR that contains the fully qualified path of the node.
+    // 
+    // DC calls this function on the component whenever:
+    // 
+    // 1. the user single/double clicks(with left mouse button) or chooses
+    // "Explore" context
+    //    menu item on a file which the component has registered as a container(in
+    //    desktop and open drawings mode).
+    // 2. the user single/double clicks(with left mouse button) or chooses
+    // "Explore" context
+    //    menu item on a place holder which the component has registered as a place
+    //    holder of a file(in desktop and open drawings mode).
+    // 3. the user single/double clicks(with left mouse button) or chooses "Explore"
+    //    context menu item by right clicking on a shortcut file(.lnk extension) that
+    //    points to a file which the component has registered as a container(in desktop
+    //    view).
+    // 4. the user single/double clicks(with left mouse button) in a node that is
+    //    registered and handled by the component(in custom view).
+    // 
+    // A component typically does the following:
+    // 1. Optionally enables the multi-item selection of palette items in DC by calling
+    //    IAcDcContentBrowser::SetPaletteMultiSelect.
+    // 2. Cache the fully qualified path of the node.
+    // 3. Iterates through a collection of items that it wants to display in DC
+    //    palette.  
+    // 4. Creates some data to associate with each item that it can use to sort
+    //    the items when asked by DC.
+    // 5. Calls IAcDcContentBrowser::AddPaletteItem for each item.
+    // 6. Calls IAcDcContentBrowser::SortPaletteItems to sort all the items it
+    //    added.
+    // 
+    // Components which participate in both desktop and open drawings mode of DC should
+    // always make sure that, at the time of adding the items, the DC mode is indeed in
+    // the mode that they are expecting DC to be in by calling
+    // IAcDcContentBrowser::GetCurrentViewMode since the user may have changed the
+    // modes between Autocad event calls(for example, reactor notification calls).
+    //
+    [id(DISPID_IAcDcContentView_NavigatorNodeClick), helpstring("Event fired when a navigator node is clicked")]
+    HRESULT NavigatorNodeClick(
+        [in] VARIANT varhNode               // node id(VT_I4)
+        , [in, string] BSTR bstrNodeText    // full text of the node
+    );
+
+    // 
+    // Called by DC when the mouse is released in the navigator.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhNode
+    //     HTREEITEM hClickedNode = (HTREEITEM)(varhNode.lVal);
+    // 
+    //     A VARIANT that contains the handle to the navigator node on which the mouse
+    //     has been released.
+    // bstrNodeText
+    //     A BSTR that contains the fully qualified path of the clicked node.
+    // varX
+    //     int nMouseX = varX.lVal;
+    // 
+    //     A VARIANT that contains the x coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was released.
+    // varY
+    //     int nMouseY = varY.lVal;
+    // 
+    //     A VARIANT that contains the y coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was released.
+    // 
+    // Components can respond to this event by popping up a context menu that is
+    // meaningful for the given node at the mouse coordinates supplied.  Currently,
+    // this event is only sent to components participating in custom view of DC.
+    // 
+    [id(DISPID_IAcDcContentView_NavigatorMouseUp), helpstring("Event fired when the mouse is released in navigator")]
+    HRESULT NavigatorMouseUp(
+        [in] VARIANT varhNode                 // node id(VT_I4)
+        , [in, string] BSTR bstrNodeText      // full text of the node
+        , [in] VARIANT varX                   // x position of mouse(VT_I4)
+        , [in] VARIANT varY                   // y position of mouse(VT_I4)
+    );
+
+    // 
+    // Called by DC when a palette item is clicked(single click) by the user.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrItemText
+    //     A BSTR that contains fully qualified path of the item that is clicked.
+    // 
+    // If applicable, components should respond to this by displaying the description
+    // of the clicked item by calling IAcDcContentBrowser::SetItemDescription.  The
+    // component should first check if the description pane of DC is exposed by calling
+    // IAcDcContentBrowser::GetPaneInfo before calling
+    // IAcDcContentBrowser::SetItemDescription.  Also, the preview pane should be
+    // rendered with the visual thumbnail sketch of the clicked item.  However, this is
+    // done via RenderPreviewWindow call from DC.  DC calls RenderPreviewWindow on the
+    // component whenever the preview pane is up and needs rendering and there is a
+    // selected item in the palette.
+    // 
+    [id(DISPID_IAcDcContentView_PaletteItemClick), helpstring("Event fired when palette items are selected")]
+    HRESULT PaletteItemClick(
+        [in, string] BSTR bstrItemText      // full text of the item
+    );
+
+    // 
+    // Called by DC when a palette item is double clicked.  A typical component
+    // may initiate an "Insert" type of action in AutoCAD's current active
+    // document.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrItemText
+    //     A BSTR that contains fully qualified path of the item that is clicked.
+    // 
+    // Components should do an "insert" action in AutoCAD for the item that is double
+    // clicked.
+    // 
+    [id(DISPID_IAcDcContentView_PaletteItemDblClick), helpstring("Event fired when a palette item is double clicked")]
+    HRESULT PaletteItemDblClick(
+        [in, string] BSTR bstrItemText      // full text of item
+    );
+
+    // 
+    // Called by DC when the user has clicked the right mouse button on item(s) in the
+    // palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varButton
+    //     int nButton = varButton.lVal;
+    // 
+    //     A VARIANT that contains a value that indicates which button was pressed.
+    //     The component should only respond if nButton == 2(right mouse button).
+    // varItemTexts
+    //     SAFEARRAY *psaItemTexts = varItemTexts.parray;
+    // 
+    //     A VARIANT that contains a pointer to a SAFEARRAY of BSTRs that represent the
+    //     names of the items being selected in the palette of DC when the mouse up
+    //     happened.
+    // varX
+    //     int nMouseX = varX.lVal;
+    // 
+    //     A VARIANT that contains the x coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was released.
+    // 
+    // varY
+    //     int nMouseY = varY.lVal;
+    // 
+    //     A VARIANT that contains the y coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was released.
+    // 
+    // If applicable, the component should display a context menu in response to this
+    // event.  It is recommended that a window owned by the component be made the owner
+    // of the context menu for displaying the help texts for each menu item by calling
+    // SetWindowText on DC status bar which can be obtained by calling
+    // IAcDcContentBrowser::GetDcstatusbar.
+    // 
+    [id(DISPID_IAcDcContentView_PaletteColumnClick), helpstring("Event fired when a column is clicked in the palette")]
+    HRESULT PaletteColumnClick(
+        [in] VARIANT varIndex              // index of column(VT_I4)
+    );
+
+    // 
+    // Called by DC when the user has clicked the right mouse button on item(s) in the
+    // palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varButton
+    //     int nButton = varButton.lVal;
+    // 
+    //     A VARIANT that contains a value that indicates which button was pressed.
+    //     The component should only respond if nButton == 2(right mouse button).
+    // varItemTexts
+    //     SAFEARRAY *psaItemTexts = varItemTexts.parray;
+    // 
+    //     A VARIANT that contains a pointer to a SAFEARRAY of BSTRs that represent the
+    //     names of the items being selected in the palette of DC when the mouse up
+    //     happened.
+    // varX
+    //     int nMouseX = varX.lVal;
+    // 
+    //     A VARIANT that contains the x coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was released.
+    // 
+    // varY
+    //     int nMouseY = varY.lVal;
+    // 
+    //     A VARIANT that contains the y coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was released.
+    // 
+    // If applicable, the component should display a context menu in response to this
+    // event.  It is recommended that a window owned by the component be made the owner
+    // of the context menu for displaying the help texts for each menu item by calling
+    // SetWindowText on DC status bar which can be obtained by calling
+    // IAcDcContentBrowser::GetDcstatusbar.
+    // 
+    [id(DISPID_IAcDcContentView_PaletteMouseUp), helpstring("Event fired when the mouse is released in palette")]
+    HRESULT PaletteMouseUp(
+        [in] VARIANT varButton              // button that is pressed(VT_I4)
+        , [in] VARIANT varItemTexts         // item texts (VT_ARRAY) 
+        , [in] VARIANT varX                 // x position of mouse(VT_I4)
+        , [in] VARIANT varY                 // y position of mouse(VT_I4)
+    );
+
+    // 
+    // Called by DC when the mouse is pressed down in the palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varButton
+    //     int nButton = varButton.lVal;
+    // 
+    //     A VARIANT that contains a value that indicates which button was pressed.
+    // bstrItemText
+    //     A BSTR that contains the fully qualified path of the item.
+    // varX
+    //     int nMouseX = varX.lVal;
+    // 
+    //     A VARIANT that contains the x coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was pressed.
+    // varY
+    //     int nMouseY = varY.lVal;
+    // 
+    //     A VARIANT that contains the y coordinate(in screen coordinates, in pixels)
+    //     of the mouse when it was pressed.
+    // 
+    // Components can take whatever action that is meaningful in response to this
+    // event.
+    // 
+    [id(DISPID_IAcDcContentView_PaletteMouseDown), helpstring("Event fired when the mouse is pressed in palette")]
+    HRESULT PaletteMouseDown(
+        [in] VARIANT varButton            // button that is pressed(VT_I4)
+        , [in, string] BSTR bstrItemText  // full text of the item
+        , [in] VARIANT varX               // x position of mouse(VT_I4)
+        , [in] VARIANT varY               // y position of mouse(VT_I4)
+    );   
+
+    // 
+    // Called by DC when the preview window size is changing or is redrawn and an item
+    // is selected in the palette of DC.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrItemText
+    //     A BSTR that contains the fully qualified path of the selected item in the
+    //     palette of DC.
+    // varhPreviewWindow
+    //     HWND hDCPreviewWnd = (HWND)(varhPreviewWindow.lVal);
+    // 
+    //     A VARIANT that contains the Windows handle to the preview window of DC.
+    // 
+    // If applicable, components should render the visual representation of the
+    // selected item in the preview pane of DC.  The handle to the preview window
+    // itself is provided as a parameter.  This handle can be used to determine the
+    // extent of the rendering and for rendering itself on a device context created for
+    // this window.
+    // 
+    [id(DISPID_IAcDcContentView_RenderPreviewWindow), helpstring("Event fired when the preview window is redrawn")]
+    HRESULT RenderPreviewWindow(
+        [in, string] BSTR bstrItemText      // full text of the item
+        , [in] VARIANT varhPreviewWindow    // HWND of preview window(VT_I4)
+    );
+
+    // 
+    // Called by DC when a right mouse click happens in preview window.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varButton
+    //     int nButton = varButton.lVal;
+    // 
+    //     A VARIANT that contains a value that indicates which button was pressed.
+    //     The component should only respond if nButton == 2(right mouse button).
+    // varX
+    //     int nMouseX = varX.lVal;
+    // 
+    //     A VARIANT that contains the x coordinate(in screen coordinates, in pixels)
+    // varY
+    //     int nMouseY = varY.lVal;
+    // 
+    //     A VARIANT that contains the y coordinate(in screen coordinates, in pixels)
+    // 
+    // If applicable, the component should display a context menu in response to this
+    // event.  The component is responsible for handling the menu selections.
+    // 
+    [id(DISPID_IAcDcContentView_PreviewMouseUp), helpstring("Event fired when the mouse is relased in preview")]
+    HRESULT PreviewMouseUp(
+        [in] VARIANT varButton            // button that is pressed(VT_I4)
+        , [in] VARIANT varX               // x position of mouse(VT_I4)
+        , [in] VARIANT varY               // y position of mouse(VT_I4)
+    );
+
+    // 
+    // Called by DC when the user begins to drag item(s) from DC palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varbstrItemTexts
+    //     SAFEARRAY *psaItemTexts = varItemTexts.parray;
+    // 
+    //     A VARIANT that contains a pointer to a SAFEARRAY of BSTRs that represent the
+    //     names of the items being selected in the palette of DC when the mouse up
+    //     happened.
+    // varX
+    //     int nMouseX = varX.lVal;
+    // 
+    //     A VARIANT that contains the x coordinate(in screen coordinates, in pixels)
+    // varY
+    //     int nMouseY = varY.lVal;
+    // 
+    //     A VARIANT that contains the y coordinate(in screen coordinates, in pixels)
+    // 
+    // A component should call DoDragDrop to start the drag and drop and should
+    // handle the OLE drag and drop until the process of dragging is over.
+    // 
+    [id(DISPID_IAcDcContentView_PaletteBeginDrag), helpstring("Event fired when items are dragged in palette")]
+    HRESULT PaletteBeginDrag(
+        [in] VARIANT varbstrItemTexts     // array of item texts(VT_ARRAY)
+        , [in] VARIANT varX               // x mouse position(VT_I4)
+        , [in] VARIANT varY               // y mouse position(VT_I4)
+    );
+
+    //
+    // Called by DC to request the component for releasing its interface pointer
+    // addrefed by the component in IAcDcContentBrowser::Initialize.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // Component is expected to release the IAcDcContentBrowser pointer in this method.
+    // 
+    [id(DISPID_IAcDcContentView_ReleaseBrowser), helpstring("Request to release IAcDcContentBrowser")]
+    HRESULT ReleaseBrowser();
+
+    // 
+    // Called by DC when user right clicks on a container file in the palette.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varhMenu
+    //     HMENU hDCContextMenu = (HMENU)(varhMenu.lVal);
+    // 
+    //     A VARIANT that contains the Windows handle to a context menu DC is going to
+    //     display for the selected container file.  This is read-only.  Components
+    //     should not destroy this handle.
+    // varIndex
+    //     int nIndex = varIndex.lVal;
+    // 
+    //     A VARIANT that contains the zero-based index at which to insert the first
+    //     menu item.
+    // varCmdFirst
+    //     int nCmdFirst = varCmdFirst.lVal;
+    // 
+    //     A VARIANT that contains the minimum value for a menu item identifier.
+    // varCmdLast
+    //     int nCmdLast = varCmdLast.lVal;
+    // 
+    //     A VARIANT that contains the maximum value for a menu item identifier.
+    // varItemTexts
+    //     SAFEARRAY *psaItemTexts = varItemTexts.parray;
+    // 
+    //     A VARIANT that contains a pointer to a SAFEARRAY of BSTRs that represent the
+    //     names of the items being selected in the palette of DC when the mouse up
+    //     happened.
+    // 
+    // This event is applicable only to files which are registered as containers by the
+    // component.  It is not applicable to right click event on item(s) which are
+    // displayed by a component in the DC palette.  A component is expected to add its
+    // own menu items(if it chooses to) which are meaningful to the container file to
+    // the given context menu.  When the user selects a menu item that the component
+    // has put in the context menu, InvokeCommand method is called.
+    // 
+    [id(DISPID_IAcDcContentView_QueryContextMenu), helpstring("Queries for a context menu")]
+    HRESULT QueryContextMenu(
+        [in] VARIANT varhMenu                // handle of DC menu
+        , [in] VARIANT varIndex              // index of first menu item
+        , [in] VARIANT varCmdFirst           // min. value of menu item id
+        , [in] VARIANT varCmdLast            // max. value of menu item id
+        , [in] VARIANT varItemTexts          // item texts
+    );
+
+    // 
+    // Called by DC when a context menu item put in by the component in response to
+    // QueryContextMenu is selected by user.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varMenuItemID
+    //     int nMenuID = varMenuItemID.lVal;
+    // 
+    //     A VARIANT that contains the menu identifier of the item the user selected.
+    // 
+    // Components should respond to this event if they responded to QueryContextMenu
+    // method by providing a menu item of their own.
+    // 
+    [id(DISPID_IAcDcContentView_InvokeCommand), helpstring("Handler for context menu item")]
+    HRESULT InvokeCommand(
+        [in] VARIANT varMenuItemID          // menu ID
+    );
+
+    //
+    // Called by DC to know if the given item can be expanded.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrItemText
+    //     A BSTR that contains the fully qualified path of the item.
+    // pvarIsExpandable
+    //     bool bIsExpandable = (VARIANT_BOOL)(pvarIsExpandable->boolVal);
+    // 
+    //     A VARIANT that contains a pointer to a boolean to indicate if the item is
+    //     expandable.
+    // 
+    // DC calls this to see if an item is expandable in custom view mode.  This is
+    // applicable only for components who participate in custom view mode of DC.
+    // 
+    [id(DISPID_IAcDcContentView_IsExpandable), helpstring("Ask if an item can be expanded")]
+    HRESULT IsExpandable(
+        [in, string] BSTR bstrItemText,			  // full text of item
+        [out, retval] VARIANT *pvarIsExpandable   // 0 or 1 (VT_I4)
+    );
+
+    // 
+    // Called by DC for a 32x32 image for a container file.  This could be a
+    // preview or thumbnail icon of a file that the component chooses to store
+    // or generate.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrFileName
+    //     A BSTR that contains the fully qualified path of the file.
+    // pvarhLargeImage
+    //     HBITMAP hLargeImage = (HBITMAP)(pvarhLargeImage->lVal);
+    // 
+    //     A VARIANT that contains a handle to a bitmap(32x32) for the given container
+    //     file.
+    // 
+    // If the component has a 32x32 thumbnail preview image of the given file, it
+    // should return S_OK with pvarhLargeImage->lVal set to HBITMAP of the given file.
+    // If the component doesn't have a bitmap for the given file, then it should return
+    // S_FALSE.  If the component doesn't have image for any file, it should return
+    // E_NOTIMPL.
+    // 
+    [id(DISPID_IAcDcContentView_GetLargeIcon), helpstring("Request to give large icon")]
+    HRESULT GetLargeImage(
+        [in] BSTR bstrFileName                  // full file name
+        , [in, out] VARIANT *pvarhLargeImage    // HBITMAP of file (VT_I4)
+    );
+
+    // 
+    // Called by DC to get small image list of a container content.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrFileName
+    //     A BSTR that contains the fully qualified path of the file.
+    // pvarhImageList
+    //     HIMAGELIST hSmallImageList = (HIMAGELIST)(pvarhImageList->lVal);
+    // 
+    //     A VARIANT that contains the handle to small image list for the container
+    //     file bstrFileName.
+    // 
+    // Components should return the handle to the small image list for the container
+    // file.  This function is currently not used by DC.
+    // 
+    [id(DISPID_IAcDcContentView_GetSmallImageListForContent), helpstring("Request to get the small image list for a given container")]
+    HRESULT GetSmallImageListForContent(
+        [in] BSTR bstrFileName                  // full file name    
+        , [out, retval] VARIANT *pvarhImageList // small HIMAGELIST (VT_I4)
+    );
+
+    // 
+    // Called by DC to get small image list of a container content.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // bstrFileName
+    //     A BSTR that contains the fully qualified path of the file.
+    // pvarhImageList
+    //     HIMAGELIST hSmallImageList = (HIMAGELIST)(pvarhImageList->lVal);
+    // 
+    //     A VARIANT that contains the handle to large image list for the container
+    //     file bstrFileName.
+    // 
+    // Components should return the handle to the large image list for the container
+    // file.  This function is currently not used by DC.
+    // 
+    [id(DISPID_IAcDcContentView_GetLargeImageListForContent), helpstring("Request to get the large image list for a given container")]
+    HRESULT GetLargeImageListForContent(
+        [in] BSTR bstrFileName                  // full file name 
+        , [out, retval] VARIANT *pvarhImageList // large HIMAGELIST (VT_I4)
+    );
+
+    // 
+    // Called by DC to obtain language-independent command string or the help
+    // text for a context menu item; this is not used at this time by DC.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // varMenuID
+    //     int nMenuID = varMenuID.lVal;
+    // 
+    //     A VARIANT that contains the menu identifier.
+    // dcMenuInfoFlag
+    //     A flag taken from dcMenuInfoFlag to indicate the information to retrieve.
+    //     Not used currently.
+    // pvarReserved
+    //     Reserved.
+    // pbstrName
+    //     A BSTR that would contain the null-terminated string.
+    // 
+    [id(DISPID_IAcDcContentView_GetCommandString), helpstring("Request to get the command string or the help text for a context menu item")]
+    HRESULT GetCommandString(
+        [in] VARIANT varMenuID          // menu id
+        , [in] dcMenuInfoFlag           // which information is required
+        , [out] VARIANT *pvarReserved   // reserved, handlers must ignore this
+        , [out] BSTR *pbstrName         // menu information
+    );
+
+    // 
+    // Deletes the component-defined data associated with each item by the
+    // component in either the navigator or palette of DesignCenter.
+    // 
+    // * Returns NOERROR on success or an OLE-defined error on failure.
+    // 
+    // dcSrc
+    //     A flag taken from dcItemDataSource enum that indicates the source of
+    //     the item data - either the navigator or the palette.
+    // varItemDataArray
+    //     VARIANT varArray = varItemDataArray.parray;
+    // 
+    //     A VARIANT that contains a SAFEARRAY of DWORDs which point to a
+    //     VARIANT that contains component-defined data.
+    // 
+    // DesignCenter calls this function when it is deleting the items provided
+    // by the component in either the palette or the navigator.  It supplies the
+    // data associated with all the items in a SAFEARRAY of DWORDs.  These
+    // DWORDs actually point to the memory for a VARIANT that contains the
+    // actual data that the component supplied when it called AddPaletteItem.
+    // This memory for the VARIANT has to be freed by the component for each
+    // item in the SAFEARRAY.  It is recommended that this memory be allocated
+    // by using COM memory allocator interface IMalloc or the OLE-implemented
+    // memory task manager.
+    //
+    [id(DISPID_IAcDcContentView_DeleteItemData), helpstring("Request to delete data associated with each item in navigator or palette")]
+    HRESULT DeleteItemData(
+        [in] dcItemDataSource dcSrc     // navigator or palette
+        , [in] VARIANT varItemDataArray // SAFEARRAY of DWORDs (V_I4)
+    );
+
+}; // interface IAcDcContentView
+
+// structure for passing informations on found items, from the IcontentFinder implementation
+// to the IAcDcContentFinderSite implementation
+typedef struct {
+    LPCOLESTR        lpObjectName;          // name of the object
+    LPCOLESTR        lpObjectType;			// type of the object (ie: "AutoCAD Drawing")
+    LPCOLESTR        lpCustomValue;         // value of the found property, if the property to search is not the default
+    LPCOLESTR        lpLocation;            // object location (usually a folder name for file based object) 
+    FILETIME         ftLastWriteTime;       // timestamp of the object
+    DWORD            nFileSizeHigh;         // object size (high order dword)
+    DWORD            nFileSizeLow;          // object size (low order dword)
+    short            nBitmapIndex;          // index of the bitmap which should be used with this object
+    short            nObjectType;           // type of the returned object. ceFinderObjectTypes enum value
+    short            nObjectTypeEx;         // extra information about the object type. custom defined. reserved for future use
+} FINDOBJECTINFO;
+
+// IUnknown interface for IAcDcContentFinderSite
+//
+[
+    object,
+    uuid(F6F24140-EC52-11d1-B9C7-0060B0B5E151),
+    helpstring("IAcDcContentFinderSite Interface"),
+    pointer_default(ref)
+]
+
+interface IAcDcContentFinderSite : IUnknown
+    {
+    //
+    // Called by a component during its search process to communicate to the finder site 
+    // informations about each objet it finds. 
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // lpObjectInfo
+    //		Pointer to a FINDOBJECTINFO structure wich contains all the informations about
+    //		an object.
+    // pbContinue
+    //		Pointer to a boolean value set by the finder site. This value is
+    //		true if the search should continue and false if the component should
+    //		stop the search.
+    //
+    //
+    [helpstring("Callback for object information")]
+    HRESULT SetObjectInfo (
+                    [in] FINDOBJECTINFO* lpObjectInfo,              // informations about the object 
+                    [out, retval] boolean* pbContinue
+    );
+
+    //
+    // Called by a component to communicate a message to the finder site while a search
+    // is in progress
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    //
+    // lpMessage
+    //		Message string
+    // pbContinue
+    //		Pointer to a boolean value set by the finder site. This value is
+    //		true if the search should continue and false if the component should
+    //		stop the search.
+    //
+    // Called by an IAcDcContentFinder implementation to display a message in
+    // the finder dialog status bar . Most likely the component will communicate
+    // the current folder it is searching in
+    //
+    [helpstring("Callback for messages")]
+    HRESULT SetMessage (
+                    [in, string] LPCOLESTR lpMessage,                  // message
+                    [out, retval] boolean* pbContinue
+    ); 
+
+    //
+    // Called by a component in response to a EnumeratePropertyValues() request.
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // lpPropertyValue
+    //		Value that the component communicates to the finder site for the requested
+    //		property
+    // pbContinue
+    //		Pointer to a boolean value set by the finder site. This value is
+    //		true if the search should continue and false if the component should
+    //		stop the search.
+    //
+    // The finder site will call EnumeratePropertyValues() in the component if a
+    // property has been specified in the advanced tab. This apply to the
+    // current object that the component returns to the finder site using
+    // SetObjectInfo(). When EnumeratePropertyValues() is called the component
+    // is supposed to enter a loop and return each value of the requested
+    // property using SetPropertyValue()
+    //
+    [helpstring("Callback for property values")]
+    HRESULT SetPropertyValue (
+                    [in, string] LPCOLESTR lpPropertyValue,
+                    [out, retval] boolean* pbContinue
+    ); 
+
+    //
+    // Called by a component to communicates the 16x16 bitmap that it associates
+    // with a given type.  The bitmap will be displayed in the search result
+    // list of the finder dialog.
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // lpTypeName
+    //		Name of the object type
+    // lpPictureDisp
+    //		Pointer to the picture created by the component
+    // pnBitmapIndex
+    //		Pointer to an index which is attributed by the finder site for the
+    //		specified image.  The component should cache this index and
+    //		communicates it to the finder site in FINDOBJECTINFO.nBitmapIndex
+    //		when calling SetObjectInfo()
+    //
+    [helpstring("Set the searched type bitmap")]
+    HRESULT SetTypeBitmap (
+                    [in, string] LPCOLESTR lpTypeName,
+                    [in] IPictureDisp* lpPictureDisp,
+                    [out] short *pnBitmapIndex
+    ); 
+
+    //
+    // Called by a component to ask if the search should continue
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // pbContinue
+    //		Pointer to a boolean value set by the finder site. This value is
+    //		true if the search should continue and false if the component should
+    //		stop the search.
+    //
+    // This method should be called often because it allows the finder dialog to
+    // process its Windows messages. Thus calling it often make the finder
+    // dialog more responsive to the user input.
+    //
+    [helpstring("Ask for continuing. Also allow yield")]
+    HRESULT QueryContinueFind (
+                    [out, retval] boolean* pbContinue
+    ); 
+
+}; // IAcDcContentFinderSite
+
+[
+    object,
+#if !defined(_WIN64) && !defined (_AC64)
+    uuid(B7EE59AE-E9F7-11D1-B9C2-0060B0B5E151),
+#else
+    uuid(3B98CCC9-AC84-437D-80FE-1F8199024F18),
+#endif
+    helpstring("IAcDcContentFinder Interface"),
+    pointer_default(unique)
+]
+
+// IUnknown interface for IAcDcContentFinder
+//
+interface IAcDcContentFinder : IUnknown
+    {
+    //
+    // Called by DC to initialize a finder component.
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // pClient
+    //		Back pointer to the finder site.  This pointer can be cached by the
+    //		component and used to call methods of the IAcDcContentFinderSite
+    //		interface.
+    //
+    // This method is called by the finder client when it instantiate a finder
+    // component for the first time. It's only called once, even if the
+    // component supports more than one object types.
+    //
+    [helpstring("One time initialization for the finder")]
+    HRESULT Initialize (
+            [in] IAcDcContentFinderSite* pClient
+    );
+
+    //
+    // Called by DC to start a search. 
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // pClient
+    //		Back pointer to the finder site.  This pointer can be cached by the
+    //		component and used to call methods of the IAcDcContentFinderSite
+    //		interface.
+    // lpTypeName
+    //		Name of the object type to search for.
+    // lpDirName
+    //		Folder where the search must start. This value is supplied for
+    //		component information: the finder site set the current directory to
+    //		the folder specified, so the component does not have to take care of
+    //		it
+    // lpFilter
+    //		Filter specified by the user. In most cases this value is not used
+    //		by the component.  A component knows what type of file(s) search in
+    //		for the given type, so the filter is ignored.
+    // bRecurse
+    //		Tells if the search should include the subfolders
+    // lpPropertyRequested
+    //		Name of the property specified in the 'In the Field(s)' combobox of
+    //		the main tab
+    // bAdvPropertySearch
+    //		Reserved. Internal use only
+    //
+    // The component is supposed to enter an enumeration loop. The component
+    // from this loop will: - call SetObjectInfo() for each object found of the
+    // given type - call regularly QueryContinueFind() in order to let the user
+    // stop the search. The call to QueryContinueFind() must be frequent enough
+    // to have a quick response to the user request to stop the search.
+    // 
+    // Note: the finder site pointer is also received in the Initialize()
+    // method. If cached at this time, it can be ignored in this function
+    //
+    [helpstring("Start the enumeration of the objects of a given type")]
+    HRESULT EnumerateObjects (
+                    [in] IAcDcContentFinderSite* pClient,
+                    [in, string] LPCOLESTR lpTypeName,
+                    [in, string] LPCOLESTR lpDirName,
+                    [in, string] LPCOLESTR lpFilter,
+                    [in] boolean bRecurse,
+                    [in, string] LPCOLESTR lpPropertyRequested,
+                    [in] boolean bAdvPropertySearch
+    );
+
+    //
+    // Called by DC to enumerate the values of an advanced property. 
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // lpPropertyName
+    //      name of the advanced property
+    //
+    // This method is called if an aditionnal search criteria has been specified
+    // in the advanced tab.  In this case, it is called immediately for each
+    // object in response to a call to SetObjectInfo() by the component.
+    //
+    [helpstring("Advanced property value enumeration")]
+    HRESULT EnumeratePropertyValues (
+            [in, string] LPCOLESTR lpPropertyName     // property name
+    );
+
+    //
+    // Called by DC to ask if it supports multi selection in the result list for
+    // a given type. 
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // lpTypeName
+    //      Name of the type
+    // pbEnable
+    //      pointer to a boolean value set by the component to indicate if multiselection 
+    //      is supported
+    //
+    // If the component replies that the multiselection is enabled, the user
+    // will be able to drag and drop or invoke commands involoving multiple
+    // objects from multiple files in a single operation
+    //
+    [helpstring("Ask the component for multiselection")]
+    HRESULT IsMultiselectionEnabled (
+                    [in, string] LPCOLESTR lpTypeName,
+                    [out, retval] boolean* pbEnable
+    ); 
+
+    //
+    // Called by DC to process a selected contextual menu command
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // nCmdId
+    //      Command identifier. The command value is one of dcFinderCommands
+    //      (see dcconst.idl)
+    // pNames
+    //      Table of object names involved in the command. Can contain more than
+    //      one name if the component indicated that multiselection is enabled
+    //      in the Finder for the given type
+    // nObjectType
+    //      Object type. Reserved for internal use. Object type is implicit. It
+    //      is the last type the user has requested a search on.
+    //
+    [helpstring("Pass a command to be executed by the component")]
+    HRESULT InvokeCommand (
+                    [in] int nCmdId,
+                    [in] SAFEARRAY(BSTR) *pNames,
+                    [in] int nObjectType
+    ); 
+
+    //
+    // Called by DC to indicates that the component should stop any search in
+    // progress immediately.  If the component keeps database(s) open during the
+    // search, these databases should be closed by this function
+    //
+    [helpstring("Interrupt a search. Searching should stop immediatly")]
+    HRESULT Interrupt ();
+
+    //
+    // Called by DC to allow a component to add/remove/modify options in the
+    // contextual menu. This method is called just before the contextual menu
+    // is displayed
+    //
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // hMenu
+    //      HMENU hWinMenuHandle = (HMENU)hMenu  
+    //      handle of the contextual menu 
+    //
+    // The options that the menu contains can be handled usinfg the command ID.
+    // Command ID in the menu have the idl values (see dcFinderCommands in
+    // dconst.idl) + an offset value of 100 This command is implicitely invoked
+    // on the last object type for which a search has been made.
+    //
+    [helpstring("Give to the component an opportunity to modify the popup menu before it is displayed")]
+    HRESULT InitPopupMenu (
+                    [in] INT_PTR hMenu
+    );
+
+    //
+    // Called by DC to get the location of an object, as it appears in the
+    // DesignCenter tree and palette.  This is used to perfom the 'Load into
+    // Palette' command.
+    // 
+    // * Returns NOERROR if successful, or an OLE-defined error value otherwise
+    // 
+    // lpObjectName
+    //      the name of the object as the component supplied it in
+    //      FINDOBJECTINFO.lpObjectName
+    // lpFolderName
+    //      the name of the object as the component supplied it in
+    //      FINDOBJECTINFO.lpLocation
+    // lpType
+    //      the name of the object as the component supplied it in
+    //      FINDOBJECTINFO.lpObjectType
+    // lpTreeLocation
+    //      pointer to an LPOLESTR. This OLE string is allocated by the
+    //      component, and will be freed by DC. The string must contains the
+    //      location of the given object, as it appears in the DC tree.
+    // lpPaletteItemName
+    //      pointer to an LPOLESTR. This OLE string is allocated by the
+    //      component, and will be freed by DC. The string must contains the
+    //      name of the object, as it appears in the DC palette.
+    //
+    // In most cases, especially from components displayed in the desktop view,
+    // the name returned in lpPaletteItemName will be the name received in
+    // lpObjectName. The location returned in lpTreeLocation will be the folder
+    // received in lpFolderName if the object is a file, and the folder name +
+    // the placeholder name if the object appears in a virtual folder
+    //
+    HRESULT QueryObjectLocation (
+                [in] LPCOLESTR lpObjectName,
+                [in] LPCOLESTR lpFolderName,
+                [in] LPCOLESTR lpType,
+                [in, out] LPOLESTR *lpTreeLocation,
+                [in, out] LPOLESTR *lpPaletteItemName
+    );
+
+
+}; // IAcDcContentFinder

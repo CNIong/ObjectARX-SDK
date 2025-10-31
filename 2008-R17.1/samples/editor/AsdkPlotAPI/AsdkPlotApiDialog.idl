@@ -1,0 +1,72 @@
+// (C) Copyright 2005-2006 by Autodesk, Inc. 
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted, 
+// provided that the above copyright notice appears in all copies and 
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting 
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to 
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+//
+// AsdkPlotApiDialog.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (asdkAsdkPlotApiDialog.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+//import "acadi.idl";
+
+[
+	object,
+	uuid(9362CEAB-4B2E-491F-B588-02183E18283C),
+	dual,
+	nonextensible,
+	helpstring("IAsdkPlotNotifySink Interface"),
+	pointer_default(unique)
+]
+interface IAsdkPlotNotifySink : IDispatch{
+	[id(1), helpstring("method SendPlotEvent")] HRESULT SendPlotEvent(BSTR EventString);
+	[propget, id(2), helpstring("property Visible")] HRESULT Visible([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(2), helpstring("property Visible")] HRESULT Visible([in] VARIANT_BOOL newVal);
+};
+[
+	uuid(79897881-D31A-4E29-865E-8C7096349AF0),
+	version(1.0),
+	helpstring("asdkAsdkPlotApiDialog 1.0 Type Library")
+]
+library asdkAsdkPlotApiDialogLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//----- If the following import fails then it means that the type library 
+	//----- is not on the system path you can fix the problem in two ways:
+	//----- 1. Add it to the system wide PATH environment variable
+	//----- 2. Add it to the executable file list in Developer Studio. You can do
+	//----- this in using the Tools/Option menu and then choosing the 'Directories'
+	//----- tab and finally typing the full path at the Executable files section.
+
+	//----- Importing english is ok here. Autodesk doesn't localize this idl/tlb.
+	//----- axdb17enu.tlb is guaranteed to be available in all locales.
+	//----- If you want to provide localized typelib then you must import
+	//----- localized tlb here.
+	importlib("axdb17enu.tlb");
+	[
+		uuid(7D6B6C36-DC1E-4C85-A5FB-1510359D4732),
+		helpstring("CPlotNotifySink Class")
+	]
+	coclass CPlotNotifySink
+	{
+		[default] interface IAsdkPlotNotifySink;
+	};
+};

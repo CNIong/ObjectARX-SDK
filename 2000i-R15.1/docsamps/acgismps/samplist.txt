@@ -1,0 +1,31 @@
+This directory contains subdirectories that contain sample
+programs to demonstrate various aspects of AcGi.
+ (C) Copyright 1998 by Autodesk, Inc.
+
+icon     - How to make an object that draws on the same
+           place on the screen relative to the viewport
+           borders no matter how you aim the viewport's
+           camera.
+
+teselate - How to tesselate a circle with the least number
+           of segments and not be able to distinguish the
+           individual segments.
+
+traits   - A worldDraw example that demonstrates setting
+           a geometry's attributes.
+
+coordsys - How to make the same polyline in model, eye, and
+           display coordinates.
+
+viewgeom - How to calculate which edges of a pyramid are
+           on the far side of the pyramid with respect to
+           to the viewport's vantage point.
+
+mesh     - How to use AcGi meshes
+
+shell    - How to use AcGi shells
+
+textstyl - Demonstrates the use of AcGiTextStyles
+
+stylcvrt - Shows how to read data from an AcDbTextStyleRecord
+           into an AcGiTextStyle object.

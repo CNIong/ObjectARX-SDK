@@ -1,0 +1,27 @@
+HKCR
+{
+	SliderCrankDb.Crank.1 = s 'Crank Class'
+	{
+		CLSID = s '{848A798D-6919-43D8-BFF1-0767FA09D840}'
+	}
+	SliderCrankDb.Crank = s 'Crank Class'
+	{
+		CLSID = s '{848A798D-6919-43D8-BFF1-0767FA09D840}'
+		CurVer = s 'SliderCrankDb.Crank.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {848A798D-6919-43D8-BFF1-0767FA09D840} = s 'Crank Class'
+		{
+			ProgID = s 'SliderCrankDb.Crank.1'
+			VersionIndependentProgID = s 'SliderCrankDb.Crank'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{BED89941-05DD-476F-BD3C-E063B8157A13}'
+		}
+	}
+}

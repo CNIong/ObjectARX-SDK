@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextFileField", "TextFileField\TextFileField.vcproj", "{A2B14437-2D2F-4C4C-8449-7A48BF5E651D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextFileFieldUI", "TextFileFieldUI\TextFileFieldUI.vcproj", "{54A0035E-AAB2-40DF-9F64-E949CDF64995}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A2B14437-2D2F-4C4C-8449-7A48BF5E651D}.Debug.ActiveCfg = Debug|Win32
+		{A2B14437-2D2F-4C4C-8449-7A48BF5E651D}.Debug.Build.0 = Debug|Win32
+		{A2B14437-2D2F-4C4C-8449-7A48BF5E651D}.Release.ActiveCfg = Release|Win32
+		{A2B14437-2D2F-4C4C-8449-7A48BF5E651D}.Release.Build.0 = Release|Win32
+		{54A0035E-AAB2-40DF-9F64-E949CDF64995}.Debug.ActiveCfg = Debug|Win32
+		{54A0035E-AAB2-40DF-9F64-E949CDF64995}.Debug.Build.0 = Debug|Win32
+		{54A0035E-AAB2-40DF-9F64-E949CDF64995}.Release.ActiveCfg = Release|Win32
+		{54A0035E-AAB2-40DF-9F64-E949CDF64995}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,61 @@
+Lab4
+
+Purpose:
+=======
+
+In this lab we introduce the concepts of dictionaries, explore the named 
+objects dictionary, and create a new dictionary named 
+OARXLABS_EMPLOYEE_DICTIONARY. We also create empty xrecord objects in this
+new dictionary to represent employee records.
+Having these entries in a dictionary enables us to iterate through all 
+employees in the database quickly and easily.
+
+Steps:
+=====
+1. Start with the results of Lab1.
+2. Add three new commands (addentry, removeentry, listentries) to replace the 
+   commands defined by Lab1. Use the command group OARX_LAB4. Don't forget to 
+   remove this command group when your application is unloaded.
+3. Create the command addentry. This will add a new xrecord to the 
+   OARXLABS_EMPLOYEE_DICTIONARY residing in the Named Objects Dictionary (NOD).
+   Here's the intended object relationship:
+
+NOD (class:AcDbDictionary)
+ |_"OARXLABS_EMPLOYEE_DICTIONARY" (class:AcDbDictionary)
+                |_"Albert" (class:AcDbXrecord)
+                |_"Ken" (class:AcDbXrecord)
+                |_"Shawn" (class:AcDbXrecord)
+
+3a. In the solved lab, I'm using transactions to do the database manipulations,
+    but you can use the open/close paradigm to achieve the same result.
+3b. First, you get the NOD using either AcDbDatabase::getNamedObjectsDictionary
+    or AcDbDatabase::namedObjectsDictionaryId. If you use the latter you will 
+    need to open the object. This can be done using a transaction.
+3c. You must check to see if OARXLABS_EMPLOYEE_DICTIONARY is already
+    present in the NOD. You can do this using the AcDbDictionary::getAt function.
+3d. If it is not yet there, you need to create it using the AcDbDictionary::setAt function.
+3e. If it is already there, you may need to open the object, depending on which 
+    AcDbDictionary::getAt you used in Step 3c.
+3f. Prompt the user for an employee ID (e.g., name). Disallow spaces. We are
+    going to use this ID as a dictionary key. Dictionary keys cannot contain spaces.
+3g. Check to see if the key is already present in OARXLABS_EMPLOYEE_DICTIONARY.
+3h. If it is not, create a new AcDbXrecord object and put it into 
+    OARXLABS_EMPLOYEE_DICTIONARY using AcDbDictionary::setAt.
+4.  You can create the removeentry command based on the addentry command. Cut and
+    paste the command definition.
+4a. You don't need to create OARXLABS_EMPLOYEE_DICTIONARY if it is not present. Return an error instead.
+4b. Prompt the user for an employee ID (e.g., name).
+4c. Use AcDbDictionary::getAt on the OARXLABS_EMPLOYEE_DICTIONARY to see if the employee is in the dictionary.
+4d. Open the object if it is there (this might have been done in Step 4c, depending 
+    on which version of getAt you use) and use erase() to remove the object.
+5.  You can create the listentries command based on the removeentries command. 
+    Cut and paste the command definition.
+5a. Since you want to list ALL elements of a dictionary, you will need to use
+    an iterator. (You cannot use getAt because you don't know the key). Traverse
+    to OARXLABS_EMPLOYEE_DICTIONARY and call AcDbDictionary::newIterator.
+    ("Traversing" means that you open the NOD, you getAt OARXLABS_EMPLOYEE_DICTIONARY, and you open it for read. You can borrow
+    this code from the removeemp command).
+5b. Use a "for" or "while" loop and the AcDbDictionaryIterator::done and 
+    AcDbDictionary::next functions to step through all elements in the dictionary.
+5c. Use AcDbDictionaryIterator::name to list the key of the individual entries.
+5d. Don't forget to delete the iterator when you are done using it.

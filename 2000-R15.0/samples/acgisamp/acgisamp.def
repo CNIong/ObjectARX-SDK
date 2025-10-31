@@ -1,0 +1,7 @@
+DESCRIPTION 'Autodesk Class1 Rx sample application'
+LIBRARY     acgisamp
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

@@ -1,0 +1,7 @@
+LIBRARY coordsys
+DESCRIPTION 'ObjectARX AcGi coordinate system conversions Test Program'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

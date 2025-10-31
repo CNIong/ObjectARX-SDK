@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CDFFD82B-8B1F-4D96-94BB-F0D9ECA2BD76}</ProjectGuid>
+    <RootNamespace>ArxDbg</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\inc\rxsdk_releasecfg.props" />
+    <Import Project="..\..\..\inc\arx.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\inc\rxsdk_debugcfg.props" />
+    <Import Project="..\..\..\inc\arx.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\inc\rxsdk_releasecfg.props" />
+    <Import Project="..\..\..\inc\arx.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\inc\rxsdk_debugcfg.props" />
+    <Import Project="..\..\..\inc\arx.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.\inc;..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AcDrawBridge.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\..\..\inc\AcRxDefault.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.\inc;..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AcDrawBridge.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\..\..\inc\AcRxDefault.def</ModuleDefinitionFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.\inc;..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AcDrawBridge.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\..\..\inc\AcRxDefault.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.\inc;..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AcDrawBridge.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\..\..\inc\AcRxDefault.def</ModuleDefinitionFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AcadUtils\AcadStr.cpp" />
+    <ClCompile Include="App\ArxDbgApp.cpp" />
+    <ClCompile Include="App\ArxDbgAppEditorReactor.cpp" />
+    <ClCompile Include="Snoop\ArxDbgCloneSet.cpp" />
+    <ClCompile Include="AdeskLogo\ArxDbgCmdAdeskLogo.cpp" />
+    <ClCompile Include="Reactors\ArxDbgCmdReactors.cpp" />
+    <ClCompile Include="Snoop\ArxDbgCmdSnoop.cpp" />
+    <ClCompile Include="Tests\ArxDbgCmdTests.cpp" />
+    <ClCompile Include="Reactors\ArxDbgDatabaseReactor.cpp" />
+    <ClCompile Include="AdeskLogo\ArxDbgDbAdeskLogo.cpp" />
+    <ClCompile Include="AdeskLogo\ArxDbgDbAdeskLogoStyle.cpp" />
+    <ClCompile Include="BaseClasses\ArxDbgDbDictRecord.cpp" />
+    <ClCompile Include="BaseClasses\ArxDbgDbEntity.cpp" />
+    <ClCompile Include="Reactors\ArxDbgDLinkerReactor.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgDocLockWrite.cpp" />
+    <ClCompile Include="Reactors\ArxDbgDocumentReactor.cpp" />
+    <ClCompile Include="Filers\ArxDbgDwgFiler.cpp" />
+    <ClCompile Include="Reactors\ArxDbgEdInputContextReactor.cpp" />
+    <ClCompile Include="Reactors\ArxDbgEditorReactor.cpp" />
+    <ClCompile Include="App\ArxDbgEdUiContext.cpp" />
+    <ClCompile Include="Reactors\ArxDbgEventReactor.cpp" />
+    <ClCompile Include="Reactors\ArxDbgGsReactor.cpp" />
+    <ClCompile Include="Prompt\ArxDbgKeywordArray.cpp" />
+    <ClCompile Include="Reactors\ArxDbgLayoutManagerReactor.cpp" />
+    <ClCompile Include="Reactors\ArxDbgLongTransactionReactor.cpp" />
+    <ClCompile Include="App\ArxDbgOptions.cpp" />
+    <ClCompile Include="Reactors\ArxDbgPersistentEntReactor.cpp" />
+    <ClCompile Include="Reactors\ArxDbgPersistentObjReactor.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgRbList.cpp" />
+    <ClCompile Include="Filers\ArxDbgReferenceFiler.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgSelSet.cpp" />
+    <ClCompile Include="Reactors\ArxDbgTransactionReactor.cpp" />
+    <ClCompile Include="Reactors\ArxDbgTransientEntReactor.cpp" />
+    <ClCompile Include="Reactors\ArxDbgTransientObjReactor.cpp" />
+    <ClCompile Include="App\ArxDbgUiDlgAboutBox.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgClassDict.cpp" />
+    <ClCompile Include="Tests\ArxDbgUiDlgColor.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgDxf.cpp" />
+    <ClCompile Include="Filers\ArxDbgUiDlgFilerTest.cpp" />
+    <ClCompile Include="Ui\ArxDbgUiDlgGenericDefId.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgObjectId.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgObjState.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgReactors.cpp" />
+    <ClCompile Include="Tests\ArxDbgUiDlgSelSet.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgServiceDict.cpp" />
+    <ClCompile Include="Ui\ArxDbgUiDlgSplash.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgSysRegistry.cpp" />
+    <ClCompile Include="Tests\ArxDbgUiDlgTestCurves.cpp" />
+    <ClCompile Include="Tests\ArxDbgUiDlgWorldDraw.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiDlgXdata.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrAngle.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrAngleDef.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrBase.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrCorner.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrDist.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrDistDef.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrDouble.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrDoubleDef.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrEntity.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrInt.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrIntDef.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrKeyWord.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrKeyWordDef.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrPoint.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrString.cpp" />
+    <ClCompile Include="Prompt\ArxDbgUiPrStringDef.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcClasses.cpp" />
+    <ClCompile Include="TransDbClones\ArxDbgUiTdcCloneSet.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcCmds.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcDatabase.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcDbObjectBase.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcDict.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcDocs.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcEntities.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcHostAppSrv.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcIdMap.cpp" />
+    <ClCompile Include="TransDbClones\ArxDbgUiTdcInsert.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcLongTrans.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcObjects.cpp" />
+    <ClCompile Include="Reactors\ArxDbgUiTdcObjReactorsBase.cpp" />
+    <ClCompile Include="App\ArxDbgUiTdcOptions.cpp" />
+    <ClCompile Include="Reactors\ArxDbgUiTdcPersistentReactors.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcReferences.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcRxObjectBase.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdcSymTbl.cpp" />
+    <ClCompile Include="Reactors\ArxDbgUiTdcSysReactors.cpp" />
+    <ClCompile Include="Reactors\ArxDbgUiTdcTransientReactors.cpp" />
+    <ClCompile Include="TransDbClones\ArxDbgUiTdcWblockClone.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdmDatabase.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdmEditor.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdmEntities.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdmIdMap.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdmLongTrans.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdmObjects.cpp" />
+    <ClCompile Include="Reactors\ArxDbgUiTdmReactors.cpp" />
+    <ClCompile Include="Snoop\ArxDbgUiTdmReferences.cpp" />
+    <ClCompile Include="TransDbClones\ArxDbgUiTdmTransDbClones.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgUtilsAcadUi.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgUtilsDb.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgUtilsDict.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgUtilsGe.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgUtilsSymTbl.cpp" />
+    <ClCompile Include="Tests\ArxDbgWorldDraw.cpp" />
+    <ClCompile Include="AcadUtils\ArxDbgXdata.cpp" />
+    <ClCompile Include="Tests\EntMakeTest.cpp" />
+    <ClCompile Include="Tests\MapTest.cpp" />
+    <ClCompile Include="MfcExt\SdStrList.cpp" />
+    <ClCompile Include="AcadUtils\SdStrObjId.cpp" />
+    <ClCompile Include="AcadUtils\SdSysVar.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Tests\TblMakeTest.cpp" />
+    <ClCompile Include="MfcExt\UiUtils.cpp" />
+    <ClCompile Include="Tests\XformTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ArxDbg.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inc\AcadStdafx.h" />
+    <ClInclude Include="Inc\AcadStr.h" />
+    <ClInclude Include="Inc\ArxDbgApp.h" />
+    <ClInclude Include="Inc\ArxDbgAppEditorReactor.h" />
+    <ClInclude Include="Inc\ArxDbgCmd.h" />
+    <ClInclude Include="Inc\ArxDbgCmdAdeskLogo.h" />
+    <ClInclude Include="Inc\ArxDbgCmdReactors.h" />
+    <ClInclude Include="Inc\ArxDbgCmdSnoop.h" />
+    <ClInclude Include="Inc\ArxDbgCmdTests.h" />
+    <ClInclude Include="Inc\ArxDbgDatabaseReactor.h" />
+    <ClInclude Include="Inc\ArxDbgDbAdeskLogo.h" />
+    <ClInclude Include="Inc\ArxDbgDbAdeskLogoStyle.h" />
+    <ClInclude Include="Inc\ArxDbgDbDictRecord.h" />
+    <ClInclude Include="Inc\ArxDbgDbEntity.h" />
+    <ClInclude Include="Inc\ArxDbgDlgColor.h" />
+    <ClInclude Include="Inc\ArxDbgDLinkerReactor.h" />
+    <ClInclude Include="Inc\ArxDbgDocumentReactor.h" />
+    <ClInclude Include="Inc\ArxDbgDwgFiler.h" />
+    <ClInclude Include="Inc\ArxDbgEdInputContextReactor.h" />
+    <ClInclude Include="Inc\ArxDbgEditorReactor.h" />
+    <ClInclude Include="Inc\ArxDbgEdUiContext.h" />
+    <ClInclude Include="Inc\ArxDbgEventReactor.h" />
+    <ClInclude Include="Inc\ArxDbgGsReactor.h" />
+    <ClInclude Include="Inc\ArxDbgKeywordArray.h" />
+    <ClInclude Include="Inc\ArxDbgLayoutManagerReactor.h" />
+    <ClInclude Include="Inc\ArxDbgLongTransactionReactor.h" />
+    <ClInclude Include="Inc\ArxDbgPersistentEntReactor.h" />
+    <ClInclude Include="Inc\ArxDbgPersistentObjReactor.h" />
+    <ClInclude Include="Inc\ArxDbgRbList.h" />
+    <ClInclude Include="Inc\ArxDbgSelSet.h" />
+    <ClInclude Include="Inc\ArxDbgTransactionReactor.h" />
+    <ClInclude Include="Inc\ArxDbgTransientEntReactor.h" />
+    <ClInclude Include="Inc\ArxDbgTransientObjReactor.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgAboutBox.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgClassDict.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgColor.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgDxf.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgFilerTest.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgGenericDefId.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgObjState.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgReactors.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgServiceDict.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgSplash.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgSysRegistry.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgTestCurves.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgWorldDraw.h" />
+    <ClInclude Include="Inc\ArxDbgUiDlgXdata.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrAngle.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrAngleDef.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrBase.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrCorner.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrDist.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrDistDef.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrDouble.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrDoubleDef.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrEntity.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrInt.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrIntDef.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrKeyWord.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrKeyWordDef.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrompts.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrPoint.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrString.h" />
+    <ClInclude Include="Inc\ArxDbgUiPrStringDef.h" />
+    <ClInclude Include="Inc\ArxDbgUiPsDatabase.h" />
+    <ClInclude Include="Inc\ArxDbgUiPsEntities.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcClasses.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcCmds.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcDatabase.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcDbObjectBase.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcDict.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcDocs.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcEntities.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcIdMap.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcLongTrans.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcObjects.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcObjReactorsBase.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcOptions.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcPersistentReactors.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcRxObjectBase.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcSymTbl.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcSysReactors.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdcTransientReactors.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdmDatabase.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdmEditor.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdmEntities.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdmIdMap.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdmLongTrans.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdmObjects.h" />
+    <ClInclude Include="Inc\ArxDbgUiTdmReactors.h" />
+    <ClInclude Include="Inc\ArxDbgUtils.h" />
+    <ClInclude Include="Inc\ArxDbgUtilsGe.h" />
+    <ClInclude Include="Inc\ArxDbgWorldDraw.h" />
+    <ClInclude Include="Inc\ArxDbgXdata.h" />
+    <ClInclude Include="Inc\EntMakeTest.h" />
+    <ClInclude Include="Inc\ExtDwgDbox.h" />
+    <ClInclude Include="Inc\FilerTestDbox.h" />
+    <ClInclude Include="Inc\MapTest.h" />
+    <ClInclude Include="Res_ArxDbg.h" />
+    <ClInclude Include="Inc\SdStrList.h" />
+    <ClInclude Include="Inc\SdStrObjId.h" />
+    <ClInclude Include="Inc\SdSysVar.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Inc\TblMakeTest.h" />
+    <ClInclude Include="Inc\XformTest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\arxdbg_b.bmp" />
+    <None Include="res\splash.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,28 @@
+:Index AutoCAD SQL Interface LISP Developer's Guide=ase.hlp
+:Title AutoCAD SQL Interface LISP Developer's Guide
+:Base ase.hlp
+1 AutoCAD SQL Interface LISP Developer's Guide
+2 Introduction=Introduction_Aseu_00@ase.hlp
+2 ASI=ASI@ase.hlp
+2 AutoLISP ASI=AutoLISP_ASI@ase.hlp
+2 AutoLISP Function Catalog=AutoLISP_Function_Catalog@ase.hlp
+2 Error Codes=Error_Codes@ase.hlp
+2 SQL2 Overview=SQL2_Overview@ase.hlp
+2 AutoLISP ASI Sample Application=AutoLISP_ASI_Sample_Application@ase.hlp
+:Base ASEmain.hlp>main
+:Index AutoCAD SQL Environment and Link C++ Developer's Guide=ASEmain.hlp
+:Title AutoCAD SQL Environment and Link C++ Developer's Guide
+1 AutoCAD SQL Environment and Link C++ Developer's Guide
+2 General Information=ASE C++ Developers Guide@asemain.hlp
+2 CAseApiObj class=CAseApiObj@asemain.hlp
+2 CAseAppl class=CAseAppl@asemain.hlp
+2 CAseLinkPath class=CAseLinkPath@asemain.hlp
+2 CAseLink class=CAseLink@asemain.hlp
+2 CAseLinkSel class=CAseLinkSel@asemain.hlp
+:Base ASImain.hlp>main
+:Index AutoCAD SQL Interface C++ Developer's Guide=ASImain.hlp
+:Title AutoCAD SQL Interface C++ Developer's Guide
+1 AutoCAD SQL Interface C++ Developer's Guide
+2 General Information=ASI C++ Developers Guide@asimain.hlp
+2 Classes=ASI Class Library@asimain.hlp
+2 ASI and SQL=SQL2_Introduction@asimain.hlp

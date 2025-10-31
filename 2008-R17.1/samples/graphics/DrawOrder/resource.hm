@@ -1,0 +1,4 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by drawordersamp.rc
+//
+#define HIDC_BUTTON_ENTORDER            0x806700ce    // IDD_LAYERDIALOG

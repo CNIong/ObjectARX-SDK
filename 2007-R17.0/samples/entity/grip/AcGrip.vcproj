@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?><VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="AcGrip" ProjectGUID="{629016E8-E337-413D-9BB4-8BDF5544A68E}">
+	<Platforms>
+		<Platform Name="Win32"></Platform>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Release/AcGrip.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;ACGRIP_EXPORTS" StringPooling="true" RuntimeLibrary="2" BufferSecurityCheck="true" EnableFunctionLevelLinking="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" PrecompiledHeaderFile=".\Release/AcGrip.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" WarningLevel="3" SuppressStartupBanner="true" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386 /IGNORE:4089" AdditionalDependencies="acdb17.lib acad.lib acedapi.lib acgiapi.lib acge17.lib rxapi.lib" OutputFile="Release/AcGrip.arx" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" ProgramDatabaseFile=".\Release/AcGrip.pdb" ImportLibrary=".\Release/AcGrip.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Debug/AcGrip.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="" Optimization="0" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions="WIN32;;_WINDOWS;_USRDLL;ACGRIP_EXPORTS" BasicRuntimeChecks="3" RuntimeLibrary="2" BufferSecurityCheck="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" PrecompiledHeaderFile=".\Debug/AcGrip.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386" AdditionalDependencies="acdb17.lib acad.lib acedapi.lib acgiapi.lib acge17.lib rxapi.lib" OutputFile="Debug/AcGrip.arx" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" GenerateDebugInformation="true" ProgramDatabaseFile=".\Debug/AcGrip.pdb" ImportLibrary=".\Debug/AcGrip.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath=".\AcCircle.cpp">
+			</File>
+			<File RelativePath="AcCircleJig.cpp">
+			</File>
+			<File RelativePath="AcDynDimCommon.cpp">
+			</File>
+			<File RelativePath=".\AcLine.cpp">
+			</File>
+			<File RelativePath=".\acrect.cpp">
+			</File>
+			<File RelativePath="AcRectJig.cpp">
+			</File>
+			<File RelativePath=".\GripCommands.cpp">
+			</File>
+			<File RelativePath=".\GripImp.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath=".\AcCircle.h">
+			</File>
+			<File RelativePath="AcCircleJig.h">
+			</File>
+			<File RelativePath="AcDynDimCommon.h">
+			</File>
+			<File RelativePath=".\AcLine.h">
+			</File>
+			<File RelativePath=".\acrect.h">
+			</File>
+			<File RelativePath="AcRectJig.h">
+			</File>
+			<File RelativePath=".\GripCommands.h">
+			</File>
+			<File RelativePath=".\GripImp.h">
+			</File>
+			<File RelativePath="resource.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+	</Files>
+</VisualStudioProject>

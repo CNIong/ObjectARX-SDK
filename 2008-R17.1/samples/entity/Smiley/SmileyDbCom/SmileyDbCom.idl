@@ -1,0 +1,94 @@
+// SmileyDbCom.idl : IDL source for AsdkSmileyDbCom.dll
+//
+// (C) Copyright 2000-2006 by Autodesk, Inc.
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted, 
+// provided that the above copyright notice appears in all copies and 
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting 
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to 
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+//
+// Type library section and components
+//
+[
+	uuid(8AE8834F-88DF-4268-B75F-466D1DE1D75B),
+	version(1.0),
+	helpstring("SmileyDb 1.0 Type Library")
+]
+library SmileyDb
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//Importing english is ok here. We don't localize this idl/tlb.
+	//axdb17enu.tlb is guaranteed to be available in all locales.
+	//If you want to provide localized typelib then you must import
+	//localized tlb here.
+	importlib("axdb17enu.tlb");
+
+	// This file will be processed by the MIDL tool to
+	// produce the type library (AsdkSmileyDbCom.tlb) and marshalling code.
+
+	import "oaidl.idl";
+	import "ocidl.idl";
+
+	//
+	// ISmileyEntity interface
+	[
+		object,
+		uuid(5DD0F0BA-B639-4170-B011-16038B85B2DE),
+		dual,
+		helpstring("ISmileyEntity Interface"),
+		pointer_default(unique)
+	]
+	interface ISmileyEntity : IAcadEntity
+	{
+		[propget, id(1), helpstring( "Radius of the face." )] HRESULT Radius([out, retval] double* r);
+		[propput, id(1), helpstring( "Radius of the face." )] HRESULT Radius([in] double r);
+		[propget, id(2), helpstring( "Center of the face." )] HRESULT Center([out, retval] VARIANT* pv);
+		[propput, id(2), helpstring( "Center of the face." )] HRESULT Center([in] VARIANT var);
+		[propget, id(3), helpstring( "Normal vector of the face." )] HRESULT Normal([out, retval] VARIANT* pv);
+		[propput, id(3), helpstring( "Normal vector of the face." )] HRESULT Normal([in] VARIANT var);
+		[propget, id(4), helpstring( "Distance between the eyes." )] HRESULT EyesApart([out, retval] double* d);
+		[propput, id(4), helpstring( "Distance between the eyes." )] HRESULT EyesApart([in] double d);
+		[propget, id(5), helpstring( "Height of the eyes from the face center." )] HRESULT EyesHeight([out, retval] double* h);
+		[propput, id(5), helpstring( "Height of the eyes from the face center." )] HRESULT EyesHeight([in] double h);
+		[propget, id(6), helpstring( "Radius of the eyes." )] HRESULT EyesSize([out, retval] double* s);
+		[propput, id(6), helpstring( "Radius of the eyes." )] HRESULT EyesSize([in] double s);
+		[propget, id(7), helpstring( "Center of the mouth." )] HRESULT MouthCenter([out, retval] VARIANT* pv);
+		[propget, id(8), helpstring( "Left point of the mouth." )] HRESULT MouthLeft([out, retval] VARIANT* pv);
+		[propput, id(8), helpstring( "Left point of the mouth." )] HRESULT MouthLeft([in] VARIANT var);
+		[propget, id(9), helpstring( "Bottom point of the mouth." )] HRESULT MouthBottom([out, retval] VARIANT* pv);
+		[propput, id(9), helpstring( "Bottom point of the mouth." )] HRESULT MouthBottom([in] VARIANT var);
+		[propget, id(10), helpstring( "Right point of the mouth." )] HRESULT MouthRight([out, retval] VARIANT* pv);
+		[propput, id(10), helpstring( "Right point of the mouth." )] HRESULT MouthRight([in] VARIANT var);
+		[id(11), helpstring("Scale the whole Smiley")] HRESULT ScaleRadius(double r);
+		[propget, id(12), helpstring("property Color")] HRESULT BackgroundColor([out, retval] VARIANT* pv);
+		[propput, id(12), helpstring("property Color")] HRESULT BackgroundColor([in] VARIANT var);
+	};
+	//
+	// coclasses in type library
+	//
+
+	// SmileyEntity coclass
+	[
+		uuid(B079D266-5E04-40A3-B94E-6AB2B0B69EA9),
+		helpstring("SmileyEntity Class")
+	]
+	coclass SmileyEntity
+	{
+		[default] interface ISmileyEntity;
+		[source] interface IAcadObjectEvents;
+	};
+};

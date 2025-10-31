@@ -1,0 +1,7 @@
+LIBRARY      xrecord
+DESCRIPTION  'ObjectARX sample application - xrecord'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

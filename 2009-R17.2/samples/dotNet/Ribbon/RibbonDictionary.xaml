@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib" 
+    xmlns:adw="clr-namespace:Autodesk.Windows;assembly=AdWindows" 
+    xmlns:swf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    xmlns:adr="clr-namespace:Autodesk.AutoCAD.Ribbon;assembly=AcRibbon"
+    xmlns:src="clr-namespace:AdskRibbon"
+    >
+  <BitmapImage x:Uid="NewImage_1" x:Key="NewImage" UriSource="Images/new.gif"/>
+  <BitmapImage x:Uid="OpenImage_1" x:Key="OpenImage" UriSource="Images/open.gif"/>
+  <BitmapImage x:Uid="DWGImage_1" x:Key="DWGImage" UriSource="Images/Dwg.ico"/>
+  <BitmapImage x:Uid="EntSelImage_1" x:Key="EntSelImage" UriSource="Images/EntSel.bmp"/>
+  <BitmapImage x:Uid="LayoutImage_1" x:Key="LayoutImage" UriSource="Images/Layout.ico"/>
+
+  <adw:RibbonPanelSource x:Uid="adw:RibbonPanelSource_1" x:Key="Panel_1" Title="Documents" >
+    <adw:RibbonRow x:Uid="adw:RibbonRow_1">
+      <src:DocumentsGalleryControl/>
+    </adw:RibbonRow>
+    <adw:RibbonRow x:Uid="adw:RibbonRow_2">
+      <adw:RibbonDropDownButton ResizeStyle="Auto" Id="RibbonDropDownButton_1" ListStyle="List" Size="Large" ButtonStyle="FlyOut" ShowText="True">
+        <adw:RibbonDropDownButton.PanelSource>
+          <adw:RibbonPanelSource>
+            <adw:RibbonRow>
+              <adw:RibbonButton Id="adw:RibbonButton_1" Text="New" Size="Large" ShowText="true" LargeImage="{StaticResource NewImage}" Image="{StaticResource NewImage}" Orientation="Horizontal"/>
+              <adw:RibbonSeparator SeparatorStyle="Line" Id="adw:Line"/>
+              <adw:RibbonButton Id="adw:RibbonButton_2" Text="Open" Size="Large" ShowText="true" LargeImage="{StaticResource OpenImage}" Image="{StaticResource OpenImage}" Orientation="Horizontal"/>
+            </adw:RibbonRow>
+          </adw:RibbonPanelSource>
+        </adw:RibbonDropDownButton.PanelSource>
+      </adw:RibbonDropDownButton>
+    </adw:RibbonRow>
+  </adw:RibbonPanelSource>
+
+  <adw:RibbonPanelSource x:Uid="adw:RibbonPanelSource_3" x:Key="Panel_3" Title="Entity Properties" >
+    <adw:RibbonRow x:Uid="adw:RibbonRow_1">
+      <adw:RibbonForm Id="mForm"/>
+    </adw:RibbonRow>
+  </adw:RibbonPanelSource>
+</ResourceDictionary>

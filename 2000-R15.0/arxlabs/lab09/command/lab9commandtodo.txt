@@ -1,0 +1,53 @@
+Implementing a Command to Create an AcDbEmployee
+================================================
+
+A) Step 1 - Importing the ARX class
+
+Examine the code in Lab9cMain.cpp to determine how the AcDbEmployee class
+is imported in the module.
+
+The solution is at the end of the file!
+
+B) Step 2 - Create a new command
+
+Examine the command that creates an AcDbEmployee entity.
+
+C) Step 3 - Building and running the module
+
+Please refer to file Lab9Todo.txt in the parent directory for instructions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Solution of Step 1:
+
+You should find '#include "Employee.h"', which declares the class.
+And ACRX_DEFINE_MEMBERS(AcDbEmployee), which defines the ARX-based 
+methods required.
+

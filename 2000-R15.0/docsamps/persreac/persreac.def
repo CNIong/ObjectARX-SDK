@@ -1,0 +1,7 @@
+LIBRARY      persreac
+DESCRIPTION  'ObjectARX sample application - persreac'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

@@ -1,0 +1,12 @@
+; compoly.def : Declares the module parameters.
+
+; (C) Copyright 1998 by Autodesk, Inc.
+LIBRARY      "compoly.dbx"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE

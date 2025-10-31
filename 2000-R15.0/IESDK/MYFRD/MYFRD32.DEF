@@ -1,0 +1,8 @@
+
+LIBRARY myfrd32
+DESCRIPTION 'MYF Sample IE File Reader'
+EXETYPE WINDOWS
+
+EXPORTS
+    moduleIdentify
+    newIeFileAnalyzer

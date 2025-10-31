@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkVisualStyleDb", "Db\AsdkVisualStyleDb.vcproj", "{15CED60A-58FC-4A27-BDE6-E3F6E6638440}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsdkVisualStyleUi", "Ui\AsdkVisualStyleUi.vcproj", "{08CBF468-1D09-40E4-8B4E-30BB67C661C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440} = {15CED60A-58FC-4A27-BDE6-E3F6E6638440}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Debug|Win32.ActiveCfg = Debug|Win32
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Debug|Win32.Build.0 = Debug|Win32
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Release|Win32.ActiveCfg = Release|Win32
+		{15CED60A-58FC-4A27-BDE6-E3F6E6638440}.Release|Win32.Build.0 = Release|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Debug|Win32.Build.0 = Debug|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Release|Win32.ActiveCfg = Release|Win32
+		{08CBF468-1D09-40E4-8B4E-30BB67C661C7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

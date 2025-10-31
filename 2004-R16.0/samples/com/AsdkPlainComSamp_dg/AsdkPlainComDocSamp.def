@@ -1,0 +1,7 @@
+; (C) Copyright 1998-2002 by Autodesk, Inc.
+;
+LIBRARY     AsdkPlainComDocSamp
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

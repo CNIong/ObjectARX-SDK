@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?><VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="brsample" ProjectGUID="{FE43EEAD-08FD-444F-B85C-FCD2394EBEAA}">
+	<Platforms>
+		<Platform Name="Win32"></Platform>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Release/sdkbrsample.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../inc,../../../../inc" PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL" StringPooling="true" RuntimeLibrary="2" BufferSecurityCheck="true" EnableFunctionLevelLinking="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" UsePrecompiledHeader="0" PrecompiledHeaderFile=".\Release/sdkbrsample.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" WarningLevel="3" WarnAsError="true" SuppressStartupBanner="true" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386 /IGNORE:4089" AdditionalDependencies="odbc32.lib odbccp32.lib rxapi.lib acdb17.lib acge17.lib acgiapi.lib achapi17.lib acISMobj17.lib acad.lib acedapi.lib Acbr17.lib Acgex17.lib" OutputFile="Release/brsample.arx" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../lib,../../../../lib" ModuleDefinitionFile=".\brsample.def" ProgramDatabaseFile="Release/Asdkbrsample.pdb" SubSystem="2" ImportLibrary=".\Release/brsample.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Debug/sdkbrsample.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" Optimization="0" AdditionalIncludeDirectories="../../inc,../../../../inc" PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL" BasicRuntimeChecks="3" RuntimeLibrary="2" BufferSecurityCheck="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" UsePrecompiledHeader="0" PrecompiledHeaderFile=".\Debug/sdkbrsample.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" WarningLevel="3" WarnAsError="true" SuppressStartupBanner="true" DebugInformationFormat="4" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386" AdditionalDependencies="odbc32.lib odbccp32.lib rxapi.lib acdb17.lib acge17.lib acgiapi.lib achapi17.lib acISMobj17.lib acad.lib acedapi.lib Acbr17.lib Acgex17.lib" OutputFile="Debug/brsample.arx" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../lib,../../../../lib" ModuleDefinitionFile=".\brsample.def" GenerateDebugInformation="true" ProgramDatabaseFile="Debug/Asdkbrsample.pdb" SubSystem="2" ImportLibrary=".\Debug/brsample.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath=".\BRBBLOCK.CPP">
+			</File>
+			<File RelativePath=".\BRBDUMP.CPP">
+			</File>
+			<File RelativePath=".\BRBMESH.CPP">
+			</File>
+			<File RelativePath=".\BRCOUNT.CPP">
+			</File>
+			<File RelativePath=".\BRDBUTL.CPP">
+			</File>
+			<File RelativePath=".\BRDUMP.CPP">
+			</File>
+			<File RelativePath=".\BREDUMP.CPP">
+			</File>
+			<File RelativePath=".\BRFDUMP.CPP">
+			</File>
+			<File RelativePath=".\BRFMESH.CPP">
+			</File>
+			<File RelativePath=".\BRGEUTL.CPP">
+			</File>
+			<File RelativePath=".\BRGPROPS.CPP">
+			</File>
+			<File RelativePath=".\BRLNCNT.CPP">
+			</File>
+			<File RelativePath=".\BRMDUMP.CPP">
+			</File>
+			<File RelativePath=".\BRMMESH.CPP">
+			</File>
+			<File RelativePath=".\BRNDUMP.CPP">
+			</File>
+			<File RelativePath=".\BRPTCNT.CPP">
+			</File>
+			<File RelativePath=".\BRREPORT.CPP">
+			</File>
+			<File RelativePath=".\brsample.cpp">
+			</File>
+			<File RelativePath=".\brsample.def">
+			</File>
+			<File RelativePath=".\BRSAMPLE_PCH.CPP">
+			</File>
+			<File RelativePath=".\BRSELECT.CPP">
+			</File>
+			<File RelativePath=".\BRTRMSRF.CPP">
+			</File>
+			<File RelativePath=".\BRVDUMP.CPP">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath=".\BRBBLOCK.H">
+			</File>
+			<File RelativePath=".\BRBDUMP.H">
+			</File>
+			<File RelativePath=".\BRBMESH.H">
+			</File>
+			<File RelativePath=".\BRCOUNT.H">
+			</File>
+			<File RelativePath=".\BRDBUTL.H">
+			</File>
+			<File RelativePath=".\BRDUMP.H">
+			</File>
+			<File RelativePath=".\BREDUMP.H">
+			</File>
+			<File RelativePath=".\BRFDUMP.H">
+			</File>
+			<File RelativePath=".\BRFMESH.H">
+			</File>
+			<File RelativePath=".\BRGEUTL.H">
+			</File>
+			<File RelativePath=".\BRGPROPS.H">
+			</File>
+			<File RelativePath=".\BRLNCNT.H">
+			</File>
+			<File RelativePath=".\BRMDUMP.H">
+			</File>
+			<File RelativePath=".\BRMMESH.H">
+			</File>
+			<File RelativePath=".\BRNDUMP.H">
+			</File>
+			<File RelativePath=".\BRPTCNT.H">
+			</File>
+			<File RelativePath=".\BRREPORT.H">
+			</File>
+			<File RelativePath=".\BRSAMPLE_PCH.H">
+			</File>
+			<File RelativePath=".\BRSELECT.H">
+			</File>
+			<File RelativePath=".\BRTRMSRF.H">
+			</File>
+			<File RelativePath=".\BRVDUMP.H">
+			</File>
+		</Filter>
+	</Files>
+</VisualStudioProject>

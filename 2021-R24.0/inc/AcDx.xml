@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcDx</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.AutoCAD.DataExtraction.AdoOutput">
+            <summary>This is a helper class for exporting a System.Data objects to various formats.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.AdoOutput.DeleteDataFile(System.String)">
+            <summary>Deletes a data file.</summary>
+            <param name="filename"> Input string; name of the data file to delete</param>
+        </member>
+        <member name="T:Autodesk.AutoCAD.DataExtraction.DxExtractionSettings">
+            <summary>Represents the data extraction settings file (.DXE file).</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxExtractionSettings.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxExtractionSettings.FromFile(System.String)">
+            <summary>This static method is used to load and return the extraction settings from a DXE file.</summary>
+            <param name="filename"> Input filename to retrieve the extraction settings from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxExtractionSettings.Save(System.String)">
+            <summary>This method saves the settings to a file.</summary>
+            <param name="filename"> Input the name of the file to save to</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxExtractionSettings.Filename">
+            <summary>Accesses the filename associated with the settings object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxExtractionSettings.DrawingDataExtractor">
+            <summary>Accesses the extraction engine object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.DataExtraction.DxFileReference">
+            <summary>This class acts as a wrapper to a file reference.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileReference.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileReference.#ctor(System.String,System.String)">
+            <summary>This constructor initializes the file reference instance by capturing the relative and absolute paths to the specified file.</summary>
+            <param name="rootdir"> Input base path from which the path will be relative to</param>
+            <param name="filename"> Input filename to set</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileReference.ToString">
+            <summary>Converts and returns the value of this instance to its equivalent string representation.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileReference.Set(System.String,System.String)">
+            <summary>Initializes the file reference instance by capturing the relative and absolute paths to the specified file.</summary>
+            <param name="rootdir"> Input base path from which the path will be relative to</param>
+            <param name="target"> Input filename to set</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileReference.Resolve(System.String)">
+            <summary>Returns the full path to the file referenced by this instance.</summary>
+            <param name="rootdir"> Input path to use for resolving relative paths. Typically, this is the path to the DXE file</param>
+        </member>
+        <member name="T:Autodesk.AutoCAD.DataExtraction.DxFolder">
+            <summary>This class acts as a wrapper to a folder reference.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFolder.#ctor(Autodesk.AutoCAD.DataExtraction.IDxFileReference,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>This constructor initializes a new instance of the DxFolder class.</summary>
+            <param name="folder"> Input the folder reference</param>
+            <param name="wildCard"> Input a wildcard string used for matching filenames</param>
+            <param name="includeSubDirs"> Input a value of true to include subfolders</param>
+            <param name="usingWildcard"> Input a value of true to enable wildcard matching</param>
+            <param name="liveFolder"> Input a value of true to enable the live folder option</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFolder.GetEnumerator(System.String)">
+            <summary>Returns an object that can be used to iterate through the collection.</summary>
+            <param name="rootdir"> Input path which will be used for resolving relative file paths</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFolder.Folder">
+            <summary>Accesses the reference object for the folder.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFolder.WildcardPattern">
+            <summary>Accesses the wildcard pattern used for matching filenames.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFolder.IncludeSubFolders">
+            <summary>Assesses whether subfolders are included or not.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFolder.UsingWildcard">
+            <summary>Assesses whether wildcard matching is enabled or not.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFolder.LiveFolder">
+            <summary>Assesses whether the live folder option is enabled or not.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFolder.SelectedFiles">
+            <summary>Accesses the list of IDxFileReference objects for this folder object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFolder.UnSelectedFiles">
+            <summary>Accesses the list of IDxFileReference objects that should explicitly be excluded from the current folder.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.DataExtraction.DxFileList">
+            <summary>This class represents a collection of files, folders, and possible subfolders.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileList.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileList.GetEnumerator(System.String)">
+            <summary>Returns an object that can be used to iterate through the collection.</summary>
+            <param name="rootdir"> Input path that will be used for resolving relative file paths. Typically, this is the path to the DXE file</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileList.AddFolder(Autodesk.AutoCAD.DataExtraction.IDxFolder)">
+            <summary>Adds a new folder object to the collection.</summary>
+            <param name="folder"> Input folder object to add</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileList.AddFile(Autodesk.AutoCAD.DataExtraction.IDxFileReference)">
+            <summary>Adds a new file object to the collection.</summary>
+            <param name="fileref"> Input file to add</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileList.RemoveFolder(Autodesk.AutoCAD.DataExtraction.IDxFolder)">
+            <summary>Removes a folder from the collection.</summary>
+            <param name="folder"> Input folder to remove</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileList.RemoveFile(Autodesk.AutoCAD.DataExtraction.IDxFileReference)">
+            <summary>Removes a file from the collection.</summary>
+            <param name="fileref"> Input file to remove</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxFileList.GetAllFiles(System.String)">
+            <summary>This function returns a flat array of file objects based on the current collection.</summary>
+            <param name="rootdir"> Input path that will be used for resolving relative file paths. Typically, this is the path to the DXE file</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFileList.CurrentFile">
+            <summary>Accesses the IDxFileReference object in the DxFileList to which the enumerator is pointing.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFileList.Folders">
+            <summary>Accesses an array of IDxFolder objects in the collection.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxFileList.Files">
+            <summary>Accesses an array of IDxFileReference objects in the collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractorSettings">
+            <summary>This class contains settings that will be used by the data extractor object.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractorSettings.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractorSettings.DrawingList">
+            <summary>Accesses a list of drawings from which the data will be extracted.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractorSettings.SelectedTypesAndProperties">
+            <summary>Accesses the list of types and properties that will be extracted.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractorSettings.ExtractFlags">
+            <summary>Accesses flags which control how the extraction will be performed.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractor">
+            <summary>This class represents the actual data extraction engine.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractor.DiscoverTypesAndProperties(System.String)">
+            <summary>Initializes the current extractor engine by scanning the drawing database(s) specified in the Settings property.</summary>
+            <param name="rootdir"> Input the path that will be used for resolving relative file paths. Typically, this is the path to the DXE file</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractor.ExtractData(System.String)">
+            <summary>Starts the data extraction.</summary>
+            <param name="rootdir"> Input the path which will be used for resolving relative file paths. Typically this is the path to the DXE file</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractor.DiscoveredTypesAndProperties">
+            <summary>Accesses the collection of data types that were discovered after calling the DiscoverTypesAndProperties() method.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractor.ExtractedData">
+            <summary>Stores the extracted data after calling the ExtractData() method.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.DataExtraction.DxDrawingDataExtractor.Settings">
+            <summary>Accesses the current settings that will be used to perform the data extraction.</summary>
+        </member>
+    </members>
+</doc>

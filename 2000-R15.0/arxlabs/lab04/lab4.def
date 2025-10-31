@@ -1,0 +1,4 @@
+EXPORTS
+	acrxEntryPoint
+	_SetacrxPtp
+	acrxGetApiVersion

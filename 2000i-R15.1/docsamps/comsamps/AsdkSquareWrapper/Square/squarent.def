@@ -1,0 +1,9 @@
+DESCRIPTION 'Autodesk square ARX test application'
+LIBRARY     square
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE
+			??0AsdkSquare@@QAE@XZ
+			?desc@AsdkSquare@@SAPAVAcRxClass@@XZ

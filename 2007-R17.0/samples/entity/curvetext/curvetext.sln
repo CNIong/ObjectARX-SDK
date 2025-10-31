@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CurveTextUI", "CurveText_UI\CurveTextUI.vcproj", "{6D98F60D-B477-4463-94D4-86C5492EEAFF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "curveText DB", "CurveText_DB\curveTextDB.vcproj", "{E00DE720-51A9-4B10-980E-979B26F3DAA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{6D98F60D-B477-4463-94D4-86C5492EEAFF}.0 = {E00DE720-51A9-4B10-980E-979B26F3DAA2}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{6D98F60D-B477-4463-94D4-86C5492EEAFF}.Debug.ActiveCfg = Debug|Win32
+		{6D98F60D-B477-4463-94D4-86C5492EEAFF}.Debug.Build.0 = Debug|Win32
+		{6D98F60D-B477-4463-94D4-86C5492EEAFF}.Release.ActiveCfg = Release|Win32
+		{6D98F60D-B477-4463-94D4-86C5492EEAFF}.Release.Build.0 = Release|Win32
+		{E00DE720-51A9-4B10-980E-979B26F3DAA2}.Debug.ActiveCfg = Debug|Win32
+		{E00DE720-51A9-4B10-980E-979B26F3DAA2}.Debug.Build.0 = Debug|Win32
+		{E00DE720-51A9-4B10-980E-979B26F3DAA2}.Release.ActiveCfg = Release|Win32
+		{E00DE720-51A9-4B10-980E-979B26F3DAA2}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

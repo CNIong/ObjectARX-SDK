@@ -1,0 +1,9 @@
+; (C) Copyright 2005-2006 by Autodesk, Inc. 
+
+
+EXPORTS
+	DllGetClassObject       @1	PRIVATE
+	DllCanUnloadNow         @2	PRIVATE
+	GetProxyDllInfo         @3	PRIVATE
+	DllRegisterServer		@4	PRIVATE
+	DllUnregisterServer		@5	PRIVATE

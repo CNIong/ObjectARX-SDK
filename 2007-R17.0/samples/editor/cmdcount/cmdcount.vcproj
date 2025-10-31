@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="cmdcount" ProjectGUID="{40CDCE63-ABF8-4B3E-96D1-FB55FBBC96E5}" Keyword="MFCProj">
+	<Platforms>
+		<Platform Name="Win32"></Platform>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Debug/asdkcmdcount.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" Optimization="0" AdditionalIncludeDirectories="../../../inc" PreprocessorDefinitions="WIN32;;_WINDOWS;_AFXEXT" StringPooling="true" ExceptionHandling="1" BasicRuntimeChecks="3" RuntimeLibrary="2" BufferSecurityCheck="true" EnableFunctionLevelLinking="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" PrecompiledHeaderFile=".\Debug/asdkcmdcount.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" BrowseInformation="0" WarningLevel="3" WarnAsError="true" SuppressStartupBanner="true" DebugInformationFormat="3" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_AFXDLL;" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool" CommandLine="if NOT exist .\Debug\stripped mkdir .\Debug\stripped"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386" AdditionalDependencies="rxapi.lib acdb17.lib acge17.lib acgiapi.lib achapi17.lib acISMobj17.lib acad.lib acedapi.lib adui17.lib acui17.lib" OutputFile="Debug/cmdcount.arx" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../lib" ModuleDefinitionFile=".\cmdcount.def" GenerateDebugInformation="true" ProgramDatabaseFile=".\Debug/cmdcount.pdb" StripPrivateSymbols=".\Debug\stripped\cmdcount.pdb" SubSystem="2" ImportLibrary=".\Debug/cmdcount.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="1" WholeProgramOptimization="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Release/asdkcmdcount.tlb"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" Optimization="2" InlineFunctionExpansion="2" EnableIntrinsicFunctions="true" FavorSizeOrSpeed="1" OmitFramePointers="true" AdditionalIncludeDirectories="../../../inc,$(MSVCDIR)\atlmfc\src\mfc,$(GCOMPINC)" PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_AFXEXT" StringPooling="true" ExceptionHandling="1" RuntimeLibrary="2" BufferSecurityCheck="true" EnableFunctionLevelLinking="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" PrecompiledHeaderFile=".\Release/asdkcmdcount.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" WarningLevel="3" WarnAsError="true" SuppressStartupBanner="true" DebugInformationFormat="3" CompileAs="0" RuntimeTypeInfo="false"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_AFXDLL;NDEBUG" Culture="1033"></Tool>
+			<Tool Name="VCPreLinkEventTool" CommandLine="if NOT exist .\Release\stripped mkdir .\Release\stripped"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/MACHINE:I386 /IGNORE:4089" AdditionalDependencies="rxapi.lib acdb17.lib acge17.lib acgiapi.lib achapi17.lib acISMobj17.lib acad.lib acedapi.lib adui17.lib acui17.lib" OutputFile="Release/cmdcount.arx" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../lib" ModuleDefinitionFile=".\cmdcount.def" ProgramDatabaseFile=".\Release/cmdcount.pdb" StripPrivateSymbols=".\Release\stripped\cmdcount.pdb" SubSystem="2" OptimizeReferences="2" EnableCOMDATFolding="2" OptimizeForWindows98="1" ImportLibrary=".\Release/cmdcount.lib"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath=".\cmdcount.cpp">
+			</File>
+		</Filter>
+	</Files>
+</VisualStudioProject>

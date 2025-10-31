@@ -1,0 +1,74 @@
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2017 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+// ipstdrop.idl : IDL source for the post-drop (drop with right button mouse) API
+//
+//
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+#if !defined(_WIN64) && !defined (_AC64)
+    uuid(17FFF82D-2C82-11d2-BA24-0060B0B5E151),
+#else
+    uuid(21E36561-85E4-40C2-81DD-EC5DECA63A5D),
+#endif
+    helpstring("IAcPostDrop Interface"),
+    pointer_default(unique)
+]
+
+// The purpose of this interface is to allow a component to handle right drag and drop
+// in the most flexible way.
+// A component may or may not want to handle the drop. Its reply to QueryDoDrop() indicates
+// that the default processing will occur, or that the component will handle the drop.
+// If the component wants to handle the drop, the interface allows two situations. The first one
+// is that the component wants an immediate action for the drop. Then it will run the drop code from
+// the PreparePostDrop() method, and will return a value indicating that the drop is done. The second situation
+// is that the component wants to present a menu for the user to choose an action. PreparePostDrop() will then 
+// return a value indicating the drop is not done yet. In this situation, QueryContextMenu() will be called,
+// allowing the component to supply a menu. The user selection will be giving to the component by the component
+// by the InvokeCommand() method. Finally, in both situation where PreparePostDrop() has been called, 
+// EndPostDrop() is called to let the component performing some cleanup if necessary.
+
+interface IAcPostDrop : IUnknown
+{
+	// called to ask the component if it wants to handle the drop by its own. or let
+	// the default processing happen
+    [helpstring ("method QueryDoDrop")]
+    HRESULT QueryDoDrop (
+			[out, retval] boolean *pbHandleDrop 	// true if the component handle the drop
+	);
+
+	// called to prepare the drop. 
+    [helpstring ("method PreparePostDrop")]
+    HRESULT PreparePostDrop (
+			[out, retval] boolean *pbContinue	// tells if QueryContextMenu will be called or not
+	);
+
+	// called to get from the component a popup menu
+    [helpstring ("method QueryContextMenu")]
+    HRESULT QueryContextMenu (
+			[out] INT_PTR *phMenu					// handle of popup menu returned by the component
+	);
+
+	// called when the user selected a command a the popup menu
+    [helpstring ("method InvokeCommand")]
+    HRESULT InvokeCommand (
+	        [in] int nMenuItemID,					// menu ID
+			[out, retval] boolean *pbCancelled		// if set to true the ongoing drop is finally canceled by the component
+	);
+
+	// called to allow cleanup
+    [helpstring ("method EndPostDrop")]
+    HRESULT EndPostDrop ();
+}

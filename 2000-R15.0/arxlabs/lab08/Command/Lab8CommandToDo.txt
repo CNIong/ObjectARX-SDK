@@ -1,0 +1,11 @@
+Lab8
+
+Purpose: /This appears in The Plan.doc/
+=======
+
+The purpose of this lab is to create yet another custom class EmployeeEntry.
+Instances of this class replace the xrecords created in Lab4. 
+These objects simply store an AcDbObjectId, the object ID of EmployeeDetails
+objects created in Lab5. 
+This will enable us to iterate through all the employees
+in the database quickly and easily. The listEmps command demonstrates this.

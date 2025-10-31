@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'AsdkPlotApiDialog'
+		'AsdkPlotApi.arx'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

@@ -1,0 +1,799 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>acdbmgdbrep</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity">
+            <summary>This .NET class wraps the AcBrEntity ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.CheckEntity">
+            <summary>Checks the entity's topology, geometry and data structure for errors.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetLineContainment(Autodesk.AutoCAD.Geometry.LinearEntity3d,System.Int32)">
+            <summary>Determines whether a line lies inside or outside the current object's topological boundary.</summary>
+            <param name="line"> Input 3D line</param>
+            <param name="numHitsWanted"> Input maximum number of hits to find</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.Equals(System.Object)">
+            <summary>Returns true if the two objects are equal.</summary>
+            <param name="obj"> Input object to check against</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetHashCode">
+            <summary>Returns the hash code for this object.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties(System.Double)">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+            <param name="density"> Input calculating density</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties(System.Double,System.Double)">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+            <param name="density"> Input calculating density</param>
+            <param name="tolRequired"> Input tolerance needed for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties(System.Double,System.Double,System.Double&)">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+            <param name="density"> Input calculating density</param>
+            <param name="tolRequired"> Input tolerance needed for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetVolume">
+            <summary>This function returns the volume of this topology object as a double, with the maximum scale factor applied for the nested transforms.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetVolume(System.Double)">
+            <summary>This function returns the volume of this topology object as a double, with the maximum scale factor applied for the nested transforms.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetVolume(System.Double,System.Double&)">
+            <summary>This function returns the volume of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetSurfaceArea">
+            <summary>This function returns the surface area of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetSurfaceArea(System.Double)">
+            <summary>This function returns the surface area of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetSurfaceArea(System.Double,System.Double&)">
+            <summary>This function returns the surface area of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetPerimeterLength">
+            <summary>This function returns the perimeter length of this topology object, with the maximum scale factor applied from the nested transformations.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetPerimeterLength(System.Double)">
+            <summary>This function returns the perimeter length of this topology object, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetPerimeterLength(System.Double,System.Double&)">
+            <summary>This function returns the perimeter length of this topology object, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.IsNull">
+            <summary>Assesses if the object is uninitialized or invalidated (that is, empty).</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.SubentityPath">
+            <summary>Accesses the full subentity path in AutoCAD for the current object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.BoundBlock">
+            <summary>Accesses the model space bounding box for the current topology object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.Brep">
+            <summary>Accesses the brep that is at the top of the current topological hierarchy.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.ValidationLevel">
+            <summary>Accesses the validation level currently being used by this topology object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.IsBrepChanged">
+            <summary>Assesses whether the associated AutoCAD object has changed since this topology object was last set.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.PointContainment">
+            <summary>Defines how the points are contained.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Hit">
+            <summary>This .NET class wraps the AcBrHit ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Hit.Equals(System.Object)">
+            <summary>Returns true if the two objects are equal.</summary>
+            <param name="obj"> Input object to check against</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Hit.GetHashCode">
+            <summary>Returns the hash code for this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Hit.IsNull">
+            <summary>Assesses if this object is null.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Hit.Point">
+            <summary>Accesses the point for the hit object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Hit.EntityHit">
+            <summary>Accesses the dimensionally lowest topological entity that contains this hit.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Hit.EntityEntered">
+            <summary>Accesses the dimensionally lowest topological entity that contains the segment along the original line bound by this hit and the next hit, or NULL if this is either the final hit in the hit array or the segment exits and then re-enters the object being tested.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Hit.EntityAssociated">
+            <summary>Accesses the topology object whose line containment test generated this hit object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Hit.ValidationLevel">
+            <summary>Accesses the validation level to be used in all data queries that require access to the associated AutoCAD object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Hit.IsBrepChanged">
+            <summary>Assesses whether the associated AutoCAD object has changed since this topology object was last set.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Brep">
+            <summary>This .NET class wraps the AcBrBrep ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Brep.#ctor(Autodesk.AutoCAD.DatabaseServices.FullSubentityPath)">
+            <summary>Constructs a brep from the given path.</summary>
+            <param name="fullPath"> Input path to construct brep from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Brep.#ctor(Autodesk.AutoCAD.DatabaseServices.Entity)">
+            <summary>Creates a brep object from another entity.</summary>
+            <param name="entity"> Input entity</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Brep.GetShellsStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Shell)">
+            <summary>Returns a collection of shells starting from a starting point.</summary>
+            <param name="startFrom"> Input shell to start collecting from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Brep.GetComplexsStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Complex)">
+            <summary>Returns a collection of complexes starting from a starting point.</summary>
+            <param name="startFrom"> Input complex to start collecting from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Brep.GetEdgesStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Edge)">
+            <summary>Returns a collection of edges starting from a starting point.</summary>
+            <param name="startFrom"> Input edge to start collecting from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.CheckEntity">
+            <summary>Checks the entity's topology, geometry and data structure for errors.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetLineContainment(Autodesk.AutoCAD.Geometry.LinearEntity3d,System.Int32)">
+            <summary>Determines whether a line lies inside or outside the current object's topological boundary.</summary>
+            <param name="line"> Input 3D line</param>
+            <param name="numHitsWanted"> Input maximum number of hits to find</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.Equals(System.Object)">
+            <summary>Returns true if the two objects are equal.</summary>
+            <param name="obj"> Input object to check against</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetHashCode">
+            <summary>Returns the hash code for this object.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties(System.Double)">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+            <param name="density"> Input calculating density</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties(System.Double,System.Double)">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+            <param name="density"> Input calculating density</param>
+            <param name="tolRequired"> Input tolerance needed for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetMassProperties(System.Double,System.Double,System.Double&)">
+            <summary>Returns the mass properties contributed by this topology object, with an entire chain of transforms from the subentity path applied where appropriate.</summary>
+            <param name="density"> Input calculating density</param>
+            <param name="tolRequired"> Input tolerance needed for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetVolume">
+            <summary>This function returns the volume of this topology object as a double, with the maximum scale factor applied for the nested transforms.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetVolume(System.Double)">
+            <summary>This function returns the volume of this topology object as a double, with the maximum scale factor applied for the nested transforms.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetVolume(System.Double,System.Double&)">
+            <summary>This function returns the volume of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetSurfaceArea">
+            <summary>This function returns the surface area of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetSurfaceArea(System.Double)">
+            <summary>This function returns the surface area of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetSurfaceArea(System.Double,System.Double&)">
+            <summary>This function returns the surface area of this topology object as a double, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetPerimeterLength">
+            <summary>This function returns the perimeter length of this topology object, with the maximum scale factor applied from the nested transformations.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetPerimeterLength(System.Double)">
+            <summary>This function returns the perimeter length of this topology object, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.GetPerimeterLength(System.Double,System.Double&)">
+            <summary>This function returns the perimeter length of this topology object, with the maximum scale factor applied from the nested transformations.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Brep.Solid">
+            <summary>Accesses the solid associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Brep.Shells">
+            <summary>Accesses all the shells associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Brep.Faces">
+            <summary>Accesses all the faces associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Brep.Complexes">
+            <summary>Accesses all the complexes associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Brep.Edges">
+            <summary>Accesses all the edges associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Brep.Vertices">
+            <summary>Accesses all the vertices associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.IsNull">
+            <summary>Assesses if the object is uninitialized or invalidated (that is, empty).</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.SubentityPath">
+            <summary>Accesses the full subentity path in AutoCAD for the current object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.BoundBlock">
+            <summary>Accesses the model space bounding box for the current topology object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.Brep">
+            <summary>Accesses the brep that is at the top of the current topological hierarchy.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.ValidationLevel">
+            <summary>Accesses the validation level currently being used by this topology object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity.IsBrepChanged">
+            <summary>Assesses whether the associated AutoCAD object has changed since this topology object was last set.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.ValidationLevel">
+            <summary>The ValidationLevel enum sets the level of validation for a BREP object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties">
+            <summary>This .NET class wraps the AcBrMassProps ObjectARX struct.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties.Volume">
+            <summary>Accesses the volume.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties.Mass">
+            <summary>Accesses the mass value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties.Centroid">
+            <summary>Accesses the centroid value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties.MomentsOfIntertia">
+            <summary>Accesses the rigid body's moment vector of inertia.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties.ProductsOfIntertia">
+            <summary>Accesses the vector product of inertia.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties.PrincipalMoments">
+            <summary>Accesses the principal moment vector at the centroid.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MassProperties.RadiiOfGyration">
+            <summary>Accesses the radii of gyration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.LoopEdgeCollection">
+            <summary>This class represents a collection of edges corresponding to the loop.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.LoopEdgeCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Edge">
+            <summary>This .NET class wraps the AcBrEdge ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Edge.#ctor(Autodesk.AutoCAD.DatabaseServices.FullSubentityPath)">
+            <summary>Constructs an edge from the given path.</summary>
+            <param name="fullPath"> Input path to construct an edge from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Edge.GetCurveAsNurb">
+            <summary>This function returns the the edge's underlying curve.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Edge.GetCurveAsNurb(System.Double)">
+            <summary>This function returns the the edge's underlying curve.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Edge.GetCurveAsNurb(System.Double,System.Double&)">
+            <summary>This function returns the the edge's underlying curve.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Edge.GetLoopsStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop)">
+            <summary>Returns a collection of loops starting from a starting point.</summary>
+            <param name="startFrom"> Input loop to start collecting from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Edge.Curve">
+            <summary>Accesses the curve of the edge object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Edge.IsOrientToCurve">
+            <summary>Assesses if the edge is oriented to a curve.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Edge.Vertex1">
+            <summary>Accesses the start vertex of the edge in its natural orientation from vertex1 to vertex2.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Edge.Vertex2">
+            <summary>Accesses the end vertex of the edge in its natural orientation from vertex1 to vertex2.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Edge.Loops">
+            <summary>Accesses all the loops.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop">
+            <summary>This class wraps the AcBrLoop ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop.#ctor(Autodesk.AutoCAD.DatabaseServices.FullSubentityPath)">
+            <summary>Constructs a boundary loop from the given path.</summary>
+            <param name="fullPath"> Input path to construct loop from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop.GetEdgesStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Edge)">
+            <summary>Returns a collection of the edges from a starting point.</summary>
+            <param name="startFrom"> Input edge to start collecting from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop.Face">
+            <summary>Accesses the face associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop.LoopType">
+            <summary>Accesses the type of loop associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop.Edges">
+            <summary>Accesses all the edges associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop.Vertices">
+            <summary>Accesses all the vertices associated with this object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.LoopEdgeEnumerator">
+            <summary>This class represents an enumeration of edges corresponding to the loop.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.LoopEdgeEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.LoopVertexCollection">
+            <summary>This class represents a collection of vertices corresponding to the loop.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.LoopVertexCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Vertex">
+            <summary>This .NET class wraps the AcBrVertex ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Vertex.#ctor(Autodesk.AutoCAD.DatabaseServices.FullSubentityPath)">
+            <summary>Constructs a vertex from the given path.</summary>
+            <param name="fullPath"> Input path to construct a vertex from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Vertex.GetLoopsStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop)">
+            <summary>Returns a collection of loops starting from a starting point.</summary>
+            <param name="startFrom"> Input loop to start collecting from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Vertex.GetEdgesStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Edge)">
+            <summary>Returns a collection of edges starting from a starting point.</summary>
+            <param name="startFrom"> Input edge to start collecting from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Vertex.Point">
+            <summary>Accesses this vertex's underlying point as a Point3d object, with the entire chain of transforms from the associated topology object's subentity path applied.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Vertex.Loops">
+            <summary>Accesses all the loops associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Vertex.Edges">
+            <summary>Accesses all the edges associated with this object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.LoopVertexEnumerator">
+            <summary>This class represents an enumeration of vertices corresponding to the loop.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.LoopVertexEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Face">
+            <summary>This .NET class wraps the AcBrFace ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.#ctor(Autodesk.AutoCAD.DatabaseServices.FullSubentityPath)">
+            <summary>Constructs a face from the given path.</summary>
+            <param name="fullPath"> Input path to construct a face from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetSurfaceAsTrimmedNurbs">
+            <summary>The GetSurfaceAsTrimmedNurbs() model space trimmed surface query converts this face's underlying surface to a trimmed representation.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetArea">
+            <summary>This function calculates the area of the face.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetArea(System.Double)">
+            <summary>This function calculates the area of the face.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetArea(System.Double,System.Double&)">
+            <summary>This function calculates the area of the face.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetSurfaceAsNurb">
+            <summary>This function returns this face's underlying surface as a subset NurbSurface, with the entire chain of transforms from the subentity path applied.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetSurfaceAsNurb(System.Double)">
+            <summary>This function returns this face's underlying surface as a subset NurbSurface, with the entire chain of transforms from the subentity path applied.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetSurfaceAsNurb(System.Double,System.Double&)">
+            <summary>This function returns this face's underlying surface as a subset NurbSurface, with the entire chain of transforms from the subentity path applied.</summary>
+            <param name="tolRequired"> Input tolerance requested for the calculation</param>
+            <param name="tolAchieved"> Output tolerance achieved for the calculation</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Face.GetLoopsStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.BoundaryLoop)">
+            <summary>Returns a collection of loops starting from a starting point.</summary>
+            <param name="startFrom"> Input loop to start collecting from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Face.Shell">
+            <summary>Accesses the shell associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Face.Surface">
+            <summary>Accesses the surface associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Face.IsOrientToSurface">
+            <summary>Assesses if the outside of the face is in the direction of the surface normal.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Face.Loops">
+            <summary>Accesses all the loops associated with this object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.LoopType">
+            <summary>The LoopType enum classifies a loop as interior, exterior, and so on.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.ShellFaceCollection">
+            <summary>This class represents a collection of faces corresponding to the shell.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.ShellFaceCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Shell">
+            <summary>This .NET class wraps the AcBrShell ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Shell.#ctor(Autodesk.AutoCAD.DatabaseServices.FullSubentityPath)">
+            <summary>Constructs a shell from the given path.</summary>
+            <param name="fullPath"> Input path to construct a shell from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Shell.Faces">
+            <summary>Accesses all the faces associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Shell.Complex">
+            <summary>Accesses the complex associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Shell.ShellType">
+            <summary>Accesses the shell type associated with this object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.ShellFaceEnumerator">
+            <summary>This class represents an enumeration of faces corresponding to the shell.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.ShellFaceEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Complex">
+            <summary>This .NET class wraps the AcBrComplex ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Complex.#ctor(Autodesk.AutoCAD.DatabaseServices.FullSubentityPath)">
+            <summary>Constructs a complex from the given path.</summary>
+            <param name="fullPath"> Input path to construct a complex from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Complex.GetShellsStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Shell)">
+            <summary>Returns a collection of shells starting from a starting point.</summary>
+            <param name="startFrom"> Input the shell to start collecting from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Complex.Shells">
+            <summary>Accesses all the shells.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.ShellType">
+            <summary>The ShellType enum classifies a shell as interior, exterior, and so on.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.VertexLoopCollection">
+            <summary>This class represents a collection of loops corresponding to the vertex.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.VertexLoopCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.VertexLoopEnumerator">
+            <summary>This class represents an enumeration of loops corresponding to the vertex.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.VertexLoopEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.VertexEdgeCollection">
+            <summary>This class represents a collection of edges corresponding to the vertex.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.VertexEdgeCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.VertexEdgeEnumerator">
+            <summary>This class represents an enumeration of edges corresponding to the vertex.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.VertexEdgeEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepShellCollection">
+            <summary>This class represents a collection of shells corresponding to the Brep.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepShellCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepShellEnumerator">
+            <summary>This class represents an enumeration of shells corresponding to the Brep.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepShellEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepFaceCollection">
+            <summary>This class represents a collection of faces corresponding to the Brep.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepFaceCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepFaceEnumerator">
+            <summary>This class represents an enumeration of faces corresponding to the Brep.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepFaceEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepComplexCollection">
+            <summary>This class represents a collection of complexes corresponding to the Brep.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepComplexCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepComplexEnumerator">
+            <summary>This class represents an enumeration of complexes corresponding to the Brep.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepComplexEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepEdgeCollection">
+            <summary>This class represents a collection of edges corresponding to the Brep.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepEdgeCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepEdgeEnumerator">
+            <summary>This class represents an enumeration of edges corresponding to the Brep.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepEdgeEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepVertexCollection">
+            <summary>This class represents a collection of vertices corresponding to the Brep.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.BrepVertexCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.BrepVertexEnumerator">
+            <summary>This class represents an enumeration of vertices corresponding to the Brep.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.BrepVertexEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.ComplexShellCollection">
+            <summary>This class represents a collection of shells corresponding to the complex.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.ComplexShellCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.ComplexShellEnumerator">
+            <summary>This class represents an enumeration of shells corresponding to the complex.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.ComplexShellEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.EdgeLoopCollection">
+            <summary>This class represents a collection of loops corresponding to the edge.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.EdgeLoopCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.EdgeLoopEnumerator">
+            <summary>This class represents an enumeration of loops corresponding to the edge.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.EdgeLoopEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.FaceLoopCollection">
+            <summary>This class represents a collection of loops corresponding to the face.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.FaceLoopCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.FaceLoopEnumerator">
+            <summary>This class represents an enumeration of loops corresponding to the face.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.FaceLoopEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Exception">
+            <summary>This class provides a container for BREP errors.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Exception.#ctor(Autodesk.AutoCAD.BoundaryRepresentation.ErrorStatus,System.String)">
+            <summary>This constructor sets an error status to be thrown, with an error message.</summary>
+            <param name="es"> Input error status</param>
+            <param name="message"> Input error message</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Exception.#ctor(Autodesk.AutoCAD.BoundaryRepresentation.ErrorStatus)">
+            <summary>This constructor sets an error status to be thrown.</summary>
+            <param name="es"> Input error status</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Exception.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Exception.ErrorStatus">
+            <summary>Returns the ErrorStatus property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.ErrorStatus">
+            <summary>The ErrorStatus enumerated values are used by all BREP functions.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.EnumeratorBase">
+            <summary>This .NET class wraps the AcBrTraverser ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.EnumeratorBase.MoveNext">
+            <summary>This method advances one item forward.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.EnumeratorBase.Reset">
+            <summary>This method resets the enumeration to point to the beginning.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.EnumeratorBase.IsNull">
+            <summary>Assesses if the object is uninitialized or invalidated (that is, empty).</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.EnumeratorBase.ValidationLevel">
+            <summary>Accesses the validation level to be used in all data queries that require access to the associated AutoCAD object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.EnumeratorBase.BrepChanged">
+            <summary>Assesses whether the associated AutoCAD object has changed since this topology object was last set.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity">
+            <summary>This .NET class wraps the AcBrMeshEntity ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.Equals(System.Object)">
+            <summary>Returns true if the two objects are equal.</summary>
+            <param name="obj"> Input object to check against</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.GetHashCode">
+            <summary>Returns the hash code for this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.IsNull">
+            <summary>Assesses if this mesh object has been set to anything meaningful.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.ValidationLevel">
+            <summary>Accesses the validation level to be used in all data queries that require access to the associated AutoCAD object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.IsBrepChanged">
+            <summary>Assesses if the BREP value has changed.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.EntityAssociated">
+            <summary>Accesses the dimensionally lowest topology object associated with this mesh object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Element">
+            <summary>This .NET class wraps the AcBrElement ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Element2dNodeCollection">
+            <summary>This class represents a collection of nodes corresponding to an Element2d object.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Element2dNodeCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Node">
+            <summary>This .NET class wraps the AcBrNode ObjectARX class.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Node.Point">
+            <summary>Accesses this node's underlying point as a Point3d object, with the entire chain of transforms from the associated topology object's subentity path applied.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Element2d">
+            <summary>This .NET class wraps the AcBrElement2d ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Element2d.GetNodesStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Node)">
+            <summary>Returns a collection of nodes starting from a starting point.</summary>
+            <param name="startFrom"> Input node to start collecting from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Element2d.Normal">
+            <summary>Accesses the normalized model space normal vector computed on the plane defined by the element nodes traversed in a clockwise direction.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Element2d.Nodes">
+            <summary>Accesses all the nodes.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Element2dNodeEnumerator">
+            <summary>This class represents an enumeration of nodes corresponding to an Element2d object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Element2dNodeEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Mesh">
+            <summary>This .NET class wraps the AcBrMesh ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.Equals(System.Object)">
+            <summary>Returns true if the two objects are equal.</summary>
+            <param name="obj"> Input object to check against</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.GetHashCode">
+            <summary>Returns the hash code for this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.IsNull">
+            <summary>Assesses if this mesh object has been set to anything meaningful.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.ValidationLevel">
+            <summary>Accesses the validation level to be used in all data queries that require access to the associated AutoCAD object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.IsBrepChanged">
+            <summary>Assesses if the BREP value has changed.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshEntity.EntityAssociated">
+            <summary>Accesses the dimensionally lowest topology object associated with this mesh object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dFilter">
+            <summary>This .NET class wraps the AcBrMesh2dFilter ObjectARX class.The Mesh2dFilter class is the interface class for 2d mesh filters.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dFilter.Insert(Autodesk.AutoCAD.BoundaryRepresentation.BrepEntity,Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dControl)">
+            <summary>The Insert() function associates a specific 2d mesh control with a topology object, and adds it to the multimap.</summary>
+            <param name="brepEntity"> Input topology to associate with</param>
+            <param name="meshControl"> Input mesh 2d control</param>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dControl">
+            <summary>This .NET class wraps the AcBrMesh2dControl ObjectARX class.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dControl.MaxAspectRatio">
+            <summary>Accesses the maximum aspect ratio as a double.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dControl.ElementShape">
+            <summary>Accesses the element's shape.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dElement2dCollection">
+            <summary>This class represents a collection of Element2d objects corresponding to the Mesh2d object.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dElement2dCollection.GetEnumerator">
+            <summary>Returns an enumeration of this collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2d">
+            <summary>This .NET class wraps the AcBrMesh2d ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2d.#ctor(Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dFilter)">
+            <summary>Constructor.</summary>
+            <param name="meshFilter"> Input a mesh filter</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2d.GetElement2dsStartingFrom(Autodesk.AutoCAD.BoundaryRepresentation.Element2d)">
+            <summary>Returns a collection of Mesh2d elements starting from a starting point.</summary>
+            <param name="startFrom"> Input element2d to start collecting from</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2d.Element2ds">
+            <summary>Accesses all the Mesh2d elements.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dElement2dEnumerator">
+            <summary>This class represents an enumeration of Element2d objects corresponding to the Mesh2d object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.Mesh2dElement2dEnumerator.Current">
+            <summary>Accesses the current item in the enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.MeshControl">
+            <summary>This .NET class wraps the AcBrMeshControl ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.MeshControl.Equals(System.Object)">
+            <summary>Returns true if the two objects are equal.</summary>
+            <param name="obj"> Input object to check against</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.BoundaryRepresentation.MeshControl.GetHashCode">
+            <summary>Returns the hash code for this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshControl.MaxSubdivisions">
+            <summary>Accesses the maximum number of subdivisions as an unsigned 32-bit integer.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshControl.MaxNodeSpacing">
+            <summary>Accesses the maximum node spacing as a double.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshControl.AngleTolerance">
+            <summary>Accesses the maximum angle tolerance as a double.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.BoundaryRepresentation.MeshControl.DistanceTolerance">
+            <summary>Accesses the maximum distance tolerance as a double.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.BoundaryRepresentation.Element2dShape">
+            <summary>This enum defines the shapes of the 2D elements.</summary>
+        </member>
+    </members>
+</doc>

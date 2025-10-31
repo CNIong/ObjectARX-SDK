@@ -1,0 +1,1589 @@
+//Microsoft Developer Studio generated resource script.
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2017 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+
+#include "Res_ArxDbg.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "Res_ArxDbg.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""..\..\..\inc\adsksdkversioninfo.rc""\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ARXDBG_DLG_SPLASH DIALOG DISCARDABLE  0, 0, 213, 250
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP
+FONT 9, "Arial"
+BEGIN
+    CONTROL         "",ARXDBG_PIC_SPLASHFRAME,"Static",SS_BLACKFRAME | 
+                    SS_CENTERIMAGE | SS_SUNKEN | WS_BORDER,12,7,189,203
+    CTEXT           "",ARXDBG_TXT_LINE1,14,212,186,8
+    CTEXT           "",ARXDBG_TXT_LINE2,14,220,186,8
+    CTEXT           "",ARXDBG_TXT_LINE3,14,228,186,8
+    CTEXT           "",ARXDBG_TXT_LINE4,14,236,186,8
+END
+
+ARXDBG_DLG_SERV_DICT DIALOG DISCARDABLE  0, 0, 299, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Service Dictionary"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "List1",ARXDBG_LC_SERVICES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,5,5,290,120
+    PUSHBUTTON      "Add Dependency",ARXDBG_BN_ADD,8,132,72,14
+    PUSHBUTTON      "Remove Dependency",ARXDBG_BN_REMOVE,84,132,72,14
+    DEFPUSHBUTTON   "OK",IDOK,240,130,50,14
+END
+
+ARXDBG_DLG_DXF DIALOG DISCARDABLE  0, 0, 332, 242
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DXF Data"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "List1",ARXDBG_LC_DXF,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,9,10,315,205
+    DEFPUSHBUTTON   "OK",IDOK,141,221,50,14
+END
+
+ARXDBG_DLG_XDATA DIALOG DISCARDABLE  0, 0, 332, 256
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Xdata"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Application:",IDC_STATIC,10,5,40,8
+    COMBOBOX        ARXDBG_POPUP_APPS,50,5,95,110,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",ARXDBG_LC_DXF,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,10,25,315,205
+    DEFPUSHBUTTON   "OK",IDOK,140,235,50,14
+END
+
+ARXDBG_DLG_REACTORS DIALOG DISCARDABLE  0, 0, 304, 166
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Reactors"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Transient Reactors",IDC_STATIC,10,5,100,135
+    LTEXT           "Class",IDC_STATIC,15,20,18,8
+    LISTBOX         ARXDBG_LB_TRANSIENT,15,30,90,105,LBS_NOINTEGRALHEIGHT | 
+                    LBS_NOSEL | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Persistent Reactors",IDC_STATIC,115,5,180,135
+    LTEXT           "Handle",IDC_STATIC,120,20,38,8
+    LTEXT           "Class",IDC_STATIC,165,20,18,8
+    LISTBOX         ARXDBG_LB_PERSISTENT,120,30,170,105,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,125,145,50,14
+END
+
+ARXDBG_DLG_RXSTATE DIALOG DISCARDABLE  0, 0, 287, 259
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Object State Predicates"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "State",IDC_STATIC,10,7,270,108
+    LTEXT           "CLASS:",IDC_STATIC,15,20,24,8
+    LTEXT           "NEW OBJECT:",IDC_STATIC,15,30,47,8
+    LTEXT           "READ ENABLED:",IDC_STATIC,15,40,55,8
+    LTEXT           "WRITE ENABLED:",IDC_STATIC,15,50,58,8
+    LTEXT           "NOTIFY ENABLED:",IDC_STATIC,15,60,60,8
+    LTEXT           "MODIFIED:",IDC_STATIC,15,70,35,8
+    LTEXT           "MODIFIED XDATA:",IDC_STATIC,15,80,59,8
+    LTEXT           "MODIFIED GRAPHICS:",IDC_STATIC,15,90,71,8
+    LTEXT           "IS A PROXY:",IDC_STATIC,15,100,65,8
+    LTEXT           "N/A",ARXDBG_TXT_CLASS,90,20,180,8
+    LTEXT           "N/A",ARXDBG_TXT_NEWOBJ,90,30,45,8
+    LTEXT           "N/A",ARXDBG_TXT_READ_ENABLED,90,40,45,8
+    LTEXT           "N/A",ARXDBG_TXT_WRITE_ENABLED,90,50,45,8
+    LTEXT           "N/A",ARXDBG_TXT_NOTIFY_ENABLED,90,60,45,8
+    LTEXT           "N/A",ARXDBG_TXT_MODIFIED,90,70,45,8
+    LTEXT           "N/A",ARXDBG_TXT_MOD_XDATA,90,80,45,8
+    LTEXT           "N/A",ARXDBG_TXT_MOD_GRAPHICS,90,90,45,8
+    LTEXT           "N/A",ARXDBG_TXT_PROXY,90,100,45,8
+    LTEXT           "TRANSACTION RESIDENT:",IDC_STATIC,145,30,87,8
+    LTEXT           "ERASED:",IDC_STATIC,145,40,31,8
+    LTEXT           "ERASE STATUS TOGGLED:",IDC_STATIC,145,50,89,8
+    LTEXT           "NOTIFYING:",IDC_STATIC,145,60,39,8
+    LTEXT           "UNDOING:",IDC_STATIC,145,70,34,8
+    LTEXT           "CANCELLING:",IDC_STATIC,145,80,44,8
+    LTEXT           "REALLY CLOSING:",IDC_STATIC,145,90,59,8
+    LTEXT           "N/A",ARXDBG_TXT_TRANS_RESIDENT,240,30,35,8
+    LTEXT           "N/A",ARXDBG_TXT_ERASED,240,40,35,8
+    LTEXT           "N/A",ARXDBG_TXT_ERASE_TOGGLED,240,50,35,8
+    LTEXT           "N/A",ARXDBG_TXT_NOTIFYING,240,60,35,8
+    LTEXT           "N/A",ARXDBG_TXT_UNDOING,240,70,35,8
+    LTEXT           "N/A",ARXDBG_TXT_CANCELLING,240,80,35,8
+    LTEXT           "N/A",ARXDBG_TXT_REALLY_CLOSING,240,90,35,8
+    GROUPBOX        "Modifiers",IDC_STATIC,10,120,270,96
+    PUSHBUTTON      "Open For Read",ARXDBG_BN_READ,16,132,75,14
+    PUSHBUTTON      "Open For Write",ARXDBG_BN_WRITE,16,148,75,14
+    PUSHBUTTON      "Open For Notify",ARXDBG_BN_NOTIFY,16,164,75,14
+    PUSHBUTTON      "Test Modify",ARXDBG_BN_MODIFY,16,180,75,14
+    PUSHBUTTON      "Upgrade To Write",ARXDBG_BN_UPGRADE_TO_W,108,132,75,14
+    PUSHBUTTON      "Downgrade From Write",ARXDBG_BN_DOWNGRADE_W,108,148,75,
+                    14
+    PUSHBUTTON      "Upgrade From Notify",ARXDBG_BN_UPGRADE_FROM_N,108,164,
+                    75,14
+    PUSHBUTTON      "Downgrade To Notify",ARXDBG_BN_DOWNGRADE_TO_N,108,180,
+                    75,14
+    PUSHBUTTON      "Erase",ARXDBG_BN_ERASE,196,132,75,14
+    PUSHBUTTON      "Un-Erase",ARXDBG_BN_UNERASE,196,148,75,14
+    PUSHBUTTON      "Cancel",ARXDBG_BN_CANCEL,196,164,75,14
+    PUSHBUTTON      "Close",ARXDBG_BN_CLOSE,196,180,75,14
+    PUSHBUTTON      "Close And Page",ARXDBG_BN_CLOSE_PAGE,196,196,76,14
+    LTEXT           "",ARXDBG_TXT_ERRMSG,8,224,195,8
+    DEFPUSHBUTTON   "OK",IDOK,112,236,50,14
+END
+
+ARXDBG_DLG_CLASS_DICT DIALOG DISCARDABLE  0, 0, 484, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ARX Classes"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "List1",ARXDBG_LC_CLASSES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,5,5,470,235
+    DEFPUSHBUTTON   "OK",IDOK,217,250,50,14
+END
+
+ARXDBG_DLG_SYSREGISTRY DIALOG DISCARDABLE  0, 0, 289, 175
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ARX System Registry"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Tree1",ARXDBG_TR_SYS_REG,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    5,10,130,125
+    LTEXT           "CLASS:",IDC_STATIC,145,15,24,8
+    LTEXT           "",ARXDBG_TXT_CLASS,180,15,105,8
+    DEFPUSHBUTTON   "OK",IDOK,120,150,50,14
+END
+
+ARXDBG_DLG_XFORM DIALOG DISCARDABLE  0, 0, 192, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Test Transformations"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Rotation",IDC_STATIC,4,4,80,84
+    CONTROL         "UCS X-Axis",ARXDBG_RB_UCS_X,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,8,16,50,10
+    CONTROL         "UCS Y-Axis",ARXDBG_RB_UCS_Y,"Button",BS_AUTORADIOBUTTON,
+                    8,28,51,10
+    CONTROL         "UCS Z-Axis",ARXDBG_RB_UCS_Z,"Button",BS_AUTORADIOBUTTON,
+                    8,40,50,10
+    CONTROL         "ECS Z-Axis",ARXDBG_RB_ECS_Z,"Button",BS_AUTORADIOBUTTON,
+                    8,52,50,10
+    PUSHBUTTON      "Rotate <",ARXDBG_BN_ROTATE,19,68,50,14,WS_GROUP
+    GROUPBOX        "Translation",IDC_STATIC,4,96,80,60
+    CONTROL         "From/To Point",ARXDBG_RB_FROM_TO,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,8,108,60,10
+    CONTROL         "UCS Displacement",ARXDBG_RB_UCS_DISP,"Button",
+                    BS_AUTORADIOBUTTON,8,120,73,10
+    PUSHBUTTON      "Move <",ARXDBG_BN_MOVE,19,136,50,14
+    GROUPBOX        "Misc.",IDC_STATIC,92,4,96,72
+    PUSHBUTTON      "Scale <",ARXDBG_BN_SCALE,100,16,80,14
+    PUSHBUTTON      "Mirror <",ARXDBG_BN_MIRROR,100,36,80,14
+    PUSHBUTTON      "XformTo WCS Origin <",ARXDBG_BN_WCS_ORIGIN,100,56,80,14
+    CONTROL         "Transform a Copy",ARXDBG_CB_XFORM_COPY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,96,96,70,10
+    DEFPUSHBUTTON   "Exit",IDOK,71,164,50,14
+END
+
+ARXDBG_DLG_ENTMAKE DIALOG DISCARDABLE  0, 0, 268, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Test Entity Make"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Curves",IDC_STATIC,5,5,60,180
+    PUSHBUTTON      "Polyline (LW)",ARXDBG_BN_POLYLINE,10,15,50,14
+    PUSHBUTTON      "2dPolyline",ARXDBG_BN_2DPOLYLINE,10,30,50,14
+    PUSHBUTTON      "3dPolyline",ARXDBG_BN_3DPOLYLINE,10,45,50,14
+    PUSHBUTTON      "Arc",ARXDBG_BN_ARC,10,60,50,14
+    PUSHBUTTON      "Circle",ARXDBG_BN_CIRCLE,10,75,50,14
+    PUSHBUTTON      "Ellipse",ARXDBG_BN_ELLIPSE,10,90,50,14
+    PUSHBUTTON      "Leader",ARXDBG_BN_LEADER,10,105,50,14
+    PUSHBUTTON      "Line",ARXDBG_BN_LINE,10,120,50,14
+    PUSHBUTTON      "Ray",ARXDBG_BN_RAY,10,135,50,14
+    PUSHBUTTON      "Spline",ARXDBG_BN_SPLINE,10,150,50,14
+    PUSHBUTTON      "Xline",ARXDBG_BN_XLINE,10,165,50,14
+    GROUPBOX        "Meshes",IDC_STATIC,75,5,60,45
+    PUSHBUTTON      "PolyFaceMesh",ARXDBG_BN_POLYFACE,80,15,50,14
+    PUSHBUTTON      "PolygonMesh",ARXDBG_BN_POLYGON,80,30,50,14
+    GROUPBOX        "Dimensions",IDC_STATIC,75,60,60,120
+    PUSHBUTTON      "2LineAngular",ARXDBG_BN_2LINEANGULAR,80,70,50,14
+    PUSHBUTTON      "3PointAngular",ARXDBG_BN_3POINTANGULAR,80,85,50,14
+    PUSHBUTTON      "Aligned",ARXDBG_BN_ALIGNED,80,100,50,14
+    PUSHBUTTON      "Diametric",ARXDBG_BN_DIAMETRIC,80,115,50,14
+    PUSHBUTTON      "Ordinate",ARXDBG_BN_ORDINATE,80,130,50,14
+    PUSHBUTTON      "Radial",ARXDBG_BN_RADIAL,80,145,50,14
+    PUSHBUTTON      "Rotated",ARXDBG_BN_ROTATED,80,160,50,14
+    GROUPBOX        "Misc.",IDC_STATIC,141,6,59,169
+    PUSHBUTTON      "BlockRef",ARXDBG_BN_BLKREF,145,20,50,14
+    PUSHBUTTON      "MInsertBlock",ARXDBG_BN_MINSERT,145,35,50,14
+    PUSHBUTTON      "Hatch",ARXDBG_BN_HATCH,145,50,50,14
+    PUSHBUTTON      "Face",ARXDBG_BN_FACE,145,65,50,14
+    PUSHBUTTON      "Fcf",ARXDBG_BN_FCF,145,80,50,14
+    PUSHBUTTON      "Mline",ARXDBG_BN_MLINE,145,95,50,14
+    PUSHBUTTON      "Point",ARXDBG_BN_POINT,145,110,50,14
+    PUSHBUTTON      "Solid",ARXDBG_BN_SOLID,145,125,50,14
+    PUSHBUTTON      "Trace",ARXDBG_BN_TRACE,145,140,50,14
+    PUSHBUTTON      "Viewport",ARXDBG_BN_VIEWPORT,145,155,50,14
+    GROUPBOX        "ACIS",IDC_STATIC,205,6,59,49
+    PUSHBUTTON      "3dSolid",ARXDBG_BN_3DSOLID,210,20,50,14
+    PUSHBUTTON      "Region",ARXDBG_BN_REGION,210,35,50,14
+    GROUPBOX        "Text",IDC_STATIC,205,63,59,62
+    PUSHBUTTON      "Text",ARXDBG_BN_TEXT,210,75,50,14
+    PUSHBUTTON      "MText",ARXDBG_BN_MTEXT,210,90,50,14
+    PUSHBUTTON      "AttributeDef",ARXDBG_BN_ATTDEF,210,105,50,14
+    DEFPUSHBUTTON   "Exit",IDOK,109,195,50,14
+END
+
+ARXDBG_DLG_TBLMAKE DIALOG DISCARDABLE  0, 0, 154, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Test Table Make"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    PUSHBUTTON      "Named Block",ARXDBG_BN_BLOCK,6,6,63,14
+    PUSHBUTTON      "Anonymous Block",ARXDBG_BN_ANONBLOCK,6,24,63,14
+    PUSHBUTTON      "Dimension Style",ARXDBG_BN_DIMSTYLE,6,42,63,14
+    PUSHBUTTON      "Layer",ARXDBG_BN_LAYER,6,60,63,14
+    PUSHBUTTON      "Linetype",ARXDBG_BN_LINETYPE,6,78,63,14
+    PUSHBUTTON      "Text Style",ARXDBG_BN_TEXTSTYLE,78,6,63,14
+    PUSHBUTTON      "Application Id",ARXDBG_BN_APPID,78,24,63,14
+    PUSHBUTTON      "UCS",ARXDBG_BN_UCS,78,42,63,14
+    PUSHBUTTON      "View",ARXDBG_BN_VIEW,78,60,63,14
+    PUSHBUTTON      "Viewport",ARXDBG_BN_VIEWPORT,78,78,63,14
+    DEFPUSHBUTTON   "Exit",IDOK,48,102,50,14
+END
+
+ARXDBG_TDC_DBMISC DIALOG DISCARDABLE  0, 0, 404, 210
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Preview Image",IDC_STATIC,5,5,50,8
+    CONTROL         "",ARXDBG_FR_PREVIEW,"Static",SS_BLACKFRAME,5,15,145,105
+    CONTROL         "List1",ARXDBG_LC_DBMISC_VALUES,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,155,10,245,180
+END
+
+ARXDBG_DLG_ABOUT DIALOGEX 0, 0, 384, 227
+STYLE DS_SETFONT | WS_POPUP
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,167,206,50,14
+    CONTROL         "ARXDBG_BMP_SPLASH",IDC_STATIC,"Static",SS_BITMAP | 
+                    SS_SUNKEN | WS_BORDER,5,5,17,15
+END
+
+ARXDBG_DLG_WORLD_DRAW DIALOG DISCARDABLE  0, 0, 269, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "World Draw/Viewport Draw Tests"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "World Draw Settings",IDC_STATIC,10,5,115,120
+    LTEXT           "Regen Type:",IDC_STATIC,15,20,41,8
+    CONTROL         "Standard",ARXDBG_RB_STANDARD,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,60,20,55,10
+    CONTROL         "Hide/Shade",ARXDBG_RB_HIDE_SHADE,"Button",
+                    BS_AUTORADIOBUTTON,60,30,54,10
+    CONTROL         "Render",ARXDBG_RB_RENDER,"Button",BS_AUTORADIOBUTTON,60,
+                    40,39,10
+    CONTROL         "Save For R12",ARXDBG_RB_R12,"Button",BS_AUTORADIOBUTTON,
+                    60,50,57,10
+    CONTROL         "Save For Proxy",ARXDBG_RB_PROXY,"Button",
+                    BS_AUTORADIOBUTTON,60,60,62,10
+    CONTROL         "Is Dragging",ARXDBG_CB_DRAGGING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,75,51,10
+    LTEXT           "Deviation:",IDC_STATIC,15,90,31,8
+    EDITTEXT        ARXDBG_EB_DEVIATION,50,90,40,14,ES_AUTOHSCROLL
+    LTEXT           "Isolines:",IDC_STATIC,15,105,26,8
+    EDITTEXT        ARXDBG_EB_ISOLINES,50,105,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Message Level",IDC_STATIC,135,5,125,55
+    CONTROL         "Show AcGiWorldDraw Calls",ARXDBG_CB_SHOW_WORLDRAW,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,15,115,10
+    CONTROL         "Show AcGiWorldGeometry Calls",ARXDBG_CB_SHOW_GEOM,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,25,115,10
+    CONTROL         "Show AcGiSubEntityTraits Calls",ARXDBG_CB_SHOW_SUBENT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,35,115,10
+    CONTROL         "Show All Parameter Values",ARXDBG_CB_SHOW_PRAMS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,140,45,115,10
+    DEFPUSHBUTTON   "OK",IDOK,82,135,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,137,135,50,14
+END
+
+ARXDBG_DLG_COLOR DIALOG DISCARDABLE  0, 0, 272, 209
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION
+CAPTION "Color"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Standard Colors",IDC_STATIC,8,4,112,28
+    CONTROL         "",ARXDBG_PIC_STANDARD_COLORS,"Static",SS_BLACKFRAME | 
+                    SS_SUNKEN,12,16,104,12
+    GROUPBOX        "Gray Shades",IDC_STATIC,124,4,80,28
+    CONTROL         "",ARXDBG_PIC_GRAY_COLORS,"Static",SS_BLACKFRAME | 
+                    SS_SUNKEN,128,16,72,12
+    PUSHBUTTON      "ByLayer",ARXDBG_BN_BYLAYER,212,4,50,14
+    PUSHBUTTON      "ByBlock",ARXDBG_BN_BYBLOCK,212,24,50,14
+    GROUPBOX        "Full Color Palette",IDC_STATIC,8,40,252,124
+    CONTROL         "",ARXDBG_PIC_FULL_PALETTE_TOP,"Static",SS_BLACKFRAME | 
+                    SS_REALSIZEIMAGE | SS_SUNKEN,12,52,244,50
+    CONTROL         "",ARXDBG_PIC_FULL_PALETTE_BOTTOM,"Static",SS_BLACKFRAME | 
+                    SS_REALSIZEIMAGE | SS_SUNKEN,12,108,244,50
+    CONTROL         "",ARXDBG_PIC_COLOR_SWATCH,"Static",SS_BLACKFRAME | 
+                    SS_SUNKEN,8,168,16,16
+    LTEXT           "Color:",IDC_STATIC,28,172,20,8
+    LTEXT           "Static",ARXDBG_TXT_COLOR,52,172,40,8
+    PUSHBUTTON      "OK",IDOK,108,188,50,14
+END
+
+ARXDBG_DLG_TESTCURVES DIALOG DISCARDABLE  0, 0, 268, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Test Curves"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    PUSHBUTTON      "isClosed/isPeriodic/isPlanar",ARXDBG_BN_CLOSED,10,5,120,
+                    14
+    PUSHBUTTON      "getPlane",ARXDBG_BN_GETPLANE,10,20,120,14
+    PUSHBUTTON      "getStartParam/getEndParam",ARXDBG_BN_STARTPARAM,10,35,
+                    120,14
+    PUSHBUTTON      "getStartPoint/getEndPoint",ARXDBG_BN_STARTPT,10,50,120,
+                    14
+    PUSHBUTTON      "getPointAtParam",ARXDBG_BN_PTATPARAM,10,65,120,14
+    PUSHBUTTON      "getParamAtPoint",ARXDBG_BN_PARAMATPT,10,80,120,14
+    PUSHBUTTON      "getDistAtParam",ARXDBG_BN_DISTATPARAM,10,95,120,14
+    PUSHBUTTON      "getParamAtDist",ARXDBG_BN_PARAMATDIST,10,110,120,14
+    PUSHBUTTON      "getDistAtPoint",ARXDBG_BN_DISTATPT,10,125,120,14
+    PUSHBUTTON      "getPointAtDist",ARXDBG_BN_PTATDIST,10,140,120,14
+    PUSHBUTTON      "getFirstDeriv/getSecondDeriv (param)",ARXDBG_BN_DERIV,
+                    10,155,120,14
+    PUSHBUTTON      "getFirstDeriv/getSecondDeriv (point)",ARXDBG_BN_DERIV2,
+                    10,170,120,14
+    PUSHBUTTON      "getClosestPointTo",ARXDBG_BN_CLOSESTPTTO,140,5,120,14
+    PUSHBUTTON      "getClosestPointTo (projected)",ARXDBG_BN_CLOSESTPTTO2,
+                    140,20,120,14
+    PUSHBUTTON      "getOrthoProjectedCurve",ARXDBG_BN_ORTHOPROJECTED,140,35,
+                    120,14
+    PUSHBUTTON      "getProjectedCurve",ARXDBG_BN_PROJECTED,140,50,120,14
+    PUSHBUTTON      "getOffsetCurves",ARXDBG_BN_OFFSETCURVES,140,65,120,14
+    PUSHBUTTON      "getSpline",ARXDBG_BN_SPLINE,140,80,120,14
+    PUSHBUTTON      "getSplitCurves (from Params)",ARXDBG_BN_SPLITCURVES,140,
+                    95,120,14
+    PUSHBUTTON      "getSplitCurves (from Points)",ARXDBG_BN_SPLITCURVES2,
+                    140,110,120,14
+    PUSHBUTTON      "extend (toParam)",ARXDBG_BN_EXTEND,140,125,120,14
+    PUSHBUTTON      "extend (toPoint)",ARXDBG_BN_EXTEND2,140,140,120,14
+    PUSHBUTTON      "getArea",ARXDBG_BN_AREA,140,155,120,14
+    DEFPUSHBUTTON   "Exit",IDOK,109,195,50,14
+END
+
+ARXDBG_TDC_OPTIONS DIALOG DISCARDABLE  0, 0, 277, 147
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Entity/Object Diagnostic Messages",IDC_STATIC,5,5,135,
+                    50
+    CONTROL         "Show DWG filer messages",ARXDBG_CB_DWG_FILER_MESSAGES,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,20,115,10
+    CONTROL         "Show deepClone() details",ARXDBG_CB_DEEP_CLONE_DETAILS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,30,115,10
+    CONTROL         "Show wblockClone() details",
+                    ARXDBG_CB_WBLOCK_CLONE_DETAILS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,40,110,10
+    CONTROL         "Insert Dictionary Entries By Hand",
+                    ARXDBG_CB_USE_DICT_MERGESTYLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,75,115,8
+END
+
+ARXDBG_TDM_EDITOR DIALOG DISCARDABLE  0, 0, 419, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Editor"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,305,250,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,360,250,50,14
+    CONTROL         "Tab1",ARXDBG_TAB_1,"SysTabControl32",0x0,5,5,410,235
+END
+
+ARXDBG_TDC_COMMANDS DIALOG DISCARDABLE  0, 0, 404, 195
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Tree1",ARXDBG_TREE_CMDS,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,10,145,180
+    CONTROL         "List1",ARXDBG_LC_DATA,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,155,10,245,180
+END
+
+ARXDBG_TDC_CLASSES DIALOG DISCARDABLE  0, 0, 409, 235
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Tree1",ARXDBG_TR_CLASSES,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,10,165,190
+    LTEXT           "Class Name:",IDC_STATIC,185,5,40,8
+    LTEXT           "Static",ARXDBG_TXT_CLASSNAME,235,5,170,8
+    LTEXT           "DXF Name:",ARXDBG_TXT_DXF_LABEL,185,15,36,8
+    LTEXT           "Static",ARXDBG_TXT_DXFNAME,235,15,170,8
+    LTEXT           "Application:",ARXDBG_TXT_APP_LABEL,185,25,40,8
+    LTEXT           "Static",ARXDBG_TXT_APPNAME,235,25,170,8
+    LTEXT           "Birth Version:",ARXDBG_TXT_BVERSION_LABEL,185,35,40,8
+    LTEXT           "Static",ARXDBG_TXT_BVERSION,235,35,170,8
+    LTEXT           "Maint. Version:",ARXDBG_TXT_MVERSION_LABEL,185,45,45,8
+    LTEXT           "Static",ARXDBG_TXT_MVERSION,235,45,170,8
+    LTEXT           "Proxy Flags",IDC_STATIC,185,62,37,8
+    LISTBOX         ARXDBG_LB_PROXY_FLAGS,185,72,215,55,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Protocol Extensions",IDC_STATIC,185,132,65,8
+    LISTBOX         ARXDBG_LB_PROTOCOL_EXT,185,142,215,55,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Press NumPad * to expand whole branch of tree.",
+                    IDC_STATIC,10,205,150,8
+    PUSHBUTTON      "Show Comparative List of Classes...",
+                    ARXDBG_BN_COMP_CLASSES,230,205,135,14
+END
+
+ARXDBG_TDC_DOCS DIALOG DISCARDABLE  0, 0, 414, 222
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LISTBOX         ARXDBG_LB_DOCS,5,10,145,180,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",ARXDBG_LC_DATA,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,160,10,245,180
+    PUSHBUTTON      "Database...",ARXDBG_BN_DATABASE,10,200,50,14
+END
+
+ARXDBG_TDM_DATABASE DIALOG DISCARDABLE  0, 0, 419, 285
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Database"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,305,265,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,360,265,50,14
+    CONTROL         "Tab1",ARXDBG_TAB_1,"SysTabControl32",0x0,5,5,410,255
+END
+
+ARXDBG_TDC_SYMTBLS DIALOG DISCARDABLE  0, 0, 409, 242
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Tree1",ARXDBG_TREE_SYMTABS,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | 
+                    TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,5,10,145,180
+    CONTROL         "List1",ARXDBG_LC_SYMTBL_VALUES,"SysListView32",
+                    LVS_REPORT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,
+                    155,10,245,180
+    PUSHBUTTON      "DXF...",ARXDBG_BN_DXF,10,195,55,14
+    PUSHBUTTON      "Xdata...",ARXDBG_BN_XDATA,10,215,55,14
+    PUSHBUTTON      "Extension Dict...",ARXDBG_BN_EXTDICT,70,195,55,14
+    PUSHBUTTON      "Reactors...",ARXDBG_BN_REACTORS,70,215,55,14
+    PUSHBUTTON      "Document...",ARXDBG_BN_DOCUMENT,130,195,55,14
+    PUSHBUTTON      "References...",ARXDBG_BN_REFERENCED_OBJS,130,215,55,14
+    PUSHBUTTON      "Entities In Block...",ARXDBG_BN_BLKENTS,210,195,75,14
+    CONTROL         "Show Erased Entities",ARXDBG_CB_SHOW_ERASED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,215,79,10
+    PUSHBUTTON      "References To Block...",ARXDBG_BN_BLKREFS,305,195,75,14
+    CONTROL         "Show Nested References",ARXDBG_CB_SHOW_NESTED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,305,215,93,10
+    CONTROL         "Show Erased References",ARXDBG_CB_SHOW_ERASED_REFS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,305,225,95,10
+END
+
+ARXDBG_TDC_DICTS DIALOG DISCARDABLE  0, 0, 404, 240
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Tree1",ARXDBG_TREE_DICT,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | 
+                    TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,5,10,145,180
+    CONTROL         "List1",ARXDBG_LC_DICT_VALUES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,155,10,245,180
+    PUSHBUTTON      "DXF...",ARXDBG_BN_DXF,10,195,55,14
+    PUSHBUTTON      "Xdata...",ARXDBG_BN_XDATA,10,215,55,14
+    PUSHBUTTON      "Extension Dict...",ARXDBG_BN_EXTDICT,70,195,55,14
+    PUSHBUTTON      "Reactors...",ARXDBG_BN_REACTORS,70,215,55,14
+    PUSHBUTTON      "Document...",ARXDBG_BN_DOCUMENT,130,195,55,14
+    PUSHBUTTON      "References...",ARXDBG_BN_REFERENCED_OBJS,130,215,55,14
+    CONTROL         "Dictionary Is Hard Owner",ARXDBG_CB_HARDOWNER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,235,195,95,10
+    LTEXT           "Merge Style:",ARXDBG_TXT_MERGESTYLE_LABEL,235,210,40,8
+    COMBOBOX        ARXDBG_PU_MERGESTYLE,280,210,95,85,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+ARXDBG_TDC_ENTS DIALOG DISCARDABLE  0, 0, 409, 235
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Tree1",ARXDBG_TREE_ENTS,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,10,145,180
+    CONTROL         "List1",ARXDBG_LC_DATA,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,155,10,245,180
+    PUSHBUTTON      "DXF...",ARXDBG_BN_DXF,10,195,55,14
+    PUSHBUTTON      "Xdata...",ARXDBG_BN_XDATA,10,215,55,14
+    PUSHBUTTON      "Extension Dict...",ARXDBG_BN_EXTDICT,70,195,55,14
+    PUSHBUTTON      "Reactors...",ARXDBG_BN_REACTORS,70,215,55,14
+    PUSHBUTTON      "Document...",ARXDBG_BN_DOCUMENT,130,195,55,14
+    PUSHBUTTON      "References...",ARXDBG_BN_REFERENCED_OBJS,130,215,55,14
+    PUSHBUTTON      "Database...",ARXDBG_BN_DATABASE,190,195,55,14
+    LTEXT           "This entity is currently erased.",
+                    ARXDBG_TXT_ERASE_STATUS,275,195,100,8,NOT WS_VISIBLE
+END
+
+ARXDBG_TDM_ENTS DIALOG DISCARDABLE  0, 0, 419, 285
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Entities"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,305,265,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,360,265,50,14
+    CONTROL         "Tab1",ARXDBG_TAB_1,"SysTabControl32",0x0,5,5,410,250
+END
+
+ARXDBG_TDC_SYS_REACTORS DIALOG DISCARDABLE  0, 0, 362, 207
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Event Reactor",IDC_STATIC,5,5,110,45
+    CONTROL         "On",ARXDBG_CB_EVENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,20,25,10
+    CONTROL         "Show Details",ARXDBG_CB_EVENT_DETAILS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,30,55,10
+    GROUPBOX        "Editor Reactor",IDC_STATIC,5,55,110,45
+    CONTROL         "On",ARXDBG_CB_EDITOR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,70,25,10
+    CONTROL         "Show Details",ARXDBG_CB_EDITOR_DETAILS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,80,55,10
+    GROUPBOX        "Database Reactor",IDC_STATIC,5,105,110,45
+    CONTROL         "On",ARXDBG_CB_DATABASE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,120,25,10
+    CONTROL         "Show Details",ARXDBG_CB_DB_DETAILS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,130,55,10
+    GROUPBOX        "Document Reactor",IDC_STATIC,5,155,110,45
+    CONTROL         "On",ARXDBG_CB_DOCUMENT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,170,25,10
+    CONTROL         "Show Details",ARXDBG_CB_DOC_DETAILS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,180,55,10
+    GROUPBOX        "Long Transaction",IDC_STATIC,125,5,110,45
+    CONTROL         "On",ARXDBG_CB_LONG_TRANS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,135,20,25,10
+    CONTROL         "Show Details",ARXDBG_CB_LONG_TRANS_DETAILS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,135,30,55,10
+    GROUPBOX        "Dynamic Linker",IDC_STATIC,125,55,110,45
+    CONTROL         "On",ARXDBG_CB_DYN_LINKER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,135,70,25,10
+    GROUPBOX        "DB Transaction",IDC_STATIC,125,105,110,45
+    CONTROL         "On",ARXDBG_CB_TRANS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,135,120,25,10
+    GROUPBOX        "Graphics System",IDC_STATIC,125,155,110,45
+    CONTROL         "On",ARXDBG_CB_GS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    135,170,25,10
+    GROUPBOX        "Layout Manager",IDC_STATIC,245,5,110,45
+    CONTROL         "On",ARXDBG_CB_LAYOUT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,255,20,25,10
+    GROUPBOX        "Editor Input",IDC_STATIC,245,55,110,45
+    CONTROL         "On",ARXDBG_CB_INPUT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,255,65,25,10
+    CONTROL         "Show Details",ARXDBG_CB_INPUT_DETAILS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,255,75,55,10
+    CONTROL         "Suppress While Dragging",ARXDBG_CB_DRAG_SUPPRESS_INPUT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,255,85,95,10
+END
+
+ARXDBG_TDC_TRANSIENT_REACTORS DIALOG DISCARDABLE  0, 0, 362, 207
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Object - AcDbObjectReactor",IDC_STATIC,10,5,240,95
+    LISTBOX         ARXDBG_LB_OBJS,15,15,150,80,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Object Handle:",IDC_STATIC,170,15,46,8
+    EDITTEXT        ARXDBG_EB_HANDLE,170,25,40,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    PUSHBUTTON      "Attach",ARXDBG_BN_ATTACH_OBJ,215,25,30,14
+    CONTROL         "ARXDBG_BMP_REMOVE|Detach From Selected Items in List",
+                    ARXDBG_BN_DETACH_SEL_OBJS,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,170,75,15,14
+    LTEXT           "Detach Selected",IDC_STATIC,190,75,51,8
+    GROUPBOX        "Entity - AcDbEntityReactor",IDC_STATIC,10,105,240,95
+    LISTBOX         ARXDBG_LB_ENTS,15,115,150,80,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Attach To Entity",ARXDBG_BN_ATTACH_ENT,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,170,120,15,14
+    LTEXT           "Attach",IDC_STATIC,190,120,40,8
+    CONTROL         "Detach From Entity",ARXDBG_BN_DETACH_ENT,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,170,140,15,14
+    LTEXT           "Detach",IDC_STATIC,190,140,35,8
+    CONTROL         "ARXDBG_BMP_REMOVE|Detach From Selected Items in List",
+                    ARXDBG_BN_DETACH_SEL_ENTS,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,170,175,15,14
+    LTEXT           "Detach Selected",IDC_STATIC,190,175,51,8
+    GROUPBOX        "Show State Dialog For",IDC_STATIC,260,15,90,150
+    CONTROL         "modified",ARXDBG_CB_STATE_MODIFIED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,30,55,10
+    CONTROL         "objectClosed",ARXDBG_CB_STATE_CLOSED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,40,70,10
+    CONTROL         "cancelled",ARXDBG_CB_STATE_CANCELLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,50,55,10
+    CONTROL         "copied",ARXDBG_CB_STATE_COPIED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,270,60,45,10
+    CONTROL         "erased",ARXDBG_CB_STATE_ERASED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,270,70,45,10
+    CONTROL         "goodbye",ARXDBG_CB_STATE_GOODBYE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,80,44,10
+    CONTROL         "openedForModify",ARXDBG_CB_STATE_OPENMOD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,90,70,10
+    CONTROL         "subObjModified",ARXDBG_CB_STATE_SUBOBJMOD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,100,64,10
+    CONTROL         "modifyUndone",ARXDBG_CB_STATE_MODUNDONE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,110,60,10
+    CONTROL         "modifiedXdata",ARXDBG_CB_STATE_MODXDATA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,120,65,10
+    CONTROL         "modifiedGraphics",ARXDBG_CB_STATE_MODGRAPHICS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,130,69,10
+    CONTROL         "unappended",ARXDBG_CB_STATE_UNAPPENDED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,140,70,10
+    CONTROL         "reappended",ARXDBG_CB_STATE_REAPPENDED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,150,65,10
+END
+
+ARXDBG_TDM_REACTORS DIALOG DISCARDABLE  0, 0, 374, 250
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Reactors"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,265,230,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,320,230,50,14
+    CONTROL         "Tab1",ARXDBG_TAB_1,"SysTabControl32",0x0,5,5,365,220
+END
+
+ARXDBG_TDC_PERSISTENT_REACTORS DIALOG DISCARDABLE  0, 0, 362, 207
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "Object - AcDbObjectReactor",IDC_STATIC,10,5,240,95
+    LISTBOX         ARXDBG_LB_OBJS,15,15,150,80,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Object Handle:",IDC_STATIC,170,15,46,8
+    EDITTEXT        ARXDBG_EB_HANDLE,170,25,40,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    PUSHBUTTON      "Attach",ARXDBG_BN_ATTACH_OBJ,215,25,30,14
+    CONTROL         "ARXDBG_BMP_REMOVE|Detach From Selected Items in List",
+                    ARXDBG_BN_DETACH_SEL_OBJS,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,170,75,15,14
+    LTEXT           "Detach Selected",IDC_STATIC,190,75,51,8
+    GROUPBOX        "Entity - AcDbEntityReactor",IDC_STATIC,10,105,240,95
+    LISTBOX         ARXDBG_LB_ENTS,15,115,150,80,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Attach To Entity",ARXDBG_BN_ATTACH_ENT,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,170,120,15,14
+    LTEXT           "Attach",IDC_STATIC,190,120,40,8
+    CONTROL         "Detach From Entity",ARXDBG_BN_DETACH_ENT,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,170,140,15,14
+    LTEXT           "Detach",IDC_STATIC,190,140,35,8
+    CONTROL         "ARXDBG_BMP_REMOVE|Detach From Selected Items in List",
+                    ARXDBG_BN_DETACH_SEL_ENTS,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,170,175,15,14
+    LTEXT           "Detach Selected",IDC_STATIC,190,175,51,8
+    GROUPBOX        "Show State Dialog For",IDC_STATIC,260,15,90,150
+    CONTROL         "modified",ARXDBG_CB_STATE_MODIFIED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,30,55,10
+    CONTROL         "objectClosed",ARXDBG_CB_STATE_CLOSED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,40,70,10
+    CONTROL         "cancelled",ARXDBG_CB_STATE_CANCELLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,50,55,10
+    CONTROL         "copied",ARXDBG_CB_STATE_COPIED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,270,60,45,10
+    CONTROL         "erased",ARXDBG_CB_STATE_ERASED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,270,70,45,10
+    CONTROL         "goodbye",ARXDBG_CB_STATE_GOODBYE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,80,44,10
+    CONTROL         "openedForModify",ARXDBG_CB_STATE_OPENMOD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,90,70,10
+    CONTROL         "subObjModified",ARXDBG_CB_STATE_SUBOBJMOD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,100,64,10
+    CONTROL         "modifyUndone",ARXDBG_CB_STATE_MODUNDONE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,110,60,10
+    CONTROL         "modifiedXdata",ARXDBG_CB_STATE_MODXDATA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,120,65,10
+    CONTROL         "modifiedGraphics",ARXDBG_CB_STATE_MODGRAPHICS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,130,69,10
+    CONTROL         "unappended",ARXDBG_CB_STATE_UNAPPENDED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,140,70,10
+    CONTROL         "reappended",ARXDBG_CB_STATE_REAPPENDED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,270,150,65,10
+END
+
+ARXDBG_TDC_LONG_TRANS DIALOG DISCARDABLE  0, 0, 409, 235
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "Tree1",ARXDBG_TREE_OBJS,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,10,145,180
+    CONTROL         "List1",ARXDBG_LC_VALUES,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,155,10,245,180
+    PUSHBUTTON      "DXF...",ARXDBG_BN_DXF,10,195,55,14
+    PUSHBUTTON      "Xdata...",ARXDBG_BN_XDATA,10,215,55,14
+    PUSHBUTTON      "Extension Dict...",ARXDBG_BN_EXTDICT,70,195,55,14
+    PUSHBUTTON      "Reactors...",ARXDBG_BN_REACTORS,70,215,55,14
+    PUSHBUTTON      "Document...",ARXDBG_BN_DOCUMENT,130,195,55,14
+    PUSHBUTTON      "References...",ARXDBG_BN_REFERENCED_OBJS,130,215,55,14
+    PUSHBUTTON      "Show IdMap...",ARXDBG_BN_IDMAP,340,195,60,14
+END
+
+ARXDBG_TDC_OBJS DIALOG DISCARDABLE  0, 0, 409, 235
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LISTBOX         ARXDBG_LB_OBJS,5,10,145,180,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",ARXDBG_LC_DATA,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,155,10,245,180
+    PUSHBUTTON      "DXF...",ARXDBG_BN_DXF,10,195,55,14
+    PUSHBUTTON      "Xdata...",ARXDBG_BN_XDATA,10,215,55,14
+    PUSHBUTTON      "Extension Dict...",ARXDBG_BN_EXTDICT,70,195,55,14
+    PUSHBUTTON      "Reactors...",ARXDBG_BN_REACTORS,70,215,55,14
+    PUSHBUTTON      "Document...",ARXDBG_BN_DOCUMENT,130,195,55,14
+    PUSHBUTTON      "References...",ARXDBG_BN_REFERENCED_OBJS,130,215,55,14
+    PUSHBUTTON      "Database...",ARXDBG_BN_DATABASE,190,195,55,14
+    LTEXT           "This entity is currently erased.",
+                    ARXDBG_TXT_ERASE_STATUS,275,195,100,8,NOT WS_VISIBLE
+END
+
+ARXDBG_TDC_IDMAP DIALOG DISCARDABLE  0, 0, 462, 217
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "List1",ARXDBG_LC_VALUES,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,10,165,200
+    CONTROL         "List1",ARXDBG_LC_MAPVALUES,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,175,10,280,200
+END
+
+ARXDBG_TDM_IDMAP DIALOG DISCARDABLE  0, 0, 474, 266
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ID Map"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,365,245,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,420,245,50,14
+    CONTROL         "Tab1",ARXDBG_TAB_1,"SysTabControl32",0x0,5,5,465,235
+END
+
+ARXDBG_DLG_FILER_TEST DIALOG DISCARDABLE  0, 0, 169, 60
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DWG Filer Test"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Filer Type:",IDC_STATIC,10,10,33,8
+    COMBOBOX        ARXDBG_PU_FILER_TYPE,45,10,105,110,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,32,40,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,87,40,50,14
+END
+
+ARXDBG_DLG_GENERIC_DEF_ID DIALOG DISCARDABLE  0, 0, 250, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Style"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "",ARXDBG_TXT_PROMPT,8,4,232,8
+    CONTROL         "List1",ARXDBG_LC_DEF_IDS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,8,16,232,96
+    DEFPUSHBUTTON   "OK",IDOK,72,120,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,128,120,50,14
+END
+
+ARXDBG_DLG_SSGET DIALOG DISCARDABLE  0, 0, 294, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Selection Set Test"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Main Selection Method:",IDC_STATIC,10,10,75,8
+    COMBOBOX        ARXDBG_PU_MAIN_SELECT_METHOD,90,10,110,110,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Flags",IDC_STATIC,10,30,125,75
+    CONTROL         "Filter Locked Layers",ARXDBG_CB_FILTER_LOCKED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,45,110,10
+    CONTROL         "Reject Non-Current Space",ARXDBG_CB_REJECT_NON_CURRENT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,55,110,10
+    CONTROL         "Reject Paper Space Viewport",
+                    ARXDBG_BN_REJECT_PSPACE_VPORT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,65,110,10
+    CONTROL         "Allow Duplicates",ARXDBG_CB_ALLOW_DUPS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,75,95,10
+    CONTROL         "Allow Single Only",ARXDBG_CB_SINGLE_ONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,85,105,10
+    GROUPBOX        "Callbacks",IDC_STATIC,10,110,125,40
+    CONTROL         "Keyword Callback",ARXDBG_CB_KEYWORD_CALLBACK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,125,70,10
+    CONTROL         "Other Callback",ARXDBG_CB_OTHER_CALLBACK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,135,60,10
+    CONTROL         "Select Objects",ARXDBG_BN_SELECT_OBJS,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,10,155,15,14
+    LTEXT           "Run Selection Test",IDC_STATIC,30,160,58,8
+    GROUPBOX        "Prompts",IDC_STATIC,140,30,145,50
+    CONTROL         "Select:",ARXDBG_CB_USE_SELECT_PROMPT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,145,45,37,10
+    EDITTEXT        ARXDBG_EB_SELECT_PROMPT,185,40,95,14,ES_AUTOHSCROLL
+    CONTROL         "Remove:",ARXDBG_CB_USE_REMOVE_PROMPT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,145,60,40,8
+    EDITTEXT        ARXDBG_EB_REMOVE_PROMPT,185,55,95,14,ES_AUTOHSCROLL
+    GROUPBOX        "Filter",IDC_STATIC,140,85,145,65
+    CONTROL         "Apply Filter",ARXDBG_CB_USE_FILTER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,150,100,70,10
+    LTEXT           "Class Type:",IDC_STATIC,150,115,40,8
+    COMBOBOX        ARXDBG_PU_CLASSTYPE,190,115,90,115,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Do isKindOf() Test",ARXDBG_CB_DO_ISKINDOF_TEST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,150,130,70,10
+    DEFPUSHBUTTON   "OK",IDOK,120,175,50,14
+END
+
+ARXDBG_TDC_CLONESET DIALOG DISCARDABLE  0, 0, 327, 187
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Databases",IDC_STATIC,10,5,35,8
+    LISTBOX         ARXDBG_LB_DATABASES,10,15,110,130,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Objects",IDC_STATIC,130,5,24,8
+    LISTBOX         ARXDBG_LB_OBJECTS,130,15,135,130,LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Show...",ARXDBG_BN_OBJ_SHOW,270,45,50,14
+    PUSHBUTTON      "Browse...",ARXDBG_BN_OBJ_BROWSE,270,65,50,14
+    PUSHBUTTON      "Remove",ARXDBG_BN_OBJ_REMOVE,270,85,50,14
+    PUSHBUTTON      "Remove All",ARXDBG_BN_OBJ_REMOVEALL,270,105,50,14
+    CONTROL         "Select",ARXDBG_BN_SELECT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,10,155,15,14
+    LTEXT           "Select Entities",IDC_STATIC,30,160,43,8
+    LTEXT           "NOTE: You can right-click on the grey area of most browsing dialogs to add objects to the clone set",
+                    IDC_STATIC,125,153,160,25
+END
+
+ARXDBG_TDC_WBLOCK DIALOG DISCARDABLE  0, 0, 327, 197
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Source Database",IDC_STATIC,10,5,54,8
+    LISTBOX         ARXDBG_LB_SOURCE_DB,10,15,150,55,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Wblock Selected Objects",IDC_STATIC,10,75,150,55
+    PUSHBUTTON      "Wblock Clone Set",ARXDBG_BN_WBLOCK_CLONE_SET,20,90,80,
+                    14
+    CONTROL         "Select Base Point",ARXDBG_BN_PICKPT,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,20,110,15,14
+    LTEXT           "Base Point;",IDC_STATIC,40,115,35,8
+    LTEXT           "Static",ARXDBG_TXT_BASE_PT,80,115,70,8
+    GROUPBOX        "Wblock Entire Database",IDC_STATIC,10,135,150,55
+    PUSHBUTTON      "Wblock All",ARXDBG_BN_WBLOCK_ALL,20,150,80,14
+    CONTROL         "Force Wblock Database Copy",ARXDBG_CB_FORCE_WBLOCK_COPY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,170,125,10
+    LTEXT           "Destination Database",IDC_STATIC,170,5,66,8
+    LISTBOX         ARXDBG_LB_DEST_DB,170,15,150,55,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Wblock Block Definition",IDC_STATIC,170,75,150,55
+    PUSHBUTTON      "Wblock Block Definition",ARXDBG_BN_WBLOCK_BLKDEF,180,90,
+                    80,14
+    LTEXT           "Block:",IDC_STATIC,180,110,20,8
+    COMBOBOX        ARXDBG_PU_BLKDEFS,205,110,110,125,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Save final result as DWG file",ARXDBG_CB_SAVE_AS_DWG,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,140,145,10
+    LTEXT           "NOTE:  Selecting an existing destination database will do a combination of WBLOCK/INSERT.",
+                    IDC_STATIC,170,158,150,25
+END
+
+ARXDBG_TDM_TRANSDB_CLONES DIALOG DISCARDABLE  0, 0, 339, 240
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Trans-Database Clones"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,230,220,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,285,220,50,14
+    CONTROL         "Tab1",ARXDBG_TAB_1,"SysTabControl32",0x0,5,5,330,210
+END
+
+ARXDBG_TDC_INSERT DIALOG DISCARDABLE  0, 0, 327, 197
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Source Database",IDC_STATIC,10,5,54,8
+    LISTBOX         ARXDBG_LB_SOURCE_DB,10,15,150,55,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Insert Database",IDC_STATIC,10,75,150,40
+    PUSHBUTTON      "Insert",ARXDBG_BN_INSERT_ALL,20,90,60,14
+    GROUPBOX        "Insert As Block Definition",IDC_STATIC,10,120,150,55
+    PUSHBUTTON      "Insert As Block",ARXDBG_BN_INSERT_AS_BLOCK,20,135,60,14
+    LTEXT           "Destination Name:",IDC_STATIC,20,160,56,8
+    EDITTEXT        ARXDBG_EB_DESTNAME1,80,155,75,14,ES_AUTOHSCROLL
+    LTEXT           "Destination Database",IDC_STATIC,170,5,66,8
+    LISTBOX         ARXDBG_LB_DEST_DB,170,15,150,55,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Transfer Block Definition",IDC_STATIC,170,75,150,65
+    PUSHBUTTON      "Transfer",ARXDBG_BN_TRANSFER_BLKDEF,180,90,60,14
+    LTEXT           "Source Name:",IDC_STATIC,180,110,44,8
+    COMBOBOX        ARXDBG_PU_BLKDEFS,240,105,75,130,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Destination Name:",IDC_STATIC,180,125,56,8
+    EDITTEXT        ARXDBG_EB_DESTNAME2,240,120,75,14,ES_AUTOHSCROLL
+    CONTROL         "Save final result as DWG file",ARXDBG_CB_SAVE_AS_DWG,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,145,145,10
+    CONTROL         "Preserve source database",ARXDBG_CB_PRESERVE_SRC_DB,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,155,125,10
+    PUSHBUTTON      "Add External Drawing...",ARXDBG_BN_EXTDWG,205,175,80,14
+END
+
+ARXDBG_DLG_OBJECT_ID_INFO DIALOG DISCARDABLE  0, 0, 264, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Object Id Info"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    LTEXT           "Object: ",IDC_STATIC,10,10,24,8
+    LTEXT           "Static",ARXDBG_TXT_OBJTYPE,40,10,215,8
+    CONTROL         "List1",ARXDBG_LC_VALUES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,10,25,245,165
+    DEFPUSHBUTTON   "OK",IDOK,79,200,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,200,50,14
+END
+
+ARXDBG_TDC_HOSTAPPSERV DIALOG DISCARDABLE  0, 0, 404, 195
+STYLE WS_CHILD
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    CONTROL         "List1",ARXDBG_LC_DATA,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,10,390,180
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    ARXDBG_DLG_SPLASH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+    END
+
+    ARXDBG_DLG_SERV_DICT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 292
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    ARXDBG_DLG_DXF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 325
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+
+    ARXDBG_DLG_XDATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 325
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 249
+    END
+
+    ARXDBG_DLG_REACTORS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
+    END
+
+    ARXDBG_DLG_RXSTATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 252
+    END
+
+    ARXDBG_DLG_CLASS_DICT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 477
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+
+    ARXDBG_DLG_SYSREGISTRY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    "ARXDBG_DLG_XFORM", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    ARXDBG_DLG_ENTMAKE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    "ARXDBG_DLG_TBLMAKE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    ARXDBG_TDC_DBMISC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 397
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    ARXDBG_DLG_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 377
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 220
+    END
+
+    ARXDBG_DLG_WORLD_DRAW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    ARXDBG_DLG_COLOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    ARXDBG_DLG_TESTCURVES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    ARXDBG_TDC_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 140
+    END
+
+    ARXDBG_TDM_EDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 412
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+
+    ARXDBG_TDC_COMMANDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 397
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    ARXDBG_TDC_CLASSES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    ARXDBG_TDC_DOCS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 407
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+    END
+
+    ARXDBG_TDM_DATABASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 412
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 278
+    END
+
+    ARXDBG_TDC_SYMTBLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+
+    ARXDBG_TDC_DICTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 397
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 233
+    END
+
+    ARXDBG_TDC_ENTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    ARXDBG_TDM_ENTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 412
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 278
+    END
+
+    ARXDBG_TDC_SYS_REACTORS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 355
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    ARXDBG_TDC_TRANSIENT_REACTORS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 355
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    ARXDBG_TDM_REACTORS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 367
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    ARXDBG_TDC_PERSISTENT_REACTORS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 355
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    ARXDBG_TDC_LONG_TRANS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    ARXDBG_TDC_OBJS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    ARXDBG_TDC_IDMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 455
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 210
+    END
+
+    ARXDBG_TDM_IDMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 467
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 259
+    END
+
+    ARXDBG_DLG_FILER_TEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 53
+    END
+
+    ARXDBG_DLG_GENERIC_DEF_ID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    ARXDBG_DLG_SSGET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    ARXDBG_TDC_CLONESET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 180
+    END
+
+    ARXDBG_TDC_WBLOCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    ARXDBG_TDM_TRANSDB_CLONES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 332
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 233
+    END
+
+    ARXDBG_TDC_INSERT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    ARXDBG_DLG_OBJECT_ID_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    ARXDBG_TDC_HOSTAPPSERV, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 397
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+ARXDBG_MNU_OBJSET MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Add To Set",                  ARXDBG_APPCMD_ADDTOSET
+        MENUITEM "Delete From Set",             ARXDBG_APPCMD_DELFROMSET
+        MENUITEM SEPARATOR
+        MENUITEM "Show Object Id Details...",   ARXDBG_APPCMD_OBJID_INFO
+    END
+END
+
+ARXDBG_MNU_APP MENU DISCARDABLE 
+BEGIN
+    POPUP "ArxDbg App Menu"
+    BEGIN
+        MENUITEM "Database Info...",            ARXDBG_APPCMD_DB_INFO
+        MENUITEM "Editor Info...",              ARXDBG_APPCMD_EDITOR_INFO
+        MENUITEM "Entity Info...",              ARXDBG_APPCMD_ENT_INFO
+        MENUITEM "Nested Entity Info...",       ARXDBG_APPCMD_NESTEDENT_INFO
+        MENUITEM "Reactors...",                 ARXDBG_APPCMD_REACTOR_INFO
+        MENUITEM "Rx Services...",              ARXDBG_APPCMD_SERVICES_INFO
+        MENUITEM "Rx System Registry...",       ARXDBG_APPCMD_REGISTRY_INFO
+        MENUITEM SEPARATOR
+        MENUITEM "Object State Test...",        ARXDBG_APPCMD_OBJ_STATE
+        MENUITEM "Trans-Db Clone Test...",      ARXDBG_APPCMD_TEST_TRANSDB_CLONES
+
+        MENUITEM "DWG Filer Test...",           ARXDBG_APPCMD_DWG_FILER
+        MENUITEM "World Draw Test...",          ARXDBG_APPCMD_TEST_WORLD_DRAW
+
+        MENUITEM "Curve Test...",               ARXDBG_APPCMD_TEST_CURVES
+        MENUITEM "Selection Set Test...",       ARXDBG_APPCMD_TEST_SELSET
+        MENUITEM "Xdata Test...",               ARXDBG_APPCMD_TEST_XDATA
+        POPUP "Other Tests"
+        BEGIN
+            MENUITEM "Extents",                     ARXDBG_APPCMD_TEST_EXTENTS
+
+            MENUITEM "Intersect With",              ARXDBG_APPCMD_TEST_INTERSECT
+
+            MENUITEM "Grip Points",                 ARXDBG_APPCMD_TEST_GRIPPTS
+
+            MENUITEM "Stretch Points",              ARXDBG_APPCMD_TEST_STRETCHPTS
+
+            MENUITEM "OSNAP",                       ARXDBG_APPCMD_TEST_OSNAP
+            MENUITEM "Extension Dictionary Add",    ARXDBG_APPCMD_TEST_EXTDICTADD
+
+            MENUITEM "Extension Dictionary Remove", ARXDBG_APPCMD_TEST_EXTDICT_REMOVE
+
+            MENUITEM "Color",                       ARXDBG_APPCMD_TEST_COLOR
+            MENUITEM "Purge",                       ARXDBG_APPCMD_TEST_PURGE
+            MENUITEM "Count References",            ARXDBG_APPCMD_TEST_COUNTREFS
+
+            MENUITEM "Making Entities...",          ARXDBG_APPCMD_TEST_ENTMAKE
+
+            MENUITEM "Making Symbol Tables...",     ARXDBG_APPCMD_TEST_TBLMAKE
+
+            MENUITEM "Transform By...",             ARXDBG_APPCMD_TEST_XFORM
+        END
+        MENUITEM SEPARATOR
+        POPUP "Autodesk Logo"
+        BEGIN
+            MENUITEM "Add",                         ARXDBG_APPCMD_LOGO_ADD
+            MENUITEM "Modify",                      ARXDBG_APPCMD_LOGO_MODIFY
+
+            MENUITEM SEPARATOR
+            MENUITEM "Add Style Definition",        ARXDBG_APPCMD_LOGO_ADD_STYLE
+
+            MENUITEM "Modify Style Definition",     ARXDBG_APPCMD_LOGO_MOD_STYLE
+
+            MENUITEM SEPARATOR
+            MENUITEM "Hardwire Test 1",             ARXDBG_APPCMD_LOGO_HARDWIRE1
+
+            MENUITEM "Hardwire Test 2",             ARXDBG_APPCMD_LOGO_HARDWIRE2
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "About ArxDbg...",             ARXDBG_APPCMD_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+ARXDBG_BMP_SPLASH       BITMAP  DISCARDABLE     "res/splash.bmp"
+ARXDBG_BMP_REMOVE       BITMAP  DISCARDABLE     "res/arxdbg_b.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+ARXDBG_TDC_DICTS DLGINIT
+BEGIN
+    ARXDBG_PU_MERGESTYLE, 0x403, 7, 0
+0x6749, 0x6f6e, 0x6572, "\000" 
+    ARXDBG_PU_MERGESTYLE, 0x403, 8, 0
+0x6552, 0x6c70, 0x6361, 0x0065, 
+    ARXDBG_PU_MERGESTYLE, 0x403, 12, 0
+0x614d, 0x676e, 0x656c, 0x4e20, 0x6d61, 0x0065, 
+    0
+END
+
+ARXDBG_DLG_FILER_TEST DLGINIT
+BEGIN
+    ARXDBG_PU_FILER_TYPE, 0x403, 5, 0
+0x6946, 0x656c, "\000" 
+    ARXDBG_PU_FILER_TYPE, 0x403, 5, 0
+0x6f43, 0x7970, "\000" 
+    ARXDBG_PU_FILER_TYPE, 0x403, 5, 0
+0x6e55, 0x6f64, "\000" 
+    ARXDBG_PU_FILER_TYPE, 0x403, 3, 0
+0x6449, "\000" 
+    ARXDBG_PU_FILER_TYPE, 0x403, 6, 0
+0x6c58, 0x7461, 0x0065, 
+    ARXDBG_PU_FILER_TYPE, 0x403, 5, 0
+0x6150, 0x6567, "\000" 
+    ARXDBG_PU_FILER_TYPE, 0x403, 11, 0
+0x6544, 0x7065, 0x4320, 0x6f6c, 0x656e, "\000" 
+    ARXDBG_PU_FILER_TYPE, 0x403, 13, 0
+0x6257, 0x6f6c, 0x6b63, 0x4320, 0x6f6c, 0x656e, "\000" 
+    0
+END
+
+ARXDBG_DLG_SSGET DLGINIT
+BEGIN
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 5, 0
+0x7355, 0x7265, "\000" 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 8, 0
+0x6d49, 0x6c70, 0x6569, 0x0064, 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 9, 0
+0x7243, 0x736f, 0x6973, 0x676e, "\000" 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 17, 0
+0x7243, 0x736f, 0x6973, 0x676e, 0x5020, 0x6c6f, 0x6779, 0x6e6f, "\000" 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 6, 0
+0x6546, 0x636e, 0x0065, 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 5, 0
+0x614c, 0x7473, "\000" 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 6, 0
+0x6f50, 0x6e69, 0x0074, 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 9, 0
+0x7250, 0x7665, 0x6f69, 0x7375, "\000" 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 7, 0
+0x6957, 0x646e, 0x776f, "\000" 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 15, 0
+0x6957, 0x646e, 0x776f, 0x5020, 0x6c6f, 0x6779, 0x6e6f, "\000" 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 12, 0
+0x6946, 0x746c, 0x7265, 0x4f20, 0x6c6e, 0x0079, 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 4, 0
+0x6c41, 0x006c, 
+    ARXDBG_PU_MAIN_SELECT_METHOD, 0x403, 4, 0
+0x6f42, 0x0078, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ARXDBG_APPCMD_REGISTRY_INFO "System Registry Information"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "..\..\..\inc\adskSDKversioninfo.rc"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,27 @@
+HKCR
+{
+	CircleStandard.AcStCircle.1 = s 'AcStCircle Class'
+	{
+		CLSID = s '{303E400F-AE01-4013-87DD-398FF4E3F9AF}'
+	}
+	CircleStandard.AcStCircle = s 'AcStCircle Class'
+	{
+		CLSID = s '{303E400F-AE01-4013-87DD-398FF4E3F9AF}'
+		CurVer = s 'CircleStandard.AcStCircle.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {303E400F-AE01-4013-87DD-398FF4E3F9AF} = s 'AcStCircle Class'
+		{
+			ProgID = s 'CircleStandard.AcStCircle.1'
+			VersionIndependentProgID = s 'CircleStandard.AcStCircle'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{D0B56413-1AE2-46DD-BE24-390BA0FBD4DE}'
+		}
+	}
+}

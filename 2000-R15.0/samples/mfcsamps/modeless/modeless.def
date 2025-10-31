@@ -1,0 +1,8 @@
+LIBRARY      modeless
+DESCRIPTION  'ARx modeless dialog sample application'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+        acrxEntryPoint
+        _SetacrxPtp
+        acrxGetApiVersion

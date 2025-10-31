@@ -1,0 +1,106 @@
+Lab5Object
+
+Purpose: 
+=======
+
+The purpose of this lab is to create a custom class derived from AcDbObject. 
+Instances of this class (EmployeeDetails) will be stored in the extension 
+dictionary of the block reference currently representing an employee. 
+EmployeeDetails will store an ID, cube number, first name, and last name 
+of an employee. Here's how the objects will relate to one another:
+
+Employee (class: AcDbBlockReference)
+    |_Extension Dictionary (class:AcDbDictionary)
+                |_"OARXLABS_EMPLOYEE_DICTIONARY" (class:AcDbDictionary) 
+                       |_"DETAILS" (class:EmployeeDetails)
+
+This lab demonstrates how to extend an existing object with some new data through
+the extension dictionary mechanism. This whole complex will be replaced by a 
+custom entity in Lab9.
+
+The lab is split into two subprojects: Lab5Object and Lab5Command. Lab5Object 
+defines the custom object EmployeeDetails. Lab5Command defines the user 
+interface commands that let you manipulate the custom object EmployeeDetails.
+
+This lab also shows how to export custom classes.
+
+
+Steps:
+=====
+
+1. Start with the project created during Lab1. Rename the files appropriately:
+Lab1.def->Lab5Object.def
+lab1Main.cpp->Lab5ObjectMain.cpp
+
+2. We cannot define any commands in a database-only module. Do not include the 
+   header file aced.h, and delete all command registration and unregistration code.
+
+3. Lab5Command will depend on this module, so register a service that 
+   allows other modules to find out if this module is loaded or not.
+   Use the function acrxRegisterService during kInitAppMsg message to register
+   a service on behalf of this module. (Don't forget to use your registered 
+   developer ID as the first four letters of the service symbol.) 
+   Add code to remove the service from the service dictionary and delete the 
+   service object during kUnloadAppMsg.
+
+4. Create a new header file, Lab5ObjectEmployeeDetails.h, and a new module file, 
+   Lab5ObjectEmployeeDetails.cpp. These files will define our new custom object.
+
+5. Declare the new class EmployeeDetails as follows:
+
+class 
+#ifdef _LAB5OBJECT
+_declspec(dllexport)
+#endif
+EmployeeDetails : public AcDbObject
+{
+};
+
+Please note the #ifdef-endif structure. Depending on the _LAB5OBJECT symbol, 
+we would like either to export or import the class. Lab5Object will define this 
+symbol, which will result in export of the class. Any other projects won't define 
+this symbol, resulting in import of the class.
+
+6. Flesh out the class. Add data members to represent the details of an employee's data:
+long m_cubeNumber;
+char* m_strFirstName;
+char* m_strLastName;
+long m_ID;
+
+7. Also add a static data member to store the version of the class:
+   static long version;
+   This will be used during filer operations, when objects of this class are written 
+   to persistent storage or read back from there.
+
+8. Use the DECLARE_MEMBERS and ACRX_DXF_DEFINE_MEMBERS macros to
+   declare and  define the standard members required by the AcRx system.
+
+9. Add member functions to read and write these member functions. It is a good
+   idea to declare reader functions as const. Also, you must call assertReadEnabled
+   as the first operation in these methods. Conversely, writer functions must call 
+   assertWriteEnabled().
+
+10. Override the dwgInFields and dwgOutFields. These methods are called under 
+    various circumstances by the AcDb subsystem: to read and write the object 
+    to a file or to copy the object.
+10a. dwgOutFields: Call assertReadEnabled() to make sure that the object is open 
+     for read when this operation is called.
+10b. Supermessage your base class. This will write all persistent state encapsulated 
+     by the base class.
+10c. Write out the version number. This makes it possible to identify the version 
+     of the persistent data during dwgInFields.
+10d. Write out all the data members using the various member functions of 
+     AcDbDwgFiler.
+10e. dwgInFields: Call assertWriteEnabled() to make sure that the object is open 
+     for write when this operation is called and to let appropriate undo recording
+     take place.
+10f. Supermessage your base class.
+10g. Read in the version number. If the version number is greater than the 
+     version number of the class reading, then return eMakeMeProxy. (Our class 
+     cannot read the data. It was written by a newer version, so our only
+     alternative is to request proxy creation from the AcDb system.)
+10h. Read in the data members in the same order they were written out.
+
+11.  Make sure that you initialize the class descriptor object of the new custom
+     class during the kInitAppMsg by calling EmployeeDetails::rxInit. Also, you
+     need to remove the class description during kUnloadAppMsg.

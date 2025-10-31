@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="AsdkSmileyUiCom" ProjectGUID="{4E5E6F39-3617-41A2-A9CA-266577B88040}" RootNamespace="SmileyUiCom">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc" PreprocessorDefinitions=";" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib " OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\SmileyUiCom.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc" PreprocessorDefinitions=";" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib " OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\SmileyUiCom.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib " OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\SmileyUiCom.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib " OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\SmileyUiCom.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+      <File RelativePath=".\SmileyApplication.cpp" />
+      <File RelativePath=".\SmileyUiCom.cpp" />
+      <File RelativePath=".\SmileyUiCom.idl">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCustomBuildTool" Description="Performing MIDL step" CommandLine="set path=%path%;..\..\..\inc&#xD;&#xA;midl /Oicf  /tlb &quot;.\AsdkSmileyUiCom.tlb&quot; /h &quot;.\SmileyUiCom.h&quot; /iid   &quot;.\SmileyUiCom_i.c&quot; &quot;.\SmileyUiCom.idl&quot;&#xD;&#xA;" Outputs=".\AsdkSmileyUiCom.tlb;.\SmileyUiCom.h;.\SmileyUiCom_i.c" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCustomBuildTool" Description="Performing MIDL step" CommandLine="set path=%path%;..\..\..\inc&#xD;&#xA;midl /Oicf  /tlb &quot;.\AsdkSmileyUiCom.tlb&quot; /h &quot;.\SmileyUiCom.h&quot; /iid   &quot;.\SmileyUiCom_i.c&quot; &quot;.\SmileyUiCom.idl&quot;&#xD;&#xA;" Outputs=".\AsdkSmileyUiCom.tlb;.\SmileyUiCom.h;.\SmileyUiCom_i.c" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCustomBuildTool" Description="Performing MIDL step" CommandLine="set path=%path%;..\..\..\inc&#xD;&#xA;midl /Oicf  /tlb &quot;.\AsdkSmileyUiCom.tlb&quot; /h &quot;.\SmileyUiCom.h&quot; /iid   &quot;.\SmileyUiCom_i.c&quot; &quot;.\SmileyUiCom.idl&quot;&#xD;&#xA;" Outputs=".\AsdkSmileyUiCom.tlb;.\SmileyUiCom.h;.\SmileyUiCom_i.c" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCustomBuildTool" Description="Performing MIDL step" CommandLine="set path=%path%;..\..\..\inc&#xD;&#xA;midl /Oicf  /tlb &quot;.\AsdkSmileyUiCom.tlb&quot; /h &quot;.\SmileyUiCom.h&quot; /iid   &quot;.\SmileyUiCom_i.c&quot; &quot;.\SmileyUiCom.idl&quot;&#xD;&#xA;" Outputs=".\AsdkSmileyUiCom.tlb;.\SmileyUiCom.h;.\SmileyUiCom_i.c" />
+        </FileConfiguration>
+      </File>
+      <File RelativePath=".\SmileyUiCom.rc">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+      </File>
+      <File RelativePath=".\StdAfx.cpp">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+      </File>
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+      <File RelativePath=".\Resource.h" />
+      <File RelativePath=".\SmileyApplication.h" />
+      <File RelativePath=".\StdAfx.h" />
+      <File RelativePath=".\StdArx.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+      <File RelativePath=".\SmileyApplication.rgs" />
+      <File RelativePath=".\res\SmileyUiCom.rc2" />
+    </Filter>
+    <File RelativePath=".\ObjectARX.prj" />
+  </Files>
+  <Globals />
+</VisualStudioProject>

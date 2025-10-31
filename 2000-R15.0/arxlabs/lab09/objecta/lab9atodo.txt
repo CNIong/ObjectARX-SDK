@@ -1,0 +1,88 @@
+Deriving from AcDbEntity
+========================
+
+Note: In this lab we will implement an entity that looks like the Ellipse
+base entity, but we will not implement it to fit AcDbEllipse behavior fully.
+We will build it to support the "center" Ellipse property only. This will 
+simplify our code a lot.
+
+A) Step 1 - Copy the custom entity from Lab9 (deriving from AcDbEllipse)
+
+Note: The Lab9a project (and directory ObjectA) contains the final solution
+of the lab, so be sure to save those files into another location before
+proceeding any further with the instructions below.
+
+
+Copy Lab9 and replace all references to AcDbEllipse with AcDbEntity.
+Add one more variable named "mCenter" to handle the positioning information.
+Add the needed AcDbEmployee protocol virtual methods to handle the new
+variable just added to the AcDbEmployee class.
+
+Change the worldDraw() method to display a circle in addition to the text that
+is already there.
+
+Since the entity is using the same definitions, Lab9c.arx will be able to handle
+that entity throughout the exported service without any code changes. There is no 
+need to write a new command.  Use Lab9c.arx to test your module and the new 
+entity derived from AcDbEntity.
+
+B) Step 2 - Support the EXPLODE command
+
+	virtual Acad::ErrorStatus explode (AcDbVoidPtrArray &entitySet) const ;
+
+Explode the entity into an AcDbCircle and an AcDbText entity.
+
+C) Step 3 - Support the LIST command
+
+	virtual void list () const ;
+
+Display the information that you'd like.
+
+Note that this method should not use any AutoCAD-specific function in order to 
+support ObjectDBX.
+
+D) Step 4 - Implement grips
+
+	virtual Acad::ErrorStatus getGripPoints (AcGePoint3dArray &gripPoints,
+		AcDbIntArray &osnapMasks, AcDbIntArray &geomIds) const;
+	virtual Acad::ErrorStatus moveGripPointsAt (const AcDbIntArray &indices,
+		const AcGeVector3d &offset) ;
+
+Make the center the only valid grip point for this entity type.
+
+E) Step 5 - Support MOVE, COPY, etc.
+
+	virtual Acad::ErrorStatus transformBy (const AcGeMatrix3d &xform) ;
+
+Handle only the translation of the entity (no scale, no mirror, no rotation, etc.,
+because we do not have any variable to store the information in the object).
+
+F) Step 6 - Implement Osnaps
+
+	virtual Acad::ErrorStatus getOsnapPoints (
+			AcDb::OsnapMode osnapMode, int gsSelectionMark,
+			const AcGePoint3d &pickPoint,
+			const AcGePoint3d &lastPoint, const AcGeMatrix3d &viewXform,
+			AcGePoint3dArray &snapPoints, AcDbIntArray &geomIds) const ;
+
+The only Snap point we want is the center of our entity. Implement the
+entity to support the following Snap modes (AcDb::kOsModeNear, AcDb::kOsModeCen,
+AcDb::kOsModeIns).
+
+G) Step 7 - Implement stretches and support the STRETCH command
+
+	virtual Acad::ErrorStatus getStretchPoints (
+		AcGePoint3dArray &stretchPoints) const ;
+	virtual Acad::ErrorStatus moveStretchPointsAt (
+		const AcDbIntArray &indices, const AcGeVector3d &offset) ;
+
+We want the exact same behavior for stretches that we do for grips.
+
+
+NOTE: What we do not have implemented:
+
+GsMarkers support, intersectWith(), boundingBoxXXX(), getTransformedCopy()
+
+H) Step 8 - Building and running the module
+
+Please refer to file Lab9Todo.txt in the parent directory for instructions.

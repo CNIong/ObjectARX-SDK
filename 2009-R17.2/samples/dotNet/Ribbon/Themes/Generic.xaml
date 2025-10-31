@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:adw="clr-namespace:Autodesk.Windows;assembly=AdWindows" 
+    xmlns:src="clr-namespace:AdskRibbon"
+    >
+
+  <DataTemplate x:Uid="test" DataType="{x:Type src:DocumentsGalleryControl}">
+    <StackPanel Width="200">
+      <adw:GalleryControl GalleryControlMode="ComboBox"  IsWrapped="true" ItemWidth="64" ItemHeight="64" ItemsSource="{Binding List}" SelectedItem="{Binding Path=Current, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+      </adw:GalleryControl>
+    </StackPanel>
+  </DataTemplate>
+  
+  <DataTemplate DataType="{x:Type src:LayoutListBoxControl}">
+    <StackPanel Width="200">
+      <ListBox Width="150" Height="100" ItemsSource="{Binding List}" SelectedItem="{Binding Path=Current, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+      </ListBox>
+    </StackPanel>
+  </DataTemplate>
+</ResourceDictionary>

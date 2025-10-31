@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="AsdkMaterialUi" ProjectGUID="{08CBF468-1D09-40E4-8B4E-30BB67C661C7}">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc,..\db,..\..\..\..\utils\render\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" LinkLibraryDependencies="true" AdditionalLibraryDirectories="..\..\..\..\lib,..\..\..\..\utils\render\lib" ModuleDefinitionFile="..\..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc,..\db,..\..\..\..\utils\render\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" LinkLibraryDependencies="true" AdditionalLibraryDirectories="..\..\..\..\lib,..\..\..\..\utils\render\lib" ModuleDefinitionFile="..\..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\..\inc,..\db,..\..\..\..\utils\render\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" LinkLibraryDependencies="true" AdditionalLibraryDirectories="..\..\..\..\lib,..\..\..\..\utils\render\lib" ModuleDefinitionFile="..\..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\..\inc,..\db,..\..\..\..\utils\render\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" LinkLibraryDependencies="true" AdditionalLibraryDirectories="..\..\..\..\lib,..\..\..\..\utils\render\lib" ModuleDefinitionFile="..\..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+      <File RelativePath=".\MaterialCmd.cpp" />
+      <File RelativePath=".\MaterialJig.cpp" />
+      <File RelativePath=".\MaterialUi.cpp" />
+      <File RelativePath=".\MaterialUi.def" />
+      <File RelativePath=".\MaterialUi.rc" />
+      <File RelativePath=".\StdAfx.cpp">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+      </File>
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+      <File RelativePath=".\AdskDMgr.h" />
+      <File RelativePath=".\MaterialCmd.h" />
+      <File RelativePath=".\MaterialJig.h" />
+      <File RelativePath=".\Resource.h" />
+      <File RelativePath=".\StdAfx.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+      <File RelativePath="..\ADSK.BMP" />
+      <File RelativePath=".\MaterialUi.rc2" />
+    </Filter>
+  </Files>
+  <Globals />
+</VisualStudioProject>

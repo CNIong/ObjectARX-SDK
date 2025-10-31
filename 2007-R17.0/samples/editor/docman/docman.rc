@@ -1,0 +1,162 @@
+//Microsoft Developer Studio generated resource script.
+//
+// (C) Copyright 2005-2006 by Autodesk, Inc.
+
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TEST_DIALOG DIALOG DISCARDABLE  0, 0, 318, 236
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modeless dialog"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,261,215,50,14
+    PUSHBUTTON      "New Doc",IDC_NEWDOC_BUTTON,7,30,50,14
+    PUSHBUTTON      "Open Doc",IDC_OPENDOC_BUTTON,70,30,50,14
+    LTEXT           "LockMode:",IDC_ACT_LSTATUS_STATIC,13,173,42,8
+    LTEXT           "Status msg.",IDC_ACT_LK_STATUS_FIELD_STATIC,65,172,85,
+                    12,SS_SUNKEN
+    PUSHBUTTON      "Close Doc",IDC_CLOSEDOC_BUTTON,261,30,50,14
+    LISTBOX         IDC_DOC_LIST,7,64,227,53,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Available Document(s):",IDC_DOCS_STATIC,23,51,74,8
+    PUSHBUTTON      "AppContextNew Document",IDC_APPNEWDOC_BUTTON,50,7,98,14
+    PUSHBUTTON      "AppContextOpen Document",IDC_APPOPENDOC_BUTTON,162,7,98,
+                    14
+    CONTROL         "Doc. Activation Enabled",IDC_ACTIVATION_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,220,51,91,10
+    PUSHBUTTON      "Send String",IDC_SENDSTRING_BUTTON,133,30,50,14
+    LTEXT           "Num",IDC_NUMDOCS_STATIC,7,51,16,8
+    PUSHBUTTON      "Is Doc Quiescent?",IDC_ISQUIESCENT_BUTTON,241,64,70,14
+    CONTROL         "Status msg.",IDC_ACTIVEDOC_FIELD_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | SS_SUNKEN | WS_GROUP,13,154,137,12
+    LTEXT           "Document to become current:",IDC_TOBECURRDOC_STATIC,7,
+                    123,94,8
+    CONTROL         "Status msg.",IDC_TOBECURRDOC_FIELD_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | SS_SUNKEN | WS_GROUP,106,123,205,12
+    PUSHBUTTON      "Activate Doc",IDC_ACTIVATEDOC_BUTTON,196,30,50,14
+    PUSHBUTTON      "Set Current Doc",IDC_SETCURRENTDOC_BUTTON,241,84,70,14
+    COMBOBOX        IDC_LOCK_COMBO,241,104,70,64,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "MyLockMode:",IDC_ACT_MYLSTATUS_STATIC2,13,191,49,8
+    LTEXT           "Status msg.",IDC_ACT_MYLK_STATUS_FIELD_STATIC,65,190,85,
+                    12,SS_SUNKEN
+    GROUPBOX        "Active Document",IDC_ACT_STATIC,7,143,150,68
+    LTEXT           "LockMode:",IDC_CUR_LSTATUS_STATIC,165,173,42,8
+    LTEXT           "Status msg.",IDC_CUR_LK_STATUS_FIELD_STATIC,217,173,85,
+                    12,SS_SUNKEN
+    CONTROL         "Status msg.",IDC_CURDOC_FIELD_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | SS_SUNKEN | WS_GROUP,165,154,137,12
+    LTEXT           "MyLockMode:",IDC_CUR_MYLSTATUS_STATIC,165,191,49,8
+    LTEXT           "Status msg.",IDC_CUR_MYLK_STATUS_FIELD_STATIC,217,191,
+                    85,12,SS_SUNKEN
+    GROUPBOX        "Current Document",IDC_CUR_STATIC,161,143,150,68
+    PUSHBUTTON      "Refresh Dialog",ID_REFRESH_BUTTON,186,215,61,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 311
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TEST_DIALOG DLGINIT
+BEGIN
+    IDC_LOCK_COMBO, 0x403, 6, 0
+0x4e6b, 0x6e6f, 0x0065, 
+    IDC_LOCK_COMBO, 0x403, 11, 0
+0x416b, 0x7475, 0x576f, 0x6972, 0x6574, "\000" 
+    IDC_LOCK_COMBO, 0x403, 11, 0
+0x4e6b, 0x746f, 0x6f4c, 0x6b63, 0x6465, "\000" 
+    IDC_LOCK_COMBO, 0x403, 7, 0
+0x576b, 0x6972, 0x6574, "\000" 
+    IDC_LOCK_COMBO, 0x403, 6, 0
+0x526b, 0x6165, 0x0064, 
+    IDC_LOCK_COMBO, 0x403, 8, 0
+0x586b, 0x7257, 0x7469, 0x0065, 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

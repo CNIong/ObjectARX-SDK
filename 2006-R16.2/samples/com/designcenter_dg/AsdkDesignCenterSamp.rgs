@@ -1,0 +1,47 @@
+HKLM
+{
+    NoRemove 'SOFTWARE'
+    {
+        NoRemove 'Autodesk'
+        {
+            NoRemove 'AutoCAD'
+            {
+                NoRemove '%RELEASE%'
+                {
+                    NoRemove '%AUTH%'
+                    {
+                        NoRemove 'AutodeskApps'
+                        {
+                            NoRemove 'AcadDC'
+                            {
+                                NoRemove 'Extensions'
+                                {
+                                    ForceRemove '.txt'
+                                    {
+                                        val CLSID = s '{AF67CC1B-83C2-11D2-A7BD-0060B0872457}'
+                                        val IconIndex = d '0'
+                                    }
+                                }
+                                NoRemove 'Applications'
+                                {
+                                    ForceRemove 'AsdkDcContent'
+                                    {
+                                        'Extensions'
+                                        {
+                                            .txt
+                                            {
+                                                val CLSID = s '{AF67CC1B-83C2-11D2-A7BD-0060B0872457}'
+                                                val IconIndex = d '0'
+                                            }
+                                        }
+                                        CustomView = s 'Yes'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

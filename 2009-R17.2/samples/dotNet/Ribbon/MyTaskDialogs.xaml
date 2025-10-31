@@ -1,0 +1,26 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+  <TaskDialog
+          x:Key="MyProduct.MyTaskDialog1" 
+          FooterIcon="Warning"
+          DefaultButton="101"
+          WindowTitle="Materials - Name Conflict"
+          Flags="16"
+          Width="0"
+          UseCommandLinks="True"
+          MainInstruction="The material %Name% already exists in the current drawing."
+          CommonButtons="Cancel"
+          MainIcon="Warning" xmlns="clr-namespace:Autodesk.Windows;assembly=AdWindows"
+          VerificationText="Always perform my current choice"
+          VerificationHandlerData="Material Dialogs">
+    <TaskDialog.Buttons>
+      <TaskDialogButton
+          x:Uid="TaskDialogButton_1" ButtonId="101"
+          ButtonText="Create a copy&#xA;A copy of &quot;%Name%&quot; will be created named &quot;Copy of %Name%&quot;." />
+      <TaskDialogButton
+          x:Uid="TaskDialogButton_2" ButtonId="102"
+          ButtonText="Overwrite&#xA;The &quot;%Name%&quot; currently in the drawing will be overwritten with the new material's properties." />
+    </TaskDialog.Buttons>
+  </TaskDialog>  
+</ResourceDictionary>

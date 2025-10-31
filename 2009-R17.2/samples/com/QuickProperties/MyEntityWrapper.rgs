@@ -1,0 +1,47 @@
+HKCR
+{
+	QuickProperties.MyEntityWrapper.1 = s 'MyEntityWrapper Class'
+	{
+		CLSID = s '{BA415977-05AE-4167-8470-9D04C6C152E2}'
+	}
+	QuickProperties.MyEntityWrapper = s 'MyEntityWrapper Class'
+	{
+		CLSID = s '{BA415977-05AE-4167-8470-9D04C6C152E2}'
+		CurVer = s 'QuickProperties.MyEntityWrapper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BA415977-05AE-4167-8470-9D04C6C152E2} = s 'MyEntityWrapper Class'
+		{
+			ProgID = s 'QuickProperties.MyEntityWrapper.1'
+			VersionIndependentProgID = s 'QuickProperties.MyEntityWrapper'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{F89DCF73-645B-47C5-A505-2EEA8CA013B0}'
+		}
+	}
+}
+
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Autodesk
+		{
+			NoRemove ObjectDBX
+			{
+				NoRemove R17.0
+				{
+					NoRemove ActiveXCLSID
+					{
+						val asdkQuickPropertiesDbx = s '{BA415977-05AE-4167-8470-9D04C6C152E2}'
+					}
+				}
+			}
+		}
+	}
+}

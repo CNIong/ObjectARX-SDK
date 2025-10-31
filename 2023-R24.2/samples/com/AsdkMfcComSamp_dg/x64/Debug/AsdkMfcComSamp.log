@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  AsdkMfcComSamp.cpp
+    正在创建库 x64\Debug\AsdkMfcComSamp.lib 和对象 x64\Debug\AsdkMfcComSamp.exp
+rxapi.lib(libinit.obj) : warning LNK4099: 未找到 PDB“”(使用“rxapi.lib(libinit.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+  AsdkMfcComSamp.vcxproj -> E:\ObjectARX\ObjectARX 2023\samples\com\AsdkMfcComSamp_dg\x64\Debug\AsdkMfcComSamp.arx

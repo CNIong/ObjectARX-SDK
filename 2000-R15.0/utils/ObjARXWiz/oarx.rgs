@@ -1,0 +1,50 @@
+HKCR
+{
+	[!ProgID] = s '[!TypeName]'
+	{
+		CLSID = s '{[!ObjectGUID]}'
+	}
+	[!VersionIndependentProgID] = s '[!TypeName]'
+	{
+		CLSID = s '{[!ObjectGUID]}'
+		CurVer = s '[!ProgID]'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {[!ObjectGUID]} = s '[!TypeName]'
+		{
+			ProgID = s '[!ProgID]'
+			VersionIndependentProgID = s '[!VersionIndependentProgID]'
+[!if=(Dual, "TRUE")]
+			ForceRemove 'Programmable'
+[!endif]
+			InprocServer32 = s '%MODULE%'
+			{
+[!if=(ThreadingModel, "Single")]
+[!else]
+				val ThreadingModel = s '[!ThreadingModel]'
+[!endif]
+			}
+			'TypeLib' = s '{[!LibGUID]}'
+		}
+	}
+}
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Autodesk
+		{
+			NoRemove ObjectDBX
+			{
+				NoRemove ActiveXCLSID
+				{
+					ForceRemove '[!AcDbClassName]'
+					{
+						val CLSID = s '{[!ObjectGUID]}'
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+:Base ObjectARX AddIn.hlp
+1 ObjectARX AddIn
+
+2 ObjectARX AddIn configuration=HID_ADDIN_CONFIG
+
+2 ObjectARX AddIn functionality
+3 Overview=HID_ADDIN_FUNCTIONALITY
+3 Select ObjectARX include files=HIDD_ARXINCANDLIB
+3 Define AutoCAD commands=HIDD_ARXCOMMANDS
+3 Select entry point messages=HIDD_ARXMSG
+3 Transient ObjectARX reactors=HIDD_ARXREACTORS
+3 Custom classes=HIDD_ARXCWFUNCTIONS
+3 MFC support=HIDD_ARCMFCSUPPORT
+3 InputPoint API=HIDD_ARXINPUTPOINT
+3 Register application=HIDD_ARXREGAPP
+3 COM wrappers / OPM support=HID_ADDIN_ATL
+3 ObjectARX components=HIDD_ARXCOMPONENTS
+3 Call ObjectARX online help=HID_ADDIN_ARXHELP

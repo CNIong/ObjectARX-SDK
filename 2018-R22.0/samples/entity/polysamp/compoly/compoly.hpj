@@ -1,0 +1,24 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+COMPRESS=12 Hall Zeck
+ERRORLOG=Compoly.log
+LCID=0x409 0x0 0x0 ; English (United States)
+REPORT=Yes
+CONTENTS=IDH_CONTENTS
+TITLE=Compoly Sample Application
+COPYRIGHT=Compoly Sample Application 1.0
+HLP=Compoly.hlp
+
+[FILES]
+compoly.RTF
+
+[MAP]
+#include compoly.hm
+
+[WINDOWS]
+LangRef="Compoly Sample Application",(653,102,360,600),62212,(r14876671),(r12632256),f3
+main="",(18,10,600,435),60672,(r14876671),(r12632256),f6
+
+[CONFIG]
+BrowseButtons()

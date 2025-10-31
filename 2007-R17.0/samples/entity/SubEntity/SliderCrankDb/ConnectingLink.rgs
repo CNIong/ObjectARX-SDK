@@ -1,0 +1,27 @@
+HKCR
+{
+	SliderCrankDb.ConnectingLink.1 = s 'ConnectingLink Class'
+	{
+		CLSID = s '{F39D31DE-794F-4090-B308-6492A1276851}'
+	}
+	SliderCrankDb.ConnectingLink = s 'ConnectingLink Class'
+	{
+		CLSID = s '{F39D31DE-794F-4090-B308-6492A1276851}'
+		CurVer = s 'SliderCrankDb.ConnectingLink.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F39D31DE-794F-4090-B308-6492A1276851} = s 'ConnectingLink Class'
+		{
+			ProgID = s 'SliderCrankDb.ConnectingLink.1'
+			VersionIndependentProgID = s 'SliderCrankDb.ConnectingLink'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{BED89941-05DD-476F-BD3C-E063B8157A13}'
+		}
+	}
+}

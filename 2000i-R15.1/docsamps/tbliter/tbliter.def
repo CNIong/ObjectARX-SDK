@@ -1,0 +1,7 @@
+LIBRARY      tbliter
+DESCRIPTION  'ObjectARX sample application - tbliter'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

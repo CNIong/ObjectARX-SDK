@@ -1,0 +1,50 @@
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2017 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+// AsdkDesignCenterSamp.idl : IDL source for AsdkDesignCenterSamp.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkDesignCenterSamp.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "dcapi.idl"
+    [
+        object,
+        uuid(C555913C-A4EA-11D2-A7DA-0060B0872457),
+        dual,
+        helpstring("IAsdkDcContent Interface"),
+        pointer_default(unique)
+    ]
+    interface IAsdkDcContent : IDispatch
+    {
+    };
+
+[
+    uuid(C555912E-A4EA-11D2-A7DA-0060B0872457),
+    version(1.0),
+    helpstring("AsdkDesignCenterSamp 1.0 Type Library")
+]
+library ASDKDESIGNCENTERSAMPLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+
+    [
+        uuid(AF67CC1B-83C2-11D2-A7BD-0060B0872457),
+        helpstring("AsdkDcContent Class")
+    ]
+    coclass AsdkDcContent
+    {
+        [default] interface IAsdkDcContent;
+    };
+};

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="AsdkRender" ProjectGUID="{099951F5-3D60-4467-AD04-99DD786431C9}" RootNamespace="AsdkRender" Keyword="MFCDLLProj">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Release|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\inc; ..\..\..\utils\Atil\Inc" PreprocessorDefinitions="CS_APP;CS_USEDLL;ACAD_INCLUDED;" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).arx" AdditionalDependencies="AcSceneOE.lib" AdditionalLibraryDirectories="..\..\..\lib; ..\..\..\utils\Atil\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\inc; ..\..\..\utils\Atil\Inc" PreprocessorDefinitions="CS_APP;CS_USEDLL;ACAD_INCLUDED;" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).arx" AdditionalDependencies="AcSceneOE.lib" AdditionalLibraryDirectories="..\..\..\lib; ..\..\..\utils\Atil\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc; ..\..\..\utils\Atil\Inc" PreprocessorDefinitions=";" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).arx" AdditionalDependencies="AcSceneOE.lib" AdditionalLibraryDirectories="..\..\..\lib; ..\..\..\utils\Atil\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc; ..\..\..\utils\Atil\Inc" PreprocessorDefinitions=";" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" OutputFile="$(OutDir)\$(ProjectName).arx" AdditionalDependencies="AcSceneOE.lib" AdditionalLibraryDirectories="..\..\..\lib; ..\..\..\utils\Atil\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+      <File RelativePath=".\Render.cpp" />
+      <File RelativePath=".\RenderCmds.cpp" />
+      <File RelativePath=".\RenderObjects.cpp" />
+      <File RelativePath=".\stdafx.cpp">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+      </File>
+      <File RelativePath=".\Utilities.cpp" />
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+      <File RelativePath=".\RenderCmds.h" />
+      <File RelativePath=".\RenderObjects.h" />
+      <File RelativePath=".\stdafx.h" />
+      <File RelativePath=".\Utilities.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav" UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}" />
+    <File RelativePath=".\ReadMe.txt" />
+  </Files>
+  <Globals>
+    <Global Name="RESOURCE_FILE" Value="Render.rc" />
+  </Globals>
+</VisualStudioProject>

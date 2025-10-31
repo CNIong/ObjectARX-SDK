@@ -1,0 +1,8 @@
+LIBRARY     square
+; (C) Copyright 1998-2002 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE
+			??0AsdkSquare@@QAE@XZ
+			?desc@AsdkSquare@@SAPAVAcRxClass@@XZ

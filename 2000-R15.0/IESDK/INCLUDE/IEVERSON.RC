@@ -1,0 +1,90 @@
+/*
+      Copyright (c) 1995-1998 by Autodesk, Inc.
+
+******************************************************************************
+*                                        *
+* The information contained herein is confidential, proprietary to Autodesk, *
+* Inc., and considered a trade secret as defined in section 499C of the      *
+* penal code of the State of California.  Use of this information by anyone  *
+* other than authorized employees of Autodesk, Inc. is granted only under a  *
+* written non-disclosure agreement, expressly prescribing the scope and      *
+* manner of such use.                                                        *
+*                                        *
+*****************************************************************************/
+
+/*
+*
+*
+* ---------------------------------------------------------------------------
+*
+* Date     Who  Description
+* -------- ---  --------------------------------------------------------
+* 9608.12  rvh  (re)create
+*
+*/
+
+#ifndef _ieverson_rc
+#define _ieverson_rc
+
+
+#include <winver.h>
+
+
+#define CS_VERMAJ       7
+#define CS_VERMIN       0
+#define CS_PRODVERSTRING    "7.0\0"
+
+#if !defined(CS_FILEVERMAJ)
+#define CS_FILEVERMAJ   CS_VERMAJ
+#endif
+#if !defined(CS_FILEVERMIN)
+#define CS_FILEVERMIN   CS_VERMIN
+#endif
+#if !defined(CS_FILEVERSTRING)
+#define CS_FILEVERSTRING   CS_PRODVERSTRING
+#endif
+#if !defined(CS_COPYRIGHTSTRING)
+#define CS_COPYRIGHTSTRING  "Copyright \251  1995-1998 Autodesk, Inc.\0"
+#endif
+
+#define CS_MINVERMAJ    5
+#define CS_MINVERMIN    0
+
+#if defined(RC_INVOKED)
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       CS_FILEVERMAJ,CS_FILEVERMIN,0,0
+  PRODUCTVERSION    CS_VERMAJ,CS_VERMIN,0,0
+  FILEFLAGSMASK     VS_FFI_FILEFLAGSMASK
+#ifdef DEBUG
+  FILEFLAGS         VS_FF_DEBUG|VS_FF_PRERELEASE
+#else
+  FILEFLAGS         VS_FF_PRERELEASE
+#endif
+  FILEOS            VOS_NT_WINDOWS32
+  FILETYPE          VFT_DLL
+  FILESUBTYPE       0
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"    // Lang=US English, CharSet=Windows Multilingual
+        BEGIN
+            VALUE "CompanyName",    "Autodesk, Inc.\0"
+            VALUE "FileDescription",CS_DESCSTRING
+            VALUE "FileVersion",    CS_FILEVERSTRING
+            VALUE "InternalName",   CS_NAMESTRING
+            VALUE "LegalCopyright", CS_COPYRIGHTSTRING
+            VALUE "LegalTrademarks","\0"
+            VALUE "OriginalFilename",CS_ORIGSTRING
+            VALUE "ProductName",    "Image Engine\0"
+            VALUE "ProductVersion", CS_PRODVERSTRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+                            // English language, Windows ANSI codepage
+    END
+END
+#endif  // if define(RC_INVOKED)
+
+#endif  // _ieverson_rc

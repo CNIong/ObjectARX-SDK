@@ -1,0 +1,1615 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdUIMgd</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.Windows.Media.AdaptiveBitmap">
+            <summary>
+            Provides a specialized <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> that loads bitmap images adaptively depending on dpi settings.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Media.AdaptiveBitmap.#ctor">
+            <summary>
+            Initializes a new instance of the class.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Media.AdaptiveBitmap.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the class by using the supplied URI.
+            </summary>
+            <param name="uriSource">The <see cref="T:System.Uri"/> to use as the source.</param>
+        </member>
+        <member name="E:Autodesk.Windows.Media.AdaptiveBitmap.DecodeFailed">
+            <summary>
+            Occurs when the image fails to load, due to a corrupt image header.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.BaseUri">
+            <summary>
+            Gets or sets a value that represents the base URI of the current context.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.DpiX">
+            <summary>
+            Gets the horizontal dpi of the bitmap.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.DpiY">
+            <summary>
+            Gets the vertical dpi of the bitmap.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.Format">
+            <summary>
+            Gets the pixel format of the bitmap data.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.Palette">
+            <summary>
+            Gets the color palette of the bitmap, if one is specified.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.PixelHeight">
+            <summary>
+            Gets the height of the bitmap in pixels.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.PixelWidth">
+            <summary>
+            Gets the width of the bitmap in pixels.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Media.AdaptiveBitmap.UriSource">
+            <summary>
+            Gets or sets the URI source.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.Media.AdaptiveBitmap.UriSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Autodesk.Windows.Media.AdaptiveBitmap.UriSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Media.AdaptiveBitmap.CopyPixels(System.Array,System.Int32,System.Int32)">
+            <summary>
+            Copies the bitmap pixel data into an array of pixels with the specified stride, starting at the specified offset.
+            </summary>
+            <param name="pixels">The destination array.</param>
+            <param name="stride">The stride of the bitmap.</param>
+            <param name="offset">The pixel location where copying begins.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Media.AdaptiveBitmap.CopyPixels(System.Windows.Int32Rect,System.Array,System.Int32,System.Int32)">
+            <summary>
+            Copies the bitmap pixel data within the specified rectangle into an array of pixels that has the specified stride starting at the specified offset.
+            </summary>
+            <param name="sourceRect">The source rectangle to copy. An <see cref="P:System.Windows.Int32Rect.Empty"/> value specifies the entire bitmap.</param>
+            <param name="pixels">The destination array.</param>
+            <param name="stride">The stride of the bitmap.</param>
+            <param name="offset">The pixel location where copying begins.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Media.AdaptiveBitmap.CopyPixels(System.Windows.Int32Rect,System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Copies the bitmap pixel data within the specified rectangle.
+            </summary>
+            <param name="sourceRect">The source rectangle to copy. An <see cref="P:System.Windows.Int32Rect.Empty"/> value specifies the entire bitmap.</param>
+            <param name="buffer">A pointer to the buffer.</param>
+            <param name="bufferSize">The size of the buffer.</param>
+            <param name="stride">The stride of the bitmap.</param>
+        </member>
+        <member name="T:Autodesk.Windows.DoubleFuzzyComparer`1">
+            <summary>
+            Provides a base class for implementations of the <see cref="T:System.Collections.Generic.IComparer`1"/> interface with a tolerance represented by a double value.
+            </summary>
+            <typeparam name="T">The type of objects to compare.</typeparam>
+        </member>
+        <member name="T:Autodesk.Windows.DpiValueComparer">
+            <summary>
+            Compares two <see cref="T:Autodesk.Windows.DpiValue"/> objects.
+            </summary>
+        </member>
+        <member name="T:Autodesk.Windows.ScaleFactor">
+            <summary>
+            Represents a scale factor.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the structure.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="factor"/> is infinity or is not a number.</exception>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.CompareTo(Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Compares this instance to another and returns an indication of their relative values.
+            </summary>
+            <param name="other">A scale factor to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.Equals(Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Returns a value indicating whether this instance and another represent the same value.
+            </summary>
+            <param name="other">A scale factor to compare.</param>
+            <returns>true if <paramref name="other"/> is equal to this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="obj">An object to compare with this instance.</param>
+            <returns>true if <paramref name="obj"/> is an instance of <see cref="T:Autodesk.Windows.ScaleFactor"/> and equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.Scale(System.Double,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value;
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.Scale(System.Single,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value;
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.Scale(System.Int32,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value;
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.Scale(System.Int64,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value;
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.Scale(System.Int16,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value;
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.ToDouble">
+            <summary>
+            Converts the scale factor to the equivalent double-precision floating-point number.
+            </summary>
+            <returns>A double-precision floating-point number that is equivalent to the scale factor.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.ToInt32(Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Converts the scale factor to an equivalent 32-bit signed integer.
+            </summary>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the conversion.</param>
+            <returns>The 32-bit signed integer.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.ToSingle(Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Converts the scale factor to an equivalent single-precision floating-point number.
+            </summary>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the conversion.</param>
+            <returns>The single-precision floating-point number.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.ToString">
+            <summary>
+            Converts the scale factor to its equivalent string representation, using the conventions of the invariant culture.
+            </summary>
+            <returns>The string representation of the value of this instance.</returns>
+        </member>
+        <member name="P:Autodesk.Windows.ScaleFactor.One">
+            <summary>
+            Gets a scale factor whose value is equal to one.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.ScaleFactor.Zero">
+            <summary>
+            Gets a scale factor whose value is equal to zero.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Equality(Autodesk.Windows.ScaleFactor,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Returns a value that indicates whether two specified scale factors are equal.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> and <paramref name="factor2"/> are equal; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Inequality(Autodesk.Windows.ScaleFactor,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Returns a value that indicates whether two specified scale factors are not equal.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> and <paramref name="factor2"/> are not equal; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_LessThan(Autodesk.Windows.ScaleFactor,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Returns a value that indicates whether a scale factor is less than another.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> is less than <paramref name="factor2"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_GreaterThan(Autodesk.Windows.ScaleFactor,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Returns a value that indicates whether a scale factor is greater than another.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> is greater than <paramref name="factor2"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_LessThanOrEqual(Autodesk.Windows.ScaleFactor,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Returns a value that indicates whether a scale factor is less than or equal to another.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> is less than or equal to <paramref name="factor2"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_GreaterThanOrEqual(Autodesk.Windows.ScaleFactor,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Returns a value that indicates whether a scale factor is greater than or equal to another.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> is greater than or equal to <paramref name="factor2"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Multiply(System.Double,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Scales <paramref name="value"/>.
+            </summary>
+            <param name="value">The original value to be scaled.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The value after scaling.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Multiply(System.Single,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Scales <paramref name="value"/>.
+            </summary>
+            <param name="value">The original value to be scaled.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The value after scaling.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Multiply(System.Int32,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Scales <paramref name="value"/>.
+            </summary>
+            <param name="value">The original value to be scaled.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The value after scaling.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Multiply(System.Int64,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Scales <paramref name="value"/>.
+            </summary>
+            <param name="value">The original value to be scaled.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The value after scaling.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Multiply(System.Int16,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Scales <paramref name="value"/>.
+            </summary>
+            <param name="value">The original value to be scaled.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The value after scaling.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Division(System.Double,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Restores a scaled value back to its original value.
+            </summary>
+            <param name="value">The scaled value to be restored.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The original value.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Division(System.Single,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Restores a scaled value back to its original value.
+            </summary>
+            <param name="value">The scaled value to be restored.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The original value.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Division(System.Int32,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Restores a scaled value back to its original value.
+            </summary>
+            <param name="value">The scaled value to be restored.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The original value.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Division(System.Int64,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Restores a scaled value back to its original value.
+            </summary>
+            <param name="value">The scaled value to be restored.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The original value.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Division(System.Int16,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Restores a scaled value back to its original value.
+            </summary>
+            <param name="value">The scaled value to be restored.</param>
+            <param name="factor">The scale factor.</param>
+            <returns>The original value.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Explicit(System.Double)~Autodesk.Windows.ScaleFactor">
+            <summary>
+            Converts the double-precision floating-point number to the equivalent scale factor.
+            </summary>
+            <param name="factor">The double-precision floating-point number.</param>
+            <returns>A scale factor that is equivalent to the double-precision floating-point number.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="factor"/> is infinity or is not a number.</exception>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor.op_Explicit(Autodesk.Windows.ScaleFactor)~System.Double">
+            <summary>
+            Converts the scale factor to the equivalent double-precision floating-point number.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <returns>A double-precision floating-point number that is equivalent to the scale factor.</returns>
+        </member>
+        <member name="T:Autodesk.Windows.ScaleFactorAction">
+            <summary>
+            Specifies the action to take when applying a scale factor to a value.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorAction.Scale">
+            <summary>
+            Scales the value, which is a multiplication operation.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorAction.Restore">
+            <summary>
+            Restores a scaled value back to its original value, which is a division operation.
+            </summary>
+        </member>
+        <member name="T:Autodesk.Windows.ScaleFactorRounding">
+            <summary>
+            Specifies mathematical rounding performed when applying a scale factor to a value or when converting a scale factor to another type.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorRounding.None">
+            <summary>
+            No rounding performed.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorRounding.Ceiling">
+            <summary>
+            The result is the smallest integer that is greater than or equal to the value.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorRounding.Floor">
+            <summary>
+            The result is the largest integer that is less than or equal to the value.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorRounding.RoundAwayFromZero">
+            <summary>
+            When the result is halfway between two others, it is rounded toward the nearest value that is away from zero.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorRounding.RoundToEven">
+            <summary>
+            When the result is halfway between two others, it is rounded toward the nearest even value.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorRounding.Truncate">
+            <summary>
+            The result is the integral part of the value.
+            </summary>
+        </member>
+        <member name="T:Autodesk.Windows.DisplayDeviceInfo">
+            <summary>
+            Provides information about a display device on current system.
+            </summary>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.ButtonBaseExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms button control classes derived from <see cref="T:System.Windows.Forms.ButtonBase"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ButtonBaseExtensions.EnableAutoScaleImage(System.Windows.Forms.ButtonBase,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the image that is displayed on <see cref="T:System.Windows.Forms.ButtonBase"/>, when its container is scaled.
+            </summary>
+            <param name="buttonBase">The <see cref="T:System.Windows.Forms.ButtonBase"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="buttonBase"/>.</param>
+            <remarks>
+            <para>
+            The image displayed on <paramref name="buttonBase"/> is specified by the <see cref="P:System.Windows.Forms.ButtonBase.Image"/> property, and need to be specified before calling this method.
+            This method only supports scaling a <see cref="T:System.Drawing.Bitmap"/> image.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.ContainerExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms containers like <see cref="T:System.Windows.Forms.Form"/> and <see cref="T:System.Windows.Forms.UserControl"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ContainerExtensions.EnableDefaultAutoScale(System.Windows.Forms.ContainerControl,System.Windows.Forms.AutoScaleMode)">
+            <summary>
+            Enables automatic scaling supported by Windows Forms.
+            </summary>
+            <param name="container">The container object, such as a <see cref="T:System.Windows.Forms.Form"/> or a <see cref="T:System.Windows.Forms.UserControl"/>.</param>
+            <param name="mode">One of the <see cref="T:System.Windows.Forms.AutoScaleMode"/> values that specifies the automatic scaling mode of <paramref name="container"/>.</param>
+            <remarks>
+            <para>
+            This method must be called inside the InitializeComponent method of <paramref name="container"/> and before calling ResumeLayout.
+            As InitializeComponent is a method generated by Windows Forms designer, any changes made in the designer will flush away this call. Be sure to add it back after editing in the designer.
+            </para>
+            <para>
+            For a <paramref name="container"/> derived from <see cref="T:System.Windows.Forms.UserControl"/>,
+            <paramref name="mode"/> is typically set to <see cref="F:System.Windows.Forms.AutoScaleMode.Inherit"/> unless the user control is to be hosted by a window that is not implemented in Windows Forms.
+            </para>
+            <para>
+            This method sets <see cref="P:System.Windows.Forms.ContainerControl.AutoScaleDimensions"/> and <see cref="P:System.Windows.Forms.ContainerControl.AutoScaleMode"/> properties of <paramref name="container"/> according to the specified <paramref name="mode"/>.
+            AutoScaleDimensions is set to (6, 13) when mode is <see cref="F:System.Windows.Forms.AutoScaleMode.Font"/>; 
+            and (96, 96) when mode is <see cref="F:System.Windows.Forms.AutoScaleMode.Dpi"/>.
+            </para>
+            </remarks>
+            <example>
+            This sample shows how to call the <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.EnableDefaultAutoScale(System.Windows.Forms.ContainerControl,System.Windows.Forms.AutoScaleMode)"/> method in a <see cref="T:System.Windows.Forms.Form"/>.
+            <code>
+            ...
+            using Autodesk.Windows.Forms;
+            
+            public partial class Form1 : Form
+            {
+                public Form1()
+                {
+                    InitializeComponent();
+                }
+            
+                private void InitializeComponent()
+                {
+                    this.button1 = new System.Windows.Forms.Button();
+                    this.SuspendLayout();
+                    ...
+                    // 
+                    // Form1
+                    // 
+                    // Make sure the following lines are removed:
+                    //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+                    //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                    this.ClientSize = new System.Drawing.Size(284, 261);
+                    this.Controls.Add(this.button1);
+                    this.Name = "Form1";
+                    this.Text = "Form1";
+                    this.EnableDefaultAutoScale();
+                    this.ResumeLayout(false);
+                }
+            
+                protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+                {
+                    base.ScaleControl(factor, specified);
+                    this.OnScaleControl(factor);
+                }
+            ...
+            </code>
+            This sample shows how to call the <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.EnableDefaultAutoScale(System.Windows.Forms.ContainerControl,System.Windows.Forms.AutoScaleMode)"/> method in a <see cref="T:System.Windows.Forms.UserControl"/>.
+            <code>
+            ...
+            using System.Windows.Forms;
+            using Autodesk.Windows.Forms;
+            
+            public partial class UserControl1 : UserControl
+            {
+                public UserControl1()
+                {
+                    InitializeComponent();
+                }
+            
+                private void InitializeComponent()
+                {
+                    this.button1 = new System.Windows.Forms.Button();
+                    this.SuspendLayout();
+                    ... 
+                    // 
+                    // UserControl1
+                    // 
+                    // Make sure the following lines are removed:
+                    //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+                    //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                    this.Controls.Add(this.button1);
+                    this.Name = "UserControl1";
+                    this.EnableDefaultAutoScale(AutoScaleMode.Inherit);
+                    this.ResumeLayout(false);
+                }
+            
+                protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+                {
+                    base.ScaleControl(factor, specified);
+                    this.OnScaleControl(factor);
+                }
+            ...
+            </code>
+            </example>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ContainerExtensions.GetAbsoluteScaleFactor(System.Windows.Forms.ContainerControl)">
+            <summary>
+            Gets the current scale factor of the <paramref name="container"/>.
+            </summary>
+            <param name="container">The container object, such as a <see cref="T:System.Windows.Forms.Form"/> or a <see cref="T:System.Windows.Forms.UserControl"/>.</param>
+            <returns>
+            The current scale factor of the <paramref name="container"/>.
+            If the container has been scaled multiple times, the returned value is the accumulated scale factor.
+            </returns>
+            <remarks>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ContainerExtensions.AutoScaleCompletedRegister(System.Windows.Forms.ContainerControl,System.EventHandler)">
+            <summary>
+            Registers the specified event handler which is called when the specified container has completed automatic scaling.
+            </summary>
+            <param name="container">The container object that raises the event, such as a <see cref="T:System.Windows.Forms.Form"/> or a <see cref="T:System.Windows.Forms.UserControl"/>.</param>
+            <param name="handler">The delegate that handles the event.</param>
+            <remarks>
+            <para>
+            If some controls have called automatic scaling extension methods to associate themselves with this container, 
+            the container will also wait for automatic scaling applied on these controls before raising the event.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ContainerExtensions.AutoScaleCompletedUnregister(System.Windows.Forms.ContainerControl,System.EventHandler)">
+            <summary>
+            Unregisters the specified event handler which was previously registered using <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.AutoScaleCompletedRegister(System.Windows.Forms.ContainerControl,System.EventHandler)"/>.
+            </summary>
+            <param name="container">The container object that raises the event, such as a <see cref="T:System.Windows.Forms.Form"/> or a <see cref="T:System.Windows.Forms.UserControl"/>.</param>
+            <param name="handler">The delegate that handles the event.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)">
+            <summary>
+            Notifies the framework that the specified container is being scaled.
+            </summary>
+            <param name="container">The container object, such as a <see cref="T:System.Windows.Forms.Form"/> or a <see cref="T:System.Windows.Forms.UserControl"/>.</param>
+            <param name="factor">The factor by which the container is being scaled.</param>
+            <remarks>
+            <para>
+            This method is mandatory for most of the other scaling related extension methods to work.
+            </para>
+            <para>
+            The container class, usually derived from <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/>, needs to override the <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> method and call this method.
+            </para>
+            </remarks>
+            <example>
+            See the examples of <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.EnableDefaultAutoScale(System.Windows.Forms.ContainerControl,System.Windows.Forms.AutoScaleMode)"/> method.
+            </example>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.FormExtensions">
+            <summary>
+            Provides a set of static methods that extend <see cref="T:System.Windows.Forms.Form"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.FormExtensions.EnableDefaultAutoScale(System.Windows.Forms.Form,System.Windows.Forms.AutoScaleMode,System.Boolean)">
+            <summary>
+            Enables automatic scaling supported by Windows Forms.
+            </summary>
+            <param name="form">The container object.</param>
+            <param name="mode">One of the <see cref="T:System.Windows.Forms.AutoScaleMode"/> values that specifies the automatic scaling mode of the container.</param>
+            <param name="workaroundInitialSize">true to call the <see cref="M:Autodesk.Windows.Forms.FormExtensions.WorkaroundInitialSize(System.Windows.Forms.Form)"/> method. See <see cref="M:Autodesk.Windows.Forms.FormExtensions.WorkaroundInitialSize(System.Windows.Forms.Form)"/> for details.</param>
+            <remarks>
+            <para>
+            This method must be called inside the InitializeComponent method of <paramref name="form"/> and before calling ResumeLayout.
+            As InitializeComponent is a method generated by Windows Forms designer, any changes made in the designer will flush away this call. Be sure to add it back after editing in the designer.
+            </para>
+            <para>
+            This method sets <see cref="P:System.Windows.Forms.ContainerControl.AutoScaleDimensions"/> and <see cref="P:System.Windows.Forms.ContainerControl.AutoScaleMode"/> properties of <paramref name="form"/> according to the specified <paramref name="mode"/>.
+            AutoScaleDimensions is set to (6, 13) when mode is <see cref="F:System.Windows.Forms.AutoScaleMode.Font"/>; 
+            and (96, 96) when mode is <see cref="F:System.Windows.Forms.AutoScaleMode.Dpi"/>.
+            </para>
+            </remarks>
+            <example>
+            See the examples of <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.EnableDefaultAutoScale(System.Windows.Forms.ContainerControl,System.Windows.Forms.AutoScaleMode)"/> method.
+            </example>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.FormExtensions.WorkaroundInitialSize(System.Windows.Forms.Form)">
+            <summary>
+            Notifies the framework to apply a workaround for the initial size issue of a form in high DPI display.
+            </summary>
+            <param name="form">The container object.</param>
+            <remarks>
+            <para>
+            It's unnecessary to explicitly call this method in most cases, because calling <see cref="M:Autodesk.Windows.Forms.FormExtensions.EnableDefaultAutoScale(System.Windows.Forms.Form,System.Windows.Forms.AutoScaleMode,System.Boolean)"/> with default values will lead to this method.
+            If called explicitly, it must be called inside the InitializeComponent method of <paramref name="form"/> and before calling ResumeLayout.
+            </para>
+            <para>
+            For this method to work, the <paramref name="form"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.ControlExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control classes derived from <see cref="T:System.Windows.Forms.Control"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ControlExtensions.FindContainerAbsoluteScaleFactor(System.Windows.Forms.Control)">
+            <summary>
+            Gets the current scale factor of the container that contains the <paramref name="control"/>.
+            </summary>
+            <param name="control">The control object.</param>
+            <returns>The current scale factor of the container that contains the <paramref name="control"/>.</returns>
+            <remarks>
+            <para>
+            The container is usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains the control.
+            </para>
+            <para>
+            For this method to work, the container must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.DataGridViewExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control class <see cref="T:System.Windows.Forms.DataGridView"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.DataGridViewExtensions.EnableAutoScaleColumnWidth(System.Windows.Forms.DataGridView,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the column widths of <see cref="T:System.Windows.Forms.DataGridView"/>, when its container is scaled.
+            </summary>
+            <param name="dataGridView">The <see cref="T:System.Windows.Forms.DataGridView"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="dataGridView"/>.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.DataGridViewColumn.Width"/> and <see cref="P:System.Windows.Forms.DataGridViewColumn.MinimumWidth"/> properties of the existing columns in <paramref name="dataGridView"/>.
+            A column in content-based automatic sizing mode or fill mode is skipped during scaling the Width property.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.DataGridViewExtensions.EnableAutoScaleHeaderSize(System.Windows.Forms.DataGridView,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the header sizes of <see cref="T:System.Windows.Forms.DataGridView"/>, when its container is scaled.
+            </summary>
+            <param name="dataGridView">The <see cref="T:System.Windows.Forms.DataGridView"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="dataGridView"/>.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.DataGridView.ColumnHeadersHeight"/> and <see cref="P:System.Windows.Forms.DataGridView.RowHeadersWidth"/> properties of <paramref name="dataGridView"/>.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.DataGridViewExtensions.ScaleColumnWidth(System.Windows.Forms.DataGridView,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Scales the column widths of <see cref="T:System.Windows.Forms.DataGridView"/> for once, using the current scale factor retrieved from its container.
+            </summary>
+            <param name="dataGridView">The <see cref="T:System.Windows.Forms.DataGridView"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="dataGridView"/>.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.DataGridViewColumn.Width"/> and <see cref="P:System.Windows.Forms.DataGridViewColumn.MinimumWidth"/> properties of the existing columns in <paramref name="dataGridView"/>.
+            A column in content-based automatic sizing mode or fill mode is skipped during scaling the Width property.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.DataGridViewExtensions.ScaleColumnWidth(System.Windows.Forms.DataGridViewColumn,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Scales the width of <see cref="T:System.Windows.Forms.DataGridViewColumn"/> for once, using the current scale factor retrieved from its container.
+            </summary>
+            <param name="dataGridViewColumn">The <see cref="T:System.Windows.Forms.DataGridViewColumn"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="dataGridViewColumn"/>.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.DataGridViewColumn.Width"/> and <see cref="P:System.Windows.Forms.DataGridViewColumn.MinimumWidth"/> properties of <paramref name="dataGridViewColumn"/>.
+            A column in content-based automatic sizing mode or fill mode is skipped during scaling the Width property.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.AdaptiveImage">
+            <summary>
+            Provides static methods that load bitmap images adaptively depending on dpi settings.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Bitmap(System.Byte[])">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Bitmap"/> from the provided buffer.
+            </summary>
+            <param name="buffer">The data buffer used to load the image.</param>
+            <returns>The created <see cref="T:System.Drawing.Bitmap"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Bitmap(System.IO.Stream)">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Bitmap"/> from the provided stream.
+            </summary>
+            <param name="stream">The data stream used to load the image.</param>
+            <returns>The created <see cref="T:System.Drawing.Bitmap"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Bitmap(System.Resources.ResourceManager,System.String)">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Bitmap"/> from the provided <see cref="T:System.Resources.ResourceManager"/> and resource name.
+            </summary>
+            <param name="resource">The <see cref="T:System.Resources.ResourceManager"/> that contains the image data.</param>
+            <param name="name">The name of the resource that contains the image data.</param>
+            <returns>The created <see cref="T:System.Drawing.Bitmap"/>.</returns>
+            <remarks>
+            <para>
+            This method retrieves image data from a <see cref="T:System.Resources.ResourceManager"/>.
+            The following types of objects are supported:
+            <see cref="T:System.Drawing.Bitmap"/>, <see cref="T:System.Drawing.Icon"/>, array of <see cref="T:System.Byte"/>.
+            </para>
+            <para>
+            An adaptive bitmap need to be stored as an array of <see cref="T:System.Byte"/> in resource. Other types lead to data loss.
+            </para>
+            <para>
+            The Managed Resource Editor automatically sets the type to <see cref="T:System.Drawing.Bitmap"/> when an adaptive bitmap is added. This could be avoided in one of the following ways:
+            <list type="bullet">
+            <item>
+            <description>Before adding, change the extension name of the adaptive bitmap file to an unknown one to the editor, for example ".bin".</description>
+            </item>
+            <item>
+            <description>After adding, edit the resx file in xml mode, and change the type to Byte[]. For example:
+            <code>
+            &lt;data name="MyBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms"&gt;
+              &lt;value&gt;MyBitmap.tif;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&lt;/value&gt;
+            &lt;/data&gt;
+            </code>
+            </description>
+            </item>
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Bitmap(System.Uri)">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Bitmap"/> from the provided URI.
+            </summary>
+            <param name="uri">The URI used to load the image.</param>
+            <returns>The created <see cref="T:System.Drawing.Bitmap"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Icon(System.Byte[])">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Icon"/> from the provided buffer.
+            </summary>
+            <param name="buffer">The data buffer used to load the image.</param>
+            <returns>The created <see cref="T:System.Drawing.Icon"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Icon(System.IO.Stream)">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Icon"/> from the provided stream.
+            </summary>
+            <param name="stream">The data stream used to load the image.</param>
+            <returns>The created <see cref="T:System.Drawing.Icon"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Icon(System.Resources.ResourceManager,System.String)">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Icon"/> from the provided <see cref="T:System.Resources.ResourceManager"/> and resource name.
+            </summary>
+            <param name="resource">The <see cref="T:System.Resources.ResourceManager"/> that contains the image data.</param>
+            <param name="name">The name of the resource that contains the image data.</param>
+            <returns>The created <see cref="T:System.Drawing.Icon"/>.</returns>
+            <remarks>
+            <para>
+            This method retrieves image data from a <see cref="T:System.Resources.ResourceManager"/>.
+            The following types of objects are supported:
+            <see cref="T:System.Drawing.Bitmap"/>, <see cref="T:System.Drawing.Icon"/>, array of <see cref="T:System.Byte"/>.
+            </para>
+            <para>
+            An adaptive bitmap need to be stored as an array of <see cref="T:System.Byte"/> in resource. Other types lead to data loss.
+            </para>
+            <para>
+            The Managed Resource Editor automatically sets the type to <see cref="T:System.Drawing.Bitmap"/> when an adaptive bitmap is added. This could be avoided in one of the following ways:
+            <list type="bullet">
+            <item>
+            <description>Before adding, change the extension name of the adaptive bitmap file to an unknown one to the editor, for example ".bin".</description>
+            </item>
+            <item>
+            <description>After adding, edit the resx file in xml mode, and change the type to Byte[]. For example:
+            <code>
+            &lt;data name="MyBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms"&gt;
+              &lt;value&gt;MyBitmap.tif;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&lt;/value&gt;
+            &lt;/data&gt;
+            </code>
+            </description>
+            </item>
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.AdaptiveImage.Icon(System.Uri)">
+            <summary>
+            Creates a new <see cref="T:System.Drawing.Icon"/> from the provided URI.
+            </summary>
+            <param name="uri">The URI used to load the image.</param>
+            <returns>The created <see cref="T:System.Drawing.Icon"/>.</returns>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.ImageListExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms component class <see cref="T:System.Windows.Forms.ImageList"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ImageListExtensions.EnableAutoScale(System.Windows.Forms.ImageList,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on <see cref="T:System.Windows.Forms.ImageList"/>, when its container is scaled.
+            </summary>
+            <param name="imageList">The <see cref="T:System.Windows.Forms.ImageList"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="imageList"/>.</param>
+            <remarks>
+            <para>
+            When scaled up, the maximum size of images is 256 by 256 due to the limitation of <see cref="T:System.Windows.Forms.ImageList"/>.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ImageListExtensions.AddStripScaled(System.Windows.Forms.ImageList,System.Drawing.Image,System.Int32)">
+            <summary>
+            Adds an image strip to <see cref="T:System.Windows.Forms.ImageList"/>, with automatic scaling.
+            </summary>
+            <param name="imageList">The <see cref="T:System.Windows.Forms.ImageList"/> object.</param>
+            <param name="imageStrip">A <see cref="T:System.Drawing.Bitmap"/> with the images to add.</param>
+            <param name="singleImageWidth">The width of each single image in the <paramref name="imageStrip"/>, in pixels.</param>
+            <remarks>
+            A strip is a single image that is treated as multiple images arranged side-by-side.
+            The strip is automatically scaled to match the current height of <paramref name="imageList"/>.
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ImageListExtensions.Scale(System.Windows.Forms.ImageList,Autodesk.Windows.ScaleFactor2D)">
+            <summary>
+            Scales <see cref="T:System.Windows.Forms.ImageList"/> for once, using the specified scale factor.
+            </summary>
+            <param name="imageList">The <see cref="T:System.Windows.Forms.ImageList"/> object.</param>
+            <param name="factor">The scale factor to be applied on <paramref name="imageList"/>.</param>
+            <remarks>
+            When scaled up, the maximum size of images is 256 by 256 due to the limitation of <see cref="T:System.Windows.Forms.ImageList"/>.
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.LabelExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control class <see cref="T:System.Windows.Forms.Label"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.LabelExtensions.EnableAutoScaleImage(System.Windows.Forms.Label,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the image that is displayed on <see cref="T:System.Windows.Forms.Label"/>, when its container is scaled.
+            </summary>
+            <param name="label">The <see cref="T:System.Windows.Forms.Label"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="label"/>.</param>
+            <remarks>
+            <para>
+            The image displayed on <paramref name="label"/> is specified by the <see cref="P:System.Windows.Forms.Label.Image"/> property, and need to be specified before calling this method.
+            This method only supports scaling a <see cref="T:System.Drawing.Bitmap"/> image.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.ListViewExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control class <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ListViewExtensions.EnableAutoScaleColumnHeader(System.Windows.Forms.ListView,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the column widths of <see cref="T:System.Windows.Forms.ListView"/>, when its container is scaled.
+            </summary>
+            <param name="listView">The <see cref="T:System.Windows.Forms.ListView"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="listView"/>.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.ColumnHeader.Width"/> property of the existing columns in <paramref name="listView"/>.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.PictureBoxExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control class <see cref="T:System.Windows.Forms.PictureBox"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.PictureBoxExtensions.EnableAutoScaleImage(System.Windows.Forms.PictureBox,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the image that is displayed by <see cref="T:System.Windows.Forms.PictureBox"/>, when its container is scaled.
+            </summary>
+            <param name="pictureBox">The <see cref="T:System.Windows.Forms.PictureBox"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="pictureBox"/>.</param>
+            <remarks>
+            <para>
+            The image that is displayed by <see cref="T:System.Windows.Forms.PictureBox"/> is specified by the <see cref="P:System.Windows.Forms.PictureBox.Image"/> property, and need to be specified before calling this method.
+            This method only supports scaling a <see cref="T:System.Drawing.Bitmap"/> image.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.ScaleFactorExtensions">
+            <summary>
+            Provides a set of static methods that extend the scale factor structures for working with types in <see cref="N:System.Drawing"/> namespace.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.MakeSafe(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts the specified <paramref name="value"/> to be limited within a specified range.
+            </summary>
+            <param name="value">The value to be converted.</param>
+            <param name="minimum">The inclusive lower bound of the value returned.</param>
+            <param name="maximum">The inclusive upper bound of the value returned.</param>
+            <returns>The converted value.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.MakeSafe(System.Drawing.Point,System.Int32,System.Int32)">
+            <summary>
+            Converts x- and y-coordinates of the specified <paramref name="point"/> to be limited within a specified range.
+            </summary>
+            <param name="point">The point to be converted.</param>
+            <param name="minimum">The inclusive lower bound of the coordinates.</param>
+            <param name="maximum">The inclusive upper bound of the coordinates.</param>
+            <returns>The converted point.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.MakeSafeLTRB(System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>
+            Converts Left, Top, Right and Bottom properties of the specified <paramref name="rectangle"/> to be limited within a specified range.
+            </summary>
+            <param name="rectangle">The rectangle to be converted.</param>
+            <param name="minimum">The inclusive lower bound of the properties.</param>
+            <param name="maximum">The inclusive upper bound of the properties.</param>
+            <returns>The converted rectangle.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.MakeSafeLocation(System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>
+            Converts Location property of the specified <paramref name="rectangle"/> to be limited within a specified range.
+            </summary>
+            <param name="rectangle">The rectangle to be converted.</param>
+            <param name="minimum">The inclusive lower bound of the coordinates.</param>
+            <param name="maximum">The inclusive upper bound of the coordinates.</param>
+            <returns>The converted rectangle.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.MakeSafeSize(System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>
+            Converts Size property of the specified <paramref name="rectangle"/> to be limited within a specified range.
+            </summary>
+            <param name="rectangle">The rectangle to be converted.</param>
+            <param name="minimum">The inclusive lower bound of the sizes.</param>
+            <param name="maximum">The inclusive upper bound of the sizes.</param>
+            <returns>The converted rectangle.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.MakeSafe(System.Drawing.Size,System.Int32,System.Int32)">
+            <summary>
+            Converts horizontal and vertical components of the specified <paramref name="size"/> to be limited within a specified range.
+            </summary>
+            <param name="size">The size to be converted.</param>
+            <param name="minimum">The inclusive lower bound of the components.</param>
+            <param name="maximum">The inclusive upper bound of the components.</param>
+            <returns>The converted size.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor,System.Drawing.Point,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor,System.Drawing.PointF,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor,System.Drawing.Rectangle,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor,System.Drawing.RectangleF,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor,System.Drawing.Size,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor,System.Drawing.SizeF,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor2D,System.Drawing.Point,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor2D,System.Drawing.PointF,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor2D,System.Drawing.Rectangle,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor2D,System.Drawing.RectangleF,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor2D,System.Drawing.Size,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.Scale(Autodesk.Windows.ScaleFactor2D,System.Drawing.SizeF,Autodesk.Windows.ScaleFactorAction,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Applies the scale factor to <paramref name="value"/>.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <param name="value">The value to be transformed.</param>
+            <param name="action">
+            <see cref="F:Autodesk.Windows.ScaleFactorAction.Scale"/> to scale the value; 
+            or <see cref="F:Autodesk.Windows.ScaleFactorAction.Restore"/> to restore a scaled value back to its original value.
+            </param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the transformation.</param>
+            <returns>The value after transformation.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.ToScaleFactor2D(System.Drawing.Size)">
+            <summary>
+            Converts the <see cref="T:System.Drawing.Size"/> to the equivalent <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.
+            </summary>
+            <param name="factor">The <see cref="T:System.Drawing.Size"/>.</param>
+            <returns>A <see cref="T:Autodesk.Windows.ScaleFactor2D"/> that is equivalent to the <see cref="T:System.Drawing.Size"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.ToScaleFactor2D(System.Drawing.SizeF)">
+            <summary>
+            Converts the <see cref="T:System.Drawing.SizeF"/> to the equivalent <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.
+            </summary>
+            <param name="factor">The <see cref="T:System.Drawing.SizeF"/>.</param>
+            <returns>A <see cref="T:Autodesk.Windows.ScaleFactor2D"/> that is equivalent to the <see cref="T:System.Drawing.SizeF"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.ToSize(Autodesk.Windows.ScaleFactor2D,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Converts the <see cref="T:Autodesk.Windows.ScaleFactor2D"/> to the equivalent <see cref="T:System.Drawing.Size"/>.
+            </summary>
+            <param name="factor">The <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.</param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the conversion.</param>
+            <returns>A <see cref="T:System.Drawing.Size"/> that is equivalent to the <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.ScaleFactorExtensions.ToSizeF(Autodesk.Windows.ScaleFactor2D,Autodesk.Windows.ScaleFactorRounding)">
+            <summary>
+            Converts the <see cref="T:Autodesk.Windows.ScaleFactor2D"/> to the equivalent <see cref="T:System.Drawing.SizeF"/>.
+            </summary>
+            <param name="factor">The <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.</param>
+            <param name="rounding">One of the <see cref="T:Autodesk.Windows.ScaleFactorRounding"/> values that specifies the rounding to use in the conversion.</param>
+            <returns>A <see cref="T:System.Drawing.SizeF"/> that is equivalent to the <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.</returns>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.SplitContainerExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control class <see cref="T:System.Windows.Forms.SplitContainer"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.SplitContainerExtensions.EnableAutoScaleMinSize(System.Windows.Forms.SplitContainer,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the minimal sizes of panels in <see cref="T:System.Windows.Forms.SplitContainer"/>, when its container is scaled.
+            </summary>
+            <param name="split">The <see cref="T:System.Windows.Forms.SplitContainer"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="split"/>.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.SplitContainer.Panel1MinSize"/> and <see cref="P:System.Windows.Forms.SplitContainer.Panel2MinSize"/> properties of <paramref name="split"/>.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.SplitContainerExtensions.UseSystemSizeCursor(System.Windows.Forms.SplitContainer)">
+            <summary>
+            Uses the default two-headed horizontal/vertical sizing cursor from OS to replace the Windows Forms specific cursor applied on <see cref="T:System.Windows.Forms.SplitContainer"/>.
+            </summary>
+            <param name="split">The <see cref="T:System.Windows.Forms.SplitContainer"/> object.</param>
+            <remarks>
+            The cursor to be used is determined by the <see cref="P:System.Windows.Forms.SplitContainer.IsSplitterFixed"/> and <see cref="P:System.Windows.Forms.SplitContainer.Orientation"/> properties of <paramref name="split"/>.
+            This method doesn't track changes of these properties, so call this again if these properties are changed.
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.SplitterExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control class <see cref="T:System.Windows.Forms.Splitter"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.SplitterExtensions.EnableAutoScaleMin(System.Windows.Forms.Splitter,System.Windows.Forms.ContainerControl)">
+            <summary>
+            Enables automatic scaling on the minimal sizes of <see cref="T:System.Windows.Forms.Splitter"/>, when its container is scaled.
+            </summary>
+            <param name="splitter">The <see cref="T:System.Windows.Forms.Splitter"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="splitter"/>.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.Splitter.MinExtra"/> and <see cref="P:System.Windows.Forms.Splitter.MinSize"/> properties of <paramref name="splitter"/>.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.SplitterExtensions.UseSystemSizeCursor(System.Windows.Forms.Splitter)">
+            <summary>
+            Uses the default two-headed horizontal/vertical sizing cursor from OS to replace the Windows Forms specific cursor applied on <see cref="T:System.Windows.Forms.Splitter"/>.
+            </summary>
+            <param name="splitter">The <see cref="T:System.Windows.Forms.Splitter"/> object.</param>
+            <remarks>
+            The cursor to be used is determined by the <see cref="P:System.Windows.Forms.Splitter.Dock"/> property of <paramref name="splitter"/>.
+            This method doesn't track changes of the property, so call this again if the property is changed.
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Forms.TreeViewExtensions">
+            <summary>
+            Provides a set of static methods that extend Windows Forms control class <see cref="T:System.Windows.Forms.TreeView"/>.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Forms.TreeViewExtensions.EnableAutoScaleIndent(System.Windows.Forms.TreeView,System.Windows.Forms.ContainerControl,System.Int32)">
+            <summary>
+            Enables automatic scaling on the indent of <see cref="T:System.Windows.Forms.TreeView"/>, when its container is scaled.
+            </summary>
+            <param name="treeView">The <see cref="T:System.Windows.Forms.TreeView"/> object.</param>
+            <param name="container">The container object, usually the <see cref="T:System.Windows.Forms.Form"/> or <see cref="T:System.Windows.Forms.UserControl"/> that contains <paramref name="treeView"/>.</param>
+            <param name="indent">The original value of the indent when it's not scaled yet.</param>
+            <remarks>
+            <para>
+            This method scales the value of <see cref="P:System.Windows.Forms.TreeView.Indent"/> property of <paramref name="treeView"/>.
+            </para>
+            <para>
+            For this method to work, the <paramref name="container"/> must override <see cref="M:System.Windows.Forms.Control.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)"/> and call <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/>. See <see cref="M:Autodesk.Windows.Forms.ContainerExtensions.OnScaleControl(System.Windows.Forms.ContainerControl,System.Drawing.SizeF)"/> for details.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.Interop.InteropAdaptiveBitmap">
+            <summary>
+            Provides a specialized <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> that loads bitmap images adaptively depending on dpi settings in interoperability scenarios.
+            </summary>
+        </member>
+        <member name="E:Autodesk.Windows.Interop.InteropAdaptiveBitmap.DecodeFailed">
+            <summary>
+            Occurs when the image fails to load, due to a corrupt image header.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Interop.InteropAdaptiveBitmap.DpiX">
+            <summary>
+            Gets the horizontal dpi of the bitmap.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Interop.InteropAdaptiveBitmap.DpiY">
+            <summary>
+            Gets the vertical dpi of the bitmap.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Interop.InteropAdaptiveBitmap.Format">
+            <summary>
+            Gets the pixel format of the bitmap data.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Interop.InteropAdaptiveBitmap.Palette">
+            <summary>
+            Gets the color palette of the bitmap, if one is specified.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Interop.InteropAdaptiveBitmap.PixelHeight">
+            <summary>
+            Gets the height of the bitmap in pixels.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.Interop.InteropAdaptiveBitmap.PixelWidth">
+            <summary>
+            Gets the width of the bitmap in pixels.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.CopyPixels(System.Array,System.Int32,System.Int32)">
+            <summary>
+            Copies the bitmap pixel data into an array of pixels with the specified stride, starting at the specified offset.
+            </summary>
+            <param name="pixels">The destination array.</param>
+            <param name="stride">The stride of the bitmap.</param>
+            <param name="offset">The pixel location where copying begins.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.CopyPixels(System.Windows.Int32Rect,System.Array,System.Int32,System.Int32)">
+            <summary>
+            Copies the bitmap pixel data within the specified rectangle into an array of pixels that has the specified stride starting at the specified offset.
+            </summary>
+            <param name="sourceRect">The source rectangle to copy. An <see cref="P:System.Windows.Int32Rect.Empty"/> value specifies the entire bitmap.</param>
+            <param name="pixels">The destination array.</param>
+            <param name="stride">The stride of the bitmap.</param>
+            <param name="offset">The pixel location where copying begins.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.CopyPixels(System.Windows.Int32Rect,System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Copies the bitmap pixel data within the specified rectangle.
+            </summary>
+            <param name="sourceRect">The source rectangle to copy. An <see cref="P:System.Windows.Int32Rect.Empty"/> value specifies the entire bitmap.</param>
+            <param name="buffer">A pointer to the buffer.</param>
+            <param name="bufferSize">The size of the buffer.</param>
+            <param name="stride">The stride of the bitmap.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.FromBitmap(System.Drawing.Bitmap)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> from the provided <see cref="T:System.Drawing.Bitmap"/>.
+            </summary>
+            <param name="bitmap">The <see cref="T:System.Drawing.Bitmap"/> that contains the bitmap data.</param>
+            <returns>The created <see cref="T:System.Windows.Media.Imaging.BitmapSource"/>.</returns>
+            <remarks>
+            The returned <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> is adaptively created from the <paramref name="bitmap"/>, using all frames and dpi info embedded within them.
+            Only frames in the <see cref="P:System.Drawing.Imaging.FrameDimension.Page"/> dimension are scanned; other dimensions are ignored.
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.FromHBitmap(System.IntPtr,System.Boolean)">
+            <summary>
+            Creates a new managed <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> from the provided pointer to an unmanaged bitmap.
+            </summary>
+            <param name="bitmap">A pointer to the unmanaged bitmap.</param>
+            <param name="destroy">true to destroy the unmanaged <paramref name="bitmap"/> before returning from this method; otherwise, false.</param>
+            <returns>The created <see cref="T:System.Windows.Media.Imaging.BitmapSource"/>.</returns>
+            <remarks>
+            The dpi of the unmanaged <paramref name="bitmap"/> is treated as system dpi. Any dpi info embedded is ignored.
+            Alpha channel is supported if the unmanaged <paramref name="bitmap"/> is a 32-bpp device independent bitmap. Premultiplied alpha is unsupported.
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.FromHBitmap(System.IntPtr,System.Boolean,System.Windows.Media.Color)">
+            <summary>
+            Creates a new managed <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> from the provided pointer to an unmanaged bitmap.
+            </summary>
+            <param name="bitmap">A pointer to the unmanaged bitmap.</param>
+            <param name="destroy">true to destroy the unmanaged <paramref name="bitmap"/> before returning from this method; otherwise, false.</param>
+            <param name="transparent">A color that is made transparent in the created <see cref="T:System.Windows.Media.Imaging.BitmapSource"/>.</param>
+            <returns>The created <see cref="T:System.Windows.Media.Imaging.BitmapSource"/>.</returns>
+            <remarks>
+            The dpi of the unmanaged <paramref name="bitmap"/> is treated as system dpi. Any dpi info embedded is ignored.
+            Alpha channel is supported if the unmanaged <paramref name="bitmap"/> is a 32-bpp device independent bitmap. Premultiplied alpha is unsupported.
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.FromIcon(System.Drawing.Icon)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> from the provided <see cref="T:System.Drawing.Icon"/>.
+            </summary>
+            <param name="icon">The <see cref="T:System.Drawing.Icon"/> that contains the bitmap data.</param>
+            <returns>The created <see cref="T:System.Windows.Media.Imaging.BitmapSource"/>.</returns>
+            <remarks>
+            The dpi of the <paramref name="icon"/> is treated as standard dpi.
+            </remarks>
+        </member>
+        <member name="M:Autodesk.Windows.Interop.InteropAdaptiveBitmap.FromResourceManager(System.Resources.ResourceManager,System.String)">
+            <summary>
+            Creates a new <see cref="T:System.Windows.Media.Imaging.BitmapSource"/> from the provided <see cref="T:System.Resources.ResourceManager"/> and resource name.
+            </summary>
+            <param name="resource">The <see cref="T:System.Resources.ResourceManager"/> that contains the bitmap data.</param>
+            <param name="name">The name of the resource that contains the bitmap data.</param>
+            <returns>The created <see cref="T:System.Windows.Media.Imaging.BitmapSource"/>.</returns>
+            <remarks>
+            <para>
+            This method retrieves bitmap data from a <see cref="T:System.Resources.ResourceManager"/>.
+            The following types of objects are supported:
+            <see cref="T:System.Drawing.Bitmap"/>, <see cref="T:System.Drawing.Icon"/>, array of <see cref="T:System.Byte"/>.
+            </para>
+            <para>
+            An adaptive bitmap need to be stored as an array of <see cref="T:System.Byte"/> in resource. Other types lead to data loss.
+            </para>
+            <para>
+            The Managed Resource Editor automatically sets the type to <see cref="T:System.Drawing.Bitmap"/> when an adaptive bitmap is added. This could be avoided in one of the following ways:
+            <list type="bullet">
+            <item>
+            <description>Before adding, change the extension name of the adaptive bitmap file to an unknown one to the editor, for example ".bin".</description>
+            </item>
+            <item>
+            <description>After adding, edit the resx file in xml mode, and change the type to Byte[]. For example:
+            <code>
+            &lt;data name="MyBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms"&gt;
+              &lt;value&gt;MyBitmap.tif;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&lt;/value&gt;
+            &lt;/data&gt;
+            </code>
+            </description>
+            </item>
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Autodesk.Windows.ScaleFactor2D">
+            <summary>
+            Represents an x and y pair of scale factors in two-dimensional space.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the structure.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="factor"/> is infinity or is not a number.</exception>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.#ctor(Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Initializes a new instance of the structure.
+            </summary>
+            <param name="factor">The scale factor.</param>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the structure.
+            </summary>
+            <param name="factorX">The X component of the scale factor.</param>
+            <param name="factorY">The Y component of the scale factor.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="factorX"/> or <paramref name="factorY"/> is infinity or is not a number.</exception>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.#ctor(Autodesk.Windows.ScaleFactor,Autodesk.Windows.ScaleFactor)">
+            <summary>
+            Initializes a new instance of the structure.
+            </summary>
+            <param name="factorX">The X component of the scale factor.</param>
+            <param name="factorY">The Y component of the scale factor.</param>
+        </member>
+        <member name="P:Autodesk.Windows.ScaleFactor2D.X">
+            <summary>
+            Gets the X component of the scale factor.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.ScaleFactor2D.Y">
+            <summary>
+            Gets the Y component of the scale factor.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.Equals(Autodesk.Windows.ScaleFactor2D)">
+            <summary>
+            Returns a value indicating whether this instance and another represent the same value.
+            </summary>
+            <param name="other">A scale factor to compare.</param>
+            <returns>true if <paramref name="other"/> is equal to this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="obj">An object to compare with this instance.</param>
+            <returns>true if <paramref name="obj"/> is an instance of <see cref="T:Autodesk.Windows.ScaleFactor2D"/> and equals the value of this instance; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.ToDouble(Autodesk.Windows.ScaleFactorReduction)">
+            <summary>
+            Converts the scale factor to the equivalent double-precision floating-point number.
+            </summary>
+            <param name="reduction">One of the <see cref="T:Autodesk.Windows.ScaleFactorReduction"/> values that specifies the reduction to use in the conversion.</param>
+            <returns>A double-precision floating-point number that is equivalent to the scale factor.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.ToScaleFactor(Autodesk.Windows.ScaleFactorReduction)">
+            <summary>
+            Converts the scale factor to the equivalent <see cref="T:Autodesk.Windows.ScaleFactor"/>.
+            </summary>
+            <param name="reduction">One of the <see cref="T:Autodesk.Windows.ScaleFactorReduction"/> values that specifies the reduction to use in the conversion.</param>
+            <returns>A <see cref="T:Autodesk.Windows.ScaleFactor"/> that is equivalent to the scale factor.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.ToString">
+            <summary>
+            Converts the scale factor to its equivalent string representation, using the conventions of the invariant culture.
+            </summary>
+            <returns>The string representation of the value of this instance.</returns>
+        </member>
+        <member name="P:Autodesk.Windows.ScaleFactor2D.One">
+            <summary>
+            Gets a scale factor whose two components are equal to one.
+            </summary>
+        </member>
+        <member name="P:Autodesk.Windows.ScaleFactor2D.Zero">
+            <summary>
+            Gets a scale factor whose two components are equal to zero.
+            </summary>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.op_Equality(Autodesk.Windows.ScaleFactor2D,Autodesk.Windows.ScaleFactor2D)">
+            <summary>
+            Returns a value that indicates whether two specified scale factors are equal.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> and <paramref name="factor2"/> are equal; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.op_Inequality(Autodesk.Windows.ScaleFactor2D,Autodesk.Windows.ScaleFactor2D)">
+            <summary>
+            Returns a value that indicates whether two specified scale factors are not equal.
+            </summary>
+            <param name="factor1">The first scale factor to compare.</param>
+            <param name="factor2">The second scale factor to compare.</param>
+            <returns>true if <paramref name="factor1"/> and <paramref name="factor2"/> are not equal; otherwise, false.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.op_Explicit(System.Double)~Autodesk.Windows.ScaleFactor2D">
+            <summary>
+            Converts the double-precision floating-point number to the equivalent scale factor.
+            </summary>
+            <param name="factor">The double-precision floating-point number.</param>
+            <returns>A scale factor that is equivalent to the double-precision floating-point number.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="factor"/> is infinity or is not a number.</exception>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.op_Explicit(Autodesk.Windows.ScaleFactor)~Autodesk.Windows.ScaleFactor2D">
+            <summary>
+            Converts the <see cref="T:Autodesk.Windows.ScaleFactor"/> to the equivalent <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.
+            </summary>
+            <param name="factor">The <see cref="T:Autodesk.Windows.ScaleFactor"/>.</param>
+            <returns>A <see cref="T:Autodesk.Windows.ScaleFactor2D"/> that is equivalent to the <see cref="T:Autodesk.Windows.ScaleFactor"/>.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.op_Explicit(Autodesk.Windows.ScaleFactor2D)~System.Double">
+            <summary>
+            Converts the scale factor to the equivalent double-precision floating-point number.
+            </summary>
+            <param name="factor">The scale factor.</param>
+            <returns>A double-precision floating-point number that is equivalent to the scale factor.</returns>
+        </member>
+        <member name="M:Autodesk.Windows.ScaleFactor2D.op_Explicit(Autodesk.Windows.ScaleFactor2D)~Autodesk.Windows.ScaleFactor">
+            <summary>
+            Converts the <see cref="T:Autodesk.Windows.ScaleFactor2D"/> to the equivalent <see cref="T:Autodesk.Windows.ScaleFactor"/>.
+            </summary>
+            <param name="factor">The <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.</param>
+            <returns>A <see cref="T:Autodesk.Windows.ScaleFactor"/> that is equivalent to the <see cref="T:Autodesk.Windows.ScaleFactor2D"/>.</returns>
+        </member>
+        <member name="T:Autodesk.Windows.ScaleFactorReduction">
+            <summary>
+            Specifies the action to take when converting a scale factor to a lower-dimensional one.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorReduction.Average">
+            <summary>
+            The result is the average of components.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorReduction.Max">
+            <summary>
+            The result is the larger of components.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorReduction.Min">
+            <summary>
+            The result is the smaller of components.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorReduction.X">
+            <summary>
+            The result is the X component.
+            </summary>
+        </member>
+        <member name="F:Autodesk.Windows.ScaleFactorReduction.Y">
+            <summary>
+            The result is the Y component.
+            </summary>
+        </member>
+    </members>
+</doc>

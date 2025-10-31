@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Arx settings"
+	InheritedPropertySheets="dbx.vsprops"
+	>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="acad.lib acedapi.lib acui17.lib adui17.lib"
+                OutputFile="$(OutDir)\$(ProjectName).arx"
+
+	/>
+</VisualStudioPropertySheet>

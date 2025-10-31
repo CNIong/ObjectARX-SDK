@@ -1,0 +1,7 @@
+
+LIBRARY      "asdkBarsWorkspace"
+
+EXPORTS
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

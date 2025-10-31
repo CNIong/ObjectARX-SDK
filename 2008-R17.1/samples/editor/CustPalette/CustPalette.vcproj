@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="AsdkCustPalette" ProjectGUID="{4774A453-18F5-42BB-A61C-98D1B145D943}" RootNamespace="AsdkCustPalette">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" GenerateStublessProxies="true" GenerateTypeLibrary="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" AdditionalUsingDirectories="" PreprocessorDefinitions=";CUSTPALETTE_MODULE;_ACRXAPP;_CRT_SECURE_NO_DEPRECATE;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib " AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" GenerateStublessProxies="true" GenerateTypeLibrary="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" AdditionalUsingDirectories="" PreprocessorDefinitions=";CUSTPALETTE_MODULE;_ACRXAPP;_CRT_SECURE_NO_DEPRECATE;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib " AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|Win32" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" GenerateStublessProxies="true" GenerateTypeLibrary="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" AdditionalUsingDirectories="" PreprocessorDefinitions="CUSTPALETTE_MODULE;_ACRXAPP;_CRT_SECURE_NO_DEPRECATE;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib " AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" GenerateStublessProxies="true" GenerateTypeLibrary="true" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc;$(IntDir)" AdditionalUsingDirectories="" PreprocessorDefinitions="CUSTPALETTE_MODULE;_ACRXAPP;_CRT_SECURE_NO_DEPRECATE;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(IntDir)" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib " AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;idl;odl">
+      <File RelativePath=".\CPalette.cpp" />
+      <File RelativePath=".\CustPalette.cpp" />
+      <File RelativePath=".\CustPalette.idl" />
+      <File RelativePath=".\DWGPreview.cpp" />
+      <File RelativePath=".\InspData.cpp" />
+      <File RelativePath=".\InspPalette.cpp" />
+      <File RelativePath=".\Palette.cpp" />
+      <File RelativePath=".\PaletteSet.cpp" />
+      <File RelativePath=".\rxdebug.cpp" />
+      <File RelativePath=".\StdAfx.cpp" />
+    </Filter>
+    <Filter Name="Include Files" Filter="h;hh;hxx">
+      <File RelativePath=".\DWGPreview.h" />
+      <File RelativePath=".\InspData.h" />
+      <File RelativePath=".\InspPalette.h" />
+      <File RelativePath=".\Palette.h" />
+      <File RelativePath=".\PaletteSet.h" />
+      <File RelativePath=".\resource.h" />
+      <File RelativePath=".\rxdebug.h" />
+      <File RelativePath=".\StdAfx.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="rc;ico;bmp;cur;jpg;gif">
+      <File RelativePath=".\CustPalette.rc" />
+    </Filter>
+    <Filter Name="Miscellaneous Files" Filter="reg;rgs;mak;clw;vsdir;vsz;css;inf;vcproj;csproj">
+      <File RelativePath=".\CustPalette.rgs" />
+      <File RelativePath=".\DWGPreview.rgs" />
+      <File RelativePath=".\InspData1.rgs" />
+    </Filter>
+  </Files>
+  <Globals />
+</VisualStudioProject>

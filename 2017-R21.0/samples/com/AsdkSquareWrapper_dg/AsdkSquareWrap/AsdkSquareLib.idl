@@ -1,0 +1,64 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2016 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+
+
+// AsdkSquareLib.idl : IDL source for AsdkSquareLib.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkSquareLib.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+    uuid(EB9E2DB2-55A0-4D59-9B3E-A791BAE008B2),
+    version(1.0),
+    helpstring("AsdkSquareLib 1.0 Type Library")
+]
+library ASDKSQUARELIBLib
+{
+    importlib("stdole32.tlb");
+    importlib("stdole2.tlb");
+    //Importing english is ok here. We don't localize this idl/tlb.
+    //axd21enu.tlb is guaranteed to be available in all locales.
+    //If you want to provide localized typelib then you must import
+    //localized tlb here.
+    importlib("axdb21enu.tlb");
+    [
+        object,
+        uuid(A30E4429-7AB8-4A18-9983-182D457A119F),
+        dual,
+        helpstring("IAsdkSquareWrapper Interface"),
+        pointer_default(unique)
+    ]
+    interface IAsdkSquareWrapper : IAcadEntity
+    {
+        [propget, id(1), helpstring("property Number")] HRESULT Number([out, retval] short *pVal);
+        [propput, id(1), helpstring("property Number")] HRESULT Number([in] short newVal);
+        [propget, id(2), helpstring("property SquareSize")] HRESULT SquareSize([out, retval] double *pVal);
+        [propput, id(2), helpstring("property SquareSize")] HRESULT SquareSize([in] double newVal);
+        [propget, id(3), helpstring("property CenterPoint")] HRESULT CenterPoint([out, retval] VARIANT *pVal);
+        [propput, id(3), helpstring("property CenterPoint")] HRESULT CenterPoint([in] VARIANT newVal);
+    };
+
+    [
+        uuid(AD1FBF15-3A1C-4448-B118-B94596AF8913),
+        helpstring("AsdkSquareWrapper Class")
+    ]
+    coclass AsdkSquareWrapper
+    {
+        [default] interface IAsdkSquareWrapper;
+        [source] interface IAcadObjectEvents;
+    };
+};
+
+

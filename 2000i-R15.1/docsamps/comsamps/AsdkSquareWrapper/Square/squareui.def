@@ -1,0 +1,7 @@
+DESCRIPTION 'Autodesk square ARX test application'
+LIBRARY     squareui
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

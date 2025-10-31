@@ -1,0 +1,94 @@
+// compoly.idl : IDL source for compoly.dll
+//
+// (C) Copyright 1998-2008 by Autodesk, Inc.
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted, 
+// provided that the above copyright notice appears in all copies and 
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting 
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to 
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+#include "compoly.hm"
+//
+// Type library section and components
+//
+[
+	uuid(60E2E250-99CE-42EB-8881-54C193F35E40),
+	version(1.0),
+	helpstring("Compoly 1.0 Type Library"),
+	helpfile("compoly.hlp")
+]
+library COMPOLYLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//Importing english is ok here. We don't localize this idl/tlb.
+	//axdb18enu.tlb is guaranteed to be available in all locales.
+	//If you want to provide localized typelib then you must import
+	//localized tlb here.
+	importlib("axdb18enu.tlb");
+
+	// This file will be processed by the MIDL tool to
+	// produce the type library (compoly.tlb) and marshalling code.
+
+	import "oaidl.idl";
+	import "ocidl.idl";
+
+	//
+	// Interfaces
+	//
+	// IComPolygon interface
+	[
+		object,
+		uuid(4EB91FA1-8DD3-4DF9-9277-E0BA3EA5361F),
+		dual,
+		helpstring("IComPolygon Interface"),
+		helpcontext(IDH_ICOMPOLYGON),
+		pointer_default(unique)
+	]
+	interface IComPolygon : IAcadEntity
+	{
+		[propget, id(1), helpstring("property TextString"),helpcontext(IDH_TEXTSTRING)] HRESULT TextString([out, retval] BSTR *pVal);
+		[propput, id(1), helpstring("property TextString"),helpcontext(IDH_TEXTSTRING)] HRESULT TextString([in] BSTR newVal);
+		[propget, id(2), helpstring("property NumSides"),helpcontext(IDH_NUMSIDES)] HRESULT NumSides([out, retval] long *pVal);
+		[propput, id(2), helpstring("property NumSides"),helpcontext(IDH_NUMSIDES)] HRESULT NumSides([in] long newVal);
+		[propget, id(3), helpstring("property Normal"),helpcontext(IDH_NORMAL)] HRESULT Normal([out, retval] VARIANT *pVal);
+		[propput, id(3), helpstring("property Normal"),helpcontext(IDH_NORMAL)] HRESULT Normal([in] VARIANT newVal);
+		[propget, id(4), helpstring("property Center"),helpcontext(IDH_CENTER)] HRESULT Center([out, retval] VARIANT *pVal);
+		[propput, id(4), helpstring("property Center"),helpcontext(IDH_CENTER)] HRESULT Center([in] VARIANT newVal);
+		[propget, id(5), helpstring("property StartPoint"),helpcontext(IDH_STARTPOINT)] HRESULT StartPoint([out, retval] VARIANT *pVal);
+		[propput, id(5), helpstring("property StartPoint"),helpcontext(IDH_STARTPOINT)] HRESULT StartPoint([in] VARIANT newVal);
+		[propget, id(6), helpstring("property TextStyleName"),helpcontext(IDH_TEXTSTYLENAME)] HRESULT TextStyleName([out, retval] BSTR *pVal);
+		[propput, id(6), helpstring("property TextStyleName"),helpcontext(IDH_TEXTSTYLENAME)] HRESULT TextStyleName([in] BSTR newVal);
+		[id(7), helpstring("method GetVertices"),helpcontext(IDH_GETVERTICES)] HRESULT GetVertices([retval, out] VARIANT* pnts);
+		[propget, id(8), helpstring("property Elevation"),helpcontext(IDH_ELEVATION)] HRESULT Elevation([out, retval] double *pVal);
+		[propput, id(8), helpstring("property Elevation"),helpcontext(IDH_ELEVATION)] HRESULT Elevation([in] double newVal);
+	};
+	//
+	// coclasses in type library
+	//
+
+	// ComPolygon coclass
+	[
+		uuid(6421F67D-6A0A-4CA4-85BA-F11A0852A656),
+		helpstring("ComPolygon Class"),
+		helpcontext(IDH_CCOMPOLYGON),
+		noncreatable
+	]
+	coclass ComPolygon 
+	{
+		[default] interface IComPolygon;
+		[source] interface IAcadObjectEvents;
+	};
+};

@@ -1,0 +1,9 @@
+; ArxDbgd.def : Declares the module parameters for the DLL.
+; for debug version
+
+LIBRARY      "ARXDBGD"
+DESCRIPTION  'ARXDBGD Windows Dynamic Link Library'
+
+EXPORTS
+	acrxGetApiVersion PRIVATE
+    acrxEntryPoint    PRIVATE

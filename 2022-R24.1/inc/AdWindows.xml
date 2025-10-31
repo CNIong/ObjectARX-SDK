@@ -1,0 +1,1249 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdWindows</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.Windows.RibbonControl">
+            <summary>This class controls the visual aspects of a ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonControl.ShowContextualTab(Autodesk.Windows.RibbonTab,System.Boolean,System.Boolean)">
+            <summary>Shows or hides the specified contextual tab.</summary>
+            <param name="tab"> Tab to show as a contextual tab.</param>
+            <param name="mergedTab"> Value indicating whether the tab should be shown as a merged contextual tab. If mergedTab is true the tab is shown as a merged contextual tab, which merges the panels of this tab to the panels of all the tabs; if false the tab is added to the list of tabs and has to be activated like any other tab.</param>
+            <param name="activate"> Value indicating whether the tab needs to be activated. If activate is true the contextual tab is displayed and also set as the active tab; if false the contextual tab is displayed but not set as the active tab. This argument is used only if mergedTab is false.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonControl.HideContextualTab(Autodesk.Windows.RibbonTab)">
+            <summary>Hides the specified contextual tab.</summary>
+            <param name="tab"> Contextual tab to hide.</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonPressImage">
+            <summary>Accesses the image that is displayed when the Application menu when it is pressed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonDisableImage">
+            <summary>Accesses the image that is displayed when the Application menu is disabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonText">
+            <summary>Accesses the text displayed on the Application menu button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.OffsetTabs">
+            <summary>Assesses whether the tabs are to offset to the right by a fixed amount.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.Tabs">
+            <summary>Accesses the tab collection in the ribbon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.OverflowButtonKeyTip">
+            <summary>Accesses the Key Tip for the ribbon overflow button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.MinimizeToggleKeyTip">
+            <summary>Accesses the Key Tip for the ribbon toggle.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.MinimizeFlyoutKeyTip">
+            <summary>Accesses the Key Tip for the ribbon flyout.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ActiveTab">
+            <summary>Accesses the active tab in the ribbon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.DisplayAppMenuButtonInRibbonVisible">
+            <summary>This is DisplayAppMenuButtonInRibbonVisible, a member of class RibbonControl.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.AreFloatingPanelsVisible">
+            <summary>Accesses whether floating panels are visible.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.AutoHideMode">
+            <summary>Accesses the ribbon auto hide mode.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonToolTip">
+            <summary>Accesses the tooltip text displayed on the Application menu button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonBackgroundBrush">
+            <summary>Accesses the background brush color applied to the Application menu button when it is enabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonHoverBackgroundBrush">
+            <summary>Accesses the background brush color applied to the Application menu button when the mouse pointer is over the button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonPressBackgroundBrush">
+            <summary>Accesses the background brush color applied to the Application menu button when it is pressed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonDisableBackgroundBrush">
+            <summary>Accesses the background brush color applied to the Application menu button when it is disabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonBackgroundImage">
+            <summary>Accesses the image that is displayed when the Application menu is enabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonControl.ApplicationMenuButtonHoverImage">
+            <summary>Accesses the image that is displayed when the Application menu when the mouse pointer is over the button.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemEventArgs">
+            <summary>Event arguments class for the RibbonItem.Initialized event.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItemEventArgs.Item">
+            <summary>Gets the ribbon item being initialized.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemSize">
+            <summary>This enum specifies the item size for ribbon items like button and label.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonSplitButtonListStyle">
+            <summary>This enum specifies the list style for a split-button drop-down list.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItem">
+            <summary>This class is used to represent all the items in a ribbon.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonItem.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class RibbonItem.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonItem.Initialized">
+            <summary>This event is fired when the ribbon item is initialized (i.e.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonItem.ResolveToolTip">
+            <summary>Resolves the tooltip.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonItem.Clone">
+            <summary>Creates a copy of the item and returns it.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonItem.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Id">
+            <summary>Gets or sets the item id.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Text">
+            <summary>Gets or sets the text of a ribbon item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Name">
+            <summary>Gets or sets the name of a ribbon item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Description">
+            <summary>Gets or sets the description text for the ribbon item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.GroupName">
+            <summary>Gets or sets the group name for the ribbon item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Highlight">
+            <summary>Gets or sets the highlight state for the ribbon item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Image">
+            <summary>Gets or sets the image to be used when the item is displayed in standard size.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.LargeImage">
+            <summary>Gets or sets the image to be used when the item is displayed in large size.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Tag">
+            <summary>Gets or sets the custom data object in the ribbon item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.ShowText">
+            <summary>Gets or sets the value indicating whether the item text is visible.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.ShowImage">
+            <summary>Gets or sets the value indicating whether the item image is visible.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.ToolTip">
+            <summary>Gets or sets an object to be used as the tooltip for the item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.IsToolTipEnabled">
+            <summary>Gets or sets the value indicating whether F1 help is enabled in the item's tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.KeyTip">
+            <summary>Gets or sets the keytip for the item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.IsVisible">
+            <summary>Gets or sets the value to indicating whether the item is visible in the ribbon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.IsEnabled">
+            <summary>Gets or sets the value indicating whether the item is enabled in the ribbon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.MinWidth">
+            <summary>Gets or sets the minimum width of the item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Width">
+            <summary>Gets or sets the width of the item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.Size">
+            <summary>Gets or sets the size with which the item is displayed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItem.IsInitialized">
+            <summary>Gets the value indicating whether this item is initialized.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemCollection">
+            <summary>This is a collection class for the RibbonItem objects.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonItemCollection.Clone">
+            <summary>Clones each item in the collection and returns a new collection containing the cloned items.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonItemCollection.CopyFrom(Autodesk.Windows.RibbonItemCollection)">
+            <summary>Clones each item from the source collection to this collection.</summary>
+            <param name="source"> Input source collection to copy from</param>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonCommandItem">
+            <summary>This class implements command support for ribbon items.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonCommandItem.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCommandItem.IsCheckable">
+            <summary>Gets or sets the value that indicates if this is a checkable item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCommandItem.IsChecked">
+            <summary>Gets or sets the value indicating the checkstate of a checkable item.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonCommandItemCollection">
+            <summary>Collection class for RibbonCommandItem objects.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonMenuItem">
+            <summary>This class is used to support hierarchical items.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonMenuItem.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonPropertyChangingEventArgs">
+            <summary>Provides data for the PropertyChanging event of all the ribbon items which support this event.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonPropertyChangedEventArgs">
+            <summary>Provides data for the PropertyChanged event of all the ribbon items which support this event.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemResizeStyles">
+            <summary>This enum is used to specify how the ribbon item should be resized to recover space when there is insufficient space in a ribbon to fit all the panels.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonSeparatorStyle">
+            <summary>This enum is used to specify the separator style for RibbonSeparator.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogCallback">
+            <summary>This delegate acts as a call back for the TaskDialog class.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogCommonButtons">
+            <summary>This enum specifies the common buttons to be displayed in the task dialog.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogResult">
+            <summary>This enum specifies the task dialog result.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogIcon">
+            <summary>This enum is a representation of standard icons to be used in main and footer areas of the task dialog.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogNotification">
+            <summary>Notification flags used in a task dialog callback.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ProgressBarState">
+            <summary>Notification flags used in a task dialog callback.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogButton">
+            <summary>Struct to specify a custom button in task dialog.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogButton.ButtonId">
+            <summary>Accesses the button id.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogButton.ButtonText">
+            <summary>Accesses the button text.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogButtonCollection">
+            <summary>This is a collection class for TaskDialogButton.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialog">
+            <summary>This class for creating a task dialog.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.TaskDialog.Show">
+            <summary>Shows itself.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.TaskDialog.Show(System.IntPtr)">
+            <summary>Shows itself in the owner window.</summary>
+            <param name="window"> The handle of the owner window that is expected to show the task dialog.</param>
+        </member>
+        <member name="M:Autodesk.Windows.TaskDialog.Show(System.IntPtr,System.Boolean&,System.Int32&)">
+            <summary>Shows itself in the owner window with the settings for verification mark checking and the default result of the radio button.</summary>
+            <param name="window"> The handle of the owner window that is expected to show the task dialog.</param>
+            <param name="verificationMarkChecked"> The flag indicates whether verification is checked.</param>
+            <param name="radioButtonResult"> Output the integer value of the default result of radio button The int value of the default result of the radio button.</param>
+            <param name="hwndOwner"> Input the handle of the owner window which is expected to show the task dialog</param>
+            <param name="verificationFlagChecked"> Output the status of the verification flag</param>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.WindowTitle">
+            <summary>Gets or sets the title of the dialog.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.WindowIcon">
+            <summary>Gets or sets the window icon to be displayed in the task dialog frame.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.EnableVerificationHandler">
+            <summary>Gets or sets the value that determines whether the verification handler should be called to check the verification state.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.MainInstruction">
+            <summary>Gets or sets the main instruction text.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.ContentText">
+            <summary>Gets or sets the content text.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.FooterText">
+            <summary>Gets or sets the footer text.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.VerificationText">
+            <summary>Gets or sets the verification check-box text.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.ExtraCheckBoxText">
+            <summary>This is ExtraCheckBoxText, a member of class TaskDialog.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.ExpandedText">
+            <summary>Gets or sets the expanded text.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.ExpandedControlText">
+            <summary>Gets or sets the text to be displayed in the control when it is expanded.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.CollapsedControlText">
+            <summary>Gets or sets the text to be displayed in a collapsed expander control.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.CommonButtons">
+            <summary>Gets or sets the common buttons displayed in the task dialog.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.MainIcon">
+            <summary>Gets or sets the main icon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.CustomMainIcon">
+            <summary>Gets or sets the custom main icon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.FooterIcon">
+            <summary>Gets or sets the footer icon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.CustomFooterIcon">
+            <summary>Gets or sets the custom footer icon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.EnableHyperlinks">
+            <summary>Gets or sets the value that determines whether hyperlinks in the text should be enabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.AllowDialogCancellation">
+            <summary>Gets or sets the flag indicating whether ESC can cancel a dialog when there is no cancel button in the dialog.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.UseCommandLinks">
+            <summary>Gets or sets the value that determines whether the custom buttons specified in the Buttons property should be displayed as command link buttons.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.UseCommandLinksNoIcon">
+            <summary>Gets or sets the value indicating whether the custom buttons specified in the Buttons property should be displayed as command link buttons without an icon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.ExpandFooterArea">
+            <summary>Gets or sets the value indicating whether the footer should be expanded when the dialog is displayed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.ExpandedByDefault">
+            <summary>Gets or sets the value that determines whether text is displayed in an expanded state when the dialog is displayed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.PositionRelativeToWindow">
+            <summary>Gets or sets the value indicating whether the task dialog should be positioned relative to the parent window.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.RightToLeftLayout">
+            <summary>Gets or sets the value that determines whether the dialog should be laid out right-to-left.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.NoDefaultRadioButton">
+            <summary>Gets or sets the value indicating whether a radio button should be selected by default.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.CanBeMinimized">
+            <summary>Gets or sets the value that determines whether the task dialog can be minimized.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.DefaultButton">
+            <summary>Gets or sets the id for the default button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.DefaultRadioButton">
+            <summary>Gets or sets the id for the default radio button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.Width">
+            <summary>Gets or sets the width of the task dialog.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.WidthInXP">
+            <summary>Gets or sets the width of the task dialog on Windows operating systems utilizing Windows XP style DPI scaling.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.Callback">
+            <summary>Gets or sets the callback for interacting with the task dialog.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.CallbackData">
+            <summary>Gets or sets the custom data to be passed to the callback functions.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialog.UseWPF">
+            <summary>This is UseWPF, a member of class TaskDialog.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.TaskDialogCallbackArgs">
+            <summary>Arguments class for TaskDialogCallback delegate.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogCallbackArgs.Notification">
+            <summary>Gets the notification of the event argument.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogCallbackArgs.ButtonId">
+            <summary>Gets the button id in the event arguments.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogCallbackArgs.Hyperlink">
+            <summary>Gets the hyperlink of the event argument.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogCallbackArgs.TimerTickCount">
+            <summary>Gets the timer tick count in the event argument.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogCallbackArgs.ExtraCheckBoxChecked">
+            <summary>This is ExtraCheckBoxChecked, a member of class TaskDialogCallbackArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.TaskDialogCallbackArgs.Expanded">
+            <summary>true if the event argument is expanded; otherwise, false.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ActiveTaskDialog">
+            <summary>This class is used to modify the displayed task dialog from a callback handler.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.ClickButton(System.Int32)">
+            <summary>Clicks a regular button.</summary>
+            <param name="buttonId"> Input ID of the clicked button</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetMarqueeProgressBar(System.Boolean)">
+            <summary>Sets the marquee progress bar to be one of two styles.</summary>
+            <param name="marquee"> Input true to set the progress bar style to the marquee progress bar, false to set the progress bar style to a regular progress bar</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetProgressBarMarquee(System.Boolean,System.UInt32)">
+            <summary>Sets the progress bar marquee.</summary>
+            <param name="startMarquee"> Input true to start the marquee progress bar</param>
+            <param name="speed"> Input the speed of the marquee</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetProgressBarState(Autodesk.Windows.ProgressBarState)">
+            <summary>Sets the progress bar state.</summary>
+            <param name="newState"> Input the new state</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetProgressBarRange(System.Int16,System.Int16)">
+            <summary>Sets the progress bar range.</summary>
+            <param name="minRange"> Input the minimum range</param>
+            <param name="maxRange"> Input the maximum range</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetProgressBarPosition(System.Int32)">
+            <summary>Sets the position of the progress bar.</summary>
+            <param name="newPosition"> Input the new position of the progress bar</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetContentText(System.String)">
+            <summary>Sets new text for the content.</summary>
+            <param name="content"> Input new content text</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.UpdateContentText(System.String)">
+            <summary>Updates the content text.</summary>
+            <param name="content"> Input new context string</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetExpandedText(System.String)">
+            <summary>Sets the expanded text.</summary>
+            <param name="sText"> Input expanded text</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.UpdateExpandedText(System.String)">
+            <summary>Updates the expanded text.</summary>
+            <param name="text"> Input the new expanded text.</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetFooterText(System.String)">
+            <summary>Sets the footer text.</summary>
+            <param name="footer"> Input new footer text</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.UpdateFooterText(System.String)">
+            <summary>Updates the footer text.</summary>
+            <param name="footer"> Input new footer text</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetMainInstruction(System.String)">
+            <summary>Sets the main instruction text.</summary>
+            <param name="mainInstruction"> Input new main instruction string</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.UpdateMainInstruction(System.String)">
+            <summary>Updates the main instruction text.</summary>
+            <param name="mainInstruction"> Input new main instruction text</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.ClickRadioButton(System.Int32)">
+            <summary>Clicks a radio button.</summary>
+            <param name="buttonId"> Input ID of the clicked radio button</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.EnableButton(System.Int32,System.Boolean)">
+            <summary>Enables or disables a regular button.</summary>
+            <param name="buttonId"> Input ID of the button to enable or disable</param>
+            <param name="enable"> Input true to enable the button, false to disable the button</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.EnableRadioButton(System.Int32,System.Boolean)">
+            <summary>Enables or disables a radio button.</summary>
+            <param name="buttonId"> Input ID of the button to enable or disable</param>
+            <param name="enable"> Input true to enable the button, false to disable the button</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.ClickVerification(System.Boolean,System.Boolean)">
+            <summary>Verifies that a click has occured.</summary>
+            <param name="checkedState"> Input true to check the verification check box, false to uncheck it</param>
+            <param name="setKeyboardFocusToCheckBox"> Input true to set the keyboard focus to check box</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.SetButtonElevationRequiredState(System.Int32,System.Boolean)">
+            <summary>Sets if button elevation is required.</summary>
+            <param name="buttonId"> Input new button ID</param>
+            <param name="elevationRequired"> Input true to elevate the button</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.UpdateMainIcon(Autodesk.Windows.TaskDialogIcon)">
+            <summary>Sets a new main icon.</summary>
+            <param name="icon"> Input new icon to set as main icon</param>
+        </member>
+        <member name="M:Autodesk.Windows.ActiveTaskDialog.UpdateFooterIcon(Autodesk.Windows.TaskDialogIcon)">
+            <summary>Updates the footer icon.</summary>
+            <param name="icon"> Input a new footer icon</param>
+        </member>
+        <member name="P:Autodesk.Windows.ActiveTaskDialog.Handle">
+            <summary>Accesses the handle to TaskDialog window.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ComponentManager">
+            <summary>The class ComponentManager is used to access and manage the global objects and component-level settings.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ComponentManager.ToolTipOpened">
+            <summary>Occurs when a tooltip is opened.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ComponentManager.ToolTipClosed">
+            <summary>Occurs when a tooltip is closed.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ComponentManager.ResourceDictionaryGettingValue">
+            <summary>This is ResourceDictionaryGettingValue, a member of class ComponentManager.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.ApplicationMenu">
+            <summary>Gets the application menu.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.FontSettings">
+            <summary>Gets the cont settings used by the ribbon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.QuickAccessToolBar">
+            <summary>Gets the Quick Access Toolbar of the application.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.IsStandardButtonBorderVisible">
+            <summary>Gets or sets whether the border for ribbon buttons is visible.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.IsCIPEnabled">
+            <summary>Gets or sets whether the Customer Involvement Program is enabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.IsRowPanelPaddingEnabled">
+            <summary>Gets or sets whether panel row padding is enabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.AreItemsTopJustifiedInVerticalRibbon">
+            <summary>Gets or sets whether items are top justified when the ribbon is displayed vertically.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.CanLargeButtonLoseTextInVerticalRibbon">
+            <summary>Gets or sets whether large buttons can lose their labels when the ribbon is displayed vertically.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.UseOriginalImageSize">
+            <summary>Gets or sets if use the original size of image resource, this property effects images in RibbonButtons, RibbonToggleButton, RibbonSplitButton, RibbonChecklistButton and RibbonMenuButton.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ComponentManager.PropogateCreateInfoCenterExceptions">
+            <summary>Gets or sets whether exceptions from the InfoCenter propagate.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemToolTipEventArgs">
+            <summary>Event arguments class for the event ComponentManager.ToolTipOpened and ToolTipClosed events.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItemToolTipEventArgs.Item">
+            <summary>Gets the ribbon item which displays the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItemToolTipEventArgs.IsFirstTime">
+            <summary>Gets a value that indicates if the tooltip is being opened for the first time.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ApplicationMenu">
+            <summary>The ApplicationMenu class is used to manage the main menu of the application.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ApplicationMenu.Opening">
+            <summary>Occurs when the application menu is about to be opened.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ApplicationMenu.SubMenuOpening">
+            <summary>Informs when a submenu on the application menu is about to be opened.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ApplicationMenu.Closing">
+            <summary>Occurs when the menu is about to be closed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenu.IsOpen">
+            <summary>Gets or sets the value indicating whether the application menu is open.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenu.IsPinned">
+            <summary>Gets or sets the value indicating whether the application menu is pinned.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenu.MenuContent">
+            <summary>Gets or sets the MenuContent object that contains the content of the menu.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.MenuContent">
+            <summary>The class MenuContent is used to manage the content of the application menu.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.MenuContent.Items">
+            <summary>Gets the collection used to generate the first-level menu items.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ApplicationMenuItem">
+            <summary>The ApplicationMenuItem class is used to manage a single menu item and its sub-menu items in a hierarchical structure in the application menu.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.ApplicationMenuItem.#ctor">
+            <summary>This is ApplicationMenuItem, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.IsSplit">
+            <summary>Gets or sets the value indicating whether or not the menu item is to be displayed as a split button type menu item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.TopListView">
+            <summary>This is TopListView, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.BottomListView">
+            <summary>This is BottomListView, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.SplitKeyTip">
+            <summary>Gets or sets the keytip for the right portion of the split button menu item which is used to open the next level menu.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.IsPinable">
+            <summary>This is IsPinable, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.IsPinned">
+            <summary>This is IsPinned, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.PinOrder">
+            <summary>This is PinOrder, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.GroupNameInternal">
+            <summary>This is GroupNameInternal, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ApplicationMenuItem.MaxDescriptionLines">
+            <summary>This is MaxDescriptionLines, a member of class ApplicationMenuItem.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ApplicationMenuItemCollection">
+            <summary>Collection class for ApplicationMenuItem objects.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.DocumentItem">
+            <summary>The DocumentItem class is used to encapsulate open and recent documents in the application menu.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.DocumentItem.Platform">
+            <summary>Gets or sets the document's platform.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.DocumentItem.DocumentItemToolTipAttributes">
+            <summary>This is DocumentItemToolTipAttributes, a member of class DocumentItem.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.DocumentItem.PreviewImage">
+            <summary>The DocumentItem class is used to encapsulate open and recent documents in the application menu.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.DocumentItemCollection">
+            <summary>Collection class for ApplicationMenuItem objects.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.DocumentGroupByItems">
+            <summary>This is record Autodesk.Windows.DocumentGroupByItems.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.DocumentItemToolTipAttributes">
+            <summary>This is record Autodesk.Windows.DocumentItemToolTipAttributes.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonButton">
+            <summary>This class is used to create a button in the ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonButton.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the button data from a source button to this button.</summary>
+            <param name="source"> Input source button to copy from</param>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonButton.MouseEntered">
+            <summary>This is MouseEntered, a member of class RibbonButton.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonButton.MouseLeft">
+            <summary>This is MouseLeft, a member of class RibbonButton.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonButton.Orientation">
+            <summary>Accesses the orientation of text and image.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonToggleButton">
+            <summary>Toggle button 
+This widget has two APIs for the toggle state:
+bool IsChecked, used for true/false state.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonToggleButton.CheckStateChanged">
+            <summary>Occurs when the IsChecked property is changed.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonList">
+            <summary>.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonList.CurrentChanging">
+            <summary>Occurs when the Current property is about to be changed.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonList.CurrentChanged">
+            <summary>Occurs when the Current property is changed.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonList.DropDownOpened">
+            <summary>This is DropDownOpened, a member of class RibbonList.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonList.DropDownClosed">
+            <summary>This is DropDownClosed, a member of class RibbonList.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonList.Items">
+            <summary>Gets the collection used to generate the drop-down list.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonList.Current">
+            <summary>Gets or sets the current item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonList.ItemTemplate">
+            <summary>Gets or sets the custom data template for the items in the list.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonList.IsGrouping">
+            <summary>Gets or sets the value that indicates whether the drop-down list should support the grouping of items.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonList.DropDownWidth">
+            <summary>Gets or sets the width of the drop-down window that is displayed when a drop-down item is opened.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonList.MaxDropDownHeight">
+            <summary>Gets or sets the maximum height of the drop-down window that is displayed when a drop-down item is opened.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonCombo">
+            <summary>This class is used to create a combo box in a ribbon.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonCombo.EditableTextChanging">
+            <summary>Occurs when the EditableText property is about to be changed.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonCombo.EditableTextChanged">
+            <summary>Occurs when the EditableText property has changed.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonCombo.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCombo.Orientation">
+            <summary>This is Orientation, a member of class RibbonCombo.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCombo.IsEditable">
+            <summary>Gets or sets the value that indicates whether the combo box text is editable.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCombo.EditableText">
+            <summary>Gets or sets the editable text in the combo box 
+This property is applicable only if IsEditable is true.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCombo.MenuItems">
+            <summary>Gets the collection used to generate the menu items in the RibbonCombo.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCombo.CommandHandler">
+            <summary>Gets or sets the command handler to be called when the RibbonCombo menu items are executed 
+The command is routed to the first command handler found while searching in the following order:
+the command handler set in the itemthe command handler set in the RibbonCombothe command handler set in the root control that contains this item (ribbon, Quick Access Toolbar, menu, or status bar)the global command handler set in ComponentManager.CommandHandler.The default value is null.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonCombo.IsVirtualizing">
+            <summary>Gets or sets a value that indicates if virtualization is enabled for the combo box.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonGallery">
+            <summary>This class is used to create a gallery in a ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonGallery.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonGallery.DisplayMode">
+            <summary>Gets or sets the display mode of the gallery.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.GalleryDisplayMode">
+            <summary>This enum is used by the RibbonGallery to control the display mode.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonLabel">
+            <summary>This class is used to add a label type item to the ribbon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonLabel.Orientation">
+            <summary>This is Orientation, a member of class RibbonLabel.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonForm">
+            <summary>This class is used to create forms in the ribbon.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonHwnd">
+            <summary>This class is used to host a Win32 control in ribbon panel.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonSeparator">
+            <summary>This class is used to support separators in a ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonSeparator.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSeparator.SeparatorStyle">
+            <summary>Gets or sets the value specifying the separator style.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonRowBreak">
+            <summary>This class is used to organize the ribbon items in a panel into multiple rows.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonRowBreak.SupportedSubPanel">
+            <summary>This is SupportedSubPanel, a member of class RibbonRowBreak.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonPanelBreak">
+            <summary>This class is used to organize a ribbon panel into main and slide-out panels.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelBreak.SupportedSubPanel">
+            <summary>This is SupportedSubPanel, a member of class RibbonPanelBreak.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonPanel">
+            <summary>The class RibbonPanel is used to store and manage the panel in a ribbon.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonPanel.HostEvent">
+            <summary>This event is used to fire events from the host application.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanel.FindItem(System.String)">
+            <summary>Searches all the ribbon items in the panel source and returns the item whose id matches the specified id.</summary>
+            <param name="sId"> Id of the ribbon item to find.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanel.FindItem(System.String,System.Boolean)">
+            <summary>Searches the ribbon items in the panel source and returns the item whose id matches the specified id.</summary>
+            <param name="id"> Id of the ribbon item to find.</param>
+            <param name="searchSubItems"> Boolean that indicates whether to search subitems on the ribbon panel.</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.Source">
+            <summary>Gets or sets the source that contains the ribbon items to be displayed by this panel.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.HighlightPanelTitleBar">
+            <summary>Accesses the highlight state for the ribbon panel's title bar.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.HighlightWhenCollapsed">
+            <summary>Accesses the collapse state for the ribbon panel when highlighted.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.IsVisible">
+            <summary>If the value is true, the panel is enabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.IsEnabled">
+            <summary>Gets or sets the value that indicates whether this panel is enabled.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.FloatingOrientation">
+            <summary>Gets or sets the orientation to be used when the panel is floating.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.Id">
+            <summary>Accesses the Id for the ribbon panel.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanel.Cookie">
+            <summary>Returns the cookie for the ribbon panel.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonPanelCollection">
+            <summary>This is a collection class for RibbonPanel.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonPanelSource">
+            <summary>The RibbonPanelSource class is used to store and manage the content of a panel in a ribbon.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonPanelSource.HostEvent">
+            <summary>This event is used to fire events from the host application.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanelSource.FindItem(System.String)">
+            <summary>Searches all the ribbon items in the panel source and returns the item whose id matches the specified id.</summary>
+            <param name="sId"> Id of the ribbon item to find.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanelSource.FindItem(System.String,System.Boolean)">
+            <summary>Searches the ribbon items in the panel source and returns the item whose id matches the specified id.</summary>
+            <param name="id"> Id of the ribbon item to find.</param>
+            <param name="searchSubItems"> Boolean that indicates whether to search subitems on the ribbon panel source.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanelSource.Clone">
+            <summary>Creates and returns a copy of the panel source.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanelSource.CopyFrom(Autodesk.Windows.RibbonPanelSource)">
+            <summary>Copies the content and properties of the panel source from the source object to this object.</summary>
+            <param name="source"> Source object to copy from.</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelSource.Id">
+            <summary>Gets or sets the id for the panel source.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelSource.Title">
+            <summary>Gets or sets the panel title.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelSource.Name">
+            <summary>Gets or sets the name of the ribbon panel.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelSource.Description">
+            <summary>Gets or sets the panel description text.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelSource.Tag">
+            <summary>Gets or sets the custom data object in the panel source.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelSource.DialogLauncher">
+            <summary>Gets or sets the command item to be used as the panel's dialog launcher.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonPanelSource.KeyTip">
+            <summary>Gets or sets the keytip for the panel.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonPanelSourceCollection">
+            <summary>Collection class for RibbonPanelSource objects.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanelSourceCollection.Clone">
+            <summary>Creates a clone of the panel source collection.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanelSourceCollection.CopyFrom(Autodesk.Windows.RibbonPanelSourceCollection)">
+            <summary>Copies the collection from source collection to this collection.</summary>
+            <param name="source"> Source collection to copy from.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonPanelSourceCollection.Find(System.String)">
+            <summary>Searches all the panel sources in this collection and returns the panel source whose id matches the specified id.</summary>
+            <param name="id"> Id of the panel source to find.</param>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonRowPanel">
+            <summary>The RibbonRowPanel class is used to create a sub-panel within a panel.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonRowPanel.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the content and propertis from the source item to this item.</summary>
+            <param name="source"> Source item to copy from.</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonRowPanel.Items">
+            <summary>Gets the collection used to store the ribbon items in the row panel.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemEnumerator">
+            <summary>The class RibbonItemEnumerator is used to recursively enumerate all the ribbon items in a panel source.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonItemEnumerator.Reset">
+            <summary>Resets the enumerator to the beginning.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonItemEnumerator.MoveNext">
+            <summary>Advances the enumerator position to the next item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonItemEnumerator.Current">
+            <summary>Gets the item at the current position of the enumerator.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemControlBase">
+            <summary>Base class for RibbonItemControl class.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonItemControl">
+            <summary>This class implements the standard support necessary for custom ribbon items.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonSpinner">
+            <summary>This class is used to create a spinner in a ribbon.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonSpinner.ValueChanged">
+            <summary>Gets or sets the current value.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonSpinner.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSpinner.Value">
+            <summary>Gets or sets the current value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSpinner.Change">
+            <summary>Gets or sets the value specifying the amount of change that occurs when the up or down spin button is pressed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSpinner.Maximum">
+            <summary>Gets or sets the maximum value of the spin range.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSpinner.Minimum">
+            <summary>Gets or sets the minimum value of the spin range.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSpinner.IsEditable">
+            <summary>Gets or sets the value that indicates whether the value is directly editable.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonTextBox">
+            <summary>This class is used to create text box in ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTextBox.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the members from the source item to this item.</summary>
+            <param name="source"> Input source item to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.Value">
+            <summary>Gets or sets the Value property.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.ImageLocation">
+            <summary>Gets or sets the location for the image that is displayed in the text box 
+ShowImage must be set to true to see the image.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.ShowImageAsButton">
+            <summary>Gets or sets the value that indicates whether the Image set in the text box should be displayed as a clickable button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.SelectTextOnFocus">
+            <summary>Gets or sets the value that indicates whether the text is selected when the text box gains focus.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.AcceptTextOnLostFocus">
+            <summary>Gets or sets the value that indicates whether edited text should be accepted when the text box loses focus before enter is pressed or the text box button is clicked.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.InvokesCommand">
+            <summary>Gets or sets the value that indicates whether the command handler needs to be invoked whenever text is changed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.Prompt">
+            <summary>Gets or sets the prompt text for the text box.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.CommandHandler">
+            <summary>Gets or sets the command handler to be called when the text is changed.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTextBox.IsEmptyTextValid">
+            <summary>Gets or sets the value that indicates whether empty text should be considered a valid value.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonImageSize">
+            <summary>This enumeration specifies the size of the image in the drop-down list box in the RibbonDropDownButton class.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonTextBoxImageLocation">
+            <summary>Values of the Autodesk.Windows.RibbonTextBoxImageLocation enumeration.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonTab">
+            <summary>The class RibbonTab is used to store and manage the contents of a ribbon tab.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonTab.Activated">
+            <summary>This event is fired when a tab becomes active tab.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonTab.Deactivated">
+            <summary>This event is fired when an active tab is deactivated and another tab is activated.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonTab.HostEvent">
+            <summary>This event is used to fire events from the host application.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTab.FindPanel(System.String)">
+            <summary>Searches the panels in this tab and returns the panel whose id matches the specified id.</summary>
+            <param name="sId"> Id of the panel to find.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTab.FindItem(System.String)">
+            <summary>Searches all the ribbon items of the panels in this tab and returns the item whose id matches the specified id.</summary>
+            <param name="sId"> Id of the ribbon item to find.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTab.FindItem(System.String,System.Boolean)">
+            <summary>Searches the ribbon items in the panels of this tab and returns the item whose id matches the specified id.</summary>
+            <param name="id"> Id of the ribbon item to find.</param>
+            <param name="searchSubItems"> Boolean that indicates whether to search subitems on the ribbon panel source.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTab.FindItem(System.String,Autodesk.Windows.RibbonPanel&)">
+            <summary>Searches all the ribbon items in the panels of this tab and returns the item whose id matches the specified id.</summary>
+            <param name="parentPanel"> Out parameter to store the panel which contains the found item.</param>
+            <param name="sId"> Id of the ribbon item to find.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTab.FindItem(System.String,Autodesk.Windows.RibbonPanel&,System.Boolean)">
+            <summary>Searches the ribbon items in the panels of this tab and returns the item whose id matches the specified id.</summary>
+            <param name="id"> Id of the ribbon item to find.</param>
+            <param name="parentPanel"> Out parameter to store the panel which contains the found item.</param>
+            <param name="searchSubItems"> Boolean that indicates whether to search subitems on the ribbon panel source.</param>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTab.Clone">
+            <summary>Creates a clone of the tab.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonTab.CopyFrom(Autodesk.Windows.RibbonTab)">
+            <summary>Copies the content and properties of the tab from the source tab to this tab.</summary>
+            <param name="source"> Source tab to copy from.</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.Title">
+            <summary>Gets or sets the tab title.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.Name">
+            <summary>Gets or sets the name of the ribbon tab.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.Description">
+            <summary>Gets or sets a description text for the tab.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.Id">
+            <summary>Gets or sets the id for the tab.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.IsVisible">
+            <summary>Gets or sets the value that indicates whether the tab is visible in the ribbon.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.IsActive">
+            <summary>Gets or sets the value that indicates whether this tab is the active tab.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.IsContextualTab">
+            <summary>Assesses whether the tab is regular tab or contextual tab.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.KeyTip">
+            <summary>Gets or sets the keytip for the tab.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.Tag">
+            <summary>Gets or sets custom data object in the tab.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.IsVisited">
+            <summary>Gets or sets whether the panel tab is visited.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonTab.Highlight">
+            <summary>Sets and gets the current highlight mode that indicates the display status of the New Badge on the upper-right corner of the ribbon tab.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonTabCollection">
+            <summary>Collection class for RibbonTab objects.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ProgressBarSource">
+            <summary>The data source of the Progress Bar widget control.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ProgressBarSource.CancelButtonPressed">
+            <summary>This is CancelButtonPressed, a member of class ProgressBarSource.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonToolTipBase">
+            <summary>This class is the base class for all the standard tooltips supported by the component.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonToolTipBase.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class RibbonToolTipBase.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.Title">
+            <summary>Gets or sets the title text for the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.Content">
+            <summary>Gets or sets the main content for the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.Image">
+            <summary>Gets or sets the image to be displayed below the main content.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.CustomContent">
+            <summary>Gets or sets the custom content.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.IsHelpEnabled">
+            <summary>Gets or sets the value that indicates whether F1 help is enabled in the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.HelpSource">
+            <summary>Gets or sets the help source.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.HelpTopic">
+            <summary>Gets or sets the help topic.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonToolTip">
+            <summary>This class implements the standard tooltip, which can be used for a ribbon, a menu, the Quick Access Toolbar, and a status bar.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonToolTipBase.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class RibbonToolTipBase.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTip.ExpandedContent">
+            <summary>Gets or sets the second-level content for the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTip.ExpandedImage">
+            <summary>Gets or sets the image to be displayed below the second-level content.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTip.IsProgressive">
+            <summary>Gets or sets the value that indicates whether the tooltip supports progressive contents display.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTip.Shortcut">
+            <summary>Gets or sets the command shortcut displayed in the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTip.Command">
+            <summary>Gets or sets the command string displayed in the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTip.Mouse">
+            <summary>Gets or sets the mouse string displayed in the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.Title">
+            <summary>Gets or sets the title text for the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.Content">
+            <summary>Gets or sets the main content for the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.Image">
+            <summary>Gets or sets the image to be displayed below the main content.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.CustomContent">
+            <summary>Gets or sets the custom content.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.IsHelpEnabled">
+            <summary>Gets or sets the value that indicates whether F1 help is enabled in the tooltip.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.HelpSource">
+            <summary>Gets or sets the help source.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonToolTipBase.HelpTopic">
+            <summary>Gets or sets the help topic.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.PreviewToolTip">
+            <summary>This class implements the standard preview tooltip, which can be used for showing preview images and properties as name-value pairs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.PreviewToolTip.IsProgressive">
+            <summary>Gets or sets the value indicating whether the tooltip supports the progressive display of contents.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.PreviewToolTip.Items">
+            <summary>Gets the collection used to store the PropertyValuePair objects.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.PropertyValuePair">
+            <summary>This class is used to store property-value pairs to be used by PreviewToolTip.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.PropertyValuePair.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class PropertyValuePair.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.PropertyValuePair.Property">
+            <summary>Gets or sets the object that represents the property name.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.PropertyValuePair.Value">
+            <summary>Gets or sets the object which represents the property value.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.PropertyValuePairCollection">
+            <summary>Collection class for PropertyValuePair objects.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonListButton">
+            <summary>This is an abstract base class for list type buttons.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonListButton.CurrentChanged">
+            <summary>Occurs when the Current property is changed.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonListButton.DropDownOpened">
+            <summary>This is DropDownOpened, a member of class RibbonListButton.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.RibbonListButton.DropDownClosed">
+            <summary>This is DropDownClosed, a member of class RibbonListButton.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonListButton.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the button data from a source button to this button.</summary>
+            <param name="source"> Input source button to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonListButton.Items">
+            <summary>Gets the collection used to generate the drop-down list.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonListButton.Current">
+            <summary>Gets or sets the current item.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonListButton.IsSplit">
+            <summary>Gets or sets the value that indicates whether the list button is to behave like a split button.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonListButton.IsSynchronizedWithCurrentItem">
+            <summary>Gets or sets the value that indicates whether the list button is synchronized with the current item from the drop-down list.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonListButton.IsGrouping">
+            <summary>Gets or sets the value that indicates whether the drop-down list supports the grouping of items.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonListButton.HighlightDropDown">
+            <summary>This is HighlightDropDown, a member of class RibbonListButton.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonSplitButton">
+            <summary>This class is used to support split buttons in a ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.RibbonSplitButton.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the button data from a source button to this button.</summary>
+            <param name="source"> Input source button to copy from</param>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSplitButton.ListStyle">
+            <summary>Gets or sets the value that indicates the style of the drop-down list.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.RibbonSplitButton.ListImageSize">
+            <summary>Gets or sets the value that specifies the size of image displayed for items in the drop-down list.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonChecklistButton">
+            <summary>This class is used to support the Checklist button in a ribbon.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonMenuButton">
+            <summary>This class is used to support the menu button in a ribbon.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.RibbonRadioButtonGroup">
+            <summary>This class is used to support radio button groups in a ribbon.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ToolBars.QuickAccessStandardCommands">
+            <summary>Specifies the standard commands supplied by the quick access toolbar.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ToolBars.QuickAccessToolBarSource">
+            <summary>The Quick Access Toolbar (QAT) is a toolbar tray containing a single toolbar that resides either in the caption bar of the application frame or in a window directly below the ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.ToolBars.QuickAccessToolBarSource.StandardCommandId(Autodesk.Windows.ToolBars.QuickAccessStandardCommands)">
+            <summary>Returns the string id of the specified standard command id.</summary>
+            <param name="commandId"> The standard command id.</param>
+        </member>
+        <member name="M:Autodesk.Windows.ToolBars.QuickAccessToolBarSource.FindStandardCommand(Autodesk.Windows.ToolBars.QuickAccessStandardCommands)">
+            <summary>Returns the ribbon item for the specified standard command id.</summary>
+            <param name="commandId"> The standard command id.</param>
+        </member>
+        <member name="M:Autodesk.Windows.ToolBars.QuickAccessToolBarSource.AddStandardItem(Autodesk.Windows.RibbonItem)">
+            <summary>Adds the specified item to the standard items collection.</summary>
+            <param name="item"> The standard item to be added to the quick access toolbar.</param>
+        </member>
+        <member name="M:Autodesk.Windows.ToolBars.QuickAccessToolBarSource.RemoveStandardItem(Autodesk.Windows.RibbonItem)">
+            <summary>Removes the specified item from the standard items collection.</summary>
+            <param name="item"> The standard item to be removed from the quick access toolbar.</param>
+        </member>
+        <member name="M:Autodesk.Windows.ToolBars.QuickAccessToolBarSource.CopyFrom(Autodesk.Windows.ToolBars.ToolBarSource)">
+            <summary>Copies the properties of the specified toolbar source to this toolbar source.</summary>
+            <param name="toolBarSource"> A Autodesk.Windows.ToolBars.ToolBarSource that contains the properties to duplicate.</param>
+        </member>
+        <member name="P:Autodesk.Windows.ToolBars.QuickAccessToolBarSource.IsMenuBarVisible">
+            <summary>Gets and sets the flag that indicates whether the menu bar is currently visible.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ToolBars.QuickAccessToolBarSource.DefaultCommands">
+            <summary>Specifies the standard commands that are included in the quick access toolbar.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ToolBars.QuickAccessToolBarTraySource">
+            <summary>Status bars are toolbar trays containing a collection with no more than 3 toolbars.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ToolBars.QuickAccessToolBarTraySource.Source">
+            <summary>Gets the quick access toolbar source for this toolbar tray.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ToolBars.StatusBarSource">
+            <summary>The StatusBarSource is the data source for a status bar.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ToolBars.StatusBarSource.OverflowPopupPlacement">
+            <summary>Gets the placement of Popup controls in StatusBar which appear on the screen.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ToolBars.StatusBarSource.CustomizeMenuPlacement">
+            <summary>Gets the placement of Customize Menu in StatusBar which appear on the screen.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ToolBars.StatusBarTraySource">
+            <summary>Status bars are toolbar trays containing a collection with no more than 3 toolbars.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ToolBars.ToolBarSource">
+            <summary>The toolbar data source.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.ToolBars.ToolBarSource.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class ToolBarSource.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ToolBars.ToolBarSource.IsShareButtonVisible">
+            <summary>Gets or sets the visibility of the Share Drawing button that is next to the Quick Access toolbar (QAT).</summary>
+        </member>
+        <member name="P:Autodesk.Windows.ToolBars.ToolBarSource.ShareButton">
+            <summary>Gets or sets the ToolBarShareButton that represents the Share Drawing button next to the Quick Access toolbar (QAT).</summary>
+        </member>
+        <member name="T:Autodesk.Windows.ToolBars.ToolBarShareButton">
+            <summary>The Share Drawing button next to the Quick Access toolbar (QAT) is a button that allows you to share a link to a copy of the current drawing, and allows the drawing to be viewed or edited in the AutoCAD web app.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.ToolBars.ToolBarShareButton.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+    </members>
+</doc>

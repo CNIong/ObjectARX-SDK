@@ -1,0 +1,22 @@
+Lab6Object
+
+Purpose: 
+=======
+
+The purpose of this lab is to create yet another custom class EmployeeEntry. 
+Instances of this class replace the xrecords created in Lab4. These objects
+simply store an AcDbObjectId, the object ID of EmployeeDetails objects 
+created in Lab5. This will enable us to iterate through all the employees 
+in the database quickly and easily. The listEmps command demonstrates this. 
+
+Steps:
+======
+
+1. You can easily model this lab after lab5Object. There are no new concepts introduced.
+   This will give you a chance to practice the skill you acquired in previous labs.
+   Copy the files of lab5Object and rename them appropriately.
+2. Create two new files-lab6ObjectEmployeeEntry.h and lab6ObjectEmployeeEntry.cpp.
+   These files will contain the definition of the new class EmployeeEntry.
+3. Follow the steps in lab5Object to define this new class.
+   It will have one data member (besides the standard version member):
+   AcDbObjectId m_idEmp;

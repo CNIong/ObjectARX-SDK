@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="ArxDbg" ProjectGUID="{CDFFD82B-8B1F-4D96-94BB-F0D9ECA2BD76}" RootNamespace="ArxDbg" Keyword="MFCProj">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories=".,.\inc,..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalLibraryDirectories="../../../lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories=".,.\inc,..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalLibraryDirectories="../../../lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories=".,.\inc,..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalLibraryDirectories="../../../lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_releasecfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories=".,.\inc,..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalLibraryDirectories="../../../lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;hpj;bat;for;f90">
+      <File RelativePath=".\AcadUtils\AcadStr.cpp" />
+      <File RelativePath=".\ArxDbg.rc" />
+      <File RelativePath=".\App\ArxDbgApp.cpp" />
+      <File RelativePath=".\App\ArxDbgAppEditorReactor.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgCloneSet.cpp" />
+      <File RelativePath=".\AdeskLogo\ArxDbgCmdAdeskLogo.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgCmdReactors.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgCmdSnoop.cpp" />
+      <File RelativePath=".\Tests\ArxDbgCmdTests.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgDatabaseReactor.cpp" />
+      <File RelativePath=".\AdeskLogo\ArxDbgDbAdeskLogo.cpp" />
+      <File RelativePath=".\AdeskLogo\ArxDbgDbAdeskLogoStyle.cpp" />
+      <File RelativePath=".\BaseClasses\ArxDbgDbDictRecord.cpp" />
+      <File RelativePath=".\BaseClasses\ArxDbgDbEntity.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgDLinkerReactor.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgDocLockWrite.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgDocumentReactor.cpp" />
+      <File RelativePath=".\Filers\ArxDbgDwgFiler.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgEdInputContextReactor.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgEditorReactor.cpp" />
+      <File RelativePath=".\App\ArxDbgEdUiContext.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgEventReactor.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgGsReactor.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgKeywordArray.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgLayoutManagerReactor.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgLongTransactionReactor.cpp" />
+      <File RelativePath=".\App\ArxDbgOptions.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgPersistentEntReactor.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgPersistentObjReactor.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgRbList.cpp" />
+      <File RelativePath=".\Filers\ArxDbgReferenceFiler.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgSelSet.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgTransactionReactor.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgTransientEntReactor.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgTransientObjReactor.cpp" />
+      <File RelativePath=".\App\ArxDbgUiDlgAboutBox.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgClassDict.cpp" />
+      <File RelativePath=".\Tests\ArxDbgUiDlgColor.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgDxf.cpp" />
+      <File RelativePath=".\Filers\ArxDbgUiDlgFilerTest.cpp" />
+      <File RelativePath=".\Ui\ArxDbgUiDlgGenericDefId.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgObjectId.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgObjState.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgReactors.cpp" />
+      <File RelativePath=".\Tests\ArxDbgUiDlgSelSet.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgServiceDict.cpp" />
+      <File RelativePath=".\Ui\ArxDbgUiDlgSplash.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgSysRegistry.cpp" />
+      <File RelativePath=".\Tests\ArxDbgUiDlgTestCurves.cpp" />
+      <File RelativePath=".\Tests\ArxDbgUiDlgWorldDraw.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiDlgXdata.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrAngle.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrAngleDef.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrBase.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrCorner.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrDist.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrDistDef.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrDouble.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrDoubleDef.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrEntity.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrInt.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrIntDef.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrKeyWord.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrKeyWordDef.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrPoint.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrString.cpp" />
+      <File RelativePath=".\Prompt\ArxDbgUiPrStringDef.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcClasses.cpp" />
+      <File RelativePath=".\TransDbClones\ArxDbgUiTdcCloneSet.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcCmds.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcDatabase.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcDbObjectBase.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcDict.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcDocs.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcEntities.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcHostAppSrv.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcIdMap.cpp" />
+      <File RelativePath=".\TransDbClones\ArxDbgUiTdcInsert.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcLongTrans.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcObjects.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgUiTdcObjReactorsBase.cpp" />
+      <File RelativePath=".\App\ArxDbgUiTdcOptions.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgUiTdcPersistentReactors.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcReferences.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcRxObjectBase.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdcSymTbl.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgUiTdcSysReactors.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgUiTdcTransientReactors.cpp" />
+      <File RelativePath=".\TransDbClones\ArxDbgUiTdcWblockClone.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdmDatabase.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdmEditor.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdmEntities.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdmIdMap.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdmLongTrans.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdmObjects.cpp" />
+      <File RelativePath=".\Reactors\ArxDbgUiTdmReactors.cpp" />
+      <File RelativePath=".\Snoop\ArxDbgUiTdmReferences.cpp" />
+      <File RelativePath=".\TransDbClones\ArxDbgUiTdmTransDbClones.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgUtilsAcadUi.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgUtilsDb.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgUtilsDict.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgUtilsGe.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgUtilsSymTbl.cpp" />
+      <File RelativePath=".\Tests\ArxDbgWorldDraw.cpp" />
+      <File RelativePath=".\AcadUtils\ArxDbgXdata.cpp" />
+      <File RelativePath=".\Tests\EntMakeTest.cpp" />
+      <File RelativePath=".\Tests\MapTest.cpp" />
+      <File RelativePath=".\MfcExt\SdStrList.cpp" />
+      <File RelativePath=".\AcadUtils\SdStrObjId.cpp" />
+      <File RelativePath=".\AcadUtils\SdSysVar.cpp" />
+      <File RelativePath=".\StdAfx.cpp">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+      </File>
+      <File RelativePath=".\Tests\TblMakeTest.cpp" />
+      <File RelativePath=".\MfcExt\UiUtils.cpp" />
+      <File RelativePath=".\Tests\XformTest.cpp" />
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;fi;fd">
+      <File RelativePath=".\Inc\AcadStdafx.h" />
+      <File RelativePath=".\Inc\AcadStr.h" />
+      <File RelativePath=".\Inc\ArxDbgApp.h" />
+      <File RelativePath=".\Inc\ArxDbgAppEditorReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgCmd.h" />
+      <File RelativePath=".\Inc\ArxDbgCmdAdeskLogo.h" />
+      <File RelativePath=".\Inc\ArxDbgCmdReactors.h" />
+      <File RelativePath=".\Inc\ArxDbgCmdSnoop.h" />
+      <File RelativePath=".\Inc\ArxDbgCmdTests.h" />
+      <File RelativePath=".\Inc\ArxDbgDatabaseReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgDbAdeskLogo.h" />
+      <File RelativePath=".\Inc\ArxDbgDbAdeskLogoStyle.h" />
+      <File RelativePath=".\Inc\ArxDbgDbDictRecord.h" />
+      <File RelativePath=".\Inc\ArxDbgDbEntity.h" />
+      <File RelativePath=".\Inc\ArxDbgDlgColor.h" />
+      <File RelativePath=".\Inc\ArxDbgDLinkerReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgDocumentReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgDwgFiler.h" />
+      <File RelativePath=".\Inc\ArxDbgEdInputContextReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgEditorReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgEdUiContext.h" />
+      <File RelativePath=".\Inc\ArxDbgEventReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgGsReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgKeywordArray.h" />
+      <File RelativePath=".\Inc\ArxDbgLayoutManagerReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgLongTransactionReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgPersistentEntReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgPersistentObjReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgRbList.h" />
+      <File RelativePath=".\Inc\ArxDbgSelSet.h" />
+      <File RelativePath=".\Inc\ArxDbgTransactionReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgTransientEntReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgTransientObjReactor.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgAboutBox.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgClassDict.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgColor.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgDxf.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgFilerTest.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgGenericDefId.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgObjState.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgReactors.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgServiceDict.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgSplash.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgSysRegistry.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgTestCurves.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgWorldDraw.h" />
+      <File RelativePath=".\Inc\ArxDbgUiDlgXdata.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrAngle.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrAngleDef.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrBase.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrCorner.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrDist.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrDistDef.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrDouble.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrDoubleDef.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrEntity.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrInt.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrIntDef.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrKeyWord.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrKeyWordDef.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrompts.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrPoint.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrString.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPrStringDef.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPsDatabase.h" />
+      <File RelativePath=".\Inc\ArxDbgUiPsEntities.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcClasses.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcCmds.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcDatabase.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcDbObjectBase.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcDict.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcDocs.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcEntities.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcIdMap.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcLongTrans.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcObjects.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcObjReactorsBase.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcOptions.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcPersistentReactors.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcRxObjectBase.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcSymTbl.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcSysReactors.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdcTransientReactors.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdmDatabase.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdmEditor.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdmEntities.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdmIdMap.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdmLongTrans.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdmObjects.h" />
+      <File RelativePath=".\Inc\ArxDbgUiTdmReactors.h" />
+      <File RelativePath=".\Inc\ArxDbgUtils.h" />
+      <File RelativePath=".\Inc\ArxDbgUtilsGe.h" />
+      <File RelativePath=".\Inc\ArxDbgWorldDraw.h" />
+      <File RelativePath=".\Inc\ArxDbgXdata.h" />
+      <File RelativePath=".\Inc\EntMakeTest.h" />
+      <File RelativePath=".\Inc\ExtDwgDbox.h" />
+      <File RelativePath=".\Inc\FilerTestDbox.h" />
+      <File RelativePath=".\Inc\MapTest.h" />
+      <File RelativePath=".\Res_ArxDbg.h" />
+      <File RelativePath=".\Inc\SdStrList.h" />
+      <File RelativePath=".\Inc\SdStrObjId.h" />
+      <File RelativePath=".\Inc\SdSysVar.h" />
+      <File RelativePath=".\StdAfx.h" />
+      <File RelativePath=".\Inc\TblMakeTest.h" />
+      <File RelativePath=".\Inc\XformTest.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe">
+      <File RelativePath=".\res\ArxDbg.rc2" />
+      <File RelativePath=".\res\arxdbg_b.bmp" />
+      <File RelativePath=".\res\dwg.bmp" />
+      <File RelativePath=".\res\splash.bmp" />
+    </Filter>
+    <Filter Name="Libraries" Filter=".lib" />
+  </Files>
+  <Globals />
+</VisualStudioProject>

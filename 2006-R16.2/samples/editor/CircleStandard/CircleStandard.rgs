@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'CircleStandard'
+		'CircleStandard.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

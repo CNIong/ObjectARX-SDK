@@ -1,0 +1,8 @@
+; (C) Copyright 1998 by Autodesk, Inc.
+;
+DESCRIPTION 'Autodesk AsdkComAccess ARX test application'
+LIBRARY     AsdkPlainComDocSamp
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

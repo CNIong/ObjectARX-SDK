@@ -1,0 +1,27 @@
+HKCR
+{
+	QuickProperties.MyEntityDynProp2.1 = s 'MyEntityDynProp2 Class'
+	{
+		CLSID = s '{2682063C-A488-4817-B93C-5231C054D752}'
+	}
+	QuickProperties.MyEntityDynProp2 = s 'MyEntityDynProp2 Class'
+	{
+		CLSID = s '{2682063C-A488-4817-B93C-5231C054D752}'
+		CurVer = s 'QuickProperties.MyEntityDynProp2.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {2682063C-A488-4817-B93C-5231C054D752} = s 'MyEntityDynProp2 Class'
+		{
+			ProgID = s 'QuickProperties.MyEntityDynProp2.1'
+			VersionIndependentProgID = s 'QuickProperties.MyEntityDynProp2'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{F89DCF73-645B-47C5-A505-2EEA8CA013B0}'
+		}
+	}
+}

@@ -1,0 +1,10 @@
+:Base ASEmain.hlp>main
+:Index AutoCAD SQL Environment and Link C++ Developer's Guide=ASEmain.hlp
+:Title AutoCAD SQL Environment and Link C++ Developer's Guide
+1 AutoCAD SQL Environment and Link C++ Developer's Guide
+2 General Information=ASE C++ Developers Guide
+2 CAseApiObj class=CAseApiObj
+2 CAseAppl class=CAseAppl
+2 CAseLinkPath class=CAseLinkPath
+2 CAseLink class=CAseLink
+2 CAseLinkSel class=CAseLinkSel

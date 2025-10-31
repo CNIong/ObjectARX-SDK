@@ -1,0 +1,47 @@
+HKLM
+{
+    NoRemove 'SOFTWARE'
+    {
+        NoRemove 'Autodesk'
+        {
+            NoRemove 'AutoCAD'
+            {
+                NoRemove 'R15.0'
+                {
+                    NoRemove '%AUTH%'
+                    {
+                        NoRemove 'AutodeskApps'
+                        {
+                            NoRemove 'AcadDC'
+                            {
+                                NoRemove 'Extensions'
+                                {
+                                    ForceRemove '.dwf'
+                                    {
+                                        val CLSID = s '{12A96FD3-36AA-11D2-B730-444553540001}'
+                                        val IconIndex = d '0'
+                                    }
+                                }
+                                NoRemove 'Applications'
+                                {
+                                    ForceRemove 'DesignCtrSampleObject'
+                                    {
+                                        'Extensions'
+                                        {
+                                            .dwf
+                                            {
+                                                val CLSID = s '{12A96FD3-36AA-11D2-B730-444553540001}'
+                                                val IconIndex = d '0'
+                                            }
+                                        }
+                                        CustomView = s 'Yes'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

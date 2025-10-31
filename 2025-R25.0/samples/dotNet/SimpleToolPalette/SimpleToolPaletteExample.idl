@@ -1,0 +1,60 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(EFF6F3A8-A838-4F83-AA9E-506E3CD1D59B),
+    dual,
+    nonextensible,
+    pointer_default(unique)
+]
+interface ISimpleTool : IDispatch {
+    [id(0x00000001), propget]
+    HRESULT CmdName([out, retval] BSTR* pRetVal);
+    [id(0x00000001), propput]
+    HRESULT CmdName([in] BSTR pRetVal);
+    [id(0x00000002), propget]
+    HRESULT Flyout([out, retval] BSTR* pRetVal);
+    [id(0x00000002), propput]
+    HRESULT Flyout([in] BSTR pRetVal);
+    [id(0x00000003), propget]
+    HRESULT StartX([out, retval] double* pRetVal);
+    [id(0x00000003), propput]
+    HRESULT StartX([in] double pRetVal);
+    [id(0x00000004), propget]
+    HRESULT StartY([out, retval] double* pRetVal);
+    [id(0x00000004), propput]
+    HRESULT StartY([in] double pRetVal);
+    [id(0x00000005), propget]
+    HRESULT StartZ([out, retval] double* pRetVal);
+    [id(0x00000005), propput]
+    HRESULT StartZ([in] double pRetVal);
+    [id(0x00000006), propget]
+    HRESULT EndX([out, retval] double* pRetVal);
+    [id(0x00000006), propput]
+    HRESULT EndX([in] double pRetVal);
+    [id(0x00000007), propget]
+    HRESULT EndY([out, retval] double* pRetVal);
+    [id(0x00000007), propput]
+    HRESULT EndY([in] double pRetVal);
+    [id(0x00000008), propget]
+    HRESULT EndZ([out, retval] double* pRetVal);
+    [id(0x00000008), propput]
+    HRESULT EndZ([in] double pRetVal);
+};
+
+[
+    uuid(E91A6215-3DDB-40CE-88A5-171AF66D7CF9),
+    version(2.0),
+]
+library SimpleToolPaletteExample
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(ADB8A9F8-E340-429E-BC10-1FE38D69A2D3)
+    ]
+    coclass SimpleTool
+    {
+        [default] interface ISimpleTool;
+    };
+};

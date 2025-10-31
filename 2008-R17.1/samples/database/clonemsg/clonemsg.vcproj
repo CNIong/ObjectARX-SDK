@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="clonemsg" ProjectGUID="{71A82960-0F86-4FBA-A490-DE294ABAA239}" RootNamespace="clonemsg">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="NOD SoftPointer|Win32" OutputDirectory=".\NoDSoft" IntermediateDirectory=".\NoDSoft" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;NOD;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="NOD SoftPointer|x64" OutputDirectory=".\$(PlatformName)\NoDSoft" IntermediateDirectory=".\$(PlatformName)\NoDSoft" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;NOD;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="ExtDict HardPointer|Win32" OutputDirectory=".\ExtDHard" IntermediateDirectory=".\ExtDHard" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;HARDPOINTER;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="ExtDict HardPointer|x64" OutputDirectory=".\$(PlatformName)\ExtDHard" IntermediateDirectory=".\$(PlatformName)\ExtDHard" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;HARDPOINTER;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="NOD HardPointer|Win32" OutputDirectory=".\NoDHard" IntermediateDirectory=".\NoDHard" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;NOD;HARDPOINTER;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="NOD HardPointer|x64" OutputDirectory=".\$(PlatformName)\NoDHard" IntermediateDirectory=".\$(PlatformName)\NoDHard" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;NOD;HARDPOINTER;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Direct|Win32" OutputDirectory=".\Direct" IntermediateDirectory=".\Direct" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;DIRECT;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Direct|x64" OutputDirectory=".\$(PlatformName)\Direct" IntermediateDirectory=".\$(PlatformName)\Direct" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;DIRECT;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="ExtDict SoftPointer|Win32" OutputDirectory=".\ExtDSoft" IntermediateDirectory=".\ExtDSoft" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="ExtDict SoftPointer|x64" OutputDirectory=".\$(PlatformName)\ExtDSoft" IntermediateDirectory=".\$(PlatformName)\ExtDSoft" ConfigurationType="2" InheritedPropertySheets="..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\inc" PreprocessorDefinitions=";ACRXAPP;XLATE;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acad.lib acdb17.lib rxapi.lib acedapi.lib acge17.lib" AdditionalLibraryDirectories="..\..\..\lib" ModuleDefinitionFile="..\..\..\inc\AcRxDefault.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;for;f90">
+      <File RelativePath=".\arxutils.cpp" />
+      <File RelativePath=".\edreact.cpp" />
+      <File RelativePath=".\main.cpp" />
+      <File RelativePath=".\MkrEnti.cpp" />
+      <File RelativePath=".\MKROBJE.cpp" />
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;fi;fd">
+      <File RelativePath=".\arxutils.h" />
+      <File RelativePath=".\edreact.h" />
+      <File RelativePath=".\main.h" />
+      <File RelativePath=".\MkrEnti.h" />
+      <File RelativePath=".\MKROBJE.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe" />
+  </Files>
+  <Globals />
+</VisualStudioProject>

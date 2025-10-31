@@ -1,0 +1,86 @@
+//
+//
+// (C) Copyright 2003-2006 by Autodesk, Inc.
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appears in all copies and
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS.
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC.
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+//
+// SimpleToolPalette.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (asdkSimpleToolPalette.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(6A66F831-FF1C-4F09-93BE-397EECB21BE7),
+	dual,
+	nonextensible,
+	helpstring("ISimpleTool Interface"),
+	pointer_default(unique)
+]
+interface ISimpleTool : IDispatch{
+	[propget, id(1), helpstring("property CmdName")] HRESULT CmdName([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("property CmdName")] HRESULT CmdName([in] BSTR newVal);
+	[propget, id(2), helpstring("property Flyout")] HRESULT Flyout([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("property Flyout")] HRESULT Flyout([in] BSTR newVal);
+	[propget, id(3), helpstring("property StartX")] HRESULT StartX([out, retval] DOUBLE* pVal);
+	[propput, id(3), helpstring("property StartX")] HRESULT StartX([in] DOUBLE newVal);
+	[propget, id(4), helpstring("property StartY")] HRESULT StartY([out, retval] DOUBLE* pVal);
+	[propput, id(4), helpstring("property StartY")] HRESULT StartY([in] DOUBLE newVal);
+	[propget, id(5), helpstring("property StartZ")] HRESULT StartZ([out, retval] DOUBLE* pVal);
+	[propput, id(5), helpstring("property StartZ")] HRESULT StartZ([in] DOUBLE newVal);
+	[propget, id(6), helpstring("property EndX")] HRESULT EndX([out, retval] DOUBLE* pVal);
+	[propput, id(6), helpstring("property EndX")] HRESULT EndX([in] DOUBLE newVal);
+	[propget, id(7), helpstring("property EndY")] HRESULT EndY([out, retval] DOUBLE* pVal);
+	[propput, id(7), helpstring("property EndY")] HRESULT EndY([in] DOUBLE newVal);
+	[propget, id(8), helpstring("property EndZ")] HRESULT EndZ([out, retval] DOUBLE* pVal);
+	[propput, id(8), helpstring("property EndZ")] HRESULT EndZ([in] DOUBLE newVal);
+};
+[
+	uuid(6266914E-3278-4CDC-995E-5D6AE19EEF20),
+	version(1.0),
+	helpstring("asdkSimpleToolPalette 1.0 Type Library")
+]
+library asdkSimpleToolPaletteLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//----- If the following import fails then it means that the type library 
+	//----- is not on the system path you can fix the problem in two ways:
+	//----- 1. Add it to the system wide PATH environment variable
+	//----- 2. Add it to the executable file list in Developer Studio. You can do
+	//----- this in using the Tools/Option menu and then choosing the 'Directories'
+	//----- tab and finally typing the full path at the Executable files section.
+
+	//----- Importing english is ok here. Autodesk doesn't localize this idl/tlb.
+	//----- axdb18enu.tlb is guaranteed to be available in all locales.
+	//----- If you want to provide localized typelib then you must import
+	//----- localized tlb here.
+	importlib("axdb18enu.tlb");
+	[
+		uuid(722DCAC8-71E1-4F61-85EC-39981C65FC4A),
+		helpstring("SimpleTool Class")
+	]
+	coclass SimpleTool
+	{
+		[default] interface ISimpleTool;
+	};
+};

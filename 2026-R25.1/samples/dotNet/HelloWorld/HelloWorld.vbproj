@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HelloWorld</RootNamespace>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblySearchPaths>..\..\..\inc\;..\..\..\inc-x64;$(AssemblySearchPaths)</AssemblySearchPaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcDbMgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="accoremgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop.Common">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

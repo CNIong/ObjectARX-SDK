@@ -1,0 +1,8 @@
+; SimpleDynProps.def : Declares the module parameters.
+
+; (C) Copyright 1998 by Autodesk, Inc.
+LIBRARY      "SimpleDynProps.arx"
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

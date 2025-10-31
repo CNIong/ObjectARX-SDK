@@ -1,0 +1,70 @@
+// SmileyUiCom.idl : IDL source for AsdkSmileyUiCom.dll
+//
+// (C) Copyright 2000 by Autodesk, Inc.
+
+//
+// Type library section and components
+//
+[
+	uuid(066DA290-CC00-11D2-B585-0010A401A37F),
+	version(1.0),
+	helpstring("SmileyUi 1.0 Type Library")
+]
+library SmileyUi
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//
+	// Boiler plate interfaces and constants used in ACAD.TLB
+	//
+	importlib("axdb15.tlb");
+
+	// This file will be processed by the MIDL tool to
+	// produce the type library (AsdkSmileyDbCom.tlb) and marshalling code.
+
+	import "oaidl.idl";
+	import "ocidl.idl";
+
+	//
+	// _ISmileyApplicationEvents interface
+	[
+		uuid(066DA2A4-CC00-11D2-B585-0010A401A37F),
+		helpstring("_ISmileyApplicationEvents Interface")
+	]
+	dispinterface _ISmileyApplicationEvents
+	{
+		properties:
+		methods:
+	};
+
+	//
+	// ISmileyApplication interface
+	[
+		object,
+		uuid(066DA2A3-CC00-11D2-B585-0010A401A37F),
+		dual,
+		helpstring("ISmileyApplication Interface"),
+		pointer_default(unique)
+	]
+	interface ISmileyApplication : IDispatch
+	{
+		[id(1), helpstring("Create a Smiley entity")] HRESULT CreateSmiley();
+	};
+
+	//
+	// coclasses in type library
+	//
+
+	// SmileyApplication coclass
+	[
+		uuid(88870444-C4D8-11D2-B579-0010A401A3C5),
+		helpstring("SmileyApplication Class")
+	]
+	coclass SmileyApplication
+	{
+		[default] interface ISmileyApplication;
+		[default, source] dispinterface _ISmileyApplicationEvents;
+	};
+};
+

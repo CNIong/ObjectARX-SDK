@@ -1,0 +1,44 @@
+HKCR
+{
+	BoltWrapper.Bolt.1 = s 'Bolt Class'
+	{
+		CLSID = s '{9CB206D1-6D16-4514-B1FA-536B34CF5D74}'
+	}
+	BoltWrapper.Bolt = s 'Bolt Class'
+	{
+		CLSID = s '{9CB206D1-6D16-4514-B1FA-536B34CF5D74}'
+		CurVer = s 'BoltWrapper.Bolt.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {9CB206D1-6D16-4514-B1FA-536B34CF5D74} = s 'Bolt Class'
+		{
+			ProgID = s 'BoltWrapper.Bolt.1'
+			VersionIndependentProgID = s 'BoltWrapper.Bolt'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{1B890088-8B56-4128-A6BD-AC855459FB0C}'
+		}
+	}
+}
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Autodesk
+		{
+			NoRemove ObjectDBX
+			{
+				NoRemove R17.1
+				{
+					NoRemove ActiveXCLSID
+					{
+						val AsdkBolt = s '{9CB206D1-6D16-4514-B1FA-536B34CF5D74}'
+					}
+				}				
+			}
+		}
+	}
+}

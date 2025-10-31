@@ -1,0 +1,116 @@
+Lab3
+
+Purpose: 
+=======
+
+In this lab, we will experiment with tables. We will learn how to add 
+a new entry to the LAYER and BLOCK table, and we will see
+how to iterate through the model space block table record.
+
+
+Steps:
+=====
+
+1. Start with the results of Lab2. You may keep or remove the addline command
+   defined in that lab.
+
+2. Add two new commands, "create" and "setLayer", to AutoCAD.
+   Use the command group OARX_LAB3.
+   Don't forget to remove this command group when your application is unloaded.
+
+   The create command will create a new layer named "USER"
+   and a new block table record named "EMPLOYEE" in the current database
+   (the database currently loaded in the AutoCAD graphic editor).
+
+   The setLayer command will find all the instances of the block "Employee" in the
+   drawing, and will change their layer to the "USER" layer.
+
+3. In lab3Utils.cpp, implement the function:
+   Acad::ErrorStatus createLayer(/*[in]*/const char* layerName, /*[out]*/
+   AcDbObjectId& id), which will add a layer of the given name to the layer table. 
+   This function will be called by the create command.
+   The second argument of the function is the object ID of the new layer
+   or of an existing layer with the same name. This function should first
+   check if a layer with the same name already exists in the database.
+
+3a. The first step is to check whether a layer of the same name already exists. To do so,
+    we need to get the layer table (AcDbLayerTable) of the current database
+    (AcDbDatabase), and determine if it contains an entry of the same name.
+    If a layer of the same name already exists, we get its object ID and return it using
+    the second argument of our createLayer function.
+
+3b. If the layer does not already exist, we have to create it and add it to the layer table.
+    Therefore, the layer table will need to be opened for write.
+    We will return the object ID of the newly created layer--after it has
+    been closed, of course.
+
+4. In lab3Main.cpp, implement the function:
+   Acad::ErrorStatus createBlockRecord(/*[in]*/const char* name),
+   which will create a block table record named "EMPLOYEE" in the block table.
+   The function should first check to see if a block of the same name already exists,
+   in which case it should exit.
+
+   The new block definition will represent a "happy face" composed of 3 circles
+   (the face and the two eyes), and an arc (the mouth).
+
+   To facilitate the work, here are the values you should use to represent
+   a reasonable "happy face":
+       - the block table record should have an origin point of 0,0,0
+       - the circle "face" should be centered on 0,0,0 with a radius of 1
+       - the circle "left eye" should be centered on 0.33,0.25,0 with a radius of 0.1
+       - the circle "right eye" should be centered on -0.33,0.25,0 with a radius of 0.1
+       - the arc "mouth" should be centered on 0,0.5,0 with a starting angle of 
+         PI+(PI*0.3) and an ending angle of PI+(PI*0.7)
+
+   The main difficulty here is to have proper error checking. In case of error,
+   all objects created and appended to the database should be closed, and all objects
+   created and not appended to the database should be deleted.
+
+   Two implementations of lab3Main.cpp are presented in the solution, one using
+   try and catch blocks for error handling.
+
+4a. First check to see if a block of the same name already exists in the block table.
+    If it does, exit with the appropriate error status.
+
+4b. If the block does not exist already, we create it (AcDbBlockTableRecord),
+    set its name, set its origin, and add it to the block table.
+    At this point, the block table record is empty.
+
+4c. Now we need to create the entities to append to the new block table record.
+    These are three circles (AcDbCircle) and an arc (AcDbArc) with the above
+    characteristics.
+
+4d. Finally, we need to append the entities to the block table record.
+    Do not forget to close everything you opened or created.
+
+
+5. In lab3Main.cpp, implement the function:
+   void setInsertLayer(), which will search for all the references to the
+   block EMPLOYEE in MODEL SPACE and change their current
+   layer to the "USER" layer we created.
+   This function will be called by the setLayer command.
+
+   To achieve this, we will need to:
+
+5a. - open the block table of the current database
+5b. - get the MODEL SPACE block table record
+5c. - obtain a block table record iterator (AcDbBlockTableRecordIterator)
+        to iterate through the MODEL SPACE block table record.
+    - use the iterator to:
+5d.        - scan all the entities within MODEL SPACE
+5e.        - check to see if they are of type AcDbBlockReference and refer to
+             the EMPLOYEE block table record
+             To determine whether the entity is an instance of AcDbBlockReference, 
+	     you'll use:
+             pEnt->isA() != AcDbBlockReference::desc(),
+             where pEnt is an AcDbEntity pointer.
+             We will see the details of the run-type identification mechanism later.
+
+5f. - If yes, change their layer to "USER."
+
+
+Testing Your Application in AutoCAD:
+====================================
+
+Build the application and run the CREATE command in a new drawing, then use AutoCAD's INSERT command to add one or more instances of the EMPLOYEE block on layer 0. After creating the inserts, run the SETLAYER command to change the insert entities' layer to USER.
+

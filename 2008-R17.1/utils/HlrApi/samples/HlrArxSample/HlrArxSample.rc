@@ -1,0 +1,177 @@
+//Microsoft Developer Studio generated resource script.
+//
+// (C) Copyright 2005-2006 by Autodesk, Inc.
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "HlrArxSample ObjectARX application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "HlrArxSample\0"
+            VALUE "LegalCopyright", "Copyright 1999\0"
+            VALUE "OriginalFilename", "AsdkHlrArxSample.arx\0"
+            VALUE "ProductName", "HlrArxSample Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONTROLS DIALOG DISCARDABLE  0, 0, 172, 185
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Controls"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    GROUPBOX        "&Controls",IDC_STATIC,7,7,158,113
+    CONTROL         "k&Project",IDC_PROJECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,20,42,10
+    CONTROL         "k&ShowAll",IDC_SHOWALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,32,45,10
+    CONTROL         "k&Entity",IDC_ENTITY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,44,37,10
+    CONTROL         "k&Block",IDC_BLOCK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,56,38,10
+    CONTROL         "kSube&ntity",IDC_SUBENTITY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,68,49,10
+    CONTROL         "kHide&Tangents",IDC_HIDETANGENTS,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,15,80,65,10
+    CONTROL         "k&Cleanup",IDC_CLEANUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,92,46,10
+    CONTROL         "k&Isolines",IDC_ISOLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,91,20,43,10
+    CONTROL         "k&Unite",IDC_UNITE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,91,32,37,10
+    CONTROL         "k&Reuse",IDC_REUSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,91,44,41,10
+    CONTROL         "kProgres&s",IDC_PROGRESS,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,91,56,47,10
+    CONTROL         "kHandle&Points",IDC_HANDLEPOINTS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,91,68,62,10
+    CONTROL         "kProcess&All",IDC_PROCESSALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,91,80,53,10
+    CONTROL         "kHonorInternals",IDC_HONORINTERNALS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,91,93,66,10
+    CONTROL         "kMeshSilhouettes",IDC_MESHSILHOUETTES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,91,106,72,10
+    EDITTEXT        IDC_EDIT,7,124,158,29,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    DEFPUSHBUTTON   "OK",IDOK,32,164,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,89,164,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 165
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROJNAME            "HlrArxSample"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

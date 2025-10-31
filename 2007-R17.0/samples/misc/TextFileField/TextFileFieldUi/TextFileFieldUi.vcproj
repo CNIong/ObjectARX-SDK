@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?><VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="TextFileFieldUI" ProjectGUID="{54A0035E-AAB2-40DF-9F64-E949CDF64995}">
+	<Platforms>
+		<Platform Name="Win32"></Platform>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="Debug" IntermediateDirectory="Debug" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="2" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" Optimization="0" AdditionalIncludeDirectories="..\..\..\..\inc" PreprocessorDefinitions="WIN32;_WINDOWS;;TEXTFILEFIELDUI_MODULE;_AFXEXT;_ACRXAPP" StringPooling="false" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="2" BufferSecurityCheck="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" RuntimeTypeInfo="true" UsePrecompiledHeader="0" WarningLevel="1" Detect64BitPortabilityProblems="true" DebugInformationFormat="4"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="AcFdUi.lib" OutputFile="$(outdir)/AsdkTextFileFieldUI.arx" LinkIncremental="2" AdditionalLibraryDirectories="..\..\..\..\lib" LinkDLL="true" ModuleDefinitionFile="..\..\..\..\inc\AcRxDefault.def" GenerateDebugInformation="true" ProgramDatabaseFile="$(OutDir)/TextFileFieldUI.pdb" SubSystem="2" ImportLibrary="$(OutDir)/TextFileFieldUI.lib" TargetMachine="1"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory="Release" IntermediateDirectory="Release" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="2" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"></Tool>
+			<Tool Name="VCCustomBuildTool"></Tool>
+			<Tool Name="VCXMLDataGeneratorTool"></Tool>
+			<Tool Name="VCWebServiceProxyGeneratorTool"></Tool>
+			<Tool Name="VCMIDLTool"></Tool>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" Optimization="2" AdditionalIncludeDirectories="..\..\..\..\inc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;TEXTFILEFIELDUI_MODULE;_AFXEXT;_ACRXAPP" StringPooling="true" MinimalRebuild="false" BasicRuntimeChecks="0" RuntimeLibrary="2" BufferSecurityCheck="true" TreatWChar_tAsBuiltInType="true" ForceConformanceInForLoopScope="true" RuntimeTypeInfo="true" UsePrecompiledHeader="0" WarningLevel="1" Detect64BitPortabilityProblems="true" DebugInformationFormat="0"></Tool>
+			<Tool Name="VCManagedResourceCompilerTool"></Tool>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"></Tool>
+			<Tool Name="VCPreLinkEventTool"></Tool>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="AcFdUi.lib" OutputFile="$(outdir)/AsdkTextFileFieldUI.arx" LinkIncremental="2" AdditionalLibraryDirectories="..\..\..\..\lib" LinkDLL="true" ModuleDefinitionFile="..\..\..\..\inc\AcRxDefault.def" GenerateDebugInformation="false" ProgramDatabaseFile="" SubSystem="2" ImportLibrary="$(OutDir)/TextFileFieldUI.lib" TargetMachine="1"></Tool>
+			<Tool Name="VCALinkTool"></Tool>
+			<Tool Name="VCManifestTool"></Tool>
+			<Tool Name="VCXDCMakeTool"></Tool>
+			<Tool Name="VCBscMakeTool"></Tool>
+			<Tool Name="VCFxCopTool"></Tool>
+			<Tool Name="VCAppVerifierTool"></Tool>
+			<Tool Name="VCWebDeploymentTool"></Tool>
+			<Tool Name="VCPostBuildEventTool"></Tool>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;idl;odl">
+			<File RelativePath="acrxEntryPoint.cpp">
+			</File>
+			<File RelativePath="AsdkTextFileFieldDialogHook.cpp">
+			</File>
+			<File RelativePath="AsdkTextFileFieldOptionDialog.cpp">
+			</File>
+			<File RelativePath="StdAfx.cpp">
+			</File>
+			<File RelativePath="TextFileFieldUI.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Include Files" Filter="h;hh;hxx">
+			<File RelativePath="AsdkTextFileFieldDialogHook.h">
+			</File>
+			<File RelativePath="AsdkTextFileFieldOptionDialog.h">
+			</File>
+			<File RelativePath="Resource.h">
+			</File>
+			<File RelativePath="StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;bmp;cur;jpg;gif">
+			<File RelativePath="TextFileFieldUI.rc">
+			</File>
+		</Filter>
+		<Filter Name="Miscellaneous Files" Filter="reg;rgs;mak;clw;vsdir;vsz;css;inf;vcproj;csproj">
+		</Filter>
+	</Files>
+</VisualStudioProject>

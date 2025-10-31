@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmileyDb", "SmileyDb\SmileyDb.vcproj", "{E9C278D1-6076-44E4-8DEB-92FC72B5195F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmileyDbCom", "SmileyDbCom\SmileyDbCom.vcproj", "{120D0797-83FD-4DAE-95BB-C6B547C29770}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmileyUi", "SmileyUi\SmileyUi.vcproj", "{6B174D74-3447-42BD-B1AF-F237FA05CC00}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmileyUiCom", "SmileyUiCom\SmileyUiCom.vcproj", "{4E5E6F39-3617-41A2-A9CA-266577B88040}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.0 = {E9C278D1-6076-44E4-8DEB-92FC72B5195F}
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.0 = {E9C278D1-6076-44E4-8DEB-92FC72B5195F}
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.0 = {6B174D74-3447-42BD-B1AF-F237FA05CC00}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Debug.ActiveCfg = Debug|Win32
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Debug.Build.0 = Debug|Win32
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Release.ActiveCfg = Release|Win32
+		{E9C278D1-6076-44E4-8DEB-92FC72B5195F}.Release.Build.0 = Release|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Debug.ActiveCfg = Debug|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Debug.Build.0 = Debug|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Release.ActiveCfg = Release|Win32
+		{120D0797-83FD-4DAE-95BB-C6B547C29770}.Release.Build.0 = Release|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Debug.ActiveCfg = Debug|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Debug.Build.0 = Debug|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Release.ActiveCfg = Release|Win32
+		{6B174D74-3447-42BD-B1AF-F237FA05CC00}.Release.Build.0 = Release|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Debug.ActiveCfg = Debug|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Debug.Build.0 = Debug|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Release.ActiveCfg = Release|Win32
+		{4E5E6F39-3617-41A2-A9CA-266577B88040}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

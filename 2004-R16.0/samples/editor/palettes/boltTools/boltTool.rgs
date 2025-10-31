@@ -1,0 +1,26 @@
+HKCR
+{
+	BoltTools.BoltTool.1 = s 'BoltTool Class'
+	{
+		CLSID = s '{DF800C4A-2B2F-45C6-8A6A-293C9DA5CA4B}'
+	}
+	BoltTools.BoltTool = s 'BoltTool Class'
+	{
+		CLSID = s '{DF800C4A-2B2F-45C6-8A6A-293C9DA5CA4B}'
+		CurVer = s 'BoltTools.BoltTool.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DF800C4A-2B2F-45C6-8A6A-293C9DA5CA4B} = s 'BoltTool Class'
+		{
+			ProgID = s 'BoltTools.BoltTool.1'
+			VersionIndependentProgID = s 'BoltTools.BoltTool'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{3BB7646A-77BA-4682-9CA0-4976F6A93C3C}'
+		}
+	}
+}

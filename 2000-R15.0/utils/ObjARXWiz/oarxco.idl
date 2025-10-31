@@ -1,0 +1,34 @@
+[!if=(ConnectionPointsEnabled, "TRUE")]
+	[
+		uuid([!InterfaceGUIDCP]),
+		helpstring("_[!InterfaceName]Events Interface")
+	]
+	dispinterface _[!InterfaceName]Events
+	{
+		properties:
+		methods:
+	};
+[!crlf]
+[!endif]
+	[
+		object,
+		uuid([!InterfaceGUID]),
+		dual,
+		helpstring("[!InterfaceName] Interface"),
+		pointer_default(unique)
+	]
+	interface [!InterfaceName] : [!if=(DerivedFrom,"AcDbEntity")]IAcadEntity[!else]IAcadObject[!endif]
+	{
+	};
+	[
+		uuid([!ObjectGUID]),
+		helpstring("[!TypeName]")
+	]
+	coclass [!CoClassName]
+	{
+		[default] interface [!InterfaceName];
+		[source] interface IAcadObjectEvents;
+[!if=(ConnectionPointsEnabled, "TRUE")]
+		[default, source] dispinterface _[!InterfaceName]Events;
+[!endif]
+	};

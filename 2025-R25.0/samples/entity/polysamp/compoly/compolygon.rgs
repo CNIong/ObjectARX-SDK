@@ -1,0 +1,33 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {49B42392-98D6-4525-87C8-4B5039C7FC4B} = s 'ComPolygon Class'
+		{
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Autodesk
+		{
+			NoRemove ObjectDBX
+			{
+				NoRemove R25.0
+				{
+					NoRemove ActiveXCLSID
+					{
+						val AsdkPoly = s '{49B42392-98D6-4525-87C8-4B5039C7FC4B}'
+					}
+				}			
+			}
+		}
+	}
+}

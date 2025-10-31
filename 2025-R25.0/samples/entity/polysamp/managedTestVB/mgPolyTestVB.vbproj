@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblySearchPaths>..\..\..\..\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcDbMgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcCoreMgd">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\managed\mgPoly.vcxproj">
+      <Project>{D26DC853-A22B-4C5B-810F-F76D1247FA93}</Project>
+      <Name>asdkmgPoly</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

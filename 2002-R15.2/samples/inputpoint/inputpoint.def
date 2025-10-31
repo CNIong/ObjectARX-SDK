@@ -1,0 +1,6 @@
+LIBRARY      InputPoint
+DESCRIPTION  'Sample Input Point API Program'
+
+EXPORTS
+acrxEntryPoint PRIVATE
+acrxGetApiVersion PRIVATE

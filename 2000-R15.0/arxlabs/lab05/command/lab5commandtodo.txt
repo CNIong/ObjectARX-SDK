@@ -1,0 +1,59 @@
+Lab5Command
+
+Purpose:
+=======
+
+The purpose of this lab is to create a custom class derived from AcDbObject. 
+Instances of this class (EmployeeDetails) will be stored in the extension 
+dictionary of the block reference currently representing an employee. 
+EmployeeDetails will store an ID, cube number, first name, and last name of 
+an employee. Here's how the objects will relate to each other:
+
+Employee (class: AcDbBlockReference)
+    |_Extension Dictionary (class:AcDbDictionary)
+                |_"OARXLABS_EMPLOYEE_DICTIONARY" (class:AcDbDictionary) 
+                       |_"DETAILS" (class:EmployeeDetails)
+
+This lab demonstrates how to extend an existing object with some new data 
+through the extension dictionary mechanism. This whole complex will be 
+replaced by a custom entity in Lab9.
+
+The lab is split into two subprojects: Lab5Object and Lab5Command. Lab5Object 
+defines the custom object EmployeeDetails.
+Lab5Command defines the user interface commands that let you manipulate the
+custom object EmployeeDetails.
+
+The lab also shows how to export custom classes.
+
+Steps:
+=====
+
+1. Start with Lab4. Rename the files appropriately:
+lab4.def->lab5Command.def
+lab4Main.cpp->lab5CommandMain.cpp
+lab4Utils.h->lab5CommandUtils.h
+lab4utils.cpp->lab5CommandUtils.cpp
+2. Set the project to link with Lab5Object.lib.
+3. Add code during kInitAppMsg to check for the presence of the service 
+   registered by Lab5Object. If the service is not present, attempt to 
+   load the corresponding arx app.
+4. Rename the command group and commands from Lab4. I have chosen the names
+   adddetail, removedetail, and listdetail.
+5. First create the command adddetail. This will add an EmployeeDetails object
+   to a dictionary named OARXLABS_EMPLOYEE_DICT residing in the extension 
+   dictionary of the block reference representing an employee. Here's the 
+   intended object relationship:
+
+Employee (class:AcDbBlockReference)
+ |_"OARXLABS_EMPLOYEE_DICT" (class:AcDbDictionary, /extension dictionary/)
+                |_"DETAILS" (class:EmployeeDetails)
+
+6. For all three commands I followed the same steps I used in Lab4. 
+   To be able to reuse code, I created three utility functions: addDictAndEntry,
+   removeEntryFromDict, and getExtDictOfObject. I was able to reuse these functions
+   later in Lab6.
+You can use the AcDbObject member functions createExtensionDictionary and 
+extensionDictionary to create and access the extension dictionary associated 
+with the block reference object. Once you get to the extension dictionary, the 
+remaining steps are identical to those carried out in Lab4 on the NOD.
+

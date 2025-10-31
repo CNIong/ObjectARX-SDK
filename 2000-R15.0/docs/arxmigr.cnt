@@ -1,0 +1,116 @@
+:Base arxmigr.hlp
+
+1 Migration Guide for Applications
+
+2 Introduction
+3 Overview=Introduction@arxmigr.hlp>main
+3 Documentation Overview=Documentation_Overview_migr00@arxmigr.hlp>main
+3 Typographical Conventions=Typographical_Conventions_migr00@arxmigr.hlp>main
+3 Using This Guide=Using_This_Guide_migr00@arxmigr.hlp>main
+3 Supported Environments=Supported_Environments_migr00@arxmigr.hlp>main
+
+2 Chapter 1 -- Overview
+3 Migration Guide for Applications=Overview@arxmigr.hlp>main
+3 Compatibility Issues=Compatibility_Issues_migr01@arxmigr.hlp>main
+3 New Features=New_Features_migr01@arxmigr.hlp>main
+3 ObjectARX Logo Compliance=ObjectARX_Logo_Compliance_migr01@arxmigr.hlp>main
+
+2 Chapter 2 -- Porting Considerations
+3 Overview=Porting_Considerations@arxmigr.hlp>main
+3 Checklist for Changes in Your Application=Checklist_for_Changes_in_Your_Application_migr02@arxmigr.hlp>main
+3 Migration Assistance=Migration_Assistance_migr02@arxmigr.hlp>main
+3 File Compatibility=File_Compatibility_migr02@arxmigr.hlp>main
+
+2 Chapter 3 -- Multiple Document Interface
+3 Overview=Multiple_Document_Interface@arxmigr.hlp>main
+3 Introduction=Introduction_migr03@arxmigr.hlp>main
+3 Terminology=Terminology_migr03@arxmigr.hlp>main
+3 Changes for Editing with MDI=Changes_for_Editing_with_MDI_migr03@arxmigr.hlp>main
+3 SDI System Variable=SDI_System_Variable_migr03@arxmigr.hlp>main
+3 Levels of Compatibility=Levels_of_Compatibility_migr03@arxmigr.hlp>main
+
+2 Chapter 4 -- Application Usability Features
+3 Overview=Application_Usability_Features@arxmigr.hlp>main
+3 Input Point Processing=Input_Point_Processing_migr04@arxmigr.hlp>main
+3 3D Graphic System=3D_Graphic_System_migr04@arxmigr.hlp>main
+3 Solids Editing=Solids_Editing_migr04@arxmigr.hlp>main
+3 DWG Summary Information=DWG_Summary_Information_migr04@arxmigr.hlp>main
+3 MFC Dialogs=MFC_Dialogs_migr04@arxmigr.hlp>main
+3 SaveAs=SaveAs_migr04@arxmigr.hlp>main
+3 AutoCAD DesignCenter=AutoCAD_DesignCenter_migr04@arxmigr.hlp>main
+3 Multiple UCS Per Viewport=Multiple_UCS_Per_Viewport_migr04@arxmigr.hlp>main
+3 Shortcut Menus=Shortcut_Menus_migr04@arxmigr.hlp>main
+
+2 Chapter 5 -- Entity Features
+3 Overview=Entity_Features@arxmigr.hlp>main
+3 Multiline Text=Multiline_Text_migr05@arxmigr.hlp>main
+3 Dimension Features=Dimension_Features_migr05@arxmigr.hlp>main
+3 Object Property Manager=Object_Property_Manager_migr05@arxmigr.hlp>main
+
+2 Chapter 6 -- Display and Hardcopy Features
+3 Overview=Display_and_Hardcopy_Features@arxmigr.hlp>main
+3 Hardcopy=Hardcopy_migr06@arxmigr.hlp>main
+3 Paper Space Layouts=Paper_Space_Layouts_migr06@arxmigr.hlp>main
+3 Lineweight=Lineweight_migr06@arxmigr.hlp>main
+3 OLE Scaling and Printing=OLE_Scaling_and_Printing_migr06@arxmigr.hlp>main
+
+2 Chapter 7 -- Collaboration Features
+3 Overview=Collaboration_Features@arxmigr.hlp>main
+3 Reference Editing=Reference_Editing_migr07@arxmigr.hlp>main
+3 Internet=Internet_migr07@arxmigr.hlp>main
+
+2 Chapter 8 -- Architectural Features
+3 Overview=Architectural_Features@arxmigr.hlp>main
+3 Release 12 Objectification=Release_12_Objectification_migr08@arxmigr.hlp>main
+3 Extended Symbol Names=Extended_Symbol_Names_migr08@arxmigr.hlp>main
+3 Partial Loading=Partial_Loading_migr08@arxmigr.hlp>main
+3 ObjectDBX=ObjectDBX_migr08@arxmigr.hlp>main
+3 DXF=DXF_migr08@arxmigr.hlp>main
+3 AcGi Library=AcGi_Library_migr08@arxmigr.hlp>main
+3 ACIS=ACIS_migr08@arxmigr.hlp>main
+
+2 Chapter 9 -- Extensibility Features
+3 Overview=Extensibility_Features@arxmigr.hlp>main
+3 Visual LISP=Visual_LISP_migr09@arxmigr.hlp>main
+3 VBA=VBA_migr09@arxmigr.hlp>main
+3 ActiveX=ActiveX_migr09@arxmigr.hlp>main
+3 AST=AST_migr09@arxmigr.hlp>main
+3 Database Connectivity=Database_Connectivity_migr09@arxmigr.hlp>main
+3 ADS=ADS_migr09@arxmigr.hlp>main
+
+2 Chapter 10 -- API Modernizations
+3 Overview=API_Modernizations@arxmigr.hlp>main
+3 Memory Management=Memory_Management_migr10@arxmigr.hlp>main
+3 Class Versioning=Class_Versioning_migr10@arxmigr.hlp>main
+3 Embedded Objects=Embedded_Objects_migr10@arxmigr.hlp>main
+3 Drawing Creation and Update Times=Drawing_Creation_and_Update_Times_migr10@arxmigr.hlp>main
+3 DllEntryPoint@12 Removal=DllEntryPoint6412_Removal_migr10@arxmigr.hlp>main
+3 Universal 8-Byte Alignment=Universal_845Byte_Alignment_migr10@arxmigr.hlp>main
+3 AutoLISP List Return Values in ObjectARX=AutoLISP_List_Return_Values_in_ObjectARX_migr10@arxmigr.hlp>main
+3 New DocLockMode Setting=New_DocLockMode_Setting_migr10@arxmigr.hlp>main
+3 Class Changes=Class_Changes_migr10@arxmigr.hlp>main
+3 Global Function Changes=Global_Function_Changes_migr10@arxmigr.hlp>main
+
+2 Appendix A -- ObjectARX Changes
+3 Overview=ObjectARX_Changes@arxmigr.hlp>main
+3 New Items=New_Items_migr0a@arxmigr.hlp>main
+3 Changed Items=Changed_Items_migr0a@arxmigr.hlp>main
+3 Deprecated Items=Deprecated_Items_migr0a@arxmigr.hlp>main
+3 Removed Items=Removed_Items_migr0a@arxmigr.hlp>main
+
+2 Appendix B -- ActiveX Changes
+3 Overview=ActiveX_Changes@arxmigr.hlp>main
+3 New Items=New_Items_migr0b@arxmigr.hlp>main
+3 Changed Items=Changed_Items_migr0b@arxmigr.hlp>main
+3 Removed Items=Removed_Items_migr0b@arxmigr.hlp>main
+
+2 Appendix C -- Visual LISP Changes
+3 Overview=Visual_LISP_Changes@arxmigr.hlp>main
+3 New Functions=New_Functions_migr0c@arxmigr.hlp>main
+3 Changed Functions=Changed_Functions_migr0c@arxmigr.hlp>main
+
+2 Appendix D -- ObjectDBX Changes
+3 Overview=ObjectDBX_Changes@arxmigr.hlp>main
+3 Class Methods=Class_Methods_migr0d@arxmigr.hlp>main
+3 Global Functions=Global_Functions_migr0d@arxmigr.hlp>main
+

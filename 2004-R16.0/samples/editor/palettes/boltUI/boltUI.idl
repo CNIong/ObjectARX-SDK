@@ -1,0 +1,26 @@
+// boltUI.idl : IDL source for AsDkboltUI.arx
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsDkboltUI.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+	uuid(EE506FE6-9FEA-4CDB-892C-9377CF6436A9),
+	version(1.0),
+	helpstring("AsDkboltUI 1.0 Type Library")
+]
+library AsDkBOLTUILib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//If the following import fails then it means that the type library 
+	//is not on the system path you can fix the problem in two ways:
+	//1. Add it to the system wide PATH environment variable
+	//2. Add it to the executable file list in Developer Studio. You can do
+	//this in using the Tools/Option menu and then choosing the 'Directories'
+	//tab and finally typing the full path at the Executable files section
+	importlib("axdb16enu.tlb");
+};

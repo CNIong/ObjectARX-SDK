@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="AsDkboltUI" ProjectGUID="{FC208C9A-0BEA-4A97-BD1D-471D5DCA214C}" RootNamespace="AsDkboltUI" Keyword="MFCProj">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Release|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" HeaderFileName="$(ProjectDir)\$(InputName)_i.h" DLLDataFileName="$(ProjectDir)\$(InputName)_d.c" InterfaceIdentifierFileName="$(ProjectDir)\$(InputName)_i.c" ProxyFileName="$(ProjectDir)\$(InputName)_p.c" />
+      <Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_SECURE_NO_DEPRECATE" InlineFunctionExpansion="1" FavorSizeOrSpeed="1" AdditionalIncludeDirectories="..\..\..\..\inc;" PreprocessorDefinitions="_BOLTUI_;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib actc.lib actcui.lib ..\boltObject\Release\asdkboltObject.lib " AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\boltUI.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" HeaderFileName="$(ProjectDir)\$(InputName)_i.h" DLLDataFileName="$(ProjectDir)\$(InputName)_d.c" InterfaceIdentifierFileName="$(ProjectDir)\$(InputName)_i.c" ProxyFileName="$(ProjectDir)\$(InputName)_p.c" />
+      <Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_SECURE_NO_DEPRECATE" InlineFunctionExpansion="1" FavorSizeOrSpeed="1" AdditionalIncludeDirectories="..\..\..\..\inc;" PreprocessorDefinitions="_BOLTUI_;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib actc.lib actcui.lib ..\boltObject\x64\Release\asdkboltObject.lib " AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\boltUI.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_SECURE_NO_DEPRECATE" AdditionalIncludeDirectories="..\..\..\..\inc;$(IntDir)" PreprocessorDefinitions=";_BOLTUI_;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib actc.lib actcui.lib ..\boltObject\Debug\asdkboltObject.lib " AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\boltUI.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalOptions="/D_CRT_SECURE_NO_DEPRECATE" AdditionalIncludeDirectories="..\..\..\..\inc;$(IntDir)" PreprocessorDefinitions=";_BOLTUI_;" UsePrecompiledHeader="0" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="axdb.lib actc.lib actcui.lib ..\boltObject\x64\Debug\asdkboltObject.lib " AdditionalLibraryDirectories="..\..\..\..\lib" ModuleDefinitionFile=".\boltUI.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+      <File RelativePath=".\boltJig.cpp" />
+      <File RelativePath=".\BoltTool.cpp" />
+      <File RelativePath=".\boltUI.cpp" />
+      <File RelativePath=".\boltUI.idl" />
+      <File RelativePath=".\boltUI.rc">
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCResourceCompilerTool" AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)" />
+        </FileConfiguration>
+      </File>
+      <File RelativePath=".\rxdebug.cpp" />
+      <File RelativePath=".\StdAfx.cpp" />
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+      <File RelativePath=".\boltJig.h" />
+      <File RelativePath=".\BoltTool.h" />
+      <File RelativePath=".\Resource.h" />
+      <File RelativePath=".\rxdebug.h" />
+      <File RelativePath=".\StdAfx.h" />
+      <File RelativePath=".\StdArx.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+      <File RelativePath=".\bitmap1.bmp" />
+      <File RelativePath=".\bmp00001.bmp" />
+      <File RelativePath="bmpgalvanized.bmp" />
+      <File RelativePath="boltaluminum.bmp" />
+      <File RelativePath="boltgalvanized.bmp" />
+      <File RelativePath=".\boltimag.bmp" />
+      <File RelativePath=".\boltImage.bmp" />
+      <File RelativePath=".\BoltJig.bmp" />
+      <File RelativePath=".\boltJigImage.bmp" />
+      <File RelativePath=".\BoltTool.rgs" />
+      <File RelativePath=".\res\boltUI.rc2" />
+    </Filter>
+    <File RelativePath=".\ObjectARX.prj" />
+  </Files>
+  <Globals />
+</VisualStudioProject>

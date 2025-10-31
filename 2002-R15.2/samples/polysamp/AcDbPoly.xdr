@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema for the AutoCAD custom object, AcDbPoly, based on the AcDbXml and DesignXML schema. -->
+<Schema name="AcDbPoly_V_100.xdr" xmlns="urn:schemas-microsoft-com:xml-data" xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:dxml="x-schema:http://www.DesignXML.org/schema/DesignXML_V_100.xdr" xmlns:acdb="x-schema:http://www.DesignXML.org/schema/AcDbXML_V_100.xdr">
+	<!-- AcDbPoly -->
+	<ElementType name="Poly" content="eltOnly" model="closed">
+		<AttributeType name="numSides" dt:type="i2" required="yes"/>
+		<AttributeType name="name" dt:type="string" required="yes"/>
+		<attribute type="numSides"/>
+		<attribute type="name"/>
+		<element type="acdb:Entity"/>
+		<element type="dxml:CenterPoint"/>
+		<element type="dxml:StartPoint"/>
+		<element type="acdb:NormalVector"/>
+		<element type="acdb:TextStyleTableRecordId"/>
+	</ElementType>
+</Schema>

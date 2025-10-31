@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'QuickProperties'
+		'adskQuickProperties.arx'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

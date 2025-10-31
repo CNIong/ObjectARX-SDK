@@ -1,0 +1,26 @@
+HKCR
+{
+	ETransmit.AddFileHandler.1 = s 'AddFileHandler Class'
+	{
+		CLSID = s '{AF63F89F-9931-43e4-B3A8-5725C9BCA77A}'
+	}
+	ETransmit.AddFileHandler = s 'AddFileHandler Class'
+	{
+		CLSID = s '{AF63F89F-9931-43e4-B3A8-5725C9BCA77A}'
+		CurVer = s 'ETransmit.AddFileHandler.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {AF63F89F-9931-43e4-B3A8-5725C9BCA77A} = s 'AddFileHandler Class'
+		{
+			ProgID = s 'ETransmit.AddFileHandler.1'
+			VersionIndependentProgID = s 'ETransmit.AddFileHandler'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{1FC604A1-CB15-49EB-94DF-932B7954093F}'
+		}
+	}
+}

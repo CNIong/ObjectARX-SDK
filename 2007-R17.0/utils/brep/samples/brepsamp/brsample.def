@@ -1,0 +1,12 @@
+;------------------------------------
+; BRSAMPLE.DEF module definition file
+; (C) Copyright 1998-2006 by Autodesk, Inc.
+;
+;------------------------------------
+
+EXPORTS
+
+acrxGetApiVersion PRIVATE
+acrxEntryPoint PRIVATE
+
+

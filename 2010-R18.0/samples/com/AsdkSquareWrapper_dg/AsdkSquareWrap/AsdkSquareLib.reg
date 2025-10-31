@@ -1,0 +1,17 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+HKEY_CLASSES_ROOT\TypeLib\{8EA3FA30-B2C2-484F-BB39-50BDB294A35D}
+HKEY_CLASSES_ROOT\TypeLib\{8EA3FA30-B2C2-484F-BB39-50BDB294A35D}\1.1 = AsdkSquareLib 1.0 Type Library
+HKEY_CLASSES_ROOT\TypeLib\{8EA3FA30-B2C2-484F-BB39-50BDB294A35D}\1.1\0\win32 = C:\objectarx\samples\com\AsdkSquareWrapper_dg\AsdkSquareWrap\Release\AsdkSquareLib.dll
+HKEY_CLASSES_ROOT\TypeLib\{8EA3FA30-B2C2-484F-BB39-50BDB294A35D}\1.1\9\win32 = C:\objectarx\samples\com\AsdkSquareWrapper_dg\AsdkSquareWrap\Release\AsdkSquareLib.dll
+
+HKEY_CLASSES_ROOT\CLSID\{71DF4CE4-9286-400F-87F2-BDFEDE1C0315} = AsdkSquareWrapper Class
+HKEY_CLASSES_ROOT\CLSID\{71DF4CE4-9286-400F-87F2-BDFEDE1C0315}\InProcServer32 = C:\objectarx\samples\com\AsdkSquareWrapper_dg\AsdkSquareWrap\Release\AsdkSquareLib.dll
+HKEY_CLASSES_ROOT\Interface\{92DD3CDE-83B0-4A90-A31A-E5328F29EDCE} = IAsdkSquareWrapper Interface
+HKEY_CLASSES_ROOT\Interface\{92DD3CDE-83B0-4A90-A31A-E5328F29EDCE}\TypeLib = {99153B91-5D1D-4F11-BAC1-27B34938E25E}
+HKEY_CLASSES_ROOT\Interface\{92DD3CDE-83B0-4A90-A31A-E5328F29EDCE}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+

@@ -1,0 +1,24 @@
+Lab6Command
+
+Purpose:
+=======
+
+The purpose of this lab is to create yet another custom class, EmployeeEntry. 
+Instances of this class replace the xrecords created in Lab4. These objects
+simply store an AcDbObjectId, the object ID of EmployeeDetails objects 
+created in Lab5. This will enable us to iterate through all the employees 
+in the database quickly and easily. The listEmps command demonstrates this.
+
+
+Steps:
+======
+
+1. You will need to merge the commands you created in Lab4 and Lab5Commands.
+   I suggest you start with Lab5 and copy and paste parts of your code from 
+   Lab4 into the project.
+
+2. Replace the AcDbXrecord instances in the code from Lab4 with the instances 
+   of EmployeeEntry.
+
+3. Set the ID stored in the EmployeeEntry object to the block reference 
+   representing the employee.

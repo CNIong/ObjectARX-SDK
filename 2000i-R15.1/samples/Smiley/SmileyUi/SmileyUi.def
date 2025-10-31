@@ -1,0 +1,7 @@
+
+LIBRARY      "AsdkSmileyUi"
+
+EXPORTS
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

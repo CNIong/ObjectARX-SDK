@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+
+  <!-- Style Used By The Separator Line (in MyToolTips.xaml and MyWindow.xaml) -->
+  <Style x:Key="SeparatorLine" >
+    <Setter Property="Line.Stroke" Value="Gray" />
+    <Setter Property="Line.StrokeThickness" Value="1" />
+    <Setter Property="Line.Y1" Value=".5" />
+    <Setter Property="Line.Y2" Value=".5" />
+    <Setter Property="Line.X2" Value="210" />
+    <Setter Property="Line.SnapsToDevicePixels" Value="True" />
+  </Style>
+
+</ResourceDictionary>

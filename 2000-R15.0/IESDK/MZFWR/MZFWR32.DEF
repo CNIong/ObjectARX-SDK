@@ -1,0 +1,8 @@
+
+LIBRARY mzfwr32
+DESCRIPTION 'MZF Sample IE File Writer'
+EXETYPE WINDOWS
+
+EXPORTS
+    moduleIdentify
+    newIeFileAnalyzer

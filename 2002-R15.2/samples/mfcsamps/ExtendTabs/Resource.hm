@@ -1,0 +1,5 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by ExtendTabs.rc
+//
+#define HIDC_BUTTON                     0x808203ea    // IDD_TAB2
+#define HIDC_LIST1                      0x808203ed    // IDD_TAB2

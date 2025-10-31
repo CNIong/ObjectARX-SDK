@@ -1,0 +1,6 @@
+DESCRIPTION 	'HelloWorld sample application'
+LIBRARY     	lab01
+
+EXPORTS     
+				acrxEntryPoint
+				acrxGetApiVersion	PRIVATE

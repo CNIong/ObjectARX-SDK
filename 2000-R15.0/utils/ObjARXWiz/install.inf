@@ -1,0 +1,50 @@
+; install.inf
+; Installation file for the ObjectARX 2000 Wizards
+
+[Version]
+Signature=$Windows NT$
+Provider=Autodesk, Inc.
+
+[DefaultInstall]
+Copyfiles=AppWizardCopy, AtlObjectWizardCopy, AddInCopy
+
+[AppWizardCopy]
+ArxAppWiz.awx
+ArxAppWiz.hlp
+
+[AtlObjectWizardCopy]
+oarx.cpp
+oarx.ctl
+oarx.rgs
+oarxco.idl
+oarx.h
+arxatlobjectwizard.dll
+
+[AddInCopy]
+ObjectARX AddIn.dll
+ObjectARX AddIn.cnt
+ObjectARX AddIn.hlp
+
+[DestinationDirs]
+AppWizardCopy=49000,\MSDev98\Template
+AtlObjectWizardCopy=49000,\MSDev98\Template\Atl
+AddInCopy=49000,\MSDev98\AddIns
+
+[SourceDisksFiles]
+ArxAppWiz.awx = 1
+ArxAppWiz.hlp = 1
+oarx.cpp = 1
+oarx.ctl = 1
+oarx.rgs = 1
+oarxco.idl = 1
+oarx.h = 1
+arxatlobjectwizard.dll = 1
+ObjectARX AddIn.dll = 1
+ObjectARX AddIn.cnt = 1
+ObjectARX AddIn.hlp = 1
+
+[SourceDisksNames]
+1 = %DiskName%,wizards.cab,0
+
+[Strings]
+DiskName = "Autodesk ObjectARX 2000 Wizards Installation Disk"

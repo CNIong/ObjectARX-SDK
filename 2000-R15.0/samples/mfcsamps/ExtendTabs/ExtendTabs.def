@@ -1,0 +1,9 @@
+; ExtendTabs.def : Declares the module parameters for the DLL.
+
+; (C) Copyright 1998 by Autodesk, Inc.
+LIBRARY      "ExtendTabs"
+DESCRIPTION  'ExtendTabs Windows Dynamic Link Library'
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

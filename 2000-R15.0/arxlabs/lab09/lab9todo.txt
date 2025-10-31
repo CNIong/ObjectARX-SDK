@@ -1,0 +1,30 @@
+Lab 9
+=====
+
+Open Lab9.dsw workspace in VC6.
+
+This contains three subprojects named Lab9, Lab9a (two different 
+implementations of the AcDbEmployee Object), and Lab9c (the 
+implementation of the commands).
+
+You have to follow the description you find in the files 
+named Lab9ObjectToDo.txt, Lab9aToDo.txt resp., and Lab9CommandToDo.txt.
+
+When done, come back to this file and process instructions below.
+
+
+A) Step 1 - Set Lab9 as your active project and build the object module.
+
+   Step 2 - Set Lab9c as your active project and build the command module.
+
+Run the sample by loading OarxLab9c.arx in AutoCAD. Then enter the command Lab9c
+on the AutoCAD command line to create an object of type AcDbEmployee.
+
+B) Step 1 - Set Lab9a as your active project and build the object module.
+
+   Step 2 - Set Lab9c as your active project.
+          - Change the LAB9OBJECT preprocessor directive to LAB9OBJECTA.
+          - Build the command module (now it will use the object from OarxLab9a.arx).
+
+Run the sample by loading OarxLab9c.arx in AutoCAD. Then enter the command Lab9c
+on the AutoCAD command line to create an object of type AcDbEmployee.

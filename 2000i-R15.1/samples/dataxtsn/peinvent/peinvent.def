@@ -1,0 +1,7 @@
+LIBRARY      peinvent
+DESCRIPTION  'ARX Protocol Extension Test Program : Inventory Id'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

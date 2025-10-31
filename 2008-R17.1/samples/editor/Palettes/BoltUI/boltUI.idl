@@ -1,0 +1,88 @@
+// (C) Copyright 2003-2006 by Autodesk, Inc. 
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted, 
+// provided that the above copyright notice appears in all copies and 
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting 
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to 
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+//
+// boltUI.idl : IDL source for AsDkboltUI.arx
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsDkboltUI.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+	object,
+	uuid(8B815F4C-2C4E-4538-8B66-6F388997D8BF),
+	dual,
+	nonextensible,
+	helpstring("IBoltTool Interface"),
+	pointer_default(unique)
+]
+interface IBoltTool : IDispatch{
+	[propget, id(1), helpstring("property Color")] HRESULT Color([out, retval] VARIANT* pVal);
+	[propput, id(1), helpstring("property Color")] HRESULT Color([in] VARIANT newVal);
+	[propget, id(2), helpstring("property Layer")] HRESULT Layer([out, retval] BSTR* pVal);
+	[propput, id(2), helpstring("property Layer")] HRESULT Layer([in] BSTR newVal);
+	[propget, id(3), helpstring("property Flyout")] HRESULT Flyout([out, retval] BSTR* pVal);
+	[propput, id(3), helpstring("property Flyout")] HRESULT Flyout([in] BSTR newVal);
+	[propget, id(4), helpstring("property MaterialName")] HRESULT MaterialName([out, retval] BSTR* pVal);
+	[propput, id(4), helpstring("property MaterialName")] HRESULT MaterialName([in] BSTR newVal);
+	[propget, id(5), helpstring("property PartNumber")] HRESULT PartNumber([out, retval] BSTR* pVal);
+	[propput, id(5), helpstring("property PartNumber")] HRESULT PartNumber([in] BSTR newVal);
+	[propget, id(6), helpstring("property HeadSides")] HRESULT HeadSides([out, retval] LONG* pVal);
+	[propput, id(6), helpstring("property HeadSides")] HRESULT HeadSides([in] LONG newVal);
+	[propget, id(7), helpstring("property HeadHeight")] HRESULT HeadHeight([out, retval] DOUBLE* pVal);
+	[propput, id(7), helpstring("property HeadHeight")] HRESULT HeadHeight([in] DOUBLE newVal);
+	[propget, id(8), helpstring("property ShaftLength")] HRESULT ShaftLength([out, retval] DOUBLE* pVal);
+	[propput, id(8), helpstring("property ShaftLength")] HRESULT ShaftLength([in] DOUBLE newVal);
+	[propget, id(9), helpstring("property ThreadLength")] HRESULT ThreadLength([out, retval] DOUBLE* pVal);
+	[propput, id(9), helpstring("property ThreadLength")] HRESULT ThreadLength([in] DOUBLE newVal);
+	[propget, id(10), helpstring("property ThreadWidth")] HRESULT ThreadWidth([out, retval] DOUBLE* pVal);
+	[propput, id(10), helpstring("property ThreadWidth")] HRESULT ThreadWidth([in] DOUBLE newVal);
+	[propget, id(11), helpstring("property HeadDiameter")] HRESULT HeadDiameter([out, retval] DOUBLE* pVal);
+	[propput, id(11), helpstring("property HeadDiameter")] HRESULT HeadDiameter([in] DOUBLE newVal);
+	[propget, id(12), helpstring("property ShaftDiameter")] HRESULT ShaftDiameter([out, retval] DOUBLE* pVal);
+	[propput, id(12), helpstring("property ShaftDiameter")] HRESULT ShaftDiameter([in] DOUBLE newVal);
+};
+[
+	uuid(EE506FE6-9FEA-4CDB-892C-9377CF6436A9),
+	version(1.0),
+	helpstring("AsDkboltUI 1.0 Type Library")
+]
+library AsDkBOLTUILib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	//If the following import fails then it means that the type library 
+	//is not on the system path you can fix the problem in two ways:
+	//1. Add it to the system wide PATH environment variable
+	//2. Add it to the executable file list in Developer Studio. You can do
+	//this in using the Tools/Option menu and then choosing the 'Directories'
+	//tab and finally typing the full path at the Executable files section
+	importlib("axdb17enu.tlb");
+	[
+		uuid(56FDE866-D7DA-4ED2-9858-65997CDEF4F9),
+		helpstring("CBoltTool Class")
+	]
+	coclass CBoltTool
+	{
+		[default] interface IBoltTool;
+	};
+};

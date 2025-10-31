@@ -1,0 +1,19 @@
+[OPTIONS]
+Compatibility=1.0
+Compiled file=MyHtmlHelp.chm
+Contents file=Table of Contents.hhc
+Default topic=Content\welcome.html
+Display compile progress=No
+Index file=Index.hhk
+Language=0x809 English (United Kingdom)
+Title=My Help
+
+
+[FILES]
+Content\welcome.html
+Content\mycommand1.html
+Content\mycommand2.html
+Content\mycommand3.html
+
+[INFOTYPES]
+

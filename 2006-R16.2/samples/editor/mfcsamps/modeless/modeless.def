@@ -1,0 +1,7 @@
+LIBRARY      modeless
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+        acrxEntryPoint
+        _SetacrxPtp
+        acrxGetApiVersion

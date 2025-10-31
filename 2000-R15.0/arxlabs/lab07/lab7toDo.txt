@@ -1,0 +1,141 @@
+Lab7
+
+Purpose:
+=======
+
+This lab illustrates the use of several transient reactors: 
+a database reactor (AcDbDatabaseReactor), an editor reactor
+(AcEditorReactor), and an object reactor (AcDbObjectReactor).
+This application uses an AcApDocManagerReactor to manage per-document
+global variables and make the application truly MDI aware.
+
+In this lab we still use the "employee" block reference in
+the block table record "employee" created in Lab3.
+
+Using reactors, we want to prevent an employee object
+from being moved to another location when commands such as MOVE, COPY,
+ROTATE, etc., are applied.
+
+The strategy implemented here is to use an editor reactor, which will be notified 
+when the previously mentioned commands start. If one of the edit commands is applied
+to one or more of the employee objects, the original and final positions of the objects in
+question will be recorded. To achieve this, an object reactor is planted on each
+employee object in order to detect when the object is opened for a modify operation.
+This will happen before the actual transformation takes place. To detect the new position
+for the object after the transformation has taken place, we also need to implement the
+notification for command ended of the editor reactor.
+
+Finally, since we need an object reactor on each instance of employee
+object, we also need to detect when new objects are created with
+a database reactor.
+
+The problem is made even more complicated by the fact that a user
+can decide to apply the edit command to a selection set that
+can contain more than one employee object. To handle such a case, we
+need to use an array of objectId (AcDbObjectIdArray) for the employee object
+being modified. In parallel, we also need to maintain an array of points
+(AGePoint3dArray) to store the corresponding original position.
+
+
+Steps:
+=====
+1. Start with the results of Lab1.
+
+2. In the main file, declare two global arrays:
+   an AcDbObjectIdArray and an AcGePoint3dArray to store the IDs and original
+   positions of the employee objects.
+   You will also need to define a global Boolean variable that will be maintained
+   by the editor reactor. This variable will be set to true if the current command
+   is an edit command. Simply name it "EditCommand."
+
+/* NEW FOR R2000 */ 
+    To make the application truly MDI aware, an AcApDocManagerReactor has to be implemented 
+ to manage our global variables on a per-document basis.
+ The classes required for this are AsdkChangedEmployees and AsdkLab7DataManager. These classes 
+ are declared and implemented in the files Lab7PerDocData.h and Lab7PerDocData.cpp.
+
+3a. Create a new header and cpp file for the object reactor (AcDbObjectReactor).
+    In our derived class, we will only override the openedForModify() notification function.
+
+3b. In our implementation of the openedForModify() function, we will first
+    check the context in which this notification is triggered, by checking a global
+    variable named "EditCommand." If this variable is false, we simply return.
+    If it is true, we need to cast the passed object pointer to an 
+    AcDbBlockReference and get its original position. openedForModify() is called
+    before the state of the object is changed.
+
+    The block reference objectId and its original position will be added to the
+    global arrays defined in Step 2.
+
+3c. In 3b you need to cast an object pointer to a block reference pointer, so
+    it would be a good idea to write a utility function to check if a passed
+    object pointer is a reference to the Employee "block," since we will need to use the same
+    check several times. Here is the proposed signature of the utility function:
+    Adesk::Boolean isAnInsertOfEmployee( /*[in]*/const AcDbObject* pObj, 
+             /*[ou]*/AcDbBlockReference*& pInsert);
+
+4a. Create a new header and cpp file for the database reactor (AcDbDatabaseReactor)
+    In our derived class, we will only override the objectAppended()
+    notification function.
+
+4b. In the implementation of objectAppended(), we want to add to it the object reactor
+    we've defined above, if the object is an employee object.
+    Note that we will need only one instance of the object reactor, and therefore
+    we will also declare it as a global in our main/Lab7PerDocData.h file.
+    Summarizing the steps required:
+      - Check if the object passed is an employee object (probably using the utility
+        function defined in 3c).
+      - If it is, add the instance of our object reactor to it.
+
+5a. Create a new header and cpp file for the editor reactor (AcDbEditorReactor)
+    we need. In our derived class, we will override commandWillStart(),
+    commandEnded(), and dwgFileOpened() notification functions.
+
+5b. In the implementation of commandWillStart(), we will need to decide if the
+    command is an edit command that can modify the position of our employee
+    object. If it is an employee object, update the EditCommand global variable.
+    This can be done using the name of the command passed as a string.
+
+    Then, we must reinitialize the global arrays that may
+    have been used by the previous command to store the object IDs
+    and original position of the employee objects. These are the global arrays
+    defined in Step 2 and used in Step 3b.
+
+5c. In the implementation of commandEnded(), if the command
+    that ended is an edit command (if EditCommand variable is true), we will restore
+    the employee object(s) to its (their) original position.
+    We will scan through the array of modified employee objects, open them
+    for write, and restore their original position based on the data stored
+    in the AcGePoint3dArray.
+
+    Note that in opening the employee object for write, we will trigger our own
+    notification function openedForModify() defined in 3b.
+    We do not want this to happen, because openedForModify() adds the object ID
+    and position to the global arrays, which would lead to an infinite loop.
+    To avoid this, we use yet another global that will be set to true in
+    commandEnded() and checked in openedForModify(). If the variable is true,
+    then openedForModify() will do nothing.
+
+5d. We need to overwrite the dwgFileOpened() notification function because we
+    want to make sure each employee object is being attached to an object reactor.
+    In our database reactor, we are notified of the creation of a new employee
+    object, but no reactor is attached to the existing employee object if the
+    user opens a file that already contains such objects.
+    This is what our dwgFileOpened() function will do: get all the existing
+    employee objects and add our object reactor to them.
+    For this purpose, it might be a good idea to write a function that will
+    scan the entire model space database, and for each employee found attach
+    (or remove, depending on the flag argument passed) our object reactor.
+    Here is the proposed signature:
+    Acad::ErrorStatus attachReactorToAllEmployee(bool attach);
+
+6. Finally, we have to handle correctly the creation and deletion of our
+   reactor objects in the kInitAppMsg and kUnloadAppMsg cases of our
+   acrxEntryPoint() function. The editor reactor and database reactor should be
+   attached when the application initializes. Also, the object reactor
+   should be attached to all existing employees.
+
+   When the application unloads, it is very important to remove all the
+   reactors we have planted, so the kUnloadAppMsg() should basically
+   remove everything.
+

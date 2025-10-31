@@ -1,0 +1,91 @@
+// (C) Copyright 2002-2006 by Autodesk, Inc. 
+//
+// Permission to use, copy, modify, and distribute this software in
+// object code form for any purpose and without fee is hereby granted, 
+// provided that the above copyright notice appears in all copies and 
+// that both that copyright notice and the limited warranty and
+// restricted rights notice below appear in all supporting 
+// documentation.
+//
+// AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+// AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+// MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+// DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+// UNINTERRUPTED OR ERROR FREE.
+//
+// Use, duplication, or disclosure by the U.S. Government is subject to 
+// restrictions set forth in FAR 52.227-19 (Commercial Computer
+// Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+// (Rights in Technical Data and Computer Software), as applicable.
+//
+
+
+// CustPalette.idl : IDL source
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsdkCustPalette.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(621BA68B-5688-4BD8-80E6-C0097FAD9AC9),
+	dual,
+	nonextensible,
+	helpstring("IInspData Interface"),
+	pointer_default(unique)
+]
+interface IInspData : IDispatch{
+	[propget, id(1), helpstring("property FileName")] HRESULT FileName([out, retval] BSTR* pVal);
+	[propput, id(1), helpstring("property FileName")] HRESULT FileName([in] BSTR newVal);
+	[propget, id(2), helpstring("property Preview")] HRESULT Preview([out, retval] BOOL *pVal);
+	[propput, id(2), helpstring("property Preview")] HRESULT Preview([in] BOOL newVal);
+};
+[
+	object,
+	uuid(E7FF7C38-71E7-4EAD-80C7-FA263D8CEA8E),
+	//dual,
+	//nonextensible,
+	helpstring("IDWGPreview Interface"),
+	pointer_default(unique)
+]
+interface IDWGPreview : IUnknown{
+	[id(1), helpstring("method GetFileName")] HRESULT GetFileName([in] BSTR *fileName);
+};
+
+[
+	uuid(8A76C9A0-80F0-4F7B-9247-7CC1730962AC),
+	version(1.0),
+	helpstring("AsdkCustPalette 1.0 Type Library")
+]
+library AsdkCustPaletteLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	[
+		uuid(27116BE4-11DA-4D43-952F-EF03EAA62884),
+		helpstring("InspData Class")
+	]
+	coclass InspData
+	{
+		[default] interface IInspData;
+	};
+	[
+		uuid(44EF9F52-159F-480F-9AD8-6289C8C41ADE),
+		helpstring("DWGPreview Class")
+	]
+	coclass DWGPreview
+	{
+		[default] interface IDWGPreview;
+	};
+	[
+		uuid(8D92B6D5-EFBA-4AA1-93F4-F8C3D34FC1FB),
+		helpstring("PropPage Class")
+	]
+	coclass PropPage
+	{
+		[default] interface IUnknown;
+	};
+};

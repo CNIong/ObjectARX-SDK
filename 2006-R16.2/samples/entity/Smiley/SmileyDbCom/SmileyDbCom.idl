@@ -1,0 +1,78 @@
+// SmileyDbCom.idl : IDL source for AsdkSmileyDbCom.dll
+//
+// (C) Copyright 2000-2002 by Autodesk, Inc.
+
+//
+// Type library section and components
+//
+[
+	uuid(066DA281-CC00-11D2-B585-0010A401A37F),
+	version(1.0),
+	helpstring("SmileyDb 1.0 Type Library")
+]
+library SmileyDb
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//Importing english is ok here. We don't localize this idl/tlb.
+	//axdb16enu.tlb is guaranteed to be available in all locales.
+	//If you want to provide localized typelib then you must import
+	//localized tlb here.
+	importlib("axdb16enu.tlb");
+
+	// This file will be processed by the MIDL tool to
+	// produce the type library (AsdkSmileyDbCom.tlb) and marshalling code.
+
+	import "oaidl.idl";
+	import "ocidl.idl";
+
+	//
+	// ISmileyEntity interface
+	[
+		object,
+		uuid(066DA2A2-CC00-11D2-B585-0010A401A37F),
+		dual,
+		helpstring("ISmileyEntity Interface"),
+		pointer_default(unique)
+	]
+	interface ISmileyEntity : IAcadEntity
+	{
+		[propget, id(1), helpstring( "Radius of the face." )] HRESULT Radius([out, retval] double* r);
+		[propput, id(1), helpstring( "Radius of the face." )] HRESULT Radius([in] double r);
+		[propget, id(2), helpstring( "Center of the face." )] HRESULT Center([out, retval] VARIANT* pv);
+		[propput, id(2), helpstring( "Center of the face." )] HRESULT Center([in] VARIANT var);
+		[propget, id(3), helpstring( "Normal vector of the face." )] HRESULT Normal([out, retval] VARIANT* pv);
+		[propput, id(3), helpstring( "Normal vector of the face." )] HRESULT Normal([in] VARIANT var);
+		[propget, id(4), helpstring( "Distance between the eyes." )] HRESULT EyesApart([out, retval] double* d);
+		[propput, id(4), helpstring( "Distance between the eyes." )] HRESULT EyesApart([in] double d);
+		[propget, id(5), helpstring( "Height of the eyes from the face center." )] HRESULT EyesHeight([out, retval] double* h);
+		[propput, id(5), helpstring( "Height of the eyes from the face center." )] HRESULT EyesHeight([in] double h);
+		[propget, id(6), helpstring( "Radius of the eyes." )] HRESULT EyesSize([out, retval] double* s);
+		[propput, id(6), helpstring( "Radius of the eyes." )] HRESULT EyesSize([in] double s);
+		[propget, id(7), helpstring( "Center of the mouth." )] HRESULT MouthCenter([out, retval] VARIANT* pv);
+		[propget, id(8), helpstring( "Left point of the mouth." )] HRESULT MouthLeft([out, retval] VARIANT* pv);
+		[propput, id(8), helpstring( "Left point of the mouth." )] HRESULT MouthLeft([in] VARIANT var);
+		[propget, id(9), helpstring( "Bottom point of the mouth." )] HRESULT MouthBottom([out, retval] VARIANT* pv);
+		[propput, id(9), helpstring( "Bottom point of the mouth." )] HRESULT MouthBottom([in] VARIANT var);
+		[propget, id(10), helpstring( "Right point of the mouth." )] HRESULT MouthRight([out, retval] VARIANT* pv);
+		[propput, id(10), helpstring( "Right point of the mouth." )] HRESULT MouthRight([in] VARIANT var);
+		[id(11), helpstring("Scale the whole Smiley")] HRESULT ScaleRadius(double r);
+		[propget, id(12), helpstring("property Color")] HRESULT BackgroundColor([out, retval] VARIANT* pv);
+		[propput, id(12), helpstring("property Color")] HRESULT BackgroundColor([in] VARIANT var);
+	};
+	//
+	// coclasses in type library
+	//
+
+	// SmileyEntity coclass
+	[
+		uuid(46765BA4-C4CD-11D2-B579-0010A401A3C5),
+		helpstring("SmileyEntity Class")
+	]
+	coclass SmileyEntity
+	{
+		[default] interface ISmileyEntity;
+		[source] interface IAcadObjectEvents;
+	};
+};

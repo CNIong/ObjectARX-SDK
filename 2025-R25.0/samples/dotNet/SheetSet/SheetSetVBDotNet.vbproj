@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SheetSetVBDotNet</RootNamespace>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblySearchPaths>..\..\..\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcDbMgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="accoremgd">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ACSMCOMPONENTS25Lib">
+      <Guid>{1D699551-94BA-4D13-8C93-7AFBF62A713E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <Exec Command="attrib -r &quot;$(TargetDir)Interop.ACSMCOMPONENTS25Lib.dll&quot;" />
+    <Exec Command="corflags /32bit- &quot;$(TargetDir)Interop.ACSMCOMPONENTS25Lib.dll&quot;" />
+  </Target>
+</Project>

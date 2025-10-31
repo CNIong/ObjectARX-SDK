@@ -1,0 +1,12 @@
+; SimpleToolPalette.def : Declares the module parameters.
+
+; (C) Copyright 2003-2006 by Autodesk, Inc.
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer	PRIVATE
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

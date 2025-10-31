@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Charles Mc Auley">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (WinNT; I) [Netscape]">
+   <TITLE>ObjectARX 2000 Training</TITLE>
+</HEAD>
+<BODY onload="parent.window.frames['index'].location.href='index_step06.htm'">
+
+<H1>
+<A NAME="Top"></A>Step 6 - Custom Entities</H1>
+
+<HR WIDTH="100%">
+<H2>
+<A NAME="Step06 - Introduction"></A>Introduction</H2>
+In this section of the ObjectARX 2000 Training tutorial, we will create
+a custom entity. The custom entity will be an <B><TT>AsdkEmployee</TT></B>
+entity derived from <B><TT>AcDbEllipse</TT></B>. Here we get all the functionality
+of an <B><TT>AcDbEllipse</TT></B> object as well as our custom derived
+behavior. The custom <B><TT>AsdkEmployee</TT></B> class will store an Employee
+ID; the employee's cubicle number; employee's first name and the employee's
+last name as before, however this information will be stored within the
+entity itself and not in the NOD or Extension Dictionary as used previously.
+This application will be another example of using the DB/UI separation
+as in the last application. We will create an ObjectARX and ObjectDBX application.
+<H3>
+<A NAME="Step06 - Objective"></A>Objective</H3>
+
+<BLOCKQUOTE>As a starting point for this exercise, use the files you created
+in the previous step or open the project contained in the <B><TT>Step06</TT></B>
+folder. In this exercise we will create a single new AutoCAD command "<B>CREATEEMPLOYEE</B>".
+<P>When the "<B>CREATEEMPLOYEE</B>" command is executed, it will:
+<BLOCKQUOTE>
+<LI>
+Prompt the user for an employee ID; employee cubicle number; employee first
+name; employee last name;&nbsp; and employee location..</LI>
+
+<LI>
+Place a custom <B><TT>AsdkEmployee</TT></B> object in Model Space complete
+with the input data obtained from the user.</LI>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<H3>
+<A NAME="Step06 - Implementation"></A>Implementation</H3>
+
+<BLOCKQUOTE>
+<UL>
+<LI>
+Load project "<B><TT>Step06</TT></B>", which was created with the ObjectARX
+Wizard or continue with the files you created in the previous step.</LI>
+
+<LI>
+Create a sub project for the <A HREF="#Step06 - Create ObjectDBX module">ObjectDBX</A>
+(*.dbx) module.</LI>
+
+<LI>
+Create the <B><TT><A HREF="#Step06 - CreateAskdEmployee">AsdkEmployee</A></TT></B>
+entity.</LI>
+
+<LI>
+Register the command <B><A HREF="#Step06 - ImpCREATEEMPLOYEEcommand">CREATEEMPLOYEE</A></B>,
+set the name of the function to be called to '<B><TT>asdkcreateemployee()</TT></B>'.</LI>
+
+<LI>
+Add the <B><A HREF="#Step06 - ImpAddAskdEmployee to module">AsdkEmployee</A></B>
+entity to the command module.</LI>
+
+<LI>
+<A HREF="#Step06 - Testing the application">Testing the application</A>.</LI>
+</UL>
+
+<H4>
+<A NAME="Step06 - Create ObjectDBX module"></A>Create a sub project for
+the ObjectDBX (*.dbx) module</H4>
+
+<OL>
+<LI>
+From the "File" pull down menu of Visual C++ 6.0, select "New...".</LI>
+
+<LI>
+Select the "Projects" tab in the dialog that appears.</LI>
+
+<LI>
+Select "ObjectARX 2000 AppWizard" in the list of project types.</LI>
+
+<LI>
+Enter <B>Employee</B> as project name.</LI>
+
+<LI>
+Select the '<B>Add to current workspace</B>' radio button.</LI>
+
+<LI>
+When presented with the new dialog (Step 1 of 1), choose "<B>ObjectDBX
+(custom object definition)</B>" radio button - <B>IMPORTANT!!</B></LI>
+
+<LI>
+Click "Finish" and then "OK."</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step06 - CreateAskdEmployee"></A>Create the <B><TT>AsdkEmployee</TT></B>
+entity.</H4>
+We will use the ObjectARX Wizard to create the <B><TT>AsdkEmployee</TT></B>
+entity. Make sure that <B>Employee</B> is the active project.
+<OL>
+<LI>
+Select the '<B>ObjectARX class wizard</B>' button from the ObjectARX Wizard
+toolbar.</LI>
+
+<LI>
+When presented with the <B>ObjectARX ClassWizard</B> dialog, click the
+"<B>Add class...</B>" button.</LI>
+
+<OL TYPE=a>
+<LI>
+When presented with the <B>New Class</B> dialog:</LI>
+
+<LI>
+Use <B>AsdkEmployee</B> as class name.</LI>
+
+<LI>
+Derive from <B>AcDbEllipse</B>.</LI>
+
+<LI>
+Use <B>ASDKEMPLOYEE</B> as <B>DXF</B> name.</LI>
+</OL>
+
+<LI>
+Add the member functions <B><TT>dwgInFields()</TT></B>, <B><TT>dwgOutFields()</TT></B>,
+<B><TT>dxfInFields()</TT></B>,
+<B><TT>dxfOutFields()</TT></B>
+and <TT><B>worldDraw()</B>.</TT></LI>
+
+<BR>&nbsp;
+<P>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<P><IMG SRC="step6_addMemberFunctions.jpg" HEIGHT=469 WIDTH=580>
+<P><B>Step 6 Figure 1 - Adding member functions to the AsdkEmployee class</B>
+<BR>&nbsp;
+<LI>
+Add the following member variables as shown in the table:</LI>
+
+<BR>&nbsp;
+<TABLE BORDER COLS=3 WIDTH="50%" >
+<CAPTION><B><TT>Member Variables for AsdkEmployee entity</TT></B></CAPTION>
+
+<TR>
+<TD><TT>Variable Name</TT></TD>
+
+<TD><TT>Data Type</TT></TD>
+
+<TD><TT>DXF Code</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_lastName</TT></TD>
+
+<TD><TT>char*</TT></TD>
+
+<TD><TT>300</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_firstName</TT></TD>
+
+<TD><TT>char*</TT></TD>
+
+<TD><TT>301</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_cube</TT></TD>
+
+<TD><TT>Adesk::Int32</TT></TD>
+
+<TD><TT>90</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>m_ID</TT></TD>
+
+<TD><TT>Adesk::Int32</TT></TD>
+
+<TD><TT>91</TT></TD>
+</TR>
+</TABLE>
+
+<P><IMG SRC="step6_addMemberVariables.jpg" HEIGHT=468 WIDTH=580>
+<P><B>Step 6 Figure 2 - Adding member variables to the AsdkEmployee class</B>
+<P><B>NOTE:</B> In addition to adding member variables to the project,
+the ObjectARX Wizard will also add the data access functions to our project
+for us. Here is a list of the function prototypes that were added to the
+<B><TT>AsdkEmployee.h</TT></B>
+file, see the <B><TT>AsdkEmployees.cpp</TT></B> for the implementation
+of these functions.
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>//{{AFX_ARX_DATA_ACCESS(AsdkEmployee)</TT>
+<BR><TT>Acad::ErrorStatus setID(const Adesk::Int32 ID);</TT>
+<BR><TT>Acad::ErrorStatus iD(Adesk::Int32&amp; ID);</TT>
+<BR><TT>Acad::ErrorStatus setCube(const Adesk::Int32 cube);</TT>
+<BR><TT>Acad::ErrorStatus cube(Adesk::Int32&amp; cube);</TT>
+<BR><TT>Acad::ErrorStatus setFirstName(const char* firstName);</TT>
+<BR><TT>Acad::ErrorStatus firstName(char*&amp; firstName);</TT>
+<BR><TT>Acad::ErrorStatus setLastName(const char* lastName);</TT>
+<BR><TT>Acad::ErrorStatus lastName(char*&amp; lastName);</TT>
+<BR><TT>//}}AFX_ARX_DATA_ACCESS</TT></TD>
+</TR>
+</TABLE>
+
+<LI>
+Examine the source code generated by the ObjectARX Wizard.</LI>
+
+<OL TYPE=a>
+<LI>
+Take a look at <TT><B>AsdkEmployee.h</B>.</TT></LI>
+
+<BR>Pay close attention to the following:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" >
+<TR>
+<TD><TT>#ifndef ASDKEMPLOYEE_DBXSERVICE</TT>
+<BR><TT>#define ASDKEMPLOYEE_DBXSERVICE "ASDKEMPLOYEE_DBXSERVICE"</TT>
+<BR><TT>#endif</TT></TD>
+</TR>
+</TABLE>
+
+<P>This was added by the ObjectARX Wizard. This will be used to register
+a service in ObjectARX.
+<BR>&nbsp;
+<LI>
+Take a look at <TT><B>AsdkEmployee.cpp</B>.</TT></LI>
+
+<BR>Pay close attention to the <B><TT>InitApplication()</TT></B> function
+which was generated by the ObjectARX Wizard:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD WIDTH="100%"><TT>void InitApplication()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;// NOTE: DO NOT edit the following lines.</TT>
+<BR><TT>&nbsp;//{{AFX_ARX_INIT</TT>
+<BR><TT>&nbsp;AsdkEmployee::rxInit();</TT>
+<BR><TT>&nbsp;acrxBuildClassHierarchy();</TT>
+<BR><TT>&nbsp;acrxRegisterService(ASDKEMPLOYEE_DBXSERVICE);</TT>
+<BR><TT>&nbsp;//}}AFX_ARX_INIT</TT>
+<P><TT>&nbsp;// TODO: add your initialization functions</TT>
+<P><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>Here we initialize the <B><TT>AsdkEmployee</TT></B> class, build the
+ObjectARX class hierarchy and add a service called <B><TT>ASKDEMPLOYEE_DBXSERVICE</TT></B>,
+we will see later how we utilize this service in our ObjectARX application.
+For more information on these functions and their usage, refer to the ObjectARX
+Developers Guide and online help.
+<BR>&nbsp;</OL>
+
+<LI>
+Implement the <B><TT>worldDraw()</TT></B> function.</LI>
+
+<OL TYPE=a>
+<LI>
+Call the base class <B><TT>worldDraw()</TT></B> function of the parent
+class (<B><TT>AcDbEllipse::worldDraw()</TT></B>) first.</LI>
+
+<LI>
+In addition, draw the <B><TT>AsdkEmployee</TT></B> entity data as text.
+(<B><TT>AcGiWorldDraw::geometry()</TT></B>, <B><TT>AcGiGeometry::text()</TT></B>).
+Hint: <B><TT>worldDraw()</TT></B> is passed an <B><TT>AcGiWorldDraw</TT></B>
+pointer, use <B><TT>mode->geometry().text(various arguments here, see online
+help)</TT></B>. For the position, normal, direction and height of the text
+use the properties of the <B><TT>AsdkEmployee</TT></B> entity which is
+derived from <B><TT>AcDbEllipse</TT></B>.</LI>
+</OL>
+
+<LI>
+Change the constructor for <B><TT>AsdkEmloyee</TT></B> class as follows:</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" >
+<TR>
+<TD><TT>AsdkEmployee::AsdkEmployee() : AcDbEllipse (AcGePoint3d (),</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AcGeVector3d (0, 0, 1),</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AcGeVector3d (1, 0, 0), 1)</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;&nbsp; // TODO: do your initialization.</TT>
+<BR><TT>&nbsp;&nbsp; m_firstName = m_lastName = NULL ;</TT>
+<BR><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step6 - worldDraw" and study the source code.</LI>
+
+<LI>
+Compile the project.</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE><B>NOTE:</B> Set "<B>Project</B>" as the active project in
+Visual C++.</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step06 - ImpCREATEEMPLOYEEcommand"></A>Implementation of the <B>CREATEEMPLOYEE</B>
+command - '<B><TT>asdkcreateemployee()</TT></B>'</H4>
+
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Register the command <B>CREATEEMPLOYEE</B> with the ObjectARX Wizard and
+set the function to be called to '<B><TT>asdkcreateemployee()</TT></B>'.</LI>
+
+<LI>
+Input employee data for employee ID; employee cubicle; employee first name;
+employee last name (<B><TT>acedGetInt()</TT></B>, <B><TT>acedGetString()</TT></B>)
+and employee position (<B><TT>acedGetPoint()</TT></B>).</LI>
+
+<BR>&nbsp;
+<P>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<P><B>NOTE:</B> The function <B><TT>acedGetPoint()</TT></B> returns an
+<B><TT>ads_point</TT></B>
+representing the point picked by the user. To convert an <B><TT>ads_point</TT></B>
+directly into an <B><TT>AcGePoint3d</TT></B> point use the global function
+<B><TT>asDblArray()</TT></B>,
+this will require you to include "<B><TT>geassign.h</TT></B>" in your project.
+Refer to the ObjectARX online help for more information on <B><TT>asDblArray()</TT></B>.
+<BR>&nbsp;
+<LI>
+Create a new instance of the <B><TT>AsdkEmployee</TT></B> entity.</LI>
+
+<LI>
+Set the <B><TT>AsdkEmployee</TT></B> data.</LI>
+
+<LI>
+Add the <B><TT>AsdkEmployee</TT></B> entity to the Model Space record.</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step6 - asdkcreateemployee" and study the source code.</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step06 - ImpAddAskdEmployee to module"></A>Add the <B><TT>AsdkEmployee</TT></B>
+entity to the command module</H4>
+
+<OL>
+<LI>
+Add the <B>AsdkEmployee.h</B> to <B>StdArx.h</B>&nbsp; - <TT><B>#include
+"Employee\AsdkEmployee.h"</B>.</TT></LI>
+
+<LI>
+Add <B>AsdkEmployee.lib</B> to the libraries of the linker settings.</LI>
+
+<LI>
+In <B>Project.cpp</B> at the <B><TT>AcRx::kInitAppMsg</TT></B> location
+in <B><TT>acrxEntryPoint()</TT></B> add code to load the <B>DBX</B> module.
+You may use the ObjectARX component gallery under "Step6 - kInitAppMsg"
+and study the source code.</LI>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step06 - Add code to acrxEntryPoint()"></A>Add code to acrxEntryPoint()</H4>
+
+<OL>
+<OL>
+<LI>
+Add the following code to the '<B><TT>acrxEntryPoint()</TT></B>' of the
+'<B><TT>Project.cpp</TT></B>' file.</LI>
+
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>AcRxObject *pSvc;</TT>
+<BR><TT>if ( !(pSvc =acrxServiceDictionary->at (ASDKEMPLOYEE_DBXSERVICE))
+) {</TT>
+<BR><TT>&nbsp;&nbsp; // Try to load the module, if it is not yet present</TT>
+<BR><TT>&nbsp;&nbsp; if ( !acrxDynamicLinker->loadModule ("AsdkEmployee.dbx",
+0) ) {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; acutPrintf ("Unable to load AsdkEmployee.dbx.
+Unloading this application...\n") ;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; return (AcRx::kRetError) ;</TT>
+<BR><TT>&nbsp;&nbsp; }</TT>
+<BR><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>Here we are checking to see if the ObjectDBX application is loaded.
+This is achieved by checking to see if the <B><TT>ASDKEMPLOYEE_DBXSERVICE
+</TT></B>service
+is registered. If the service is not registered, load the ObjectDBX module.
+Alternatively this code could be added to the '<B><TT>InitApplication()</TT></B>'
+function generated by the ObjectARX Wizard.</OL>
+</OL>
+
+<HR WIDTH="80%"></BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step06 - Testing the application"></A>Test the application</H4>
+
+<OL>
+<LI>
+Build the application and load the DBX module first. Create an <B>EMPLOYEE</B>
+entity with the command <B>CREATEEMPLOYEE</B>. Save the drawing. Unload
+the application and dbx module. Notice that you have now a Proxy entity.
+Reload the application and notice that the <B>EMPLOYEE</B> is once again
+a valid entity.</LI>
+</OL>
+</BLOCKQUOTE>
+
+</BODY>
+</HTML>

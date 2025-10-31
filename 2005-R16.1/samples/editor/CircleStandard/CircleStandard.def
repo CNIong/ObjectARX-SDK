@@ -1,0 +1,9 @@
+; CircleStandard.def : Declares the module parameters.
+
+LIBRARY      "CircleStandard.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

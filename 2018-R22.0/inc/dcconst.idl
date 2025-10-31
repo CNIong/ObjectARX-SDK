@@ -1,0 +1,110 @@
+//
+//  apiconst.idl : Constants for Design Center API
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright 2017 Autodesk, Inc.  All rights reserved.
+//
+//  Use of this software is subject to the terms of the Autodesk license 
+//  agreement provided at the time of installation or download, or which 
+//  otherwise accompanies this software in either electronic or hard copy form.   
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+
+typedef [uuid(7f677e70-dae5-11d1-a932-0060b0a1f6bb)] [v1_enum] enum dcNavNodeRelation
+{
+    dcNavNodeFirst = 0,
+    dcNavNodeLast,
+    dcNavNodeSort,
+} dcNavNodeRelation;
+
+typedef [uuid(960a99c0-dae8-11d1-a932-0060b0a1f6bb)] [v1_enum] enum dcPalColAlignment
+{
+    dcPalColLeft    = 0,
+    dcPalColRight   = 1,
+    dcPalColCenter  = 2
+} dcPalColAlignment;
+
+typedef [uuid(eeb66efa-dae8-11d1-a932-0060b0a1f6bb)] [v1_enum] enum dcPalSortOrder
+{
+    dcPalAscending  = 0,
+    dcPalDescending = 1
+} dcPalSortOrder;
+
+typedef [uuid(31acbab6-dae9-11d1-a932-0060b0a1f6bb)] [v1_enum] enum dcPalViewType
+{
+    dcPalIcon       = 0,
+    dcPalSmallIcon  = 1,
+    dcPalList       = 2,
+    dcPalReport     = 3
+} dcPalViewType;
+
+typedef [uuid(DA67B937-EC54-11d1-B9C7-0060B0B5E151)] [v1_enum] enum dcFinderTypeMask
+{
+    dcFinderTypeMaskDate            = 1,
+    dcFinderTypeMaskAdvanced        = 2,
+    dcFinderTypeMaskFileBased       = 4,
+    dcFinderTypeMaskDateReturned    = 8,
+    dcFinderTypeMaskSizeReturned    = 16,
+} dcFinderTypeMask;
+
+typedef [uuid(C96EC44C-FA43-11d1-B9D4-0060B0B5E151)] [v1_enum] enum dcFinderObjectTypes
+{
+	dcFinderADeskDrawing        = 0,
+	dcFinderADeskBlock          = 1,
+	dcFinderADeskLayer          = 2,
+	dcFinderADeskActrix         = 3,
+	dcFinderADeskActrixCatalog  = 4,
+	dcFinderADeskXref           = 5,
+	dcFinderADeskLinetypes      = 6,
+	dcFinderThirdParty          = 7,
+	dcFinderADeskLayouts        = 8,
+	dcFinderADeskDimStyles      = 9,
+	dcFinderADeskTextStyles     = 10,
+	dcFinderADeskTableStyles    = 11,
+    dcFinderADeskMultileaderStyles = 12,
+    dcFinderADeskVisualStyles   = 13,
+    dcFinderADeskSectionViewStyles = 14,
+    dcFinderADeskDetailViewStyles = 15,
+} dcFinderObjectTypes;
+
+typedef [uuid(44A8B451-314F-11d2-BA25-0060B0B5E151)] [v1_enum] enum dcFinderCommands
+{
+	dcFinderCmdInsert           = 1,
+	dcFinderCmdAttachAsXref     = 2,
+	dcFinderCmdCopy             = 3,
+	dcFinderCmdOpen             = 4,
+	dcFinderCmdLoad             = 5,
+	dcFinderCmdFirst            = 1,
+	dcFinderCmdCustFirst        = 6,
+	dcFinderCmdCustLast         = 32,
+	dcFinderCmdLast             = 32,
+} dcFinderCommands;
+
+typedef [uuid(875F5C81-F0D4-11d1-8049-080009AC689B)] [v1_enum] enum dcContentMode
+{
+    dcDesktop		     = 0,
+    dcOpenDrawings	     = 1,
+    dcCustomContent	     = 2,
+} dcContentMode;
+
+typedef [uuid(fe7053fa-80cb-11d2-a9a0-0060b0a1f6bb)] [v1_enum] enum dcPane
+{
+    dcPreview            = 0,
+    dcDescription        = 1,
+    dcNavigator          = 2,
+} dcPane;
+
+typedef [uuid(1e8f57be-8970-11d2-a9a2-0060b0a1f6bb)] [v1_enum] enum dcMenuInfoFlag
+{
+    dcHelpText          = 0,
+    dcValidate          = 1,
+    dcVerb              = 2,
+} dcMenuInfoFlag;
+
+typedef [uuid(a33a1f18-b09d-11d2-a9ab-0060b0a1f6bb)] [v1_enum] enum dcItemDataSource
+{
+    dcIDSNavigator      = 0,
+    dcIDSPalette        = 1,
+} dcItemDataSource;

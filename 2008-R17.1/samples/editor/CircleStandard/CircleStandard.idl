@@ -1,0 +1,37 @@
+// CircleStandard.idl : IDL source for CircleStandard
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CircleStandard.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(2CFD8828-5AA7-4759-938A-7C84B1D562AF),
+	dual,
+	nonextensible,
+	helpstring("IAcStCircle Interface"),
+	pointer_default(unique)
+]
+interface IAcStCircle : IDispatch{
+};
+[
+	uuid(D0B56413-1AE2-46DD-BE24-390BA0FBD4DE),
+	version(1.0),
+	helpstring("CircleStandard 1.0 Type Library")
+]
+library CircleStandardLib
+{
+	importlib("stdole2.tlb");
+	importlib("AcStMgr.tlb");
+	[
+		uuid(303E400F-AE01-4013-87DD-398FF4E3F9AF),
+		helpstring("AcStCircle Class")
+	]
+	coclass AcStCircle
+	{
+		[default] interface IAcStPlugin2;
+	};
+};

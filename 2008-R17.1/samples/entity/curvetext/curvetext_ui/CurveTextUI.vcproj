@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="AsdkCurvetext" ProjectGUID="{6D98F60D-B477-4463-94D4-86C5492EEAFF}" RootNamespace="AsdkCurvetext" Keyword="MFCProj">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Release|Win32"  IntermediateDirectory="$(ConfigurationName)" ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" AdditionalIncludeDirectories="..\..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="AsdkCurveText.lib " AdditionalLibraryDirectories="..\CurveText_DB\Release,..\..\..\..\lib" ModuleDefinitionFile=".\curveText.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Release|x64" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" />
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" AdditionalIncludeDirectories="..\..\..\..\inc" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="AsdkCurveText.lib " AdditionalLibraryDirectories="..\CurveText_DB\x64\Release,..\..\..\..\lib" ModuleDefinitionFile=".\curveText.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|Win32" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" PreprocessorDefinitions=";" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="AsdkCurveText.lib " AdditionalLibraryDirectories="..\CurveText_DB\Debug,..\..\..\..\lib" ModuleDefinitionFile=".\curveText.def" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+    <Configuration Name="Debug|x64" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops">
+      <Tool Name="VCPreBuildEventTool" />
+      <Tool Name="VCCustomBuildTool" />
+      <Tool Name="VCXMLDataGeneratorTool" />
+      <Tool Name="VCWebServiceProxyGeneratorTool" />
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc" AdditionalOptions="/D_CRT_NON_CONFORMING_SWPRINTFS /D_CRT_SECURE_NO_DEPRECATE" PreprocessorDefinitions=";" />
+      <Tool Name="VCManagedResourceCompilerTool" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";" />
+      <Tool Name="VCPreLinkEventTool" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="AsdkCurveText.lib " AdditionalLibraryDirectories="..\CurveText_DB\x64\Debug,..\..\..\..\lib" ModuleDefinitionFile=".\curveText.def" TargetMachine="17" />
+      <Tool Name="VCALinkTool" />
+      <Tool Name="VCManifestTool" />
+      <Tool Name="VCXDCMakeTool" />
+      <Tool Name="VCBscMakeTool" />
+      <Tool Name="VCFxCopTool" />
+      <Tool Name="VCAppVerifierTool" />
+      <Tool Name="VCWebDeploymentTool" />
+      <Tool Name="VCPostBuildEventTool" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="*.cpp">
+      <File RelativePath=".\ContextMenu.cpp" />
+      <File RelativePath=".\CurveTextDialog.cpp" />
+      <File RelativePath=".\CurvetextHelper.cpp" />
+      <File RelativePath=".\CurveTextJig.cpp" />
+      <File RelativePath=".\InputPointMonitor.cpp" />
+      <File RelativePath=".\MAIN.CPP" />
+      <File RelativePath=".\STDAFX.CPP">
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+      </File>
+      <File RelativePath=".\Utils.cpp" />
+    </Filter>
+    <Filter Name="Header Files" Filter="*.h">
+      <File RelativePath="AdskDMgr.h" />
+      <File RelativePath=".\ContextMenu.h" />
+      <File RelativePath=".\CurveTextDialog.h" />
+      <File RelativePath=".\CurveTextHelper.h" />
+      <File RelativePath=".\CurveTextJig.h" />
+      <File RelativePath=".\InputPointMonitor.h" />
+      <File RelativePath=".\resource.h" />
+      <File RelativePath=".\STDAFX.H" />
+      <File RelativePath=".\Utils.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="*.rc">
+      <File RelativePath=".\curveText.rc" />
+    </Filter>
+  </Files>
+  <Globals />
+</VisualStudioProject>

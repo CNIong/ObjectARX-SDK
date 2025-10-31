@@ -1,0 +1,7 @@
+DESCRIPTION 'Progress Bar Application'
+LIBRARY     progbar.arx
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

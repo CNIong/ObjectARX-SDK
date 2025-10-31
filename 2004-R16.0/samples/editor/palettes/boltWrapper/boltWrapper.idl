@@ -1,0 +1,70 @@
+// boltWrapper.idl : IDL source for AsDkboltWrapper.arx
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (AsDkboltWrapper.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+	uuid(1B890088-8B56-4128-A6BD-AC855459FB0C),
+	version(1.0),
+	helpstring("AsDkboltWrapper 1.0 Type Library")
+]
+library AsDkBOLTWRAPPERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	importlib("axdb16enu.tlb");
+	//If the following import fails then it means that the type library 
+	//is not on the system path you can fix the problem in two ways:
+	//1. Add it to the system wide PATH environment variable
+	//2. Add it to the executable file list in Developer Studio. You can do
+	//this in using the Tools/Option menu and then choosing the 'Directories'
+	//tab and finally typing the full path at the Executable files section
+//	importlib("axdb15.tlb");
+	[
+		object,
+		uuid(AFC92840-07CB-4BC9-9142-173F37B5E510),
+		dual,
+		helpstring("IBolt Interface"),
+		pointer_default(unique)
+	]
+	interface IBolt : IAcadEntity
+	{
+		[propget, id(1), helpstring("property alignment")] HRESULT alignment([out, retval] VARIANT *pVal);
+		[propput, id(1), helpstring("property alignment")] HRESULT alignment([in] VARIANT newVal);
+		[propget, id(2), helpstring("property headDiameter")] HRESULT headDiameter([out, retval] double *pVal);
+		[propput, id(2), helpstring("property headDiameter")] HRESULT headDiameter([in] double newVal);
+		[propget, id(3), helpstring("property headHeight")] HRESULT headHeight([out, retval] double *pVal);
+		[propput, id(3), helpstring("property headHeight")] HRESULT headHeight([in] double newVal);
+		[propget, id(4), helpstring("property headSides")] HRESULT headSides([out, retval] int *pVal);
+		[propput, id(4), helpstring("property headSides")] HRESULT headSides([in] int newVal);
+		[propget, id(5), helpstring("property materialName")] HRESULT materialName([out, retval] BSTR *pVal);
+		[propput, id(5), helpstring("property materialName")] HRESULT materialName([in] BSTR newVal);
+		[propget, id(6), helpstring("property position")] HRESULT position([out, retval] VARIANT *pVal);
+		[propput, id(6), helpstring("property position")] HRESULT position([in] VARIANT newVal);
+		[propget, id(7), helpstring("property shaftDiameter")] HRESULT shaftDiameter([out, retval] double *pVal);
+		[propput, id(7), helpstring("property shaftDiameter")] HRESULT shaftDiameter([in] double newVal);
+		[propget, id(8), helpstring("property shaftLength")] HRESULT shaftLength([out, retval] double *pVal);
+		[propput, id(8), helpstring("property shaftLength")] HRESULT shaftLength([in] double newVal);
+		[propget, id(9), helpstring("property partNumber")] HRESULT partNumber([out, retval] BSTR *pVal);
+		[propput, id(9), helpstring("property partNumber")] HRESULT partNumber([in] BSTR newVal);
+		[propget, id(10), helpstring("property threadLength")] HRESULT threadLength([out, retval] double *pVal);
+		[propput, id(10), helpstring("property threadLength")] HRESULT threadLength([in] double newVal);
+		[propget, id(11), helpstring("property threadWidth")] HRESULT threadWidth([out, retval] double *pVal);
+		[propput, id(11), helpstring("property threadWidth")] HRESULT threadWidth([in] double newVal);
+//		[propget, id(12), helpstring("property color")] HRESULT color([out, retval] LONG* pVal);
+//		[propput, id(12), helpstring("property color")] HRESULT color([in] LONG newVal);
+	};
+	[
+		uuid(9CB206D1-6D16-4514-B1FA-536B34CF5D74),
+		helpstring("Bolt Class")
+	]
+	coclass Bolt
+	{
+		[default] interface IBolt;
+		[source] interface IAcadObjectEvents;
+	};
+};

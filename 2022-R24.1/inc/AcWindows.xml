@@ -1,0 +1,761 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcWindows</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn">
+            <summary>This class is the connector between the AutoCAD and InfoCenter components.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.Terminate">
+            <summary>AutoCAD calls this method when the defining application is unloaded.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.Initialize">
+            <summary>AutoCAD calls this method when the defining application is loaded.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.DownloadOfflineHelp">
+            <summary>This is DownloadOfflineHelp, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.DownloadLanguagePacks">
+            <summary>This is DownloadLanguagePacks, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenSubscription">
+            <summary>This is OpenSubscription, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenHWCertification">
+            <summary>This is OpenHWCertification, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenYouTubeWithProduct">
+            <summary>This is OpenYouTubeWithProduct, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenFacebookWithProduct">
+            <summary>This is OpenFacebookWithProduct, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenTwitterWithProduct">
+            <summary>This is OpenTwitterWithProduct, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenAutoCADBlogWithProduct">
+            <summary>This is OpenAutoCADBlogWithProduct, a member of class AcInfoCenterConn.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler">
+            <summary>This is class Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.CanExecute(System.Object)">
+            <summary>This is CanExecute, a member of class SignInHandler.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.CanExecuteChanged">
+            <summary>This is CanExecuteChanged, a member of class SignInHandler.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.Execute(System.Object)">
+            <summary>This is Execute, a member of class SignInHandler.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager">
+            <summary>This class manages the Palette Manager and is the connection between InfoCenter and the Application.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.Dispose">
+            <summary>Deletes the user interaction object associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.Toolbar">
+            <summary>Retrieves the InfoCenter toolbar.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.PaletteManager">
+            <summary>Retrieves the Palette Manager.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterBalloonHelper">
+            <summary>This class is related to feature related balloon notifications.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterBalloonHelper.DisplayAwarenessInfoCenterBalloon">
+            <summary>Displays the Web and Mobile Awareness balloon notification.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.ClicUiHandler">
+            <summary>This class is the connector between the AutoCAD and ADLM components.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.AcInfoCenterConn.ClicUiHandler.CanExecuteChanged">
+            <summary>Lets the Licensing UI button prepare for execution.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.ClicUiHandler.CanExecute(System.Object)">
+            <summary>This method is called to enable or disable the Licensing UI button.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.ClicUiHandler.Execute(System.Object)">
+            <summary>Executes the action of the Licensing UI button.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.AcInfoCenterConn.ClicUiHandler.Instance">
+            <summary>Retrieves the Licensing UI of the InfoCenter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.RibbonCommandButton">
+            <summary>This class represents command buttons within the ribbon.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.CopyFrom(Autodesk.Windows.RibbonItem)">
+            <summary>Copies the button data from a source button to this button.</summary>
+            <param name="source"> Input source button to copy from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.Execute(System.Object)">
+            <summary>This is Execute, a member of class RibbonCommandButton.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.Macro">
+            <summary>Accesses the macro associated with this object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.MenuMacroId">
+            <summary>Accesses the menu macro ID for this object.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.CachedImageMultiToSingleConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.CachedImageMultiToSingleConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.CachedImageMultiToSingleConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class CachedImageMultiToSingleConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.CachedImageMultiToSingleConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class CachedImageMultiToSingleConverter.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.CachedImageMultiToSingleConverter.Cache">
+            <summary>This is Cache, a member of class CachedImageMultiToSingleConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.ViewImageCache">
+            <summary>This class is used to return the image of one or more named views.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet">
+            <summary>This class represents a ribbon palette set.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.WorkspaceLoaded">
+            <summary>This is WorkspaceLoaded, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.WorkspaceUnloading">
+            <summary>This is WorkspaceUnloading, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.VisibleChanged">
+            <summary>This event is fired when the palette's visibility has changed.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.TabLoaded">
+            <summary>This is TabLoaded, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.TabActivated">
+            <summary>This is TabActivated, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.DockStateChanged">
+            <summary>This event is fired when the dock state changes.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.Moved">
+            <summary>This event is fired when the palette is moved.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.Destroy">
+            <summary>This event is fired when the palette is destroyed.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.UpdateFileTabDisplay">
+            <summary>This is UpdateFileTabDisplay, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.ShowFileTabControl">
+            <summary>This is ShowFileTabControl, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.HideFileTabControl">
+            <summary>This is HideFileTabControl, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.SaveRibbonState">
+            <summary>This is SaveRibbonState, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.RestoreRibbonState">
+            <summary>This is RestoreRibbonState, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.UpdateCommandButtonImages">
+            <summary>This is UpdateCommandButtonImages, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.ResizeControl">
+            <summary>This is ResizeControl, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.RibbonControl">
+            <summary>Accesses the ribbon control within the palette.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.DocumentSwitchControl">
+            <summary>This is DocumentSwitchControl, a member of class RibbonPaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.DockState">
+            <summary>Accesses the dock state for the palette object.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.Visible">
+            <summary>Accesses the visibility of the ribbon palette.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.KeepFocus">
+            <summary>Assesses if the palette should be kept in focus at all times, or not.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.ExtensionMethod">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ExtensionMethod.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.RibbonServices">
+            <summary>This class creates an object which assists the ribbon palette class by providing event arguments.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.RibbonServices.RibbonPaletteSetCreated">
+            <summary>This event is fired after the ribbon palette set is created.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RibbonServices.CreateRibbonPaletteSet">
+            <summary>This function creates a new RibbonPaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonServices.RibbonPaletteSet">
+            <summary>Accesses the ribbon palette set which has been created.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.RibbonUtilContent">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsOnlineDwgSyncAvailable">
+            <summary>This is IsOnlineDwgSyncAvailable, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsSampleLocalAvailable">
+            <summary>This is IsSampleLocalAvailable, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsSampleOnlineAvailable">
+            <summary>This is IsSampleOnlineAvailable, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsSampleAvailable">
+            <summary>This is IsSampleAvailable, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.AboutProductName">
+            <summary>This is AboutProductName, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.CompanyName">
+            <summary>This is CompanyName, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ConnectWithProduct">
+            <summary>This is ConnectWithProduct, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnTheWeb">
+            <summary>This is ProductOnTheWeb, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnYouTube">
+            <summary>This is ProductOnYouTube, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnFacebook">
+            <summary>This is ProductOnFacebook, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnTwitter">
+            <summary>This is ProductOnTwitter, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnAutoCADBlog">
+            <summary>This is ProductOnAutoCADBlog, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.AutodeskSubscriptionCenter">
+            <summary>This is AutodeskSubscriptionCenter, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.AutodeskHardwareCertification">
+            <summary>This is AutodeskHardwareCertification, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.NewHighlightsAvaliable">
+            <summary>This is NewHighlightsAvaliable, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsHighlightsAvaliable">
+            <summary>This is IsHighlightsAvaliable, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ShowNewHighlights">
+            <summary>This is ShowNewHighlights, a member of class RibbonUtilContent.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.HighlightVisibility">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.HighlightVisibility.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.HighlightVisibility.#ctor">
+            <summary>This is HighlightVisibility, a member of class HighlightVisibility.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.HighlightVisibility.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class HighlightVisibility.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.HighlightVisibility.HighlightsAvaliable">
+            <summary>This is HighlightsAvaliable, a member of class HighlightVisibility.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.ShowNewHighlights">
+            <summary>Used to determine whether ribbon controls, associated with a command that was updated or added in a product update, have an orange dot on them to indicate "new or changed feature".</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.ShowNewHighlights.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class ShowNewHighlights.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.ShowNewHighlights.HighlightsVisible">
+            <summary>Indicates whether visually a small orange dot appears on a ribbon control with an updated or new command.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.ArrayDataSource">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ArrayDataSource.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.ArrayDataSource.#ctor">
+            <summary>This is ArrayDataSource, a member of class ArrayDataSource.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.ArrayDataSource.CurrentArray">
+            <summary>This is CurrentArray, a member of class ArrayDataSource.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.ArrayDataSource.CloseCommand">
+            <summary>This is CloseCommand, a member of class ArrayDataSource.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.UpdateArrayConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.UpdateArrayConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.UpdateArrayConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class UpdateArrayConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.UpdateArrayConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class UpdateArrayConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.</summary>
+        </member>
+        <member name="E:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class ReadOnlyPropertyBridge.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.SourceValue">
+            <summary>This is SourceValue, a member of class ReadOnlyPropertyBridge.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.Source">
+            <summary>This is Source, a member of class ReadOnlyPropertyBridge.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.PropertyName">
+            <summary>This is PropertyName, a member of class ReadOnlyPropertyBridge.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.Value">
+            <summary>This is Value, a member of class ReadOnlyPropertyBridge.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.CachedImageConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.CachedImageConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.CachedImageConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class CachedImageConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.CachedImageConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class CachedImageConverter.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.CachedImageConverter.Cache">
+            <summary>This is Cache, a member of class CachedImageConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class InactiveTextColorConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class InactiveTextColorConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class NegateIsDependentConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class NegateIsDependentConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.ColorThemeConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ColorThemeConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.ColorThemeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class ColorThemeConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.ColorThemeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class ColorThemeConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.RGBColorToColorStringConverter">
+            <summary>This class is used to convert a color (RGB, AutoCAD, or OS) value to a named color string or convert a named color string back to a color (RGB, AutoCAD, or OS) value.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RGBColorToColorStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Converts a color (RGB, AutoCAD, or OS) value to a color string.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.RGBColorToColorStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Converts a color string back to its associated color (RGB, AutoCAD, or OS) value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.DynamicLargeIconConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.DynamicLargeIconConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.DynamicLargeIconConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class DynamicLargeIconConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.DynamicLargeIconConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class DynamicLargeIconConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.DynamicLargeIconConverter.GetColors(System.String)">
+            <summary>This is GetColors, a member of class DynamicLargeIconConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.DynamicLargeIconConverter.GenerateDynamicIcon(System.String,System.String,System.Int16,System.Boolean)">
+            <summary>This is GenerateDynamicIcon, a member of class DynamicLargeIconConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.BothTrueSystemVariablesToIsEnableConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.BothTrueSystemVariablesToIsEnableConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.BothTrueSystemVariablesToIsEnableConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class BothTrueSystemVariablesToIsEnableConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.BothTrueSystemVariablesToIsEnableConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class BothTrueSystemVariablesToIsEnableConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.GetFileName">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GetFileName.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GetFileName.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class GetFileName.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GetFileName.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class GetFileName.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.GetFileNameWithExt">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GetFileNameWithExt.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GetFileNameWithExt.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class GetFileNameWithExt.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GetFileNameWithExt.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class GetFileNameWithExt.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.GetFolderPath">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GetFolderPath.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GetFolderPath.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class GetFolderPath.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GetFolderPath.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class GetFolderPath.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.KeepSelectionConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.KeepSelectionConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.KeepSelectionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class KeepSelectionConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.KeepSelectionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class KeepSelectionConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class NullToVisibilityConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class NullToVisibilityConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.NullToVariesConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.NullToVariesConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.NullToVariesConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class NullToVariesConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.NullToVariesConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class NullToVariesConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class FocusableDoubleToStringConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class FocusableDoubleToStringConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.Ribbon2DViewStyleCombo">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.Ribbon2DViewStyleCombo.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.Ribbon2DViewStyleCombo.#ctor">
+            <summary>This is Ribbon2DViewStyleCombo, a member of class Ribbon2DViewStyleCombo.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class VetoSecViewSelectionConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class VetoSecViewSelectionConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is Convert, a member of class VetoDetViewSelectionConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>This is ConvertBack, a member of class VetoDetViewSelectionConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.IImageCache">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.IImageCache.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.IImageCache.GetImage(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>This is GetImage, a member of class IImageCache.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.GalleryImageCache">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GalleryImageCache.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GalleryImageCache.#ctor">
+            <summary>This is GalleryImageCache, a member of class GalleryImageCache.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GalleryImageCache.GetImage(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>This is GetImage, a member of class GalleryImageCache.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.ItemsSource">
+            <summary>This is ItemsSource, a member of class GalleryImageCache.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.BackgroundColor">
+            <summary>This is BackgroundColor, a member of class GalleryImageCache.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.ImageWidth">
+            <summary>This is ImageWidth, a member of class GalleryImageCache.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.ImageHeight">
+            <summary>This is ImageHeight, a member of class GalleryImageCache.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.BlockImageCache">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.BlockImageCache.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.#ctor">
+            <summary>This is GalleryNonCacheableImage, a member of class GalleryNonCacheableImage.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.GetImage(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
+            <summary>This is GetImage, a member of class GalleryNonCacheableImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.ItemsSource">
+            <summary>This is ItemsSource, a member of class GalleryNonCacheableImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.BackgroundColor">
+            <summary>This is BackgroundColor, a member of class GalleryNonCacheableImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.ImageWidth">
+            <summary>This is ImageWidth, a member of class GalleryNonCacheableImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.ImageHeight">
+            <summary>This is ImageHeight, a member of class GalleryNonCacheableImage.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.GalleryNamedImage">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GalleryNamedImage.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.#ctor">
+            <summary>This is GalleryNamedImage, a member of class GalleryNamedImage.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.GetNamedImage(System.String)">
+            <summary>This is GetNamedImage, a member of class GalleryNamedImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.ItemsSource">
+            <summary>This is ItemsSource, a member of class GalleryNamedImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.BackgroundColor">
+            <summary>This is BackgroundColor, a member of class GalleryNamedImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.ImageWidth">
+            <summary>This is ImageWidth, a member of class GalleryNamedImage.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.ImageHeight">
+            <summary>This is ImageHeight, a member of class GalleryNamedImage.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.TableCellStyleImageProvider">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.TableCellStyleImageProvider.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.DimStyleImageProvider">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.DimStyleImageProvider.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.MLeaderStyleImageProvider">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.MLeaderStyleImageProvider.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.TableStyleImageProvider">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.TableStyleImageProvider.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Ribbon.GeomapRibbonDataBoundDropDown">
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GeomapRibbonDataBoundDropDown.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.QATItemCollection">
+            <summary>This collection represents the items on the Quick Access toolbar (QAT).</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.QATItemCollection.Ordering">
+            <summary>Gets or sets the order of the ordering of the collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.AutomationDataGridView">
+            <summary>This is class Autodesk.AutoCAD.Windows.AutomationDataGridView.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ColorListBoxItem">
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorListBoxItem.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ColorListBox">
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorListBox.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ColorComboBox">
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorComboBox.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorComboBox.OnApplyTemplate">
+            <summary>This is OnApplyTemplate, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsByLayer">
+            <summary>This is SupportsByLayer, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsByBlock">
+            <summary>This is SupportsByBlock, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsNone">
+            <summary>This is SupportsNone, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsUseCurrent">
+            <summary>This is SupportsUseCurrent, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsByEntity">
+            <summary>This is SupportsByEntity, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsMoreColors">
+            <summary>This is SupportsMoreColors, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.MaxRecentColorCount">
+            <summary>This is MaxRecentColorCount, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SpecialColors">
+            <summary>This is SpecialColors, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.TrueColors">
+            <summary>This is TrueColors, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.IndexColors">
+            <summary>This is IndexColors, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.RecentColors">
+            <summary>This is RecentColors, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.CurrentColor">
+            <summary>This is CurrentColor, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SelectionBoxItemTemplate">
+            <summary>This is SelectionBoxItemTemplate, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.Highlight">
+            <summary>This is Highlight, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.CurrentAcadColor">
+            <summary>This is CurrentAcadColor, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.PreviewSafeAcadColor">
+            <summary>This is PreviewSafeAcadColor, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.MoreColorsCommand">
+            <summary>This is MoreColorsCommand, a member of class ColorComboBox.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ColorItem">
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorItem.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItem.#ctor(Autodesk.AutoCAD.Colors.Color)">
+            <summary>This is ColorItem, a member of class ColorItem.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItem.ToString">
+            <summary>This is ToString, a member of class ColorItem.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItem.Equals(System.Object)">
+            <summary>This is Equals, a member of class ColorItem.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItem.GetHashCode">
+            <summary>This is GetHashCode, a member of class ColorItem.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItem.GetIndexColorItem(System.Int16)">
+            <summary>This is GetIndexColorItem, a member of class ColorItem.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItem.GetTrueColorItem(System.Windows.Media.Color)">
+            <summary>This is GetTrueColorItem, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.Name">
+            <summary>This is Name, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.Color">
+            <summary>This is Color, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.AcadColor">
+            <summary>This is AcadColor, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsByBlock">
+            <summary>This is IsByBlock, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsByLayer">
+            <summary>This is IsByLayer, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsNone">
+            <summary>This is IsNone, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsUseCurrent">
+            <summary>This is IsUseCurrent, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.ByBlock">
+            <summary>This is ByBlock, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.ByLayer">
+            <summary>This is ByLayer, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.None">
+            <summary>This is None, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.UseCurrent">
+            <summary>This is UseCurrent, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.ByLayerColor">
+            <summary>This is ByLayerColor, a member of class ColorItem.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ColorItem.LocalName">
+            <summary>This is LocalName, a member of class ColorItem.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ColorItemConverter">
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorItemConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>This is CanConvertFrom, a member of class ColorItemConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>This is ConvertFrom, a member of class ColorItemConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>This is CanConvertTo, a member of class ColorItemConverter.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>This is ConvertTo, a member of class ColorItemConverter.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ColorItemCollection">
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorItemCollection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToggleAblePopup">
+            <summary>This is class Autodesk.AutoCAD.Windows.ToggleAblePopup.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToggleAblePopup.KeyboardFocusableElement">
+            <summary>This is KeyboardFocusableElement, a member of class ToggleAblePopup.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.LocationChangingEventArgs">
+            <summary>This is class Autodesk.AutoCAD.Windows.LocationChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.LocationChangingEventArgs.Location">
+            <summary>This is Location, a member of class LocationChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.LocationChangingEventArgs.NewLocation">
+            <summary>This is NewLocation, a member of class LocationChangingEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.SizeChangingEventArgs">
+            <summary>This is class Autodesk.AutoCAD.Windows.SizeChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.SizeChangingEventArgs.Size">
+            <summary>This is Size, a member of class SizeChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.SizeChangingEventArgs.NewSize">
+            <summary>This is NewSize, a member of class SizeChangingEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs">
+            <summary>This is class Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.#ctor(System.Boolean,System.Boolean)">
+            <summary>This is WindowPositionChangedEventArgs, a member of class WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.Moved">
+            <summary>This is Moved, a member of class WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.Sized">
+            <summary>This is Sized, a member of class WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.AnalyticInfo">
+            <summary>This is class Autodesk.AutoCAD.Windows.AnalyticInfo.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.AnalyticInfo.GetAnalyticsId">
+            <summary>This is GetAnalyticsId, a member of class AnalyticInfo.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.BGPublish.BgPublish">
+            <summary>This class represents the background publish process.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.BGPublish.BgPublish.publishThisDsd(System.String,System.String)">
+            <summary>Publishes a DSD file using the background publishing process.</summary>
+            <param name="dwgName"> Input string as the name of the host drawing</param>
+            <param name="dsdName"> Input string that contains the path and filename of the DSD file to be published</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.BGPublish.BgPublish.clearAllPublishActions">
+            <summary>Clears all queued background publishing processes.</summary>
+        </member>
+    </members>
+</doc>

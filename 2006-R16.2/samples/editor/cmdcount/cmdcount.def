@@ -1,0 +1,10 @@
+LIBRARY      cmdcount
+; (C) Copyright 1998-2002,2004 by Autodesk, Inc.
+
+EXPORTS
+	acrxEntryPoint         PRIVATE
+	acrxGetApiVersion      PRIVATE
+	
+	;;; 
+	StartCountingCmd
+	EndCountingCmd  

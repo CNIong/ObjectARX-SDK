@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>brsample</ProjectName>
+    <ProjectGuid>{FE43EEAD-08FD-444F-B85C-FCD2394EBEAA}</ProjectGuid>
+    <RootNamespace>brsample</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\inc\rxsdk_releasecfg.props" />
+    <Import Project="..\..\..\..\inc\arx.props" />
+    <Import Project="..\..\..\..\inc\brep.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\inc\rxsdk_debugcfg.props" />
+    <Import Project="..\..\..\..\inc\arx.props" />
+    <Import Project="..\..\..\..\inc\brep.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30128.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\inc;..\..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>brsample_pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>acgeoment.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib-$(Platform);..\..\..\..\lib-$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\brsample.def</ModuleDefinitionFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\inc;..\..\..\..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>brsample_pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>acgeoment.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib-$(Platform);..\..\..\..\lib-$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\brsample.def</ModuleDefinitionFile>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BRBBLOCK.CPP" />
+    <ClCompile Include="BRBDUMP.CPP" />
+    <ClCompile Include="BRBMESH.CPP" />
+    <ClCompile Include="BRCOUNT.CPP" />
+    <ClCompile Include="BRDBUTL.CPP" />
+    <ClCompile Include="BRDUMP.CPP" />
+    <ClCompile Include="BREDUMP.CPP" />
+    <ClCompile Include="BRFDUMP.CPP" />
+    <ClCompile Include="BRFMESH.CPP" />
+    <ClCompile Include="BRGEUTL.CPP" />
+    <ClCompile Include="BRGPROPS.CPP" />
+    <ClCompile Include="BRLNCNT.CPP" />
+    <ClCompile Include="BRMDUMP.CPP" />
+    <ClCompile Include="BRMMESH.CPP" />
+    <ClCompile Include="BRNDUMP.CPP" />
+    <ClCompile Include="BRPTCNT.CPP" />
+    <ClCompile Include="BRREPORT.CPP" />
+    <ClCompile Include="brsample.cpp" />
+    <ClCompile Include="BRSAMPLE_PCH.CPP">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="BRSELECT.CPP" />
+    <ClCompile Include="BRTRMSRF.CPP" />
+    <ClCompile Include="BRVDUMP.CPP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="brsample.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BRBBLOCK.H" />
+    <ClInclude Include="BRBDUMP.H" />
+    <ClInclude Include="BRBMESH.H" />
+    <ClInclude Include="BRCOUNT.H" />
+    <ClInclude Include="BRDBUTL.H" />
+    <ClInclude Include="BRDUMP.H" />
+    <ClInclude Include="BREDUMP.H" />
+    <ClInclude Include="BRFDUMP.H" />
+    <ClInclude Include="BRFMESH.H" />
+    <ClInclude Include="BRGEUTL.H" />
+    <ClInclude Include="BRGPROPS.H" />
+    <ClInclude Include="BRLNCNT.H" />
+    <ClInclude Include="BRMDUMP.H" />
+    <ClInclude Include="BRMMESH.H" />
+    <ClInclude Include="BRNDUMP.H" />
+    <ClInclude Include="BRPTCNT.H" />
+    <ClInclude Include="BRREPORT.H" />
+    <ClInclude Include="BRSAMPLE_PCH.H" />
+    <ClInclude Include="BRSELECT.H" />
+    <ClInclude Include="BRTRMSRF.H" />
+    <ClInclude Include="BRVDUMP.H" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

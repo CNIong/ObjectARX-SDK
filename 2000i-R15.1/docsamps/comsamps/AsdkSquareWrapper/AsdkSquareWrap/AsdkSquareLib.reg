@@ -1,0 +1,17 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+HKEY_CLASSES_ROOT\TypeLib\{800F70A1-6DE9-11D2-A7A6-0060B0872457}
+HKEY_CLASSES_ROOT\TypeLib\{800F70A1-6DE9-11D2-A7A6-0060B0872457}\1.1 = AsdkSquareLib 1.0 Type Library
+HKEY_CLASSES_ROOT\TypeLib\{800F70A1-6DE9-11D2-A7A6-0060B0872457}\1.1\0\win32 = V:\TEMP\sq\AsdkSquareLib\Debug\AsdkSquareLib.dll
+HKEY_CLASSES_ROOT\TypeLib\{800F70A1-6DE9-11D2-A7A6-0060B0872457}\1.1\9\win32 = V:\TEMP\sq\AsdkSquareLib\Debug\AsdkSquareLib.dll
+
+HKEY_CLASSES_ROOT\CLSID\{800F70AE-6DE9-11D2-A7A6-0060B0872457} = AsdkSquareWrapper Class
+HKEY_CLASSES_ROOT\CLSID\{800F70AE-6DE9-11D2-A7A6-0060B0872457}\InProcServer32 = V:\TEMP\sq\AsdkSquareLib\Debug\AsdkSquareLib.dll
+HKEY_CLASSES_ROOT\Interface\{800F70AD-6DE9-11D2-A7A6-0060B0872457} = IAsdkSquareWrapper Interface
+HKEY_CLASSES_ROOT\Interface\{800F70AD-6DE9-11D2-A7A6-0060B0872457}\TypeLib = {800F70A1-6DE9-11D2-A7A6-0060B0872457}
+HKEY_CLASSES_ROOT\Interface\{800F70AD-6DE9-11D2-A7A6-0060B0872457}\ProxyStubClsid32 = {00020424-0000-0000-C000-000000000046}
+

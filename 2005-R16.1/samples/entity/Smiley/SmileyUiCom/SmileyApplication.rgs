@@ -1,0 +1,26 @@
+HKCR
+{
+	SmileyUi.Application.1 = s 'SmileyApplication Class'
+	{
+		CLSID = s '{88870444-C4D8-11D2-B579-0010A401A3C5}'
+	}
+	SmileyUi.Application = s 'SmileyApplication Class'
+	{
+		CLSID = s '{88870444-C4D8-11D2-B579-0010A401A3C5}'
+		CurVer = s 'SmileyUi.Application.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {88870444-C4D8-11D2-B579-0010A401A3C5} = s 'SmileyApplication Class'
+		{
+			ProgID = s 'SmileyUi.Application.1'
+			VersionIndependentProgID = s 'SmileyUi.Application'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{066DA290-CC00-11D2-B585-0010A401A37F}'
+		}
+	}
+}

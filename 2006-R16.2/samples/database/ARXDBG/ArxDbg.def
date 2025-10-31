@@ -1,0 +1,7 @@
+; ArxDbg.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ARXDBG"
+
+EXPORTS
+	acrxGetApiVersion  PRIVATE
+    acrxEntryPoint     PRIVATE

@@ -1,0 +1,27 @@
+HKCR
+{
+	SliderCrankDb.Piston.1 = s 'Piston Class'
+	{
+		CLSID = s '{13D5C55F-9308-4CCE-89CC-3E2ACB947603}'
+	}
+	SliderCrankDb.Piston = s 'Piston Class'
+	{
+		CLSID = s '{13D5C55F-9308-4CCE-89CC-3E2ACB947603}'
+		CurVer = s 'SliderCrankDb.Piston.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {13D5C55F-9308-4CCE-89CC-3E2ACB947603} = s 'Piston Class'
+		{
+			ProgID = s 'SliderCrankDb.Piston.1'
+			VersionIndependentProgID = s 'SliderCrankDb.Piston'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{BED89941-05DD-476F-BD3C-E063B8157A13}'
+		}
+	}
+}

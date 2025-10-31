@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Dbx settings"
+	>
+	<Tool
+            Name="VCLinkerTool"
+            AdditionalDependencies="acdb17.lib acge17.lib acgiapi.lib acISMobj17.lib rxapi.lib"
+            OutputFile="$(OutDir)\$(ProjectName).dbx"
+
+    />
+</VisualStudioPropertySheet>

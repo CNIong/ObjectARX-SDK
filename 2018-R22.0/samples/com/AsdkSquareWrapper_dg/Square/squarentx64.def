@@ -1,0 +1,7 @@
+; Copyright 2017 Autodesk, Inc.  All rights reserved.
+
+EXPORTS
+    acrxEntryPoint      PRIVATE
+    acrxGetApiVersion   PRIVATE
+    ??0AsdkSquare@@QEAA@XZ
+    ?desc@AsdkSquare@@SAPEAVAcRxClass@@XZ

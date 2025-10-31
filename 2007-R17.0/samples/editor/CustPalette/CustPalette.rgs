@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'CustPalette'
+		'AsdkCustPalette.arx'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

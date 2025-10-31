@@ -1,0 +1,45 @@
+HKCR
+{
+	SmileyDb.Entity.1 = s 'SmileyEntity Class'
+	{
+		CLSID = s '{B079D266-5E04-40A3-B94E-6AB2B0B69EA9}'
+	}
+	SmileyDb.Entity = s 'SmileyEntity Class'
+	{
+		CLSID = s '{B079D266-5E04-40A3-B94E-6AB2B0B69EA9}'
+		CurVer = s 'SmileyDb.Entity.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B079D266-5E04-40A3-B94E-6AB2B0B69EA9} = s 'SmileyEntity Class'
+		{
+			ProgID = s 'SmileyDb.Entity.1'
+			VersionIndependentProgID = s 'SmileyDb.Entity'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{8AE8834F-88DF-4268-B75F-466D1DE1D75B}'
+		}
+	}
+}
+HKLM
+{
+	NoRemove SOFTWARE
+	{
+		NoRemove Autodesk
+		{
+			NoRemove ObjectDBX
+			{
+				NoRemove R17.1
+				{
+					NoRemove ActiveXCLSID
+					{
+						val AsdkSmiley = s '{B079D266-5E04-40A3-B94E-6AB2B0B69EA9}'
+					}
+				}
+			}
+		}
+	}
+}

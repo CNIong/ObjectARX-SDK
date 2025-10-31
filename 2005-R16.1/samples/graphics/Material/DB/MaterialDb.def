@@ -1,0 +1,7 @@
+
+LIBRARY      "AsdkMaterialDb"
+
+EXPORTS
+	acrxEntryPoint		PRIVATE
+	acrxGetApiVersion	PRIVATE
+

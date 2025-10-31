@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="asdkmgPoly" ProjectGUID="{D26DC853-A22B-4C5B-810F-F76D1247FA93}" RootNamespace="mgPoly" Keyword="ManagedCProj">
+  <Platforms>
+    <Platform Name="Win32" />
+    <Platform Name="x64" />
+  </Platforms>
+  <ToolFiles />
+  <Configurations>
+    <Configuration Name="Debug|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops" ManagedExtensions="4">
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions="VC7;" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc" AdditionalUsingDirectories="..\..\..\..\inc" PreprocessorDefinitions=";VC7;" ExceptionHandling="2" BasicRuntimeChecks="0" SmallerTypeCheck="false" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="VC7;" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acdbmgd.lib ..\$(IntDir)\asdkpolyobj.lib " ShowProgress="0" OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" />
+    </Configuration>
+    <Configuration Name="Debug|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Debugcfg.vsprops;..\..\..\..\inc\arx.vsprops" ManagedExtensions="4">
+      <Tool Name="VCMIDLTool" PreprocessorDefinitions="VC7;" />
+      <Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="..\..\..\..\inc" AdditionalUsingDirectories="..\..\..\..\inc" PreprocessorDefinitions=";VC7;" ExceptionHandling="2" BasicRuntimeChecks="0" SmallerTypeCheck="false" />
+      <Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="VC7;" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acdbmgd.lib ..\$(IntDir)\asdkpolyobj.lib " ShowProgress="0" OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" TargetMachine="17" />
+    </Configuration>
+    <Configuration Name="Release|Win32"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops" ManagedExtensions="4">
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\..\inc" AdditionalUsingDirectories="..\..\..\..\inc" PreprocessorDefinitions="VC7;" ExceptionHandling="2" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acdbmgd.lib ..\$(IntDir)\asdkpolyobj.lib " OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" />
+    </Configuration>
+    <Configuration Name="Release|x64"  ConfigurationType="2" InheritedPropertySheets="..\..\..\..\inc\rxsdk_Releasecfg.vsprops;..\..\..\..\inc\arx.vsprops" ManagedExtensions="4">
+      <Tool Name="VCCLCompilerTool" InlineFunctionExpansion="1" AdditionalIncludeDirectories="..\..\..\..\inc" AdditionalUsingDirectories="..\..\..\..\inc" PreprocessorDefinitions="VC7;" ExceptionHandling="2" />
+      <Tool Name="VCLinkerTool" AdditionalDependencies="acdbmgd.lib ..\$(IntDir)\asdkpolyobj.lib " OutputFile="$(OutDir)\$(ProjectName).dll" AdditionalLibraryDirectories="..\..\..\..\lib" TargetMachine="17" />
+    </Configuration>
+  </Configurations>
+  <References />
+  <Files>
+    <Filter Name="Source Files" Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+      <File RelativePath="AssemblyInfo.cpp" />
+      <File RelativePath="main.cpp" />
+      <File RelativePath="mgPoly.cpp" />
+      <File RelativePath="Stdafx.cpp">
+        <FileConfiguration Name="Debug|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Debug|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|Win32">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+        <FileConfiguration Name="Release|x64">
+          <Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1" />
+        </FileConfiguration>
+      </File>
+    </Filter>
+    <Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc">
+      <File RelativePath="_vcclrit.h" />
+      <File RelativePath="mgPoly.h" />
+      <File RelativePath="Stdafx.h" />
+    </Filter>
+    <Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;r" />
+    <File RelativePath="ReadMe.txt" />
+  </Files>
+  <Globals />
+</VisualStudioProject>

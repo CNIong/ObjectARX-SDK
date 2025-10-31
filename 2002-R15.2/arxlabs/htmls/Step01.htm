@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Charles Mc Auley">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (WinNT; I) [Netscape]">
+   <TITLE>ObjectARX 2000 Training</TITLE>
+</HEAD>
+<BODY onload="parent.window.frames['index'].location.href='index_step01.htm'">
+
+<H1>
+<A NAME="Top"></A>Step 1 - Project Settings - Command Registration</H1>
+
+<H2>
+
+<HR WIDTH="100%"><A NAME="Step01 - Introduction"></A>Introduction</H2>
+In this step you will learn how to set up a new ObjectARX project in Visual
+C++ and you will build your first ObjectARX application.
+<H3>
+<A NAME="Creating a New Project"></A>Creating a New Project</H3>
+
+<OL>
+<LI>
+From the "File" pull down menu of Visual C++ 6.0, select "New."</LI>
+
+<LI>
+Select the "Projects" tab in the dialog that appears.</LI>
+
+<LI>
+Select "Win32 Dynamic-Link Library" in the list of project types.</LI>
+
+<LI>
+Enter the desired project name, for example "Project" in the Project name
+edit box.</LI>
+
+<LI>
+Set the Location to the folder where you want your project to be stored,
+then click "OK."</LI>
+</OL>
+
+<UL><IMG SRC="step1_newProject.JPG" HEIGHT=401 WIDTH=561>
+<P><B>Step 1 Figure 1 - Starting a New Project</B></UL>
+
+<OL START=6>
+<LI>
+In the new dialog (Step 1 of 1), choose "An empty DLL project."</LI>
+
+<LI>
+Click "Finish" and then "OK."</LI>
+</OL>
+
+<H3>
+<A NAME="Compiler Settings"></A>Compiler Settings</H3>
+
+<OL>
+<LI>
+From the "Project" pull down menu, select "Settings..." to display the
+"Project Settings" dialog.</LI>
+</OL>
+
+<OL START=2><IMG SRC="step1_projectSettings.JPG" HEIGHT=219 WIDTH=344>
+<P><B>Step 1 Figure 2 - Select Project Settings</B>
+<P><B>NOTE:</B> Initially the "Settings For:" list box on the left side
+of the dialog box (See Figure 3) should be set to "Win32 Debug." If you
+need to make changes to both the debug and release version of your application,
+choose "All Configurations" in the combo box. Unless explicitly specified,
+the settings below apply to both versions.
+<BR>&nbsp;
+<LI>
+Select the C/C++ tab on the right side of the dialog box to access the
+compiler settings.</LI>
+
+<LI>
+Make sure the project name itself is selected in the "Settings for:" window
+tree view (and not a sub item).</LI>
+
+<LI>
+In the "Settings For:" list, choose "All Configurations."</LI>
+
+<LI>
+In the "Category:" combo box, select "Code Generation."</LI>
+
+<LI>
+In the "Use run-time library" edit box, choose "Multithreaded DLL."</LI>
+
+<P><BR><IMG SRC="step1_compilerSettings.JPG" HEIGHT=373 WIDTH=577>
+<P><B>Step 1 Figure 3 - Project Compiler Settings</B>
+<BR>&nbsp;
+<LI>
+In the "Category:" combo box, select "Preprocessor."</LI>
+
+<LI>
+In the "Additional include directories:" field, add the path to your ObjectARX
+include files. Typically, this is: <TT>C:\ObjectARX 2000\inc</TT>.</LI>
+</OL>
+
+<H3>
+<A NAME="Linker Settings"></A>Linker Settings</H3>
+
+<OL>
+<LI>
+In the "Project settings" dialog box, select the "Link" tab to access the
+linker settings.</LI>
+
+<LI>
+Make sure the "Category:" combo box is set to "General."</LI>
+
+<LI>
+On the left side of the dialog box, select "Win32 Debug" in the "Settings
+For:" combo box.</LI>
+
+<LI>
+In the "Output File Name:" edit box, you will see "Debug/&lt;Project>.dll".
+Change the file name extension from .dll to .arx. It is recommended that
+you use the extension .arx because it is the default extension that AutoCAD
+expects for ARX applications.</LI>
+</OL>
+&nbsp;&nbsp;&nbsp;&nbsp; <B>NOTE:</B> This setting specifies the location
+and the name of the executable the linker will produce. It is the ObjectARX
+executable file for your application that will be loaded in AutoCAD.
+<OL START=5>
+<LI>
+On the left side of the dialog box, select "Win32 Release" in the "Settings
+For:" combo box.</LI>
+
+<LI>
+In the "Output File Name:" edit box, you will see "Release/&lt;Project>.dll."
+Change the file name extension from .dll to .arx.</LI>
+
+<LI>
+On the left side of the dialog box, select "All Configurations" in the
+"Settings For:" combo box.</LI>
+
+<LI>
+In the "Object/library modules" edit box, add the following library file
+names to the beginning of the list the following library file names:<B>
+rxapi.lib acrx15.lib acutil15.lib acedapi.lib</B>. These are the only ObjectARX
+libraries we need for this very basic ObjectARX application. More sophisticated
+applications may need to link to other ObjectARX libraries.</LI>
+</OL>
+
+<OL START=9><IMG SRC="step1_linkerSettings.JPG" HEIGHT=372 WIDTH=576>
+<P><B>Step 1 Figure 4 - Project Linker Settings</B>
+<BR>&nbsp;
+<LI>
+Set the "Category:" combo box to "Input."</LI>
+
+<LI>
+In the "Additional Library Path:" field, enter the path for your ObjectARX&nbsp;
+library files. Typically, this is <TT>C:\ObjectARX 2000\lib</TT>.</LI>
+
+<LI>
+Close the "Project Settings" dialog by clicking "OK."</LI>
+</OL>
+Our Project Settings are now complete. Next we will add the code required
+to allow us to print "Hello World" on the AutoCAD command prompt.
+<H3>
+<A NAME="Adding Code to the Project"></A>Adding Code to the Project</H3>
+
+<OL>
+<LI>
+From the "Project" pull down menu, select "Add to Project" and then "New...".</LI>
+
+<LI>
+Make sure the "Files" tab is selected in the "New" dialog box.</LI>
+
+<LI>
+Select "C++ Source File" as the file type and enter "Project" in the "File
+name:" edit box. Click "OK."</LI>
+</OL>
+
+<P><BR>First, we need to include two ObjectARX header files: <B>aced.h</B>
+and <B>rxregsvc.h</B>. These are the header files for Rx application definitions
+and C access to AutoCAD Editor-specific services (<B>aced.h</B>) and the
+header for the <B>acrxXXX</B> utility functions (<B>rxregsvc.h</B>). Add
+them as follows:
+<BR><B><TT></TT></B>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>#include &lt;aced.h></TT>
+<BR><TT>#include &lt;rxregsvc.h></TT></TD>
+</TR>
+</TABLE>
+
+<P>Next, we declare two functions:
+<P><B><TT>initApp() - </TT></B>which will be called by AutoCAD when our
+application is loaded and
+<BR><B><TT>unloadApp() - </TT></B>which is called when our application
+is unloaded.
+<P>Please refer to the <B><TT>acrxEntryPoint()</TT></B> function below
+to see how these functions are being called by AutoCAD. Add the lines:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>void initApp();</TT>
+<BR><TT>void unloadApp();</TT></TD>
+</TR>
+</TABLE>
+
+<P>Next, we declare our own function to print "Hello world!" on the AutoCAD
+command line. Add:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>void helloWorld();</TT></TD>
+</TR>
+</TABLE>
+
+<P>Now we will define the <B><TT>initApp()</TT></B> function. This function
+registers a new command with the AutoCAD command mechanism. This new command
+will become an additional entry point into our application:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>void initApp()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; // register a command with the AutoCAD command
+mechanism</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; acedRegCmds->addCommand("HELLOWORLD_COMMANDS",</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"Hello",</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"Bonjour",</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ACRX_CMD_TRANSPARENT,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+helloWorld);</TT>
+<BR><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>For details regarding the <B><TT>acedRegCmds</TT></B> macro and the
+<B><TT>addCommand()</TT></B>
+method (of <B><TT>AcEdCommandStack</TT></B> class), please refer to the
+ObjectARX online help file. The first argument of <B><TT>addCommand()</TT></B>
+is the command group name (it includes only one command in our case). The
+second argument is the global/untranslated command name. The third argument
+is the local/translated name for the same command. The fourth argument
+is the command flag (note that here we define a transparent command, which
+means that the command can be invoked while another command is active).
+Finally, the last argument is the pointer to the function being called
+by our command. In C++ this is the function name itself.
+<P>Next we define the <B>unloadApp()</B> function. This function will remove
+our command group, which will also removes our command. Since commands
+registered with AutoCAD become additional entry points into our application,
+it is absolutely necessary to remove them when the application is unloaded.
+Add:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>void unloadApp()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; acedRegCmds->removeGroup("HELLOWORLD_COMMANDS");</TT>
+<BR><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>Next we define our <B><TT>helloWorld()</TT></B> function; <B><TT>acutPrintf()</TT></B>
+is the equivalent of the C <B><TT>printf</TT></B> function redirected to
+the AutoCAD command line. Add:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>void helloWorld()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; acutPrintf("\nHello World!");</TT>
+<BR><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>Pretty basic indeed!
+<P>Now we need to define the most important function for ObjectARX applications.
+All ObjectARX applications have one main entry point that is used for messaging:
+the
+<B><TT>acrxEntryPoint()</TT></B> function. Remember that an ObjectARX
+application is a DLL and thus does not have a&nbsp; <B><TT>main() </TT></B>entry
+point. AutoCAD calls the ObjectARX module <B><TT>acrxEntryPoint()</TT></B>
+function to pass messages to the application.
+<P>The first parameter of <B><TT>acrxEntryPoint()</TT></B> is a data member
+of the <B><TT>AcRx </TT></B>class called <B><TT>msg</TT></B> which represents
+the message sent from the ObjectARX kernel to the application. Refer to
+the online help for details about the different messages an ObjectARX application
+can receive from AutoCAD.
+<P>In our very simple example, we need to be notified when the application
+is loaded and unloaded in order to register and "deregister" our "<B><TT>hello</TT></B>"
+command. In the first case we will call our <B><TT>initApp()</TT></B> function;
+in the second case we will call our <B><TT>unloadApp()</TT></B> function.
+<P>The second parameter of <B><TT>acrxEntryPoint()</TT></B> is an opaque
+handle to data passed to different functions, such as the lock and unlock
+functions (this data changes depending on the message passed by AutoCAD).
+<P>By default applications are locked, which means that once loaded they
+cannot be unloaded. Since our application is very simple (it does not define
+objects that AutoCAD and other applications refer to, except our command),
+we can safely unlock our application to make it unloadable, provided that
+we remove our command first, which is achieved in our <B><TT>unloadApp()</TT></B>
+function.
+<P>Also by default, ObjectARX applications are not MDI aware (again, please
+refer to the online help for detailed information on the MDI issues). Applications
+need to register themselves explicitly as being MDI aware using the <B><TT>acrxRegisterAppMDIAware()</TT></B>
+global function.
+<P><B>NOTE:</B> Registering an application as being MDI aware is not in
+itself enough for the application to be effectively MDI aware. The criteria
+that need to be met are described in details in the ObjectARX online documentation.
+<P>Since our application is very simple (it does not use the concept of
+Document and does not interact with the AutoCAD drawing database), we can
+safely register it as being MDI aware using the <B><TT>acrxRegisterAppMDIAware()</TT></B>
+global function. Add:
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>extern "C" AcRx::AppRetCode</TT>
+<BR><TT>acrxEntryPoint(AcRx::AppMsgCode msg, void* pkt)</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; switch (msg)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case AcRx::kInitAppMsg:</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+acrxDynamicLinker->unlockApplication(pkt);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+acrxRegisterAppMDIAware(pkt);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+initApp();</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case AcRx::kUnloadAppMsg:</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+unloadApp();</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default:</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; return AcRx::kRetOK;</TT>
+<BR><TT>}</TT></TD>
+</TR>
+</TABLE>
+
+<P>Finally, we need to export the <B><TT>acrxEntryPoint()</TT></B> function
+so that AutoCAD can access it. There are several ways to do so. One consists
+of creating a definition (.def) file.
+<H3>
+<A NAME="Creating a Definition (.DEF) File"></A>Creating a Definition (.DEF)
+File</H3>
+
+<OL>
+<LI>
+From the "Project" pull down menu, select "Add to Project" and then "New...".</LI>
+
+<LI>
+Make sure the "Files" tab is selected in the "New" dialog box.</LI>
+
+<LI>
+Select "Text File" as the file type and enter "Project.def" in the "File
+name:" edit box. Click "OK."</LI>
+</OL>
+
+<P><BR>Add the following information to the new file. All ObjectARX applications
+have to export at least two functions: <B><TT>acrxEntryPoint</TT></B> and
+<B><TT>acrxGetApiVersion</TT></B>.
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" BGCOLOR="#C0C0C0" NOWRAP >
+<TR>
+<TD><TT>LIBRARY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Project"</TT>
+<BR><TT>EXPORTS</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; acrxEntryPoint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+PRIVATE</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; acrxGetApiVersion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+PRIVATE</TT></TD>
+</TR>
+</TABLE>
+
+<P>Our project is ready to be built. If you have followed the tutorial
+correctly, you should get 0 errors and 0 warnings. Load <B>hello.arx</B>
+in AutoCAD and type "<B>hello</B>" to run our command.
+<P>To load <B>hello.arx</B>, choose one of these methods:
+<OL>
+<LI>
+Simply drag the file from Explorer to the AutoCAD Window.</LI>
+
+<LI>
+Use the AutoCAD "<B>ARX</B>" command, "<B>Load</B>" option at the command
+line prompt.</LI>
+
+<LI>
+From the Tools pull down menu in AutoCAD, select the&nbsp; "Load Application..."
+option.</LI>
+</OL>
+
+<P><BR>Once the application is loaded, typing "<B>hello</B>" or "<B>bonjour</B>"
+on the command line will display the "<B>Hello World!</B>" message.
+</BODY>
+</HTML>

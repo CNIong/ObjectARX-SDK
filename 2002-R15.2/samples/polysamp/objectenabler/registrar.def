@@ -1,0 +1,6 @@
+LIBRARY      register
+DESCRIPTION  'Arx sample application - POLYSAMP'
+
+EXPORTS
+	acrxEntryPoint        PRIVATE
+    acrxGetApiVersion     PRIVATE

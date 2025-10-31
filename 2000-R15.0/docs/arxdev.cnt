@@ -1,0 +1,291 @@
+:Base arxdev.hlp
+
+1 ObjectARX Developer's Guide
+
+2 Introduction -- About ObjectARX Documentation
+3 Overview=About_ObjectARX_Documentation@arxdev.hlp>main
+3 The ObjectARX Documentation Set=The_ObjectARX_Documentation_Set_arxdev00@arxdev.hlp>main
+3 Using This Guide=Using_This_Guide_arxdev00@arxdev.hlp>main
+
+2 Chapter 1 -- Overview
+3 Introduction=Overview@arxdev.hlp>main
+3 The ObjectARX Programming Environment=The_ObjectARX_Programming_Environment_arxdev01@arxdev.hlp>main
+3 ObjectARX Class Libraries=ObjectARX_Class_Libraries_arxdev01@arxdev.hlp>main
+3 Getting Started=Getting_Started_arxdev01@arxdev.hlp>main
+
+2 Chapter 2 -- Database Primer
+3 Overview=Database_Primer@arxdev.hlp>main
+3 AutoCAD Database Overview=AutoCAD_Database_Overview_arxdev02@arxdev.hlp>main
+3 Essential Database Objects=Essential_Database_Objects_arxdev02@arxdev.hlp>main
+3 Creating Objects in AutoCAD=Creating_Objects_in_AutoCAD_arxdev02@arxdev.hlp>main
+3 Creating Objects in ObjectARX=Creating_Objects_in_ObjectARX_arxdev02@arxdev.hlp>main
+
+2 Chapter 3 -- ObjectARX Application Basics
+3 Overview=ObjectARX_Application_Basics@arxdev.hlp>main
+3 Creating an ObjectARX Application=Creating_an_ObjectARX_Application_arxdev03@arxdev.hlp>main
+3 Example Application=Example_Application_arxdev03@arxdev.hlp>main
+3 Registering New Commands=Registering_New_Commands_arxdev03@arxdev.hlp>main
+3 Loading an ObjectARX Application=Loading_an_ObjectARX_Application_arxdev03@arxdev.hlp>main
+3 Unloading an ObjectARX Application=Unloading_an_ObjectARX_Application_arxdev03@arxdev.hlp>main
+3 Demand Loading=Demand_Loading_arxdev03@arxdev.hlp>main
+3 ARX Command=ARX_Command_arxdev03@arxdev.hlp>main
+3 Running ObjectARX Applications from AutoLISP=Running_ObjectARX_Applications_from_AutoLISP_arxdev03@arxdev.hlp>main
+3 Error Handling=Error_Handling_arxdev03@arxdev.hlp>main
+
+2 Chapter 4 -- Database Operations
+3 Overview=Database_Operations@arxdev.hlp>main
+3 Initial Database=Initial_Database_arxdev04@arxdev.hlp>main
+3 Creating and Populating a Database=Creating_and_Populating_a_Database_arxdev04@arxdev.hlp>main
+3 Saving a Database=Saving_a_Database_arxdev04@arxdev.hlp>main
+3 The wblock Operation=The_wblock_Operation_arxdev04@arxdev.hlp>main
+3 Inserting a Database=Inserting_a_Database_arxdev04@arxdev.hlp>main
+3 Setting Current Database Values=Setting_Current_Database_Values_arxdev04@arxdev.hlp>main
+3 Example of Database Operations=Example_of_Database_Operations_arxdev04@arxdev.hlp>main
+3 Long Transactions=Long_Transactions_arxdev04@arxdev.hlp>main
+3 External References=External_References_arxdev04@arxdev.hlp>main
+3 Indexes and Filters=Indexes_and_Filters_arxdev04@arxdev.hlp>main
+3 Drawing Summary Information=Drawing_Summary_Information_arxdev04@arxdev.hlp>main
+3 Last Saved by Autodesk Software=Last_Saved_by_Autodesk_Software_arxdev04@arxdev.hlp>main
+
+2 Chapter 5 -- Database Objects
+3 Overview=Database_Objects@arxdev.hlp>main
+3 Opening and Closing Database Objects=Opening_and_Closing_Database_Objects_arxdev05@arxdev.hlp>main
+3 Deleting Objects=Deleting_Objects_arxdev05@arxdev.hlp>main
+3 Database Ownership of Objects=Database_Ownership_of_Objects_arxdev05@arxdev.hlp>main
+3 Adding Object-Specific Data=Adding_Object45Specific_Data_arxdev05@arxdev.hlp>main
+3 Erasing Objects=Erasing_Objects_arxdev05@arxdev.hlp>main
+3 Object Filing=Object_Filing_arxdev05@arxdev.hlp>main
+
+2 Chapter 6 -- Entities
+3 Overview=Entities@arxdev.hlp>main
+3 Entities Defined=Entities_Defined_arxdev06@arxdev.hlp>main
+2 Entity Ownership=Entity_Ownership_arxdev06@arxdev.hlp>main
+3 AutoCAD Release 12 Entities=AutoCAD_Release_12_Entities_arxdev06@arxdev.hlp>main
+3 Common Entity Properties=Common_Entity_Properties_arxdev06@arxdev.hlp>main
+3 Common Entity Functions=Common_Entity_Functions_arxdev06@arxdev.hlp>main
+3 Creating Instances of AutoCAD Entities=Creating_Instances_of_AutoCAD_Entities_arxdev06@arxdev.hlp>main
+3 Complex Entities=Complex_Entities_arxdev06@arxdev.hlp>main
+3 Coordinate System Access=Coordinate_System_Access_arxdev06@arxdev.hlp>main
+3 Curve Functions=Curve_Functions_arxdev06@arxdev.hlp>main
+3 Associating Hyperlinks with Entities=Associating_Hyperlinks_with_Entities_arxdev06@arxdev.hlp>main
+
+2 Chapter 7 -- Container Objects
+3 Overview=Container_Objects@arxdev.hlp>main
+3 Comparison of Symbol Tables and Dictionaries=Comparison_of_Symbol_Tables_and_Dictionaries_arxdev07@arxdev.hlp>main
+3 Symbol Tables=Symbol_Tables_arxdev07@arxdev.hlp>main
+3 Dictionaries=Dictionaries_arxdev07@arxdev.hlp>main
+3 Layouts=Layouts_arxdev07@arxdev.hlp>main
+3 Xrecords=Xrecords_arxdev07@arxdev.hlp>main
+
+2 Chapter 8 -- MFC Topics
+3 Overview=MFC_Topics@arxdev.hlp>main
+3 Introduction=Introduction_arxdev08@arxdev.hlp>main
+3 Using MFC with ObjectARX Applications=Using_MFC_with_ObjectARX_Applications_arxdev08@arxdev.hlp>main
+3 ObjectARX Applications with Dynamically Linked MFC=ObjectARX_Applications_with_Dynamically_Linked_MFC_arxdev08@arxdev.hlp>main
+3 Built-In MFC User Interface Support=Built45In_MFC_User_Interface_Support_arxdev08@arxdev.hlp>main
+3 Using AdUi and AcUi with VC++ AppWizard=Using_AdUi_and_AcUi_with_VC4343_AppWizard_arxdev08@arxdev.hlp>main
+
+2 Chapter 9 -- Selection Set, Entity, and Symbol Table Functions
+3 Overview=Selection_Set44_Entity44_and_Symbol_Table_Functions@arxdev.hlp>main
+3 Selection Set and Entity Names=Selection_Set_and_Entity_Names_arxdev09@arxdev.hlp>main
+3 Handling Selection Sets=Handling_Selection_Sets_arxdev09@arxdev.hlp>main
+3 Entity Name and Data Functions=Entity_Name_and_Data_Functions_arxdev09@arxdev.hlp>main
+3 Symbol Table Access=Symbol_Table_Access_arxdev09@arxdev.hlp>main
+
+2 Chapter 10 -- Global Functions for Interacting with AutoCAD
+3 Overview=Global_Functions_for_Interacting_with_AutoCAD@arxdev.hlp>main
+3 AutoCAD Queries and Commands=AutoCAD_Queries_and_Commands_arxdev10@arxdev.hlp>main
+3 Getting User Input=Getting_User_Input_arxdev10@arxdev.hlp>main
+3 Conversions=Conversions_arxdev10@arxdev.hlp>main
+3 Character Type Handling=Character_Type_Handling_arxdev10@arxdev.hlp>main
+3 Coordinate System Transformations=Coordinate_System_Transformations_arxdev10@arxdev.hlp>main
+3 Display Control=Display_Control_arxdev10@arxdev.hlp>main
+3 Tablet Calibration=Tablet_Calibration_arxdev10@arxdev.hlp>main
+3 Wild-Card Matching=Wild45Card_Matching_arxdev10@arxdev.hlp>main
+
+2 Chapter 11 -- Deriving a Custom ObjectARX Class
+3 Overview=Deriving_a_Custom_ObjectARX_Class@arxdev.hlp>main
+3 Custom Class Derivation=Custom_Class_Derivation_arxdev11@arxdev.hlp>main
+3 Runtime Class Identification=Runtime_Class_Identification_arxdev11@arxdev.hlp>main
+3 Class Declaration Macro=Class_Declaration_Macro_arxdev11@arxdev.hlp>main
+3 Class Implementation Macros=Class_Implementation_Macros_arxdev11@arxdev.hlp>main
+3 Class Initialization Function=Class_Initialization_Function_arxdev11@arxdev.hlp>main
+
+2 Chapter 12 -- Deriving from AcDbObject
+3 Overview=Deriving_from_AcDbObject@arxdev.hlp>main
+3 Overriding AcDbObject Virtual Functions=Overriding_AcDbObject_Virtual_Functions_arxdev12@arxdev.hlp>main
+3 Implementing Member Functions=Implementing_Member_Functions_arxdev12@arxdev.hlp>main
+3 Filing Objects to DWG and DXF Files=Filing_Objects_to_DWG_and_DXF_Files_arxdev12@arxdev.hlp>main
+3 Object References=Object_References_arxdev12@arxdev.hlp>main
+3 Ownership References=Ownership_References_arxdev12@arxdev.hlp>main
+3 Pointer References=Pointer_References_arxdev12@arxdev.hlp>main
+3 Long Transaction Issues for Custom Objects=Long_Transaction_Issues_for_Custom_Objects_arxdev12@arxdev.hlp>main
+3 Purge=Purge_arxdev12@arxdev.hlp>main
+3 Undo and Redo=Undo_and_Redo_arxdev12@arxdev.hlp>main
+3 subErase, subOpen, subClose, and subCancel=subErase44_subOpen44_subClose44_and_subCancel_arxdev12@arxdev.hlp>main
+3 Example of a Custom Object Class=Example_of_a_Custom_Object_Class_arxdev12@arxdev.hlp>main
+3 Object Version Support=Object_Version_Support_arxdev12@arxdev.hlp>main
+
+2 Chapter 13 -- Deriving from AcDbEntity
+3 Overview=Deriving_from_AcDbEntity@arxdev.hlp>main
+3 Deriving Custom Entities=Deriving_Custom_Entities_arxdev13@arxdev.hlp>main
+3 Overriding Common Entity Functions=Overriding_Common_Entity_Functions_arxdev13@arxdev.hlp>main
+3 Extending Entity Functionality=Extending_Entity_Functionality_arxdev13@arxdev.hlp>main
+3 Using AcEdJig=Using_AcEdJig_arxdev13@arxdev.hlp>main
+
+2 Chapter 14 -- Proxy Objects
+3 Overview=Proxy_Objects@arxdev.hlp>main
+3 Proxy Objects Defined=Proxy_Objects_Defined_arxdev14@arxdev.hlp>main
+3 Proxy Object Life Cycle=Proxy_Object_Life_Cycle_arxdev14@arxdev.hlp>main
+3 User Encounters with Proxy Objects=User_Encounters_with_Proxy_Objects_arxdev14@arxdev.hlp>main
+3 Displaying Proxy Entities=Displaying_Proxy_Entities_arxdev14@arxdev.hlp>main
+3 Editing Proxy Entities=Editing_Proxy_Entities_arxdev14@arxdev.hlp>main
+3 Unloading an Application=Unloading_an_Application_arxdev14@arxdev.hlp>main
+
+2 Chapter 15 -- Notification
+3 Overview=Notification@arxdev.hlp>main
+3 Notification Overview=Notification_Overview_arxdev15@arxdev.hlp>main
+3 Using Reactors=Using_Reactors_arxdev15@arxdev.hlp>main
+3 Notification Use Guidelines=Notification_Use_Guidelines_arxdev15@arxdev.hlp>main
+
+2 Chapter 16 -- The Multiple Document Interface
+3 Overview=The_Multiple_Document_Interface@arxdev.hlp>main
+3 Introduction=Introduction_arxdev16@arxdev.hlp>main
+3 Terminology=Terminology_arxdev16@arxdev.hlp>main
+3 SDI System Variable=SDI_System_Variable_arxdev16@arxdev.hlp>main
+3 Levels of Compatibility=Levels_of_Compatibility_arxdev16@arxdev.hlp>main
+3 Interacting with Multiple Documents=Interacting_with_Multiple_Documents_arxdev16@arxdev.hlp>main
+3 Document Event Notification=Document_Event_Notification_arxdev16@arxdev.hlp>main
+3 Application-Specific Document Objects=Application45Specific_Document_Objects_arxdev16@arxdev.hlp>main
+3 Nonreentrant Commands=Nonreentrant_Commands_arxdev16@arxdev.hlp>main
+3 Multi-Document Commands=Multi45Document_Commands_arxdev16@arxdev.hlp>main
+3 Disabling Document Switching=Disabling_Document_Switching_arxdev16@arxdev.hlp>main
+3 Application Execution Context=Application_Execution_Context_arxdev16@arxdev.hlp>main
+3 Database Undo and Transaction Management Facilities=Database_Undo_and_Transaction_Management_Facilities_arxdev16@arxdev.hlp>main
+3 Document-Independent Databases=Document45Independent_Databases_arxdev16@arxdev.hlp>main
+3 An MDI-Aware Example Application=An_MDI45Aware_Example_Application_arxdev16@arxdev.hlp>main
+
+2 Chapter 17 -- Transaction Management
+3 Overview=Transaction_Management@arxdev.hlp>main
+3 Overview of Transaction Management=Overview_of_Transaction_Management_arxdev17@arxdev.hlp>main
+3 Transaction Manager=Transaction_Manager_arxdev17@arxdev.hlp>main
+3 Nesting Transactions=Nesting_Transactions_arxdev17@arxdev.hlp>main
+3 Transaction Boundaries=Transaction_Boundaries_arxdev17@arxdev.hlp>main
+3 Obtaining Pointers to Objects in a Transaction=Obtaining_Pointers_to_Objects_in_a_Transaction_arxdev17@arxdev.hlp>main
+3 Newly Created Objects and Transactions=Newly_Created_Objects_and_Transactions_arxdev17@arxdev.hlp>main
+3 Commit-Time Guidelines=Commit45Time_Guidelines_arxdev17@arxdev.hlp>main
+3 Undo and Transactions=Undo_and_Transactions_arxdev17@arxdev.hlp>main
+3 Mixing the Transaction Model with the Open and Close Mechanism=Mixing_the_Transaction_Model_with_the_Open_and_Close_Mechanism_arxdev17@arxdev.hlp>main
+3 Transactions and Graphics Generation=Transactions_and_Graphics_Generation_arxdev17@arxdev.hlp>main
+3 Transaction Reactors=Transaction_Reactors_arxdev17@arxdev.hlp>main
+3 Example of Nested Transactions=Example_of_Nested_Transactions_arxdev17@arxdev.hlp>main
+
+2 Chapter 18 -- Deep Cloning
+3 Overview=Deep_Cloning@arxdev.hlp>main
+3 Deep Clone Basics=Deep_Clone_Basics_arxdev18@arxdev.hlp>main
+3 Implementing deepClone() for Custom Classes=Implementing_deepClone4041_for_Custom_Classes_arxdev18@arxdev.hlp>main
+
+2 Chapter 19 -- Protocol Extension
+3 Overview=Protocol_Extension@arxdev.hlp>main
+3 Protocol Extension Defined=Protocol_Extension_Defined_arxdev19@arxdev.hlp>main
+3 Implementing Protocol Extension=Implementing_Protocol_Extension_arxdev19@arxdev.hlp>main
+3 Protocol Extension for the MATCH Command=Protocol_Extension_for_the_MATCH_Command_arxdev19@arxdev.hlp>main
+3 Protocol Extension Example=Protocol_Extension_Example_arxdev19@arxdev.hlp>main
+
+2 Chapter 20 -- ObjectARX Global Utility Functions
+3 Overview=ObjectARX_Global_Utility_Functions@arxdev.hlp>main
+3 Common Characteristics of ObjectARX Library Functions=Common_Characteristics_of_ObjectARX_Library_Functions_arxdev20@arxdev.hlp>main
+3 Variables, Types, and Values Defined in ObjectARX=Variables44_Types44_and_Values_Defined_in_ObjectARX_arxdev20@arxdev.hlp>main
+3 Lists and Other Dynamically Allocated Data=Lists_and_Other_Dynamically_Allocated_Data_arxdev20@arxdev.hlp>main
+3 Extended Data Exclusive Data Types=Extended_Data_Exclusive_Data_Types_arxdev20@arxdev.hlp>main
+3 Text String Globalization Issues=Text_String_Globalization_Issues_arxdev20@arxdev.hlp>main
+
+2 Chapter 21 -- Input Point Processing  
+3 Overview=Input_Point_Processing@arxdev.hlp>main
+3 Custom Object Snap Modes=Custom_Object_Snap_Modes_arxdev21@arxdev.hlp>main
+3 Input Point Management=Input_Point_Management_arxdev21@arxdev.hlp>main
+
+2 Chapter 22 -- Application Configuration 
+3 Overview=Application_Configuration@arxdev.hlp>main
+3 Profile Manager=Profile_Manager_arxdev22@arxdev.hlp>main
+
+2 Chapter 23 -- COM, ActiveX Automation, and the Object Property Manager
+3 Overview=COM44_ActiveX_Automation44_and_the_Object_Property_Manager@arxdev.hlp>main
+3 Introduction=Introduction_arxdev23@arxdev.hlp>main
+3 Using AutoCAD COM Objects from ObjectARX and Other Environments=Using_AutoCAD_COM_Objects_from_ObjectARX_and_Other_Environments_arxdev23@arxdev.hlp>main
+3 AutoCAD ActiveX Automation Implementation=AutoCAD_ActiveX_Automation_Implementation_arxdev23@arxdev.hlp>main
+3 Interacting with AutoCAD=Interacting_with_AutoCAD_arxdev23@arxdev.hlp>main
+3 Document Locking=Document_Locking_arxdev23@arxdev.hlp>main
+3 Creating a Registry File=Creating_a_Registry_File_arxdev23@arxdev.hlp>main
+3 Exposing Automation Functionality=Exposing_Automation_Functionality_arxdev23@arxdev.hlp>main
+3 Object Property Manager API=Object_Property_Manager_API_arxdev23@arxdev.hlp>main
+3 Static OPM COM Interfaces=Static_OPM_COM_Interfaces_arxdev23@arxdev.hlp>main
+3 Implementing Static OPM Interfaces=Implementing_Static_OPM_Interfaces_arxdev23@arxdev.hlp>main
+3 Dynamic Properties and OPM=Dynamic_Properties_and_OPM_arxdev23@arxdev.hlp>main
+
+2 Chapter 24 -- AutoCAD DesignCenter COM API
+3 Overview=AutoCAD_DesignCenter_COM_API@arxdev.hlp>main
+3 AutoCAD DesignCenter API=AutoCAD_DesignCenter_API_arxdev24@arxdev.hlp>main
+3 Registry Requirements for an AutoCAD DesignCenter Component=Registry_Requirements_for_an_AutoCAD_DesignCenter_Component_arxdev24@arxdev.hlp>main
+3 Implementing the Interfaces for AutoCAD DesignCenter=Implementing_the_Interfaces_for_AutoCAD_DesignCenter_arxdev24@arxdev.hlp>main
+3 Customizing AutoCAD DesignCenter=Customizing_AutoCAD_DesignCenter_arxdev24@arxdev.hlp>main
+
+2 Chapter 25 -- The ObjectDBX Libraries
+3 Overview=The_ObjectDBX_Libraries@arxdev.hlp>main
+3 Introduction=Introduction_arxdev25@arxdev.hlp>main
+3 Using ObjectDBX=Using_ObjectDBX_arxdev25@arxdev.hlp>main
+3 Differences Between ObjectDBX and ObjectARX=Differences_Between_ObjectDBX_and_ObjectARX_arxdev25@arxdev.hlp>main
+3 Localization and XMX Files=Localization_and_XMX_Files_arxdev25@arxdev.hlp>main
+3 Transaction Management=Transaction_Management_arxdev25@arxdev.hlp>main
+3 Creating a Viewer=Creating_a_Viewer_arxdev25@arxdev.hlp>main
+3 Demand Loading=Demand_Loading_arxdev25@arxdev.hlp>main
+3 Installing the ObjectDBX Libraries=Installing_the_ObjectDBX_Libraries_arxdev25@arxdev.hlp>main
+3 Tips and Techniques=Tips_and_Techniques_arxdev25@arxdev.hlp>main
+3 Known Limitations=Known_Limitations_arxdev25@arxdev.hlp>main
+
+2 Chapter 26 -- The Graphics Interface Library
+3 Overview=The_Graphics_Interface_Library@arxdev.hlp>main
+3 AcGi Overview=AcGi_Overview_arxdev26@arxdev.hlp>main
+3 Setting Entity Traits=Setting_Entity_Traits_arxdev26@arxdev.hlp>main
+3 Primitives=Primitives_arxdev26@arxdev.hlp>main
+3 Using Drawables in your Object=Using_Drawables_in_your_Object_arxdev26@arxdev.hlp>main
+3 Tessellation=Tessellation_arxdev26@arxdev.hlp>main
+3 Isolines=Isolines_arxdev26@arxdev.hlp>main
+3 Transformations=Transformations_arxdev26@arxdev.hlp>main
+3 Using Clip Boundaries in AcGi=Using_Clip_Boundaries_in_AcGi_arxdev26@arxdev.hlp>main
+
+2 Chapter 27 -- Using the Geometry Library
+3 Overview=Using_the_Geometry_Library@arxdev.hlp>main
+3 Overview of the AcGe Library=Overview_of_the_AcGe_Library_arxdev27@arxdev.hlp>main
+3 Using Basic Geometry Types=Using_Basic_Geometry_Types_arxdev27@arxdev.hlp>main
+3 Using the Line and Plane Classes=Using_the_Line_and_Plane_Classes_arxdev27@arxdev.hlp>main
+3 Parametric Geometry=Parametric_Geometry_arxdev27@arxdev.hlp>main
+3 Special Evaluation Classes=Special_Evaluation_Classes_arxdev27@arxdev.hlp>main
+3 Persistent AcGe Entities=Persistent_AcGe_Entities_arxdev27@arxdev.hlp>main
+
+2 Chapter 28 -- Using the Boundary Representation Library
+3 Overview=Using_the_Boundary_Representation_Library@arxdev.hlp>main
+3 Introduction=Introduction_arxdev28@arxdev.hlp>main
+3 Domain=Domain_arxdev28@arxdev.hlp>main
+3 Limitations=Limitations_arxdev28@arxdev.hlp>main
+3 Class Hierarchy=Class_Hierarchy_arxdev28@arxdev.hlp>main
+3 Topological Objects=Topological_Objects_arxdev28@arxdev.hlp>main
+3 AcBr Class Descriptions=AcBr_Class_Descriptions_arxdev28@arxdev.hlp>main
+3 Enumerated Types=Enumerated_Types_arxdev28@arxdev.hlp>main
+3 Building an Application=Building_an_Application_arxdev28@arxdev.hlp>main
+
+2 Appendix A -- Migrating ADS Programs to ObjectARX
+3 Overview=Migrating_ADS_Programs_to_ObjectARX@arxdev.hlp>main
+3 Migrating to ObjectARX=Migrating_to_ObjectARX_arxdev0a@arxdev.hlp>main
+3 Loading Applications: ADS versus ObjectARX=Loading_Applications58_ADS_versus_ObjectARX_arxdev0a@arxdev.hlp>main
+3 Building ADS Applications in the ObjectARX Program Environment=Building_ADS_Applications_in_the_ObjectARX_Program_Environment_arxdev0a@arxdev.hlp>main
+3 Sample ObjectARX Application=Sample_ObjectARX_Application_arxdev0a@arxdev.hlp>main
+3 ObjectARX-Exclusive Data Type=ObjectARX45Exclusive_Data_Type_arxdev0a@arxdev.hlp>main
+
+2 Appendix B -- Programmable Dialog Boxes
+3 Overview=Programmable_Dialog_Boxes@arxdev.hlp>main
+3 Introduction=Introduction_arxdev0b@arxdev.hlp>main
+3 Function Sequence Outline=Function_Sequence_Outline_arxdev0b@arxdev.hlp>main
+3 Definitions and Declarations=Definitions_and_Declarations_arxdev0b@arxdev.hlp>main
+3 Handling Tiles=Handling_Tiles_arxdev0b@arxdev.hlp>main
+

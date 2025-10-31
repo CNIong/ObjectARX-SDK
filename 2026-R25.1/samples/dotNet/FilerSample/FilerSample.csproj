@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FilerSample</RootNamespace>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <AssemblySearchPaths>..\..\..\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcDbMgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="accoremgd">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

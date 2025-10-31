@@ -1,0 +1,7 @@
+LIBRARY teselate
+DESCRIPTION 'ObjectARX AcGi PIX Test Program'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

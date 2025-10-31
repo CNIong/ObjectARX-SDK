@@ -1,0 +1,9 @@
+; ExtDwgSetng.def : Declares the module parameters for the DLL.
+
+; (C) Copyright 1998 by Autodesk, Inc.
+LIBRARY      "ExtDwgSetng"
+DESCRIPTION  'ExtDwgSetng Windows Dynamic Link Library'
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

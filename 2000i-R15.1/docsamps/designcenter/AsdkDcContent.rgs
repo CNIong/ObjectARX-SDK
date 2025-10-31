@@ -1,0 +1,26 @@
+HKCR
+{
+	AsdkDesignCenterSamp.AsdkDcContent.1 = s 'AsdkDcContent Class'
+	{
+		CLSID = s '{AF67CC1B-83C2-11D2-A7BD-0060B0872457}'
+	}
+	AsdkDesignCenterSamp.AsdkDcContent = s 'AsdkDcContent Class'
+	{
+		CLSID = s '{AF67CC1B-83C2-11D2-A7BD-0060B0872457}'
+		CurVer = s 'AsdkDesignCenterSamp.AsdkDcContent.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {AF67CC1B-83C2-11D2-A7BD-0060B0872457} = s 'AsdkDcContent Class'
+		{
+			ProgID = s 'AsdkDesignCenterSamp.AsdkDcContent.1'
+			VersionIndependentProgID = s 'AsdkDesignCenterSamp.AsdkDcContent'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{C555912E-A4EA-11D2-A7DA-0060B0872457}'
+		}
+	}
+}

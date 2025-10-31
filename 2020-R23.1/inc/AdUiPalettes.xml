@@ -1,0 +1,2749 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdUiPalettes</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.Windows.Themes.FontInfo">
+            <summary>This is class Autodesk.Windows.Themes.FontInfo.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.FontInfo.#ctor(System.Double,System.Windows.FontWeight,System.Windows.Media.FontFamily,System.Windows.FontStyle)">
+            <summary>This is FontInfo, a member of class FontInfo.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.FontInfo.Equals(Autodesk.Windows.Themes.FontInfo)">
+            <summary>This is Equals, a member of class FontInfo.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.FontInfo.FontFamily">
+            <summary>This is FontFamily, a member of class FontInfo.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.FontInfo.FontSize">
+            <summary>This is FontSize, a member of class FontInfo.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.FontInfo.FontStyle">
+            <summary>This is FontStyle, a member of class FontInfo.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.FontInfo.FontWeight">
+            <summary>This is FontWeight, a member of class FontInfo.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.HSBColor">
+            <summary>This class represents HSB format color in managed code.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.#ctor">
+            <summary>Create a new HSBColor object with default color (0, 0, 0, 100).</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>Create a new HSBColor object with provided color.</summary>
+            <param name="hue"> Specify the hue for HSB color.</param>
+            <param name="saturation"> Specify the saturation for HSB color.</param>
+            <param name="brightness"> Specify the brightness for HSB color.</param>
+            <param name="opacity"> Specify the opacity for HSB color.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.#ctor(System.String)">
+            <summary>Create a new HSBColor object with string format.</summary>
+            <param name="hsbString"> Specify the string of HSB color. String format: "0,0,32"</param>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.SetHSB(System.Double,System.Double,System.Double,System.Double)">
+            <summary>Set HSB color.</summary>
+            <param name="hue"> Specify the hue for HSB color.</param>
+            <param name="saturation"> Specify the saturation for HSB color.</param>
+            <param name="brightness"> Specify the brightness for HSB color.</param>
+            <param name="opacity"> Specify the opacity for HSB color.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.ToColor">
+            <summary>Covert current HSBColor to Color object.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.op_Addition(Autodesk.Windows.Themes.HSBColor,Autodesk.Windows.Themes.HSBColor)">
+            <summary>Multiply operation for 2 HSBColor.</summary>
+            <param name="a"> Specify the first parameter of multiply operation.</param>
+            <param name="b"> Specify the second parameter of multiply operation.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.op_Subtraction(Autodesk.Windows.Themes.HSBColor,Autodesk.Windows.Themes.HSBColor)">
+            <summary>Multiply operation for 2 HSBColor.</summary>
+            <param name="a"> Specify the first parameter of multiply operation.</param>
+            <param name="b"> Specify the second parameter of multiply operation.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.op_Multiply(Autodesk.Windows.Themes.HSBColor,Autodesk.Windows.Themes.HSBColor)">
+            <summary>Multiply operation for 2 HSBColor.</summary>
+            <param name="a"> Specify the first parameter of multiply operation.</param>
+            <param name="b"> Specify the second parameter of multiply operation.</param>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.ToString">
+            <summary>Return the string of HSBColor object.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColor.ToString(System.Int32)">
+            <summary>Return the string of HSBColor object.</summary>
+            <param name="flag"> If 0, return string as "H:{0} S:{1} B:{2} A:{3} format". Otherwise, return string as "H:{0} S:{1} B:{2} A:{3} Operation:{4}" format.</param>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.HSBColor.Hue">
+            <summary>Get and Set the Hue value of HSBColor.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.HSBColor.Saturation">
+            <summary>Get and Set the Saturation value of HSBColor.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.HSBColor.Brightness">
+            <summary>Get and Set the Brightness value of HSBColor.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.HSBColor.Opacity">
+            <summary>Get and Set the Opacity value of HSBColor.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.HSBColor.Operation">
+            <summary>This is Operation, a member of class HSBColor.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.HSBColors">
+            <summary>This is class Autodesk.Windows.Themes.HSBColors.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.HSBColors.BaseColorKey">
+            <summary>This is BaseColorKey, a member of class HSBColors.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.HSBColorDictionary">
+            <summary>This is class Autodesk.Windows.Themes.HSBColorDictionary.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.HSBColorsDictionary">
+            <summary>This is class Autodesk.Windows.Themes.HSBColorsDictionary.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ColorDictionary">
+            <summary>This is class Autodesk.Windows.Themes.ColorDictionary.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.HSBColorUtil">
+            <summary>This is class Autodesk.Windows.Themes.HSBColorUtil.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.HSBColorUtil.GetPaletteThemeHSBColors(Autodesk.Windows.Themes.HSBColor)">
+            <summary>This is GetPaletteThemeHSBColors, a member of class HSBColorUtil.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ImageSources">
+            <summary>This class is used to access and manage the global image reources in Windows resource DLLs.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Themes.ImageSources.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class ImageSources.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Themes.ImageSources.PropertyChanging">
+            <summary>This is PropertyChanging, a member of class ImageSources.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ImageSources.Images">
+            <summary>Provides access to the theme image sources.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ImageSources.Uris">
+            <summary>Provides access to the theme image URIs.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ThemedImageUri">
+            <summary>This is class Autodesk.Windows.Themes.ThemedImageUri.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemedImageUri.#ctor">
+            <summary>This is ThemedImageUri, a member of class ThemedImageUri.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ThemedImageSource">
+            <summary>ThemedImageSources is a new .NET class that is used to represent image source.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemedImageSource.#ctor">
+            <summary>This is ThemedImageSource, a member of class ThemedImageSource.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.InPlaceEditorThemeDefaults">
+            <summary>This is class Autodesk.Windows.Themes.InPlaceEditorThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorThemeDefaults.DarkOverallColor">
+            <summary>This is DarkOverallColor, a member of class InPlaceEditorThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorThemeDefaults.LightOverallColor">
+            <summary>This is LightOverallColor, a member of class InPlaceEditorThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorThemeDefaults.DarkTextColor">
+            <summary>This is DarkTextColor, a member of class InPlaceEditorThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorThemeDefaults.LightTextColor">
+            <summary>This is LightTextColor, a member of class InPlaceEditorThemeDefaults.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.InPlaceEditorTheme">
+            <summary>This is class Autodesk.Windows.Themes.InPlaceEditorTheme.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.InPlaceEditorTheme.#ctor">
+            <summary>This is InPlaceEditorTheme, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.InPlaceEditorTheme.#ctor(Autodesk.Windows.Themes.HSBColor)">
+            <summary>This is InPlaceEditorTheme, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.InPlaceEditorTheme.Equals(Autodesk.Windows.Themes.InPlaceEditorTheme)">
+            <summary>This is Equals, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.IsDark">
+            <summary>This is IsDark, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.OverallColor">
+            <summary>This is OverallColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.OverallTextColor">
+            <summary>This is OverallTextColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.FillColor">
+            <summary>This is FillColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.OutlineColor">
+            <summary>This is OutlineColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.ShadowLineColor">
+            <summary>This is ShadowLineColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.CornerResizeColor">
+            <summary>This is CornerResizeColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.CornerResizeShadowColor">
+            <summary>This is CornerResizeShadowColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.GlyphColor">
+            <summary>This is GlyphColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.GlyphShadowColor">
+            <summary>This is GlyphShadowColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.CompositeSoftShadowColor">
+            <summary>This is CompositeSoftShadowColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.InPlaceEditorTheme.CompositeHardShadowColor">
+            <summary>This is CompositeHardShadowColor, a member of class InPlaceEditorTheme.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ThemeBase">
+            <summary>This is class Autodesk.Windows.Themes.ThemeBase.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ThemeColorGenerator">
+            <summary>This is class Autodesk.Windows.Themes.ThemeColorGenerator.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeColorGenerator.#ctor(Autodesk.Windows.Themes.HSBColor)">
+            <summary>This is ThemeColorGenerator, a member of class ThemeColorGenerator.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeColorGenerator.GenerateColor(Autodesk.Windows.Themes.HSBColor)">
+            <summary>This is GenerateColor, a member of class ThemeColorGenerator.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeColorGenerator.GenerateColor(Autodesk.Windows.Themes.HSBColor,Autodesk.Windows.Themes.HSBColor)">
+            <summary>This is GenerateColor, a member of class ThemeColorGenerator.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeColorGenerator.GenerateHSBColor(Autodesk.Windows.Themes.HSBColor)">
+            <summary>This is GenerateHSBColor, a member of class ThemeColorGenerator.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeColorGenerator.GenerateHSBColor(Autodesk.Windows.Themes.HSBColors,Autodesk.Windows.Themes.HSBColorDictionary)">
+            <summary>This is GenerateHSBColor, a member of class ThemeColorGenerator.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeColorGenerator.GenerateHSBColor(Autodesk.Windows.Themes.HSBColor,Autodesk.Windows.Themes.HSBColor)">
+            <summary>This is GenerateHSBColor, a member of class ThemeColorGenerator.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ThemeColorGenerator.OverallColor">
+            <summary>This is OverallColor, a member of class ThemeColorGenerator.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ThemeManager">
+            <summary>The ThemeManager is a singleton dependency object that holds all settings and provides access to the global objects within the theme framework.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Themes.ThemeManager.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class ThemeManager.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Themes.ThemeManager.PropertyChanging">
+            <summary>This is PropertyChanging, a member of class ThemeManager.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ThemeManager.Instance">
+            <summary>Returns the global instance of the ThemeManager class.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ThemeManager.PaletteSettings">
+            <summary>This property is usefule for binding in xaml to PaletteUiManager.Settings.CurrentTheme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ThemeManager.InPlaceEditorSettings">
+            <summary>This is InPlaceEditorSettings, a member of class ThemeManager.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ThemeManager.ImageSources">
+            <summary>This property is useful for binding in xaml to image resources contained in the acadbtn and other Windows resource DLLs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ThemeManager.CurrentPaletteTheme">
+            <summary>Gets or sets the Current theme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Themes.ThemeManager.CurrentInPlaceEditorTheme">
+            <summary>This is CurrentInPlaceEditorTheme, a member of class ThemeManager.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Themes.ThemeResources">
+            <summary>The ThemeResources is a new .NET class, which is used to access and manage the cultureless themed resources in the satellite assembly of a managed module.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeResources.#ctor(System.Type)">
+            <summary>Creates a new instance of the ThemeResources.object that looks up resources in satellite assemblies based on information from the specified type object.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeResources.GetThemedObject(System.String)">
+            <summary>This is GetThemedObject, a member of class ThemeResources.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Themes.ThemeResources.GetObject(System.String)">
+            <summary>This is GetObject, a member of class ThemeResources.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.HighlightItemInfo">
+            <summary>This is class Autodesk.Windows.Palettes.HighlightItemInfo.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.HighlightItemInfo.#ctor(System.Int32,System.Int32)">
+            <summary>This is HighlightItemInfo, a member of class HighlightItemInfo.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.IAcSeamlessHost">
+            <summary>This is class Autodesk.Windows.Palettes.IAcSeamlessHost.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.IAcSeamlessHost.GetMFCDialogHighlightItems(System.String)">
+            <summary>This is GetMFCDialogHighlightItems, a member of class IAcSeamlessHost.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.IAcSeamlessHost.HighlightStateChanged">
+            <summary>This is HighlightStateChanged, a member of class IAcSeamlessHost.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.IAcSeamlessHost.HighlightRefreshed">
+            <summary>This is HighlightRefreshed, a member of class IAcSeamlessHost.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteService">
+            <summary>This is class Autodesk.Windows.Palettes.PaletteService.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteService.EnableInput(System.Boolean)">
+            <summary>This is EnableInput, a member of class PaletteService.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteService.AcSeamlessHost">
+            <summary>This is AcSeamlessHost, a member of class PaletteService.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteSettings">
+            <summary>The PaletteSettings object is a collection of properties that apply to the palette system as a whole.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSettings.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class PaletteSettings.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSettings.PropertyChanging">
+            <summary>This is PropertyChanging, a member of class PaletteSettings.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSettings.EnableInput(System.Boolean)">
+            <summary>This is EnableInput, a member of class PaletteSettings.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSettings.CurrentTheme">
+            <summary>This is CurrentTheme, a member of class PaletteSettings.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.Win32Palette">
+            <summary>This is class Autodesk.Windows.Palettes.Win32Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Win32Palette.SourceHWND">
+            <summary>This is SourceHWND, a member of class Win32Palette.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.Win32PaletteSet">
+            <summary>This is class Autodesk.Windows.Palettes.Win32PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.Win32PaletteSet.#ctor">
+            <summary>This is Win32PaletteSet, a member of class Win32PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Win32PaletteSet.HWND">
+            <summary>This is HWND, a member of class Win32PaletteSet.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.Palette">
+            <summary>This is class Autodesk.Windows.Palettes.Palette.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.Palette.#ctor">
+            <summary>This is Palette, a member of class Palette.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.Palette.#ctor(System.String)">
+            <summary>This is Palette, a member of class Palette.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.Palette.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class Palette.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.Palette.PropertyChanging">
+            <summary>This is PropertyChanging, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.Image">
+            <summary>This is Image, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.Title">
+            <summary>This is Title, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.PaletteSet">
+            <summary>This is PaletteSet, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.Id">
+            <summary>This is Id, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.MinWidth">
+            <summary>This is MinWidth, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.MaxWidth">
+            <summary>This is MaxWidth, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.MinHeight">
+            <summary>This is MinHeight, a member of class Palette.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Palette.MaxHeight">
+            <summary>This is MaxHeight, a member of class Palette.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteDockManager">
+            <summary>This is class Autodesk.Windows.Palettes.PaletteDockManager.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteDockManager.#ctor">
+            <summary>This is paletteDockManager, a member of class PaletteDockManager.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteDockManager.paletteDockManager">
+            <summary>This is paletteDockManager, a member of class PaletteDockManager.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteDockManager.mainFrameWindow">
+            <summary>This is mainFrameWindow, a member of class PaletteDockManager.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteDockManager.SetMainFrameWindow(System.IntPtr)">
+            <summary>This is SetMainFrameWindow, a member of class PaletteDockManager.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.LocationChangingEventArgs">
+            <summary>This is class Autodesk.Windows.Palettes.LocationChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.LocationChangingEventArgs.Location">
+            <summary>This is Location, a member of class LocationChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.LocationChangingEventArgs.NewLocation">
+            <summary>This is NewLocation, a member of class LocationChangingEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.SizeChangingEventArgs">
+            <summary>This is class Autodesk.Windows.Palettes.SizeChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.SizeChangingEventArgs.Size">
+            <summary>This is Size, a member of class SizeChangingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.SizeChangingEventArgs.NewSize">
+            <summary>This is NewSize, a member of class SizeChangingEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.WindowPositionChangedEventArgs">
+            <summary>This is class Autodesk.Windows.Palettes.WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.WindowPositionChangedEventArgs.#ctor(System.Boolean,System.Boolean)">
+            <summary>This is WindowPositionChangedEventArgs, a member of class WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.WindowPositionChangedEventArgs.Moved">
+            <summary>This is Moved, a member of class WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.WindowPositionChangedEventArgs.Sized">
+            <summary>This is Sized, a member of class WindowPositionChangedEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteSetSelectorType">
+            <summary>This is record Autodesk.Windows.Palettes.PaletteSetSelectorType.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteSet">
+            <summary>This is class Autodesk.Windows.Palettes.PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.#ctor">
+            <summary>This is PaletteSet, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.#ctor(System.String)">
+            <summary>This is PaletteSet, a member of class PaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSet.Closed">
+            <summary>This is Closed, a member of class PaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSet.IsSelectedChanged">
+            <summary>This is IsSelectedChanged, a member of class PaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSet.PaletteActivating">
+            <summary>This is PaletteActivating, a member of class PaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSet.PaletteActivated">
+            <summary>This is PaletteActivated, a member of class PaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSet.PropertyChanged">
+            <summary>This is PropertyChanged, a member of class PaletteSet.</summary>
+        </member>
+        <member name="E:Autodesk.Windows.Palettes.PaletteSet.PropertyChanging">
+            <summary>This is PropertyChanging, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.Add(Autodesk.Windows.Palettes.Palette)">
+            <summary>This is Add, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.Remove(Autodesk.Windows.Palettes.Palette)">
+            <summary>This is Remove, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.RemovePaletteAtIndex(System.Int32)">
+            <summary>This is RemovePaletteAtIndex, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.IndexOfPalette(Autodesk.Windows.Palettes.Palette)">
+            <summary>This is IndexOfPalette, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.PaletteAtIndex(System.Int32)">
+            <summary>This is PaletteAtIndex, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.ActivatePalette(System.Int32)">
+            <summary>This is ActivatePalette, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.Dispose">
+            <summary>This is Dispose, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.UpdateWindowMinMaxSize">
+            <summary>This is UpdateWindowMinMaxSize, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.addPaletteContent">
+            <summary>This is addPaletteContent, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.Show">
+            <summary>This is Show, a member of class PaletteSet.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteSet.Hide">
+            <summary>This is Hide, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.Image">
+            <summary>This is Image, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.Title">
+            <summary>This is Title, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.SelectorType">
+            <summary>This is SelectorType, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.ActivePaletteIndex">
+            <summary>This is ActivePaletteIndex, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.Id">
+            <summary>This is Id, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.PaletteCount">
+            <summary>This is PaletteCount, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.MinWidth">
+            <summary>This is MinWidth, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.MaxWidth">
+            <summary>This is MaxWidth, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.MinHeight">
+            <summary>This is MinHeight, a member of class PaletteSet.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteSet.MaxHeight">
+            <summary>This is MaxHeight, a member of class PaletteSet.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteActivatedEventArgs">
+            <summary>This is class Autodesk.Windows.Palettes.PaletteActivatedEventArgs.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteActivatedEventArgs.#ctor(Autodesk.Windows.Palettes.Palette,Autodesk.Windows.Palettes.Palette)">
+            <summary>This is PaletteActivatedEventArgs, a member of class PaletteActivatedEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteActivatedEventArgs.ActivatedPalette">
+            <summary>This is ActivatedPalette, a member of class PaletteActivatedEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteActivatedEventArgs.DeactivatedPalette">
+            <summary>This is DeactivatedPalette, a member of class PaletteActivatedEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteActivatingEventArgs">
+            <summary>This is class Autodesk.Windows.Palettes.PaletteActivatingEventArgs.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteActivatingEventArgs.#ctor(Autodesk.Windows.Palettes.Palette,Autodesk.Windows.Palettes.Palette)">
+            <summary>This is PaletteActivatingEventArgs, a member of class PaletteActivatingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteActivatingEventArgs.PaletteToActivate">
+            <summary>This is PaletteToActivate, a member of class PaletteActivatingEventArgs.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteActivatingEventArgs.PaletteToDeactivate">
+            <summary>This is PaletteToDeactivate, a member of class PaletteActivatingEventArgs.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteThemeDefaults">
+            <summary>This is class Autodesk.Windows.Palettes.PaletteThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteThemeDefaults.DarkOverallColor">
+            <summary>This is DarkOverallColor, a member of class PaletteThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteThemeDefaults.LightOverallColor">
+            <summary>This is LightOverallColor, a member of class PaletteThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteThemeDefaults.DarkTextColor">
+            <summary>This is DarkTextColor, a member of class PaletteThemeDefaults.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteThemeDefaults.LightTextColor">
+            <summary>This is LightTextColor, a member of class PaletteThemeDefaults.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.PaletteTheme">
+            <summary>This class provides themed colors, fonts and brushs information.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.PaletteTheme.Equals(Autodesk.Windows.Palettes.PaletteTheme)">
+            <summary>Get value.</summary>
+            <param name="theme"> Specify the PaletteTheme that is used to compared.</param>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsHighlightBrush">
+            <summary>Set and get FileTabsHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsInverseHighlightBrush">
+            <summary>Get FileTabsHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsActiveBackgroundBrush">
+            <summary>Get FileTabsActiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsInactiveBackgroundBrush">
+            <summary>Get FileTabsInactiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsInactiveInverseBackgroundBrush">
+            <summary>Get FileTabsActiveInverseBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsActiveInverseBackgroundBrush">
+            <summary>Set and get FileTabsActiveInverseBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsHorizListBoxBackgroundBrush">
+            <summary>Get FileTabsHorizListBoxBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.IPETextFocusBackgroundBrush">
+            <summary>Get IPETextFocusBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryBackgroundBrush">
+            <summary>Set and get CategoryBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryButtonHoverBackgroundBrush">
+            <summary>Set and get CategoryButtonHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryButtonClickBackgroundBrush">
+            <summary>Set and get CategoryButtonClickBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryBorderBrush">
+            <summary>Set and get CategoryBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryExpanderBrush">
+            <summary>Set and get CategoryExpanderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryExpanderFillBrush">
+            <summary>Set and get CategoryExpanderFillBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryExpanderShadowBrush">
+            <summary>Set and get CategoryExpanderShadowBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlBorderBrush">
+            <summary>Set and get TreeControlBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlLineBrush">
+            <summary>Set and get TreeControlLineBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectBackgroundBrush">
+            <summary>Set and get TreeControlSelectBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectActiveBackgroundBrush">
+            <summary>Set and get TreeControlSelectActiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectInactiveBackgroundBrush">
+            <summary>Set and get TreeControlSelectInactiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlTextBrush">
+            <summary>Set and get TreeControlTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlDisabledTextBrush">
+            <summary>Set and get TreeControlDisabledTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlInactiveTextBrush">
+            <summary>Set and get TreeControlInactiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectTextBrush">
+            <summary>Set and get TreeControlSelectTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectInactiveTextBrush">
+            <summary>Set and get TreeControlSelectInactiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectDisabledTextBrush">
+            <summary>Set and get TreeControlSelectDisabledTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineSuggestionListExpandedBackgroundBrush">
+            <summary>Set and get CommandLineSuggestionListExpandedBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineCommandOptionsTextHighlightedColorBrush">
+            <summary>Set and get CommandLineCommandOptionsTextHighlightedColorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHistoryBackgroundColorBrush">
+            <summary>Set and get CommandLineHistoryBackgroundColorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.IsDark">
+            <summary>Get IsDark value.If true, PaletteTheme is dark theme.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.NormalFont">
+            <summary>Get NormalFont value that includes normal font information.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.BoldFont">
+            <summary>Get BoldFont value that includes bold font information.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxHoverBackgroundBrush">
+            <summary>Set and get CheckBoxHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxHoverBorderBrush">
+            <summary>Set and get CheckBoxHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxPressedBackgroundBrush">
+            <summary>Set and get CheckBoxPressedBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxPressedBorderBrush">
+            <summary>Set and get CheckBoxPressedBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxCheckBrush">
+            <summary>Set and get CheckBoxCheckBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonActiveTextBrush">
+            <summary>Set and get PushButtonActiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonBackgroundBrush">
+            <summary>Set and get PushButtonBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonBorderBrush">
+            <summary>Set and get PushButtonBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonActiveBackgroundBrush">
+            <summary>Set and get PushButtonActiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonHoverBorderBrush">
+            <summary>Set and get PushButtonHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonHoverBackgroundBrush">
+            <summary>Set and get PushButtonHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputBackgroundBrush">
+            <summary>Set and get TextInputBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputBorderBrush">
+            <summary>Set and get TextInputBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveBackgroundBrush">
+            <summary>Set and get TextInputActiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveHighlightBrush">
+            <summary>Set and get TextInputActiveHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputTextBrush">
+            <summary>Set and get TextInputTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputDisabledTextBrush">
+            <summary>Set and get TextInputDisabledTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputInactiveTextBrush">
+            <summary>Set and get TextInputInactiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveBorderBrush">
+            <summary>Set and get TextInputActiveBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlBorderBrush">
+            <summary>Set and get SpinControlBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlArrowBrush">
+            <summary>Set and get SpinControlArrowBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlHoverBackgroundBrush">
+            <summary>Set and get SpinControlHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlClickBackgroundBrush">
+            <summary>Set and get SpinControlClickBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlBackgroundBrush">
+            <summary>Set and get SpinControlBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxBorderBrush">
+            <summary>Set and get ListBoxBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxGridBrush">
+            <summary>Set and get ListBoxGridBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxHoverBackgroundBrush">
+            <summary>Get ListBoxHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxHoverBorderBrush">
+            <summary>Get ListBoxHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxClickBackgroundBrush">
+            <summary>Get ListBoxClickBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxClickBorderBrush">
+            <summary>Get ListBoxClickBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectBackgroundBrush">
+            <summary>Get ListBoxSelectBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectBorderBrush">
+            <summary>Get ListBoxSelectBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectInactiveBackgroundBrush">
+            <summary>Set and get ListBoxSelectInactiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectHoverBackgroundBrush">
+            <summary>Get ListBoxSelectHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectHoverBorderBrush">
+            <summary>Get ListBoxSelectHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxInnerShadowBrush">
+            <summary>Get ListBoxInnerShadowBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxTextBrush">
+            <summary>Set and get ListBoxTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxDisabledTextBrush">
+            <summary>Set and get ListBoxDisabledTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxInactiveTextBrush">
+            <summary>Set and get ListBoxInactiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectTextBrush">
+            <summary>Get ListBoxSelectTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectInactiveTextBrush">
+            <summary>Set and get ListBoxSelectInactiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectDisabledTextBrush">
+            <summary>Set and get ListBoxSelectDisabledTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderTextBrush">
+            <summary>Set and get ListBoxColumnHeaderTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderArrowBrush">
+            <summary>Set and get ListBoxColumnHeaderArrowBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderBackgroundBrush">
+            <summary>Set and get ListBoxColumnHeaderBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderBorderBrush">
+            <summary>Get ListBoxColumnHeaderBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderSortCellBackgroundBrush">
+            <summary>Get ListBoxColumnHeaderSortCellBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxGroupHeaderTextBrush">
+            <summary>Set and get ListBoxGroupHeaderTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlBorderBrush">
+            <summary>Set and get ControlBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlActiveOuterBorderBrush">
+            <summary>Get ControlActiveOuterBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlErrorOuterBorderBrush">
+            <summary>Get ControlErrorOuterBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlCaretBrush">
+            <summary>Set and get ControlCaretBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlTextBrush">
+            <summary>Set and get ControlTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlInactiveTextBrush">
+            <summary>Set and get ControlInactiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlDisabledTextBrush">
+            <summary>Set and get ControlDisabledTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarTooltipBackgroundBrush">
+            <summary>Get StatusBarTooltipBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarTooltipStateTextBrush">
+            <summary>Get StatusBarTooltipStateTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarOuterBorderBrush">
+            <summary>Set and get StatusBarOuterBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarInnerBorderBrush">
+            <summary>Set and get StatusBarInnerBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarBackgroundBrush">
+            <summary>Set and get StatusBarBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarTextBrush">
+            <summary>Set and get StatusBarTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarSeparatorBrush">
+            <summary>Set and get StatusBarSeparatorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsRowBackgroundBrush">
+            <summary>Get FileTabsRowBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsInnerHighlightBrush">
+            <summary>Get FileTabsInnerHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineImageButtonBackgroundRolloverColor3">
+            <summary>Set and get CommandLineImageButtonBackgroundRolloverColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineImageButtonBackgroundRolloverColor4">
+            <summary>Set and get CommandLineImageButtonBackgroundRolloverColor4 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineImageButtonBorderRolloverColor">
+            <summary>Set and get CommandLineImageButtonBorderRolloverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ToolbarBackgroundColor">
+            <summary>Set and get ToolbarBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ToolbarBorderColor">
+            <summary>Set and get ToolbarBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ToolbarGripBackgroundColor">
+            <summary>Set and get ToolbarGripBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ToolbarGripDarkDotColor">
+            <summary>Set and get ToolbarGripDarkDotColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ToolbarGripLightDotColor">
+            <summary>Set and get ToolbarGripLightDotColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ToolbarRolloverBorderColor">
+            <summary>Set and get ToolbarRolloverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ToolbarCloseButtonColor">
+            <summary>Set and get ToolbarCloseButtonColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ActiveTextBrush">
+            <summary>Get ActiveTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.InactiveTextBrush">
+            <summary>Get InactiveSearchBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ContainerBackgroundBrush">
+            <summary>Get ContainerBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ContainerBorderBrush">
+            <summary>Get ControlBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ContainerHighlightBrush">
+            <summary>Get ContainerHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ActivityIndicatorBrush">
+            <summary>Get ActivityIndicatorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TabBackgroundBrush">
+            <summary>Get TabBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TabBorderBrush">
+            <summary>Set and get TabBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TabHighlightBrush">
+            <summary>Get TabHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ActiveTabBrush">
+            <summary>Get ActiveTabBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.InactiveSearchBrush">
+            <summary>Set and get InactiveSearchBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SearchTextPlaceholderBrush">
+            <summary>Get SearchTextPlaceholderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTreeOrListBackgroundBrush">
+            <summary>Set and get PaletteTreeOrListBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuItemHoverBackgroundBrush">
+            <summary>Set and get MenuItemHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuItemHoverBorderBrush">
+            <summary>Set and get MenuItemHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuTextBrush">
+            <summary>Set and get MenuTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuBackgroundBrush">
+            <summary>Set and get MenuBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuInnerBorderBrush">
+            <summary>Set and get MenuInnerBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuOuterBorderBrush">
+            <summary>Set and get MenuOuterBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuCheckMarkBrush">
+            <summary>Set and get MenuCheckMarkBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuSeparatorBrush">
+            <summary>Set and get MenuSeparatorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ScrollBarThumbBrush">
+            <summary>Get ScrollBarThumbBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonBorderBrush">
+            <summary>Set and get SquareButtonBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonBackgroundBrush">
+            <summary>Set and get SquareButtonBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonDisabledBorderBrush">
+            <summary>Set and get SquareButtonDisabledBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonDisabledBackgroundBrush">
+            <summary>Set and get SquareButtonDisabledBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonHoverBorderBrush">
+            <summary>Get SquareButtonHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonHoverHighlightBrush">
+            <summary>Get SquareButtonHoverHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonHoverBackgroundBrush">
+            <summary>Get SquareButtonHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonClickBorderBrush">
+            <summary>Get SquareButtonClickBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonClickHighlightBrush">
+            <summary>Get SquareButtonClickHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonClickBackgroundBrush">
+            <summary>Get SquareButtonClickBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledBorderBrush">
+            <summary>Set and get SquareButtonToggledBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledBackgroundBrush">
+            <summary>Set and get SquareButtonToggledBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledHoverBorderBrush">
+            <summary>Set and get SquareButtonToggledHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledHoverBackgroundBrush">
+            <summary>Set and get SquareButtonToggledHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledDisabledBorderBrush">
+            <summary>Set and get SquareButtonToggledDisabledBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledDisabledBackgroundBrush">
+            <summary>Set and get SquareButtonToggledDisabledBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxBackgroundBrush">
+            <summary>Get ComboBoxBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxBorderBrush">
+            <summary>Set and get ComboBoxBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxActiveBackgroundBrush">
+            <summary>Get ComboBoxActiveBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxArrowBrush">
+            <summary>Get ComboBoxArrowBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxArrowShadowBrush">
+            <summary>Get ComboBoxArrowShadowBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverTextBrush">
+            <summary>Get ComboBoxHoverTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxTextBrush">
+            <summary>Set and get ComboBoxTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxSelectTextBrush">
+            <summary>Get ComboBoxSelectTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxDisabledTextBrush">
+            <summary>Set and get ComboBoxDisabledTextBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverBackgroundBrush">
+            <summary>Get ComboBoxHoverBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverBorderBrush">
+            <summary>Set and get ComboBoxHoverBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxSelectBackgroundBrush">
+            <summary>Get ComboBoxSelectBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverSelectHighlightBrush">
+            <summary>Get ComboBoxHoverSelectHighlightBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxSeparatorBrush">
+            <summary>Set and get ComboBoxSeparatorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxBackgroundBrush">
+            <summary>Set and get CheckBoxBackgroundBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxBorderBrush">
+            <summary>Set and get CheckBoxBorderBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATDropDownListBoxBorderColor">
+            <summary>Set and get QATDropDownListBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATDropDownListBoxBackgroundColor">
+            <summary>Set and get QATDropDownListBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATTextBoxForegroundColor">
+            <summary>Set and get QATTextBoxForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATTextBoxBackgroundColor">
+            <summary>Set and get QATTextBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATTextBoxBorderColor">
+            <summary>Set and get QATTextBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATTextBoxRollOverBorderColor">
+            <summary>Set and get QATTextBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlButtonBackgroundColor1">
+            <summary>Set and get ColorControlButtonBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlButtonBackgroundColor2">
+            <summary>Set and get ColorControlButtonBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlButtonBorderColor">
+            <summary>Set and get ColorControlButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPopupBackgroundColor">
+            <summary>Set and get ColorControlPopupBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPopupBorderColor">
+            <summary>Set and get ColorControlPopupBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPopupTextColor">
+            <summary>Set and get ColorControlPopupTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPopupSeparatorColor">
+            <summary>Set and get ColorControlPopupSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlArrowColor">
+            <summary>Set and get ColorControlArrowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlForegroundColor">
+            <summary>Set and get ColorControlForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlNormalButtonBorderColor">
+            <summary>Set and get ColorControlNormalButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlNormalButtonPanelBackgroundColor1">
+            <summary>Set and get ColorControlNormalButtonPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlNormalButtonPanelBackgroundColor2">
+            <summary>Set and get ColorControlNormalButtonPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlMouseOverButtonBorderColor">
+            <summary>Set and get ColorControlMouseOverButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlMouseOverButtonPanelBackgroundColor1">
+            <summary>Set and get ColorControlMouseOverButtonPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlMouseOverButtonPanelBackgroundColor2">
+            <summary>Set and get ColorControlMouseOverButtonPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPressedButtonBorderColor">
+            <summary>Set and get ColorControlPressedButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPressedButtonPanelBackgroundColor1">
+            <summary>Set and get ColorControlPressedButtonPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPressedButtonPanelBackgroundColor2">
+            <summary>Set and get ColorControlPressedButtonPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlCheckedButtonBorderColor">
+            <summary>Set and get ColorControlCheckedButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlCheckedButtonPanelBackgroundColor1">
+            <summary>Set and get ColorControlCheckedButtonPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlCheckedButtonPanelBackgroundColor2">
+            <summary>Set and get ColorControlCheckedButtonPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlDisabledArrowColor">
+            <summary>Set and get ColorControlDisabledArrowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlDisabledForegroundColor">
+            <summary>Set and get ColorControlDisabledForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlListBoxItemBorderColor">
+            <summary>Set and get ColorControlListBoxItemBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlListBoxItemBackgroundColor1">
+            <summary>Set and get ColorControlListBoxItemBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlListBoxItemBackgroundColor2">
+            <summary>Set and get ColorControlListBoxItemBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPressedListBoxItemBorderColor">
+            <summary>Set and get ColorControlPressedListBoxItemBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPressedListBoxItemBackgroundColor1">
+            <summary>Set and get ColorControlPressedListBoxItemBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlPressedListBoxItemBackgroundColor2">
+            <summary>Set and get ColorControlPressedListBoxItemBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlSelectListBoxItemBorderColor">
+            <summary>Set and get ColorControlSelectListBoxItemBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlSelectListBoxItemBackgroundColor1">
+            <summary>Set and get ColorControlSelectListBoxItemBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ColorControlSelectListBoxItemBackgroundColor2">
+            <summary>Set and get ColorControlSelectListBoxItemBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineSuggestionListExpandedBackgroundColor">
+            <summary>Set and get CommandLineSuggestionListExpandedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineCommandOptionsTextHighlightedColor">
+            <summary>Set and get CommandLineCommandOptionsTextHighlightedColorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHistoryBackgroundColor">
+            <summary>Set and get CommandLineHistoryBackgroundColorBrush value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintBackgroundColor">
+            <summary>Set and get CommandLineHintBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintBorderColor">
+            <summary>Set and get CommandLineHintBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintTextColor">
+            <summary>Set and get CommandLineHintTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintSelectBackgroundColor">
+            <summary>Set and get CommandLineHintSelectBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintSelectBorderColor">
+            <summary>Set and get CommandLineHintSelectBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintSelectTextColor">
+            <summary>Set and get CommandLineHintSelectTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintHeaderBackgroundColor">
+            <summary>Set and get CommandLineHintHeaderBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintHeaderTextColor">
+            <summary>Set and get CommandLineHintHeaderTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHintScrollBarThumbColor">
+            <summary>Set and get CommandLineHintScrollBarThumbColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineTitlePathColor">
+            <summary>Set and get CommandLineTitlePathColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineInputAreaBorderColor">
+            <summary>Set and get CommandLineInputAreaBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineDefaultTextForegroundColor">
+            <summary>Set and get CommandLineDefaultTextForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineButtonBorderRolloverColor">
+            <summary>Set and get CommandLineButtonBorderRolloverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineButtonBackgroundRolloverColor">
+            <summary>Set and get CommandLineButtonBackgroundRolloverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineButtonBorderPressedColor">
+            <summary>Set and get CommandLineButtonBorderPressedColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineButtonBackgroundPressedColor">
+            <summary>Set and get CommandLineButtonBackgroundPressedColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineBackgroundColor1">
+            <summary>Set and get CommandLineBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineBackgroundColor2">
+            <summary>Set and get CommandLineBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineHistoryBorderColor">
+            <summary>Set and get CommandLineHistoryBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineBackgroundBorderColor">
+            <summary>Set and get CommandLineBackgroundBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineButtonPathFillColor">
+            <summary>Set and get CommandLineButtonPathFillColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineImageButtonBackgroundRolloverColor1">
+            <summary>Set and get CommandLineImageButtonBackgroundRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CommandLineImageButtonBackgroundRolloverColor2">
+            <summary>Set and get CommandLineImageButtonBackgroundRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBackgroundVerticalLeftColor2">
+            <summary>Set and get RibbonPurplePanelBackgroundVerticalLeftColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBackgroundVerticalRightColor1">
+            <summary>Set and get RibbonPurplePanelBackgroundVerticalRightColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBackgroundVerticalRightColor2">
+            <summary>Set and get RibbonPurplePanelBackgroundVerticalRightColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonRenderProgressBarBackgroundColor">
+            <summary>Set and get RibbonRenderProgressBarBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonRenderProgressBarBorderColor">
+            <summary>Set and get RibbonRenderProgressBarBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonRenderProgressBarForegroundColor">
+            <summary>Set and get RibbonRenderProgressBarForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonRenderBorderColor">
+            <summary>Set and get RibbonRenderBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonRenderBackgroundColor">
+            <summary>Set and get RibbonRenderBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATSeparatorColor">
+            <summary>Set and get QATSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATToolBarListBoxBackgroundColor">
+            <summary>Set and get QATToolBarListBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATToolBarTextBlockColor1">
+            <summary>Set and get QATToolBarTextBlockColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATToolBarTextBlockColor2">
+            <summary>Set and get QATToolBarTextBlockColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATPromptTextForegroundColor">
+            <summary>Set and get QATPromptTextForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATDisabledTextForegroundColor">
+            <summary>Set and get QATDisabledTextForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATDisabledTextBoxBackgroundColor">
+            <summary>Set and get QATDisabledTextBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBorderPressedColor">
+            <summary>Set and get QATButtonBorderPressedColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundPressedColor1">
+            <summary>Set and get QATButtonBackgroundPressedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundPressedColor2">
+            <summary>Set and get QATButtonBackgroundPressedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBorderRollOverColor">
+            <summary>Set and get QATButtonBorderRollOverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundRolloverColor1">
+            <summary>Set and get QATButtonBackgroundRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundRolloverColor2">
+            <summary>Set and get QATButtonBackgroundRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListButtonBackgroundRolloverColor1">
+            <summary>Set and get QATListButtonBackgroundRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListButtonBackgroundRolloverColor2">
+            <summary>Set and get QATListButtonBackgroundRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBorderActiveColor">
+            <summary>Set and get QATButtonBorderActiveColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundActiveColor1">
+            <summary>Set and get QATButtonBackgroundActiveColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundActiveColor2">
+            <summary>Set and get QATButtonBackgroundActiveColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBorderActiveRolloverColor">
+            <summary>Set and get QATButtonBorderActiveRolloverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundActiveRolloverColor1">
+            <summary>Set and get QATButtonBackgroundActiveRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATButtonBackgroundActiveRolloverColor2">
+            <summary>Set and get QATButtonBackgroundActiveRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListHeaderBackgroundColor">
+            <summary>Set and get QATListHeaderBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxDropDownBackgroundColor">
+            <summary>Set and get QATComboBoxDropDownBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxDropDownBorderColor">
+            <summary>Set and get QATComboBoxDropDownBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxBackgroundColor1">
+            <summary>Set and get QATComboBoxBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxBackgroundColor2">
+            <summary>Set and get QATComboBoxBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxBorderColor">
+            <summary>Set and get QATComboBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxRollOverBackgroundColor">
+            <summary>Set and get QATComboBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxRollOverBorderColor">
+            <summary>Set and get QATComboBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxSelectBackgroundColor">
+            <summary>Set and get QATComboBoxSelectBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxSelectBorderColor">
+            <summary>Set and get QATComboBoxSelectBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxButtonRollOverBackgroundColor">
+            <summary>Set and get QATComboBoxButtonRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxButtonRollOverBorderColor">
+            <summary>Set and get QATComboBoxButtonRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxButtonPressedBackgroundColor">
+            <summary>Set and get QATComboBoxButtonPressedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATComboBoxButtonPressedBorderColor">
+            <summary>Set and get QATComboBoxButtonPressedBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATToggleButtonPressedBackgroundColor">
+            <summary>Set and get QATToggleButtonPressedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATToggleButtonPressedBorderColor">
+            <summary>Set and get QATToggleButtonPressedBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATToggleButtonRollOverBackgroundColor">
+            <summary>Set and get QATToggleButtonRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATToggleButtonRollOverBorderColor">
+            <summary>Set and get QATToggleButtonRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListBoxRollOverBackgroundColor">
+            <summary>Set and get QATListBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListBoxRollOverBorderColor">
+            <summary>Set and get QATListBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListBoxSelectBackgroundColor">
+            <summary>Set and get QATListBoxSelectBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListBoxSelectBorderColor">
+            <summary>Set and get QATListBoxSelectBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATListBoxSeparatorColor">
+            <summary>Set and get QATListBoxSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATCheckBoxBorderColor">
+            <summary>Set and get QATCheckBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATCheckBoxBackgroundColor1">
+            <summary>Set and get QATCheckBoxBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATCheckBoxBackgroundColor2">
+            <summary>Set and get QATCheckBoxBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATCheckBoxRollOverBackgroundColor">
+            <summary>Set and get QATCheckBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATCheckBoxRollOverBorderColor">
+            <summary>Set and get QATCheckBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATCheckBoxPressedBackgroundColor">
+            <summary>Set and get QATCheckBoxPressedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATCheckBoxPressedBorderColor">
+            <summary>Set and get QATCheckBoxPressedBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATMenuItemListBoxBackgroundColor">
+            <summary>Set and get QATMenuItemListBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATMenuItemListBoxRollOverBackgroundColor">
+            <summary>Set and get QATMenuItemListBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATMenuItemListBoxRollOverBorderColor">
+            <summary>Set and get QATMenuItemListBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATMenuItemListBoxBorderColor">
+            <summary>Set and get QATMenuItemListBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.QATSpinnerBackgroundColor">
+            <summary>Set and get QATSpinnerBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBlueTabItemBackgroundDefaultColor2">
+            <summary>Set and get RibbonBlueTabItemBackgroundDefaultColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBlueTabItemBackgroundSelectedColor1">
+            <summary>Set and get RibbonBlueTabItemBackgroundSelectedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBlueTabItemBackgroundSelectedColor2">
+            <summary>Set and get RibbonBlueTabItemBackgroundSelectedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelTitleBarBackgroundColor1">
+            <summary>Set and get RibbonBluePanelTitleBarBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelTitleBarBackgroundColor2">
+            <summary>Set and get RibbonBluePanelTitleBarBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelTitleBarBackgroundColor3">
+            <summary>Set and get RibbonBluePanelTitleBarBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBlueOuterBorderColor">
+            <summary>Set and get RibbonBlueOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBlueInnerBorderColor">
+            <summary>Set and get RibbonBlueInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBorderColor">
+            <summary>Set and get RibbonBluePanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBackgroundColor1">
+            <summary>Set and get RibbonBluePanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBackgroundColor2">
+            <summary>Set and get RibbonBluePanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBackgroundColor3">
+            <summary>Set and get RibbonBluePanelBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBackgroundVerticalLeftColor1">
+            <summary>Set and get RibbonBluePanelBackgroundVerticalLeftColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBackgroundVerticalLeftColor2">
+            <summary>Set and get RibbonBluePanelBackgroundVerticalLeftColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBackgroundVerticalRightColor1">
+            <summary>Set and get RibbonBluePanelBackgroundVerticalRightColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBluePanelBackgroundVerticalRightColor2">
+            <summary>Set and get RibbonBluePanelBackgroundVerticalRightColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanTabItemBackgroundDefaultColor1">
+            <summary>Set and get RibbonCyanTabItemBackgroundDefaultColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanTabItemBackgroundDefaultColor2">
+            <summary>Set and get RibbonCyanTabItemBackgroundDefaultColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanTabItemBackgroundSelectedColor1">
+            <summary>Set and get RibbonCyanTabItemBackgroundSelectedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanTabItemBackgroundSelectedColor2">
+            <summary>Set and get RibbonCyanTabItemBackgroundSelectedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelTitleBarBackgroundColor1">
+            <summary>Set and get RibbonCyanPanelTitleBarBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelTitleBarBackgroundColor2">
+            <summary>Set and get RibbonCyanPanelTitleBarBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelTitleBarBackgroundColor3">
+            <summary>Set and get RibbonCyanPanelTitleBarBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanOuterBorderColor">
+            <summary>Set and get RibbonCyanOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanInnerBorderColor">
+            <summary>Set and get RibbonCyanInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBorderColor">
+            <summary>Set and get RibbonCyanPanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBackgroundColor1">
+            <summary>Set and get RibbonCyanPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBackgroundColor2">
+            <summary>Set and get RibbonCyanPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBackgroundColor3">
+            <summary>Set and get RibbonCyanPanelBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBackgroundVerticalLeftColor1">
+            <summary>Set and get RibbonCyanPanelBackgroundVerticalLeftColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBackgroundVerticalLeftColor2">
+            <summary>Set and get RibbonCyanPanelBackgroundVerticalLeftColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBackgroundVerticalRightColor1">
+            <summary>Set and get RibbonCyanPanelBackgroundVerticalRightColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCyanPanelBackgroundVerticalRightColor2">
+            <summary>Set and get RibbonCyanPanelBackgroundVerticalRightColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowTabItemBackgroundDefaultColor1">
+            <summary>Set and get RibbonYellowTabItemBackgroundDefaultColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowTabItemBackgroundDefaultColor2">
+            <summary>Set and get RibbonYellowTabItemBackgroundDefaultColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowTabItemBackgroundSelectedColor1">
+            <summary>Set and get RibbonYellowTabItemBackgroundSelectedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowTabItemBackgroundSelectedColor2">
+            <summary>Set and get RibbonYellowTabItemBackgroundSelectedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelTitleBarBackgroundColor1">
+            <summary>Set and get RibbonYellowPanelTitleBarBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelTitleBarBackgroundColor2">
+            <summary>Set and get RibbonYellowPanelTitleBarBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelTitleBarBackgroundColor3">
+            <summary>Set and get RibbonYellowPanelTitleBarBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowOuterBorderColor">
+            <summary>Set and get RibbonYellowOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowInnerBorderColor">
+            <summary>Set and get RibbonYellowInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBorderColor">
+            <summary>Set and get RibbonYellowPanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBackgroundColor1">
+            <summary>Set and get RibbonYellowPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBackgroundColor2">
+            <summary>Set and get RibbonYellowPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBackgroundColor3">
+            <summary>Set and get RibbonYellowPanelBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBackgroundVerticalLeftColor1">
+            <summary>Set and get RibbonYellowPanelBackgroundVerticalLeftColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBackgroundVerticalLeftColor2">
+            <summary>Set and get RibbonYellowPanelBackgroundVerticalLeftColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBackgroundVerticalRightColor1">
+            <summary>Set and get RibbonYellowPanelBackgroundVerticalRightColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonYellowPanelBackgroundVerticalRightColor2">
+            <summary>Set and get RibbonYellowPanelBackgroundVerticalRightColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurpleTabItemBackgroundDefaultColor1">
+            <summary>Set and get RibbonPurpleTabItemBackgroundDefaultColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurpleTabItemBackgroundDefaultColor2">
+            <summary>Set and get RibbonPurpleTabItemBackgroundDefaultColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurpleTabItemBackgroundSelectedColor1">
+            <summary>Set and get RibbonPurpleTabItemBackgroundSelectedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurpleTabItemBackgroundSelectedColor2">
+            <summary>Set and get RibbonPurpleTabItemBackgroundSelectedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelTitleBarBackgroundColor1">
+            <summary>Set and get RibbonPurplePanelTitleBarBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelTitleBarBackgroundColor2">
+            <summary>Set and get RibbonPurplePanelTitleBarBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelTitleBarBackgroundColor3">
+            <summary>Set and get RibbonPurplePanelTitleBarBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurpleOuterBorderColor">
+            <summary>Set and get RibbonPurpleOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurpleInnerBorderColor">
+            <summary>Set and get RibbonPurpleInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBorderColor">
+            <summary>Set and get RibbonPurplePanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBackgroundColor1">
+            <summary>Set and get RibbonPurplePanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBackgroundColor2">
+            <summary>Set and get RibbonPurplePanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBackgroundColor3">
+            <summary>Set and get RibbonPurplePanelBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPurplePanelBackgroundVerticalLeftColor1">
+            <summary>Set and get RibbonPurplePanelBackgroundVerticalLeftColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCheckBoxBackgroundColor1">
+            <summary>Set and get RibbonCheckBoxBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCheckBoxBackgroundColor2">
+            <summary>Set and get RibbonCheckBoxBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCheckBoxRollOverBackgroundColor">
+            <summary>Set and get RibbonCheckBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCheckBoxRollOverBorderColor">
+            <summary>Set and get RibbonCheckBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCheckBoxPressedBackgroundColor">
+            <summary>Set and get RibbonCheckBoxPressedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCheckBoxPressedBorderColor">
+            <summary>Set and get RibbonCheckBoxPressedBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonResizeControlBackgroundColor">
+            <summary>Set and get RibbonResizeControlBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonResizeControlBorderColor">
+            <summary>Set and get RibbonResizeControlBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTextBoxBackgroundColor">
+            <summary>Set and get RibbonTextBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonMenuItemListBoxBackgroundColor">
+            <summary>Set and get RibbonMenuItemListBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonMenuItemListBoxBorderColor">
+            <summary>Set and get RibbonMenuItemListBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonMenuItemListBoxRollOverBackgroundColor">
+            <summary>Set and get RibbonMenuItemListBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonMenuItemListBoxRollOverBorderColor">
+            <summary>Set and get RibbonMenuItemListBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonDropDownListBoxBorderColor">
+            <summary>Set and get RibbonDropDownListBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonDropDownListBoxBackgroundColor">
+            <summary>Set and get RibbonDropDownListBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBorderInvisibleColor">
+            <summary>Set and get RibbonButtonBorderInvisibleColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabBackgroundColor">
+            <summary>Set and get RibbonTabBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonFloatingFrameBackgroundColor">
+            <summary>Set and get RibbonFloatingFrameBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabItemRolloverColor1">
+            <summary>Set and get RibbonTabItemRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabItemRolloverColor2">
+            <summary>Set and get RibbonTabItemRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelSlideoutSeparatorColor">
+            <summary>Set and get RibbonPanelSlideoutSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSlideoutButtonBorderColor">
+            <summary>Set and get RibbonSlideoutButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSlideoutPanelBorderColor">
+            <summary>Set and get RibbonSlideoutPanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTextBoxForegroundColor">
+            <summary>Set and get RibbonTextBoxForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTextBoxBorderColor">
+            <summary>Set and get RibbonTextBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTextBoxRollOverBorderColor">
+            <summary>Set and get RibbonTextBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSpinnerButtonArrowColor">
+            <summary>Set and get RibbonSpinnerButtonArrowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSpinnerBackgroundColor">
+            <summary>Set and get RibbonSpinnerBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelBorderColor">
+            <summary>Set and get RibbonPanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSeparatorColor">
+            <summary>Set and get RibbonSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabItemSelectedColor1">
+            <summary>Set and get RibbonTabItemSelectedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabItemSelectedColor2">
+            <summary>Set and get RibbonTabItemSelectedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelBackgroundColor1">
+            <summary>Set and get RibbonPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelBackgroundColor2">
+            <summary>Set and get RibbonPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelBarBackgroundColor1">
+            <summary>Set and get RibbonPanelBarBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelBarBackgroundColor2">
+            <summary>Set and get RibbonPanelBarBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelSlideoutAreaDefaultColor1">
+            <summary>Set and get RibbonPanelSlideoutAreaDefaultColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelSlideoutAreaDefaultColor2">
+            <summary>Set and get RibbonPanelSlideoutAreaDefaultColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabListBoxBorderColor">
+            <summary>Set and get RibbonTabListBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabOverflowArrowIdleColor">
+            <summary>Set and get RibbonTabOverflowArrowIdleColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabOverflowArrowHighlightColor">
+            <summary>Set and get RibbonTabOverflowArrowHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonOverflowTabPanelForegroundColor">
+            <summary>Set and get RibbonOverflowTabPanelForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonOverflowTabPanelBackgroundColor">
+            <summary>Set and get RibbonOverflowTabPanelBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonOverflowTabPanelBorderColor">
+            <summary>Set and get RibbonOverflowTabPanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelTitleForegroundColor">
+            <summary>Set and get RibbonPanelTitleForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelDialogBoxLauncherColor">
+            <summary>Set and get RibbonPanelDialogBoxLauncherColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenTabItemBackgroundDefaultColor1">
+            <summary>Set and get RibbonGreenTabItemBackgroundDefaultColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenTabItemBackgroundDefaultColor2">
+            <summary>Set and get RibbonGreenTabItemBackgroundDefaultColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenTabItemBackgroundSelectedColor1">
+            <summary>Set and get RibbonGreenTabItemBackgroundSelectedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenTabItemBackgroundSelectedColor2">
+            <summary>Set and get RibbonGreenTabItemBackgroundSelectedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelTitleBarBackgroundColor1">
+            <summary>Set and get RibbonGreenPanelTitleBarBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelTitleBarBackgroundColor2">
+            <summary>Set and get RibbonGreenPanelTitleBarBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelTitleBarBackgroundColor3">
+            <summary>Set and get RibbonGreenPanelTitleBarBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenOuterBorderColor">
+            <summary>Set and get RibbonGreenOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenInnerBorderColor">
+            <summary>Set and get RibbonGreenInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBorderColor">
+            <summary>Set and get RibbonGreenPanelBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBackgroundColor1">
+            <summary>Set and get RibbonGreenPanelBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBackgroundColor2">
+            <summary>Set and get RibbonGreenPanelBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBackgroundColor3">
+            <summary>Set and get RibbonGreenPanelBackgroundColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBackgroundVerticalLeftColor1">
+            <summary>Set and get RibbonGreenPanelBackgroundVerticalLeftColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBackgroundVerticalLeftColor2">
+            <summary>Set and get RibbonGreenPanelBackgroundVerticalLeftColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBackgroundVerticalRightColor1">
+            <summary>Set and get RibbonGreenPanelBackgroundVerticalRightColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGreenPanelBackgroundVerticalRightColor2">
+            <summary>Set and get RibbonGreenPanelBackgroundVerticalRightColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonBlueTabItemBackgroundDefaultColor1">
+            <summary>Set and get RibbonBlueTabItemBackgroundDefaultColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollbarTrackBorderColor">
+            <summary>Set and get RibbonScrollbarTrackBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabItemForegroundColor">
+            <summary>Set and get RibbonTabItemForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabItemSelectedForegroundColor">
+            <summary>Set and get RibbonTabItemSelectedForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabItemRolloverForegroundColor">
+            <summary>Set and get RibbonTabItemRolloverForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonArrowColor">
+            <summary>Set and get RibbonArrowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundActiveColor1">
+            <summary>Set and get RibbonButtonBackgroundActiveColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundActiveColor2">
+            <summary>Set and get RibbonButtonBackgroundActiveColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelContentBackgroundColor1">
+            <summary>Set and get RibbonPanelContentBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonPanelContentBackgroundColor2">
+            <summary>Set and get RibbonPanelContentBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundActiveRolloverColor1">
+            <summary>Set and get RibbonButtonBackgroundActiveRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundActiveRolloverColor2">
+            <summary>Set and get RibbonButtonBackgroundActiveRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBorderActiveRolloverColor">
+            <summary>Set and get RibbonButtonBorderActiveRolloverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBorderActiveColor">
+            <summary>Set and get RibbonButtonBorderActiveColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundRolloverColor1">
+            <summary>Set and get RibbonButtonBackgroundRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundRolloverColor2">
+            <summary>Set and get RibbonButtonBackgroundRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListButtonBackgroundRolloverColor1">
+            <summary>Set and get RibbonListButtonBackgroundRolloverColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListButtonBackgroundRolloverColor2">
+            <summary>Set and get RibbonListButtonBackgroundRolloverColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonGalleryBackgroundFillColor">
+            <summary>Set and get RibbonGalleryBackgroundFillColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListHeaderBackgroundColor">
+            <summary>Set and get RibbonListHeaderBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBorderRollOverColor">
+            <summary>Set and get RibbonButtonBorderRollOverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonItemStyleButtonBackgroundIdleColor1">
+            <summary>Set and get RibbonItemStyleButtonBackgroundIdleColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonItemStyleButtonBackgroundIdleColor2">
+            <summary>Set and get RibbonItemStyleButtonBackgroundIdleColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonItemStyleButtonBorderColor">
+            <summary>Set and get RibbonItemStyleButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundPressedColor1">
+            <summary>Set and get RibbonButtonBackgroundPressedColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBackgroundPressedColor2">
+            <summary>Set and get RibbonButtonBackgroundPressedColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTextForegroundColor">
+            <summary>Set and get RibbonTextForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonDisabledTextForegroundColor">
+            <summary>Set and get RibbonDisabledTextForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonDisabledTextBoxBackgroundColor">
+            <summary>Set and get RibbonDisabledTextBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBorderPressedColor">
+            <summary>Set and get RibbonButtonBorderPressedColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonButtonBorderColor">
+            <summary>Set and get RibbonButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabsListItemContainerBorderRollOverColor">
+            <summary>Set and get RibbonTabsListItemContainerBorderRollOverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonTabsListItemContainerBorderColor">
+            <summary>Set and get RibbonTabsListItemContainerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderTickColor">
+            <summary>Set and get RibbonSliderTickColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderThumbColor">
+            <summary>Set and get RibbonSliderThumbColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderThumbInactiveColor1">
+            <summary>Set and get RibbonSliderThumbInactiveColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderThumbInactiveColor2">
+            <summary>Set and get RibbonSliderThumbInactiveColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderTextForegroundColor">
+            <summary>Set and get RibbonSliderTextForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderTextBoxBorderColor">
+            <summary>Set and get RibbonSliderTextBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderTextBoxBackgroundColor">
+            <summary>Set and get RibbonSliderTextBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderBorderColor">
+            <summary>Set and get RibbonSliderBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonSliderTrackDecreaseBackgroundColor">
+            <summary>Set and get RibbonSliderTrackDecreaseBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxDropDownBackgroundColor">
+            <summary>Set and get RibbonComboBoxDropDownBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxDropDownBorderColor">
+            <summary>Set and get RibbonComboBoxDropDownBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxBackgroundColor1">
+            <summary>Set and get RibbonComboBoxBackgroundColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxBackgroundColor2">
+            <summary>Set and get RibbonComboBoxBackgroundColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxBorderColor">
+            <summary>Set and get RibbonComboBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxRollOverBackgroundColor">
+            <summary>Set and get RibbonComboBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxRollOverBorderColor">
+            <summary>Set and get RibbonComboBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxSelectBackgroundColor">
+            <summary>Set and get RibbonComboBoxSelectBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxSelectBorderColor">
+            <summary>Set and get RibbonComboBoxSelectBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxButtonRollOverBackgroundColor">
+            <summary>Set and get RibbonComboBoxButtonRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxButtonRollOverBorderColor">
+            <summary>Set and get RibbonComboBoxButtonRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxButtonPressedBackgroundColor">
+            <summary>Set and get RibbonComboBoxButtonPressedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonComboBoxButtonPressedBorderColor">
+            <summary>Set and get RibbonComboBoxButtonPressedBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonToggleButtonPressedBackgroundColor">
+            <summary>Set and get RibbonToggleButtonPressedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonToggleButtonPressedBorderColor">
+            <summary>Set and get RibbonToggleButtonPressedBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonToggleButtonRollOverBackgroundColor">
+            <summary>Set and get RibbonToggleButtonRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonToggleButtonRollOverBorderColor">
+            <summary>Set and get RibbonToggleButtonRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListBoxRollOverBackgroundColor">
+            <summary>Set and get RibbonListBoxRollOverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListBoxRollOverBorderColor">
+            <summary>Set and get RibbonListBoxRollOverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListBoxSelectBackgroundColor">
+            <summary>Set and get RibbonListBoxSelectBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListBoxSelectBorderColor">
+            <summary>Set and get RibbonListBoxSelectBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonListBoxSeparatorColor">
+            <summary>Set and get RibbonListBoxSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonCheckBoxBorderColor">
+            <summary>Set and get RibbonCheckBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxHoverBackgroundBottomColor">
+            <summary>Get ListBoxHoverBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxHoverBorderColor">
+            <summary>Get ListBoxHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxClickBackgroundTopColor">
+            <summary>Get ListBoxClickBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxClickBackgroundBottomColor">
+            <summary>Get ListBoxClickBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxClickBorderColor">
+            <summary>Get ListBoxClickBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectBackgroundTopColor">
+            <summary>Get ListBoxSelectBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectBackgroundBottomColor">
+            <summary>Get ListBoxSelectBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectBorderColor">
+            <summary>Get ListBoxSelectBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectInactiveBackgroundTopColor">
+            <summary>Set and get ListBoxSelectInactiveBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectInactiveBackgroundBottomColor">
+            <summary>Set and get ListBoxSelectInactiveBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectHoverBackgroundTopColor">
+            <summary>Get ListBoxSelectHoverBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectHoverBackgroundBottomColor">
+            <summary>Get ListBoxSelectHoverBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectHoverBorderColor">
+            <summary>Get ListBoxSelectHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxInnerShadowColor">
+            <summary>Get ListBoxInnerShadowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxTextColor">
+            <summary>Set and get ListBoxTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxDisabledTextColor">
+            <summary>Set and get ListBoxDisabledTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxInactiveTextColor">
+            <summary>Set and get ListBoxInactiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectTextColor">
+            <summary>Get ListBoxSelectTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectInactiveTextColor">
+            <summary>Set and get ListBoxSelectInactiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxSelectDisabledTextColor">
+            <summary>Set and get ListBoxSelectDisabledTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderBackgroundTopColor">
+            <summary>Set and get ListBoxColumnHeaderBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderBackgroundBottomColor">
+            <summary>Set and get ListBoxColumnHeaderBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderBorderColor">
+            <summary>Set and get ListBoxColumnHeaderBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderTextColor">
+            <summary>Set and get ListBoxColumnHeaderTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderArrowColor">
+            <summary>Set and get ListBoxColumnHeaderArrowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderSortCellBackgroundTopColor">
+            <summary>Set and get ListBoxColumnHeaderSortCellBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxColumnHeaderSortCellBackgroundBottomColor">
+            <summary>Set and get ListBoxColumnHeaderSortCellBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxGroupHeaderTextColor">
+            <summary>Set and get ListBoxGroupHeaderTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarTooltipBackgroundColor">
+            <summary>Get StatusBarTooltipBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarTooltipStateTextColor">
+            <summary>Get StatusBarTooltipStateTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarOuterBorderColor">
+            <summary>Set and get StatusBarOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarInnerBorderColor">
+            <summary>Set and get StatusBarInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarBackgroundColor">
+            <summary>Set and get StatusBarBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarTextColor">
+            <summary>Set and get StatusBarTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.StatusBarSeparatorColor">
+            <summary>Set and get StatusBarSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsBorderColor">
+            <summary>Set and get FileTabsBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsRowBackgroundColor">
+            <summary>Get FileTabsRowBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsActiveBackgroundTopColor">
+            <summary>Get FileTabsActiveBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsActiveBackgroundBottomColor">
+            <summary>Set and get FileTabsActiveBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsInactiveBackgroundTopColor">
+            <summary>Get FileTabsInactiveBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsInactiveBackgroundBottomColor">
+            <summary>Get FileTabsInactiveBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsInnerHighlightColor">
+            <summary>Get FileTabsInnerHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsHighlightTopColor">
+            <summary>Get FileTabsHighlightTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsHighlightBottomColor">
+            <summary>Get FileTabsHighlightBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsHorizListBoxBackgroundColor">
+            <summary>Get FileTabsHorizListBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsHorizListBoxHoverColor">
+            <summary>Set and get FileTabsHorizListBoxHoverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsHorizListBoxActiveBorderColor">
+            <summary>Set and get FileTabsHorizListBoxActiveBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsNewButtonForegroundColor">
+            <summary>Set and get FileTabsNewButtonForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsNewButtonForegroundClickColor">
+            <summary>Set and get FileTabsNewButtonForegroundClickColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsNewButtonForegroundHoverColor">
+            <summary>Set and get FileTabsNewButtonForegroundHoverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsCloseButtonForegroundColor">
+            <summary>Set and get FileTabsCloseButtonForegroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsCloseButtonForegroundClickColor">
+            <summary>Set and get FileTabsCloseButtonForegroundClickColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsCloseButtonForegroundHoverColor">
+            <summary>Set and get FileTabsCloseButtonForegroundHoverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsButtonHoverColor">
+            <summary>Set and get FileTabsButtonHoverColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.FileTabsButtonHoverBorderColor">
+            <summary>Set and get FileTabsButtonHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.IPETextFocusBackgroundTopColor">
+            <summary>Get IPETextFocusBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.IPETextFocusBackgroundBottomColor">
+            <summary>Get IPETextFocusBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollBarThumbFillColor">
+            <summary>Set and get RibbonScrollBarThumbFillColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollBarThumbRolloverBorderColor">
+            <summary>Set and get RibbonScrollBarThumbRolloverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollBarThumbRolloverGradientColor1">
+            <summary>Set and get RibbonScrollBarThumbRolloverGradientColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollBarThumbRolloverGradientColor2">
+            <summary>Set and get RibbonScrollBarThumbRolloverGradientColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollBarThumbRolloverGradientColor3">
+            <summary>Set and get RibbonScrollBarThumbRolloverGradientColor3 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollBarThumbRolloverGradientColor4">
+            <summary>Set and get RibbonScrollBarThumbRolloverGradientColor4 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.RibbonScrollbarTrackBackgroundColor">
+            <summary>Set and get RibbonScrollbarTrackBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxSelectBackgroundTopColor">
+            <summary>Get ComboBoxSelectBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxSelectBackgroundBottomColor">
+            <summary>Get ComboBoxSelectBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverSelectHighlightColor">
+            <summary>Get ComboBoxHoverSelectHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxSeparatorColor">
+            <summary>Set and get ComboBoxSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxBackgroundColor">
+            <summary>Set and get CheckBoxBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxBorderColor">
+            <summary>Set and get CheckBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxHoverBackgroundColor">
+            <summary>Set and get CheckBoxHoverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxHoverBorderColor">
+            <summary>Set and get CheckBoxHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxPressedBackgroundColor">
+            <summary>Set and get CheckBoxPressedBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxPressedBorderColor">
+            <summary>Set and get CheckBoxPressedBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CheckBoxCheckColor">
+            <summary>Set and get CheckBoxCheckColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonActiveTextColor">
+            <summary>Get PushButtonActiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonBackgroundTopColor">
+            <summary>Get PushButtonBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonBackgroundBottomColor">
+            <summary>Get PushButtonBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonBorderColor">
+            <summary>Set and get PushButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonActiveBackgroundTopColor">
+            <summary>Get PushButtonActiveBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonActiveBackgroundBottomColor">
+            <summary>Get PushButtonActiveBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonActiveShadowColor">
+            <summary>Get PushButtonActiveShadowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonHoverBorderColor">
+            <summary>Set and get PushButtonHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonHoverBackgroundTopColor">
+            <summary>Set and get PushButtonHoverBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PushButtonHoverBackgroundBottomColor">
+            <summary>Set and get PushButtonHoverBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.GroupGripColor">
+            <summary>Get GroupGripColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.GroupGripShadowColor">
+            <summary>Get TextInputInnerShadowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputBackgroundColor">
+            <summary>Set and get TextInputBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputBorderColor">
+            <summary>Set and get TextInputBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputInnerShadowColor">
+            <summary>Set and get TextInputInnerShadowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveBackgroundTopColor">
+            <summary>Get TextInputActiveBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveBackgroundBottomColor">
+            <summary>Get TextInputActiveBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveHighlightColor">
+            <summary>Get TextInputActiveHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveTextColor">
+            <summary>Get TextInputActiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputTextColor">
+            <summary>Set and get TextInputTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputDisabledTextColor">
+            <summary>Set and get TextInputDisabledTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputInactiveTextColor">
+            <summary>Set and get TextInputInactiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TextInputActiveBorderColor">
+            <summary>Set and get TextInputActiveBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlHighlightColor">
+            <summary>Get SpinControlHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlBorderColor">
+            <summary>Get SpinControlBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlArrowColor">
+            <summary>Set and get SpinControlArrowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlHoverBackgroundTopColor">
+            <summary>Set and get SpinControlHoverBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlHoverBackgroundBottomColor">
+            <summary>Set and get SpinControlHoverBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlClickBackgroundTopColor">
+            <summary>Get SpinControlClickBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlClickBackgroundBottomColor">
+            <summary>Get SpinControlClickBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlBackgroundTopColor">
+            <summary>Get SpinControlBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SpinControlBackgroundBottomColor">
+            <summary>Get SpinControlBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlBorderColor">
+            <summary>Set and get TreeControlBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlLineColor">
+            <summary>Get TreeControlLineColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectBackgroundColor">
+            <summary>Set and get TreeControlSelectBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectActiveBackgroundColor">
+            <summary>Set and get TreeControlSelectActiveBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectInactiveBackgroundColor">
+            <summary>Set and get TreeControlSelectInactiveBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlTextColor">
+            <summary>Set and get TreeControlTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlDisabledTextColor">
+            <summary>Set and get TreeControlDisabledTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlInactiveTextColor">
+            <summary>Set and get TreeControlInactiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectTextColor">
+            <summary>Set and get TreeControlSelectTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectInactiveTextColor">
+            <summary>Set and get TreeControlSelectInactiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.TreeControlSelectDisabledTextColor">
+            <summary>Set and get TreeControlSelectDisabledTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryBorderColor">
+            <summary>Set and get CategoryBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryBackgroundColor">
+            <summary>Set and get CategoryBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryButtonHoverBackgroundColor">
+            <summary>Set and get CategoryButtonHoverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryButtonClickBackgroundColor">
+            <summary>Set and get CategoryButtonClickBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryExpanderColor">
+            <summary>Get CategoryExpanderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryExpanderShadowColor">
+            <summary>Get CategoryExpanderShadowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.CategoryExpanderFillColor">
+            <summary>Set and get CategoryExpanderFillColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxBorderColor">
+            <summary>Set and get ListBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxGridColor">
+            <summary>Set and get ListBoxGridColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ListBoxHoverBackgroundTopColor">
+            <summary>Get ListBoxHoverBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarInnerHighlightColor">
+            <summary>Set and get PaletteAnchorBarInnerHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarGradientColor1">
+            <summary>Set and get PaletteAnchorBarGradientColor1 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarGradientColor2">
+            <summary>Set and get PaletteAnchorBarGradientColor2 value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarActiveTitleBackgroundColor">
+            <summary>Set and get PaletteAnchorBarActiveTitleBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarCaptionTextColor">
+            <summary>Set and get PaletteAnchorBarCaptionTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlHighlightColor">
+            <summary>Get ControlHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlBorderColor">
+            <summary>Get ControlBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlActiveOuterBorderColor">
+            <summary>Get ControlActiveOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlErrorOuterBorderColor">
+            <summary>Get ControlErrorOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlCaretColor">
+            <summary>Set and get ControlCaretColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTextActiveColor">
+            <summary>Get PaletteTextActiveColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTextInactiveColor">
+            <summary>Get PaletteTextInactiveColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTextSearchPlaceholderColor">
+            <summary>Get PaletteTextSearchPlaceholderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTextSearchUserstringColor">
+            <summary>Get PaletteTextSearchUserstringColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTextSearchAutocompleteColor">
+            <summary>Get PaletteTextSearchAutocompleteColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlTextColor">
+            <summary>Get ControlTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlInactiveTextColor">
+            <summary>Set and get ControlInactiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlDisabledTextColor">
+            <summary>Set and get ControlDisabledTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ControlActiveTextColor">
+            <summary>Get ControlActiveTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PropertyInspectorCategoryBackgroundColor">
+            <summary>Get PropertyInspectorCategoryBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PropertyInspectorSubCategoryBackgroundColor">
+            <summary>Set and get PropertyInspectorSubCategoryBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PropertyInspectorItemBorderColor">
+            <summary>Get PropertyInspectorItemBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PropertyInspectorTextLabelColor">
+            <summary>Set and get PropertyInspectorTextLabelColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuItemHoverBackgroundTopColor">
+            <summary>Set and get MenuItemHoverBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuItemHoverBackgroundBottomColor">
+            <summary>Set and get MenuItemHoverBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuItemHoverBorderColor">
+            <summary>Set and get MenuItemHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuTextColor">
+            <summary>Set and get MenuTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuBackgroundColor">
+            <summary>Set and get MenuBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuInnerBorderColor">
+            <summary>Set and get MenuInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuOuterBorderColor">
+            <summary>Set and get MenuOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuCheckMarkColor">
+            <summary>Set and get MenuCheckMarkColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.MenuSeparatorColor">
+            <summary>Set and get MenuSeparatorColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonBorderColor">
+            <summary>Set and get SquareButtonBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonBackgroundColor">
+            <summary>Set and get SquareButtonBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonDisabledBorderColor">
+            <summary>Set and get SquareButtonDisabledBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonDisabledBackgroundColor">
+            <summary>Set and get SquareButtonDisabledBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonHoverBorderColor">
+            <summary>Get SquareButtonHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonHoverHighlightColor">
+            <summary>Get SquareButtonHoverHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonHoverBackgroundTopColor">
+            <summary>Get SquareButtonHoverBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonHoverBackgroundBottomColor">
+            <summary>Get SquareButtonHoverBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonClickBorderColor">
+            <summary>Get SquareButtonClickBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonClickHighlightColor">
+            <summary>Get SquareButtonClickHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonClickBackgroundTopColor">
+            <summary>Get SquareButtonClickBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonClickBackgroundBottomColor">
+            <summary>Get SquareButtonClickBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledBorderColor">
+            <summary>Set and get SquareButtonToggledBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledBackgroundColor">
+            <summary>Set and get SquareButtonToggledBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledHoverBorderColor">
+            <summary>Set and get SquareButtonToggledHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledHoverBackgroundColor">
+            <summary>Set and get SquareButtonToggledHoverBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledDisabledBorderColor">
+            <summary>Set and get SquareButtonToggledDisabledBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.SquareButtonToggledDisabledBackgroundColor">
+            <summary>Set and get SquareButtonToggledDisabledBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxBackgroundTopColor">
+            <summary>Get ComboBoxBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxBackgroundBottomColor">
+            <summary>Set and get ComboBoxBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxBorderColor">
+            <summary>Set and get ComboBoxBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxActiveBackgroundTopColor">
+            <summary>Get ComboBoxActiveBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxActiveBackgroundBottomColor">
+            <summary>Get ComboBoxActiveBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxArrowColor">
+            <summary>Get ComboBoxArrowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxArrowShadowColor">
+            <summary>Get ComboBoxArrowShadowColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverTextColor">
+            <summary>Get ComboBoxHoverTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxTextColor">
+            <summary>Set and get ComboBoxTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxSelectTextColor">
+            <summary>Get ComboBoxSelectTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxDisabledTextColor">
+            <summary>Set and get ComboBoxDisabledTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverBackgroundTopColor">
+            <summary>Get ComboBoxHoverBackgroundTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverBackgroundBottomColor">
+            <summary>Get ComboBoxHoverBackgroundBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ComboBoxHoverBorderColor">
+            <summary>Set and get ComboBoxHoverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.OverallColor">
+            <summary>Set and get OverallColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.OverallTextColor">
+            <summary>Get OverallTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameNonClientInnerBorderColor">
+            <summary>Set and get ApplicationFrameNonClientInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameNonClientOuterBorderColor">
+            <summary>Set and get ApplicationFrameNonClientOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameActiveGradientTopColor">
+            <summary>Set and get ApplicationFrameActiveGradientTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameActiveGradientBottomColor">
+            <summary>Set and get ApplicationFrameActiveGradientBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameOuterBorderColor">
+            <summary>Set and get ApplicationFrameOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameInnerBorderColor">
+            <summary>Set and get ApplicationFrameInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameInactiveGradientColor">
+            <summary>Set and get ApplicationFrameInactiveGradientColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameInactiveBorderColor">
+            <summary>Set and get ApplicationFrameInactiveBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameCaptionActiveGradientTopColor">
+            <summary>Set and get ApplicationFrameCaptionActiveGradientTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameCaptionActiveGradientBottomColor">
+            <summary>Set and get ApplicationFrameCaptionActiveGradientBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameCaptionOuterBorderColor">
+            <summary>Set and get ApplicationFrameCaptionOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameCaptionInnerBorderColor">
+            <summary>Set and get ApplicationFrameCaptionInnerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameCaptionInactiveGradientTopColor">
+            <summary>Set and get ApplicationFrameCaptionInactiveGradientTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameCaptionInactiveGradientBottomColor">
+            <summary>Set and get ApplicationFrameCaptionInactiveGradientBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameCaptionInactiveBorderColor">
+            <summary>Set and get ApplicationFrameCaptionInactiveBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameDocumentNameFileNameTextColor">
+            <summary>Set and get ApplicationFrameDocumentNameFileNameTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameDocumentNameInactiveFileNameTextColor">
+            <summary>Set and get ApplicationFrameDocumentNameInactiveFileNameTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameMenuBarMenuTextColor">
+            <summary>Set and get ApplicationFrameMenuBarMenuTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameMenuBarMenuHighlightTextColor">
+            <summary>Set and get ApplicationFrameMenuBarMenuHighlightTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameMenuBarRolloverBorderColor">
+            <summary>Set and get ApplicationFrameMenuBarRolloverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameMenuBarRolloverFillColor">
+            <summary>Set and get ApplicationFrameMenuBarRolloverFillColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameMenuBarClickBorderColor">
+            <summary>Set and get ApplicationFrameMenuBarClickBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameMenuBarClickFillColor">
+            <summary>Set and get ApplicationFrameMenuBarClickFillColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsRolloverGradientFillTopColor">
+            <summary>Set and get ApplicationFrameControlButtonsRolloverGradientFillTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsRolloverGradientFillBottomColor">
+            <summary>Set and get ApplicationFrameControlButtonsRolloverGradientFillBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsRolloverBorderColor">
+            <summary>Set and get ApplicationFrameControlButtonsRolloverBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsRolloverSymbolColor">
+            <summary>Set and get ApplicationFrameControlButtonsRolloverSymbolColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsClickGradientFillTopColor">
+            <summary>Set and get ApplicationFrameControlButtonsClickGradientFillTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsClickGradientFillBottomColor">
+            <summary>Set and get ApplicationFrameControlButtonsClickGradientFillBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsClickBorderColor">
+            <summary>Set and get ApplicationFrameControlButtonsClickBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsClickSymbolColor">
+            <summary>Set and get ApplicationFrameControlButtonsClickSymbolColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.ApplicationFrameControlButtonsSymbolColor">
+            <summary>Set and get ApplicationFrameControlButtonsSymbolColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteContainerBackgroundColor">
+            <summary>Get PaletteContainerBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteContainerBorderColor">
+            <summary>Get PaletteContainerBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteContainerHighlightColor">
+            <summary>Get PaletteContainerHighlightColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteContainerCloseColor">
+            <summary>Get PaletteContainerCloseColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTabBackgroundColor">
+            <summary>Get PaletteTabBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTabActiveTopColor">
+            <summary>Get PaletteTabActiveTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTabActiveBottomColor">
+            <summary>Get PaletteTabActiveBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTabInactiveColor">
+            <summary>Get PaletteTabInactiveColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTabBorderColor">
+            <summary>Get PaletteTabBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTabHighlightColor">
+            <summary>Get PaletteTabScrollColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTabScrollColor">
+            <summary>Set and get PaletteTabScrollColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteSearchInactiveTopColor">
+            <summary>Get PaletteSearchInactiveTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteSearchInactiveBottomColor">
+            <summary>Get PaletteSearchInactiveBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteSearchActiveTopColor">
+            <summary>Get PaletteSearchActiveTopColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteSearchActiveBottomColor">
+            <summary>Get PaletteSearchActiveBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteActivityIndicatorOutlineColor">
+            <summary>Get PaletteActivityIndicatorOutlineColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteColumnHeaderBackgroundColor">
+            <summary>Set and get PaletteColumnHeaderBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteHyperlinkTextColor">
+            <summary>Set and get PaletteHyperlinkTextColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteTreeOrListBackgroundColor">
+            <summary>Set and get PaletteTreeOrListBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarBackgroundColor">
+            <summary>Set and get PaletteAnchorBarBackgroundColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarOuterBorderColor">
+            <summary>Set and get PaletteAnchorBarOuterBorderColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarEmbossRightBottomColor">
+            <summary>Set and get PaletteAnchorBarEmbossRightBottomColor value.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.PaletteTheme.PaletteAnchorBarEmbossLeftTopColor">
+            <summary>Set and get PaletteAnchorBarEmbossLeftTopColor value.</summary>
+        </member>
+        <member name="T:Autodesk.Windows.Palettes.Controls.ThemedImage">
+            <summary>The ThemedImage object represents a control that displays an themed image in the JPEG or PNG file formats.</summary>
+        </member>
+        <member name="M:Autodesk.Windows.Palettes.Controls.ThemedImage.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Controls.ThemedImage.DarkSource">
+            <summary>The DarkSource dependency property gets or sets the source for the image to used when the dark theme is active.</summary>
+        </member>
+        <member name="P:Autodesk.Windows.Palettes.Controls.ThemedImage.LightSource">
+            <summary>The LightSource dependency property gets or sets the source for the image to used when the light theme is active.</summary>
+        </member>
+    </members>
+</doc>

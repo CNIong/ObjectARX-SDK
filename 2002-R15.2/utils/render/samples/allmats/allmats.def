@@ -1,0 +1,6 @@
+LIBRARY      allmats
+DESCRIPTION  'Allmats'
+
+EXPORTS
+    acrxEntryPoint       PRIVATE
+    acrxGetApiVersion    PRIVATE

@@ -1,0 +1,959 @@
+//  Copyright (C) 1997-1998 by Autodesk, Inc.
+//  
+//  Permission to use, copy, modify, and distribute this software in
+//  object code form for any purpose and without fee is hereby granted,
+//  provided that the above copyright notice appears in all copies and
+//  that both that copyright notice and the limited warranty and
+//  restricted rights notice below appear in all supporting
+//  documentation.
+//  
+//  AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS.
+//  AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+//  MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC.
+//  DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+//  UNINTERRUPTED OR ERROR FREE.
+//  
+//  Use, duplication, or disclosure by the U.S. Government is subject to
+//  restrictions set forth in FAR 52.227-19 (Commercial Computer
+//  Software - Restricted Rights) and DFAR 252.227-7013(c)(1)(ii)
+//  (Rights in Technical Data and Computer Software), as applicable.
+
+//============================================================================
+//  SETUP.RUL
+//
+//  This is a sample InstallShield script for wiring in ARX applications for
+//  AutoCAD Release 14.0 and above.
+//  
+//  This script contains three functions useful for enumerating AutoCAD
+//  installations.  Specifically, it uses a function GetCurrentAutoCADKey()
+//  to determine the "Primary" AutoCAD which will be either
+//      a) the last AutoCAD installed or
+//      b) the last AutoCAD run on the workstation.
+//  In either case, it requires that the workstation you are installing to
+//  contains an AutoCAD that has been installed using AutoCAD Setup.
+//
+//  The functions of interest for installing ARX application which will
+//  support demand loading:
+//
+//  GetCurrentAutoCADKey     Find the last AutoCAD run or installed.
+//  GetAutoCADProductList    Populates an InstallShield list of all AutoCADs
+//                           installed on this machine.
+//  SetARXForProduct         Performs a registry update for polysamp.arx,
+//                           registering pointers to the PolySamp product.
+//  CreatePolySampKeys       Performs a registry update for polysamp.arx,
+//                           registering all commands for each product.
+//                           (Called by SetARXForProduct).
+//
+//  Search for the string "ARX Sample Section" for calls and functions
+//  specific to ARX demand loading.
+//============================================================================
+
+declare
+
+#include "sddialog.h"           // Include script dialog definition.
+
+// Constant declarations.
+#define SPACE_REQUIRED          100000  
+#define APP_NAME                "PolyCAD 2000"
+#define PROGRAM_FOLDER_NAME     "PolyCAD 2000 Test Folder"
+#define APPBASE_PATH            "PolySamp\\"
+#define APPBASE_PATH_WIN32S     "PolySamp\\"
+#define COMPANY_NAME            "PolySamp"
+#define PRODUCT_VERSION         "2.0"
+#define DEINSTALL_KEY           "PolyCAD Deinstall"
+#define UNINSTALL_NAME          "PolyCAD 2000"
+#define PRODUCT_KEY             "AsdkPolyUi.arx"
+#define	MAX_SIZE				256
+#define DATA_DIR     			"data\\"
+
+
+// =====================================================================
+// ARX Sample Section Constant Declarations
+// =====================================================================
+#define ARX_FILE_UI             "asdkpolyui.arx"
+#define ARX_FILE_OBJ            "asdkpolyobj.dbx"
+#define REG_AUTOCAD_BASE_KEY    "Software\\Autodesk\\AutoCAD"
+
+// Please note that the following key defines your company name and
+// product name.  For this example we are using ObjectARX, but for
+// third parties developing ARX applications you should define the 
+// registry key associated with your company and application, not
+// Autodesk\ObjectARX.  For example:
+//          "Software\\PolySampInc\\PolyCAD"
+#define REG_OBJECTDBX_BASE_KEY    "Software\\Autodesk\\ObjectDBX\\R15.0"
+#define REG_SAMPLES_KEY         "SampleApps"
+#define REG_POLYCAD_KEY         "PolySamp"
+#define REG_ASDKPOLY_KEY        "AsdkPoly"
+
+#define MAX_PATH                260
+#define MAX_PRODUCT_NAME        128
+#define MAX_LANGUAGE            128
+#define MAX_KEY_LEN             512
+#define ACAD_PREFIX             "ACAD-"
+#define ADSK_COMMONFILES        "Autodesk Shared"
+
+// Global variable declarations.
+STRING  svFolder, svDir, szMsg, szFileSet, szTitle, svUninstLogFile;
+STRING  svTarget, szProgram, szParam, szTemp, szAppPath;
+STRING  szBigString[1024];
+STRING  szObjDBXFile[MAX_SIZE];
+
+BOOL    bSpaceOk, bWinNT, bWin32s, bIsShellExplorer;
+NUMBER  nResult,nResInst,nvType;
+STRING  szDll;
+
+// =====================================================================
+// ARX Sample Section Global Variable Declarations
+// =====================================================================
+STRING  szAcadProductKey,szACADPath,szAcadProductId;
+LIST    listACADs;
+
+// Function declarations.
+prototype SetupScreen ();
+prototype CheckRequirements ();
+
+// =====================================================================
+// ARX Sample Section 
+// function declarations for AutoCAD product identification
+// =====================================================================
+prototype GetCurrentAutoCADKey  ( BYREF STRING, BYREF STRING, BYREF STRING);
+prototype GetAutoCADProductList ( BYREF LIST, STRING, STRING );
+prototype SetARXForProduct      ( STRING, BOOL );
+prototype CreatePolySampKeys    ( STRING, STRING );
+prototype InstallObjDBXSharedFiles ( STRING );
+
+program
+
+start:
+
+    Disable( BACKGROUND );
+
+    // =====================================================================
+    // ARX Sample Section 
+    // Get the currently installed AutoCAD only.
+    // =====================================================================
+    nResult = GetCurrentAutoCADKey  ( szAcadProductKey, szAcadProductId, 
+                                      szACADPath );
+    if (nResult = FALSE) then
+        szMsg = "Could not find an AutoCAD installed on this\n" +
+                "workstation.  This sample application requires\n" +
+                "that AutoCAD R14 or above was correctly installed.\n\n" +
+                "Installation will halt.";
+        MessageBox( szMsg, WARNING );
+        exit;
+    endif;
+        
+    // =====================================================================
+    // ARX Sample Section 
+    // Get the a list of all AutoCADs.  The list that is returned contains
+    // a semicolon-delimited list of all installed AutoCADs in the registry
+    // and placed in the global InstallShield LIST variable listACADs.
+    // This list is formatted in the following manner:
+    //
+    // InstallID;Version;ProductName;Language;Location
+    // 
+    // Example : 
+    // ACAD-2450533:24177638;R14.0;AutoCAD R14.0;English;f:\acadr14
+    //
+    //  NOTE:
+    //
+    //  The GetAutoCADProductList() and global listACADs is *not* required
+    //  if you are planning to only install based on the current version
+    //  (return from GetCurrentAutoCADKey() above).  It is shown here to
+    //  provide an example of how you might build a list of AutoCADs on a
+    //  machine specific to the ARX product you are delivering.
+    // 
+    // =====================================================================
+    listACADs = ListCreate(STRINGLIST);
+    GetAutoCADProductList ( listACADs, "", "");
+
+    // Set installation info., which is required for registry entries.
+    InstallationInfo( COMPANY_NAME, APP_NAME, PRODUCT_VERSION, PRODUCT_KEY );
+
+    // Set up the installation screen.
+    SetupScreen();
+
+    Enable( DIALOGCACHE );
+
+// Create a Welcome dialog.
+WelcomeDlg:
+
+    Disable( BACKBUTTON );
+    Welcome( "", 0 );
+    Enable( BACKBUTTON );
+
+    // Test target system for proper configuration.
+    CheckRequirements();
+
+// Ask user for a destination location for the installation.--
+GetTargetDirectory:
+
+    // InstallShield sets PROGRAMFILES such that it points to 'Program Files' directory location.
+
+    svTarget = szACADPath ^ "arx\\samples\\polysamp";
+
+    if (AskDestPath( "", szMsg, svTarget, 0 ) = BACK) then
+        goto WelcomeDlg;
+    endif;
+
+    // Perform space check of target drive.
+    bSpaceOk = TRUE;
+    if (GetDiskSpace( svTarget ) < SPACE_REQUIRED) then
+        szMsg = "There is not enough space available on the disk\n" +
+         "'" + svTarget + "' \n" +
+        "Please free up some space or change the target location\n" +
+        "to a different disk";
+        MessageBox( szMsg, WARNING );
+        bSpaceOk = FALSE;
+    endif;
+
+    // If not enough space, ask user to try again.
+    if (bSpaceOk = FALSE) then
+        goto GetTargetDirectory;
+    endif;
+
+// Prepare file set
+SetupFilesToTransfer:
+
+    szFileSet = "General";
+    SRCDIR = SRCDIR ^ DATA_DIR;
+    TARGETDIR = svTarget;
+
+    // Define the file set.
+    FileSetBeginDefine( szFileSet );
+    CopyFile ( ARX_FILE_UI, ARX_FILE_UI );
+    FileSetEndDefine( szFileSet );
+
+// Install file set
+TransferFiles:
+
+    // Prepare InstallShield3 to record deinstallation information.
+    DeinstallStart( svTarget, svUninstLogFile, DEINSTALL_KEY, 0 );
+    RegDBSetItem( REGDB_UNINSTALL_NAME, UNINSTALL_NAME );
+
+    // Set up progress indicator and information gauge.
+    Disable( DIALOGCACHE );
+    Enable( STATUSDLG );
+
+    StatusUpdate( ON, 90 );
+
+    // Perform the file set.
+    SetStatusWindow( 0, "Copying program files..." );
+    nResult = FileSetPerformEz( szFileSet, 0 );
+
+    switch (nResult)
+    case FS_DONE: // Successful completion.
+
+    case FS_CREATEDIR: // Create directory error.
+        MessageBox( "Unable to create a directory under " + TARGETDIR + "."+
+                     "Please check write access to this directory.", SEVERE );
+        abort;
+
+    default: // Group all other errors under default label.
+        NumToStr( szTemp, nResult );
+        MessageBox( "General file transfer error." +
+                 "Please check your target location and try again." +
+                 "\n\n Error Number:" + szTemp +
+                  "\n Related File: " + ERRORFILENAME,
+                  SEVERE );
+        abort;
+    endswitch;
+
+    Delay( 1 );
+    Disable( STATUSDLG );
+
+    // Now install the ObjectDBX shared files
+    SdShowMsg ("Installing ObjectDBX shared files...", TRUE);
+    szObjDBXFile = ARX_FILE_OBJ;
+    InstallObjDBXSharedFiles(szObjDBXFile);
+
+// Create program folders and icons.
+InstallProgramItems:
+
+    // hide the previous message
+    Delay( 1 );
+    SdShowMsg ("Installing ObjectDBX shared files...", FALSE);
+    SdShowMsg ("Creating Program Folder and Icons....", TRUE);
+    if ( !bIsShellExplorer ) then
+        AppCommand( PROGMAN, CMD_RESTORE );
+        LongPathToShortPath( svTarget );
+    endif;
+ 
+    svFolder = PROGRAM_FOLDER_NAME;
+    CreateProgramFolder( svFolder );
+    ShowProgramFolder( svFolder, 0 );
+
+    // Global variable UNINST stores the name and location of the
+    // uninstaller file.
+    szProgram = UNINST;
+    LongPathToShortPath( szProgram );
+    LongPathToShortPath( svUninstLogFile );
+    szProgram = szProgram + " -f" + svUninstLogFile;
+    szTemp = "unInstall " + APP_NAME;
+    AddFolderIcon( svFolder, szTemp, szProgram,
+	               WINDIR, "", 0, "", REPLACE );
+
+// Update the registry
+DoAcadRegistry:
+
+    // =====================================================================
+    // ARX Sample Section 
+    // Set the ARX values requested.  The last parameter says 'populate all'
+    // AutoCADs found in the registry under Applications.  For this example
+    // we will only use the currently installed AutoCAD by passing the 
+    // FALSE argument to SetARXForProduct.
+    // =====================================================================
+    // hide the previous message
+    Delay( 1 );
+    SdShowMsg ("Creating Program Folder and Icons....", FALSE);
+    SdShowMsg ( "Updating registry...", TRUE);
+    SetARXForProduct ( szAcadProductKey, FALSE );
+
+    // Done with the list
+    ListDestroy(listACADs);
+
+// Notify complete
+FinalInstallProcess:
+    // hide the previous message
+    Delay( 1 );
+    SdShowMsg ( "Updating registry...", FALSE);
+
+    szMsg = "Setup is complete.";
+    MessageBox( szMsg, INFORMATION );
+
+exit;
+
+/*---------------------------------------------------------------------------*\
+ *
+ * Function:  SetupScreen
+ *
+ *  Purpose:  This function will set up the screen look.  This includes
+ *            colors, fonts, text to be displayed, etc.
+ *
+\*-------------------------------------------------------------------------*/
+
+function SetupScreen()
+NUMBER  nDx, nDy;
+begin
+    GetExtents( nDx, nDy );
+
+    Enable( FULLWINDOWMODE );
+    Enable( INDVFILESTATUS );
+    Enable( BITMAP256COLORS );
+
+    SetTitle( "Installing " + APP_NAME, 24, WHITE );
+
+    SetColor( BACKGROUND, BK_BLUE ); // Dark blue.
+    SetColor( STATUSBAR, BLUE );     // Bright blue.
+    SetTitle( "Setup", 0, BACKGROUNDCAPTION ); // Caption bar text.
+
+    Enable( BACKGROUND );
+
+    Delay( 1 );
+end;
+
+/*---------------------------------------------------------------------------*\
+ *
+ * Function:  CheckRequirements
+ *
+ *  Purpose:  This function will check all minimum requirements for the
+ *            application being installed.  If any fail, then the user
+ *            is informed and the installation is terminated.
+ *
+\*---------------------------------------------------------------------------*/
+
+function CheckRequirements()
+NUMBER  nvDx, nvDy, nvResult;
+STRING  svResult;
+begin
+
+    // Check screen resolution.
+    GetExtents( nvDx, nvDy );
+
+    if (nvDy < 480) then
+        MessageBox( "This program requires VGA or better resolution.", WARNING );
+        abort;
+    endif;
+
+    // Determine the target system's operating system.
+    GetSystemInfo( OS, nvResult, svResult );
+
+    bWinNT           = FALSE;
+    bWin32s          = FALSE;
+    bIsShellExplorer = FALSE;
+
+    if (nvResult =  IS_WINDOWSNT) then
+        bWinNT = TRUE;                   // Running Windows NT.
+        // Check to see if the shell being used is EXPLORER shell.
+        if (( nvResult = IS_WINDOWSNT ) || ( nvResult = IS_WINDOWS95 )) then
+            if (GetSystemInfo( OSMAJOR, nvResult, svResult ) = 0) then
+                if (nvResult >= 4) then
+                    bIsShellExplorer = TRUE;
+                endif;
+            endif;
+        endif;
+
+    elseif (nvResult =  IS_WIN32S) then
+        bWin32s = TRUE; // Running Win32s.
+    elseif (nvResult = IS_WINDOWS95 ) then
+        bIsShellExplorer = TRUE;
+    endif;
+
+end;
+
+function GetCurrentAutoCADKey ( szKey, szId, szPath )
+// =====================================================================
+// ARX Sample Section 
+// Construct a product key for the last AutoCAD run or installed.
+// This is referred to as the "Primary" AutoCAD.  All CLSID entries
+// and path references in the registry should be consistent with this
+// entry.
+//
+// Parameters
+//   szKey           Returned by reference.  Upon successful return
+//                   this will contain the fully qualified key that
+//                   will be found under HKEY_LOCAL_MACHINE
+//   szId            Returned by reference.  Upon successful return
+//                   will contain the ACAD-ID InstallId
+//   szPath          Returned by reference.  Upon successful return
+//                   this will contain the path to acad.exe that is
+//                   associated with the current AutoCAD.
+//
+// Returns    TRUE   If the key could be constructed
+// Returns    FALSE  If there is no Primary AutoCAD
+//
+// =====================================================================
+NUMBER  nvType, nRet, nvSize;
+STRING  szPrimaryKey;
+begin
+
+    // Inspect the CurVer value at the ..\AutoCAD level to
+    // determine the major release version key.  This will
+    // point us to a section in the registry based upon the
+    // version number.
+    
+    RegDBSetDefaultRoot ( HKEY_LOCAL_MACHINE );
+    nvType = REGDB_STRING;
+    nvSize = MAX_KEY_LEN;
+    szPrimaryKey = REG_AUTOCAD_BASE_KEY;
+    nRet = RegDBGetKeyValueEx (szPrimaryKey,"CurVer",nvType,szKey,nvSize);
+
+    // Must have the release version
+    if (nRet < 0) then
+        return FALSE;
+    endif;
+
+    // Inspect the CurVer value at the ..\AutoCAD\szKey level to
+    // determine the registry key id.  This will point us to a 
+    // major registry key where the Applications Subkey can be found
+    
+    nvType = REGDB_STRING;
+    nvSize = MAX_KEY_LEN;
+    szPrimaryKey = szPrimaryKey + "\\" + szKey;
+    nRet = RegDBGetKeyValueEx (szPrimaryKey,"CurVer",nvType,szKey,nvSize );
+
+    // Must have the ID
+    if (nRet < 0 ) then
+        return FALSE;
+    endif;
+
+    szId = szKey;
+    szKey = szPrimaryKey + "\\" + szKey;
+
+    nvType = REGDB_STRING;
+    nvSize = MAX_KEY_LEN;
+    nRet = RegDBGetKeyValueEx(szKey,"AcadLocation",nvType,szPath,nvSize );
+
+    // Must have the path
+    if (nRet < 0 ) then
+        return FALSE;
+    endif;
+
+    return TRUE;
+
+end;
+
+function GetAutoCADProductList ( listProducts, szProductSrc, szLanguageSrc )
+// =====================================================================
+// ARX Sample Section 
+// This function will build a list of semi-colon delimited strings
+// into an InstallShield STRINGLIST.
+// 
+// Parameters:
+//   listProducts    Returns list of products semicolon delimited (see
+//                   NOTES below.
+//   szProductSrc    If specified, will only add specified product name
+//                   to the list.
+//   szLanguageSrc   If specified, will only add products with this
+//                   language 
+//
+// If neither the szProductSrc or szLanguageSrc parameters are specified,
+// then this function will return all AutoCADs (R14 and above) found on
+// this workstation.
+//
+// NOTES:
+//   Constructs a list of products string containing:
+//     RegistryKey;VERSION;ProductName;Language;Path
+//   For example:
+//     ACAD-2450533:24177638;R14.0;AutoCAD R14.0;English;f:\acadr14
+// =====================================================================
+STRING  szPrimaryKey;
+LIST    listTemp, listKeys;
+NUMBER  nRes, nRet, nvType, nvSize, nResIn, nChars;
+STRING  szTmp;
+STRING  szKey;
+STRING  szPath[MAX_PATH];
+STRING  szProductName[MAX_PRODUCT_NAME];
+STRING  szLanguage[MAX_LANGUAGE];
+STRING  szVersion;
+STRING  svSubString;
+BOOL    bOneDeleted;
+
+begin
+
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+
+    // First need to get the high level list at the AutoCAD level
+    // Note that any 'invalid' versions (non R1??.?? related) will be 
+    // discarded on the 'inside' ACAD-ID search conducted below.
+
+    szPrimaryKey = REG_AUTOCAD_BASE_KEY;
+    listTemp = ListCreate(STRINGLIST);
+    if (RegDBQueryKey(szPrimaryKey, REGDB_KEYS, listTemp) < 0) then
+        ListDestroy(listTemp);        
+        return FALSE;
+    endif;
+
+    // The listTemp list contains a list of the major AutoCAD
+    // versions (i.e. R14.0, R14.1, etc....)  These need to
+    // be put in a temporary list so that a second list (listkeys)
+    // can be built.
+    
+    nRes = ListGetFirstString(listTemp, szTmp);
+    
+    // Have nothing, get out.
+    if ( nRes != 0) then
+        return FALSE;
+    endif;
+
+    // If at least one major version key is present, then
+    // build a second list of InstallId subkeys that are found under
+    // the each of the major versions.  
+
+    while (nRes = 0)
+        szKey = szPrimaryKey + "\\" + szTmp;
+        listKeys = ListCreate(STRINGLIST);
+
+        // Don't fail on the following call as it could be just
+        // an empty list.  Fall through.
+
+        if (RegDBQueryKey(szKey,REGDB_KEYS,listKeys) = 0) then
+
+            // This is the major list processor for return.
+            // The full key and the Release Version key
+            // are catted for processing if they are valid
+            // AutoCAD related keys.
+
+            nResIn = ListGetFirstString(listKeys,szKey);
+            while ( (nResIn = 0) && StrLength(szKey) > 0 ) 
+
+                // Note that we only want those with the ACAD_PREFIX
+                nChars = StrSub(svSubString, szKey, 0, 5);
+                if (nChars = 5) then
+                    if (StrCompare(svSubString, ACAD_PREFIX) = 0) then
+                        ListAddString (listProducts,szKey + ";" +
+                                                    szTmp + ";"
+                                                    ,AFTER);
+                    endif;
+                endif;
+                
+                nResIn = ListGetNextString(listKeys,szKey);
+            endwhile;
+        endif;
+
+        ListDestroy(listKeys);
+        nRes = ListGetNextString(listTemp,szTmp);
+    endwhile;
+
+    ListDestroy (listTemp);
+
+    // The final stages involve stepping through the list
+    // and populating the remaining values associated with
+    // the registry entries under the given key.
+
+    nRes     = ListGetFirstString ( listProducts, szTmp );
+    while ( nRes = 0 )
+        // We create a quick list to extract the key value
+        // which will be used in inspecting the list.
+        listTemp = ListCreate ( STRINGLIST );
+        StrGetTokens ( listTemp, szTmp, ";" );
+        ListGetFirstString (listTemp,szKey);
+        ListGetNextString  (listTemp,szVersion);
+        ListDestroy (listTemp);
+        
+        szKey = REG_AUTOCAD_BASE_KEY + "\\" + szVersion +
+                "\\" + szKey;
+        nvSize = MAX_PRODUCT_NAME;        
+        nRet   = RegDBGetKeyValueEx  ( szKey, 
+                "ProductName", nvType, 
+                szProductName, nvSize );
+
+        nvSize = MAX_LANGUAGE;        
+        if ( nRet = 0 ) then
+            nRet   = RegDBGetKeyValueEx  ( szKey, 
+                    "Language", nvType, 
+                    szLanguage, nvSize );
+        endif;
+
+        if ( nRet = 0 ) then
+            nvSize = MAX_PATH;
+            nRet   = RegDBGetKeyValueEx  ( szKey, 
+                    "AcadLocation",nvType, 
+                    szPath, nvSize );
+
+            szTmp = szTmp + szProductName + ";" +
+                    szLanguage + ";" + szPath;
+            ListSetCurrentString ( listProducts,szTmp);
+        endif;
+        nRes = ListGetNextString ( listProducts, szTmp );
+    endwhile;
+
+    // Finally, if either the szProductSrc or szLangSrc strings
+    // have been specified, then remove strings that are not
+    // needed.  If neither are specified, we can fall through
+    // without modifying our list.
+
+    if ( (StrLength(szProductSrc) > 0) ||
+         (StrLength(szLanguageSrc) > 0) ) then
+        nRes     = ListGetFirstString ( listProducts, szTmp );
+        while ( nRes = 0 )
+            bOneDeleted = FALSE;
+            listTemp = ListCreate ( STRINGLIST );
+            StrGetTokens ( listTemp, szTmp, ";" );
+            ListGetFirstString (listTemp,szKey);
+            ListGetNextString  (listTemp,szVersion);
+            ListGetNextString  (listTemp,szProductName );
+            ListGetNextString  (listTemp,szLanguage );
+            ListDestroy (listTemp);
+            if ( StrLength(szProductSrc) > 0) then
+                if ( StrCompare ( szProductName, szProductSrc) != 0) then
+                    ListDeleteString(listProducts);
+                    bOneDeleted = TRUE;
+                endif;
+            endif;
+            if (bOneDeleted = FALSE) then
+                if ( StrLength(szLanguageSrc) > 0) then
+                    if ( StrCompare ( szLanguage, szLanguageSrc) != 0) then
+                        ListDeleteString(listProducts);
+                        bOneDeleted = TRUE;
+                    endif;
+                endif;
+            endif;
+
+            // If the string was *not* deleted from our master list,
+            // then we simply move the pointer up; otherwise, we grab
+            // the 'new' current string.
+            if (bOneDeleted = FALSE) then
+                nRes = ListGetNextString ( listProducts, szTmp );
+            else
+                nRes = ListCurrentString ( listProducts, szTmp );
+            endif;
+    
+                   
+        endwhile;
+
+    endif;
+
+    return TRUE;
+
+end;
+
+function SetARXForProduct ( szProductKey, bInitializeAll )
+// =====================================================================
+// ARX Sample Section 
+// Register the an arx application for demand loading.
+// This function is an example of how one would use InstallShield
+// to set up an ARX application in the registry.  It is assumed that
+// a call to determine the product key has been performed.  This 
+// product key is then passed to this function as szProductKey.
+//
+// The global svTarget should contain the installed location of the 
+// arx application to be registered.  
+//
+// The last parameter bInitializeAll, if set to TRUE, will use the
+// global list listProducts to populate each and every unique 
+// AutoCAD in the registry to point to the REG_OBJECTDBX_BASE_KEY.
+// In this case, the szProductKey is *ignored*.
+//
+// Also note #define the constant REG_OBJECTDBX_BASE_KEY used here.
+// This define should contain the key name that the Applications\
+// REGPATH value points to.  With Autodesk applications, this value
+// is 'AutodeskApps'.  For third parties, you may choose any valid
+// registry key name.
+//
+// Parameters
+//   szProductKey       Used to determine the base product key if the
+//                      the value bInitializeAll is set to FALSE.
+//   bInitializeAll     If TRUE, will register ALL AutoCADs found in
+//                      the global listACADs
+//
+// =====================================================================
+STRING	szKey, szSubKey, szTmp, szLoadCtrl, szARXName, szVersion;
+STRING  szPath;
+LONG    lFlags;
+NUMBER  nRes;
+LIST    listTemp;
+begin
+
+    RegDBSetDefaultRoot( HKEY_LOCAL_MACHINE );
+
+    // Create subkey and values under the root szProductKey called 
+    // Applications 
+
+    if ( bInitializeAll = FALSE ) then
+
+        // Set the Load Controls options bit flag.  
+        // See ARX documentation for values.
+        szLoadCtrl= "12";
+
+        // The name of the arx application.  DO NOT use the .arx extension.
+        szARXName = REG_ASDKPOLY_KEY + "CAD";
+        
+        // Set up UI section in Applications under 
+        // HKLM\Software\Autodesk\AutoCAD\R15.0\InstallId...
+        szSubKey = szProductKey + "\\Applications\\" + szARXName;
+	    RegDBCreateKeyEx (szSubKey,"");
+        RegDBSetKeyValueEx(szSubKey, "LOADCTRLS", REGDB_NUMBER, 
+                           szLoadCtrl, -1);
+
+        // Construct a pointer to the registry path containing the 
+        // command list
+        RegDBSetKeyValueEx(szSubKey, "REGPATH",   REGDB_STRING, 
+            "\\\\HKEY_LOCAL_MACHINE\\" + 
+            "Software" + "\\" +
+            COMPANY_NAME + "\\" +
+            "ObjectARX\\3.0\\" +
+            "SampleApps\\" +
+            APP_NAME + "\\" +
+            szARXName, -1);
+
+        // Set up OBJ section in Applications under 
+        // HKLM\Software\Autodesk\ObjectDBX\R15.0...
+        szARXName = REG_ASDKPOLY_KEY + "OBJ";
+        szLoadCtrl= "1";
+        szSubKey = REG_OBJECTDBX_BASE_KEY + "\\Applications\\" + szARXName;
+	    RegDBCreateKeyEx (szSubKey,"");
+        RegDBSetKeyValueEx(szSubKey, "LOADCTRLS", REGDB_NUMBER, 
+                           szLoadCtrl, -1);
+
+        // Construct a pointer to the registry path containing the 
+        // loader name (no command list, since this is the OBJ section).
+        RegDBSetKeyValueEx(szSubKey, "REGPATH",   REGDB_STRING, 
+            "\\\\HKEY_LOCAL_MACHINE\\" + 
+            "Software" + "\\" +
+            COMPANY_NAME + "\\" +
+            "ObjectARX\\3.0\\" +
+            "SampleApps\\" +
+            APP_NAME + "\\" +
+            szARXName, -1);
+
+        // Set up our company's arx module entry
+        CreatePolySampKeys( szAcadProductId,REG_ASDKPOLY_KEY );
+
+    else
+        
+        // If we are going to have all AutoCADs point to this ARX application,
+        // then loop through the global list of AutoCADs (listACADs built 
+        // when calling GetAutoCADProductList) and retrieve information about 
+        // the version, key, and path.  This information is used to create 
+        // the high level Applications key. Also call the function 
+        // CreatePolySampKeys for each.
+        // A temporary list is used for parsing delimited semicolon 
+        // information contained in the global list.
+        
+        nRes = ListGetFirstString ( listACADs,szTmp );
+        while (nRes = 0)
+            listTemp = ListCreate(STRINGLIST);
+            nRes = StrGetTokens(listTemp,szTmp,";");
+            if ( (nRes = 0) && ListCount(listTemp) > 4) then
+                ListGetFirstString(listTemp,szKey);
+                ListGetNextString (listTemp,szVersion);
+                ListGetNextString (listTemp,szTmp);  // Toss
+                ListGetNextString (listTemp,szTmp);  // Toss
+                ListGetNextString (listTemp,szPath);
+
+                szLoadCtrl= "12";
+
+                szARXName = REG_ASDKPOLY_KEY + "CAD";
+
+                szSubKey = REG_AUTOCAD_BASE_KEY + "\\" + szVersion + "\\" +
+                           szKey + "\\Applications\\" + szARXName;
+                RegDBCreateKeyEx(szSubKey,"");
+                RegDBSetKeyValueEx(szSubKey, "LOADCTRLS", REGDB_NUMBER, 
+                                   szLoadCtrl, -1);
+
+                RegDBSetKeyValueEx(szSubKey, "REGPATH",   REGDB_STRING, 
+                    "\\\\HKEY_LOCAL_MACHINE\\" + 
+                    "Software" + "\\" +
+                    COMPANY_NAME + "\\" +
+                    "ObjectARX\\3.0\\" +
+                    "SampleApps\\" +
+                    APP_NAME + "\\" +
+                    szARXName, -1);
+
+            endif;
+            ListDestroy(listTemp);
+            nRes = ListGetNextString(listACADs,szTmp);
+        endwhile;
+
+        szARXName = REG_ASDKPOLY_KEY + "OBJ";
+        szLoadCtrl= "1";
+        szSubKey = REG_OBJECTDBX_BASE_KEY + "\\Applications\\" + szARXName;
+	    RegDBCreateKeyEx (szSubKey,"");
+        RegDBSetKeyValueEx(szSubKey, "LOADCTRLS", REGDB_NUMBER, 
+                           szLoadCtrl, -1);
+
+        RegDBSetKeyValueEx(szSubKey, "REGPATH",   REGDB_STRING, 
+            "\\\\HKEY_LOCAL_MACHINE\\" + 
+            "Software" + "\\" +
+            COMPANY_NAME + "\\" +
+            "ObjectARX\\3.0\\" +
+            "SampleApps\\" +
+            APP_NAME + "\\" +
+            szARXName, -1);
+
+        CreatePolySampKeys( szAcadProductId,REG_ASDKPOLY_KEY );
+
+    endif;
+
+	return TRUE;
+
+end;
+
+function CreatePolySampKeys ( szKey, szARXName )
+// =====================================================================
+// ARX Sample Section 
+// Create subkey and values under the root szProductKey 
+// szKey contains the ACAD-ID InstallId which will be carried over to the
+// PolySamp application key.
+// =====================================================================
+STRING  szSubKey, szLocalARXName, szTempKey;
+begin
+
+    // Create all required high level keys for PolySampInc
+
+    szSubKey = "Software\\" + COMPANY_NAME;
+    // Don't creat this, else we'll blow away all of Autodesk's HKLM 
+    // stuff on uninstall (given that COMPANY_NAME="Autodesk")...
+    // RegDBCreateKeyEx (szSubKey,"" );
+
+    // UI section...
+    szLocalARXName = szARXName + "CAD";
+
+    szSubKey = szSubKey + "\\" + "ObjectARX";
+    RegDBCreateKeyEx( szSubKey, "" );
+    szSubKey = szSubKey + "\\" + "3.0";
+    RegDBCreateKeyEx( szSubKey, "" );
+    szSubKey = szSubKey + "\\" + "SampleApps";
+    RegDBCreateKeyEx( szSubKey, "" );
+    szSubKey = szSubKey + "\\" + APP_NAME;
+    RegDBCreateKeyEx( szSubKey, "" );
+    szTempKey = szSubKey + "\\" + szLocalARXName;
+    RegDBCreateKeyEx (szTempKey, "");
+    szTempKey = szSubKey + "\\" + szLocalARXName + "\\Commands";
+    RegDBCreateKeyEx (szTempKey, "");
+    szTempKey = szSubKey + "\\" + szLocalARXName + "\\Loader";
+    RegDBCreateKeyEx (szTempKey, "");
+    szTempKey = szSubKey + "\\" + szLocalARXName + "\\Name";
+    RegDBCreateKeyEx (szTempKey, "");
+    szTempKey = szSubKey + "\\" + szLocalARXName + "\\Groups";
+    RegDBCreateKeyEx (szTempKey, "");
+
+    // Create a Groups value
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Groups", 
+                "ASDK_POLYGON", REGDB_STRING,"ASDK_POLYGON", -1);
+
+    // Now, for each command, add a value.  Please note that this
+    // sample takes a global command first.  If you plan to localize,
+    // you must localize the fourth parameter (the value).  This 
+    // example uses this model.  For example, ASDK_xxxx is the global
+    // command and xxx is the local command.
+    
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_POLY", REGDB_STRING,"POLY", -1);
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_DRAGPOLY", REGDB_STRING,"DRAGPOLY", -1);
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_POLYEDIT", REGDB_STRING,"POLYEDIT", -1);
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_TRANSACT", REGDB_STRING,"TRANSACT", -1);
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_HILITPOLY", REGDB_STRING,"HILITPOLY", -1);
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_HILITSOLID", REGDB_STRING,"HILITSOLID", -1);
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_CREATEINSERT", REGDB_STRING,"CREATEINSERT", -1);
+	RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Commands", 
+                "ASDK_HILITINSERT", REGDB_STRING,"HILITINSERT", -1);
+
+    // Finally, provide a module name and reference name for this 
+    // arx application.
+    RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Loader", 
+                "MODULE", REGDB_STRING,  
+                svTarget ^ ARX_FILE_UI,-1);
+
+    RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Name", 
+                szLocalARXName, 
+                REGDB_STRING,  
+                szLocalARXName, -1);
+
+    // OBJ section...
+    szLocalARXName = szARXName + "OBJ";
+
+    szTempKey = szSubKey + "\\" + szLocalARXName;
+    RegDBCreateKeyEx (szTempKey, "");
+    szTempKey = szSubKey + "\\" + szLocalARXName + "\\Loader";
+    RegDBCreateKeyEx (szTempKey, "");
+    szTempKey = szSubKey + "\\" + szLocalARXName + "\\Name";
+    RegDBCreateKeyEx (szTempKey, "");
+
+    // Finally, provide a module name and reference name for this 
+    // arx application.
+    RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Loader", 
+                "MODULE", REGDB_STRING,  
+                svTarget ^ ARX_FILE_OBJ,-1);
+
+    RegDBSetKeyValueEx(szSubKey + "\\" + szLocalARXName + "\\Name", 
+                szLocalARXName, 
+                REGDB_STRING,  
+                szLocalARXName, -1);
+
+end;
+
+
+function InstallObjDBXSharedFiles(szObjDBXFile)
+STRING szTemp[MAX_SIZE], szFormat[MAX_SIZE];
+NUMBER nRet;
+begin
+    szFormat = "Unable to copy shared file:\n%s";
+    VarSave(SRCTARGETDIR);
+    TARGETDIR = COMMONFILES ^ ADSK_COMMONFILES;
+
+    szTemp = SRCDIR ^ szObjDBXFile;
+    if( Is( FILE_EXISTS, szTemp ) ) then
+        nRet = XCopyFile(szObjDBXFile, szObjDBXFile, COMP_UPDATE_VERSION|SHAREDFILE );
+        if (nRet < 0) then
+            SprintfBox (SEVERE, "", szFormat, szObjDBXFile);
+        endif;
+    else 
+        szFormat = "Unable to find shared file on CD:\n%s";
+        SprintfBox (SEVERE, "", szFormat, szObjDBXFile);
+    endif;
+
+    VarRestore (SRCTARGETDIR);
+end;
+
+    
+#include "sddialog.rul"
+
+    

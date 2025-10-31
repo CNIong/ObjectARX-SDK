@@ -1,0 +1,58 @@
+Deriving from AcDbEllipse
+=========================
+
+A) Step 1 - Deriving from AcDbEllipse
+
+Examine the code for the AcDbEmployee class in Lab9Employee.* files.
+As AcDbEllipse is an R13-based entity, we need to implement the
+default constructor as well as the following ACRX_* macros:
+	ACRX_DECLARE_MEMBERS() in the header file
+	ACRX_DXF_DEFINE_MEMBERS() in the implementation file
+
+Also, we need to call AcDbEmployee::rxInit() and acrxBuildClassHierarchy() 
+during kInitAppMsg in the acrxEntryPoint function, and
+delete AcRxClass(AcDbEmployee::desc()) during kUnloadAppMsg.
+
+B) Step 2 - Adding member variables
+
+In addition to Step 1, we need to implement the same member variables for
+our object as in Lab5 (for the custom object). We also need to implement the
+class versioning.
+
+Note: All methods must be implemented as "virtual" if we want to export
+our class later to another ARX module without using the Microsoft "lib" link
+mechanism.  This is necessary in order to do the DB-UI code separation.
+
+C) Step 3 - The Service
+
+The service creates an AcRxService derived class to support an API for the
+custom entity for access from other ARX modules.
+
+It implements a method to add an employee entity or to check if an employee
+already exists, and may implement any other methods necessary to manipulate a 
+custom entity from another ARX module.
+
+Do not forget that these methods are DB oriented (to be ObjectDBX compatible),
+so no UI function, or AutoCAD-specific calls, should be used in that module
+(such as acedGetPoint(), or transactions).
+
+Examine the implementation of the service and determine the difference between
+the ObjectARX and the ObjectDBX way of coding the service (in Lab9Employee.cpp).
+
+D) Step 4 - Adding graphical information to our object
+
+To do this we need to overwrite the worldDraw() method to display the
+Employee ID and Name inside the ellipse. Examine the code to see how to do
+this.
+
+If you have time, continue implementing the worldDraw() method to experiment with
+the AcGiWorldDraw() primitives.
+
+E) Step 5 - For advanced ARX programmers
+
+Examine the code of the subErase() method on the AcDbEmployee that maintains
+the consistency between AcDbEmployee entities and Dictionary entries.
+
+F) Step 6 - Building and running the module
+
+Please refer to file Lab9Todo.txt in the parent directory for instructions.

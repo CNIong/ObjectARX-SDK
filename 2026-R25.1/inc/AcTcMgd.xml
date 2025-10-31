@@ -1,0 +1,1111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcTcMgd</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.ImageInfo">
+            <summary>This .NET class wraps the ACTC_IMAGE_INFO ObjectARX struct.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ImageInfo.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ImageInfo.Size">
+            <summary>Returns the Size property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ImageInfo.ResourceName">
+            <summary>Returns the ResourceName property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ImageInfo.ResourceFile">
+            <summary>Returns the ResourceFile property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo">
+            <summary>This .NET class wraps the ACTC_TARGET_PRODUCT_INFO ObjectARX struct.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo.ProductName">
+            <summary>Returns the ProductName property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo.LocaleId">
+            <summary>Returns the LocaleId property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo.MinimumVersion">
+            <summary>Returns the MinimumVersion property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo.MaximumVersion">
+            <summary>Returns the MaximumVersion property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.Image">
+            <summary>This .NET class wraps the AcTcImage ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.GetBitmap(System.Drawing.Color)">
+            <summary>This .NET method corresponds to Image.GetHBITMAP() COM interface method of AutoCAD.</summary>
+            <param name="backgroundColor"> Input background color for the bitmap.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.Load(System.Runtime.InteropServices.ComTypes.IStream)">
+            <summary>This .NET method corresponds to Image.Load() COM interface method of AutoCAD.</summary>
+            <param name="stream"> Input the stream that contains the image data.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.Load(System.IntPtr)">
+            <summary>This .NET method corresponds to Image.Load() COM interface method of AutoCAD.</summary>
+            <param name="bitmap"> Input handle to a Windows GDI bitmap.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.Load(System.String)">
+            <summary>This .NET method corresponds to Image.Load() COM interface method of AutoCAD.</summary>
+            <param name="filename"> Input image file to load with the path.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.Save(System.Runtime.InteropServices.ComTypes.IStream)">
+            <summary>This .NET method corresponds to Image.Save() COM interface method of AutoCAD.</summary>
+            <param name="stream"> Input the stream into which the image must be written.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.Save(System.String,Autodesk.AutoCAD.Windows.ToolPalette.ImageType)">
+            <summary>This is Save, a member of class Image.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.Save(System.String)">
+            <summary>This .NET method corresponds to Image.Save() COM interface method of AutoCAD.</summary>
+            <param name="filename"> Input image file to save with path.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Image.ConvertTo(Autodesk.AutoCAD.Windows.ToolPalette.ImageType,System.Boolean)">
+            <summary>This is ConvertTo, a member of class Image.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Image.Size">
+            <summary>Returns size of the image.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Image.Type">
+            <summary>Returns the image type.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Image.SaveType">
+            <summary>Returns the image type to save.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Image.IsLoaded">
+            <summary>Returns true if the image is loaded, else false.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Image.Icon">
+            <summary>Returns the Icon property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.ImageType">
+            <summary>This .NET enum wraps the ImageType ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.DrawImageOption">
+            <summary>This enum defines possible styles that can be used to render an image in a tool palette.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.ImageList">
+            <summary>This .NET class wraps the AcTcImageList ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.GetImageInfo(System.Int32,System.Boolean)">
+            <summary>This function will fail if a valid index is not passed. Copies the information of the image at the specified index to the ACTC_IMAGE_INFO structure.</summary>
+            <param name="index"> Input zero-based index of the image; the index should be in the range of zero to one less than the number of images</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.GetImage(System.Int32,System.Boolean)">
+            <summary>Returns the image at the specified index. The image is loaded if it is not already loaded. It returns NULL if the index is out of range or if the image cannot be loaded. The returned pointer is owned by this object and should not be deleted.</summary>
+            <param name="index"> Input zero-based index of the image; the index should be in the range of zero to one less than the number of images.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.Delete(System.Int32)">
+            <summary>Deletes the image at the specified index.</summary>
+            <param name="index"> Input zero-based index of the image; the index should be in the range of zero to one less than the number of images</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.DeleteAllImages">
+            <summary>Deletes all of the images in the image list.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.LoadImageW(System.Int32,System.Boolean)">
+            <summary>This is LoadImageW, a member of class ImageList.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.GetImageIndex(System.Drawing.Size,System.Boolean,System.Boolean)">
+            <summary>If exactMatch is FALSE, and if the image with the same size is not found, then the index of the image with the next highest size is returned. If the next highest size is not available, then the index of the image with the next lowest size is returned.</summary>
+            <param name="size"> Input size of the image; only width is used and height is ignored</param>
+            <param name="exactMatch"> Input exact match Boolean</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.Count">
+            <summary>The number of images in the list.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ImageList.ImageOptions">
+            <summary>Returns the image option flags.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.ImageOptionFlags">
+            <summary>Image option flags.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem">
+            <summary>This .NET class wraps the AcTcCatalogItem ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SetHelpInfo(System.String,System.String,System.String)">
+            <summary>Sets the URL of the help file to be used by the item.</summary>
+            <param name="file"> Input specifying an HTML file, a URL, or a compiled HTML Help (CHM) file.</param>
+            <param name="command"> Input command string.</param>
+            <param name="data"> Input additional data required to display the help</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetImageFilePath(System.Int32)">
+            <summary>Copies the local image file with absolute path of the image at the specified index to the buffer.</summary>
+            <param name="index"> Input of the image.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.FromFile(System.String,System.Boolean,Autodesk.AutoCAD.Windows.ToolPalette.LoadFlags)">
+            <summary>Finds the catalog item contained in the specified XML file, then creates and returns an appropriate catalog item object. If the file does not contain a valid catalog item this method returns null. If load is true, this method loads the file into the item after creating it. 
+Returns the newly created catalog item if the file contains a catalog item. Returns null if the file does not contain a catalog item or if the function failed.</summary>
+            <param name="file"> Input specifying the XML file that contains the catalog item.</param>
+            <param name="load"> Input Boolean to indicate whether the function should load the file into the newly created catalog item.</param>
+            <param name="flags"> Input ignored if load is false</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetType(System.String)">
+            <summary>Checks the root node of the specified XML file and returns the type of catalog item it contains.</summary>
+            <param name="filename"> Input the name of an XML file that contains a catalog item</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Load(System.Uri,Autodesk.AutoCAD.Windows.ToolPalette.LoadFlags)">
+            <summary>This function loads the catalog item from an XML file.</summary>
+            <param name="url"> Input specifying the file from which the item is loaded.</param>
+            <param name="flags"> Input one of the LoadFlags options.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LoadLink">
+            <summary>If this catalog item is a linked item, this function loads the linked file into this item.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Save(System.Uri,Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags)">
+            <summary>This function saves the catalog item to the XML file specified by url.</summary>
+            <param name="url"> Input specifying the file to which the item is saved.</param>
+            <param name="flag"> Input the SaveFlags value.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AddChild(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Appends newItem as the last child of this item.</summary>
+            <param name="newItem"> Input the new item to be added.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.InsertChild(System.Int32,Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Inserts newItem as the child of this item at the index specified by index.</summary>
+            <param name="index"> Input at which to insert the item .</param>
+            <param name="newItem"> Input object to be inserted.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteChild(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Removes the specified child item from the list of children and deletes item.</summary>
+            <param name="item"> Input the child item to be deleted from this item's list of children.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DetachChild(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Removes the specified child item from the list of children without deleting it.</summary>
+            <param name="item"> Input child item to be detached from this item's list of children</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetChildCountFor(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemType)">
+            <summary>Returns the number of children of type type.</summary>
+            <param name="type"> Input item type to count.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetChild(System.Int32)">
+            <summary>Returns the child at index index.</summary>
+            <param name="index"> Input index of the child to be retrieved.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetNextChild(System.Int32,Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemType)">
+            <summary>Searches the child array for a child of type type, beginning at index index.</summary>
+            <param name="index"> Input array index at which to begin the search, or -1 to find the first item that matches the specified type</param>
+            <param name="type"> Input item type to get.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteAllChildren">
+            <summary>Deletes all of this item's children and their descendants recursively.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetImage(System.Drawing.Size,System.Boolean)">
+            <summary>Returns the Image object. The object's width in pixels is specified by the SIZE.cx member of size. The height member of size is ignored. 
+If an image of the specified size is not found, the image with the next larger size is returned. If a larger-sized image is not available, then the image with the next smaller size is returned. 
+Returns null if no image is associated with the item.</summary>
+            <param name="size"> Input indicating the image size</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetXml(Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags)">
+            <summary>Gets the XML representation of the item, including the item node and all its children.</summary>
+            <param name="flag"> Input save option flags.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.FindInChildren(System.String,System.Boolean)">
+            <summary>Finds the item with the specified name. The item from which this function is called is not included in the search. 
+If recursive is true, this function searches the children's descendants recursively. If recursive is false, it searches only the children of this item. 
+Returns the item if it is found. Otherwise, returns null.</summary>
+            <param name="name"> Input name of the item for which to search</param>
+            <param name="recursive"> Input Boolean specifying whether to search recursively (the children of the children) or only search the children of this item</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DoRefresh(Autodesk.AutoCAD.Windows.ToolPalette.RefreshFlags)">
+            <summary>Refreshes the item from its source.</summary>
+            <param name="flag"> Input refresh flag</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Download(System.Uri,Autodesk.AutoCAD.Windows.ToolPalette.DownloadFlags,System.String)">
+            <summary>Downloads a catalog item from the specified URL to a local directory and then loads the file into this item.</summary>
+            <param name="url"> Input URL to download; should point to the same type of catalog item that is represented by this object.</param>
+            <param name="flag"> Input download flag, which can be one or more of the DownloadFlags.</param>
+            <param name="downloadPath"> Input path to which the URL will be downloaded; if NULL, the URL is downloaded to TEMP directory</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetReferencePath(System.Int32)">
+            <summary>Gets the reference path which is used to resolve the relative paths of image files and linked files while loading and saving the item.</summary>
+            <param name="index"> Input index of the reference path.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SetReferencePath(System.String,System.Int32)">
+            <summary>Sets the reference path.</summary>
+            <param name="value"> Input string to be used as the reference path for the item.</param>
+            <param name="flag"> Input indicating type of reference path to set.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AssignNewId(System.Boolean)">
+            <summary>Creates a new ID and sets it in this item. If recursive is true, new IDs are assigned to the item's children.</summary>
+            <param name="recursive"> Input bool to indicate whether to set new IDs in children</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteImageFile(System.Boolean)">
+            <summary>This function permanently deletes the image file referred to by this item. 
+If recursive is true, image files belonging to the item's children are also deleted. If it is false, only the image file of this item is deleted.</summary>
+            <param name="recursive"> Input Boolean to indicate whether to delete image files of children.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteLinkFile(System.Boolean)">
+            <summary>This function permanently deletes the link file if this item is a linked item. 
+If recursive is true, this function also deletes the link files referenced by this item's children. Otherwise, it deletes only the link file of this item.</summary>
+            <param name="recursive"> Input Boolean to indicate whether children's links should be deleted</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteOverlayImageFile(System.Boolean)">
+            <summary>Permanently deletes the overlay image file of this item and, optionally, those of its children. 
+If recursive is true, this function recursively deletes the overlay image files of this item's children. Otherwise, it deletes the overlay image file of this item only.</summary>
+            <param name="recursive"> Input that indicates whether to delete images recursively</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetTargetProduct(System.Int32)">
+            <summary>Returns information about an entry in the target product list.</summary>
+            <param name="index"> Input zero-based index of a target product list item.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AddTargetProduct(Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo)">
+            <summary>Adds a new target product to the target product list.</summary>
+            <param name="productInfo"> Input product information.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteTargetProduct(System.Int32)">
+            <summary>Deletes the target product whose index in the target product list is index.</summary>
+            <param name="index"> Input of the target product to delete</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsValidForProduct(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>This function returns a value that indicates whether this item can be used in the specified product.</summary>
+            <param name="productName"> Input the product name.</param>
+            <param name="majorVersion"> Input the major version of the product.</param>
+            <param name="minorVersion"> Input the minor version of the product.</param>
+            <param name="localeId"> Input the locale identifier of the product.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SetItemOrder(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem[])">
+            <summary>This method rearranges the order of the items in the view.</summary>
+            <param name="itemsInOrder"> Input object containing the catalog items in the order in which they should be arranged in the view.</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HasChildren">
+            <summary>Returns a non-zero value if the item has children.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ID">
+            <summary>Returns the ID property value; ID of the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AccessRight">
+            <summary>Returns the access right for the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsReadOnly">
+            <summary>An item is considered read only if one of the following conditions is satisfied: The access right of the item was set to AccessRead or AccessReadOnlyFile using SetAccessRight.The item can be refreshed, and refresh currently is enabled for the item.
+Returns true if the item is read-only.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Name">
+            <summary>Returns the name of the catalog item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Description">
+            <summary>Description of catalog items.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ToolTipText">
+            <summary>Returns the ToolTipText property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HelpInfoFile">
+            <summary>Returns the HelpInfoFile property value; string specifying an HTML filename, a URL, or a compiled HTML filename.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HelpInfoCommand">
+            <summary>Returns the HelpInfoCommand property value; the buffer that receives the command.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HelpInfoData">
+            <summary>Returns the HelpInfoData property value; additional data required to display the help.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Keywords">
+            <summary>Returns the Keywords property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LinkUrl">
+            <summary>If this item is a linked item, this function copies the URL of the link to buffer that receives the text..</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SourceUrl">
+            <summary>Returns the source url of the catalog item to the buffer.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ParentDocumentName">
+            <summary>Returns the parent document name.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ParentDocumentDescription">
+            <summary>Returns the parent document description.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ParentDocumentUrl">
+            <summary>Returns the parent document url.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherName">
+            <summary>Returns name of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherDescription">
+            <summary>Returns description of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherCountry">
+            <summary>Returns the publisher country name.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherEmail">
+            <summary>Returns email id of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherUrl">
+            <summary>Returns the url of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Url">
+            <summary>Returns the Url property value; URL from which this item was loaded.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LocalFile">
+            <summary>Returns the LocalFile property value; the local file from which this item was loaded.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Root">
+            <summary>Returns the Root item of the catalog.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Scheme">
+            <summary>Returns the Scheme property value; the scheme to which this catalog item belongs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Parent">
+            <summary>Parent item in the catalog.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsRoot">
+            <summary>Indicates whether this item is the root item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsLink">
+            <summary>This function's return value indicates whether the item is a linked item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsLinkLoaded">
+            <summary>Returns true if the item is a linked item, and if the linked file is currently loaded into this item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ImageList">
+            <summary>Returns the image list associated with the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.CreateTime">
+            <summary>Returns the CreateTime property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LastModifiedTime">
+            <summary>Returns the last modified time of the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LastRefreshedTime">
+            <summary>Returns the last refreshed time of the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Refresh">
+            <summary>True if the item can be refreshed; else false.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.CanRefresh">
+            <summary>Checks whether an item can be refreshed.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AutoRefresh">
+            <summary>True if AutoRefresh property is enabled; else false.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.CustomData">
+            <summary>Returns the XML node which contains the item's custom data.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LinkFilePath">
+            <summary>Not implemented.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SourceID">
+            <summary>The ID of the source catalog item from which this item can be refreshed.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.OverlayImage">
+            <summary>Returns the OverlayImage property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.OverlayImageInfo">
+            <summary>Returns information about the overlay image.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.OverlayImageFilePath">
+            <summary>Returns the OverlayImageFilePath property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.TargetProductCount">
+            <summary>Returns the number of target products specified in the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ChildCount">
+            <summary>Number of child members in the catalog item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ItemOptions">
+            <summary>Returns the ItemOptions property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.AccessRight">
+            <summary>This .NET class wraps the AccessRight ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.Scheme">
+            <summary>This .NET class wraps the AcTcScheme ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.#ctor(System.String)">
+            <summary>Constructs a new scheme.</summary>
+            <param name="name"> Input name of the scheme.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.GetCatalogSet(Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags)">
+            <summary>Gets the catalog set for the specified catalog type.</summary>
+            <param name="flags"> Input type of catalog set to get, which can be one of the following CatalogType enum values: Catalog or StockToolCatalog</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.LoadCatalogs">
+            <summary>Loads all the catalogs.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.LoadCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags,Autodesk.AutoCAD.Windows.ToolPalette.LoadFlags)">
+            <summary>Loads the specified catalogs.</summary>
+            <param name="flags"> Input catalog type to load, which can be one or more of the CatalogType enum values (multiple values can be combined with bitwise OR).</param>
+            <param name="loadFlags"> Input load option, which can be one or more of the LoadOption enum values (multiple values can be combined with bitwise OR)</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.UnloadCatalogs">
+            <summary>Unloads all the catalogs.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.UnloadCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags)">
+            <summary>Unloads the specified catalogs.</summary>
+            <param name="flags"> Input catalog type to load, which can be one or more of the CatalogType enum values (multiple values can be combined with bitwise OR).</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.SaveCatalogs">
+            <summary>Saves all the catalogs.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.SaveCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags,Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags)">
+            <summary>Saves the specified catalogs.</summary>
+            <param name="flags"> Input catalog type to load, which can be one or more of the CatalogType enum values (multiple values can be combined with bitwise OR).</param>
+            <param name="saveFlags"> Input save option, which can be one or more of the SaveFlags enum values (multiple values can be combined with bitwise OR)</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Scheme.Name">
+            <summary>The name of the scheme.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.ItemOptionFlags">
+            <summary>This .NET enum wraps the AcTc.ItemOption ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.LoadFlags">
+            <summary>This .NET enum wraps the AcTc.LoadOption ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemType">
+            <summary>This .NET class wraps the CatalogItemType ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags">
+            <summary>This .NET enum wraps the AcTc.SaveOption ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.RefreshFlags">
+            <summary>This .NET enum wraps the AcTc.RefreshOption ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.DownloadFlags">
+            <summary>This .NET enum wraps the AcTc.DownloadOption ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemCollection">
+            <summary>This collection provides a container for catalog items.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemCollection.GetEnumerator">
+            <summary>Returns an enumerator object for this collection.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemCollection.CopyTo(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem[],System.Int32)">
+            <summary>Copies objects in array to this collection.</summary>
+            <param name="array"> Input array to copy from</param>
+            <param name="index"> Input index to begin copying</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemCollection.Add(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Appends item to the catalog item list.</summary>
+            <param name="item"> Input item to be added.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemCollection.Remove(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Removes the object represented by catalogItem from the collection.</summary>
+            <param name="catalogItem"> Input object to be removed.</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemCollection.Count">
+            <summary>Returns the Count property value; number of items in the collection.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet">
+            <summary>This .NET class wraps the AcTcCatalogSet ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.LoadCatalogs">
+            <summary>Loads the catalogs from the paths set in the catalog set.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.LoadCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.LoadFlags)">
+            <summary>Loads the catalogs from the paths set in the catalog set.</summary>
+            <param name="options"> Input object, which can be one or more of the LoadOption enum values (multiple values can be combined with bitwise OR)</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.UnloadCatalogs">
+            <summary>Unloads the catalogs in the catalog set.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.SaveCatalogs">
+            <summary>Saves the catalogs in the catalog set.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.SaveCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags)">
+            <summary>Saves the catalogs in the catalog set.</summary>
+            <param name="flags"> Input save flags</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.Scheme">
+            <summary>Returns the Scheme property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.Catalogs">
+            <summary>Returns the Catalogs property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogSet.CatalogPath">
+            <summary>Returns the CatalogPath property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags">
+            <summary>This .NET enum wraps the AcTc::CatalogType ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection">
+            <summary>This collection encapsulates the schemes currently owned by the ToolPaletteManager object.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection.GetEnumerator">
+            <summary>Returns an enumerator object for this collection.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection.CopyTo(Autodesk.AutoCAD.Windows.ToolPalette.Scheme[],System.Int32)">
+            <summary>Copies the array of schemes starting at the specified source index.</summary>
+            <param name="array"> Input array to copy to</param>
+            <param name="index"> Input index to begin copying from</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection.Add(System.String)">
+            <summary>Adds scheme collection as per the specified name.</summary>
+            <param name="name"> Input name of the scheme collection.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection.Remove(Autodesk.AutoCAD.Windows.ToolPalette.Scheme)">
+            <summary>Removes the scheme collection as per the specified name.</summary>
+            <param name="scheme"> Input the scheme to be removed.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection.Remove(System.String)">
+            <summary>Removes the scheme collection as per the specified name.</summary>
+            <param name="name"> Input name of the scheme collection to be removed.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection.Find(System.String)">
+            <summary>Finds the scheme collection as per the specified name.</summary>
+            <param name="name"> Input name of the scheme collection to find.</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.SchemeCollection.Count">
+            <summary>The number of scheme collections available.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.StockTool">
+            <summary>This .NET class wraps the AcTcStockTool ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.CreateTool">
+            <summary>Creates the tool object.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.CreateTool(System.Boolean)">
+            <summary>Creates the tool object. The returned pointer is allocated in the heap and should be deleted after use.</summary>
+            <param name="setDefaults"> If TRUE, sets the default properties of the tool by copying the stock tool's properties; if FALSE, does not set the tool properties.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.CreateAcadStockTool">
+            <summary>Creates the COM object that implements the IAcadStockTool interface.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.CreateAcadTool">
+            <summary>Creates the COM object which implements the IAcadTool interface.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.ComClassID">
+            <summary>Returns the class ID of the COM class that implements the stock tool by implementing the IAcadStockTool interface.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.ModuleFileName">
+            <summary>Returns the file name (with the relative or full path) of the DLL that contains the COM object implementing the stock tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.ModuleInstallUrl">
+            <summary>Returns the URL of the stock tool binary that contains the MSI file for installing the stock tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.StockTool.ModuleInstallArguments">
+            <summary>Returns the commandline options of msiexec.exe that are used during the installation of the stock tool MSI file.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.Tool">
+            <summary>This .NET class wraps the AcTcTool ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Tool.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Tool.CreateAcadTool(System.Boolean)">
+            <summary>Creates the COM object that implements IAcadTool.If loadData is true, loads the tool’s data. 
+If the function succeeds, the return value is nonzero. If the function fails, the return value is zero.</summary>
+            <param name="loadData"> Input, if true, loads the tool's custom data.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Tool.EnableFlyout(System.Boolean)">
+            <summary>Enables or disables a flyout tool. Set UseFlyout to true to enable the flyout, or false to disable it. 
+This method should be used only for flyout tools. If the tool is not a flyout tool, this function fails. 
+If this function succeeds, the return value is non-zero. Otherwise, the return value is zero.</summary>
+            <param name="useFlyout"> Input indicating whether to use a flyout</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Tool.GetActiveShapes">
+            <summary>Stores the shape tools that are currently visible in the shape palette in the array.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.StockTool">
+            <summary>Returns the StockTool pointer associated with the tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.StockToolId">
+            <summary>Returns the ID of the stock tool associated to the tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.StockToolFileUrl">
+            <summary>Copies the stock tool file URL for downloading the stock tool file.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.ToolType">
+            <summary>Returns the tool type.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.IsFlyoutEnabled">
+            <summary>Returns true if the flyout tool is enabled.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.ShapePackage">
+            <summary>Returns the shape package associated with the flyout tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.CurrentShape">
+            <summary>Returns the current shape selected in the shape palette.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.CurrentShapeGuid">
+            <summary>Returns the current shape in the flyout tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.Tool.ToolData">
+            <summary>Returns the XML node that contains the tool's custom data.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.ToolType">
+            <summary>This .NET enum wraps the ToolType ObjectARX enum.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.Category">
+            <summary>This .NET class wraps the AcTcCategory ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Category.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.Catalog">
+            <summary>This .NET class wraps the AcTcCatalog ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Catalog.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SetHelpInfo(System.String,System.String,System.String)">
+            <summary>Sets the URL of the help file to be used by the item.</summary>
+            <param name="file"> Input specifying an HTML file, a URL, or a compiled HTML Help (CHM) file.</param>
+            <param name="command"> Input command string.</param>
+            <param name="data"> Input additional data required to display the help</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetImageFilePath(System.Int32)">
+            <summary>Copies the local image file with absolute path of the image at the specified index to the buffer.</summary>
+            <param name="index"> Input of the image.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Load(System.Uri,Autodesk.AutoCAD.Windows.ToolPalette.LoadFlags)">
+            <summary>This function loads the catalog item from an XML file.</summary>
+            <param name="url"> Input specifying the file from which the item is loaded.</param>
+            <param name="flags"> Input one of the LoadFlags options.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LoadLink">
+            <summary>If this catalog item is a linked item, this function loads the linked file into this item.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Save(System.Uri,Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags)">
+            <summary>This function saves the catalog item to the XML file specified by url.</summary>
+            <param name="url"> Input specifying the file to which the item is saved.</param>
+            <param name="flag"> Input the SaveFlags value.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AddChild(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Appends newItem as the last child of this item.</summary>
+            <param name="newItem"> Input the new item to be added.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.InsertChild(System.Int32,Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Inserts newItem as the child of this item at the index specified by index.</summary>
+            <param name="index"> Input at which to insert the item .</param>
+            <param name="newItem"> Input object to be inserted.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteChild(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Removes the specified child item from the list of children and deletes item.</summary>
+            <param name="item"> Input the child item to be deleted from this item's list of children.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DetachChild(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem)">
+            <summary>Removes the specified child item from the list of children without deleting it.</summary>
+            <param name="item"> Input child item to be detached from this item's list of children</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetChildCountFor(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemType)">
+            <summary>Returns the number of children of type type.</summary>
+            <param name="type"> Input item type to count.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetChild(System.Int32)">
+            <summary>Returns the child at index index.</summary>
+            <param name="index"> Input index of the child to be retrieved.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetNextChild(System.Int32,Autodesk.AutoCAD.Windows.ToolPalette.CatalogItemType)">
+            <summary>Searches the child array for a child of type type, beginning at index index.</summary>
+            <param name="index"> Input array index at which to begin the search, or -1 to find the first item that matches the specified type</param>
+            <param name="type"> Input item type to get.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteAllChildren">
+            <summary>Deletes all of this item's children and their descendants recursively.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetImage(System.Drawing.Size,System.Boolean)">
+            <summary>Returns the Image object. The object's width in pixels is specified by the SIZE.cx member of size. The height member of size is ignored. 
+If an image of the specified size is not found, the image with the next larger size is returned. If a larger-sized image is not available, then the image with the next smaller size is returned. 
+Returns null if no image is associated with the item.</summary>
+            <param name="size"> Input indicating the image size</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetXml(Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags)">
+            <summary>Gets the XML representation of the item, including the item node and all its children.</summary>
+            <param name="flag"> Input save option flags.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.FindInChildren(System.String,System.Boolean)">
+            <summary>Finds the item with the specified name. The item from which this function is called is not included in the search. 
+If recursive is true, this function searches the children's descendants recursively. If recursive is false, it searches only the children of this item. 
+Returns the item if it is found. Otherwise, returns null.</summary>
+            <param name="name"> Input name of the item for which to search</param>
+            <param name="recursive"> Input Boolean specifying whether to search recursively (the children of the children) or only search the children of this item</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DoRefresh(Autodesk.AutoCAD.Windows.ToolPalette.RefreshFlags)">
+            <summary>Refreshes the item from its source.</summary>
+            <param name="flag"> Input refresh flag</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Download(System.Uri,Autodesk.AutoCAD.Windows.ToolPalette.DownloadFlags,System.String)">
+            <summary>Downloads a catalog item from the specified URL to a local directory and then loads the file into this item.</summary>
+            <param name="url"> Input URL to download; should point to the same type of catalog item that is represented by this object.</param>
+            <param name="flag"> Input download flag, which can be one or more of the DownloadFlags.</param>
+            <param name="downloadPath"> Input path to which the URL will be downloaded; if NULL, the URL is downloaded to TEMP directory</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetReferencePath(System.Int32)">
+            <summary>Gets the reference path which is used to resolve the relative paths of image files and linked files while loading and saving the item.</summary>
+            <param name="index"> Input index of the reference path.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SetReferencePath(System.String,System.Int32)">
+            <summary>Sets the reference path.</summary>
+            <param name="value"> Input string to be used as the reference path for the item.</param>
+            <param name="flag"> Input indicating type of reference path to set.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AssignNewId(System.Boolean)">
+            <summary>Creates a new ID and sets it in this item. If recursive is true, new IDs are assigned to the item's children.</summary>
+            <param name="recursive"> Input bool to indicate whether to set new IDs in children</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteImageFile(System.Boolean)">
+            <summary>This function permanently deletes the image file referred to by this item. 
+If recursive is true, image files belonging to the item's children are also deleted. If it is false, only the image file of this item is deleted.</summary>
+            <param name="recursive"> Input Boolean to indicate whether to delete image files of children.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteLinkFile(System.Boolean)">
+            <summary>This function permanently deletes the link file if this item is a linked item. 
+If recursive is true, this function also deletes the link files referenced by this item's children. Otherwise, it deletes only the link file of this item.</summary>
+            <param name="recursive"> Input Boolean to indicate whether children's links should be deleted</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteOverlayImageFile(System.Boolean)">
+            <summary>Permanently deletes the overlay image file of this item and, optionally, those of its children. 
+If recursive is true, this function recursively deletes the overlay image files of this item's children. Otherwise, it deletes the overlay image file of this item only.</summary>
+            <param name="recursive"> Input that indicates whether to delete images recursively</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.GetTargetProduct(System.Int32)">
+            <summary>Returns information about an entry in the target product list.</summary>
+            <param name="index"> Input zero-based index of a target product list item.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AddTargetProduct(Autodesk.AutoCAD.Windows.ToolPalette.TargetProductInfo)">
+            <summary>Adds a new target product to the target product list.</summary>
+            <param name="productInfo"> Input product information.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.DeleteTargetProduct(System.Int32)">
+            <summary>Deletes the target product whose index in the target product list is index.</summary>
+            <param name="index"> Input of the target product to delete</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsValidForProduct(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>This function returns a value that indicates whether this item can be used in the specified product.</summary>
+            <param name="productName"> Input the product name.</param>
+            <param name="majorVersion"> Input the major version of the product.</param>
+            <param name="minorVersion"> Input the minor version of the product.</param>
+            <param name="localeId"> Input the locale identifier of the product.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SetItemOrder(Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem[])">
+            <summary>This method rearranges the order of the items in the view.</summary>
+            <param name="itemsInOrder"> Input object containing the catalog items in the order in which they should be arranged in the view.</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HasChildren">
+            <summary>Returns a non-zero value if the item has children.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ID">
+            <summary>Returns the ID property value; ID of the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AccessRight">
+            <summary>Returns the access right for the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsReadOnly">
+            <summary>An item is considered read only if one of the following conditions is satisfied: The access right of the item was set to AccessRead or AccessReadOnlyFile using SetAccessRight.The item can be refreshed, and refresh currently is enabled for the item.
+Returns true if the item is read-only.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Name">
+            <summary>Returns the name of the catalog item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Description">
+            <summary>Description of catalog items.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ToolTipText">
+            <summary>Returns the ToolTipText property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HelpInfoFile">
+            <summary>Returns the HelpInfoFile property value; string specifying an HTML filename, a URL, or a compiled HTML filename.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HelpInfoCommand">
+            <summary>Returns the HelpInfoCommand property value; the buffer that receives the command.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.HelpInfoData">
+            <summary>Returns the HelpInfoData property value; additional data required to display the help.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Keywords">
+            <summary>Returns the Keywords property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LinkUrl">
+            <summary>If this item is a linked item, this function copies the URL of the link to buffer that receives the text..</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SourceUrl">
+            <summary>Returns the source url of the catalog item to the buffer.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ParentDocumentName">
+            <summary>Returns the parent document name.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ParentDocumentDescription">
+            <summary>Returns the parent document description.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ParentDocumentUrl">
+            <summary>Returns the parent document url.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherName">
+            <summary>Returns name of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherDescription">
+            <summary>Returns description of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherCountry">
+            <summary>Returns the publisher country name.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherEmail">
+            <summary>Returns email id of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.PublisherUrl">
+            <summary>Returns the url of the publisher.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Url">
+            <summary>Returns the Url property value; URL from which this item was loaded.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LocalFile">
+            <summary>Returns the LocalFile property value; the local file from which this item was loaded.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Root">
+            <summary>Returns the Root item of the catalog.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Scheme">
+            <summary>Returns the Scheme property value; the scheme to which this catalog item belongs.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Parent">
+            <summary>Parent item in the catalog.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsRoot">
+            <summary>Indicates whether this item is the root item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsLink">
+            <summary>This function's return value indicates whether the item is a linked item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.IsLinkLoaded">
+            <summary>Returns true if the item is a linked item, and if the linked file is currently loaded into this item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ImageList">
+            <summary>Returns the image list associated with the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.CreateTime">
+            <summary>Returns the CreateTime property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LastModifiedTime">
+            <summary>Returns the last modified time of the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LastRefreshedTime">
+            <summary>Returns the last refreshed time of the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.Refresh">
+            <summary>True if the item can be refreshed; else false.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.CanRefresh">
+            <summary>Checks whether an item can be refreshed.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.AutoRefresh">
+            <summary>True if AutoRefresh property is enabled; else false.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.CustomData">
+            <summary>Returns the XML node which contains the item's custom data.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.LinkFilePath">
+            <summary>Not implemented.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.SourceID">
+            <summary>The ID of the source catalog item from which this item can be refreshed.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.OverlayImage">
+            <summary>Returns the OverlayImage property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.OverlayImageInfo">
+            <summary>Returns information about the overlay image.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.OverlayImageFilePath">
+            <summary>Returns the OverlayImageFilePath property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.TargetProductCount">
+            <summary>Returns the number of target products specified in the item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ChildCount">
+            <summary>Number of child members in the catalog item.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.CatalogItem.ItemOptions">
+            <summary>Returns the ItemOptions property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.Package">
+            <summary>This .NET class wraps the AcTcPackage ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Package.#ctor">
+            <summary>Constructor.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.Palette">
+            <summary>This .NET class wraps the AcTcPalette ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.Palette.#ctor">
+            <summary>Default constructor.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager">
+            <summary>This .NET class wraps the AcTcManager ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.GetShapePackage(System.String)">
+            <summary>Returns the shape package stored in the shape catalog whose name matches value.</summary>
+            <param name="value"> Input name of package.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.LoadCatalogs">
+            <summary>Loads the workspace catalogs and stock tool catalogs.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.LoadCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags,Autodesk.AutoCAD.Windows.ToolPalette.LoadFlags)">
+            <summary>Loads the workspace catalogs and stock tool catalogs.</summary>
+            <param name="flags"> Input catalog type to load.</param>
+            <param name="options"> Input load option.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.UnloadCatalogs">
+            <summary>Unloads the workspace catalogs and stock tool catalogs.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.UnloadCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags)">
+            <summary>Unloads the workspace catalogs and stock tool catalogs.</summary>
+            <param name="flags"> Input Unload options.</param>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.SaveCatalogs">
+            <summary>Saves the workspace catalogs and stock tool catalogs.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.SaveCatalogs(Autodesk.AutoCAD.Windows.ToolPalette.CatalogTypeFlags,Autodesk.AutoCAD.Windows.ToolPalette.SaveFlags)">
+            <summary>Saves the workspace catalogs and stock tool catalogs.</summary>
+            <param name="flags"> Input catalog type to save.</param>
+            <param name="options"> Input save option.</param>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.Manager">
+            <summary>Returns the Manager property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.StockToolCatalogs">
+            <summary>Returns the stock tool catalog at the specified index.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.Catalogs">
+            <summary>Returns the pointer to the workspace catalog at the specified index.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.CatalogPath">
+            <summary>Returns the absolute paths where the product's workspace catalog files are stored.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.StockToolCatalogPath">
+            <summary>Returns the absolute path of the location where the product's stock tool catalog files are stored.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.ShapeCatalogFile">
+            <summary>Copies the shape catalog file name and path to the buffer.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.ShapeCatalog">
+            <summary>Returns the singleton shape catalog, which contains the shape packages.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.ToolPaletteManager.Schemes">
+            <summary>Returns the scheme object at the specified index.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.POINTL">
+            <summary>This .NET struct wraps the POINTL struct of the Windows API.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool">
+            <summary>This .NET class wraps the IAcadTool ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool.GetStockTool">
+            <summary>This .NET method corresponds to the IAcadTool.GetStockTool() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool.BeginEdit">
+            <summary>This .NET method corresponds to the IAcadTool.BeginEdit() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool.New">
+            <summary>This .NET method corresponds to the IAcadTool.New() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool.GetDropTarget">
+            <summary>This .NET method corresponds to the IAcadTool.GetDropTarget() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool.ValidateEditChanges">
+            <summary>This .NET method corresponds to the IAcadTool.ValidateEditChanges() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool.GetToolProperties">
+            <summary>This .NET method corresponds to the IAcadTool.GetToolProperties() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadTool.EditMode">
+            <summary>Returns EditMode property value.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolFlyoutShape">
+            <summary>This .NET class wraps the IAcadToolFlyoutShape ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IDropTarget">
+            <summary>This class provides .NET access to the IDropTarget COM interface.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IDropTarget.DragLeave">
+            <summary>Called by the framework on a stock tool when a dragged object leaves a palette containing tools.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolDropTarget">
+            <summary>This .NET class wraps the IAcadToolDropTarget ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolDropTarget.DragLeave">
+            <summary>This .NET method corresponds to the IAcadToolDropTarget.DragLeave() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolDragSource">
+            <summary>This .NET class wraps the IAcadToolDragSource ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolDragSource.DragLeaveDrawing">
+            <summary>This .NET method corresponds to the IAcadToolDragSource.DragLeaveDrawing() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties">
+            <summary>This .NET class wraps the IAcadToolProperties ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.GetCustomData">
+            <summary>This .NET method corresponds to the IAcadToolProperties.GetCustomData() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.GetAcTcTool">
+            <summary>This .NET method corresponds to the IAcadToolProperties.GetTool() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.ID">
+            <summary>Returns the ID of the tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.Name">
+            <summary>Returns the name of the property.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.Description">
+            <summary>Returns the Description of the property.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.ToolTipText">
+            <summary>Returns the tool tip text.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.HelpFile">
+            <summary>Returns the Help file, which can be an HTML file, a URL, or a compiled HTML file.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.HelpCommand">
+            <summary>Sets the Help command that specifies how the Help is displayed, whether through a HTML Help window or a browser.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.HelpData">
+            <summary>Returns the additional Help data required to display the Help.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.IsReadOnly">
+            <summary>Determines if the tool is read-only and marks the properties as read-only when the tool properties are displayed in the Property Inspector for editing.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.ToolType">
+            <summary>Returns the type of the tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.IsFlyoutEnabled">
+            <summary>Returns true if the flyout tool property is enabled, else returns false.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.ShapePackageId">
+            <summary>Returns the ShapePackageId property value.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.CurrentShapeId">
+            <summary>Returns the CurrentShapeId of the tool.</summary>
+        </member>
+        <member name="P:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolProperties.ActiveShapeIds">
+            <summary>Returns the ActiveShapeIds of the tool.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcadStockTool">
+            <summary>This .NET class wraps the IAcadStockTool ObjectARX class.</summary>
+        </member>
+        <member name="M:Autodesk.AutoCAD.Windows.ToolPalette.IAcadStockTool.CreateTool">
+            <summary>This .NET method corresponds to the IAcadStockTool.CreateTool() COM interface method of AutoCAD.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcadToolContextMenu">
+            <summary>This .NET class wraps the IAcadToolContextMenu ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcPiPropertyUnspecified">
+            <summary>This .NET class wraps the IAcPiPropertyUnspecified ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcPiPropertyDisplay">
+            <summary>This .NET class wraps the IAcPiPropertyDisplay ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IOPMPropertyExtension">
+            <summary>This .NET class wraps the IOPMPropertyExtension ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IAcPiCategorizeProperties">
+            <summary>This .NET class wraps the IAcPiCategorizeProperties ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IOPMPropertyDialog">
+            <summary>This .NET class wraps the IOPMPropertyDialog ObjectARX class.</summary>
+        </member>
+        <member name="T:Autodesk.AutoCAD.Windows.ToolPalette.IPerPropertyBrowsing">
+            <summary>IPerPropertyBrowsing is a standard Microsoft interface.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,27 @@
+HKCR
+{
+	SimpleToolPalette.SimpleTool.1 = s 'SimpleTool Class'
+	{
+		CLSID = s '{722DCAC8-71E1-4F61-85EC-39981C65FC4A}'
+	}
+	SimpleToolPalette.SimpleTool = s 'SimpleTool Class'
+	{
+		CLSID = s '{722DCAC8-71E1-4F61-85EC-39981C65FC4A}'
+		CurVer = s 'SimpleToolPalette.SimpleTool.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {722DCAC8-71E1-4F61-85EC-39981C65FC4A} = s 'SimpleTool Class'
+		{
+			ProgID = s 'SimpleToolPalette.SimpleTool.1'
+			VersionIndependentProgID = s 'SimpleToolPalette.SimpleTool'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{6266914E-3278-4CDC-995E-5D6AE19EEF20}'
+		}
+	}
+}

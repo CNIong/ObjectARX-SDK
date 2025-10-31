@@ -1,0 +1,582 @@
+:Title ObjectARX for AutoCAD 2000
+:Base arxref.hlp
+
+:Index ObjectARX Developer's Guide=arxdev.hlp
+:Index ObjectARX Reference Manual=arxref.hlp
+:Index ObjectARX Reference Manual=arxref1.hlp
+:Index ObjectARX Reference Manual=arxref2.hlp
+:Index ObjectARX Reference Manual=arxref3.hlp
+:Index ObjectARX Reference Manual=arxref4.hlp
+:Index ObjectARX Reference Manual=arxref5.hlp
+:Index ObjectARX Migration Guide=arxmigr.hlp
+:Index ObjectARX README=readarx.hlp
+:Index ObjectDBX README=readdbx.hlp
+
+:Link arxref.hlp
+:Link arxref1.hlp
+:Link arxref2.hlp
+:Link arxref3.hlp
+:Link arxref4.hlp
+:Link arxref5.hlp
+
+:Include arxdev.cnt
+
+1 ObjectARX Reference
+2 About the ObjectARX Reference=About_the_ObjectARX_Reference@arxref.hlp>main
+2 AcArray=AcArray@arxref4.hlp>main
+
+2 AcAp -- AutoCAD Application
+3 AcApDocManager=AcApDocManager@arxref.hlp>main
+3 AcApDocManagerReactor=AcApDocManagerReactor@arxref.hlp>main
+3 AcApDocument=AcApDocument@arxref.hlp>main
+3 AcApDocumentIterator=AcApDocumentIterator@arxref.hlp>main
+3 AcApLayoutManager=AcApLayoutManager@arxref.hlp>main
+3 AcApLongTransactionManager=AcApLongTransactionManager@arxref.hlp>main
+3 AcApLongTransactionReactor=AcApLongTransactionReactor@arxref.hlp>main
+3 AcApProfileManager=AcApProfileManager@arxref.hlp>main
+3 AcApProfileManagerReactor=AcApProfileManagerReactor@arxref.hlp>main
+3 AcApProfileNameArray=AcApProfileNameArray@arxref.hlp>main
+
+2 AcAx -- AutoCAD ActiveX Automation
+3 AcAxDocLock=AcAxDocLock@arxref.hlp>main
+3 AcAxMatrix3d=AcAxMatrix3d@arxref.hlp>main
+3 AcAxOleLinkManager=AcAxOleLinkManager@arxref.hlp>main
+3 AcAxPoint2d=AcAxPoint2d@arxref.hlp>main
+3 AcAxPoint2dArray=AcAxPoint2dArray@arxref.hlp>main
+3 AcAxPoint3d=AcAxPoint3d@arxref.hlp>main
+3 AcAxPoint3dArray=AcAxPoint3dArray@arxref.hlp>main
+
+2 AcBr -- Boundary Representation
+3 AcBrBrep=AcBrBrep@arxref1.hlp>main
+3 AcBrBrepComplexTraverser=AcBrBrepComplexTraverser@arxref1.hlp>main
+3 AcBrBrepEdgeTraverser=AcBrBrepEdgeTraverser@arxref1.hlp>main
+3 AcBrBrepFaceTraverser=AcBrBrepFaceTraverser@arxref1.hlp>main
+3 AcBrBrepShellTraverser=AcBrBrepShellTraverser@arxref1.hlp>main
+3 AcBrBrepVertexTraverser=AcBrBrepVertexTraverser@arxref1.hlp>main
+3 AcBrComplex=AcBrComplex@arxref1.hlp>main
+3 AcBrComplexShellTraverser=AcBrComplexShellTraverser@arxref1.hlp>main
+3 AcBrEdge=AcBrEdge@arxref1.hlp>main
+3 AcBrEdgeLoopTraverser=AcBrEdgeLoopTraverser@arxref1.hlp>main
+3 AcBrElement=AcBrElement@arxref1.hlp>main
+3 AcBrElement2d=AcBrElement2d@arxref1.hlp>main
+3 AcBrElement2dNodeTraverser=AcBrElement2dNodeTraverser@arxref1.hlp>main
+3 AcBrEntity=AcBrEntity@arxref1.hlp>main
+3 AcBrFace=AcBrFace@arxref1.hlp>main
+3 AcBrFaceLoopTraverser=AcBrFaceLoopTraverser@arxref1.hlp>main
+3 AcBrHit=AcBrHit@arxref1.hlp>main
+3 AcBrLoop=AcBrLoop@arxref1.hlp>main
+3 AcBrLoopEdgeTraverser=AcBrLoopEdgeTraverser@arxref1.hlp>main
+3 AcBrLoopVertexTraverser=AcBrLoopVertexTraverser@arxref1.hlp>main
+3 AcBrMesh=AcBrMesh@arxref1.hlp>main
+3 AcBrMesh2d=AcBrMesh2d@arxref1.hlp>main
+3 AcBrMesh2dControl=AcBrMesh2dControl@arxref1.hlp>main
+3 AcBrMesh2dElement2dTraverser=AcBrMesh2dElement2dTraverser@arxref1.hlp>main
+3 AcBrMesh2dFilter=AcBrMesh2dFilter@arxref1.hlp>main
+3 AcBrMeshControl=AcBrMeshControl@arxref1.hlp>main
+3 AcBrMeshEntity=AcBrMeshEntity@arxref1.hlp>main
+3 AcBrNode=AcBrNode@arxref1.hlp>main
+3 AcBrShell=AcBrShell@arxref1.hlp>main
+3 AcBrShellFaceTraverser=AcBrShellFaceTraverser@arxref1.hlp>main
+3 AcBrTraverser=AcBrTraverser@arxref1.hlp>main
+3 AcBrVertex=AcBrVertex@arxref1.hlp>main
+3 AcBrVertexEdgeTraverser=AcBrVertexEdgeTraverser@arxref1.hlp>main
+3 AcBrVertexLoopTraverser=AcBrVertexLoopTraverser@arxref1.hlp>main
+3 AcBr structure=AcBr_structure@arxref1.hlp>main
+3 AcBrMassProps structure=Struct_AcBrMassProps@arxref1.hlp>main
+
+2 AcCm -- Color
+3 AcCmComplexColor=AcCmComplexColor@arxref4.hlp>main
+3 AcCmColor=AcCmColor@arxref4.hlp>main
+3 AcCmEntityColor=AcCmEntityColor@arxref4.hlp>main
+
+2 AcDb -- Database and Contents
+3 AcDb2 - AcDbB
+4 AcDb2dPolyline=AcDb2dPolyline@arxref2.hlp>main
+4 AcDb2dVertex=AcDb2dVertex@arxref2.hlp>main
+4 AcDb2LineAngularDimension=AcDb2LineAngularDimension@arxref2.hlp>main
+4 AcDb3dPolyline=AcDb3dPolyline@arxref2.hlp>main
+4 AcDb3dPolylineVertex=AcDb3dPolylineVertex@arxref2.hlp>main
+4 AcDb3dSolid=AcDb3dSolid@arxref2.hlp>main
+4 AcDb3PointAngularDimension=AcDb3PointAngularDimension@arxref2.hlp>main
+4 AcDbAbstractViewTable=AcDbAbstractViewTable@arxref2.hlp>main
+4 AcDbAbstractViewTableIterator=AcDbAbstractViewTableIterator@arxref2.hlp>main
+4 AcDbAbstractViewTableRecord=AcDbAbstractViewTableRecord@arxref2.hlp>main
+4 AcDbAlignedDimension=AcDbAlignedDimension@arxref2.hlp>main
+4 AcDbArc=AcDbArc@arxref2.hlp>main
+4 AcDbAttribute=AcDbAttribute@arxref2.hlp>main
+4 AcDbAttributeDefinition=AcDbAttributeDefinition@arxref2.hlp>main
+4 AcDbAuditInfo=AcDbAuditInfo@arxref2.hlp>main
+4 AcDbBlockBegin=AcDbBlockBegin@arxref2.hlp>main
+4 AcDbBlockChangeIterator=AcDbBlockChangeIterator@arxref2.hlp>main
+4 AcDbBlockEnd=AcDbBlockEnd@arxref2.hlp>main
+4 AcDbBlockReference=AcDbBlockReference@arxref2.hlp>main
+4 AcDbBlockReferenceIdIterator=AcDbBlockReferenceIdIterator@arxref2.hlp>main
+4 AcDbBlockTable=AcDbBlockTable@arxref2.hlp>main
+4 AcDbBlockTableIterator=AcDbBlockTableIterator@arxref2.hlp>main
+4 AcDbBlockTableRecord=AcDbBlockTableRecord@arxref2.hlp>main
+4 AcDbBlockTableRecordIterator=AcDbBlockTableRecordIterator@arxref2.hlp>main
+4 AcDbBody=AcDbBody@arxref2.hlp>main
+3 AcDbC - AcDbF
+4 AcDbCircle=AcDbCircle@arxref2.hlp>main
+4 AcDbCompositeFilteredBlockIterator=AcDbCompositeFilteredBlockIterator@arxref2.hlp>main
+4 AcDbCurve=AcDbCurve@arxref2.hlp>main
+4 AcDbCustomOsnapInfo=AcDbCustomOsnapInfo@arxref2.hlp>main
+4 AcDbCustomOsnapManager=AcDbCustomOsnapManager@arxref2.hlp>main
+4 AcDbCustomOsnapMode=AcDbCustomOsnapMode@arxref2.hlp>main
+4 AcDbDatabase=AcDbDatabase@arxref2.hlp>main
+4 AcDbDatabaseReactor=AcDbDatabaseReactor@arxref2.hlp>main
+4 AcDbDatabaseSummaryInfo=AcDbDatabaseSummaryInfo@arxref2.hlp>main
+4 AcDbDate=AcDbDate@arxref2.hlp>main
+4 AcDbDeepCloneFiler=AcDbDeepCloneFiler@arxref2.hlp>main
+4 AcDbDiametricDimension=AcDbDiametricDimension@arxref2.hlp>main
+4 AcDbDictionary=AcDbDictionary@arxref2.hlp>main
+4 AcDbDictionaryIterator=AcDbDictionaryIterator@arxref2.hlp>main
+4 AcDbDictionaryWithDefault=AcDbDictionaryWithDefault@arxref2.hlp>main
+4 AcDbDimension=AcDbDimension@arxref2.hlp>main
+4 AcDbDimStyleTable=AcDbDimStyleTable@arxref2.hlp>main
+4 AcDbDimStyleTableIterator=AcDbDimStyleTableIterator@arxref2.hlp>main
+4 AcDbDimStyleTableRecord=AcDbDimStyleTableRecord@arxref2.hlp>main
+4 AcDbDwgFiler=AcDbDwgFiler@arxref2.hlp>main
+4 AcDbDxfFiler=AcDbDxfFiler@arxref2.hlp>main
+4 AcDbEllipse=AcDbEllipse@arxref2.hlp>main
+4 AcDbEntity=AcDbEntity@arxref2.hlp>main
+4 AcDbEntityHyperlinkPE=AcDbEntityHyperlinkPE@arxref2.hlp>main
+4 AcDbEntityReactor=AcDbEntityReactor@arxref2.hlp>main
+4 AcDbExtents=AcDbExtents@arxref2.hlp>main
+4 AcDbFace=AcDbFace@arxref2.hlp>main
+4 AcDbFaceRecord=AcDbFaceRecord@arxref2.hlp>main
+4 AcDbFcf=AcDbFcf@arxref2.hlp>main
+4 AcDbFilter=AcDbFilter@arxref2.hlp>main
+4 AcDbFilteredBlockIterator=AcDbFilteredBlockIterator@arxref2.hlp>main
+4 AcDbFrame=AcDbFrame@arxref2.hlp>main
+4 AcDbFullSubentPath=AcDbFullSubentPath@arxref2.hlp>main
+3 AcDbG - AcDbM
+4 AcDbGraph=AcDbGraph@arxref2.hlp>main
+4 AcDbGraphNode=AcDbGraphNode@arxref2.hlp>main
+4 AcDbGraphStack=AcDbGraphStack@arxref2.hlp>main
+4 AcDbGroup=AcDbGroup@arxref2.hlp>main
+4 AcDbGroupIterator=AcDbGroupIterator@arxref2.hlp>main
+4 AcDbHandle=AcDbHandle@arxref2.hlp>main
+4 AcDbHardOwnershipId=AcDbHardOwnershipId@arxref2.hlp>main
+4 AcDbHardPointerId=AcDbHardPointerId@arxref2.hlp>main
+4 AcDbHatch=AcDbHatch@arxref2.hlp>main
+4 AcDbHostApplicationProgressMeter=AcDbHostApplicationProgressMeter@arxref2.hlp>main
+4 AcDbHostApplicationServices=AcDbHostApplicationServices@arxref2.hlp>main
+4 AcDbHyperlink=AcDbHyperlink@arxref2.hlp>main
+4 AcDbHyperlinkCollection=AcDbHyperlinkCollection@arxref2.hlp>main
+4 AcDbIdMapping=AcDbIdMapping@arxref2.hlp>main
+4 AcDbIdMappingIter=AcDbIdMappingIter@arxref2.hlp>main
+4 AcDbIdPair=AcDbIdPair@arxref2.hlp>main
+4 AcDbImage=AcDbImage@arxref2.hlp>main
+4 AcDbIndex=AcDbIndex@arxref2.hlp>main
+4 AcDbIndexFilterManager=AcDbIndexFilterManager@arxref2.hlp>main
+4 AcDbIndexUpdateData=AcDbIndexUpdateData@arxref2.hlp>main
+4 AcDbIndexUpdateDataIterator=AcDbIndexUpdateDataIterator@arxref2.hlp>main
+4 AcDbIntArray=AcDbIntArray@arxref2.hlp>main
+4 AcDbLayerFilter=AcDbLayerFilter@arxref2.hlp>main
+4 AcDbLayerIndex=AcDbLayerIndex@arxref2.hlp>main
+4 AcDbLayerIndexIterator=AcDbLayerIndexIterator@arxref2.hlp>main
+4 AcDbLayerTable=AcDbLayerTable@arxref2.hlp>main
+4 AcDbLayerTableIterator=AcDbLayerTableIterator@arxref2.hlp>main
+4 AcDbLayerTableRecord=AcDbLayerTableRecord@arxref2.hlp>main
+4 AcDbLayout=AcDbLayout@arxref2.hlp>main
+4 AcDbLayoutManager=AcDbLayoutManager@arxref2.hlp>main
+4 AcDbLayoutManagerReactor=AcDbLayoutManagerReactor@arxref2.hlp>main
+4 AcDbLeader=AcDbLeader@arxref2.hlp>main
+4 AcDbLine=AcDbLine@arxref2.hlp>main
+4 AcDbLinetypeTable=AcDbLinetypeTable@arxref2.hlp>main
+4 AcDbLinetypeTableIterator=AcDbLinetypeTableIterator@arxref2.hlp>main
+4 AcDbLinetypeTableRecord=AcDbLinetypeTableRecord@arxref2.hlp>main
+4 AcDbLongTransaction=AcDbLongTransaction@arxref2.hlp>main
+4 AcDbLongTransWorkSetIterator=AcDbLongTransWorkSetIterator@arxref2.hlp>main
+4 AcDbMatchProperties=AcDbMatchProperties@arxref3.hlp>main
+4 AcDbMInsertBlock=AcDbMInsertBlock@arxref3.hlp>main
+4 AcDbMline=AcDbMline@arxref3.hlp>main
+4 AcDbMlineStyle=AcDbMlineStyle@arxref3.hlp>main
+4 AcDbMText=AcDbMText@arxref3.hlp>main
+3 AcDbO - AcDbR
+4 AcDbObject=AcDbObject@arxref3.hlp>main
+4 AcDbObjectId=AcDbObjectId@arxref3.hlp>main
+4 AcDbObjectIdArray=AcDbObjectIdArray@arxref3.hlp>main
+4 AcDbObjectIterator=AcDbObjectIterator@arxref3.hlp>main
+4 AcDbObjectPointer=AcDbObjectPointer@arxref3.hlp>main
+4 AcDbObjectPointerBase=AcDbObjectPointerBase@arxref3.hlp>main
+4 AcDbObjectReactor=AcDbObjectReactor@arxref3.hlp>main
+4 AcDbOle2Frame=AcDbOle2Frame@arxref3.hlp>main
+4 AcDbOleFrame=AcDbOleFrame@arxref3.hlp>main
+4 AcDbOrdinateDimension=AcDbOrdinateDimension@arxref3.hlp>main
+4 AcDbPlaceHolder=AcDbPlaceHolder@arxref3.hlp>main
+4 AcDbPlotSettings=AcDbPlotSettings@arxref3.hlp>main
+4 AcDbPlotSettingsValidator=AcDbPlotSettingsValidator@arxref3.hlp>main
+4 AcDbPoint=AcDbPoint@arxref3.hlp>main
+4 AcDbPolyFaceMesh=AcDbPolyFaceMesh@arxref3.hlp>main
+4 AcDbPolyFaceMeshVertex=AcDbPolyFaceMeshVertex@arxref3.hlp>main
+4 AcDbPolygonMesh=AcDbPolygonMesh@arxref3.hlp>main
+4 AcDbPolygonMeshVertex=AcDbPolygonMeshVertex@arxref3.hlp>main
+4 AcDbPolyline=AcDbPolyline@arxref3.hlp>main
+4 AcDbProxyEntity=AcDbProxyEntity@arxref3.hlp>main
+4 AcDbProxyObject=AcDbProxyObject@arxref3.hlp>main
+4 AcDbR13ObjectId=AcDbR13ObjectId@arxref3.hlp>main
+4 AcDbRadialDimension=AcDbRadialDimension@arxref3.hlp>main
+4 AcDbRasterImage=AcDbRasterImage@arxref3.hlp>main
+4 AcDbRasterImageDef=AcDbRasterImageDef@arxref3.hlp>main
+4 AcDbRasterImageDefFileAccessReactor=AcDbRasterImageDefFileAccessReactor@arxref3.hlp>main
+4 AcDbRasterImageDefReactor=AcDbRasterImageDefReactor@arxref3.hlp>main
+4 AcDbRasterImageDefTransReactor=AcDbRasterImageDefTransReactor@arxref3.hlp>main
+4 AcDbRasterVariables=AcDbRasterVariables@arxref3.hlp>main
+4 AcDbRay=AcDbRay@arxref3.hlp>main
+4 AcDbRecover=AcDbRecover@arxref3.hlp>main
+4 AcDbRecoverCallBack=AcDbRecoverCallBack@arxref3.hlp>main
+4 AcDbRegAppTable=AcDbRegAppTable@arxref3.hlp>main
+4 AcDbRegAppTableIterator=AcDbRegAppTableIterator@arxref3.hlp>main
+4 AcDbRegAppTableRecord=AcDbRegAppTableRecord@arxref3.hlp>main
+4 AcDbRegion=AcDbRegion@arxref3.hlp>main
+4 AcDbRotatedDimension=AcDbRotatedDimension@arxref3.hlp>main
+3 AcDbS - AcDbU
+4 AcDbSequenceEnd=AcDbSequenceEnd@arxref3.hlp>main
+4 AcDbServices=AcDbServices@arxref3.hlp>main
+4 AcDbShape=AcDbShape@arxref3.hlp>main
+4 AcDbSoftOwnershipId=AcDbSoftOwnershipId@arxref3.hlp>main
+4 AcDbSoftPointerId=AcDbSoftPointerId@arxref3.hlp>main
+4 AcDbSolid=AcDbSolid@arxref3.hlp>main
+4 AcDbSpatialFilter=AcDbSpatialFilter@arxref3.hlp>main
+4 AcDbSpatialIndex=AcDbSpatialIndex@arxref3.hlp>main
+4 AcDbSpatialIndexIterator=AcDbSpatialIndexIterator@arxref3.hlp>main
+4 AcDbSpline=AcDbSpline@arxref3.hlp>main
+4 AcDbSubentId=AcDbSubentId@arxref3.hlp>main
+4 AcDbSummaryInfoManager=AcDbSummaryInfoManager@arxref3.hlp>main
+4 AcDbSummaryInfoReactor=AcDbSummaryInfoReactor@arxref3.hlp>main
+4 AcDbSymbolTable=AcDbSymbolTable@arxref3.hlp>main
+4 AcDbSymbolTableIterator=AcDbSymbolTableIterator@arxref3.hlp>main
+4 AcDbSymbolTablePointer=AcDbSymbolTablePointer@arxref3.hlp>main
+4 AcDbSymbolTableRecord=AcDbSymbolTableRecord@arxref3.hlp>main
+4 AcDbSymbolTableRecordPointer=AcDbSymbolTableRecordPointer@arxref3.hlp>main
+4 AcDbSymbolUtilities functions=AcDbSymbolUtilities@arxref3.hlp>main
+4 AcDbSymbolUtilities::Services=AcDbSymbolUtilities5858Services@arxref3.hlp>main
+4 AcDbText=AcDbText@arxref3.hlp>main
+4 AcDbTextStyleTable=AcDbTextStyleTable@arxref3.hlp>main
+4 AcDbTextStyleTableIterator=AcDbTextStyleTableIterator@arxref3.hlp>main
+4 AcDbTextStyleTableRecord=AcDbTextStyleTableRecord@arxref3.hlp>main
+4 AcDbTrace=AcDbTrace@arxref3.hlp>main
+4 AcDbUCSTable=AcDbUCSTable@arxref3.hlp>main
+4 AcDbUCSTableIterator=AcDbUCSTableIterator@arxref3.hlp>main
+4 AcDbUCSTableRecord=AcDbUCSTableRecord@arxref3.hlp>main
+4 AcDbUndoFiler=AcDbUndoFiler@arxref3.hlp>main
+3 AcDbV - AcDbX
+4 AcDbVertex=AcDbVertex@arxref3.hlp>main
+4 AcDbViewport=AcDbViewport@arxref3.hlp>main
+4 AcDbViewportTable=AcDbViewportTable@arxref3.hlp>main
+4 AcDbViewportTableIterator=AcDbViewportTableIterator@arxref3.hlp>main
+4 AcDbViewportTableRecord=AcDbViewportTableRecord@arxref3.hlp>main
+4 AcDbViewTable=AcDbViewTable@arxref3.hlp>main
+4 AcDbViewTableIterator=AcDbViewTableIterator@arxref3.hlp>main
+4 AcDbViewTableRecord=AcDbViewTableRecord@arxref3.hlp>main
+4 AcDbVoidPointerArray=AcDbVoidPointerArray@arxref3.hlp>main
+4 AcDbWblockCloneFiler=AcDbWblockCloneFiler@arxref3.hlp>main
+4 AcDbXline=AcDbXline@arxref3.hlp>main
+4 AcDbXObject=AcDbXObject@arxref3.hlp>main
+4 AcDbXrecord=AcDbXrecord@arxref3.hlp>main
+4 AcDbXrecordIterator=AcDbXrecordIterator@arxref3.hlp>main
+4 AcDbXrefGraph=AcDbXrefGraph@arxref3.hlp>main
+4 AcDbXrefGraphNode=AcDbXrefGraphNode@arxref3.hlp>main
+
+2 AcEd -- AutoCAD Editor
+3 AcEdCommand=AcEdCommand@arxref.hlp>main
+3 AcEdCommandIterator=AcEdCommandIterator@arxref.hlp>main
+3 AcEdCommandStack=AcEdCommandStack@arxref.hlp>main
+3 AcEdInputContextReactor=AcEdInputContextReactor@arxref.hlp>main
+3 AcEdInputPointFilter=AcEdInputPointFilter@arxref.hlp>main
+3 AcEdInputPointManager=AcEdInputPointManager@arxref.hlp>main
+3 AcEdInputPointMonitor=AcEdInputPointMonitor@arxref.hlp>main
+3 AcEditor=AcEditor@arxref.hlp>main
+3 AcEditorReactor=AcEditorReactor@arxref.hlp>main
+3 AcEdJig=AcEdJig@arxref.hlp>main
+3 AcEdServices=AcEdServices@arxref.hlp>main
+3 AcEdSolidSubentitySelector=AcEdSolidSubentitySelector@arxref.hlp>main
+3 AcEdSymbolUtilities functions=AcEdSymbolUtilities@arxref.hlp>main
+3 AcEdSymbolUtilities::Services=AcEdSymbolUtilities5858Services@arxref.hlp>main
+3 AcEdUIContext=AcEdUIContext@arxref.hlp>main
+3 AcEdXrefFileLock=AcEdXrefFileLock@arxref.hlp>main
+
+2 AcGe -- Geometry
+3 AcGeA - AcGeD
+4 AcGeAugPolyLine3d=AcGeAugPolyLine3d@arxref1.hlp>main
+4 AcGeBoundBlock2d=AcGeBoundBlock2d@arxref1.hlp>main
+4 AcGeBoundBlock3d=AcGeBoundBlock3d@arxref1.hlp>main
+4 AcGeBoundedPlane=AcGeBoundedPlane@arxref1.hlp>main
+4 AcGeCircArc2d=AcGeCircArc2d@arxref1.hlp>main
+4 AcGeCircArc3d=AcGeCircArc3d@arxref1.hlp>main
+4 AcGeClipBoundary2d=AcGeClipBoundary2d@arxref1.hlp>main
+4 AcGeCompositeCurve2d=AcGeCompositeCurve2d@arxref1.hlp>main
+4 AcGeCompositeCurve3d=AcGeCompositeCurve3d@arxref1.hlp>main
+4 AcGeCone=AcGeCone@arxref1.hlp>main
+4 AcGeContext=AcGeContext@arxref1.hlp>main
+4 AcGeCubicSplineCurve2d=AcGeCubicSplineCurve2d@arxref1.hlp>main
+4 AcGeCubicSplineCurve3d=AcGeCubicSplineCurve3d@arxref1.hlp>main
+4 AcGeCurve2d=AcGeCurve2d@arxref1.hlp>main
+4 AcGeCurve3d=AcGeCurve3d@arxref1.hlp>main
+4 AcGeCurveBoundary=AcGeCurveBoundary@arxref1.hlp>main
+4 AcGeCurveCurveInt2d=AcGeCurveCurveInt2d@arxref1.hlp>main
+4 AcGeCurveCurveInt3d=AcGeCurveCurveInt3d@arxref1.hlp>main
+4 AcGeCylinder=AcGeCylinder@arxref1.hlp>main
+4 AcGeDoubleArray=AcGeDoubleArray@arxref1.hlp>main
+3 AcGeE - AcGeM
+4 AcGeEllipArc2d=AcGeEllipArc2d@arxref1.hlp>main
+4 AcGeEllipArc3d=AcGeEllipArc3d@arxref1.hlp>main
+4 AcGeEntity2d=AcGeEntity2d@arxref1.hlp>main
+4 AcGeEntity3d=AcGeEntity3d@arxref1.hlp>main
+4 AcGeExternalBoundedSurface=AcGeExternalBoundedSurface@arxref1.hlp>main
+4 AcGeExternalCurve2d=AcGeExternalCurve2d@arxref1.hlp>main
+4 AcGeExternalCurve3d=AcGeExternalCurve3d@arxref1.hlp>main
+4 AcGeExternalSurface=AcGeExternalSurface@arxref1.hlp>main
+4 AcGeIntArray=AcGeIntArray@arxref1.hlp>main
+4 AcGeInterval=AcGeInterval@arxref1.hlp>main
+4 AcGeKnotVector=AcGeKnotVector@arxref1.hlp>main
+4 AcGeLine2d=AcGeLine2d@arxref1.hlp>main
+4 AcGeLine3d=AcGeLine3d@arxref1.hlp>main
+4 AcGeLinearEnt2d=AcGeLinearEnt2d@arxref1.hlp>main
+4 AcGeLinearEnt3d=AcGeLinearEnt3d@arxref1.hlp>main
+4 AcGeLineSeg2d=AcGeLineSeg2d@arxref1.hlp>main
+4 AcGeLineSeg3d=AcGeLineSeg3d@arxref1.hlp>main
+4 AcGeMatrix2d=AcGeMatrix2d@arxref1.hlp>main
+4 AcGeMatrix3d=AcGeMatrix3d@arxref1.hlp>main
+3 AcGeN - AcGeP
+4 AcGeNurbCurve2d=AcGeNurbCurve2d@arxref1.hlp>main
+4 AcGeNurbCurve3d=AcGeNurbCurve3d@arxref1.hlp>main
+4 AcGeNurbSurface=AcGeNurbSurface@arxref1.hlp>main
+4 AcGeOffsetCurve2d=AcGeOffsetCurve2d@arxref1.hlp>main
+4 AcGeOffsetCurve3d=AcGeOffsetCurve3d@arxref1.hlp>main
+4 AcGeOffsetSurface=AcGeOffsetSurface@arxref1.hlp>main
+4 AcGePlanarEnt=AcGePlanarEnt@arxref1.hlp>main
+4 AcGePlane=AcGePlane@arxref1.hlp>main
+4 AcGePoint2d=AcGePoint2d@arxref1.hlp>main
+4 AcGePoint2dArray=AcGePoint2dArray@arxref1.hlp>main
+4 AcGePoint3d=AcGePoint3d@arxref1.hlp>main
+4 AcGePoint3dArray=AcGePoint3dArray@arxref1.hlp>main
+4 AcGePointEnt2d=AcGePointEnt2d@arxref1.hlp>main
+4 AcGePointEnt3d=AcGePointEnt3d@arxref1.hlp>main
+4 AcGePointOnCurve2d=AcGePointOnCurve2d@arxref1.hlp>main
+4 AcGePointOnCurve3d=AcGePointOnCurve3d@arxref1.hlp>main
+4 AcGePointOnSurface=AcGePointOnSurface@arxref1.hlp>main
+4 AcGePolyline2d=AcGePolyline2d@arxref1.hlp>main
+4 AcGePolyline3d=AcGePolyline3d@arxref1.hlp>main
+4 AcGePosition2d=AcGePosition2d@arxref1.hlp>main
+4 AcGePosition3d=AcGePosition3d@arxref1.hlp>main
+3 AcGeR - AcGeV
+4 AcGeRay2d=AcGeRay2d@arxref1.hlp>main
+4 AcGeRay3d=AcGeRay3d@arxref1.hlp>main
+4 AcGeScale2d=AcGeScale2d@arxref1.hlp>main
+4 AcGeScale3d=AcGeScale3d@arxref1.hlp>main
+4 AcGeSphere=AcGeSphere@arxref1.hlp>main
+4 AcGeSplineEnt2d=AcGeSplineEnt2d@arxref1.hlp>main
+4 AcGeSplineEnt3d=AcGeSplineEnt3d@arxref1.hlp>main
+4 AcGeSurface=AcGeSurface@arxref1.hlp>main
+4 AcGeTol=AcGeTol@arxref1.hlp>main
+4 AcGeTorus=AcGeTorus@arxref1.hlp>main
+4 AcGeVector2d=AcGeVector2d@arxref1.hlp>main
+4 AcGeVector2dArray=AcGeVector2dArray@arxref1.hlp>main
+4 AcGeVector3d=AcGeVector3d@arxref1.hlp>main
+4 AcGeVector3dArray=AcGeVector3dArray@arxref1.hlp>main
+4 AcGeVoidPointerArray=AcGeVoidPointerArray@arxref1.hlp>main
+
+2 AcGi -- Graphics Interface
+3 AcGiCommonDraw=AcGiCommonDraw@arxref4.hlp>main
+3 AcGiContext=AcGiContext@arxref4.hlp>main
+3 AcGiDrawable=AcGiDrawable@arxref4.hlp>main
+3 AcGiDrawableTraits=AcGiDrawableTraits@arxref4.hlp>main
+3 AcGiEdgeData=AcGiEdgeData@arxref4.hlp>main
+3 AcGiFaceData=AcGiFaceData@arxref4.hlp>main
+3 AcGiGeometry=AcGiGeometry@arxref4.hlp>main
+3 AcGiGlyph=AcGiGlyph@arxref4.hlp>main
+3 AcGiSubEntityTraits=AcGiSubEntityTraits@arxref4.hlp>main
+3 AcGiTextStyle=AcGiTextStyle@arxref4.hlp>main
+3 AcGiVertexData=AcGiVertexData@arxref4.hlp>main
+3 AcGiViewport=AcGiViewport@arxref4.hlp>main
+3 AcGiViewportDraw=AcGiViewportDraw@arxref4.hlp>main
+3 AcGiViewportGeometry=AcGiViewportGeometry@arxref4.hlp>main
+3 AcGiWorldDraw=AcGiWorldDraw@arxref4.hlp>main
+3 AcGiWorldGeometry=AcGiWorldGeometry@arxref4.hlp>main
+
+2 AcGs -- Graphics System
+3 AcGsClassFactory=AcGsClassFactory@arxref4.hlp>main
+3 AcGsConfig=AcGsConfig@arxref4.hlp>main
+3 AcGsDCPoint=AcGsDCPoint@arxref4.hlp>main
+3 AcGsDCRect=AcGsDCRect@arxref4.hlp>main
+3 AcGsDevice=AcGsDevice@arxref4.hlp>main
+3 AcGsManager=AcGsManager@arxref4.hlp>main
+3 AcGsModel=AcGsModel@arxref4.hlp>main
+3 AcGsReactor=AcGsReactor@arxref4.hlp>main
+3 AcGsView=AcGsView@arxref4.hlp>main
+3 ScreenShot=ScreenShot@arxref4.hlp>main
+
+2 AcRx -- ARX Overhead
+3 AcRxClass=AcRxClass@arxref.hlp>main
+3 AcRxDictionary=AcRxDictionary@arxref.hlp>main
+3 AcRxDictionaryIterator=AcRxDictionaryIterator@arxref.hlp>main
+3 AcRxDLinkerReactor=AcRxDLinkerReactor@arxref.hlp>main
+3 AcRxDynamicLinker=AcRxDynamicLinker@arxref.hlp>main
+3 AcRxEventReactor=AcRxEventReactor@arxref.hlp>main
+3 AcRxIterator=AcRxIterator@arxref.hlp>main
+3 AcRxKernel=AcRxKernel@arxref.hlp>main
+3 AcRxObject=AcRxObject@arxref.hlp>main
+3 AcRxService=AcRxService@arxref.hlp>main
+
+2 AcTr -- Transaction Management
+3 AcTransaction=AcTransaction@arxref.hlp>main
+3 AcTransactionManager=AcTransactionManager@arxref.hlp>main
+3 AcTransactionReactor=AcTransactionReactor@arxref.hlp>main
+
+2 CAcUi and CAdUi -- MFC
+4 CAcExtensionModule=CAcExtensionModule@arxref5.hlp>main
+4 CAcModuleResourceOverride=CAcModuleResourceOverride@arxref5.hlp>main
+3 CAcUi
+4 CAcUiAngleComboBox=CAcUiAngleComboBox@arxref5.hlp>main
+4 CAcUiAngleEdit=CAcUiAngleEdit@arxref5.hlp>main
+4 CAcUiArrowHeadComboBox=CAcUiArrowHeadComboBox@arxref5.hlp>main
+4 CAcUiBitmapButton=CAcUiBitmapButton@arxref5.hlp>main
+4 CAcUiBitmapStatic=CAcUiBitmapStatic@arxref5.hlp>main
+4 CAcUiColorComboBox=CAcUiColorComboBox@arxref5.hlp>main
+4 CAcUiComboBox=CAcUiComboBox@arxref5.hlp>main
+4 CAcUiDialog=CAcUiDialog@arxref5.hlp>main
+4 CAcUiDialogBar=CAcUiDialogBar@arxref5.hlp>main
+4 CAcUiDockControlBar=CAcUiDockControlBar@arxref5.hlp>main
+4 CAcUiDropSite=CAcUiDropSite@arxref5.hlp>main
+4 CAcUiEdit=CAcUiEdit@arxref5.hlp>main
+4 CAcUiFileDialog=CAcUiFileDialog@arxref5.hlp>main
+4 CAcUiHeaderCtrl=CAcUiHeaderCtrl@arxref5.hlp>main
+4 CAcUiLineWeightComboBox=CAcUiLineWeightComboBox@arxref5.hlp>main
+4 CAcUiListBox=CAcUiListBox@arxref5.hlp>main
+4 CAcUiListCtrl=CAcUiListCtrl@arxref5.hlp>main
+4 CAcUiMRUComboBox=CAcUiMRUComboBox@arxref5.hlp>main
+4 CAcUiMRUListBox=CAcUiMRUListBox@arxref5.hlp>main
+4 CAcUiNumericComboBox=CAcUiNumericComboBox@arxref5.hlp>main
+4 CAcUiNumericEdit=CAcUiNumericEdit@arxref5.hlp>main
+4 CAcUiOwnerDrawButton=CAcUiOwnerDrawButton@arxref5.hlp>main
+4 CAcUiPickButton=CAcUiPickButton@arxref5.hlp>main
+4 CAcUiPlotStyleNamesComboBox=CAcUiPlotStyleNamesComboBox@arxref5.hlp>main
+4 CAcUiPlotStyleTablesComboBox=CAcUiPlotStyleTablesComboBox@arxref5.hlp>main
+4 CAcUiSelectButton=CAcUiSelectButton@arxref5.hlp>main
+4 CAcUiString=CAcUiString@arxref5.hlp>main
+4 CAcUiStringComboBox=CAcUiStringComboBox@arxref5.hlp>main
+4 CAcUiStringEdit=CAcUiStringEdit@arxref5.hlp>main
+4 CAcUiSymbolComboBox=CAcUiSymbolComboBox@arxref5.hlp>main
+4 CAcUiSymbolEdit=CAcUiSymbolEdit@arxref5.hlp>main
+4 CAcUiTab=CAcUiTab@arxref5.hlp>main
+4 CAcUiTabChildDialog=CAcUiTabChildDialog@arxref5.hlp>main
+4 CAcUiTabMainDialog=CAcUiTabMainDialog@arxref5.hlp>main
+4 CAcUiToolButton=CAcUiToolButton@arxref5.hlp>main
+3 CAdUi
+4 CAdUiBalloonTip=CAdUiBalloonTip@arxref5.hlp>main
+4 CAdUiBaseDialog=CAdUiBaseDialog@arxref5.hlp>main
+4 CAdUiBitmapButton=CAdUiBitmapButton@arxref5.hlp>main
+4 CAdUiBitmapStatic=CAdUiBitmapStatic@arxref5.hlp>main
+4 CAdUiComboBox=CAdUiComboBox@arxref5.hlp>main
+4 CAdUiDialog=CAdUiDialog@arxref5.hlp>main
+4 CAdUiDialogBar=CAdUiDialogBar@arxref5.hlp>main
+4 CAdUiDockControlBar=CAdUiDockControlBar@arxref5.hlp>main
+4 CAdUiDockFrame=CAdUiDockFrame@arxref5.hlp>main
+4 CAdUiDrawTipText=CAdUiDrawTipText@arxref5.hlp>main
+4 CAdUiDropSite=CAdUiDropSite@arxref5.hlp>main
+4 CAdUiEdit=CAdUiEdit@arxref5.hlp>main
+4 CAdUiFileDialog=CAdUiFileDialog@arxref5.hlp>main
+4 CAdUiHeaderCtrl=CAdUiHeaderCtrl@arxref5.hlp>main
+4 CAdUiListBox=CAdUiListBox@arxref5.hlp>main
+4 CAdUiListCtrl=CAdUiListCtrl@arxref5.hlp>main
+4 CAdUiOwnerDrawButton=CAdUiOwnerDrawButton@arxref5.hlp>main
+4 CAdUiRegistryAccess=CAdUiRegistryAccess@arxref5.hlp>main
+4 CAdUiRegistryDeleteAccess=CAdUiRegistryDeleteAccess@arxref5.hlp>main
+4 CAdUiRegistryWriteAccess=CAdUiRegistryWriteAccess@arxref5.hlp>main
+4 CAdUiTab=CAdUiTab@arxref5.hlp>main
+4 CAdUiTabChildDialog=CAdUiTabChildDialog@arxref5.hlp>main
+4 CAdUiTabExtensionManager=CAdUiTabExtensionManager@arxref5.hlp>main
+4 CAdUiTabMainDialog=CAdUiTabMainDialog@arxref5.hlp>main
+4 CAdUiTextTip=CAdUiTextTip@arxref5.hlp>main
+4 CAdUiTipWindow=CAdUiTipWindow@arxref5.hlp>main
+4 CAdUiToolButton=CAdUiToolButton@arxref5.hlp>main
+
+2 Utility Macros
+3 Overview=Utility_Macros@arxref4.hlp>main
+3 ACRX Macros for Custom Classes=ACRX_Macros_for_Custom_Classes@arxref4.hlp>main
+3 ObjectARX Global Object Access Macros=ObjectARX_Global_Object_Access_Macros@arxref4.hlp>main
+3 Sample Protocol Extension Access Macro=Sample_Protocol_Extension_Access_Macro@arxref4.hlp>main
+
+2 Global Functions
+3 Overview=Global_Functions@arxref4.hlp>main
+3 AcAx Global Functions=AcAx_Global_Functions@arxref4.hlp>main
+3 AcDb Global Functions=AcDb_Global_Functions@arxref4.hlp>main
+3 AcEd Global Functions=AcEd_Global_Functions@arxref4.hlp>main
+3 AdUi/AcUi MFC Global Functions=AdUi47AcUi_MFC_Global_Functions@arxref5.hlp>main
+3 ObjectARX Editor MFC Functions=ObjectARX_MFC_Functions@arxref4.hlp>main
+3 AcGe Global Functions=AcGe_Global_Functions@arxref4.hlp>main
+3 AcGs Global Functions=AcGs_Global_Functions@arxref4.hlp>main
+3 AcRe Global Functions=AcRe_Global_Functions@arxref4.hlp>main
+3 AcRx Global Functions=AcRx_Global_Functions@arxref4.hlp>main
+3 AcGiTextStyle to AcDbTextStyleTableRecord Transfer Functions=AcGiTextStyle_60_4545_62_AcDbTextStyleTableRecord_Transfer_Functions@arxref4.hlp>main
+3 Miscellaneous Global Functions=Miscellaneous_Global_Functions@arxref4.hlp>main
+3 Former ADS Functions
+4 Synopsis of Former ADS Functions=Synopsis_of_Former_ADS_Functions@arxref4.hlp>main
+4 ADS Functions (Renamed)
+5 Overview=ADS_Functions_40Renamed41@arxref4.hlp>main
+5 AcDb Functions=AcDb_Functions@arxref4.hlp>main
+5 AcEd Functions=AcEd_Functions@arxref4.hlp>main
+5 AcUt Functions=AcUt_Functions@arxref4.hlp>main
+5 Windows Support Functions=Windows_Support_Functions@arxref4.hlp>main
+5 Memory Management Functions=Memory_Management_Functions@arxref4.hlp>main
+4 ADS Dialog Box Functions=ADS_Dialog_Box_Functions@arxref4.hlp>main
+4 ADS Extensions=ADS_Extensions@arxref4.hlp>main
+
+2 Enumerated Types
+3 Overview=Enumerated_Types@arxref4.hlp>main
+3 struct AcAp=struct_AcAp@arxref.hlp>main
+3 struct AcadApp=struct_AcadApp@arxref4.hlp>main
+3 struct Acad=struct_Acad@arxref4.hlp>main
+3 struct AcDb=struct_AcDb@arxref4.hlp>main
+3 AcDbMatchProperties::Flags=AcDbMatchProperties5858Flags@arxref4.hlp>main
+3 AcDbProxyObjectproxyFlags=AcDbProxyObjectproxyFlags@arxref4.hlp>main
+3 AcDbProxyEntityproxyFlags=AcDbProxyEntityproxyFlags@arxref4.hlp>main
+3 struct Adesk=struct_Adesk@arxref4.hlp>main
+3 struct AcGe=struct_AcGe@arxref4.hlp>main
+3 struct AcGiClipBoundary=struct_AcGiClipBoundary@arxref4.hlp>main
+3 struct AcRx=struct_AcRx@arxref4.hlp>main
+
+2 Support for AutoCAD Design Center
+3 IAcDcContentBrowser=IAcDcContentBrowser@arxref5.hlp>main
+3 IAcDcContentFinder=IAcDcContentFinder@arxref5.hlp>main
+3 IAcDcContentFinderSite=IAcDcContentFinderSite@arxref5.hlp>main
+3 IAcDcContentView=IAcDcContentView@arxref5.hlp>main
+3 IAcPostDrop=IAcPostDrop@arxref5.hlp>main
+
+2 Support for Object Property Manager (OPM)
+3 OPMPropertyExtension=OPMPropertyExtension@arxref5.hlp>main
+3 OPMPropertyExtensionFactory=OPMPropertyExtensionFactory@arxref5.hlp>main
+3 OPM Macros=OPM_Macros@arxref5.hlp>main
+3 ICategorizeProperties=ICategorizeProperties@arxref5.hlp>main
+3 IDynamicDialogProperty=IDynamicDialogProperty@arxref5.hlp>main
+3 IDynamicEnumProperty=IDynamicEnumProperty@arxref5.hlp>main
+3 IDynamicProperty=IDynamicProperty@arxref5.hlp>main
+3 IDynamicPropertyNotify=IDynamicPropertyNotify@arxref5.hlp>main
+3 IOPMPropertyExpander=IOPMPropertyExpander@arxref5.hlp>main
+3 IOPMPropertyExtension=IOPMPropertyExtension@arxref5.hlp>main
+3 IPerPropertyBrowsing=IPerPropertyBrowsing@arxref5.hlp>main
+3 IPropertyManager=IPropertyManager@arxref5.hlp>main
+3 IRetrieveApplication=IRetrieveApplication@arxref5.hlp>main
+
+2 Additional Information
+3 Compiler Support=Compiler_Support@arxref4.hlp>main
+3 ObjectARX Memory Management=ObjectARX_Memory_Management@arxref4.hlp>main
+3 Imaging Support Module (ISM)=Imaging_Support_Module_40ISM41@arxref4.hlp>main
+3 AcadAppInfo=AcadAppInfo@arxref4.hlp>main
+3 AcDbDimStyle Families=AcDbDimStyle_Families@arxref4.hlp>main
+3 AcDbDimStyle Overrides=AcDbDimStyle_Overrides@arxref4.hlp>main
+3 AcReCallout=AcReCallout@arxref4.hlp>main
+3 CRect3d=CRect3d@arxref4.hlp>main
+3 rxInit=rxInit@arxref4.hlp>main
+
+:Include arxmigr.cnt
+
+:Include ASE.cnt
+:Include ASEmain.cnt
+:Include ASImain.cnt
+
+:Include ReadARX.cnt
+:Include ReadDBX.cnt

@@ -1,0 +1,26 @@
+HKCR
+{
+	AsdkSquareLib.AsdkSquareWrapper.1 = s 'AsdkSquareWrapper Class'
+	{
+		CLSID = s '{C3F0A84C-9A0A-46E6-BCAA-D75030FE6206}'
+	}
+	AsdkSquareLib.AsdkSquareWrapper = s 'AsdkSquareWrapper Class'
+	{
+		CLSID = s '{C3F0A84C-9A0A-46E6-BCAA-D75030FE6206}'
+		CurVer = s 'AsdkSquareLib.AsdkSquareWrapper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C3F0A84C-9A0A-46E6-BCAA-D75030FE6206} = s 'AsdkSquareWrapper Class'
+		{
+			ProgID = s 'AsdkSquareLib.AsdkSquareWrapper.1'
+			VersionIndependentProgID = s 'AsdkSquareLib.AsdkSquareWrapper'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{99153B91-5D1D-4F11-BAC1-27B34938E25E}'
+		}
+	}
+}

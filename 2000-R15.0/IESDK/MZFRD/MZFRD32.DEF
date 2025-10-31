@@ -1,0 +1,8 @@
+
+LIBRARY mzfrd32
+DESCRIPTION 'MZF Sample IE File Reader'
+EXETYPE WINDOWS
+
+EXPORTS
+    moduleIdentify
+    newIeFileAnalyzer

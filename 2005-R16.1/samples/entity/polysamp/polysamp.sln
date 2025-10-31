@@ -1,0 +1,69 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "compoly", "compoly\compoly.vcproj", "{06B9D355-F6F9-4029-A614-834774D248C0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "polyobj", "polyobj.vcproj", "{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "polyui", "polyui.vcproj", "{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PolyObjMSM", "Setup\PolyObjMSM.vdproj", "{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PolyObjMSI", "Setup\PolyObjMSI.vdproj", "{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+		ConfigName.2 = Release MinDependency
+		ConfigName.3 = Release MinSize
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{06B9D355-F6F9-4029-A614-834774D248C0}.0 = {35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.0 = {35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Debug.ActiveCfg = Debug|Win32
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Debug.Build.0 = Debug|Win32
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Release.ActiveCfg = Release MinDependency|Win32
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Release.Build.0 = Release MinDependency|Win32
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Release MinDependency.ActiveCfg = Release MinDependency|Win32
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Release MinDependency.Build.0 = Release MinDependency|Win32
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Release MinSize.ActiveCfg = Release MinSize|Win32
+		{06B9D355-F6F9-4029-A614-834774D248C0}.Release MinSize.Build.0 = Release MinSize|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Debug.ActiveCfg = Debug|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Debug.Build.0 = Debug|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Release.ActiveCfg = Release|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Release.Build.0 = Release|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Release MinDependency.ActiveCfg = Release|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Release MinDependency.Build.0 = Release|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Release MinSize.ActiveCfg = Release|Win32
+		{35B7C0B1-F802-48D8-B3C0-A1F82E5AB9FB}.Release MinSize.Build.0 = Release|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Debug.ActiveCfg = Debug|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Debug.Build.0 = Debug|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Release.ActiveCfg = Release|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Release.Build.0 = Release|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Release MinDependency.ActiveCfg = Release|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Release MinDependency.Build.0 = Release|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Release MinSize.ActiveCfg = Release|Win32
+		{AD76FB2C-856B-4ACD-9A34-5BB7B5FDE659}.Release MinSize.Build.0 = Release|Win32
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Debug.ActiveCfg = Debug
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Debug.Build.0 = Debug
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Release.ActiveCfg = Release
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Release.Build.0 = Release
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Release MinDependency.ActiveCfg = Release
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Release MinDependency.Build.0 = Release
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Release MinSize.ActiveCfg = Release
+		{0F0F69F7-CF25-4C54-A00A-EF1BD1B2A6A4}.Release MinSize.Build.0 = Release
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Debug.ActiveCfg = Debug
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Debug.Build.0 = Debug
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Release.ActiveCfg = Release
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Release.Build.0 = Release
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Release MinDependency.ActiveCfg = Release
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Release MinDependency.Build.0 = Release
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Release MinSize.ActiveCfg = Release
+		{FA0C6E5C-E8B1-43ED-8390-24E99EF635D9}.Release MinSize.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

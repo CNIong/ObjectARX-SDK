@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DesignCtrSample", "DesignCtrSample.vcproj", "{08604605-0175-4AB7-BCC2-E70937C2A660}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release MinDependency
+		ConfigName.2 = Release MinSize
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{08604605-0175-4AB7-BCC2-E70937C2A660}.Debug.ActiveCfg = Debug|Win32
+		{08604605-0175-4AB7-BCC2-E70937C2A660}.Debug.Build.0 = Debug|Win32
+		{08604605-0175-4AB7-BCC2-E70937C2A660}.Release MinDependency.ActiveCfg = Release MinDependency|Win32
+		{08604605-0175-4AB7-BCC2-E70937C2A660}.Release MinDependency.Build.0 = Release MinDependency|Win32
+		{08604605-0175-4AB7-BCC2-E70937C2A660}.Release MinSize.ActiveCfg = Release MinSize|Win32
+		{08604605-0175-4AB7-BCC2-E70937C2A660}.Release MinSize.Build.0 = Release MinSize|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

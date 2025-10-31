@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ApplicationIcon>watcher.ico</ApplicationIcon>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EventsWatcher</RootNamespace>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblySearchPaths>..\..\..\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcDbMgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="accoremgd">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

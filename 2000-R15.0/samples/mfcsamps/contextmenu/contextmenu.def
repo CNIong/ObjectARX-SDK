@@ -1,0 +1,9 @@
+; contextmenu.def : Declares the module parameters for the DLL.
+
+; (C) Copyright 1998 by Autodesk, Inc.
+LIBRARY      "contextmenu"
+DESCRIPTION  'contextmenu ObjectARX application'
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

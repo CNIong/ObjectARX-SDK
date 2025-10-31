@@ -1,0 +1,143 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "mzfres.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONSDLG DIALOG DISCARDABLE  0, 0, 146, 58
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "MZF Write Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,100,10,40,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,100,32,40,14
+    COMBOBOX        IDC_ENCODING,10,15,75,45,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Encoding",IDC_STATIC,10,5,32,8
+    LTEXT           "Rows Per Strip:",IDC_STATIC,10,35,52,8
+    EDITTEXT        IDC_ROWSPERSTRIP,65,33,20,13
+    LTEXT           "(0 = contiguous)",IDC_STATIC,10,45,54,8
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "mzfres.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_OPTIONSDLG DLGINIT
+BEGIN
+    IDC_ENCODING, 0x403, 13, 0
+0x4e55, 0x4f43, 0x504d, 0x4552, 0x5353, 0x4445, "\000" 
+    IDC_ENCODING, 0x403, 18, 0
+0x414d, 0x5043, 0x4941, 0x544e, 0x5020, 0x4341, 0x424b, 0x5449, 0x0053, 
+
+    IDC_ENCODING, 0x403, 8, 0
+0x5a4d, 0x2046, 0x4c52, 0x0045, 
+    0
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 7,0,0,0
+ PRODUCTVERSION 7,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Autodesk, Inc.\0"
+            VALUE "FileDescription", "MZF Writer DLL\0"
+            VALUE "FileVersion", "7, 0, 0, 0\0"
+            VALUE "InternalName", "mzfwr32\0"
+            VALUE "LegalCopyright", "Copyright © Autodesk, Inc. 1995-1999\0"
+            VALUE "OriginalFilename", "mzfwr32.dll\0"
+            VALUE "ProductName", "mzfwr32\0"
+            VALUE "ProductVersion", "7, 0, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

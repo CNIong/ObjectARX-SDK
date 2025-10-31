@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding = "Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="compoly"
+	SccProjectName=""
+	SccLocalPath=""
+	Keyword="AtlProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions=""
+				Optimization="0"
+				AdditionalIncludeDirectories="..\..\..\inc;..\..\..\..\inc;..\"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_USRDLL;_ATL_NO_UUIDOF"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\Debug/compoly.pch"
+				AssemblerListingLocation=".\Debug/"
+				ObjectFile=".\Debug/"
+				ProgramDataBaseFileName=".\Debug/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="rxapi.lib acge16.lib axdb16.lib acdb16.lib asdkpolyobj.lib"
+				OutputFile=".\..\asdkcompoly.dbx"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="..\..\..\lib;..\..\..\..\lib;..\"
+				ModuleDefinitionFile=".\compoly.def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\Debug/asdkcompoly.pdb"
+				SubSystem="2"
+				ImportLibrary=".\Debug/asdkcompoly.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				AdditionalIncludeDirectories="..\..\..\inc;..\..\..\..\inc"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Debug/compoly.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release MinSize|Win32"
+			OutputDirectory=".\ReleaseMinSize"
+			IntermediateDirectory=".\ReleaseMinSize"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			UseOfATL="2"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions=""
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="..\..\..\inc;..\..\..\..\inc;..\"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_USRDLL;_ATL_NO_UUIDOF"
+				StringPooling="TRUE"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="FALSE"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\ReleaseMinSize/compoly.pch"
+				AssemblerListingLocation=".\ReleaseMinSize/"
+				ObjectFile=".\ReleaseMinSize/"
+				ProgramDataBaseFileName=".\ReleaseMinSize/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib rxapi.lib acge16.lib axdb16.lib acdb16.lib asdkpolyobj.lib"
+				OutputFile=".\..\asdkcompoly.dbx"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="..\..\..\lib;..\..\..\..\lib;..\"
+				ModuleDefinitionFile=".\compoly.def"
+				ProgramDatabaseFile=".\ReleaseMinSize/asdkcompoly.pdb"
+				SubSystem="2"
+				ImportLibrary=".\ReleaseMinSize/asdkcompoly.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				AdditionalIncludeDirectories="..\..\..\inc;..\..\..\..\inc"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\ReleaseMinSize/compoly.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release MinDependency|Win32"
+			OutputDirectory=".\ReleaseMinDependency"
+			IntermediateDirectory=".\ReleaseMinDependency"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			UseOfATL="1"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions=""
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="..\..\..\inc;..\..\..\..\inc;..\"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_USRDLL;_ATL_NO_UUIDOF"
+				StringPooling="TRUE"
+				RuntimeLibrary="2"
+				BufferSecurityCheck="FALSE"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\ReleaseMinDependency/compoly.pch"
+				AssemblerListingLocation=".\ReleaseMinDependency/"
+				ObjectFile=".\ReleaseMinDependency/"
+				ProgramDataBaseFileName=".\ReleaseMinDependency/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib rxapi.lib acge16.lib axdb16.lib acdb16.lib asdkpolyobj.lib"
+				OutputFile=".\..\asdkcompoly.dbx"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="..\..\..\lib;..\..\..\..\lib;..\"
+				ModuleDefinitionFile=".\compoly.def"
+				ProgramDatabaseFile=".\ReleaseMinDependency/asdkcompoly.pdb"
+				SubSystem="2"
+				ImportLibrary=".\ReleaseMinDependency/asdkcompoly.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				AdditionalIncludeDirectories="..\..\..\inc;..\..\..\..\inc"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\ReleaseMinDependency/compoly.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath=".\ComPolygon.cpp">
+			</File>
+			<File
+				RelativePath=".\StdAfx.cpp">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinSize|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\compoly.cpp">
+			</File>
+			<File
+				RelativePath=".\compoly.def">
+			</File>
+			<File
+				RelativePath=".\compoly.hpj">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling Help"
+						CommandLine="hcw /c /e /m compoly.hpj
+"
+						Outputs="compoly.hlp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinSize|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling Help"
+						CommandLine="hcw /c /e /m compoly.hpj
+"
+						Outputs="compoly.hlp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling Help"
+						CommandLine="hcw /c /e /m compoly.hpj
+"
+						Outputs="compoly.hlp"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\compoly.idl">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Performing MIDL step"
+						CommandLine="set path=%path%;..\..\..\..\inc
+midl /Oicf  /tlb &quot;.\compoly.tlb&quot; /h &quot;.\compoly.h&quot; /iid   &quot;.\compoly_i.c&quot; &quot;.\compoly.idl&quot;
+"
+						Outputs=".\compoly.tlb;.\compoly.h;.\compoly_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinSize|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Performing MIDL step"
+						CommandLine="set path=%path%;..\..\..\..\inc
+midl /Oicf  /tlb &quot;.\compoly.tlb&quot; /h &quot;.\compoly.h&quot; /iid   &quot;.\compoly_i.c&quot; &quot;.\compoly.idl&quot;
+"
+						Outputs=".\compoly.tlb;.\compoly.h;.\compoly_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Performing MIDL step"
+						CommandLine="set path=%path%;..\..\..\..\inc
+midl /Oicf  /tlb &quot;.\compoly.tlb&quot; /h &quot;.\compoly.h&quot; /iid   &quot;.\compoly_i.c&quot; &quot;.\compoly.idl&quot;
+"
+						Outputs=".\compoly.tlb;.\compoly.h;.\compoly_i.c"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\compoly.rc">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCResourceCompilerTool"
+						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinSize|Win32">
+					<Tool
+						Name="VCResourceCompilerTool"
+						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32">
+					<Tool
+						Name="VCResourceCompilerTool"
+						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath=".\ComPolygon.h">
+			</File>
+			<File
+				RelativePath=".\Resource.h">
+			</File>
+			<File
+				RelativePath=".\StdAfx.h">
+			</File>
+			<File
+				RelativePath=".\compoly.hm">
+			</File>
+			<File
+				RelativePath="..\poly.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe">
+			<File
+				RelativePath=".\ComPolygon.rgs">
+			</File>
+			<File
+				RelativePath=".\compoly.RTF">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

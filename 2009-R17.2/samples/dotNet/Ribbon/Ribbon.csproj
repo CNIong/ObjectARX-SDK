@@ -1,0 +1,102 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1D4EFA4-D738-4575-AAFE-911E33190951}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>AdskRibbon</RootNamespace>
+    <AssemblyName>AdskRibbon</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <MinFrameworkVersionRequired>3.0</MinFrameworkVersionRequired>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>Publish\</PublishUrl>
+    <StartupObject>
+    </StartupObject>
+    <ReferencePath>..\..\..\inc-win32;..\..\..\inc-x64</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="acdbmgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acmgd, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcRibbon, Version=17.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AdWindows, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands.cs" />
+    <Compile Include="CustomControls.cs" />
+    <Compile Include="MyKeyboardHook.cs" />
+    <Compile Include="MyToolTip.cs" />
+    <Compile Include="MyToolTipW.cs" />
+    <Compile Include="MyWindow.xaml.cs">
+      <DependentUpon>MyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MyStyles.xaml" />
+    <Page Include="MyTaskDialogs.xaml" />
+    <Page Include="MyToolTips.xaml" />
+    <Page Include="MyWindow.xaml" />
+    <Page Include="RibbonDictionary.xaml" />
+    <Page Include="Themes\Generic.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dwg.ico" />
+    <Resource Include="Images\EntSel.bmp" />
+    <Resource Include="Images\Layout.ico" />
+    <Resource Include="Images\new.gif" />
+    <Resource Include="Images\open.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Help.gif" />
+    <Resource Include="Images\MyImage.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
+</Project>

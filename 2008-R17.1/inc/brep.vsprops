@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Brep settings"
+	>
+	<Tool
+            Name="VCLinkerTool"
+            AdditionalDependencies="acbr17.lib acgex17.lib"
+        />
+        <Tool
+		Name="VCCLCompilerTool"
+		PreprocessorDefinitions="DLLNAME_ACBR=acbr17.dbx"
+        />
+</VisualStudioPropertySheet>

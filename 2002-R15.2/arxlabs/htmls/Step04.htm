@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Charles Mc Auley">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.08 [en] (WinNT; I) [Netscape]">
+   <TITLE>ObjectARX 2000 Training</TITLE>
+</HEAD>
+<BODY onload="parent.window.frames['index'].location.href='index_step04.htm'">
+
+<H1>
+<A NAME="Top"></A>Step 4 - Xrecords - Named Objects Dictionary</H1>
+
+<HR WIDTH="100%">
+<H2>
+<A NAME="Step04 - Introduction"></A>Introduction</H2>
+In this section of the ObjectARX 2000 Training tutorial, we introduce the
+concept of Dictionaries and explore the Named Objects Dictionary (NOD).
+The NOD is use to store non-graphical data in our drawing file. The recommended
+usage of the NOD is to create a base level Dictionary (<B><TT>AcDbDictionary</TT></B>)
+object in the NOD and then to, populate our base level Dictionary with
+the data item we wish to store. We will also be introduced to Xrecord objects
+(<B><TT>AcDbXrecord</TT></B>) which are a much improved mechanism for storing
+data than the old (still used) Extended Entity Data mechanism.Our base
+level dictionary object will have a key of "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+which represents employee records. We also create empty Xrecord objects
+in this new dictionary to represent employee records. The employee records
+(a key and associated <B><TT>AcDbXrecord</TT></B>) are then added to the
+"<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" level of the NOD. Having these
+entries in a dictionary enables us to iterate through all employees in
+the database quickly and easily
+<H3>
+<A NAME="Step04 - Objective"></A>Objective</H3>
+
+<BLOCKQUOTE>As a starting point for this exercise, use the files you created
+in the previous step or open the project contained in the <B><TT>Step04</TT></B>
+folder. In this exercise we will create three new AutoCAD commands "<B>ADDENTRY</B>",
+"<B>LISTENTRIES</B>" and "<B>REMOVEENTRY</B>".
+<P>When the "<B>ADDENTRY</B>" command is executed, it will:
+<UL>
+<LI>
+Check to see if the base level <B><TT>AcDbDictionary</TT></B> "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+exists in the Named Objects Dictionary. If not, "<B>ADDENTRY</B>" will
+create this base level entry in the NOD.</LI>
+
+<LI>
+Prompt for an employee name and add an <B><TT>AcDbXrecord</TT></B> object
+to our base level in the NOD. If the employee already exists in the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+our request will be ignored.</LI>
+</UL>
+When the "<B>LISTENTRIES</B>" command is executed, it will:
+<UL>
+<LI>
+Check to see if the base level <B><TT>AcDbDictionary</TT></B> "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+exists in the Named Objects Dictionary. If not, the command is terminated.</LI>
+
+<LI>
+Use an <B><TT>AcDbDictionaryIterator</TT></B> to step through the entries
+in the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" dictionary in the NOD
+and print the name of all the employees stored there.</LI>
+</UL>
+When the "<B>REMOVEENTRY</B>" command is executed, it will:
+<UL>
+<LI>
+Prompt the user for an employee name.</LI>
+
+<LI>
+Check to see if the base level <B><TT>AcDbDictionary</TT></B> "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+exists in the Named Objects Dictionary. If not, the command is terminated.</LI>
+
+<LI>
+Remove the employee entry if it exist in our base level of the NOD.</LI>
+</UL>
+Here's the intended object relationship in the Named Objects Dictionary:
+<P><TT>NOD (class:AcDbDictionary)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; |_"ASDK_EMPLOYEE_DICTIONARY" (class:AcDbDictionary)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_"Charles" (class:AcDbXrecord)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_"Christian" (class:AcDbXrecord)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_"Cyrille" (class:AcDbXrecord)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_"Gabriel" (calss:AcDbXrecord)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_"Henry" (class:AcDbXrecord)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_"Peter" (class:AcDbXrecord)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|_"Kean" (class:AcDbXrecord)</TT>
+<BR>&nbsp;</BLOCKQUOTE>
+
+<H3>
+<A NAME="Step04 - Implementation"></A>Implementation</H3>
+
+<BLOCKQUOTE><B>NOTE:</B> Select the link to view implementation details.
+<BLOCKQUOTE>
+<LI>
+Load project "<B><TT>Step04</TT></B>", which was created with the ObjectARX
+Wizard and contains the commands and source from the previous step or continue
+with the file you created from the previous step.</LI>
+
+<LI>
+Register the command "<B><A HREF="#Step04 - ImpADDENTRYCommand">ADDENTRY</A></B>",
+set the name of the function to be called to '<B><TT>asdkaddentry()</TT></B>'.</LI>
+
+<LI>
+Register the command "<B><A HREF="#Step04 - ImpLISTENTRIESCommand">LISTENTRIES</A></B>",
+set the name of the function to be called to '<B><TT>asdklistentries()</TT></B>'.</LI>
+
+<LI>
+Register the command "<B><A HREF="#Step04 - ImpREMOVEENTRYCommand">REMOVEENTRY</A></B>",
+set the name of the function to be called to '<B><TT>asdkremoveentry()</TT></B>'.</LI>
+
+<LI>
+<A HREF="#Step04 - Testing the Application:">Testing the application</A>.</LI>
+</BLOCKQUOTE>
+
+<H4>
+<A NAME="Step04 - ImpADDENTRYCommand"></A>Implementation of the ADDENTRY
+command - '<TT>asdkaddentry()</TT>'</H4>
+
+<OL>
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Register the command <B>ADDENTRY</B> with the ObjectARX Wizard and set
+the function to be call to '<B><TT>asdkaddentry()</TT></B>'.</LI>
+
+<LI>
+Prompt the user for an employee name (<B><TT>acedGetString()</TT></B>)</LI>
+
+<LI>
+Get the Named Objects Dictionary from the current working database (<B><TT>AcDbDictionary</TT></B>,
+<B><TT>AcDbDatabase::getNamedObjectsDictionary()</TT></B>)</LI>
+
+<LI>
+Check if the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" is already in the
+NOD (<B><TT>AcDbDictionary::getAt()</TT></B>)</LI>
+
+<LI>
+If the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" base level is not in
+the NOD, then create a new <B><TT>AcDbDictionary</TT></B> with key "<B><TT>ASDK_EMPLOYEE_DICTIONARY"</TT></B>
+and add it to the named objects dictionary (<B><TT>new AcDbDictionary</TT></B>,
+<B><TT>AcDbDictionary::setAt()</TT></B>).</LI>
+
+<LI>
+Check if the name of the employee is already in the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+dictionary.</LI>
+
+<LI>
+If the employee dictionary is not there then create a new <B><TT>AcDbXrecord</TT></B>
+and add it to the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" (<B><TT>AcDbDictionary::setAt()</TT></B>).</LI>
+
+<LI>
+Don't forget to close the Named Objects Dictionary, the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>"
+and the Xrecord if created.</LI>
+
+<LI>
+Using <B><TT>AcDbXrecord</TT></B> requires the include file <B>&lt;dbxrecrd.h></B>.
+You can use the ObjectARX Wizard. Select the "<B>.H</B>" button on the
+ObjectARX toolbar and select the <B><TT>AcDbXrecord</TT></B> class to add
+the appropriate header file to the project. The include file will be added
+into "<B>StdArx.h</B>" file.</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step4 - asdkaddentry" and study the source code.</LI>
+</OL>
+</OL>
+</BLOCKQUOTE>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step04 - ImpLISTENTRIESCommand"></A>Implementation of the LISTENTRIES
+command - 'asdklistentries()'</H4>
+</BLOCKQUOTE>
+
+<OL>
+<OL>
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Register the command <B>LISTENTRIES</B> with the ObjectARX Wizard and set
+the function to be call to '<B><TT>asdklistentries()</TT></B>'.</LI>
+
+<LI>
+Get the Named Objects Dictionary from the current working database (<B><TT>AcDbDictionary</TT></B>,
+<B><TT>AcDbDatabase::getNamedObjectsDictionary()</TT></B>)</LI>
+
+<LI>
+Get the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" dictionary (<B><TT>AcDbDictionary::getAt()</TT></B>)</LI>
+
+<LI>
+Iterate through the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" and print
+out the dictionary keys (employee names)</LI>
+
+<OL>
+<LI>
+Create a new iterator (<B><TT>AcDbDictionary::newIterator()</TT></B>, <B><TT>AcDbDictionaryIterator</TT></B>)</LI>
+
+<LI>
+Iterate through the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" (<B><TT>AcDbDictionaryIterator::done()</TT></B>,
+<B><TT>AcDbDictionaryIterator::next()</TT></B>)</LI>
+
+<LI>
+Print the dictionary key (<B><TT>AcDbDictionaryIterator::name()</TT></B>)</LI>
+</OL>
+
+<LI>
+Delete the iterator and don't forget to close opened objects.</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step4 - asdklistentry" and study the source code.</LI>
+</OL>
+</OL>
+</OL>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step04 - ImpREMOVEENTRYCommand"></A>Implementation of the REMOVEENTRY
+command - 'asdkremoveentry()'</H4>
+</BLOCKQUOTE>
+
+<OL>
+<OL>
+<H4>
+Algorithm</H4>
+
+<OL>
+<LI>
+Register the command <B>REMOVEENTRY</B> with the ObjectARX Wizard and set
+the function to be called to '<B><TT>asdkremoveentry()</TT></B>'.</LI>
+
+<LI>
+Get an employee name from the user (<B><TT>acedGetString()</TT></B>) to
+remove.</LI>
+
+<LI>
+Get the Named Objects Dictionary from the current working database (<B><TT>AcDbDictionary</TT></B>,
+<B><TT>AcDbDatabase::getNamedObjectsDictionary()</TT></B>)</LI>
+
+<LI>
+Get the "<B><TT>ASDK_EMPLOYEE_DICTIONARY</TT></B>" dictionary (<B><TT>AcDbDictionary::getAt()</TT></B>)</LI>
+
+<LI>
+Get the <B><TT>AcDbXrecord</TT></B> entry with the given employee name.</LI>
+
+<LI>
+If the employee entry exists. Open it for write and then erase it (<B><TT>AcDbObject::erase()</TT></B>)</LI>
+
+<LI>
+Try to implement this function yourself. Don't forget the ObjectARX online
+help. If you get stuck, you may use the ObjectARX component gallery under
+"Step4 - asdkremoveentry" and study the source code.</LI>
+</OL>
+</OL>
+</OL>
+
+<HR WIDTH="80%">
+<BLOCKQUOTE>
+<H4>
+<A NAME="Step04 - Testing the Application:"></A>Test the application:</H4>
+
+<BLOCKQUOTE>Build the application and execute the <B>ADDENTRY</B> command
+a few times. After you have added some entries you may call the commands
+<B>LISTENTRIES</B>
+or <B>REMOVEENTRY</B>.</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+</BODY>
+</HTML>

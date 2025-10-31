@@ -1,0 +1,7 @@
+LIBRARY      ents
+DESCRIPTION  'ObjectARX sample program - entity manipulation'
+; (C) Copyright 1998 by Autodesk, Inc.
+
+EXPORTS
+		acrxEntryPoint		PRIVATE
+		acrxGetApiVersion	PRIVATE

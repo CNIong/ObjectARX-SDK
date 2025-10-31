@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "asdkboltObject", "boltObject\boltObject.vcproj", "{7A25750F-95B4-449A-BC42-74FE5302C8D5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsDkboltUI", "boltUI\boltUI.vcproj", "{FC208C9A-0BEA-4A97-BD1D-471D5DCA214C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C28BF43F-B4FD-4AEA-A741-0DC60CEA855D} = {C28BF43F-B4FD-4AEA-A741-0DC60CEA855D}
+		{7A25750F-95B4-449A-BC42-74FE5302C8D5} = {7A25750F-95B4-449A-BC42-74FE5302C8D5}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsDkboltWrapper", "boltWrapper\boltWrapper.vcproj", "{C28BF43F-B4FD-4AEA-A741-0DC60CEA855D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7A25750F-95B4-449A-BC42-74FE5302C8D5} = {7A25750F-95B4-449A-BC42-74FE5302C8D5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A25750F-95B4-449A-BC42-74FE5302C8D5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7A25750F-95B4-449A-BC42-74FE5302C8D5}.Debug|Win32.Build.0 = Debug|Win32
+		{7A25750F-95B4-449A-BC42-74FE5302C8D5}.Release|Win32.ActiveCfg = Release|Win32
+		{7A25750F-95B4-449A-BC42-74FE5302C8D5}.Release|Win32.Build.0 = Release|Win32
+		{FC208C9A-0BEA-4A97-BD1D-471D5DCA214C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FC208C9A-0BEA-4A97-BD1D-471D5DCA214C}.Debug|Win32.Build.0 = Debug|Win32
+		{FC208C9A-0BEA-4A97-BD1D-471D5DCA214C}.Release|Win32.ActiveCfg = Release|Win32
+		{FC208C9A-0BEA-4A97-BD1D-471D5DCA214C}.Release|Win32.Build.0 = Release|Win32
+		{C28BF43F-B4FD-4AEA-A741-0DC60CEA855D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C28BF43F-B4FD-4AEA-A741-0DC60CEA855D}.Debug|Win32.Build.0 = Debug|Win32
+		{C28BF43F-B4FD-4AEA-A741-0DC60CEA855D}.Release|Win32.ActiveCfg = Release|Win32
+		{C28BF43F-B4FD-4AEA-A741-0DC60CEA855D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
