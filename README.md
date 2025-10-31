@@ -403,7 +403,23 @@ ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
 
 ## 📄 许可证
 
-本仓库仅用于学习和开发目的。ObjectARX SDK 的版权归 Autodesk 所有。使用本 SDK 进行开发时，请遵守 Autodesk 的相关许可协议。
+### 仓库许可证
+
+本仓库采用 **MIT License** 许可，仅适用于：
+- 仓库结构、组织方式
+- README 文档及其他说明文件
+- 仓库维护者提供的工具和脚本
+
+### ObjectARX SDK 许可
+
+⚠️ **重要**: 本仓库中的 **Autodesk ObjectARX SDK 文件**受 Autodesk 专有许可协议约束，不属于 MIT License 范畴。
+
+- ObjectARX SDK 的版权归 **Autodesk, Inc.** 所有
+- 使用 ObjectARX SDK 时，必须遵守 Autodesk 的许可条款
+- 本仓库仅用于学习和开发目的
+- 请访问 [Autodesk 官方网站](https://www.autodesk.com/developer-network/platform-technologies/autocad/arx) 查看官方许可条款
+
+详细信息请参阅 [LICENSE](LICENSE) 文件。
 
 ---
 

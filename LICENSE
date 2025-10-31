@@ -1,0 +1,68 @@
+MIT License
+
+Copyright (c) 2025 ObjectARX-SDK Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+IMPORTANT NOTICE REGARDING AUTODESK OBJECTARX SDK:
+
+This repository contains Autodesk ObjectARX SDK files which are proprietary 
+software owned by Autodesk, Inc. The ObjectARX SDK files in this repository 
+are subject to Autodesk's license terms and conditions.
+
+The MIT License above applies only to:
+- This repository's structure, organization, and documentation (README.md, etc.)
+- Any scripts, utilities, or additional tools provided by this repository
+
+The MIT License does NOT apply to:
+- Any Autodesk ObjectARX SDK files, libraries, headers, or documentation
+- Any files originating from Autodesk
+
+Users must comply with Autodesk's license terms when using ObjectARX SDK files.
+For the official license terms, please visit:
+https://www.autodesk.com/developer-network/platform-technologies/autocad/arx
+
+This repository is provided for educational and development purposes only.
+The maintainers of this repository make no claim of ownership over Autodesk's 
+proprietary software.
+
+---
+
+重要提示 - 关于 Autodesk ObjectARX SDK：
+
+本仓库包含 Autodesk ObjectARX SDK 文件，这些文件是 Autodesk, Inc. 拥有的专有软件。
+本仓库中的 ObjectARX SDK 文件受 Autodesk 许可条款和条件约束。
+
+上述 MIT 许可证仅适用于：
+- 本仓库的结构、组织和文档（README.md 等）
+- 本仓库提供的任何脚本、实用程序或附加工具
+
+MIT 许可证不适用于：
+- 任何 Autodesk ObjectARX SDK 文件、库、头文件或文档
+- 任何来自 Autodesk 的文件
+
+用户使用 ObjectARX SDK 文件时必须遵守 Autodesk 的许可条款。
+官方许可条款请访问：
+https://www.autodesk.com/developer-network/platform-technologies/autocad/arx
+
+本仓库仅用于教育和开发目的。
+本仓库的维护者不主张对 Autodesk 专有软件的所有权。
+
