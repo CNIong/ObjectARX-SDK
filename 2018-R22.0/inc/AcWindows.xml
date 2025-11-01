@@ -5,641 +5,641 @@
     </assembly>
     <members>
         <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn">
-            <summary>此类为 AutoCAD 与 InfoCenter 组件之间的连接器。</summary>
+            <summary>This class is the connector between the AutoCAD and InfoCenter components.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.Terminate">
-            <summary>当定义该应用程序被卸载时，AutoCAD 会调用此方法。</summary>
+            <summary>AutoCAD calls this method when the defining application is unloaded.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.Initialize">
-            <summary>当定义该应用程序被加载时，AutoCAD 会调用此方法。</summary>
+            <summary>AutoCAD calls this method when the defining application is loaded.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.DownloadOfflineHelp">
-            <summary>这是类 AcInfoCenterConn 的成员：DownloadOfflineHelp（下载离线帮助）。</summary>
+            <summary>This is DownloadOfflineHelp, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.DownloadLanguagePacks">
-            <summary>这是类 AcInfoCenterConn 的成员：DownloadLanguagePacks（下载语言包）。</summary>
+            <summary>This is DownloadLanguagePacks, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenSubscription">
-            <summary>这是类 AcInfoCenterConn 的成员：OpenSubscription（打开订阅页面）。</summary>
+            <summary>This is OpenSubscription, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenHWCertification">
-            <summary>这是类 AcInfoCenterConn 的成员：OpenHWCertification（打开硬件认证页面）。</summary>
+            <summary>This is OpenHWCertification, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenYouTubeWithProduct">
-            <summary>这是类 AcInfoCenterConn 的成员：OpenYouTubeWithProduct（在 YouTube 上打开与产品相关的视频）。</summary>
+            <summary>This is OpenYouTubeWithProduct, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenFacebookWithProduct">
-            <summary>这是类 AcInfoCenterConn 的成员：OpenFacebookWithProduct（在 Facebook 上打开与产品相关的页面）。</summary>
+            <summary>This is OpenFacebookWithProduct, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenTwitterWithProduct">
-            <summary>这是类 AcInfoCenterConn 的成员：OpenTwitterWithProduct（在 Twitter 上打开与产品相关的页面）。</summary>
+            <summary>This is OpenTwitterWithProduct, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.AcInfoCenterConn.OpenAutoCADBlogWithProduct">
-            <summary>这是类 AcInfoCenterConn 的成员：OpenAutoCADBlogWithProduct（在 AutoCAD 博客上打开与产品相关的文章）。</summary>
+            <summary>This is OpenAutoCADBlogWithProduct, a member of class AcInfoCenterConn.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler">
-            <summary>这是类 Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler（登录处理器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.CanExecute(System.Object)">
-            <summary>这是类 SignInHandler 的成员：CanExecute（判断是否可执行）。</summary>
+            <summary>This is CanExecute, a member of class SignInHandler.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.CanExecuteChanged">
-            <summary>这是类 SignInHandler 的事件：CanExecuteChanged（可执行状态更改）。</summary>
+            <summary>This is CanExecuteChanged, a member of class SignInHandler.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.SignInHandler.Execute(System.Object)">
-            <summary>这是类 SignInHandler 的成员：Execute（执行操作）。</summary>
+            <summary>This is Execute, a member of class SignInHandler.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager">
-            <summary>此类管理面板（Palette Manager），并且负责 InfoCenter 与应用程序之间的连接。</summary>
+            <summary>This class manages the Palette Manager and is the connection between InfoCenter and the Application.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.#ctor">
-            <summary>默认构造函数。</summary>
+            <summary>Default constructor.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.Dispose">
-            <summary>删除与该对象关联的用户交互对象。</summary>
+            <summary>Deletes the user interaction object associated with this object.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.Toolbar">
-            <summary>获取 InfoCenter 的工具栏。</summary>
+            <summary>Retrieves the InfoCenter toolbar.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.AcInfoCenterConn.InfoCenterManager.PaletteManager">
-            <summary>获取面板管理器（Palette Manager）。</summary>
+            <summary>Retrieves the Palette Manager.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.RibbonCommandButton">
-            <summary>此类表示功能区（ribbon）中的命令按钮。</summary>
+            <summary>This class represents command buttons within the ribbon.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.CopyFrom(Autodesk.Windows.RibbonItem)">
-            <summary>将源按钮的数据复制到此按钮。</summary>
-            <param name="source"> 要复制的源按钮。</param>
+            <summary>Copies the button data from a source button to this button.</summary>
+            <param name="source"> Input source button to copy from</param>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.Execute(System.Object)">
-            <summary>这是类 RibbonCommandButton 的成员：Execute（执行命令）。</summary>
+            <summary>This is Execute, a member of class RibbonCommandButton.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.Macro">
-            <summary>访问与此对象关联的宏。</summary>
+            <summary>Accesses the macro associated with this object.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonCommandButton.MenuMacroId">
-            <summary>访问此对象的菜单宏 ID。</summary>
+            <summary>Accesses the menu macro ID for this object.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet">
-            <summary>此类表示一个功能区面板集合（Ribbon Palette Set）。</summary>
+            <summary>This class represents a ribbon palette set.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.WorkspaceLoaded">
-            <summary>这是 RibbonPaletteSet 的事件：WorkspaceLoaded（工作区已加载）。</summary>
+            <summary>This is WorkspaceLoaded, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.WorkspaceUnloading">
-            <summary>这是 RibbonPaletteSet 的事件：WorkspaceUnloading（工作区正在卸载）。</summary>
+            <summary>This is WorkspaceUnloading, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.VisibleChanged">
-            <summary>当面板可见性改变时触发此事件。</summary>
+            <summary>This event is fired when the palette's visibility has changed.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.TabLoaded">
-            <summary>这是 RibbonPaletteSet 的事件：TabLoaded（选项卡已加载）。</summary>
+            <summary>This is TabLoaded, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.TabActivated">
-            <summary>这是 RibbonPaletteSet 的事件：TabActivated（选项卡已激活）。</summary>
+            <summary>This is TabActivated, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.DockStateChanged">
-            <summary>当停靠状态改变时触发此事件。</summary>
+            <summary>This event is fired when the dock state changes.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.Moved">
-            <summary>当面板被移动时触发此事件。</summary>
+            <summary>This event is fired when the palette is moved.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.Destroy">
-            <summary>当面板被销毁时触发此事件。</summary>
+            <summary>This event is fired when the palette is destroyed.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.UpdateFileTabDisplay">
-            <summary>这是 RibbonPaletteSet 的成员：UpdateFileTabDisplay（更新文件选项卡显示）。</summary>
+            <summary>This is UpdateFileTabDisplay, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.ShowFileTabControl">
-            <summary>这是 RibbonPaletteSet 的成员：ShowFileTabControl（显示文件选项卡控件）。</summary>
+            <summary>This is ShowFileTabControl, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.HideFileTabControl">
-            <summary>这是 RibbonPaletteSet 的成员：HideFileTabControl（隐藏文件选项卡控件）。</summary>
+            <summary>This is HideFileTabControl, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.SaveRibbonState">
-            <summary>这是 RibbonPaletteSet 的成员：SaveRibbonState（保存功能区状态）。</summary>
+            <summary>This is SaveRibbonState, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.RestoreRibbonState">
-            <summary>这是 RibbonPaletteSet 的成员：RestoreRibbonState（恢复功能区状态）。</summary>
+            <summary>This is RestoreRibbonState, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.UpdateCommandButtonImages">
-            <summary>这是 RibbonPaletteSet 的成员：UpdateCommandButtonImages（更新命令按钮图像）。</summary>
+            <summary>This is UpdateCommandButtonImages, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.ResizeControl">
-            <summary>这是 RibbonPaletteSet 的成员：ResizeControl（调整控件大小）。</summary>
+            <summary>This is ResizeControl, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.RibbonControl">
-            <summary>访问面板内的功能区控件。</summary>
+            <summary>Accesses the ribbon control within the palette.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.DocumentSwitchControl">
-            <summary>这是 DocumentSwitchControl（文档切换控件）。</summary>
+            <summary>This is DocumentSwitchControl, a member of class RibbonPaletteSet.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.DockState">
-            <summary>访问面板的停靠状态。</summary>
+            <summary>Accesses the dock state for the palette object.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.Visible">
-            <summary>访问功能区面板的可见性设置。</summary>
+            <summary>Accesses the visibility of the ribbon palette.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonPaletteSet.KeepFocus">
-            <summary>判断该面板是否应始终保持焦点。</summary>
+            <summary>Assesses if the palette should be kept in focus at all times, or not.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.ExtensionMethod">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.ExtensionMethod（扩展方法类）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ExtensionMethod.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.RibbonServices">
-            <summary>此类创建一个对象，通过提供事件参数来辅助 RibbonPaletteSet。</summary>
+            <summary>This class creates an object which assists the ribbon palette class by providing event arguments.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.RibbonServices.RibbonPaletteSetCreated">
-            <summary>在创建 RibbonPaletteSet 之后触发此事件。</summary>
+            <summary>This event is fired after the ribbon palette set is created.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.RibbonServices.CreateRibbonPaletteSet">
-            <summary>此函数用于创建一个新的 RibbonPaletteSet。</summary>
+            <summary>This function creates a new RibbonPaletteSet.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonServices.RibbonPaletteSet">
-            <summary>访问已创建的 RibbonPaletteSet。</summary>
+            <summary>Accesses the ribbon palette set which has been created.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.RibbonUtilContent">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.RibbonUtilContent（功能区工具内容）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsOnlineDwgSyncAvailable">
-            <summary>判断在线图纸同步功能是否可用。</summary>
+            <summary>This is IsOnlineDwgSyncAvailable, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsSampleLocalAvailable">
-            <summary>判断本地示例是否可用。</summary>
+            <summary>This is IsSampleLocalAvailable, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsSampleOnlineAvailable">
-            <summary>判断在线示例是否可用。</summary>
+            <summary>This is IsSampleOnlineAvailable, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsSampleAvailable">
-            <summary>判断示例（本地或在线）是否可用。</summary>
+            <summary>This is IsSampleAvailable, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.AboutProductName">
-            <summary>这是 AboutProductName（产品名称信息）。</summary>
+            <summary>This is AboutProductName, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.CompanyName">
-            <summary>这是 CompanyName（公司名称信息）。</summary>
+            <summary>This is CompanyName, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ConnectWithProduct">
-            <summary>这是 ConnectWithProduct（与产品建立联系的方式）。</summary>
+            <summary>This is ConnectWithProduct, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnTheWeb">
-            <summary>这是 ProductOnTheWeb（产品在线信息）。</summary>
+            <summary>This is ProductOnTheWeb, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnYouTube">
-            <summary>这是 ProductOnYouTube（产品在 YouTube 上的信息）。</summary>
+            <summary>This is ProductOnYouTube, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnFacebook">
-            <summary>这是 ProductOnFacebook（产品在 Facebook 上的信息）。</summary>
+            <summary>This is ProductOnFacebook, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnTwitter">
-            <summary>这是 ProductOnTwitter（产品在 Twitter 上的信息）。</summary>
+            <summary>This is ProductOnTwitter, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ProductOnAutoCADBlog">
-            <summary>这是 ProductOnAutoCADBlog（产品在 AutoCAD 博客上的信息）。</summary>
+            <summary>This is ProductOnAutoCADBlog, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.AutodeskSubscriptionCenter">
-            <summary>这是 AutodeskSubscriptionCenter（Autodesk 订阅中心）。</summary>
+            <summary>This is AutodeskSubscriptionCenter, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.AutodeskHardwareCertification">
-            <summary>这是 AutodeskHardwareCertification（Autodesk 硬件认证）。</summary>
+            <summary>This is AutodeskHardwareCertification, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.NewHighlightsAvaliable">
-            <summary>这是 NewHighlightsAvaliable（新亮点/更新是否可用）。</summary>
+            <summary>This is NewHighlightsAvaliable, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.IsHighlightsAvaliable">
-            <summary>这是 IsHighlightsAvaliable（判断亮点是否可用）。</summary>
+            <summary>This is IsHighlightsAvaliable, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.RibbonUtilContent.ShowNewHighlights">
-            <summary>这是 ShowNewHighlights（显示新亮点）。</summary>
+            <summary>This is ShowNewHighlights, a member of class RibbonUtilContent.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.HighlightVisibility">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.HighlightVisibility（高亮可见性）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.HighlightVisibility.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.HighlightVisibility.#ctor">
-            <summary>这是 HighlightVisibility 的构造函数。</summary>
+            <summary>This is HighlightVisibility, a member of class HighlightVisibility.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.HighlightVisibility.PropertyChanged">
-            <summary>这是 PropertyChanged（属性改变事件）。</summary>
+            <summary>This is PropertyChanged, a member of class HighlightVisibility.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.HighlightVisibility.HighlightsAvaliable">
-            <summary>这是 HighlightsAvaliable（是否有高亮项可用）。</summary>
+            <summary>This is HighlightsAvaliable, a member of class HighlightVisibility.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.ShowNewHighlights">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.ShowNewHighlights（显示新高亮项）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ShowNewHighlights.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.ShowNewHighlights.#ctor">
-            <summary>这是 ShowNewHighlights 的构造函数。</summary>
+            <summary>This is ShowNewHighlights, a member of class ShowNewHighlights.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.ShowNewHighlights.PropertyChanged">
-            <summary>这是 PropertyChanged（属性改变事件）。</summary>
+            <summary>This is PropertyChanged, a member of class ShowNewHighlights.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.ShowNewHighlights.HighlightsVisible">
-            <summary>这是 HighlightsVisible（高亮是否可见）。</summary>
+            <summary>This is HighlightsVisible, a member of class ShowNewHighlights.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.ArrayDataSource">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.ArrayDataSource（数组数据源）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ArrayDataSource.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.ArrayDataSource.#ctor">
-            <summary>这是 ArrayDataSource 的构造函数。</summary>
+            <summary>This is ArrayDataSource, a member of class ArrayDataSource.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.ArrayDataSource.CurrentArray">
-            <summary>这是 CurrentArray（当前数组）。</summary>
+            <summary>This is CurrentArray, a member of class ArrayDataSource.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.ArrayDataSource.CloseCommand">
-            <summary>这是 CloseCommand（关闭命令）。</summary>
+            <summary>This is CloseCommand, a member of class ArrayDataSource.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.UpdateArrayConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.UpdateArrayConverter（更新数组转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.UpdateArrayConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.UpdateArrayConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 UpdateArrayConverter 类。</summary>
+            <summary>This is Convert, a member of class UpdateArrayConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.UpdateArrayConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 UpdateArrayConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class UpdateArrayConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge（只读属性桥接器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.</summary>
         </member>
         <member name="E:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.PropertyChanged">
-            <summary>这是 PropertyChanged（属性改变事件）。</summary>
+            <summary>This is PropertyChanged, a member of class ReadOnlyPropertyBridge.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.SourceValue">
-            <summary>这是 SourceValue（源值）。</summary>
+            <summary>This is SourceValue, a member of class ReadOnlyPropertyBridge.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.Source">
-            <summary>这是 Source（源对象）。</summary>
+            <summary>This is Source, a member of class ReadOnlyPropertyBridge.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.PropertyName">
-            <summary>这是 PropertyName（属性名称）。</summary>
+            <summary>This is PropertyName, a member of class ReadOnlyPropertyBridge.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.ReadOnlyPropertyBridge.Value">
-            <summary>这是 Value（值）。</summary>
+            <summary>This is Value, a member of class ReadOnlyPropertyBridge.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.CachedImageConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.CachedImageConverter（缓存图像转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.CachedImageConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.CachedImageConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 CachedImageConverter 类。</summary>
+            <summary>This is Convert, a member of class CachedImageConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.CachedImageConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 CachedImageConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class CachedImageConverter.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.CachedImageConverter.Cache">
-            <summary>这是 Cache（缓存）。</summary>
+            <summary>This is Cache, a member of class CachedImageConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter（非活动文本颜色转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 InactiveTextColorConverter 类。</summary>
+            <summary>This is Convert, a member of class InactiveTextColorConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.InactiveTextColorConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 InactiveTextColorConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class InactiveTextColorConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter（取反依赖转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 NegateIsDependentConverter 类。</summary>
+            <summary>This is Convert, a member of class NegateIsDependentConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.NegateIsDependentConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 NegateIsDependentConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class NegateIsDependentConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.ColorThemeConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.ColorThemeConverter（颜色主题转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.ColorThemeConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.ColorThemeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 ColorThemeConverter 类。</summary>
+            <summary>This is Convert, a member of class ColorThemeConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.ColorThemeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 ColorThemeConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class ColorThemeConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.KeepSelectionConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.KeepSelectionConverter（保持选择转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.KeepSelectionConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.KeepSelectionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 KeepSelectionConverter 类。</summary>
+            <summary>This is Convert, a member of class KeepSelectionConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.KeepSelectionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 KeepSelectionConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class KeepSelectionConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter（空值到可见性转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 NullToVisibilityConverter 类。</summary>
+            <summary>This is Convert, a member of class NullToVisibilityConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.NullToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 NullToVisibilityConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class NullToVisibilityConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.NullToVariesConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.NullToVariesConverter（空值到多种值的转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.NullToVariesConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.NullToVariesConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 NullToVariesConverter 类。</summary>
+            <summary>This is Convert, a member of class NullToVariesConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.NullToVariesConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 NullToVariesConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class NullToVariesConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter（可聚焦的双精度到字符串转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 FocusableDoubleToStringConverter 类。</summary>
+            <summary>This is Convert, a member of class FocusableDoubleToStringConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.FocusableDoubleToStringConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 FocusableDoubleToStringConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class FocusableDoubleToStringConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.Ribbon2DViewStyleCombo">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.Ribbon2DViewStyleCombo（2D 视图样式下拉）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.Ribbon2DViewStyleCombo.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.Ribbon2DViewStyleCombo.#ctor">
-            <summary>这是 Ribbon2DViewStyleCombo 的构造函数。</summary>
+            <summary>This is Ribbon2DViewStyleCombo, a member of class Ribbon2DViewStyleCombo.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter（否决二级视图选择转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 VetoSecViewSelectionConverter 类。</summary>
+            <summary>This is Convert, a member of class VetoSecViewSelectionConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.VetoSecViewSelectionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 VetoSecViewSelectionConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class VetoSecViewSelectionConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter（否决细节视图选择转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 Convert（转换方法），属于 VetoDetViewSelectionConverter 类。</summary>
+            <summary>This is Convert, a member of class VetoDetViewSelectionConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.VetoDetViewSelectionConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>这是 ConvertBack（反向转换方法），属于 VetoDetViewSelectionConverter 类。</summary>
+            <summary>This is ConvertBack, a member of class VetoDetViewSelectionConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.IImageCache">
-            <summary>这是接口 Autodesk.AutoCAD.Ribbon.IImageCache（图像缓存接口）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.IImageCache.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.IImageCache.GetImage(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
-            <summary>这是 IImageCache 的成员：GetImage（根据 ObjectId 获取图像）。</summary>
+            <summary>This is GetImage, a member of class IImageCache.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.GalleryImageCache">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.GalleryImageCache（图库图像缓存）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GalleryImageCache.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.GalleryImageCache.#ctor">
-            <summary>这是 GalleryImageCache 的构造函数。</summary>
+            <summary>This is GalleryImageCache, a member of class GalleryImageCache.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.GalleryImageCache.GetImage(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
-            <summary>这是 GalleryImageCache 的成员：GetImage（获取图片）。</summary>
+            <summary>This is GetImage, a member of class GalleryImageCache.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.ItemsSource">
-            <summary>这是 ItemsSource（项目数据源）。</summary>
+            <summary>This is ItemsSource, a member of class GalleryImageCache.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.BackgroundColor">
-            <summary>这是 BackgroundColor（背景色）。</summary>
+            <summary>This is BackgroundColor, a member of class GalleryImageCache.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.ImageWidth">
-            <summary>这是 ImageWidth（图像宽度）。</summary>
+            <summary>This is ImageWidth, a member of class GalleryImageCache.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryImageCache.ImageHeight">
-            <summary>这是 ImageHeight（图像高度）。</summary>
+            <summary>This is ImageHeight, a member of class GalleryImageCache.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.BlockImageCache">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.BlockImageCache（块图像缓存）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.BlockImageCache.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage（不可缓存的图库图像）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.#ctor">
-            <summary>这是 GalleryNonCacheableImage 的构造函数。</summary>
+            <summary>This is GalleryNonCacheableImage, a member of class GalleryNonCacheableImage.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.GetImage(Autodesk.AutoCAD.DatabaseServices.ObjectId)">
-            <summary>这是 GalleryNonCacheableImage 的成员：GetImage（获取图片）。</summary>
+            <summary>This is GetImage, a member of class GalleryNonCacheableImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.ItemsSource">
-            <summary>这是 ItemsSource（项目数据源）。</summary>
+            <summary>This is ItemsSource, a member of class GalleryNonCacheableImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.BackgroundColor">
-            <summary>这是 BackgroundColor（背景色）。</summary>
+            <summary>This is BackgroundColor, a member of class GalleryNonCacheableImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.ImageWidth">
-            <summary>这是 ImageWidth（图像宽度）。</summary>
+            <summary>This is ImageWidth, a member of class GalleryNonCacheableImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNonCacheableImage.ImageHeight">
-            <summary>这是 ImageHeight（图像高度）。</summary>
+            <summary>This is ImageHeight, a member of class GalleryNonCacheableImage.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.GalleryNamedImage">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.GalleryNamedImage（命名图库图像）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GalleryNamedImage.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.#ctor">
-            <summary>这是 GalleryNamedImage 的构造函数。</summary>
+            <summary>This is GalleryNamedImage, a member of class GalleryNamedImage.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.GetNamedImage(System.String)">
-            <summary>这是 GetNamedImage（通过名称获取图像），属于 GalleryNamedImage 类。</summary>
+            <summary>This is GetNamedImage, a member of class GalleryNamedImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.ItemsSource">
-            <summary>这是 ItemsSource（项目数据源）。</summary>
+            <summary>This is ItemsSource, a member of class GalleryNamedImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.BackgroundColor">
-            <summary>这是 BackgroundColor（背景色）。</summary>
+            <summary>This is BackgroundColor, a member of class GalleryNamedImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.ImageWidth">
-            <summary>这是 ImageWidth（图像宽度）。</summary>
+            <summary>This is ImageWidth, a member of class GalleryNamedImage.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Ribbon.GalleryNamedImage.ImageHeight">
-            <summary>这是 ImageHeight（图像高度）。</summary>
+            <summary>This is ImageHeight, a member of class GalleryNamedImage.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.TableCellStyleImageProvider">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.TableCellStyleImageProvider（表格单元样式图像提供者）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.TableCellStyleImageProvider.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.DimStyleImageProvider">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.DimStyleImageProvider（标注样式图像提供者）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.DimStyleImageProvider.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.MLeaderStyleImageProvider">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.MLeaderStyleImageProvider（多引线样式图像提供者）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.MLeaderStyleImageProvider.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.TableStyleImageProvider">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.TableStyleImageProvider（表格样式图像提供者）。summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.TableStyleImageProvider.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Ribbon.GeomapRibbonDataBoundDropDown">
-            <summary>这是类 Autodesk.AutoCAD.Ribbon.GeomapRibbonDataBoundDropDown（地理映射功能区数据绑定下拉）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Ribbon.GeomapRibbonDataBoundDropDown.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.AutomationDataGridView">
-            <summary>这是类 Autodesk.AutoCAD.Windows.AutomationDataGridView（自动化数据网格视图）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.AutomationDataGridView.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.ColorListBoxItem">
-            <summary>这是类 Autodesk.AutoCAD.Windows.ColorListBoxItem（颜色列表项）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorListBoxItem.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.ColorListBox">
-            <summary>这是类 Autodesk.AutoCAD.Windows.ColorListBox（颜色列表框）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorListBox.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.ColorComboBox">
-            <summary>这是类 Autodesk.AutoCAD.Windows.ColorComboBox（颜色组合框）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorComboBox.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorComboBox.OnApplyTemplate">
-            <summary>这是 OnApplyTemplate 方法，属于 ColorComboBox 类（应用模板时调用）。</summary>
+            <summary>This is OnApplyTemplate, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsByLayer">
-            <summary>这是 SupportsByLayer（是否支持按图层设置颜色）。</summary>
+            <summary>This is SupportsByLayer, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsByBlock">
-            <summary>这是 SupportsByBlock（是否支持按块设置颜色）。</summary>
+            <summary>This is SupportsByBlock, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsNone">
-            <summary>这是 SupportsNone（是否支持“无”颜色选项）。</summary>
+            <summary>This is SupportsNone, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsUseCurrent">
-            <summary>这是 SupportsUseCurrent（是否支持使用当前颜色）。</summary>
+            <summary>This is SupportsUseCurrent, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsByEntity">
-            <summary>这是 SupportsByEntity（是否支持按实体设置颜色）。</summary>
+            <summary>This is SupportsByEntity, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SupportsMoreColors">
-            <summary>这是 SupportsMoreColors（是否支持更多颜色选择）。</summary>
+            <summary>This is SupportsMoreColors, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.MaxRecentColorCount">
-            <summary>这是 MaxRecentColorCount（最近颜色的最大数量）。</summary>
+            <summary>This is MaxRecentColorCount, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SpecialColors">
-            <summary>这是 SpecialColors（特殊颜色集合）。</summary>
+            <summary>This is SpecialColors, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.TrueColors">
-            <summary>这是 TrueColors（真实颜色集合）。</summary>
+            <summary>This is TrueColors, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.IndexColors">
-            <summary>这是 IndexColors（索引颜色集合）。</summary>
+            <summary>This is IndexColors, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.RecentColors">
-            <summary>这是 RecentColors（最近使用的颜色）。</summary>
+            <summary>This is RecentColors, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.CurrentColor">
-            <summary>这是 CurrentColor（当前颜色）。</summary>
+            <summary>This is CurrentColor, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.SelectionBoxItemTemplate">
-            <summary>这是 SelectionBoxItemTemplate（选择框项模板）。</summary>
+            <summary>This is SelectionBoxItemTemplate, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.Highlight">
-            <summary>这是 Highlight（高亮）。</summary>
+            <summary>This is Highlight, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.CurrentAcadColor">
-            <summary>这是 CurrentAcadColor（当前 AutoCAD 颜色）。</summary>
+            <summary>This is CurrentAcadColor, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.PreviewSafeAcadColor">
-            <summary>这是 PreviewSafeAcadColor（预览用安全的 AutoCAD 颜色）。</summary>
+            <summary>This is PreviewSafeAcadColor, a member of class ColorComboBox.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorComboBox.MoreColorsCommand">
-            <summary>这是 MoreColorsCommand（更多颜色命令）。</summary>
+            <summary>This is MoreColorsCommand, a member of class ColorComboBox.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.ColorItem">
-            <summary>这是类 Autodesk.AutoCAD.Windows.ColorItem（颜色项）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorItem.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItem.#ctor(Autodesk.AutoCAD.Colors.Color)">
-            <summary>这是 ColorItem 的构造函数（接收一个 Color 参数）。</summary>
+            <summary>This is ColorItem, a member of class ColorItem.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItem.ToString">
-            <summary>这是 ToString 方法，属于 ColorItem 类（返回字符串表示）。</summary>
+            <summary>This is ToString, a member of class ColorItem.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItem.Equals(System.Object)">
-            <summary>这是 Equals（比较方法），属于 ColorItem 类。</summary>
+            <summary>This is Equals, a member of class ColorItem.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItem.GetHashCode">
-            <summary>这是 GetHashCode（获取哈希码），属于 ColorItem 类。</summary>
+            <summary>This is GetHashCode, a member of class ColorItem.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItem.GetIndexColorItem(System.Int16)">
-            <summary>这是 GetIndexColorItem（根据索引获取颜色项），属于 ColorItem 类。</summary>
+            <summary>This is GetIndexColorItem, a member of class ColorItem.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItem.GetTrueColorItem(System.Windows.Media.Color)">
-            <summary>这是 GetTrueColorItem（根据真实颜色获取颜色项），属于 ColorItem 类。</summary>
+            <summary>This is GetTrueColorItem, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.Name">
-            <summary>这是 Name（名称）。</summary>
+            <summary>This is Name, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.Color">
-            <summary>这是 Color（颜色值）。</summary>
+            <summary>This is Color, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.AcadColor">
-            <summary>这是 AcadColor（AutoCAD 颜色表示）。</summary>
+            <summary>This is AcadColor, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsByBlock">
-            <summary>这是 IsByBlock（是否按块设置）。</summary>
+            <summary>This is IsByBlock, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsByLayer">
-            <summary>这是 IsByLayer（是否按图层设置）。</summary>
+            <summary>This is IsByLayer, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsNone">
-            <summary>这是 IsNone（是否为“无”）。</summary>
+            <summary>This is IsNone, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.IsUseCurrent">
-            <summary>这是 IsUseCurrent（是否使用当前颜色）。</summary>
+            <summary>This is IsUseCurrent, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.ByBlock">
-            <summary>这是 ByBlock（按块）。</summary>
+            <summary>This is ByBlock, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.ByLayer">
-            <summary>这是 ByLayer（按图层）。</summary>
+            <summary>This is ByLayer, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.None">
-            <summary>这是 None（无）。</summary>
+            <summary>This is None, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.UseCurrent">
-            <summary>这是 UseCurrent（使用当前颜色）。</summary>
+            <summary>This is UseCurrent, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.ByLayerColor">
-            <summary>这是 ByLayerColor（按图层颜色）。</summary>
+            <summary>This is ByLayerColor, a member of class ColorItem.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ColorItem.LocalName">
-            <summary>这是 LocalName（本地化名称）。</summary>
+            <summary>This is LocalName, a member of class ColorItem.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.ColorItemConverter">
-            <summary>这是类 Autodesk.AutoCAD.Windows.ColorItemConverter（颜色项转换器）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorItemConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <summary>这是 CanConvertFrom（检查是否可以从某类型转换），属于 ColorItemConverter 类。</summary>
+            <summary>This is CanConvertFrom, a member of class ColorItemConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
-            <summary>这是 ConvertFrom（从对象转换），属于 ColorItemConverter 类。</summary>
+            <summary>This is ConvertFrom, a member of class ColorItemConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <summary>这是 CanConvertTo（检查是否可以转换为某类型），属于 ColorItemConverter 类。</summary>
+            <summary>This is CanConvertTo, a member of class ColorItemConverter.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.ColorItemConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
-            <summary>这是 ConvertTo（转换为指定类型），属于 ColorItemConverter 类。</summary>
+            <summary>This is ConvertTo, a member of class ColorItemConverter.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.ColorItemCollection">
-            <summary>这是类 Autodesk.AutoCAD.Windows.ColorItemCollection（颜色项集合）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.ColorItemCollection.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.ToggleAblePopup">
-            <summary>这是类 Autodesk.AutoCAD.Windows.ToggleAblePopup（可切换弹出控件）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.ToggleAblePopup.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.ToggleAblePopup.KeyboardFocusableElement">
-            <summary>这是 KeyboardFocusableElement（键盘可聚焦元素）。</summary>
+            <summary>This is KeyboardFocusableElement, a member of class ToggleAblePopup.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.LocationChangingEventArgs">
-            <summary>这是类 Autodesk.AutoCAD.Windows.LocationChangingEventArgs（位置更改事件参数）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.LocationChangingEventArgs.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.LocationChangingEventArgs.Location">
-            <summary>这是 Location（当前位置）。</summary>
+            <summary>This is Location, a member of class LocationChangingEventArgs.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.LocationChangingEventArgs.NewLocation">
-            <summary>这是 NewLocation（新位置）。</summary>
+            <summary>This is NewLocation, a member of class LocationChangingEventArgs.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.SizeChangingEventArgs">
-            <summary>这是类 Autodesk.AutoCAD.Windows.SizeChangingEventArgs（大小更改事件参数）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.SizeChangingEventArgs.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.SizeChangingEventArgs.Size">
-            <summary>这是 Size（当前大小）。</summary>
+            <summary>This is Size, a member of class SizeChangingEventArgs.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.SizeChangingEventArgs.NewSize">
-            <summary>这是 NewSize（新大小）。</summary>
+            <summary>This is NewSize, a member of class SizeChangingEventArgs.</summary>
         </member>
         <member name="T:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs">
-            <summary>这是类 Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs（窗口位置更改事件参数）。</summary>
+            <summary>This is class Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.</summary>
         </member>
         <member name="M:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.#ctor(System.Boolean,System.Boolean)">
-            <summary>这是 WindowPositionChangedEventArgs 的构造函数（接收 Moved 与 Sized 两个布尔参数）。</summary>
+            <summary>This is WindowPositionChangedEventArgs, a member of class WindowPositionChangedEventArgs.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.Moved">
-            <summary>这是 Moved（是否已移动）。</summary>
+            <summary>This is Moved, a member of class WindowPositionChangedEventArgs.</summary>
         </member>
         <member name="P:Autodesk.AutoCAD.Windows.WindowPositionChangedEventArgs.Sized">
-            <summary>这是 Sized（是否已调整大小）。</summary>
+            <summary>This is Sized, a member of class WindowPositionChangedEventArgs.</summary>
         </member>
     </members>
 </doc>
